@@ -245,7 +245,7 @@ export default function CursoEditorPage() {
       </div>
 
       {tab === "INFORMAÇÕES" && (
-        <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-6 space-y-4">
+        <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-6 space-y-4">
           <div>
             <label className="block text-xs text-muted mb-1.5 font-mono">Título do Curso</label>
             <input
@@ -295,7 +295,7 @@ export default function CursoEditorPage() {
       )}
 
       {tab === "CONTEÚDO" && (
-        <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-5 space-y-4">
+        <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 space-y-4">
           {modulos.map((modulo) => (
             <div key={modulo.id} className="border border-[#2A2A2A] rounded-card overflow-hidden">
               <div className="flex items-center justify-between px-4 py-3 bg-[#111111] border-b border-[#2A2A2A]">
@@ -351,7 +351,7 @@ export default function CursoEditorPage() {
       {/* Modal de edição de aula */}
       {editAula && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#00000088" }}>
-          <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-6 w-full max-w-md">
+          <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-6 w-full max-w-md">
             <h3 className="text-foreground font-bold text-base mb-4">Editar Aula</h3>
             <div className="space-y-4">
               <div>

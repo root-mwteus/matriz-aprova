@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
+import { toast } from "sonner"
 
 export default function NovoSimuladoPage() {
   const router = useRouter()
@@ -35,10 +36,12 @@ export default function NovoSimuladoPage() {
     })
 
     if (error) {
-      alert("Erro ao criar simulado: " + error.message)
+      toast.error("Erro ao criar simulado: " + error.message)
       setSaving(false)
       return
     }
+    
+    toast.success("Simulado criado com sucesso!")
 
     router.push("/admin/simulados")
     router.refresh()

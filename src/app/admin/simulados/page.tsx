@@ -41,7 +41,7 @@ export default function AdminSimuladosPage() {
         <MetricCard label="PIOR MATÉRIA" value="Matemática" variacao="42% de acertos — refaça o plano" variacaoPositiva={false} />
       </div>
 
-      <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card">
+      <div className="bg-CARD] border border-[#2A2A2A] rounded-card">
         <div className="text-[11px] text-muted font-mono px-5 pt-4 pb-2">/ RANKING GERAL</div>
         <AdminTable
           columns={[
@@ -60,7 +60,7 @@ export default function AdminSimuladosPage() {
         />
       </div>
 
-      <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card">
+      <div className="bg-CARD] border border-[#2A2A2A] rounded-card">
         <div className="flex items-center gap-3 px-5 pt-4 pb-2">
           <span className="text-[11px] text-muted font-mono">/ SIMULADOS REALIZADOS</span>
           <select className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-2 py-1 text-[11px] text-muted focus:outline-none focus:border-accent">

@@ -113,7 +113,7 @@ export default function SimuladosPage() {
       </div>
 
       {/* CONFIGURAÇÃO */}
-      <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[14px] p-5 space-y-5">
+      <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 space-y-5">
         <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666]">
           NOVO SIMULADO
         </h2>
@@ -124,7 +124,7 @@ export default function SimuladosPage() {
             <select
               value={banca}
               onChange={(e) => setBanca(e.target.value)}
-              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-4 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-4 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
             >
               <option value="">Todas as bancas</option>
               {bancas.map((b) => (
@@ -138,7 +138,7 @@ export default function SimuladosPage() {
             <select
               value={area}
               onChange={(e) => setArea(e.target.value)}
-              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-4 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-4 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
             >
               <option value="">Todas as áreas</option>
               {areas.map((a) => (
@@ -154,7 +154,7 @@ export default function SimuladosPage() {
                 <button
                   key={n}
                   onClick={() => setNumQuestoes(n)}
-                  className={`py-3 rounded-[10px] text-sm font-semibold transition-all ${
+                  className={`py-3 rounded-card text-sm font-semibold transition-all ${
                     numQuestoes === n
                       ? "bg-[#CBFF4D] text-[#000000] font-bold"
                       : "bg-[#0D0D0D] border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
@@ -173,7 +173,7 @@ export default function SimuladosPage() {
                 <button
                   key={t.value}
                   onClick={() => setTempo(t.value)}
-                  className={`py-3 rounded-[10px] text-sm font-semibold transition-all ${
+                  className={`py-3 rounded-card text-sm font-semibold transition-all ${
                     tempo === t.value
                       ? "bg-[#CBFF4D] text-[#000000] font-bold"
                       : "bg-[#0D0D0D] border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
@@ -187,7 +187,7 @@ export default function SimuladosPage() {
         </div>
 
         {error && (
-          <p className="text-sm text-[#FF4D4D] bg-[#FF4D4D10] border border-[#FF4D4D30] rounded-[10px] px-4 py-2">
+          <p className="text-sm text-[#FF4D4D] bg-[#FF4D4D10] border border-[#FF4D4D30] rounded-card px-4 py-2">
             {error}
           </p>
         )}
@@ -195,7 +195,7 @@ export default function SimuladosPage() {
         <button
           onClick={handleIniciar}
           disabled={loading}
-          className="w-full bg-[#CBFF4D] text-[#000000] font-bold py-3.5 rounded-[10px] text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-50"
+          className="w-full bg-[#CBFF4D] text-[#000000] font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-50"
         >
           {loading ? "SELECIONANDO QUESTÕES..." : "INICIAR SIMULADO →"}
         </button>
@@ -241,7 +241,7 @@ function UltimosResultados() {
             <a
               key={r.id}
               href={`/simulados/resultado/${r.id}`}
-              className="block bg-[#1A1A1A] border border-[#2A2A2A] rounded-[14px] p-4 hover:border-[#CBFF4D]/30 transition-colors"
+              className="block bg-CARD] border border-[#2A2A2A] rounded-card p-4 hover:border-[#CBFF4D]/30 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <div>

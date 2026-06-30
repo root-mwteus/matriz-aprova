@@ -81,12 +81,12 @@ export default function MateriaisPage() {
       </div>
 
       {/* FILTROS */}
-      <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[14px] p-4 space-y-4">
+      <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-4 space-y-4">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <select
             value={materia}
             onChange={(e) => setMateria(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
           >
             <option value="">Matéria</option>
             {materiasList.map((m) => (
@@ -97,7 +97,7 @@ export default function MateriaisPage() {
           <select
             value={banca}
             onChange={(e) => setBanca(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
           >
             <option value="">Banca</option>
             {bancasList.map((b) => (
@@ -108,7 +108,7 @@ export default function MateriaisPage() {
           <select
             value={professor}
             onChange={(e) => setProfessor(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
           >
             <option value="">Professor</option>
             {professores.map((p) => (
@@ -119,7 +119,7 @@ export default function MateriaisPage() {
           <select
             value={ordenacao}
             onChange={(e) => setOrdenacao(e.target.value as Ordenacao)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
           >
             <option value="incidencia">Incidência</option>
             <option value="materia">Matéria</option>
@@ -130,7 +130,7 @@ export default function MateriaisPage() {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setFiltroIA("todos")}
-            className={`px-4 py-2 rounded-[10px] text-xs font-semibold transition-all ${
+            className={`px-4 py-2 rounded-card text-xs font-semibold transition-all ${
               filtroIA === "todos"
                 ? "bg-[#CBFF4D] text-[#000000] font-bold"
                 : "bg-[#0D0D0D] border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
@@ -140,7 +140,7 @@ export default function MateriaisPage() {
           </button>
           <button
             onClick={() => setFiltroIA("ia")}
-            className={`px-4 py-2 rounded-[10px] text-xs font-semibold transition-all ${
+            className={`px-4 py-2 rounded-card text-xs font-semibold transition-all ${
               filtroIA === "ia"
                 ? "bg-[#CBFF4D] text-[#000000] font-bold"
                 : "bg-[#0D0D0D] border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
@@ -162,7 +162,7 @@ export default function MateriaisPage() {
           <div className="text-[#666666] text-sm animate-pulse">Carregando materiais...</div>
         </div>
       ) : materiais.length === 0 ? (
-        <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[14px] p-10 text-center space-y-3">
+        <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-10 text-center space-y-3">
           <span className="text-4xl">📚</span>
           <p className="text-sm text-[#666666]">Nenhum material encontrado.</p>
         </div>
@@ -174,7 +174,7 @@ export default function MateriaisPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
-              className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[14px] p-5 hover:border-[#CBFF4D]/30 transition-all group flex flex-col"
+              className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 hover:border-[#CBFF4D]/30 transition-all group flex flex-col"
             >
               {(m.incidencia_pct ?? 0) > 70 && (
                 <div className="flex items-center justify-between mb-3">

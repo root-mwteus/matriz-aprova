@@ -85,12 +85,12 @@ export default function QuestoesPage() {
       </div>
 
       {/* FILTROS */}
-      <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[14px] p-4 space-y-4">
+      <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-4 space-y-4">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <select
             value={materia}
             onChange={(e) => setMateria(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
           >
             <option value="">Matéria</option>
             {materiasList.map((m) => (
@@ -101,7 +101,7 @@ export default function QuestoesPage() {
           <select
             value={banca}
             onChange={(e) => setBanca(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
           >
             <option value="">Banca</option>
             {bancasList.map((b) => (
@@ -112,7 +112,7 @@ export default function QuestoesPage() {
           <select
             value={ano}
             onChange={(e) => setAno(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
           >
             <option value="">Ano</option>
             {anosList.map((a) => (
@@ -123,7 +123,7 @@ export default function QuestoesPage() {
           <select
             value={area}
             onChange={(e) => setArea(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-[10px] px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
           >
             <option value="">Área</option>
             <option value="Concursos Gerais">Concursos Gerais</option>
@@ -136,13 +136,13 @@ export default function QuestoesPage() {
         <div className="flex items-center gap-3">
           <button
             onClick={handleFiltrar}
-            className="bg-[#CBFF4D] text-[#000000] font-bold px-6 py-3.5 rounded-[10px] text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity"
+            className="bg-[#CBFF4D] text-[#000000] font-bold px-6 py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity"
           >
             FILTRAR
           </button>
           <button
             onClick={handleAleatorio}
-            className="bg-transparent border border-[#2A2A2A] text-[#888888] font-semibold px-6 py-3.5 rounded-[10px] text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-[#FFFFFF] transition-all"
+            className="bg-transparent border border-[#2A2A2A] text-[#888888] font-semibold px-6 py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-[#FFFFFF] transition-all"
           >
             ALEATÓRIO
           </button>
@@ -161,7 +161,7 @@ export default function QuestoesPage() {
               setMateria(mc.materia)
               router.push(`/questoes/resolver?materia=${encodeURIComponent(mc.materia)}`)
             }}
-            className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[14px] p-4 text-left hover:border-[#CBFF4D]/30 transition-colors group"
+            className="bg-CARD] border border-[#2A2A2A] rounded-card p-4 text-left hover:border-[#CBFF4D]/30 transition-colors group"
           >
             <div className="text-xs text-[#666666] font-mono mb-1">{String(i + 1).padStart(2, "0")}</div>
             <div className="text-sm font-semibold text-[#FFFFFF] group-hover:text-[#CBFF4D] transition-colors">

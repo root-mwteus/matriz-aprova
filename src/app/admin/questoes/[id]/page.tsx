@@ -64,7 +64,7 @@ export default function AdminQuestaoDetailPage() {
           <p className="text-sm text-muted">Questão não encontrada</p>
         </div>
       ) : (
-        <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-6 space-y-6">
+        <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-6 space-y-6">
           <div className="flex flex-wrap gap-2 text-xs">
             <span className="bg-accent/10 text-accent px-2.5 py-1 rounded-full">{questao.materia}</span>
             {questao.sub_materia && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.sub_materia}</span>}

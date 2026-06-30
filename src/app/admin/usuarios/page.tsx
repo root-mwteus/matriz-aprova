@@ -136,7 +136,7 @@ export default function AdminUsuariosPage() {
         </select>
       </div>
 
-      <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card overflow-hidden">
+      <div className="bg-CARD] border border-[#2A2A2A] rounded-card overflow-hidden">
         <AdminTable
           loading={loading}
           columns={[

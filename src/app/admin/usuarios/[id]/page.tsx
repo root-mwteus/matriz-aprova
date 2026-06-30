@@ -123,7 +123,7 @@ export default function UserDetailPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* COLUNA ESQUERDA — Identidade */}
         <div className="space-y-4">
-          <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-6 text-center">
+          <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-6 text-center">
             <div className="w-16 h-16 rounded-xl bg-accent/20 text-accent text-xl font-bold flex items-center justify-center mx-auto mb-3">
               {nomeExibicao.split(" ").map((s) => s[0]).join("").slice(0, 2).toUpperCase()}
             </div>
@@ -153,7 +153,7 @@ export default function UserDetailPage() {
             </div>
           </div>
 
-          <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-5 space-y-3">
+          <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 space-y-3">
             <a
               href={`mailto:${perfil.email}`}
               className="block w-full text-center text-sm bg-accent/20 text-accent border border-accent/40 px-4 py-2.5 rounded-lg font-medium hover:bg-accent/30 transition-colors"
@@ -192,7 +192,7 @@ export default function UserDetailPage() {
 
           {tab === "PROGRESSO" && (
             <div className="space-y-5">
-              <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-5">
+              <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5">
                 <div className="text-[11px] text-muted font-mono mb-3">STREAK · ÚLTIMOS 30 DIAS</div>
                 <div className="flex gap-1 flex-wrap">
                   {calendarDays.map((d, i) => (
@@ -208,7 +208,7 @@ export default function UserDetailPage() {
 
               <div className="space-y-2">
                 {progressData.map((p) => (
-                  <div key={p.materia} className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-4">
+                  <div key={p.materia} className="bg-CARD] border border-[#2A2A2A] rounded-card p-4">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm text-foreground font-medium">{p.materia}</span>
                       <span className="text-xs text-muted font-mono">{p.aulas} aulas</span>
@@ -226,7 +226,7 @@ export default function UserDetailPage() {
           )}
 
           {tab === "QUESTÕES" && (
-            <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card overflow-hidden">
+            <div className="bg-CARD] border border-[#2A2A2A] rounded-card overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-[#2A2A2A]">
@@ -256,7 +256,7 @@ export default function UserDetailPage() {
           {tab === "SIMULADOS" && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {simulados.map((s, i) => (
-                <div key={i} className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-5">
+                <div key={i} className="bg-CARD] border border-[#2A2A2A] rounded-card p-5">
                   <div className="text-sm text-foreground font-medium">{s.titulo}</div>
                   <div className="mt-2 flex items-baseline gap-1">
                     <span className="text-2xl font-bold text-accent">{s.pct}%</span>
@@ -269,7 +269,7 @@ export default function UserDetailPage() {
           )}
 
           {tab === "FINANCEIRO" && (
-            <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-8 text-center">
+            <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-8 text-center">
               <p className="text-muted text-sm">Sistema de pagamentos ainda não implementado.</p>
             </div>
           )}
