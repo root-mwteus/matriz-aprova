@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components/Sidebar.tsx -> @/lib/supabase/client\":{\"id\":\"components/Sidebar.tsx -> @/lib/supabase/client\",\"files\":[]}}"
