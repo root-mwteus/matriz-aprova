@@ -10,6 +10,7 @@ CREATE TABLE public.profiles (
   area_concurso text,
   data_prova  date,
   role        text NOT NULL DEFAULT 'user' CHECK (role IN ('user', 'admin')),
+  suspenso    boolean NOT NULL DEFAULT false,
   created_at  timestamptz NOT NULL DEFAULT now()
 );
 
@@ -27,6 +28,14 @@ CREATE POLICY "Sistema pode inserir perfil"
   ON public.profiles FOR INSERT
   WITH CHECK (auth.uid() = id);
 
+CREATE POLICY "Admin vê todos os perfis"
+  ON public.profiles FOR SELECT
+  USING (EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'admin'));
+
+CREATE POLICY "Admin atualiza qualquer perfil"
+  ON public.profiles FOR UPDATE
+  USING (EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'admin'));
+
 CREATE INDEX idx_profiles_email ON public.profiles(email);
 CREATE INDEX idx_profiles_role  ON public.profiles(role);
 
@@ -37,6 +46,7 @@ CREATE TABLE public.courses (
   area          text,
   descricao     text,
   thumbnail_url text,
+  publicado     boolean NOT NULL DEFAULT false,
   ordem         integer NOT NULL DEFAULT 0,
   created_at    timestamptz NOT NULL DEFAULT now()
 );
@@ -157,9 +167,11 @@ CREATE INDEX idx_progress_concluido ON public.progress(concluido);
 CREATE TABLE public.questions (
   id              uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   materia         text NOT NULL,
+  sub_materia     text,
   banca           text,
   ano             integer,
   nivel           text CHECK (nivel IN ('facil', 'medio', 'dificil')),
+  area_concurso   text,
   enunciado       text NOT NULL,
   alternativas    jsonb NOT NULL DEFAULT '[]'::jsonb,
   resposta_correta integer NOT NULL,
@@ -190,6 +202,7 @@ CREATE INDEX idx_questions_materia ON public.questions(materia);
 CREATE INDEX idx_questions_banca   ON public.questions(banca);
 CREATE INDEX idx_questions_ano     ON public.questions(ano);
 CREATE INDEX idx_questions_nivel   ON public.questions(nivel);
+CREATE INDEX idx_questions_area_concurso ON public.questions(area_concurso);
 
 -- 7. USER_ANSWERS
 CREATE TABLE public.user_answers (
@@ -226,11 +239,13 @@ CREATE TABLE public.materials (
   id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   titulo        text NOT NULL,
   materia       text,
+  sub_materia   text,
   banca         text,
   professor     text,
   paginas       integer,
   pdf_url       text,
   incidencia_pct numeric(5,2) DEFAULT 0,
+  ia_recommend  boolean NOT NULL DEFAULT false,
   created_at    timestamptz NOT NULL DEFAULT now()
 );
 
@@ -369,3 +384,36 @@ CREATE OR REPLACE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW
   EXECUTE FUNCTION public.handle_new_user();
+
+-- ============================================================
+-- STORAGE: bucket de materiais (PDFs)
+-- Privado — leitura só via signed URL para usuários autenticados.
+-- ============================================================
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('materiais', 'materiais', false)
+ON CONFLICT (id) DO NOTHING;
+
+CREATE POLICY "Admin faz upload de materiais"
+  ON storage.objects FOR INSERT
+  WITH CHECK (
+    bucket_id = 'materiais'
+    AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
+  );
+
+CREATE POLICY "Admin atualiza materiais no storage"
+  ON storage.objects FOR UPDATE
+  USING (
+    bucket_id = 'materiais'
+    AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
+  );
+
+CREATE POLICY "Admin exclui materiais do storage"
+  ON storage.objects FOR DELETE
+  USING (
+    bucket_id = 'materiais'
+    AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
+  );
+
+CREATE POLICY "Autenticados leem materiais do storage"
+  ON storage.objects FOR SELECT
+  USING (bucket_id = 'materiais' AND auth.role() = 'authenticated');

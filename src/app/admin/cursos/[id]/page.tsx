@@ -1,75 +1,224 @@
 "use client"
 
-import { useState } from "react"
-import { useParams } from "next/navigation"
+import { useEffect, useState } from "react"
+import { useParams, useRouter } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { toast } from "sonner"
+import { createClient } from "@/lib/supabase/client"
+import type { Course, Lesson, Module } from "@/types"
 
 const tabs = ["INFORMAÇÕES", "CONTEÚDO"]
+const areas = ["Concursos", "OAB", "Militar", "ENEM"]
 
-interface Aula {
-  id: string
-  titulo: string
-  duracao: string
+interface ModuloComAulas extends Module {
+  aulas: Lesson[]
 }
 
-interface Modulo {
-  id: string
-  titulo: string
-  aulas: Aula[]
+function formatarDuracao(segundos: number | null) {
+  if (!segundos) return "00:00"
+  const m = Math.floor(segundos / 60)
+  const s = segundos % 60
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
 }
 
-const initialModulos: Modulo[] = [
-  {
-    id: "m1",
-    titulo: "Módulo 01 — Princípios Constitucionais",
-    aulas: [
-      { id: "a1", titulo: "Introdução aos Princípios", duracao: "12:34" },
-      { id: "a2", titulo: "Princípio da Legalidade", duracao: "08:21" },
-    ],
-  },
-  {
-    id: "m2",
-    titulo: "Módulo 02 — Atos Administrativos",
-    aulas: [],
-  },
-]
+function parseDuracao(texto: string): number {
+  const [m, s] = texto.split(":").map((v) => parseInt(v) || 0)
+  return (m || 0) * 60 + (s || 0)
+}
 
 export default function CursoEditorPage() {
-  const params = useParams()
-  const [tab, setTab] = useState("CONTEÚDO")
-  const [modulos, setModulos] = useState(initialModulos)
-  const [editAula, setEditAula] = useState<{ moduloId: string; aula: Aula } | null>(null)
-  const [editModuloTitulo, setEditModuloTitulo] = useState<string | null>(null)
+  const params = useParams<{ id: string }>()
+  const router = useRouter()
+  const [tab, setTab] = useState("INFORMAÇÕES")
+  const [loading, setLoading] = useState(true)
+  const [naoEncontrado, setNaoEncontrado] = useState(false)
+  const [curso, setCurso] = useState<Course | null>(null)
+  const [titulo, setTitulo] = useState("")
+  const [area, setArea] = useState("")
+  const [descricao, setDescricao] = useState("")
+  const [publicado, setPublicado] = useState(false)
+  const [salvandoInfo, setSalvandoInfo] = useState(false)
+  const [modulos, setModulos] = useState<ModuloComAulas[]>([])
+  const [editAula, setEditAula] = useState<{ moduloId: string; aula: Lesson } | null>(null)
 
-  function addModulo() {
+  useEffect(() => {
+    carregar()
+  }, [params.id])
+
+  async function carregar() {
+    setLoading(true)
+    const supabase = createClient()
+
+    const { data: cursoData, error } = await supabase.from("courses").select("*").eq("id", params.id).single()
+    if (error || !cursoData) {
+      setNaoEncontrado(true)
+      setLoading(false)
+      return
+    }
+    setCurso(cursoData)
+    setTitulo(cursoData.titulo)
+    setArea(cursoData.area || areas[0])
+    setDescricao(cursoData.descricao || "")
+    setPublicado(cursoData.publicado)
+
+    const { data: modulosData } = await supabase
+      .from("modules")
+      .select("*")
+      .eq("course_id", params.id)
+      .order("ordem")
+
+    const moduloIds = (modulosData || []).map((m) => m.id)
+    let aulasPorModulo: Record<string, Lesson[]> = {}
+    if (moduloIds.length > 0) {
+      const { data: aulasData } = await supabase
+        .from("lessons")
+        .select("*")
+        .in("module_id", moduloIds)
+        .order("ordem")
+      aulasPorModulo = (aulasData || []).reduce((acc, a) => {
+        acc[a.module_id] = acc[a.module_id] || []
+        acc[a.module_id].push(a)
+        return acc
+      }, {} as Record<string, Lesson[]>)
+    }
+
+    setModulos((modulosData || []).map((m) => ({ ...m, aulas: aulasPorModulo[m.id] || [] })))
+    setLoading(false)
+  }
+
+  async function salvarInformacoes() {
+    if (!titulo.trim()) {
+      toast.error("O título é obrigatório")
+      return
+    }
+    setSalvandoInfo(true)
+    const supabase = createClient()
+    const { error } = await supabase
+      .from("courses")
+      .update({ titulo, area, descricao: descricao || null, publicado })
+      .eq("id", params.id)
+    setSalvandoInfo(false)
+
+    if (error) {
+      console.error("Erro ao salvar curso:", error)
+      toast.error("Erro ao salvar informações")
+    } else {
+      toast.success("Informações salvas")
+    }
+  }
+
+  async function addModulo() {
+    const supabase = createClient()
     const idx = modulos.length + 1
-    setModulos([...modulos, { id: `m${Date.now()}`, titulo: `Módulo ${String(idx).padStart(2, "0")} — Novo Módulo`, aulas: [] }])
+    const { data, error } = await supabase
+      .from("modules")
+      .insert({ course_id: params.id, titulo: `Módulo ${String(idx).padStart(2, "0")} — Novo Módulo`, ordem: modulos.length })
+      .select()
+      .single()
+
+    if (error || !data) {
+      console.error("Erro ao criar módulo:", error)
+      toast.error("Erro ao criar módulo")
+      return
+    }
+    setModulos([...modulos, { ...data, aulas: [] }])
   }
 
-  function addAula(moduloId: string) {
-    const aula: Aula = { id: `a${Date.now()}`, titulo: "Nova Aula", duracao: "00:00" }
-    setModulos(modulos.map((m) => m.id === moduloId ? { ...m, aulas: [...m.aulas, aula] } : m))
-    setEditAula({ moduloId, aula })
+  async function renomearModulo(moduloId: string, novoTitulo: string) {
+    setModulos(modulos.map((m) => (m.id === moduloId ? { ...m, titulo: novoTitulo } : m)))
   }
 
-  function saveAula(moduloId: string, aulaId: string, titulo: string, duracao: string) {
-    setModulos(modulos.map((m) =>
-      m.id === moduloId
-        ? { ...m, aulas: m.aulas.map((a) => a.id === aulaId ? { ...a, titulo, duracao } : a) }
-        : m
-    ))
-    setEditAula(null)
+  async function salvarTituloModulo(moduloId: string, tituloAtual: string) {
+    const supabase = createClient()
+    const { error } = await supabase.from("modules").update({ titulo: tituloAtual }).eq("id", moduloId)
+    if (error) {
+      console.error("Erro ao renomear módulo:", error)
+      toast.error("Erro ao renomear módulo")
+    }
   }
 
-  function deleteModulo(id: string) {
+  async function deleteModulo(id: string) {
+    const supabase = createClient()
+    const { error } = await supabase.from("modules").delete().eq("id", id)
+    if (error) {
+      console.error("Erro ao excluir módulo:", error)
+      toast.error("Erro ao excluir módulo")
+      return
+    }
     setModulos(modulos.filter((m) => m.id !== id))
   }
 
-  function deleteAula(moduloId: string, aulaId: string) {
+  async function addAula(moduloId: string) {
+    const modulo = modulos.find((m) => m.id === moduloId)
+    if (!modulo) return
+    const supabase = createClient()
+    const { data, error } = await supabase
+      .from("lessons")
+      .insert({ module_id: moduloId, titulo: "Nova Aula", ordem: modulo.aulas.length })
+      .select()
+      .single()
+
+    if (error || !data) {
+      console.error("Erro ao criar aula:", error)
+      toast.error("Erro ao criar aula")
+      return
+    }
+    setModulos(modulos.map((m) => (m.id === moduloId ? { ...m, aulas: [...m.aulas, data] } : m)))
+    setEditAula({ moduloId, aula: data })
+  }
+
+  async function saveAula(moduloId: string, aulaId: string, titulo: string, videoUrl: string, duracaoTexto: string) {
+    const supabase = createClient()
+    const duracaoSegundos = parseDuracao(duracaoTexto)
+    const { error } = await supabase
+      .from("lessons")
+      .update({ titulo, video_url: videoUrl || null, duracao_segundos: duracaoSegundos })
+      .eq("id", aulaId)
+
+    if (error) {
+      console.error("Erro ao salvar aula:", error)
+      toast.error("Erro ao salvar aula")
+      return
+    }
+
     setModulos(modulos.map((m) =>
-      m.id === moduloId ? { ...m, aulas: m.aulas.filter((a) => a.id !== aulaId) } : m
+      m.id === moduloId
+        ? { ...m, aulas: m.aulas.map((a) => (a.id === aulaId ? { ...a, titulo, video_url: videoUrl || null, duracao_segundos: duracaoSegundos } : a)) }
+        : m
     ))
+    setEditAula(null)
+    toast.success("Aula salva")
+  }
+
+  async function deleteAula(moduloId: string, aulaId: string) {
+    const supabase = createClient()
+    const { error } = await supabase.from("lessons").delete().eq("id", aulaId)
+    if (error) {
+      console.error("Erro ao excluir aula:", error)
+      toast.error("Erro ao excluir aula")
+      return
+    }
+    setModulos(modulos.map((m) => (m.id === moduloId ? { ...m, aulas: m.aulas.filter((a) => a.id !== aulaId) } : m)))
+  }
+
+  if (loading) {
+    return <div className="text-muted text-sm">Carregando...</div>
+  }
+
+  if (naoEncontrado || !curso) {
+    return (
+      <div className="space-y-8">
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold tracking-title uppercase">Editar Curso</h1>
+          <Link href="/admin/cursos" className="text-sm text-muted hover:text-foreground transition-colors">← VOLTAR</Link>
+        </div>
+        <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-card-border rounded-card">
+          <span className="text-5xl mb-4">🎓</span>
+          <p className="text-sm text-muted">Curso não encontrado</p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -100,31 +249,46 @@ export default function CursoEditorPage() {
           <div>
             <label className="block text-xs text-muted mb-1.5 font-mono">Título do Curso</label>
             <input
+              value={titulo}
+              onChange={(e) => setTitulo(e.target.value)}
               className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
-              defaultValue="Direito Constitucional para Concursos"
             />
           </div>
           <div>
             <label className="block text-xs text-muted mb-1.5 font-mono">Área</label>
-            <select className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent">
-              <option>Concursos</option>
-              <option>OAB</option>
-              <option>Militar</option>
-              <option>ENEM</option>
+            <select
+              value={area}
+              onChange={(e) => setArea(e.target.value)}
+              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+            >
+              {areas.map((a) => <option key={a} value={a}>{a}</option>)}
             </select>
           </div>
           <div>
             <label className="block text-xs text-muted mb-1.5 font-mono">Descrição</label>
             <textarea
+              value={descricao}
+              onChange={(e) => setDescricao(e.target.value)}
               rows={4}
               className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent resize-y"
-              defaultValue="Curso completo de Direito Constitucional para concursos públicos. Aborda teoria, jurisprudência e questões comentadas."
             />
           </div>
           <div className="pt-3 border-t border-[#2A2A2A] flex items-center justify-between">
             <label className="text-xs text-muted font-mono">Publicado</label>
-            <button className="w-9 h-5 rounded-full bg-accent relative transition-colors">
-              <span className="absolute top-0.5 right-[3px] w-4 h-4 bg-white rounded-full" />
+            <button
+              onClick={() => setPublicado(!publicado)}
+              className={`w-9 h-5 rounded-full relative transition-colors ${publicado ? "bg-accent" : "bg-[#2A2A2A]"}`}
+            >
+              <span className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform ${publicado ? "translate-x-[18px]" : "translate-x-0.5"}`} />
+            </button>
+          </div>
+          <div className="pt-4 flex justify-end">
+            <button
+              onClick={salvarInformacoes}
+              disabled={salvandoInfo}
+              className="text-xs bg-accent/20 text-accent border border-accent/40 px-6 py-2.5 rounded-lg font-semibold hover:bg-accent/30 transition-colors disabled:opacity-50"
+            >
+              {salvandoInfo ? "SALVANDO..." : "SALVAR INFORMAÇÕES →"}
             </button>
           </div>
         </div>
@@ -132,24 +296,16 @@ export default function CursoEditorPage() {
 
       {tab === "CONTEÚDO" && (
         <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-5 space-y-4">
-          {modulos.map((modulo, mi) => (
+          {modulos.map((modulo) => (
             <div key={modulo.id} className="border border-[#2A2A2A] rounded-card overflow-hidden">
               <div className="flex items-center justify-between px-4 py-3 bg-[#111111] border-b border-[#2A2A2A]">
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-muted cursor-grab" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
-                  </svg>
-                  <input
-                    value={editModuloTitulo === modulo.id ? undefined : modulo.titulo}
-                    onChange={(e) => {
-                      const updated = modulos.map((m) => m.id === modulo.id ? { ...m, titulo: e.target.value } : m)
-                      setModulos(updated)
-                    }}
-                    className="bg-transparent text-sm text-foreground font-medium focus:outline-none focus:text-accent w-full"
-                    defaultValue={modulo.titulo}
-                  />
-                </div>
-                <button onClick={() => deleteModulo(modulo.id)} className="text-muted hover:text-red-400 transition-colors">
+                <input
+                  value={modulo.titulo}
+                  onChange={(e) => renomearModulo(modulo.id, e.target.value)}
+                  onBlur={(e) => salvarTituloModulo(modulo.id, e.target.value)}
+                  className="bg-transparent text-sm text-foreground font-medium focus:outline-none focus:text-accent w-full"
+                />
+                <button onClick={() => deleteModulo(modulo.id)} className="text-muted hover:text-red-400 transition-colors flex-shrink-0 ml-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
@@ -158,20 +314,14 @@ export default function CursoEditorPage() {
               <div className="px-4 py-2 space-y-1">
                 {modulo.aulas.map((aula) => (
                   <div key={aula.id} className="flex items-center justify-between py-1.5 group/aula">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3.5 h-3.5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span
-                        className="text-sm text-foreground cursor-pointer hover:text-accent transition-colors"
-                        onClick={() => setEditAula({ moduloId: modulo.id, aula })}
-                      >
-                        {aula.titulo}
-                      </span>
-                    </div>
+                    <span
+                      className="text-sm text-foreground cursor-pointer hover:text-accent transition-colors"
+                      onClick={() => setEditAula({ moduloId: modulo.id, aula })}
+                    >
+                      {aula.titulo}
+                    </span>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-muted font-mono">{aula.duracao}</span>
+                      <span className="text-xs text-muted font-mono">{formatarDuracao(aula.duracao_segundos)}</span>
                       <button onClick={() => deleteAula(modulo.id, aula.id)} className="text-muted hover:text-red-400 transition-colors opacity-0 group-hover/aula:opacity-100">
                         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -215,7 +365,9 @@ export default function CursoEditorPage() {
               <div>
                 <label className="block text-xs text-muted mb-1.5 font-mono">URL do Vídeo</label>
                 <input
+                  id="edit-aula-video"
                   className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                  defaultValue={editAula.aula.video_url || ""}
                   placeholder="https://youtube.com/watch?v=..."
                 />
               </div>
@@ -224,7 +376,7 @@ export default function CursoEditorPage() {
                 <input
                   id="edit-aula-duracao"
                   className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
-                  defaultValue={editAula.aula.duracao}
+                  defaultValue={formatarDuracao(editAula.aula.duracao_segundos)}
                   placeholder="MM:SS"
                 />
               </div>
@@ -236,8 +388,9 @@ export default function CursoEditorPage() {
               <button
                 onClick={() => {
                   const tit = (document.getElementById("edit-aula-titulo") as HTMLInputElement)?.value || editAula.aula.titulo
-                  const dur = (document.getElementById("edit-aula-duracao") as HTMLInputElement)?.value || editAula.aula.duracao
-                  saveAula(editAula.moduloId, editAula.aula.id, tit, dur)
+                  const video = (document.getElementById("edit-aula-video") as HTMLInputElement)?.value || ""
+                  const dur = (document.getElementById("edit-aula-duracao") as HTMLInputElement)?.value || "00:00"
+                  saveAula(editAula.moduloId, editAula.aula.id, tit, video, dur)
                 }}
                 className="px-4 py-2 text-sm bg-accent/20 text-accent border border-accent/40 rounded-lg font-semibold hover:bg-accent/30 transition-colors"
               >

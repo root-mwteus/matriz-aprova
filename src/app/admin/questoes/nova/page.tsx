@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
 
 const materias = ["Português", "Matemática", "Direito Constitucional", "Direito Administrativo", "Informática", "Raciocínio Lógico", "História", "Geografia", "Atualidades"]
@@ -25,7 +26,22 @@ export default function NovaQuestaoPage() {
   const [saving, setSaving] = useState(false)
   const supabase = createClient()
 
-  async function handleSave(published: boolean) {
+  function validar(): string | null {
+    if (!materia) return "Selecione a matéria"
+    if (!enunciado.trim()) return "O enunciado é obrigatório"
+    const preenchidas = alternativas.filter((a) => a.trim().length > 0)
+    if (preenchidas.length < 2) return "Preencha pelo menos 2 alternativas"
+    if (!alternativas[correta]?.trim()) return "A alternativa marcada como correta está vazia"
+    return null
+  }
+
+  async function handleSave() {
+    const erro = validar()
+    if (erro) {
+      toast.error(erro)
+      return
+    }
+
     setSaving(true)
     const { error } = await supabase.from("questions").insert({
       materia,
@@ -35,16 +51,21 @@ export default function NovaQuestaoPage() {
       area_concurso: area || null,
       incidencia_pct: incidencia,
       enunciado,
-      alternativas: alternativas.map((t, i) => ({ letter: String.fromCharCode(65 + i), text: t })),
+      alternativas: alternativas
+        .map((t, i) => ({ letter: String.fromCharCode(65 + i), text: t }))
+        .filter((a) => a.text.trim().length > 0),
       resposta_correta: correta,
       explicacao: explicacao || null,
-      published,
     })
+    setSaving(false)
+
     if (error) {
-      alert("Erro: " + error.message)
-      setSaving(false)
+      console.error("Erro ao salvar questão:", error)
+      toast.error("Erro ao salvar: " + error.message)
       return
     }
+
+    toast.success("Questão criada com sucesso")
     router.push("/admin/questoes")
     router.refresh()
   }
@@ -161,20 +182,13 @@ export default function NovaQuestaoPage() {
         </div>
 
         {/* Rodapé */}
-        <div className="flex items-center justify-between pt-4 border-t border-[#2A2A2A]">
+        <div className="flex items-center justify-end pt-4 border-t border-[#2A2A2A]">
           <button
-            onClick={() => handleSave(false)}
-            disabled={saving}
-            className="text-xs text-muted border border-[#2A2A2A] px-5 py-2.5 rounded-lg hover:text-foreground transition-colors disabled:opacity-50"
-          >
-            SALVAR RASCUNHO
-          </button>
-          <button
-            onClick={() => handleSave(true)}
+            onClick={handleSave}
             disabled={saving}
             className="text-xs bg-accent/20 text-accent border border-accent/40 px-6 py-2.5 rounded-lg font-semibold hover:bg-accent/30 transition-colors disabled:opacity-50"
           >
-            {saving ? "SALVANDO..." : "PUBLICAR QUESTÃO →"}
+            {saving ? "SALVANDO..." : "CRIAR QUESTÃO →"}
           </button>
         </div>
       </div>

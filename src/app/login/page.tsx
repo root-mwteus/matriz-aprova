@@ -1,19 +1,21 @@
 "use client"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { Suspense, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { createClient } from "@/lib/supabase/client"
 import { loginSchema, type LoginData } from "@/lib/auth-validation"
 import { SITE_NAME } from "@/lib/constants"
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const supabase = createClient()
   const [form, setForm] = useState<LoginData>({ email: "", password: "" })
   const [errors, setErrors] = useState<Partial<Record<keyof LoginData | "api", string>>>({})
   const [loading, setLoading] = useState(false)
+  const contaSuspensa = searchParams.get("suspenso") === "1"
 
   function validate(): boolean {
     const result = loginSchema.safeParse(form)
@@ -76,6 +78,16 @@ export default function LoginPage() {
           </Link>
           <p className="text-muted text-sm">Sua aprovação começa aqui</p>
         </div>
+
+        {contaSuspensa && (
+          <motion.p
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-sm text-red-400 bg-red-400/10 border border-red-400/30 rounded-card px-4 py-3 text-center"
+          >
+            Sua conta foi suspensa. Entre em contato com o suporte para mais informações.
+          </motion.p>
+        )}
 
         <div className="bg-card border border-card-border rounded-card p-8">
           <form onSubmit={handleLogin} className="space-y-5">
@@ -152,5 +164,13 @@ export default function LoginPage() {
         </p>
       </motion.div>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={null}>
+      <LoginContent />
+    </Suspense>
   )
 }

@@ -53,14 +53,22 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  if (user && isAdminRoute) {
+  if (user && (isDashboardRoute || isAdminRoute)) {
     const { data: profile } = await supabase
       .from("profiles")
-      .select("role")
+      .select("role, suspenso")
       .eq("id", user.id)
       .single()
 
-    if (profile?.role !== "admin") {
+    if (profile?.suspenso) {
+      await supabase.auth.signOut()
+      const url = request.nextUrl.clone()
+      url.pathname = "/login"
+      url.searchParams.set("suspenso", "1")
+      return NextResponse.redirect(url)
+    }
+
+    if (isAdminRoute && profile?.role !== "admin") {
       const url = request.nextUrl.clone()
       url.pathname = "/dashboard"
       return NextResponse.redirect(url)

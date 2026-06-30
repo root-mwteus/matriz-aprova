@@ -14,6 +14,7 @@ export interface Course {
   area: string | null
   descricao: string | null
   thumbnail_url: string | null
+  publicado: boolean
   ordem: number
   created_at: string
 }
@@ -48,9 +49,11 @@ export interface Progress {
 export interface Question {
   id: string
   materia: string
+  sub_materia: string | null
   banca: string | null
   ano: number | null
   nivel: "facil" | "medio" | "dificil" | null
+  area_concurso: string | null
   enunciado: string
   alternativas: Alternative[]
   resposta_correta: number
@@ -78,11 +81,13 @@ export interface Material {
   id: string
   titulo: string
   materia: string | null
+  sub_materia: string | null
   banca: string | null
   professor: string | null
   paginas: number | null
   pdf_url: string | null
   incidencia_pct: number | null
+  ia_recommend: boolean
   created_at: string
 }
 

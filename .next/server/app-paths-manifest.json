@@ -1,0 +1,7 @@
+{
+  "/(dashboard)/questoes/page": "app/(dashboard)/questoes/page.js",
+  "/admin/materiais/page": "app/admin/materiais/page.js",
+  "/admin/cursos/page": "app/admin/cursos/page.js",
+  "/admin/questoes/page": "app/admin/questoes/page.js",
+  "/admin/simulados/page": "app/admin/simulados/page.js"
+}

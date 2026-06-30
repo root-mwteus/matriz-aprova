@@ -4,7 +4,9 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { toast } from "sonner"
 import { UploadZone } from "@/components/admin/UploadZone"
+import { createClient } from "@/lib/supabase/client"
 
 const materias = ["Português", "Matemática", "Direito Constitucional", "Direito Administrativo", "Informática", "Raciocínio Lógico"]
 const bancas = ["CESPE/CEBRASPE", "FGV", "VUNESP", "FCC", "IBFC", "CONSULPLAN", "QUADRIX", "CESGRANRIO"]
@@ -22,12 +24,49 @@ export default function NovoMaterialPage() {
   const [uploading, setUploading] = useState(false)
 
   async function handleSave() {
-    if (!file || !titulo) return
+    if (!file) {
+      toast.error("Selecione um arquivo PDF")
+      return
+    }
+    if (!titulo.trim()) {
+      toast.error("O título é obrigatório")
+      return
+    }
+
     setUploading(true)
-    // Simulate upload to Supabase Storage
-    await new Promise((r) => setTimeout(r, 1500))
-    setUploading(false)
+    const supabase = createClient()
+    const path = `${crypto.randomUUID()}-${file.name}`
+
+    const { error: uploadError } = await supabase.storage.from("materiais").upload(path, file)
+    if (uploadError) {
+      console.error("Erro ao fazer upload do PDF:", uploadError)
+      toast.error("Erro ao fazer upload: " + uploadError.message)
+      setUploading(false)
+      return
+    }
+
+    const { error: insertError } = await supabase.from("materials").insert({
+      titulo,
+      materia: materia || null,
+      sub_materia: subMateria || null,
+      banca: banca || null,
+      professor: professor || null,
+      incidencia_pct: incidencia,
+      ia_recommend: iaRecommend,
+      pdf_url: path,
+    })
+
+    if (insertError) {
+      console.error("Erro ao salvar material:", insertError)
+      toast.error("Erro ao salvar: " + insertError.message)
+      await supabase.storage.from("materiais").remove([path])
+      setUploading(false)
+      return
+    }
+
+    toast.success("Material salvo com sucesso")
     router.push("/admin/materiais")
+    router.refresh()
   }
 
   return (

@@ -1,22 +1,23 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { toast } from "sonner"
 import { ConfirmModal } from "@/components/admin/ConfirmModal"
+import { createClient } from "@/lib/supabase/client"
 
 const tabs = ["PROGRESSO", "QUESTÕES", "SIMULADOS", "FINANCEIRO"]
 
-const userData = {
-  nome: "Ana Beatriz Santos",
-  email: "ana@email.com",
-  area: "OAB",
-  concurso: "Exame da OAB",
-  cadastro: "02/01/2026",
-  ultimoAcesso: "28/06/2026 14:23",
-  plano: "ANUAL",
-  vencimento: "02/01/2027",
+interface Perfil {
+  id: string
+  nome: string | null
+  email: string
+  area_concurso: string | null
+  data_prova: string | null
+  created_at: string
+  suspenso: boolean
 }
 
 const progressData = [
@@ -47,11 +48,71 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => {
   }
 })
 
+function formatarData(iso: string | null) {
+  if (!iso) return "—"
+  return new Date(iso).toLocaleDateString("pt-BR")
+}
+
 export default function UserDetailPage() {
-  const params = useParams()
+  const params = useParams<{ id: string }>()
   const [tab, setTab] = useState("PROGRESSO")
-  const [showSuspend, setShowSuspend] = useState(false)
-  const [active, setActive] = useState(true)
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [perfil, setPerfil] = useState<Perfil | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [updating, setUpdating] = useState(false)
+
+  useEffect(() => {
+    const supabase = createClient()
+    let active = true
+
+    supabase
+      .from("profiles")
+      .select("id, nome, email, area_concurso, data_prova, created_at, suspenso")
+      .eq("id", params.id)
+      .single()
+      .then(({ data, error }) => {
+        if (!active) return
+        if (error) {
+          console.error("Erro ao carregar perfil:", error)
+          toast.error("Não foi possível carregar este usuário")
+        } else {
+          setPerfil(data)
+        }
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [params.id])
+
+  async function confirmarSuspensao() {
+    if (!perfil) return
+    setUpdating(true)
+    const novoStatus = !perfil.suspenso
+    const supabase = createClient()
+    const { error } = await supabase.from("profiles").update({ suspenso: novoStatus }).eq("id", perfil.id)
+
+    if (error) {
+      console.error("Erro ao atualizar status da conta:", error)
+      toast.error("Erro ao atualizar status da conta")
+    } else {
+      setPerfil({ ...perfil, suspenso: novoStatus })
+      toast.success(novoStatus ? "Conta suspensa com sucesso" : "Conta reativada com sucesso")
+    }
+    setUpdating(false)
+    setShowConfirm(false)
+  }
+
+  if (loading) {
+    return <div className="text-muted text-sm">Carregando...</div>
+  }
+
+  if (!perfil) {
+    return <div className="text-muted text-sm">Usuário não encontrado.</div>
+  }
+
+  const nomeExibicao = perfil.nome || perfil.email
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
@@ -64,53 +125,52 @@ export default function UserDetailPage() {
         <div className="space-y-4">
           <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-6 text-center">
             <div className="w-16 h-16 rounded-xl bg-accent/20 text-accent text-xl font-bold flex items-center justify-center mx-auto mb-3">
-              {userData.nome.split(" ").map(s => s[0]).join("").slice(0, 2).toUpperCase()}
+              {nomeExibicao.split(" ").map((s) => s[0]).join("").slice(0, 2).toUpperCase()}
             </div>
-            <h2 className="text-foreground font-bold text-lg">{userData.nome}</h2>
-            <p className="text-muted text-xs mt-1">{userData.email}</p>
+            <h2 className="text-foreground font-bold text-lg">{nomeExibicao}</h2>
+            <p className="text-muted text-xs mt-1">{perfil.email}</p>
+            {perfil.suspenso && (
+              <span className="inline-block mt-2 text-[11px] text-red-400 bg-red-400/10 border border-red-400/30 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                Suspenso
+              </span>
+            )}
             <div className="flex items-center justify-center gap-2 mt-3">
-              <span className="text-[11px] text-accent bg-accent/10 px-2 py-0.5 rounded-full">{userData.area}</span>
-              <span className="text-[11px] text-muted">{userData.concurso}</span>
+              <span className="text-[11px] text-accent bg-accent/10 px-2 py-0.5 rounded-full">{perfil.area_concurso || "Não informado"}</span>
             </div>
             <div className="mt-4 space-y-2 text-xs">
               <div className="flex justify-between text-muted">
                 <span>Cadastro</span>
-                <span className="text-foreground font-mono">{userData.cadastro}</span>
+                <span className="text-foreground font-mono">{formatarData(perfil.created_at)}</span>
               </div>
               <div className="flex justify-between text-muted">
-                <span>Último acesso</span>
-                <span className="text-foreground font-mono">{userData.ultimoAcesso}</span>
+                <span>Data da prova</span>
+                <span className="text-foreground font-mono">{formatarData(perfil.data_prova)}</span>
               </div>
               <div className="flex justify-between text-muted">
                 <span>Plano</span>
-                <span className="text-green-400 font-medium">{userData.plano}</span>
-              </div>
-              <div className="flex justify-between text-muted">
-                <span>Vencimento</span>
-                <span className="text-foreground font-mono">{userData.vencimento}</span>
+                <span className="text-muted">Indisponível (pagamentos a implementar)</span>
               </div>
             </div>
           </div>
 
           <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-5 space-y-3">
-            <button className="w-full text-sm bg-accent/20 text-accent border border-accent/40 px-4 py-2.5 rounded-lg font-medium hover:bg-accent/30 transition-colors">
+            <a
+              href={`mailto:${perfil.email}`}
+              className="block w-full text-center text-sm bg-accent/20 text-accent border border-accent/40 px-4 py-2.5 rounded-lg font-medium hover:bg-accent/30 transition-colors"
+            >
               ENVIAR EMAIL
+            </a>
+            <button
+              onClick={() => setShowConfirm(true)}
+              disabled={updating}
+              className={`w-full text-sm px-4 py-2.5 rounded-lg font-medium transition-colors disabled:opacity-50 ${
+                perfil.suspenso
+                  ? "bg-accent/20 text-accent border border-accent/40 hover:bg-accent/30"
+                  : "bg-red-500/10 text-red-400 border border-red-500/30 hover:bg-red-500/20"
+              }`}
+            >
+              {perfil.suspenso ? "REATIVAR CONTA" : "SUSPENDER CONTA"}
             </button>
-            <button onClick={() => setShowSuspend(true)} className="w-full text-sm bg-red-500/10 text-red-400 border border-red-500/30 px-4 py-2.5 rounded-lg font-medium hover:bg-red-500/20 transition-colors">
-              SUSPENDER CONTA
-            </button>
-            <button className="w-full text-sm text-muted border border-[#2A2A2A] px-4 py-2.5 rounded-lg hover:text-foreground transition-colors">
-              RESETAR SENHA
-            </button>
-            <label className="flex items-center justify-between text-xs text-muted pt-2 border-t border-[#2A2A2A]">
-              <span>Acesso imediato</span>
-              <button
-                onClick={() => setActive(!active)}
-                className={`w-9 h-5 rounded-full transition-colors relative ${active ? "bg-accent" : "bg-[#2A2A2A]"}`}
-              >
-                <span className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform ${active ? "translate-x-[18px]" : "translate-x-0.5"}`} />
-              </button>
-            </label>
           </div>
         </div>
 
@@ -210,20 +270,24 @@ export default function UserDetailPage() {
 
           {tab === "FINANCEIRO" && (
             <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-8 text-center">
-              <p className="text-muted text-sm">Nenhum registro financeiro encontrado.</p>
+              <p className="text-muted text-sm">Sistema de pagamentos ainda não implementado.</p>
             </div>
           )}
         </div>
       </div>
 
       <ConfirmModal
-        open={showSuspend}
-        title="Suspender conta"
-        description={`Tem certeza que deseja suspender o acesso de ${userData.nome}?`}
-        confirmLabel="SUSPENDER"
-        confirmDestructive
-        onConfirm={() => { setShowSuspend(false) }}
-        onCancel={() => setShowSuspend(false)}
+        open={showConfirm}
+        title={perfil.suspenso ? "Reativar conta" : "Suspender conta"}
+        description={
+          perfil.suspenso
+            ? `Tem certeza que deseja reativar o acesso de ${nomeExibicao}?`
+            : `Tem certeza que deseja suspender o acesso de ${nomeExibicao}? A sessão atual dele será encerrada.`
+        }
+        confirmLabel={perfil.suspenso ? "REATIVAR" : "SUSPENDER"}
+        confirmDestructive={!perfil.suspenso}
+        onConfirm={confirmarSuspensao}
+        onCancel={() => setShowConfirm(false)}
       />
     </motion.div>
   )

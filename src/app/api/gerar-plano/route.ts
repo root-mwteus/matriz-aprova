@@ -78,16 +78,24 @@ export async function POST(request: Request) {
 
     const { data: { user } } = await supabase.auth.getUser()
 
-    if (user) {
-      await supabase.from("study_plans").insert({
-        user_id: user.id,
-        semana_inicio: new Date().toISOString().split("T")[0],
-        tarefas: plan.dias,
-      })
+    if (!user) {
+      return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
+    }
+
+    const { error: insertError } = await supabase.from("study_plans").insert({
+      user_id: user.id,
+      semana_inicio: new Date().toISOString().split("T")[0],
+      tarefas: plan.dias,
+    })
+
+    if (insertError) {
+      console.error("Erro ao salvar plano de estudos:", insertError)
+      return NextResponse.json({ error: "Erro ao salvar plano de estudos" }, { status: 500 })
     }
 
     return NextResponse.json(plan)
   } catch (err) {
+    console.error("Erro ao gerar plano:", err)
     return NextResponse.json({ error: "Erro ao gerar plano" }, { status: 500 })
   }
 }

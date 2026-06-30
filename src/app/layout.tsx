@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Toaster } from "sonner"
 import "./globals.css"
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants"
 
@@ -24,7 +25,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Toaster theme="dark" position="top-right" richColors />
+      </body>
     </html>
   )
 }

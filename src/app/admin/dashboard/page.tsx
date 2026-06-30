@@ -1,35 +1,23 @@
 "use client"
 
+import { useEffect, useState } from "react"
+import Link from "next/link"
 import { MetricCard } from "@/components/admin/MetricCard"
 import { AdminTable } from "@/components/admin/AdminTable"
-import { StatusBadge } from "@/components/admin/StatusBadge"
 import { motion } from "framer-motion"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
+import { createClient } from "@/lib/supabase/client"
 
-const weekData = [
-  { dia: "DOM", questoes: 142 },
-  { dia: "SEG", questoes: 287 },
-  { dia: "TER", questoes: 354 },
-  { dia: "QUA", questoes: 412 },
-  { dia: "QUI", questoes: 298 },
-  { dia: "SEX", questoes: 0 },
-  { dia: "SAB", questoes: 0 },
-]
+const DIAS_SEMANA = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"]
+const AREA_CORES = ["#CBFF4D", "#888888", "#4DCBFF", "#F0F0A8", "#FF8C42", "#A84DFF"]
 
-const areaData = [
-  { area: "Concursos", valor: 58, cor: "#CBFF4D" },
-  { area: "OAB", valor: 22, cor: "#888888" },
-  { area: "Militar", valor: 12, cor: "#FFFFFF30" },
-  { area: "ENEM", valor: 8, cor: "#F0F0A8" },
-]
-
-const recentUsers = [
-  { id: "1", nome: "Carlos Silva", area: "Concursos", plano: "ativo" as const, cadastro: "28/06/2026" },
-  { id: "2", nome: "Ana Beatriz", area: "OAB", plano: "trial" as const, cadastro: "27/06/2026" },
-  { id: "3", nome: "João Pereira", area: "Militar", plano: "ativo" as const, cadastro: "27/06/2026" },
-  { id: "4", nome: "Marina Costa", area: "ENEM", plano: "inativo" as const, cadastro: "26/06/2026" },
-  { id: "5", nome: "Rafael Oliveira", area: "Concursos", plano: "ativo" as const, cadastro: "25/06/2026" },
-]
+interface RecentUser {
+  id: string
+  nome: string | null
+  email: string
+  area_concurso: string | null
+  created_at: string
+}
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload?.length) {
@@ -53,38 +41,135 @@ const itemAnim = {
   show: { opacity: 1, y: 0, transition: { type: "spring", damping: 20, stiffness: 200 } },
 }
 
+function formatarData(iso: string) {
+  return new Date(iso).toLocaleDateString("pt-BR")
+}
+
 export default function AdminDashboard() {
+  const [loading, setLoading] = useState(true)
+  const [totalAlunos, setTotalAlunos] = useState(0)
+  const [novosAlunos7d, setNovosAlunos7d] = useState(0)
+  const [totalRespostas, setTotalRespostas] = useState(0)
+  const [taxaAcerto, setTaxaAcerto] = useState(0)
+  const [weekData, setWeekData] = useState<{ dia: string; questoes: number }[]>([])
+  const [areaData, setAreaData] = useState<{ area: string; valor: number; cor: string }[]>([])
+  const [recentUsers, setRecentUsers] = useState<RecentUser[]>([])
+
+  useEffect(() => {
+    const supabase = createClient()
+    let active = true
+
+    async function load() {
+      const hoje = new Date()
+      const seteDiasAtras = new Date(hoje)
+      seteDiasAtras.setDate(seteDiasAtras.getDate() - 6)
+      seteDiasAtras.setHours(0, 0, 0, 0)
+
+      const [
+        { count: alunosCount },
+        { count: novosCount },
+        { count: respostasCount },
+        { count: corretasCount },
+        { data: respostasSemana },
+        { data: areaRows },
+        { data: recentes },
+      ] = await Promise.all([
+        supabase.from("profiles").select("*", { count: "exact", head: true }).eq("role", "user"),
+        supabase.from("profiles").select("*", { count: "exact", head: true }).eq("role", "user").gte("created_at", seteDiasAtras.toISOString()),
+        supabase.from("user_answers").select("*", { count: "exact", head: true }),
+        supabase.from("user_answers").select("*", { count: "exact", head: true }).eq("correto", true),
+        supabase.from("user_answers").select("created_at").gte("created_at", seteDiasAtras.toISOString()),
+        supabase.from("profiles").select("area_concurso").eq("role", "user"),
+        supabase
+          .from("profiles")
+          .select("id, nome, email, area_concurso, created_at")
+          .eq("role", "user")
+          .order("created_at", { ascending: false })
+          .limit(5),
+      ])
+
+      if (!active) return
+
+      const dias: { date: Date; dia: string; questoes: number }[] = []
+      for (let i = 6; i >= 0; i--) {
+        const d = new Date(hoje)
+        d.setDate(d.getDate() - i)
+        dias.push({ date: d, dia: DIAS_SEMANA[d.getDay()], questoes: 0 })
+      }
+      respostasSemana?.forEach((r) => {
+        const dataResposta = new Date(r.created_at)
+        const bucket = dias.find((d) => d.date.toDateString() === dataResposta.toDateString())
+        if (bucket) bucket.questoes += 1
+      })
+
+      const contagemArea = new Map<string, number>()
+      areaRows?.forEach((r) => {
+        const area = r.area_concurso || "Não informado"
+        contagemArea.set(area, (contagemArea.get(area) || 0) + 1)
+      })
+      const totalComArea = areaRows?.length || 0
+      const distribuicao = Array.from(contagemArea.entries())
+        .sort((a, b) => b[1] - a[1])
+        .map(([area, qtd], i) => ({
+          area,
+          valor: totalComArea ? Math.round((qtd / totalComArea) * 100) : 0,
+          cor: AREA_CORES[i % AREA_CORES.length],
+        }))
+
+      setTotalAlunos(alunosCount ?? 0)
+      setNovosAlunos7d(novosCount ?? 0)
+      setTotalRespostas(respostasCount ?? 0)
+      setTaxaAcerto(respostasCount ? Math.round(((corretasCount ?? 0) / respostasCount) * 100) : 0)
+      setWeekData(dias.map(({ dia, questoes }) => ({ dia, questoes })))
+      setAreaData(distribuicao)
+      setRecentUsers(recentes ?? [])
+      setLoading(false)
+    }
+
+    load().catch((err) => {
+      console.error("Erro ao carregar dashboard admin:", err)
+      if (active) setLoading(false)
+    })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  const maxQuestoesSemana = Math.max(1, ...weekData.map((d) => d.questoes))
+
   return (
     <motion.div variants={container} initial="hidden" animate="show" className="space-y-6">
       {/* LINHA 1 — 4 métricas */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <motion.div variants={itemAnim}>
-          <MetricCard label="/ ALUNOS ATIVOS" value="1.247" variacao="+23 esta semana" variacaoPositiva>
+          <MetricCard
+            label="/ ALUNOS CADASTRADOS"
+            value={loading ? "—" : totalAlunos.toLocaleString("pt-BR")}
+            variacao={loading ? undefined : `+${novosAlunos7d} esta semana`}
+            variacaoPositiva
+          >
             <div className="flex items-end gap-[2px] h-8">
               {weekData.map((d, i) => (
                 <div
                   key={i}
                   className="flex-1 rounded-t-sm"
-                  style={{ height: `${(d.questoes / 412) * 100}%`, background: "#CBFF4D30", minHeight: d.questoes ? 4 : 0 }}
+                  style={{ height: `${(d.questoes / maxQuestoesSemana) * 100}%`, background: "#CBFF4D30", minHeight: d.questoes ? 4 : 0 }}
                 />
               ))}
             </div>
           </MetricCard>
         </motion.div>
         <motion.div variants={itemAnim}>
-          <MetricCard label="/ RECEITA MENSAL" value="R$ 18.247" variacao="+12% vs mês anterior" variacaoPositiva>
-            <div className="inline-flex items-center gap-1.5 text-[10px] text-green-400 font-mono border border-green-400/30 bg-green-400/10 px-2 py-0.5 rounded-full">
-              MRR
-            </div>
+          <MetricCard label="/ NOVOS CADASTROS (7 DIAS)" value={loading ? "—" : novosAlunos7d}>
+            <div className="text-[11px] text-muted font-mono">Receita: pagamentos ainda não implementados</div>
           </MetricCard>
         </motion.div>
         <motion.div variants={itemAnim}>
-          <MetricCard label="/ QUESTÕES RESOLVIDAS" value="1.493" variacao="+8% hoje">
-            <div className="text-xs text-muted font-mono">Total geral: 84.721</div>
-          </MetricCard>
+          <MetricCard label="/ QUESTÕES RESPONDIDAS" value={loading ? "—" : totalRespostas.toLocaleString("pt-BR")} />
         </motion.div>
         <motion.div variants={itemAnim}>
-          <MetricCard label="/ TAXA DE ACERTO MÉDIA" value="67%" variacao="↑ 3% vs semana passada" variacaoPositiva />
+          <MetricCard label="/ TAXA DE ACERTO MÉDIA" value={loading ? "—" : `${taxaAcerto}%`} />
         </motion.div>
       </div>
 
@@ -105,25 +190,31 @@ export default function AdminDashboard() {
 
         <motion.div variants={itemAnim} className="lg:col-span-2 bg-[#1A1A1A] border border-[#2A2A2A] rounded-card p-5">
           <div className="text-[11px] text-muted font-mono mb-4">/ DISTRIBUIÇÃO POR ÁREA</div>
-          <ResponsiveContainer width="100%" height={180}>
-            <PieChart>
-              <Pie data={areaData} dataKey="valor" nameKey="area" cx="50%" cy="50%" innerRadius={45} outerRadius={70} stroke="none">
-                {areaData.map((entry, i) => (
-                  <Cell key={i} fill={entry.cor} />
+          {areaData.length === 0 ? (
+            <div className="h-[180px] flex items-center justify-center text-xs text-muted">Sem dados ainda</div>
+          ) : (
+            <>
+              <ResponsiveContainer width="100%" height={180}>
+                <PieChart>
+                  <Pie data={areaData} dataKey="valor" nameKey="area" cx="50%" cy="50%" innerRadius={45} outerRadius={70} stroke="none">
+                    {areaData.map((entry, i) => (
+                      <Cell key={i} fill={entry.cor} />
+                    ))}
+                  </Pie>
+                  <Tooltip content={<CustomTooltip />} />
+                </PieChart>
+              </ResponsiveContainer>
+              <div className="flex flex-wrap justify-center gap-3 mt-2">
+                {areaData.map((a) => (
+                  <div key={a.area} className="flex items-center gap-1.5 text-[11px]">
+                    <span className="w-2 h-2 rounded-full" style={{ background: a.cor }} />
+                    <span className="text-muted">{a.area}</span>
+                    <span className="text-foreground font-medium">{a.valor}%</span>
+                  </div>
                 ))}
-              </Pie>
-              <Tooltip content={<CustomTooltip />} />
-            </PieChart>
-          </ResponsiveContainer>
-          <div className="flex flex-wrap justify-center gap-3 mt-2">
-            {areaData.map((a) => (
-              <div key={a.area} className="flex items-center gap-1.5 text-[11px]">
-                <span className="w-2 h-2 rounded-full" style={{ background: a.cor }} />
-                <span className="text-muted">{a.area}</span>
-                <span className="text-foreground font-medium">{a.valor}%</span>
               </div>
-            ))}
-          </div>
+            </>
+          )}
         </motion.div>
       </div>
 
@@ -131,28 +222,19 @@ export default function AdminDashboard() {
       <motion.div variants={itemAnim} className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-card">
         <div className="text-[11px] text-muted font-mono px-5 pt-4 pb-2">/ ÚLTIMOS CADASTROS</div>
         <AdminTable
+          loading={loading}
           columns={[
-            { key: "nome", header: "ALUNO", render: (row) => <span className="text-foreground text-sm">{row.nome}</span> },
-            { key: "area", header: "ÁREA" },
-            { key: "plano", header: "STATUS", render: (row) => <StatusBadge status={row.plano} /> },
-            { key: "cadastro", header: "CADASTRO", render: (row) => <span className="text-muted font-mono text-xs">{row.cadastro}</span> },
+            { key: "nome", header: "ALUNO", render: (row) => <span className="text-foreground text-sm">{row.nome || row.email}</span> },
+            { key: "area_concurso", header: "ÁREA", render: (row) => <span className="text-muted text-xs">{row.area_concurso || "—"}</span> },
+            { key: "email", header: "EMAIL", render: (row) => <span className="text-muted font-mono text-xs">{row.email}</span> },
+            { key: "created_at", header: "CADASTRO", render: (row) => <span className="text-muted font-mono text-xs">{formatarData(row.created_at)}</span> },
             {
               key: "acoes",
               header: "AÇÕES",
-              render: () => (
-                <div className="flex items-center gap-2">
-                  <button className="text-muted hover:text-foreground transition-colors" title="Ver perfil">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  </button>
-                  <button className="text-muted hover:text-red-400 transition-colors" title="Suspender">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                    </svg>
-                  </button>
-                </div>
+              render: (row) => (
+                <Link href={`/admin/usuarios/${row.id}`} className="text-[11px] text-accent hover:underline">
+                  VER PERFIL
+                </Link>
               ),
             },
           ]}
