@@ -4,7 +4,8 @@ import { useEffect, useState, useRef, useCallback } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { createClient } from "@/lib/supabase/client"
-import type { Question } from "@/types"
+import { LatexText } from "@/components/LatexText"
+import type { Question, QuestaoFigura } from "@/types"
 
 export function ResolverContent() {
   const router = useRouter()
@@ -175,15 +176,35 @@ export function ResolverContent() {
           exit={{ opacity: 0, x: -20 }}
           className="bg-card border border-card-border rounded-card overflow-hidden"
         >
+          {/* TEXTO DE REFERÊNCIA */}
+          {questao.mostrar_texto && questao.texto_referencia && (
+            <div className="px-5 py-4 border-b border-card-border bg-white/[.02]">
+              <div className="text-[10px] text-muted font-mono uppercase tracking-widest mb-2">Texto de apoio</div>
+              <LatexText text={questao.texto_referencia} block className="text-sm text-foreground/80 leading-relaxed" />
+            </div>
+          )}
+
           {/* ENUNCIADO */}
           <div className="px-5 py-6 border-b border-card-border">
+            {questao.figuras?.length > 0 && (
+              <div className="mb-4 space-y-2">
+                {(questao.figuras as QuestaoFigura[]).map((fig) => {
+                  const supabase = createClient()
+                  const { data } = supabase.storage.from("questoes-figuras").getPublicUrl(fig.storage_path)
+                  return (
+                    <figure key={fig.id}>
+                      <img src={data.publicUrl} alt={fig.legenda || ""} className="max-w-full rounded-lg" />
+                      {fig.legenda && <figcaption className="text-[11px] text-muted text-center mt-1">{fig.legenda}</figcaption>}
+                    </figure>
+                  )
+                })}
+              </div>
+            )}
             <div className="flex items-start gap-3">
               <span className="text-xs text-muted font-mono mt-0.5 flex-shrink-0">
                 {String(indice + 1).padStart(2, "0")}
               </span>
-              <p className="text-sm text-foreground leading-relaxed">
-                {questao.enunciado}
-              </p>
+              <LatexText text={questao.enunciado} block className="text-sm text-foreground leading-relaxed flex-1" />
             </div>
           </div>
 
@@ -212,7 +233,7 @@ export function ResolverContent() {
                   className={`w-full flex items-start gap-3 px-4 py-3 rounded-card border transition-all text-left text-sm ${classe}`}
                 >
                   <span className="font-bold flex-shrink-0 w-5">{letras[i]}</span>
-                  <span className="flex-1">{alt.text || (alt as any).texto || ""}</span>
+                  <LatexText text={alt.text || (alt as any).texto || ""} className="flex-1" />
                   {confirmada && i === questao.resposta_correta && (
                     <span className="text-accent flex-shrink-0">✓</span>
                   )}
@@ -266,9 +287,10 @@ export function ResolverContent() {
                 <p className={`text-sm font-bold mb-2 ${correto ? "text-accent" : "text-red-400"}`}>
                   {correto ? "CORRETO!" : "ERRADO!"}
                 </p>
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  {questao.explicacao}
-                </p>
+                <LatexText text={questao.explicacao} block className="text-sm text-foreground/80 leading-relaxed" />
+                {questao.referencias && (
+                  <p className="text-xs text-muted mt-2 pt-2 border-t border-white/10 whitespace-pre-line">{questao.referencias}</p>
+                )}
               </div>
             </div>
           </motion.div>

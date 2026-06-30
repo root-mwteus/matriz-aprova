@@ -60,6 +60,12 @@ export interface Progress {
   updated_at: string
 }
 
+export interface QuestaoFigura {
+  id: string
+  storage_path: string
+  legenda?: string
+}
+
 export interface Question {
   id: string
   materia: string
@@ -69,9 +75,13 @@ export interface Question {
   nivel: "facil" | "medio" | "dificil" | null
   area_concurso: string | null
   enunciado: string
+  texto_referencia: string | null
+  mostrar_texto: boolean
   alternativas: Alternative[]
   resposta_correta: number
   explicacao: string | null
+  referencias: string | null
+  figuras: QuestaoFigura[]
   incidencia_pct: number | null
   created_at: string
 }

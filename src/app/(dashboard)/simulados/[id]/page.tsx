@@ -4,7 +4,8 @@ import { useEffect, useState, useRef, useCallback } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { createClient } from "@/lib/supabase/client"
-import type { Question } from "@/types"
+import { LatexText } from "@/components/LatexText"
+import type { Question, QuestaoFigura } from "@/types"
 
 interface SimCache {
   questoes: Question[]
@@ -177,12 +178,33 @@ export default function SimuladoPage() {
           exit={{ opacity: 0, x: -20 }}
           className="bg-card border border-card-border rounded-card overflow-hidden"
         >
+          {questao.mostrar_texto && questao.texto_referencia && (
+            <div className="px-5 py-4 border-b border-card-border bg-white/[.02]">
+              <div className="text-[10px] text-muted font-mono uppercase tracking-widest mb-2">Texto de apoio</div>
+              <LatexText text={questao.texto_referencia} block className="text-sm text-foreground/80 leading-relaxed" />
+            </div>
+          )}
+
           <div className="px-5 py-6 border-b border-card-border">
+            {questao.figuras?.length > 0 && (
+              <div className="mb-4 space-y-2">
+                {(questao.figuras as QuestaoFigura[]).map((fig) => {
+                  const supabase = createClient()
+                  const { data } = supabase.storage.from("questoes-figuras").getPublicUrl(fig.storage_path)
+                  return (
+                    <figure key={fig.id}>
+                      <img src={data.publicUrl} alt={fig.legenda || ""} className="max-w-full rounded-lg" />
+                      {fig.legenda && <figcaption className="text-[11px] text-muted text-center mt-1">{fig.legenda}</figcaption>}
+                    </figure>
+                  )
+                })}
+              </div>
+            )}
             <div className="flex items-start gap-3">
               <span className="text-xs text-muted font-mono mt-0.5 flex-shrink-0">
                 {String(indice + 1).padStart(2, "0")}
               </span>
-              <p className="text-sm text-foreground leading-relaxed">{questao.enunciado}</p>
+              <LatexText text={questao.enunciado} block className="text-sm text-foreground leading-relaxed flex-1" />
             </div>
           </div>
 
@@ -200,7 +222,7 @@ export default function SimuladoPage() {
                   }`}
                 >
                   <span className="font-bold flex-shrink-0 w-5">{letras[i]}</span>
-                  <span className="flex-1">{alt.text || (alt as any).texto || ""}</span>
+                  <LatexText text={alt.text || (alt as any).texto || ""} className="flex-1" />
                   {selecionada && <span className="text-accent flex-shrink-0">✓</span>}
                 </button>
               )
