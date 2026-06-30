@@ -15,7 +15,7 @@ export function ConfirmModal({ open, title, description, confirmLabel = "CONFIRM
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#00000088" }}>
-      <div className="bg-CARD border border-[#2A2A2A] rounded-card p-6 w-full max-w-sm">
+      <div className="bg-card border border-[#2A2A2A] rounded-card p-6 w-full max-w-sm">
         <h3 className="text-foreground font-bold text-lg mb-2">{title}</h3>
         <p className="text-muted text-sm mb-6">{description}</p>
         <div className="flex gap-3 justify-end">

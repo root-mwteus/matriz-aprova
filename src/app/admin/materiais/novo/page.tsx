@@ -78,7 +78,7 @@ export default function NovoMaterialPage() {
         <Link href="/admin/materiais" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
 
-      <div className="bg-CARD border border-[#2A2A2A] rounded-card p-6 space-y-6">
+      <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-6">
         <UploadZone onFile={setFile} />
 
         <div className="space-y-4">

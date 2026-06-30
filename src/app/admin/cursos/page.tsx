@@ -143,7 +143,7 @@ export default function AdminCursosPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-CARD border border-[#2A2A2A] rounded-card overflow-hidden group hover:border-accent/30 transition-colors"
+              className="bg-card border border-[#2A2A2A] rounded-card overflow-hidden group hover:border-accent/30 transition-colors"
             >
               <div className="h-32 bg-gradient-to-br from-[#CBFF4D20] to-[#111111] flex items-center justify-center">
                 <div className="w-12 h-12 rounded-xl bg-accent/20 text-accent text-lg font-bold flex items-center justify-center">
@@ -186,7 +186,7 @@ export default function AdminCursosPage() {
 
       {criando && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#00000088" }}>
-          <div className="bg-CARD border border-[#2A2A2A] rounded-card p-6 w-full max-w-md">
+          <div className="bg-card border border-[#2A2A2A] rounded-card p-6 w-full max-w-md">
             <h3 className="text-foreground font-bold text-base mb-4">Novo Curso</h3>
             <div className="space-y-4">
               <div>

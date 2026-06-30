@@ -12,7 +12,7 @@ export default function EstatisticasPage() {
       />
 
       <div className="grid lg:grid-cols-2 gap-6">
-        <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5">
+        <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
           <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666] mb-4">
             DESEMPENHO POR MATÉRIA
           </h2>
@@ -21,7 +21,7 @@ export default function EstatisticasPage() {
           </div>
         </div>
 
-        <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5">
+        <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
           <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666] mb-4">
             EVOLUÇÃO SEMANAL
           </h2>
@@ -30,7 +30,7 @@ export default function EstatisticasPage() {
           </div>
         </div>
 
-        <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5">
+        <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
           <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666] mb-4">
             TAXA DE ACERTO
           </h2>
@@ -39,7 +39,7 @@ export default function EstatisticasPage() {
           </div>
         </div>
 
-        <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5">
+        <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
           <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666] mb-4">
             TEMPO MÉDIO
           </h2>

@@ -81,7 +81,7 @@ export default function MateriaisPage() {
       </div>
 
       {/* FILTROS */}
-      <div className="bg-CARD border border-[#2A2A2A] rounded-card p-4 space-y-4">
+      <div className="bg-card border border-[#2A2A2A] rounded-card p-4 space-y-4">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <select
             value={materia}
@@ -162,7 +162,7 @@ export default function MateriaisPage() {
           <div className="text-[#666666] text-sm animate-pulse">Carregando materiais...</div>
         </div>
       ) : materiais.length === 0 ? (
-        <div className="bg-CARD border border-[#2A2A2A] rounded-card p-10 text-center space-y-3">
+        <div className="bg-card border border-[#2A2A2A] rounded-card p-10 text-center space-y-3">
           <span className="text-4xl">📚</span>
           <p className="text-sm text-[#666666]">Nenhum material encontrado.</p>
         </div>
@@ -174,7 +174,7 @@ export default function MateriaisPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
-              className="bg-CARD border border-[#2A2A2A] rounded-card p-5 hover:border-[#CBFF4D]/30 transition-all group flex flex-col"
+              className="bg-card border border-[#2A2A2A] rounded-card p-5 hover:border-[#CBFF4D]/30 transition-all group flex flex-col"
             >
               {(m.incidencia_pct ?? 0) > 70 && (
                 <div className="flex items-center justify-between mb-3">

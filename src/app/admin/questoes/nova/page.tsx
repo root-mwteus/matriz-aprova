@@ -77,7 +77,7 @@ export default function NovaQuestaoPage() {
         <Link href="/admin/questoes" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
 
-      <div className="bg-CARD border border-[#2A2A2A] rounded-card p-6 space-y-6">
+      <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-6">
         {/* Classificação */}
         <div>
           <div className="text-[11px] text-muted font-mono mb-3">/ CLASSIFICAÇÃO</div>
@@ -140,7 +140,7 @@ export default function NovaQuestaoPage() {
                     type="button"
                     onClick={() => setCorreta(i)}
                     className={`flex-shrink-0 w-8 h-8 rounded-lg text-sm font-bold transition-colors ${
-                      isCorrect ? "bg-accent text-black" : "bg-CARD text-muted border border-[#2A2A2A]"
+                      isCorrect ? "bg-accent text-black" : "bg-card text-muted border border-[#2A2A2A]"
                     }`}
                   >
                     {letter}
