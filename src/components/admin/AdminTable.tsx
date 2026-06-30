@@ -24,7 +24,7 @@ function SkeletonRow({ cols }: { cols: number }) {
     <tr>
       {Array.from({ length: cols }).map((_, i) => (
         <td key={i} className="px-4 py-3">
-          <div className="h-4 bg-CARD] rounded animate-pulse" style={{ width: `${60 + Math.random() * 40}%` }} />
+          <div className="h-4 bg-CARD rounded animate-pulse" style={{ width: `${60 + Math.random() * 40}%` }} />
         </td>
       ))}
     </tr>

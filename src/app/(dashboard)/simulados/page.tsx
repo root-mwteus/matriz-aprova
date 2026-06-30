@@ -113,7 +113,7 @@ export default function SimuladosPage() {
       </div>
 
       {/* CONFIGURAÇÃO */}
-      <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 space-y-5">
+      <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5 space-y-5">
         <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666]">
           NOVO SIMULADO
         </h2>
@@ -241,7 +241,7 @@ function UltimosResultados() {
             <a
               key={r.id}
               href={`/simulados/resultado/${r.id}`}
-              className="block bg-CARD] border border-[#2A2A2A] rounded-card p-4 hover:border-[#CBFF4D]/30 transition-colors"
+              className="block bg-CARD border border-[#2A2A2A] rounded-card p-4 hover:border-[#CBFF4D]/30 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <div>

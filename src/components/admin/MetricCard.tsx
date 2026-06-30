@@ -12,7 +12,7 @@ interface MetricCardProps {
 
 export function MetricCard({ label, value, variacao, variacaoPositiva = true, children }: MetricCardProps) {
   return (
-    <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 relative overflow-hidden">
+    <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5 relative overflow-hidden">
       <div className="text-[11px] text-muted font-mono mb-1">{label}</div>
       <div className="text-2xl font-bold text-foreground">{value}</div>
       {variacao && (

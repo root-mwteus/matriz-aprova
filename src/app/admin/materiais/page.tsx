@@ -80,7 +80,7 @@ export default function AdminMateriaisPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-CARD] border border-[#2A2A2A] rounded-card p-4 hover:border-accent/30 transition-colors group"
+              className="bg-CARD border border-[#2A2A2A] rounded-card p-4 hover:border-accent/30 transition-colors group"
             >
               <div className="flex items-start gap-3">
                 <div className="w-10 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 border border-accent/20">

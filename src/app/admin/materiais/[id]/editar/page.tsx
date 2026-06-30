@@ -138,7 +138,7 @@ export default function EditarMaterialPage() {
         <Link href="/admin/materiais" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
 
-      <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-6 space-y-6">
+      <div className="bg-CARD border border-[#2A2A2A] rounded-card p-6 space-y-6">
         <div>
           <div className="text-[11px] text-muted font-mono mb-2">{pdfAtual ? "Substituir PDF (opcional)" : "Anexar PDF"}</div>
           <UploadZone onFile={setFile} />

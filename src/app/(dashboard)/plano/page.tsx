@@ -208,7 +208,7 @@ export default function PlanoPage() {
           </div>
 
           {/* WIZARD STEPS */}
-          <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5">
+          <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5">
             <AnimatePresence mode="wait">
               {step === 0 && (
                 <motion.div
@@ -387,7 +387,7 @@ export default function PlanoPage() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 space-y-4"
+              className="bg-CARD border border-[#2A2A2A] rounded-card p-5 space-y-4"
             >
               <div className="flex items-center justify-center gap-3">
                 <div className="w-5 h-5 border-2 border-[#CBFF4D] border-t-transparent rounded-full animate-spin" />
@@ -405,7 +405,7 @@ export default function PlanoPage() {
 
         {/* COLUNA DIREITA — PREVIEW */}
         <div className="lg:w-[35%] lg:min-w-[280px]">
-          <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 space-y-4 sticky top-8">
+          <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5 space-y-4 sticky top-8">
             <span className="inline-block px-2 py-0.5 rounded-[6px] bg-[#66666620] text-[#666666] border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
               O QUE VOCÊ VAI RECEBER
             </span>
@@ -477,7 +477,7 @@ export default function PlanoPage() {
       </div>
 
       {/* PROGRESSO */}
-      <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-5 space-y-3">
+      <div className="bg-CARD border border-[#2A2A2A] rounded-card p-5 space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-xs text-[#666666] font-mono">Progresso da semana</span>
           <span className="text-sm font-bold text-[#CBFF4D]">{progresso}%</span>
@@ -507,7 +507,7 @@ export default function PlanoPage() {
                   ? "bg-[#CBFF4D] text-[#000000] font-bold"
                   : concluido
                   ? "bg-[#CBFF4D20] text-[#CBFF4D]"
-                  : "bg-CARD] border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
+                  : "bg-CARD border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
               }`}
             >
               <span className="text-xs font-bold">{DIAS_ABREV[d.dia]}</span>
@@ -518,7 +518,7 @@ export default function PlanoPage() {
       </div>
 
       {/* TAREFAS DO DIA */}
-      <div className="bg-CARD] border border-[#2A2A2A] rounded-card overflow-hidden">
+      <div className="bg-CARD border border-[#2A2A2A] rounded-card overflow-hidden">
         <div className="px-5 py-4 border-b border-[#2A2A2A] flex items-center justify-between">
           <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666]">
             {dia.dia} · {dia.totalHoras}h

@@ -85,7 +85,7 @@ export default function QuestoesPage() {
       </div>
 
       {/* FILTROS */}
-      <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-4 space-y-4">
+      <div className="bg-CARD border border-[#2A2A2A] rounded-card p-4 space-y-4">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <select
             value={materia}
@@ -161,7 +161,7 @@ export default function QuestoesPage() {
               setMateria(mc.materia)
               router.push(`/questoes/resolver?materia=${encodeURIComponent(mc.materia)}`)
             }}
-            className="bg-CARD] border border-[#2A2A2A] rounded-card p-4 text-left hover:border-[#CBFF4D]/30 transition-colors group"
+            className="bg-CARD border border-[#2A2A2A] rounded-card p-4 text-left hover:border-[#CBFF4D]/30 transition-colors group"
           >
             <div className="text-xs text-[#666666] font-mono mb-1">{String(i + 1).padStart(2, "0")}</div>
             <div className="text-sm font-semibold text-[#FFFFFF] group-hover:text-[#CBFF4D] transition-colors">

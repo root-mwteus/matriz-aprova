@@ -151,7 +151,7 @@ function UserCard({
   streakCount: number
 }) {
   return (
-    <div className="flex items-center justify-between h-[72px] px-4 bg-CARD] border border-[#2A2A2A] rounded-card">
+    <div className="flex items-center justify-between h-[72px] px-4 bg-CARD border border-[#2A2A2A] rounded-card">
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-[8px] bg-[#CBFF4D] flex items-center justify-center font-bold text-sm text-[#000000] flex-shrink-0">
           {initials}
@@ -179,7 +179,7 @@ function UserCard({
 
 function StreakBar({ dias, diaIdx }: { dias: boolean[]; diaIdx: number }) {
   return (
-    <div className="bg-CARD] border border-[#2A2A2A] rounded-card p-3 h-[72px] flex items-center">
+    <div className="bg-CARD border border-[#2A2A2A] rounded-card p-3 h-[72px] flex items-center">
       <div className="flex items-center gap-[6px]">
         {dias.map((ativo, i) => {
           const isHoje = i === diaIdx
@@ -190,10 +190,10 @@ function StreakBar({ dias, diaIdx }: { dias: boolean[]; diaIdx: number }) {
                   isHoje
                     ? ativo
                       ? "bg-[#CBFF4D] border-2 border-[#CBFF4D]"
-                      : "bg-CARD] border-2 border-[#CBFF4D]"
+                      : "bg-CARD border-2 border-[#CBFF4D]"
                     : ativo
                     ? "bg-[#CBFF4D]"
-                    : "bg-CARD] border border-[#2A2A2A]"
+                    : "bg-CARD border border-[#2A2A2A]"
                 }`}
               />
               <span className={`text-[10px] font-mono ${isHoje ? "text-[#CBFF4D]" : "text-[#666666]"}`}>
@@ -263,7 +263,7 @@ function QuestoesDoDia({
   taxa: number | null
 }) {
   return (
-    <div className="bg-CARD] border border-[#2A2A2A] rounded-card overflow-hidden">
+    <div className="bg-CARD border border-[#2A2A2A] rounded-card overflow-hidden">
       <div className="flex items-center justify-between px-5 py-4 border-b border-[#2A2A2A]">
         <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666]">
           QUESTÕES · HOJE

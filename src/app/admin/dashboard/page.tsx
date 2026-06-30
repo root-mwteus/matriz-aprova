@@ -22,7 +22,7 @@ interface RecentUser {
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload?.length) {
     return (
-      <div className="bg-CARD] border border-[#2A2A2A] rounded-lg px-3 py-2 shadow-lg">
+      <div className="bg-CARD border border-[#2A2A2A] rounded-lg px-3 py-2 shadow-lg">
         <p className="text-xs text-foreground font-medium">{label}</p>
         <p className="text-xs text-accent">{payload[0].value} questões</p>
       </div>
@@ -175,7 +175,7 @@ export default function AdminDashboard() {
 
       {/* LINHA 2 — Gráfico + Donut */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
-        <motion.div variants={itemAnim} className="lg:col-span-3 bg-CARD] border border-[#2A2A2A] rounded-card p-5">
+        <motion.div variants={itemAnim} className="lg:col-span-3 bg-CARD border border-[#2A2A2A] rounded-card p-5">
           <div className="text-[11px] text-muted font-mono mb-4">/ ATIVIDADE · ÚLTIMOS 7 DIAS</div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={weekData}>
@@ -188,7 +188,7 @@ export default function AdminDashboard() {
           </ResponsiveContainer>
         </motion.div>
 
-        <motion.div variants={itemAnim} className="lg:col-span-2 bg-CARD] border border-[#2A2A2A] rounded-card p-5">
+        <motion.div variants={itemAnim} className="lg:col-span-2 bg-CARD border border-[#2A2A2A] rounded-card p-5">
           <div className="text-[11px] text-muted font-mono mb-4">/ DISTRIBUIÇÃO POR ÁREA</div>
           {areaData.length === 0 ? (
             <div className="h-[180px] flex items-center justify-center text-xs text-muted">Sem dados ainda</div>
@@ -219,7 +219,7 @@ export default function AdminDashboard() {
       </div>
 
       {/* LINHA 3 — Últimos cadastros */}
-      <motion.div variants={itemAnim} className="bg-CARD] border border-[#2A2A2A] rounded-card">
+      <motion.div variants={itemAnim} className="bg-CARD border border-[#2A2A2A] rounded-card">
         <div className="text-[11px] text-muted font-mono px-5 pt-4 pb-2">/ ÚLTIMOS CADASTROS</div>
         <AdminTable
           loading={loading}

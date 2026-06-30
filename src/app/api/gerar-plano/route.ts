@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server"
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { cookies } from "next/headers"
-
-interface GeraPlanoBody {
-  concurso: string
-  dataProva: string
-  horasPorDia: number
-}
+import { z } from "zod"
 
 const DIAS = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
+
+const GeraPlanoSchema = z.object({
+  concurso: z.string().min(1, "O campo concurso é obrigatório").max(100, "O campo concurso deve ter no máximo 100 caracteres"),
+  dataProva: z.string().refine((v) => !isNaN(new Date(v).getTime()) && new Date(v) > new Date(), "O campo dataProva deve ser uma data válida"),
+  horasPorDia: z.number().int().min(1).max(16),
+})
 
 function gerarPlanoLocal(concurso: string, dataProva: string, horasPorDia: number) {
   const data = new Date(dataProva)
@@ -55,11 +56,11 @@ function gerarPlanoLocal(concurso: string, dataProva: string, horasPorDia: numbe
 
 export async function POST(request: Request) {
   try {
-    const body: GeraPlanoBody = await request.json()
-
-    if (!body.concurso || !body.dataProva || !body.horasPorDia) {
-      return NextResponse.json({ error: "Campos obrigatórios: concurso, dataProva, horasPorDia" }, { status: 400 })
+    const parsed = GeraPlanoSchema.safeParse(await request.json())
+    if (!parsed.success) {
+      return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 })
     }
+    const body = parsed.data
 
     const plan = gerarPlanoLocal(body.concurso, body.dataProva, body.horasPorDia)
 

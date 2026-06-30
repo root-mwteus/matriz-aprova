@@ -163,7 +163,7 @@ export default function AdminQuestoesPage() {
         </select>
       </div>
 
-      <div className="bg-CARD] border border-[#2A2A2A] rounded-card overflow-hidden">
+      <div className="bg-CARD border border-[#2A2A2A] rounded-card overflow-hidden">
         <AdminTable
           loading={loading}
           columns={[
