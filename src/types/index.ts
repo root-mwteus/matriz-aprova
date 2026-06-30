@@ -8,6 +8,20 @@ export interface Profile {
   created_at: string
 }
 
+export interface Edital {
+  id: string
+  orgao: string
+  cargo: string | null
+  banca: string | null
+  area_concurso: string
+  vagas: number | null
+  data_prova: string | null
+  data_inscricao_fim: string | null
+  link: string | null
+  status: "aberto" | "encerrado" | "previsto"
+  created_at: string
+}
+
 export interface Course {
   id: string
   titulo: string

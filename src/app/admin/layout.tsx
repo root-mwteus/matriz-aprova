@@ -12,6 +12,7 @@ const navItems = [
   { href: "/admin/questoes", label: "Questões", icon: "≡" },
   { href: "/admin/materiais", label: "Materiais", icon: "↓" },
   { href: "/admin/cursos", label: "Cursos", icon: "▷" },
+  { href: "/admin/editais", label: "Editais", icon: "📋" },
   { href: "/admin/simulados", label: "Simulados", icon: "◈" },
   { href: "/admin/financeiro", label: "Financeiro", icon: "$" },
 ]
