@@ -8,35 +8,46 @@ interface Segment {
   content: string
 }
 
+// Reconhece os 4 delimitadores comuns de LaTeX:
+//   display:  $$...$$   e   \[...\]
+//   inline:   $...$     e   \(...\)
+// Display vem antes na alternância para ter prioridade sobre inline.
+const LATEX_PATTERN =
+  /(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\$[^$\n]+?\$|\\\([\s\S]*?\\\))/g
+
 function splitLatex(text: string): Segment[] {
-  const result: Segment[] = []
+  const segments: Segment[] = []
+  let lastIndex = 0
+  let m: RegExpExecArray | null
 
-  // Split on $$...$$ (display math) first
-  const displayParts = text.split(/(\$\$[\s\S]*?\$\$)/)
-
-  for (const part of displayParts) {
-    if (part.startsWith("$$") && part.endsWith("$$") && part.length > 4) {
-      result.push({ type: "display", content: part.slice(2, -2) })
-      continue
+  LATEX_PATTERN.lastIndex = 0
+  while ((m = LATEX_PATTERN.exec(text)) !== null) {
+    if (m.index > lastIndex) {
+      segments.push({ type: "text", content: text.slice(lastIndex, m.index) })
     }
-    // Within plain-text segments, split on $...$ (inline math)
-    const inlineParts = part.split(/(\$[^$\n]+?\$)/)
-    for (const p of inlineParts) {
-      if (!p) continue
-      if (p.startsWith("$") && p.endsWith("$") && p.length > 2) {
-        result.push({ type: "inline", content: p.slice(1, -1) })
-      } else {
-        result.push({ type: "text", content: p })
-      }
+    const tok = m[0]
+    if (tok.startsWith("$$")) {
+      segments.push({ type: "display", content: tok.slice(2, -2) })
+    } else if (tok.startsWith("\\[")) {
+      segments.push({ type: "display", content: tok.slice(2, -2) })
+    } else if (tok.startsWith("\\(")) {
+      segments.push({ type: "inline", content: tok.slice(2, -2) })
+    } else {
+      segments.push({ type: "inline", content: tok.slice(1, -1) })
     }
+    lastIndex = LATEX_PATTERN.lastIndex
   }
 
-  return result
+  if (lastIndex < text.length) {
+    segments.push({ type: "text", content: text.slice(lastIndex) })
+  }
+
+  return segments
 }
 
 function renderMath(latex: string, display: boolean): string {
   try {
-    return katex.renderToString(latex, {
+    return katex.renderToString(latex.trim(), {
       displayMode: display,
       throwOnError: false,
       strict: false,
@@ -53,25 +64,24 @@ interface Props {
 }
 
 export function LatexText({ text, className, block }: Props) {
-  const segments = splitLatex(text)
+  const segments = splitLatex(text || "")
   const Tag = block ? "div" : "span"
 
   return (
-    <Tag className={className}>
+    <Tag className={className} style={{ whiteSpace: "pre-wrap" }}>
       {segments.map((seg, i) => {
         if (seg.type === "text") {
           return <span key={i}>{seg.content}</span>
         }
         if (seg.type === "display") {
           return (
-            <div
+            <span
               key={i}
-              className="my-3 overflow-x-auto text-center"
+              className="block my-3 overflow-x-auto text-center"
               dangerouslySetInnerHTML={{ __html: renderMath(seg.content, true) }}
             />
           )
         }
-        // inline
         return (
           <span
             key={i}

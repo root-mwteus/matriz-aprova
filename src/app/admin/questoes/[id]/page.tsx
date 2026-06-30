@@ -95,6 +95,19 @@ export default function AdminQuestaoDetailPage() {
               )}
             </div>
 
+            {/* Texto de referência */}
+            {questao.texto_referencia && (
+              <div className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-[10px] text-muted font-mono uppercase tracking-widest">Texto de apoio</div>
+                  {!questao.mostrar_texto && (
+                    <span className="text-[10px] text-muted">👁 oculto para o aluno</span>
+                  )}
+                </div>
+                <LatexText text={questao.texto_referencia} block className="text-sm text-foreground/80 leading-relaxed" />
+              </div>
+            )}
+
             {/* Figuras do enunciado */}
             {questao.figuras?.length > 0 && (
               <div className="space-y-2">

@@ -17,6 +17,8 @@ export interface QuestaoDraft {
   area: string
   incidencia: number
   enunciado: string
+  textoReferencia: string
+  mostrarTexto: boolean
   explicacao: string
   referencias: string
   alternativas: string[]
@@ -33,6 +35,8 @@ export function emptyDraft(): QuestaoDraft {
     area: "",
     incidencia: 50,
     enunciado: "",
+    textoReferencia: "",
+    mostrarTexto: true,
     explicacao: "",
     referencias: "",
     alternativas: ["", "", "", "", ""],
@@ -50,6 +54,18 @@ export function validarDraft(d: QuestaoDraft): string | null {
   return null
 }
 
+/** Sobe um Blob (ex.: recorte do PDF) para o bucket de figuras. */
+export async function uploadFiguraBlob(blob: Blob): Promise<QuestaoFigura> {
+  const supabase = createClient()
+  const id = crypto.randomUUID()
+  const path = `${id}.png`
+  const { error } = await supabase.storage
+    .from("questoes-figuras")
+    .upload(path, blob, { contentType: "image/png" })
+  if (error) throw error
+  return { id, storage_path: path, legenda: "" }
+}
+
 /** Converte um draft no formato da linha da tabela `questions`. */
 export function draftToRow(d: QuestaoDraft) {
   return {
@@ -60,6 +76,8 @@ export function draftToRow(d: QuestaoDraft) {
     area_concurso: d.area || null,
     incidencia_pct: d.incidencia,
     enunciado: d.enunciado,
+    texto_referencia: d.textoReferencia.trim() || null,
+    mostrar_texto: d.mostrarTexto,
     alternativas: d.alternativas
       .map((t, i) => ({ letter: String.fromCharCode(65 + i), text: t }))
       .filter((a) => a.text.trim().length > 0),
@@ -79,9 +97,14 @@ interface Props {
   onChange: (d: QuestaoDraft) => void
   /** Dica textual de figuras detectadas pela IA (extrator de PDF). */
   figurasDescricao?: string[]
+  /**
+   * Quando presente, mostra o botão "recortar do PDF" (contexto de importação).
+   * Se receber um `figuraId`, o recorte deve SUBSTITUIR aquela figura (ajuste).
+   */
+  onCropFromPdf?: (figuraId?: string) => void
 }
 
-export function QuestaoForm({ value, onChange, figurasDescricao }: Props) {
+export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }: Props) {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [uploadingFigura, setUploadingFigura] = useState(false)
   const supabase = createClient()
@@ -157,15 +180,26 @@ export function QuestaoForm({ value, onChange, figurasDescricao }: Props) {
       <div>
         <div className="flex items-center justify-between mb-3">
           <div className="text-[11px] text-muted font-mono">/ FIGURAS</div>
-          <button
-            type="button"
-            onClick={() => fileInputRef.current?.click()}
-            disabled={uploadingFigura}
-            className="text-[11px] text-accent border border-accent/40 px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-colors disabled:opacity-50"
-          >
-            {uploadingFigura ? "ENVIANDO..." : "+ ADICIONAR IMAGEM"}
-          </button>
-          <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleUploadFigura} />
+          <div className="flex items-center gap-2">
+            {onCropFromPdf && (
+              <button
+                type="button"
+                onClick={() => onCropFromPdf()}
+                className="text-[11px] text-accent border border-accent/40 px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-colors"
+              >
+                ✂ RECORTAR DO PDF
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploadingFigura}
+              className="text-[11px] text-accent border border-accent/40 px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-colors disabled:opacity-50"
+            >
+              {uploadingFigura ? "ENVIANDO..." : "+ ADICIONAR IMAGEM"}
+            </button>
+            <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleUploadFigura} />
+          </div>
         </div>
 
         {figurasDescricao && figurasDescricao.length > 0 && (
@@ -184,7 +218,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao }: Props) {
               return (
                 <div key={fig.id} className="flex items-start gap-3 bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg p-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={data.publicUrl} alt="" className="w-24 h-16 object-cover rounded flex-shrink-0" />
+                  <img src={data.publicUrl} alt="" className="w-24 h-16 object-contain bg-white rounded flex-shrink-0" />
                   <div className="flex-1 min-w-0">
                     <input
                       value={fig.legenda || ""}
@@ -194,12 +228,50 @@ export function QuestaoForm({ value, onChange, figurasDescricao }: Props) {
                     />
                     <p className="text-[10px] text-muted mt-1 font-mono truncate">{fig.storage_path}</p>
                   </div>
-                  <button type="button" onClick={() => removerFigura(fig)} className="text-red-400 hover:text-red-300 text-xs flex-shrink-0">
-                    REMOVER
-                  </button>
+                  <div className="flex flex-col gap-1.5 flex-shrink-0">
+                    {onCropFromPdf && (
+                      <button type="button" onClick={() => onCropFromPdf(fig.id)} className="text-accent hover:text-accent/80 text-[11px]">
+                        ✂ AJUSTAR
+                      </button>
+                    )}
+                    <button type="button" onClick={() => removerFigura(fig)} className="text-red-400 hover:text-red-300 text-[11px]">
+                      REMOVER
+                    </button>
+                  </div>
                 </div>
               )
             })}
+          </div>
+        )}
+      </div>
+
+      <hr className="border-[#2A2A2A]" />
+
+      {/* Texto de referência */}
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <div className="text-[11px] text-muted font-mono">/ TEXTO DE REFERÊNCIA (OPCIONAL)</div>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <span className="text-[11px] text-muted">Exibir ao aluno</span>
+            <button
+              type="button"
+              onClick={() => set("mostrarTexto", !value.mostrarTexto)}
+              className={`relative w-9 h-5 rounded-full transition-colors ${value.mostrarTexto ? "bg-accent" : "bg-[#2A2A2A]"}`}
+            >
+              <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${value.mostrarTexto ? "translate-x-4" : ""}`} />
+            </button>
+          </label>
+        </div>
+        <textarea
+          value={value.textoReferencia}
+          onChange={(e) => set("textoReferencia", e.target.value)}
+          rows={value.textoReferencia ? 6 : 2}
+          className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
+          placeholder="Texto-base / motivador (crônica, poema, artigo, trecho de lei...). Deixe vazio se a questão não depende de um texto."
+        />
+        {value.textoReferencia && !value.mostrarTexto && (
+          <div className="flex items-center gap-1.5 mt-1.5 text-[11px] text-muted bg-[#0D0D0D] border border-[#2A2A2A] px-3 py-1.5 rounded-lg">
+            👁 Texto salvo, mas oculto para o aluno
           </div>
         )}
       </div>

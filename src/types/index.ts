@@ -61,6 +61,8 @@ export interface Question {
   nivel: "facil" | "medio" | "dificil" | null
   area_concurso: string | null
   enunciado: string
+  texto_referencia: string | null
+  mostrar_texto: boolean
   alternativas: Alternative[]
   resposta_correta: number
   explicacao: string | null

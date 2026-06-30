@@ -44,6 +44,8 @@ export default function EditarQuestaoPage() {
           area: data.area_concurso || "",
           incidencia: data.incidencia_pct || 0,
           enunciado: data.enunciado,
+          textoReferencia: data.texto_referencia || "",
+          mostrarTexto: data.mostrar_texto ?? true,
           explicacao: data.explicacao || "",
           referencias: data.referencias || "",
           alternativas: preenchidas,

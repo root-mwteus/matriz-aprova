@@ -178,6 +178,13 @@ export default function SimuladoPage() {
           exit={{ opacity: 0, x: -20 }}
           className="bg-card border border-card-border rounded-card overflow-hidden"
         >
+          {questao.mostrar_texto && questao.texto_referencia && (
+            <div className="px-5 py-4 border-b border-card-border bg-white/[.02]">
+              <div className="text-[10px] text-muted font-mono uppercase tracking-widest mb-2">Texto de apoio</div>
+              <LatexText text={questao.texto_referencia} block className="text-sm text-foreground/80 leading-relaxed" />
+            </div>
+          )}
+
           <div className="px-5 py-6 border-b border-card-border">
             {questao.figuras?.length > 0 && (
               <div className="mb-4 space-y-2">

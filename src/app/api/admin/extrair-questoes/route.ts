@@ -4,14 +4,15 @@ import { cookies } from "next/headers"
 import { z } from "zod"
 import OpenAI from "openai"
 
-// A extração pode demorar para PDFs grandes; aumenta o limite da função.
-export const maxDuration = 300
+export const maxDuration = 120
 
 const BodySchema = z.object({
-  pdf_path: z.string().min(1, "pdf_path é obrigatório"),
+  page_image: z.string().min(1).startsWith("data:image/"),
+  next_page_image: z.string().startsWith("data:image/").optional(),
+  page_number: z.number().int().positive(),
 })
 
-// Schema de saída estruturada exigido da OpenAI (strict json_schema).
+// Saída estruturada exigida da OpenAI (strict json_schema).
 const questoesJsonSchema = {
   type: "object",
   additionalProperties: false,
@@ -22,11 +23,15 @@ const questoesJsonSchema = {
         type: "object",
         additionalProperties: false,
         properties: {
-          enunciado: { type: "string" },
+          enunciado: { type: "string", description: "Enunciado COMPLETO da questão, sem cortes nem resumo" },
+          texto_referencia: {
+            type: ["string", "null"],
+            description: "Texto-base/motivador que a questão exige para ser respondida (interpretação, poema, gráfico textual, lei citada). null se a questão não depender de um texto externo.",
+          },
           alternativas: { type: "array", items: { type: "string" } },
           resposta_correta: {
             type: ["integer", "null"],
-            description: "Índice (0-based) da alternativa correta, ou null se o gabarito não estiver no PDF",
+            description: "Índice (0-based) da alternativa correta; null se o gabarito não estiver visível",
           },
           explicacao: { type: ["string", "null"] },
           referencias: { type: ["string", "null"] },
@@ -38,11 +43,20 @@ const questoesJsonSchema = {
           figuras_descricao: {
             type: "array",
             items: { type: "string" },
-            description: "Descrição de cada figura/gráfico/imagem que aparece na questão",
+            description: "Descrição de cada figura/gráfico/imagem/mapa que faz parte da questão",
+          },
+          completa: {
+            type: "boolean",
+            description: "true se a questão parece COMPLETA (enunciado + alternativas legíveis; se houver figura, ela é parte separada que o admin anexa). false se algo essencial está faltando/cortado.",
+          },
+          aviso: {
+            type: ["string", "null"],
+            description: "Se completa=false, explique o que falta (ex.: 'alternativas D e E cortadas', 'depende de figura', 'texto-base incompleto'). Senão null.",
           },
         },
         required: [
           "enunciado",
+          "texto_referencia",
           "alternativas",
           "resposta_correta",
           "explicacao",
@@ -53,6 +67,8 @@ const questoesJsonSchema = {
           "ano",
           "area_concurso",
           "figuras_descricao",
+          "completa",
+          "aviso",
         ],
       },
     },
@@ -61,18 +77,29 @@ const questoesJsonSchema = {
 } as const
 
 const SYSTEM_PROMPT = `Você é um extrator de questões de provas de concursos públicos brasileiros.
-Receberá o PDF de uma prova e deve identificar TODAS as questões de múltipla escolha.
+Você recebe a IMAGEM de uma página da prova (a "página atual"). Às vezes recebe TAMBÉM a imagem da página SEGUINTE, apenas como contexto.
 
-Regras:
-- Transcreva o enunciado e as alternativas EXATAMENTE como aparecem.
-- Fórmulas matemáticas, químicas ou físicas DEVEM ser escritas em LaTeX: use $...$ para inline e $$...$$ para fórmulas em destaque. Ex.: "a raiz de $x^2 + 1$" ou "$$\\int_0^1 x\\,dx$$".
-- "alternativas" é um array de strings, na ordem A, B, C, D, E (sem incluir a letra, só o texto).
-- "resposta_correta" é o índice 0-based (A=0, B=1...). Se o gabarito NÃO estiver no PDF, use null.
-- "explicacao": se a prova trouxer comentário/justificativa do gabarito, transcreva; senão escreva uma explicação correta e concisa de por que a alternativa está certa. Pode usar LaTeX.
-- "referencias": base legal ou doutrinária quando identificável (ex.: "Lei 8.666/93, art. 23"); senão null.
+REGRA DE OURO (evita duplicação e cortes entre páginas):
+- Extraia SOMENTE as questões que COMEÇAM na página atual (a primeira imagem).
+- Se uma questão começa na página atual e CONTINUA na página seguinte (alternativas ou enunciado que transbordam), use a segunda imagem para transcrever a questão COMPLETA.
+- NÃO extraia questões que começam na página seguinte — elas serão extraídas depois.
+
+Transcrição:
+- Transcreva o enunciado e as alternativas INTEGRALMENTE, sem resumir, encurtar ou cortar. Se o texto é longo, copie tudo.
+- Fórmulas matemáticas/químicas/físicas SEMPRE em LaTeX, usando APENAS estes delimitadores: $...$ para inline e $$...$$ para destaque. NÃO use \\( \\) nem \\[ \\]. Ex.: "a raiz de $x^2+1$" e "$$\\int_0^1 x\\,dx$$".
+- "alternativas": array de strings na ordem A, B, C, D, E (só o texto, sem a letra).
+- "resposta_correta": índice 0-based; null se o gabarito não estiver visível.
+- "texto_referencia": questões de Português/Línguas/Interpretação/Atualidades costumam depender de um TEXTO-BASE (crônica, poema, charge com texto, artigo, trecho de lei). Transcreva esse texto-base aqui INTEGRALMENTE. Se vários itens compartilham o mesmo texto, repita-o em cada questão. Se a questão não depende de texto externo, use null.
+- "explicacao": transcreva o comentário do gabarito se houver; senão escreva uma explicação correta e concisa (pode usar LaTeX).
+- "referencias": base legal/doutrinária se identificável; senão null.
 - "materia": classifique (ex.: "Direito Constitucional", "Matemática", "Português").
-- "figuras_descricao": para cada imagem/gráfico/diagrama que faça parte da questão, descreva o que ela mostra. Se não houver figura, retorne array vazio.
-- Ignore capa, instruções, folha de respostas em branco e rodapés. Extraia apenas questões reais.`
+- "figuras_descricao": descreva cada figura/gráfico/diagrama/mapa que faça parte da questão. Sem figura → array vazio.
+
+Auto-revisão de completude:
+- "completa": marque false se faltar parte do enunciado, faltar alternativa, o texto-base estiver cortado, ou se a questão claramente depende de uma figura para ser respondida. Considere a figura como item à parte (o admin vai anexá-la), mas SINALIZE quando ela é indispensável.
+- "aviso": se completa=false, diga objetivamente o que falta. Senão null.
+
+Se a página atual não tiver nenhuma questão que comece nela, retorne "questoes": [].`
 
 function getSupabase() {
   const cookieStore = cookies()
@@ -96,61 +123,47 @@ function getSupabase() {
 export async function POST(request: Request) {
   try {
     if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json(
-        { error: "OPENAI_API_KEY não configurada no servidor" },
-        { status: 500 }
-      )
+      return NextResponse.json({ error: "OPENAI_API_KEY não configurada no servidor" }, { status: 500 })
     }
 
     const parsed = BodySchema.safeParse(await request.json())
     if (!parsed.success) {
       return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 })
     }
-    const { pdf_path } = parsed.data
+    const { page_image, next_page_image, page_number } = parsed.data
 
     const supabase = getSupabase()
 
-    // 1. Autenticação + checagem de papel admin (server-side, não confiar só no middleware)
     const { data: { user } } = await supabase.auth.getUser()
-    if (!user) {
-      return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
-    }
+    if (!user) return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
+
     const { data: profile } = await supabase
-      .from("profiles")
-      .select("role")
-      .eq("id", user.id)
-      .single()
+      .from("profiles").select("role").eq("id", user.id).single()
     if (profile?.role !== "admin") {
       return NextResponse.json({ error: "Acesso restrito a administradores" }, { status: 403 })
     }
 
-    // 2. Download do PDF do Storage
-    const { data: file, error: downloadError } = await supabase.storage
-      .from("pdf-provas")
-      .download(pdf_path)
-    if (downloadError || !file) {
-      console.error("Erro ao baixar PDF:", downloadError)
-      return NextResponse.json({ error: "Não foi possível ler o PDF enviado" }, { status: 400 })
-    }
-
-    const buffer = Buffer.from(await file.arrayBuffer())
-    const base64 = buffer.toString("base64")
-    const dataUrl = `data:application/pdf;base64,${base64}`
-
-    // 3. Chamada à OpenAI Responses API com o PDF nativo
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+
+    const content: OpenAI.Responses.ResponseInputMessageContentList = [
+      {
+        type: "input_text",
+        text: next_page_image
+          ? `Página atual: nº ${page_number} (1ª imagem). A 2ª imagem é a página seguinte, apenas como contexto para completar questões que transbordam. Extraia só as questões que COMEÇAM na página ${page_number}.`
+          : `Página atual: nº ${page_number} (última do documento). Extraia as questões que começam nela.`,
+      },
+      { type: "input_image", image_url: page_image, detail: "high" },
+    ]
+    if (next_page_image) {
+      content.push({ type: "input_image", image_url: next_page_image, detail: "high" })
+    }
 
     const response = await openai.responses.create({
       model: "gpt-4o",
+      max_output_tokens: 8000,
       input: [
         { role: "system", content: SYSTEM_PROMPT },
-        {
-          role: "user",
-          content: [
-            { type: "input_text", text: "Extraia todas as questões deste PDF de prova." },
-            { type: "input_file", filename: pdf_path.split("/").pop() || "prova.pdf", file_data: dataUrl },
-          ],
-        },
+        { role: "user", content },
       ],
       text: {
         format: {
@@ -163,14 +176,12 @@ export async function POST(request: Request) {
     })
 
     const raw = response.output_text
-    if (!raw) {
-      return NextResponse.json({ error: "A IA não retornou questões" }, { status: 502 })
-    }
+    if (!raw) return NextResponse.json({ error: "A IA não retornou dados" }, { status: 502 })
 
     let questoes
     try {
       questoes = JSON.parse(raw).questoes
-    } catch (e) {
+    } catch {
       console.error("Resposta da IA não é JSON válido:", raw)
       return NextResponse.json({ error: "Falha ao interpretar a resposta da IA" }, { status: 502 })
     }

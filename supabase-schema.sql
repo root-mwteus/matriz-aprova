@@ -173,6 +173,8 @@ CREATE TABLE public.questions (
   nivel           text CHECK (nivel IN ('facil', 'medio', 'dificil')),
   area_concurso   text,
   enunciado       text NOT NULL,
+  texto_referencia text,
+  mostrar_texto   boolean NOT NULL DEFAULT true,
   alternativas    jsonb NOT NULL DEFAULT '[]'::jsonb,
   resposta_correta integer NOT NULL,
   explicacao      text,
