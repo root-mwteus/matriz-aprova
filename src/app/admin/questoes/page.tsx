@@ -130,12 +130,20 @@ export default function AdminQuestoesPage() {
           <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Questões</h1>
           <span className="text-xs text-muted font-mono">{total}</span>
         </div>
-        <Link
-          href="/admin/questoes/nova"
-          className="text-xs bg-accent/20 text-accent border border-accent/40 px-4 py-1.5 rounded-lg font-semibold hover:bg-accent/30 transition-colors"
-        >
-          NOVA QUESTÃO →
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/admin/questoes/importar-pdf"
+            className="text-xs bg-card text-foreground border border-[#2A2A2A] px-4 py-1.5 rounded-lg font-semibold hover:border-accent/40 transition-colors"
+          >
+            📄 IMPORTAR PDF
+          </Link>
+          <Link
+            href="/admin/questoes/nova"
+            className="text-xs bg-accent/20 text-accent border border-accent/40 px-4 py-1.5 rounded-lg font-semibold hover:bg-accent/30 transition-colors"
+          >
+            NOVA QUESTÃO →
+          </Link>
+        </div>
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
