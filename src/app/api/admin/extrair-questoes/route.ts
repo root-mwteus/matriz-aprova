@@ -87,6 +87,7 @@ REGRA DE OURO (evita duplicação e cortes entre páginas):
 Transcrição:
 - Transcreva o enunciado e as alternativas INTEGRALMENTE, sem resumir, encurtar ou cortar. Se o texto é longo, copie tudo.
 - Fórmulas matemáticas/químicas/físicas SEMPRE em LaTeX, usando APENAS estes delimitadores: $...$ para inline e $$...$$ para destaque. NÃO use \\( \\) nem \\[ \\]. Ex.: "a raiz de $x^2+1$" e "$$\\int_0^1 x\\,dx$$".
+- Use APENAS comandos LaTeX suportados pelo KaTeX. Exemplos válidos: \\frac{}{}, \\sqrt{}, \\sum, \\int, \\lim, \\infty, \\pm, \\times, \\cdot, \\leq, \\geq, \\neq, \\approx, ^{}, _{}, \\left(, \\right), \\alpha, \\beta, \\gamma, \\delta, \\theta, \\lambda, \\mu, \\nu, \\pi, \\sigma, \\phi, \\psi, \\omega, \\Gamma, \\Delta, \\Sigma, \\Omega. NÃO invente comandos — se não sabe o comando exato de um símbolo, use o Unicode diretamente (ex.: ± em vez de tentar inventar um comando).
 - "alternativas": array de strings na ordem A, B, C, D, E (só o texto, sem a letra).
 - "resposta_correta": índice 0-based; null se o gabarito não estiver visível.
 - "texto_referencia": questões de Português/Línguas/Interpretação/Atualidades costumam depender de um TEXTO-BASE (crônica, poema, charge com texto, artigo, trecho de lei). Transcreva esse texto-base aqui INTEGRALMENTE. Se vários itens compartilham o mesmo texto, repita-o em cada questão. Se a questão não depende de texto externo, use null.
