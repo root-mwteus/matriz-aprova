@@ -4,7 +4,28 @@ import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
-import type { Question } from "@/types"
+import { LatexText } from "@/components/LatexText"
+import type { Question, QuestaoFigura } from "@/types"
+
+function FiguraImg({ figura }: { figura: QuestaoFigura }) {
+  const supabase = createClient()
+  const { data } = supabase.storage
+    .from("questoes-figuras")
+    .getPublicUrl(figura.storage_path)
+
+  return (
+    <figure className="my-2">
+      <img
+        src={data.publicUrl}
+        alt={figura.legenda || "Figura da questão"}
+        className="max-w-full rounded-lg border border-[#2A2A2A]"
+      />
+      {figura.legenda && (
+        <figcaption className="text-[11px] text-muted text-center mt-1">{figura.legenda}</figcaption>
+      )}
+    </figure>
+  )
+}
 
 export default function AdminQuestaoDetailPage() {
   const params = useParams<{ id: string }>()
@@ -27,17 +48,13 @@ export default function AdminQuestaoDetailPage() {
         setLoading(false)
       })
 
-    return () => {
-      active = false
-    }
+    return () => { active = false }
   }, [params.id])
 
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold tracking-title uppercase">Detalhes da Questão</h1>
-        </div>
+        <h1 className="text-2xl font-bold tracking-title uppercase">Detalhes da Questão</h1>
         <div className="flex items-center gap-3">
           {questao && (
             <Link
@@ -47,10 +64,7 @@ export default function AdminQuestaoDetailPage() {
               EDITAR
             </Link>
           )}
-          <Link
-            href="/admin/questoes"
-            className="text-sm text-muted hover:text-foreground transition-colors"
-          >
+          <Link href="/admin/questoes" className="text-sm text-muted hover:text-foreground transition-colors">
             ← VOLTAR
           </Link>
         </div>
@@ -64,41 +78,79 @@ export default function AdminQuestaoDetailPage() {
           <p className="text-sm text-muted">Questão não encontrada</p>
         </div>
       ) : (
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-6">
-          <div className="flex flex-wrap gap-2 text-xs">
-            <span className="bg-accent/10 text-accent px-2.5 py-1 rounded-full">{questao.materia}</span>
-            {questao.sub_materia && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.sub_materia}</span>}
-            {questao.banca && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.banca}</span>}
-            {questao.ano && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.ano}</span>}
-            {questao.area_concurso && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.area_concurso}</span>}
-          </div>
+        <div className="space-y-5">
+          {/* Metadados */}
+          <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-5">
+            <div className="flex flex-wrap gap-2 text-xs">
+              <span className="bg-accent/10 text-accent px-2.5 py-1 rounded-full">{questao.materia}</span>
+              {questao.sub_materia && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.sub_materia}</span>}
+              {questao.banca && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.banca}</span>}
+              {questao.ano && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.ano}</span>}
+              {questao.area_concurso && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.area_concurso}</span>}
+              {questao.nivel && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full uppercase">{questao.nivel}</span>}
+              {questao.incidencia_pct != null && (
+                <span className="bg-yellow-400/10 text-yellow-400 px-2.5 py-1 rounded-full">
+                  {questao.incidencia_pct}% incidência
+                </span>
+              )}
+            </div>
 
-          <p className="text-foreground text-sm leading-relaxed">{questao.enunciado}</p>
+            {/* Figuras do enunciado */}
+            {questao.figuras?.length > 0 && (
+              <div className="space-y-2">
+                {questao.figuras.map((fig) => (
+                  <FiguraImg key={fig.id} figura={fig} />
+                ))}
+              </div>
+            )}
 
-          <div className="space-y-2">
-            {questao.alternativas.map((alt, i) => (
-              <div
-                key={alt.letter}
-                className={`flex items-start gap-3 p-3 rounded-lg border ${
-                  i === questao.resposta_correta ? "border-accent bg-accent/5" : "border-[#2A2A2A]"
-                }`}
-              >
-                <span
-                  className={`flex-shrink-0 w-7 h-7 rounded-lg text-xs font-bold flex items-center justify-center ${
-                    i === questao.resposta_correta ? "bg-accent text-black" : "bg-[#0D0D0D] text-muted border border-[#2A2A2A]"
+            {/* Enunciado */}
+            <LatexText text={questao.enunciado} block className="text-foreground text-sm leading-relaxed" />
+
+            {/* Alternativas */}
+            <div className="space-y-2">
+              {questao.alternativas.map((alt, i) => (
+                <div
+                  key={alt.letter}
+                  className={`flex items-start gap-3 p-3 rounded-lg border ${
+                    i === questao.resposta_correta ? "border-accent bg-accent/5" : "border-[#2A2A2A]"
                   }`}
                 >
-                  {alt.letter}
-                </span>
-                <span className="text-sm text-foreground pt-1">{alt.text}</span>
-              </div>
-            ))}
+                  <span
+                    className={`flex-shrink-0 w-7 h-7 rounded-lg text-xs font-bold flex items-center justify-center ${
+                      i === questao.resposta_correta ? "bg-accent text-black" : "bg-[#0D0D0D] text-muted border border-[#2A2A2A]"
+                    }`}
+                  >
+                    {alt.letter}
+                  </span>
+                  <LatexText text={alt.text} className="text-sm text-foreground pt-1 flex-1" />
+                  {i === questao.resposta_correta && (
+                    <span className="text-[11px] text-accent font-semibold flex-shrink-0 pt-1">✓ CORRETA</span>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {questao.explicacao && (
-            <div>
-              <div className="text-[11px] text-muted font-mono mb-2">/ EXPLICAÇÃO</div>
-              <p className="text-sm text-muted leading-relaxed">{questao.explicacao}</p>
+          {/* Gabarito comentado */}
+          {(questao.explicacao || questao.referencias) && (
+            <div className="bg-accent/5 border border-accent/20 rounded-card p-6 space-y-4">
+              <div className="text-[11px] text-accent font-mono">/ GABARITO COMENTADO</div>
+
+              {questao.explicacao && (
+                <LatexText
+                  text={questao.explicacao}
+                  block
+                  className="text-sm text-foreground/90 leading-relaxed"
+                />
+              )}
+
+              {questao.referencias && (
+                <div className="pt-3 border-t border-accent/20">
+                  <div className="text-[11px] text-muted font-mono mb-1.5">REFERÊNCIAS</div>
+                  <p className="text-xs text-muted leading-relaxed whitespace-pre-line">{questao.referencias}</p>
+                </div>
+              )}
             </div>
           )}
         </div>

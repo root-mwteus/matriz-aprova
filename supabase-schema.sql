@@ -176,6 +176,8 @@ CREATE TABLE public.questions (
   alternativas    jsonb NOT NULL DEFAULT '[]'::jsonb,
   resposta_correta integer NOT NULL,
   explicacao      text,
+  referencias     text,
+  figuras         jsonb NOT NULL DEFAULT '[]'::jsonb,
   incidencia_pct  numeric(5,2) DEFAULT 0,
   created_at      timestamptz NOT NULL DEFAULT now()
 );
@@ -417,3 +419,23 @@ CREATE POLICY "Admin exclui materiais do storage"
 CREATE POLICY "Autenticados leem materiais do storage"
   ON storage.objects FOR SELECT
   USING (bucket_id = 'materiais' AND auth.role() = 'authenticated');
+
+-- Bucket público para figuras de questões (conteúdo educacional)
+INSERT INTO storage.buckets (id, name, public)
+  VALUES ('questoes-figuras', 'questoes-figuras', true)
+  ON CONFLICT (id) DO NOTHING;
+
+CREATE POLICY "Admin faz upload de figuras de questoes"
+  ON storage.objects FOR INSERT
+  TO authenticated
+  WITH CHECK (
+    bucket_id = 'questoes-figuras'
+    AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
+  );
+
+CREATE POLICY "Admin exclui figuras de questoes"
+  ON storage.objects FOR DELETE
+  USING (
+    bucket_id = 'questoes-figuras'
+    AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
+  );

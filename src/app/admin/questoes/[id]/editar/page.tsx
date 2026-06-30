@@ -1,11 +1,12 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
+import type { QuestaoFigura } from "@/types"
 
 const materias = ["Português", "Matemática", "Direito Constitucional", "Direito Administrativo", "Informática", "Raciocínio Lógico", "História", "Geografia", "Atualidades"]
 const bancas = ["CESPE/CEBRASPE", "FGV", "VUNESP", "FCC", "IBFC", "CONSULPLAN", "QUADRIX", "CESGRANRIO", "Outra"]
@@ -14,6 +15,7 @@ const areas = ["Concursos", "OAB", "Militar", "ENEM"]
 export default function EditarQuestaoPage() {
   const params = useParams<{ id: string }>()
   const router = useRouter()
+  const fileInputRef = useRef<HTMLInputElement>(null)
   const [loading, setLoading] = useState(true)
   const [naoEncontrada, setNaoEncontrada] = useState(false)
   const [materia, setMateria] = useState("")
@@ -24,8 +26,11 @@ export default function EditarQuestaoPage() {
   const [incidencia, setIncidencia] = useState(50)
   const [enunciado, setEnunciado] = useState("")
   const [explicacao, setExplicacao] = useState("")
+  const [referencias, setReferencias] = useState("")
   const [alternativas, setAlternativas] = useState(["", "", "", "", ""])
   const [correta, setCorreta] = useState(0)
+  const [figuras, setFiguras] = useState<QuestaoFigura[]>([])
+  const [uploadingFigura, setUploadingFigura] = useState(false)
   const [saving, setSaving] = useState(false)
 
   useEffect(() => {
@@ -52,19 +57,17 @@ export default function EditarQuestaoPage() {
         setIncidencia(data.incidencia_pct || 0)
         setEnunciado(data.enunciado)
         setExplicacao(data.explicacao || "")
+        setReferencias(data.referencias || "")
         const alts = (data.alternativas as { letter: string; text: string }[]) || []
         const preenchidas = ["", "", "", "", ""]
-        alts.forEach((a, i) => {
-          if (i < 5) preenchidas[i] = a.text
-        })
+        alts.forEach((a, i) => { if (i < 5) preenchidas[i] = a.text })
         setAlternativas(preenchidas)
         setCorreta(data.resposta_correta)
+        setFiguras((data.figuras as QuestaoFigura[]) || [])
         setLoading(false)
       })
 
-    return () => {
-      active = false
-    }
+    return () => { active = false }
   }, [params.id])
 
   function validar(): string | null {
@@ -74,6 +77,39 @@ export default function EditarQuestaoPage() {
     if (preenchidas.length < 2) return "Preencha pelo menos 2 alternativas"
     if (!alternativas[correta]?.trim()) return "A alternativa marcada como correta está vazia"
     return null
+  }
+
+  async function handleUploadFigura(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (!file) return
+    if (!file.type.startsWith("image/")) {
+      toast.error("Selecione um arquivo de imagem")
+      return
+    }
+    setUploadingFigura(true)
+    const supabase = createClient()
+    const ext = file.name.split(".").pop()
+    const id = crypto.randomUUID()
+    const path = `${id}.${ext}`
+    const { error } = await supabase.storage.from("questoes-figuras").upload(path, file)
+    if (error) {
+      toast.error("Erro ao fazer upload da figura: " + error.message)
+      setUploadingFigura(false)
+      return
+    }
+    setFiguras((prev) => [...prev, { id, storage_path: path, legenda: "" }])
+    setUploadingFigura(false)
+    if (fileInputRef.current) fileInputRef.current.value = ""
+  }
+
+  async function removerFigura(figura: QuestaoFigura) {
+    const supabase = createClient()
+    await supabase.storage.from("questoes-figuras").remove([figura.storage_path])
+    setFiguras((prev) => prev.filter((f) => f.id !== figura.id))
+  }
+
+  function atualizarLegenda(id: string, legenda: string) {
+    setFiguras((prev) => prev.map((f) => (f.id === id ? { ...f, legenda } : f)))
   }
 
   async function handleSave() {
@@ -100,6 +136,8 @@ export default function EditarQuestaoPage() {
           .filter((a) => a.text.trim().length > 0),
         resposta_correta: correta,
         explicacao: explicacao || null,
+        referencias: referencias || null,
+        figuras: figuras.map(({ id, storage_path, legenda }) => ({ id, storage_path, legenda: legenda || undefined })),
       })
       .eq("id", params.id)
     setSaving(false)
@@ -115,9 +153,7 @@ export default function EditarQuestaoPage() {
     router.refresh()
   }
 
-  if (loading) {
-    return <div className="text-muted text-sm">Carregando...</div>
-  }
+  if (loading) return <div className="text-muted text-sm">Carregando...</div>
 
   if (naoEncontrada) {
     return (
@@ -133,6 +169,8 @@ export default function EditarQuestaoPage() {
       </div>
     )
   }
+
+  const supabaseClient = createClient()
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-2xl mx-auto space-y-6">
@@ -151,7 +189,7 @@ export default function EditarQuestaoPage() {
               {areas.map((a) => <option key={a} value={a}>{a}</option>)}
             </select>
             <select value={materia} onChange={(e) => setMateria(e.target.value)} className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent">
-              <option value="">Matéria</option>
+              <option value="">Matéria *</option>
               {materias.map((m) => <option key={m} value={m}>{m}</option>)}
             </select>
             <input value={subMateria} onChange={(e) => setSubMateria(e.target.value)} className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent" placeholder="Submatéria" />
@@ -171,6 +209,57 @@ export default function EditarQuestaoPage() {
 
         <hr className="border-[#2A2A2A]" />
 
+        {/* Figuras */}
+        <div>
+          <div className="flex items-center justify-between mb-3">
+            <div className="text-[11px] text-muted font-mono">/ FIGURAS</div>
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              disabled={uploadingFigura}
+              className="text-[11px] text-accent border border-accent/40 px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-colors disabled:opacity-50"
+            >
+              {uploadingFigura ? "ENVIANDO..." : "+ ADICIONAR IMAGEM"}
+            </button>
+            <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleUploadFigura} />
+          </div>
+          {figuras.length > 0 ? (
+            <div className="space-y-3">
+              {figuras.map((fig) => {
+                const { data } = supabaseClient.storage.from("questoes-figuras").getPublicUrl(fig.storage_path)
+                return (
+                  <div key={fig.id} className="flex items-start gap-3 bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg p-3">
+                    <img src={data.publicUrl} alt="" className="w-24 h-16 object-cover rounded flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <input
+                        value={fig.legenda || ""}
+                        onChange={(e) => atualizarLegenda(fig.id, e.target.value)}
+                        placeholder="Legenda (opcional)"
+                        className="w-full bg-transparent text-xs text-foreground placeholder:text-muted focus:outline-none border-b border-[#2A2A2A] pb-1"
+                      />
+                      <p className="text-[10px] text-muted mt-1 font-mono truncate">{fig.storage_path}</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => removerFigura(fig)}
+                      className="text-red-400 hover:text-red-300 text-xs flex-shrink-0"
+                    >
+                      REMOVER
+                    </button>
+                  </div>
+                )
+              })}
+            </div>
+          ) : (
+            <p className="text-xs text-muted">
+              Nenhuma figura. Use <code className="text-accent">$LaTeX$</code> inline e{" "}
+              <code className="text-accent">$$LaTeX$$</code> para display math nos textos.
+            </p>
+          )}
+        </div>
+
+        <hr className="border-[#2A2A2A]" />
+
         {/* Enunciado */}
         <div>
           <div className="text-[11px] text-muted font-mono mb-3">/ ENUNCIADO</div>
@@ -178,10 +267,10 @@ export default function EditarQuestaoPage() {
             value={enunciado}
             onChange={(e) => setEnunciado(e.target.value)}
             rows={6}
-            className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y"
-            placeholder="Digite o enunciado da questão..."
+            className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
+            placeholder="Digite o enunciado... Use $...$ para LaTeX inline e $$...$$ para display."
           />
-          <div className="text-[11px] text-muted font-mono text-right mt-1">{enunciado.length} caracteres</div>
+          <div className="text-[11px] text-muted font-mono text-right mt-1">{enunciado.length} chars</div>
         </div>
 
         <hr className="border-[#2A2A2A]" />
@@ -216,8 +305,8 @@ export default function EditarQuestaoPage() {
                       copy[i] = e.target.value
                       setAlternativas(copy)
                     }}
-                    className="flex-1 bg-transparent text-sm text-foreground focus:outline-none placeholder:text-muted"
-                    placeholder={`Alternativa ${letter}`}
+                    className="flex-1 bg-transparent text-sm text-foreground focus:outline-none placeholder:text-muted font-mono"
+                    placeholder={`Alternativa ${letter} — suporta $LaTeX$`}
                   />
                   {isCorrect && <span className="text-[11px] text-accent font-semibold flex-shrink-0">✓ CORRETA</span>}
                 </div>
@@ -228,21 +317,33 @@ export default function EditarQuestaoPage() {
 
         <hr className="border-[#2A2A2A]" />
 
-        {/* Explicação */}
+        {/* Gabarito comentado */}
         <div>
-          <div className="text-[11px] text-muted font-mono mb-3">/ EXPLICAÇÃO</div>
+          <div className="text-[11px] text-muted font-mono mb-3">/ GABARITO COMENTADO</div>
           <textarea
             value={explicacao}
             onChange={(e) => setExplicacao(e.target.value)}
-            rows={4}
-            className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y"
-            placeholder="Explique a resposta da questão..."
+            rows={5}
+            className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
+            placeholder="Explique por que a alternativa está correta... suporta $LaTeX$."
           />
           {!explicacao && (
             <div className="flex items-center gap-1.5 mt-1.5 text-[11px] text-yellow-400 bg-yellow-400/10 border border-yellow-400/20 px-3 py-1.5 rounded-lg">
-              ⚠ SEM EXPLICAÇÃO — alunos não verão feedback
+              ⚠ SEM COMENTÁRIO — alunos não verão feedback
             </div>
           )}
+        </div>
+
+        {/* Referências */}
+        <div>
+          <div className="text-[11px] text-muted font-mono mb-3">/ REFERÊNCIAS (OPCIONAL)</div>
+          <textarea
+            value={referencias}
+            onChange={(e) => setReferencias(e.target.value)}
+            rows={2}
+            className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y"
+            placeholder={"Lei nº 8.666/93, art. 23\nSTJ - REsp 1.234.567/SP"}
+          />
         </div>
 
         {/* Rodapé */}
