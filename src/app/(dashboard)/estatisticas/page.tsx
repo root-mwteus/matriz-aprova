@@ -37,6 +37,7 @@ function formatarTempo(segundos: number) {
 
 export default function EstatisticasPage() {
   const [loading, setLoading] = useState(true)
+  const [erro, setErro] = useState("")
   const [respostas, setRespostas] = useState<Resposta[]>([])
 
   useEffect(() => {
@@ -44,17 +45,22 @@ export default function EstatisticasPage() {
     let active = true
 
     async function load() {
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) return
+      try {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (!user) return
 
-      const { data } = await supabase
-        .from("user_answers")
-        .select("correto, tempo_segundos, created_at, questions(materia)")
-        .eq("user_id", user.id)
+        const { data } = await supabase
+          .from("user_answers")
+          .select("correto, tempo_segundos, created_at, questions(materia)")
+          .eq("user_id", user.id)
 
-      if (!active) return
-      setRespostas((data as unknown as Resposta[]) || [])
-      setLoading(false)
+        if (!active) return
+        setRespostas((data as unknown as Resposta[]) || [])
+      } catch {
+        if (active) setErro("Não foi possível carregar as estatísticas")
+      } finally {
+        if (active) setLoading(false)
+      }
     }
 
     load()
@@ -123,6 +129,14 @@ export default function EstatisticasPage() {
     return (
       <div className="flex items-center justify-center h-48 text-muted text-sm">
         Resolva questões para gerar gráficos
+      </div>
+    )
+  }
+
+  if (erro) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p className="text-destructive text-sm">{erro}</p>
       </div>
     )
   }

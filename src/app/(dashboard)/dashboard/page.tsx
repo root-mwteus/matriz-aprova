@@ -33,9 +33,11 @@ export default function DashboardPage() {
   const [questoes, setQuestoes] = useState<QuestaoDoDia[]>([])
   const [material, setMaterial] = useState<Material | null>(null)
   const [loading, setLoading] = useState(true)
+  const [erro, setErro] = useState("")
 
   useEffect(() => {
     async function load() {
+      try {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) return
 
@@ -102,8 +104,11 @@ export default function DashboardPage() {
         .limit(1)
         .order("incidencia_pct", { ascending: false })
       if (mats && mats.length > 0) setMaterial(mats[0])
-
-      setLoading(false)
+      } catch {
+        setErro("Não foi possível carregar o painel")
+      } finally {
+        setLoading(false)
+      }
     }
     load()
   }, [supabase])
@@ -116,6 +121,14 @@ export default function DashboardPage() {
   const streakCount = streak.filter(Boolean).length
   const acertos = questoes.filter((q) => q.resposta?.correto).length
   const taxaAcerto = questoes.length > 0 ? Math.round((acertos / questoes.length) * 100) : null
+
+  if (erro) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p className="text-destructive text-sm">{erro}</p>
+      </div>
+    )
+  }
 
   if (loading) {
     return (

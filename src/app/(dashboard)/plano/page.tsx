@@ -53,6 +53,7 @@ export default function PlanoPage() {
   const router = useRouter()
   const [plano, setPlano] = useState<Plano | null>(null)
   const [loading, setLoading] = useState(true)
+  const [erro, setErro] = useState("")
   const [step, setStep] = useState(0)
   const [concurso, setConcurso] = useState("")
   const [dataProva, setDataProva] = useState("")
@@ -66,23 +67,28 @@ export default function PlanoPage() {
 
   useEffect(() => {
     async function load() {
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) return
+      try {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (!user) return
 
-      const hoje = new Date().toISOString().split("T")[0]
-      const { data } = await supabase
-        .from("study_plans")
-        .select("*")
-        .eq("user_id", user.id)
-        .gte("semana_inicio", hoje)
-        .order("semana_inicio", { ascending: false })
-        .limit(1)
-        .single()
+        const hoje = new Date().toISOString().split("T")[0]
+        const { data } = await supabase
+          .from("study_plans")
+          .select("*")
+          .eq("user_id", user.id)
+          .gte("semana_inicio", hoje)
+          .order("semana_inicio", { ascending: false })
+          .limit(1)
+          .single()
 
-      if (data) {
-        setPlano({ dias: data.tarefas as unknown as DiaPlano[] } as Plano)
+        if (data) {
+          setPlano({ dias: data.tarefas as unknown as DiaPlano[] } as Plano)
+        }
+      } catch {
+        setErro("Não foi possível carregar o plano")
+      } finally {
+        setLoading(false)
       }
-      setLoading(false)
     }
     load()
   }, [supabase])
@@ -148,6 +154,14 @@ export default function PlanoPage() {
   async function handleReplanejar() {
     setPlano(null)
     setStep(0)
+  }
+
+  if (erro) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p className="text-destructive text-sm">{erro}</p>
+      </div>
+    )
   }
 
   if (loading) {

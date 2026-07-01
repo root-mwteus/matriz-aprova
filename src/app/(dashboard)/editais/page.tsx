@@ -27,10 +27,12 @@ function formatarData(iso: string | null) {
 export default function EditaisPage() {
   const [editais, setEditais] = useState<Edital[]>([])
   const [loading, setLoading] = useState(true)
+  const [erro, setErro] = useState("")
   const [area, setArea] = useState("Todas")
 
   useEffect(() => {
     async function load() {
+      try {
       const supabase = createClient()
       const { data: { user } } = await supabase.auth.getUser()
 
@@ -48,7 +50,11 @@ export default function EditaisPage() {
         }
       }
 
-      setLoading(false)
+      } catch {
+        setErro("Não foi possível carregar os editais")
+      } finally {
+        setLoading(false)
+      }
     }
     load()
   }, [])
@@ -79,7 +85,11 @@ export default function EditaisPage() {
         ))}
       </div>
 
-      {loading ? (
+      {erro ? (
+        <div className="flex items-center justify-center py-20">
+          <p className="text-destructive text-sm">{erro}</p>
+        </div>
+      ) : loading ? (
         <div className="text-muted text-sm">Carregando...</div>
       ) : editaisFiltrados.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-card-border rounded-card">
