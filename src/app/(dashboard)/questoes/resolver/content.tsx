@@ -210,7 +210,7 @@ export function ResolverContent() {
 
           {/* ALTERNATIVAS */}
           <div className="px-5 py-4 space-y-2.5">
-            {(questao.alternativas as any[]).map((alt, i) => {
+            {questao.alternativas.map((alt, i) => {
               let classe = "bg-transparent border border-card-border text-foreground hover:border-accent/50"
 
               if (confirmada) {
@@ -233,7 +233,7 @@ export function ResolverContent() {
                   className={`w-full flex items-start gap-3 px-4 py-3 rounded-card border transition-all text-left text-sm ${classe}`}
                 >
                   <span className="font-bold flex-shrink-0 w-5">{letras[i]}</span>
-                  <LatexText text={alt.text || (alt as any).texto || ""} className="flex-1" />
+                  <LatexText text={alt.text || ""} className="flex-1" />
                   {confirmada && i === questao.resposta_correta && (
                     <span className="text-accent flex-shrink-0">✓</span>
                   )}

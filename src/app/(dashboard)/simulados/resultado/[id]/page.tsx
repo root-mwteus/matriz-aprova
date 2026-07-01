@@ -36,7 +36,7 @@ export default function ResultadoPage() {
 
       if (sim) {
         setData({
-          questoes: sim.questoes as any,
+          questoes: sim.questoes,
           pontuacao: sim.pontuacao,
           tempo_total: sim.tempo_total,
           created_at: sim.created_at,

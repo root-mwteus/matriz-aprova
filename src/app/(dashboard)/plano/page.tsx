@@ -80,7 +80,7 @@ export default function PlanoPage() {
         .single()
 
       if (data) {
-        setPlano({ dias: data.tarefas as any } as Plano)
+        setPlano({ dias: data.tarefas as unknown as DiaPlano[] } as Plano)
       }
       setLoading(false)
     }

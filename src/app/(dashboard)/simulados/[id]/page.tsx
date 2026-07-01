@@ -209,7 +209,7 @@ export default function SimuladoPage() {
           </div>
 
           <div className="px-5 py-4 space-y-2.5">
-            {(questao.alternativas as any[]).map((alt, i) => {
+            {questao.alternativas.map((alt, i) => {
               const selecionada = cache.respostas[questao.id] === i
               return (
                 <button
@@ -222,7 +222,7 @@ export default function SimuladoPage() {
                   }`}
                 >
                   <span className="font-bold flex-shrink-0 w-5">{letras[i]}</span>
-                  <LatexText text={alt.text || (alt as any).texto || ""} className="flex-1" />
+                  <LatexText text={alt.text || ""} className="flex-1" />
                   {selecionada && <span className="text-accent flex-shrink-0">✓</span>}
                 </button>
               )

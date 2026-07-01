@@ -236,7 +236,7 @@ function UltimosResultados() {
       </h3>
       <div className="space-y-2">
         {resultados.map((r) => {
-          const totalQuestoes = (r.questoes as any[])?.length || 0
+          const totalQuestoes = r.questoes?.length || 0
           const pct = totalQuestoes > 0 ? Math.round((r.pontuacao / totalQuestoes) * 100) : 0
           return (
             <a

@@ -115,24 +115,38 @@ export interface Material {
   created_at: string
 }
 
+export interface PlanoTarefa {
+  materia: string
+  descricao: string
+  horas: number
+  concluido: boolean
+  ordem: number
+}
+
+export interface PlanoDia {
+  dia: string
+  tarefas: PlanoTarefa[]
+  totalHoras: number
+}
+
 export interface StudyPlan {
   id: string
   user_id: string
   semana_inicio: string
-  tarefas: StudyTask[]
+  tarefas: PlanoDia[]
   created_at: string
 }
 
-export interface StudyTask {
+export interface SimulationQuestion {
+  id: string
   materia: string
-  descricao: string
-  concluido: boolean
+  resposta_correta: number
 }
 
 export interface Simulation {
   id: string
   user_id: string
-  questoes: string[]
+  questoes: SimulationQuestion[]
   pontuacao: number
   tempo_total: number
   created_at: string

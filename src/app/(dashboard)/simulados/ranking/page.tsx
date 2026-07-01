@@ -37,7 +37,7 @@ export default function RankingPage() {
       const melhores = new Map<string, RankingEntry>()
 
       for (const s of simulations) {
-        const total = (s.questoes as any[])?.length || 0
+        const total = s.questoes?.length || 0
         const pct = total > 0 ? Math.round((s.pontuacao / total) * 100) : 0
 
         if (!melhores.has(s.user_id) || (melhores.get(s.user_id)?.pct ?? 0) < pct) {
