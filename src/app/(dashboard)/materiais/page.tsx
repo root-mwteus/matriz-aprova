@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react"
 import { motion } from "framer-motion"
+import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
 import type { Material } from "@/types"
 import PageHeader from "@/components/PageHeader"
@@ -53,11 +54,12 @@ export default function MateriaisPage() {
   const handleDownload = useCallback(async (url: string | null, titulo: string) => {
     if (!url) return
     const supabase = createClient()
-    const { data } = await supabase.storage.from("materiais").createSignedUrl(url, 60)
+    const { data, error } = await supabase.storage.from("materiais").createSignedUrl(url, 60)
     if (data?.signedUrl) {
       window.open(data.signedUrl, "_blank")
     } else {
-      window.open(url, "_blank")
+      console.error("Erro ao gerar URL do material:", error)
+      toast.error(`Não foi possível abrir "${titulo}"`)
     }
   }, [])
 

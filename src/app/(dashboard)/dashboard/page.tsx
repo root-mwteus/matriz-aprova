@@ -29,7 +29,7 @@ const itemVariants = {
 export default function DashboardPage() {
   const supabase = createClient()
   const [profile, setProfile] = useState<Profile | null>(null)
-  const [streak, setStreak] = useState<boolean[]>([false, false, true, true, true, false, false])
+  const [streak, setStreak] = useState<boolean[]>(Array(7).fill(false))
   const [questoes, setQuestoes] = useState<QuestaoDoDia[]>([])
   const [material, setMaterial] = useState<Material | null>(null)
   const [loading, setLoading] = useState(true)
@@ -69,6 +69,32 @@ export default function DashboardPage() {
           }))
         )
       }
+
+      const dia = new Date().getDay()
+      const offsetParaSegunda = dia === 0 ? -6 : 1 - dia
+      const segunda = new Date()
+      segunda.setDate(new Date().getDate() + offsetParaSegunda)
+      segunda.setHours(0, 0, 0, 0)
+      const domingo = new Date(segunda)
+      domingo.setDate(segunda.getDate() + 7)
+
+      const { data: streakData } = await supabase
+        .from("user_answers")
+        .select("created_at")
+        .eq("user_id", user.id)
+        .gte("created_at", segunda.toISOString())
+        .lt("created_at", domingo.toISOString())
+
+      const diasDaSemana = Array.from({ length: 7 }, (_, i) => {
+        const d = new Date(segunda)
+        d.setDate(segunda.getDate() + i)
+        return d
+      })
+      setStreak(
+        diasDaSemana.map((d) =>
+          (streakData || []).some((r) => new Date(r.created_at).toDateString() === d.toDateString())
+        )
+      )
 
       const { data: mats } = await supabase
         .from("materials")

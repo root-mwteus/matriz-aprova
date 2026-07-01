@@ -40,6 +40,7 @@ export default function SimuladosPage() {
     let query = supabase.from("questions").select("*")
 
     if (banca) query = query.eq("banca", banca)
+    if (area) query = query.eq("area_concurso", area)
     query = query.limit(numQuestoes * 2)
     query = query.order("created_at", { ascending: false })
 
@@ -90,7 +91,7 @@ export default function SimuladosPage() {
 
     router.push(`/simulados/${sim.id}`)
     setLoading(false)
-  }, [banca, numQuestoes, tempo, supabase, router])
+  }, [banca, area, numQuestoes, tempo, supabase, router])
 
   return (
     <motion.div

@@ -92,13 +92,7 @@ export default function PlanoPage() {
     setProgressoGeracao(0)
 
     const timer = setInterval(() => {
-      setProgressoGeracao((prev) => {
-        if (prev >= 100) {
-          clearInterval(timer)
-          return 100
-        }
-        return prev + 2
-      })
+      setProgressoGeracao((prev) => Math.min(prev + 2, 85))
     }, 60)
 
     const today = new Date()
