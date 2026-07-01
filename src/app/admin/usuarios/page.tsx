@@ -112,13 +112,13 @@ export default function AdminUsuariosPage() {
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          className="flex-1 min-w-[200px] bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2 text-xs text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+          className="flex-1 min-w-[200px] bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
           placeholder="Buscar por nome ou email..."
         />
         <select
           value={area}
           onChange={(e) => setArea(e.target.value)}
-          className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
+          className="bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
         >
           <option value="todas">Todas as áreas</option>
           <option value="Concursos">Concursos</option>
@@ -129,14 +129,14 @@ export default function AdminUsuariosPage() {
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value as "recentes" | "antigos")}
-          className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
+          className="bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
         >
           <option value="recentes">Mais recentes</option>
           <option value="antigos">Mais antigos</option>
         </select>
       </div>
 
-      <div className="bg-card border border-[#2A2A2A] rounded-card overflow-hidden">
+      <div className="bg-card border border-card-border rounded-card overflow-hidden">
         <AdminTable
           loading={loading}
           columns={[

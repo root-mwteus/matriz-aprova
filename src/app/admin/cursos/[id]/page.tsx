@@ -230,7 +230,7 @@ export default function CursoEditorPage() {
         <Link href="/admin/cursos" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
 
-      <div className="flex border-b border-[#2A2A2A] mb-2">
+      <div className="flex border-b border-card-border mb-2">
         {tabs.map((t) => (
           <button
             key={t}
@@ -245,13 +245,13 @@ export default function CursoEditorPage() {
       </div>
 
       {tab === "INFORMAÇÕES" && (
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-4">
+        <div className="bg-card border border-card-border rounded-card p-6 space-y-4">
           <div>
             <label className="block text-xs text-muted mb-1.5 font-mono">Título do Curso</label>
             <input
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
-              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
             />
           </div>
           <div>
@@ -259,7 +259,7 @@ export default function CursoEditorPage() {
             <select
               value={area}
               onChange={(e) => setArea(e.target.value)}
-              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
             >
               {areas.map((a) => <option key={a} value={a}>{a}</option>)}
             </select>
@@ -270,14 +270,14 @@ export default function CursoEditorPage() {
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
               rows={4}
-              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent resize-y"
+              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent resize-y"
             />
           </div>
-          <div className="pt-3 border-t border-[#2A2A2A] flex items-center justify-between">
+          <div className="pt-3 border-t border-card-border flex items-center justify-between">
             <label className="text-xs text-muted font-mono">Publicado</label>
             <button
               onClick={() => setPublicado(!publicado)}
-              className={`w-9 h-5 rounded-full relative transition-colors ${publicado ? "bg-accent" : "bg-[#2A2A2A]"}`}
+              className={`w-9 h-5 rounded-full relative transition-colors ${publicado ? "bg-accent" : "bg-card-border"}`}
             >
               <span className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform ${publicado ? "translate-x-[18px]" : "translate-x-0.5"}`} />
             </button>
@@ -295,10 +295,10 @@ export default function CursoEditorPage() {
       )}
 
       {tab === "CONTEÚDO" && (
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-5 space-y-4">
+        <div className="bg-card border border-card-border rounded-card p-5 space-y-4">
           {modulos.map((modulo) => (
-            <div key={modulo.id} className="border border-[#2A2A2A] rounded-card overflow-hidden">
-              <div className="flex items-center justify-between px-4 py-3 bg-[#111111] border-b border-[#2A2A2A]">
+            <div key={modulo.id} className="border border-card-border rounded-card overflow-hidden">
+              <div className="flex items-center justify-between px-4 py-3 bg-surface border-b border-card-border">
                 <input
                   value={modulo.titulo}
                   onChange={(e) => renomearModulo(modulo.id, e.target.value)}
@@ -351,14 +351,14 @@ export default function CursoEditorPage() {
       {/* Modal de edição de aula */}
       {editAula && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#00000088" }}>
-          <div className="bg-card border border-[#2A2A2A] rounded-card p-6 w-full max-w-md">
+          <div className="bg-card border border-card-border rounded-card p-6 w-full max-w-md">
             <h3 className="text-foreground font-bold text-base mb-4">Editar Aula</h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-xs text-muted mb-1.5 font-mono">Título da Aula</label>
                 <input
                   id="edit-aula-titulo"
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                   defaultValue={editAula.aula.titulo}
                 />
               </div>
@@ -366,7 +366,7 @@ export default function CursoEditorPage() {
                 <label className="block text-xs text-muted mb-1.5 font-mono">URL do Vídeo</label>
                 <input
                   id="edit-aula-video"
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
                   defaultValue={editAula.aula.video_url || ""}
                   placeholder="https://youtube.com/watch?v=..."
                 />
@@ -375,14 +375,14 @@ export default function CursoEditorPage() {
                 <label className="block text-xs text-muted mb-1.5 font-mono">Duração</label>
                 <input
                   id="edit-aula-duracao"
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                   defaultValue={formatarDuracao(editAula.aula.duracao_segundos)}
                   placeholder="MM:SS"
                 />
               </div>
             </div>
             <div className="flex justify-end gap-3 mt-6">
-              <button onClick={() => setEditAula(null)} className="px-4 py-2 text-sm border border-[#2A2A2A] rounded-lg text-muted hover:text-foreground transition-colors">
+              <button onClick={() => setEditAula(null)} className="px-4 py-2 text-sm border border-card-border rounded-lg text-muted hover:text-foreground transition-colors">
                 CANCELAR
               </button>
               <button

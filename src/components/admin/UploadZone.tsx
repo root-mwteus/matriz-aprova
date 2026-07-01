@@ -31,7 +31,7 @@ export function UploadZone({ onFile, accept = ".pdf" }: UploadZoneProps) {
       onDragLeave={() => setDragging(false)}
       onDrop={handleDrop}
       className={`border-2 border-dashed rounded-card p-8 text-center cursor-pointer transition-colors ${
-        dragging ? "border-accent bg-accent/5" : "border-[#2A2A2A] hover:border-[#444]"
+        dragging ? "border-accent bg-accent/5" : "border-card-border hover:border-[#444]"
       }`}
     >
       {file ? (

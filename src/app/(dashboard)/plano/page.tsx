@@ -153,7 +153,7 @@ export default function PlanoPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="text-[#666666] text-sm animate-pulse">Carregando plano...</div>
+        <div className="text-muted text-sm animate-pulse">Carregando plano...</div>
       </div>
     )
   }
@@ -181,7 +181,7 @@ export default function PlanoPage() {
                 <div key={i} className="flex-1">
                   <div
                     className={`h-[3px] transition-colors ${
-                      i <= step ? "bg-[#CBFF4D]" : "bg-[#2A2A2A]"
+                      i <= step ? "bg-accent" : "bg-card-border"
                     }`}
                   />
                 </div>
@@ -192,7 +192,7 @@ export default function PlanoPage() {
                 <span
                   key={i}
                   className={`text-[10px] uppercase tracking-wider ${
-                    i === step ? "text-[#CBFF4D] font-semibold" : "text-[#666666]"
+                    i === step ? "text-accent font-semibold" : "text-muted"
                   }`}
                 >
                   {label}
@@ -202,7 +202,7 @@ export default function PlanoPage() {
           </div>
 
           {/* WIZARD STEPS */}
-          <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
+          <div className="bg-card border border-card-border rounded-card p-5">
             <AnimatePresence mode="wait">
               {step === 0 && (
                 <motion.div
@@ -212,14 +212,14 @@ export default function PlanoPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-4"
                 >
-                  <label className="text-xs text-[#666666] uppercase tracking-wider">
+                  <label className="text-xs text-muted uppercase tracking-wider">
                     CONCURSO ALVO
                   </label>
                   <input
                     type="text"
                     value={concurso}
                     onChange={(e) => setConcurso(e.target.value)}
-                    className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-4 py-3.5 text-[15px] text-[#FFFFFF] placeholder:text-[#666666]/50 focus:outline-none focus:border-[#CBFF4D] transition-colors"
+                    className="w-full bg-background border border-card-border rounded-card px-4 py-3.5 text-[15px] text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
                     placeholder="Ex: Polícia Federal, TRT-SP, OAB..."
                   />
                   <div className="flex flex-wrap gap-2">
@@ -229,8 +229,8 @@ export default function PlanoPage() {
                         onClick={() => setConcurso(s)}
                         className={`px-3.5 py-1.5 rounded-full border text-xs transition-all ${
                           concurso === s
-                            ? "border-[#CBFF4D] bg-[#CBFF4D20] text-[#CBFF4D]"
-                            : "border-[#2A2A2A] text-[#666666] hover:border-[#CBFF4D]"
+                            ? "border-accent bg-badge-bg text-accent"
+                            : "border-card-border text-muted hover:border-accent"
                         }`}
                       >
                         {s}
@@ -240,7 +240,7 @@ export default function PlanoPage() {
                   <button
                     onClick={() => setStep(1)}
                     disabled={!concurso.trim()}
-                    className="w-full bg-[#CBFF4D] text-[#000000] font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-30"
+                    className="w-full bg-accent text-accent-foreground font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-30"
                   >
                     CONTINUAR →
                   </button>
@@ -255,7 +255,7 @@ export default function PlanoPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-4"
                 >
-                  <label className="text-xs text-[#666666] uppercase tracking-wider">
+                  <label className="text-xs text-muted uppercase tracking-wider">
                     DATA DA PROVA
                   </label>
                   <input
@@ -266,10 +266,10 @@ export default function PlanoPage() {
                       setSemData(false)
                     }}
                     disabled={semData}
-                    className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-4 py-3.5 text-[15px] text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors [color-scheme:dark] disabled:opacity-30"
+                    className="w-full bg-background border border-card-border rounded-card px-4 py-3.5 text-[15px] text-foreground focus:outline-none focus:border-accent transition-colors [color-scheme:dark] disabled:opacity-30"
                   />
                   {dataProva && !semData && (
-                    <p className="text-sm font-bold text-[#CBFF4D]">
+                    <p className="text-sm font-bold text-accent">
                       Faltam {diasRestantes} dias
                     </p>
                   )}
@@ -280,19 +280,19 @@ export default function PlanoPage() {
                       onChange={(e) => setSemData(e.target.checked)}
                       className="w-4 h-4 accent-[#CBFF4D]"
                     />
-                    <span className="text-xs text-[#666666]">Ainda não sei a data</span>
+                    <span className="text-xs text-muted">Ainda não sei a data</span>
                   </label>
                   <div className="flex gap-3 pt-2">
                     <button
                       onClick={() => setStep(0)}
-                      className="flex-1 bg-transparent border border-[#2A2A2A] text-[#888888] font-semibold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-[#FFFFFF] transition-all"
+                      className="flex-1 bg-transparent border border-card-border text-[#888888] font-semibold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-foreground transition-all"
                     >
                       ← VOLTAR
                     </button>
                     <button
                       onClick={() => setStep(2)}
                       disabled={!dataProva && !semData}
-                      className="flex-1 bg-[#CBFF4D] text-[#000000] font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-30"
+                      className="flex-1 bg-accent text-accent-foreground font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-30"
                     >
                       CONTINUAR →
                     </button>
@@ -308,19 +308,19 @@ export default function PlanoPage() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-6"
                 >
-                  <label className="text-xs text-[#666666] uppercase tracking-wider">
+                  <label className="text-xs text-muted uppercase tracking-wider">
                     HORAS DISPONÍVEIS POR DIA
                   </label>
 
                   <div className="text-center">
-                    <span className="text-[32px] font-[800] text-[#CBFF4D]">{horas}h</span>
-                    <span className="text-sm text-[#666666] ml-2">/ dia</span>
+                    <span className="text-[32px] font-[800] text-accent">{horas}h</span>
+                    <span className="text-sm text-muted ml-2">/ dia</span>
                   </div>
 
                   <div className="relative">
-                    <div className="w-full h-1.5 bg-[#2A2A2A] rounded-full overflow-hidden">
+                    <div className="w-full h-1.5 bg-card-border rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-[#CBFF4D] rounded-full transition-all"
+                        className="h-full bg-accent rounded-full transition-all"
                         style={{ width: `${((horas - 1) / 7) * 100}%` }}
                       />
                     </div>
@@ -334,33 +334,33 @@ export default function PlanoPage() {
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                     />
                     <div
-                      className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-[#CBFF4D] rounded-full pointer-events-none transition-all"
+                      className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-accent rounded-full pointer-events-none transition-all"
                       style={{
                         left: `calc(${((horas - 1) / 7) * 100}% - 10px)`,
                       }}
                     />
                   </div>
 
-                  <div className="flex justify-between text-[11px] text-[#666666]">
+                  <div className="flex justify-between text-[11px] text-muted">
                     <span>1h</span>
                     <span>8h</span>
                   </div>
 
-                  <p className="text-sm text-[#666666] text-center">
-                    Estimativa: <span className="font-semibold text-[#FFFFFF]">~{Math.max(4, Math.round(180 / horas))} semanas</span> de estudo
+                  <p className="text-sm text-muted text-center">
+                    Estimativa: <span className="font-semibold text-foreground">~{Math.max(4, Math.round(180 / horas))} semanas</span> de estudo
                   </p>
 
                   <div className="flex gap-3 pt-2">
                     <button
                       onClick={() => setStep(1)}
-                      className="flex-1 bg-transparent border border-[#2A2A2A] text-[#888888] font-semibold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-[#FFFFFF] transition-all"
+                      className="flex-1 bg-transparent border border-card-border text-[#888888] font-semibold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-foreground transition-all"
                     >
                       ← VOLTAR
                     </button>
                     <button
                       onClick={handleGerar}
                       disabled={gerando}
-                      className="flex-1 bg-[#CBFF4D] text-[#000000] font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                      className="flex-1 bg-accent text-accent-foreground font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
                     >
                       {gerando ? (
                         "GERANDO..."
@@ -381,15 +381,15 @@ export default function PlanoPage() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-card border border-[#2A2A2A] rounded-card p-5 space-y-4"
+              className="bg-card border border-card-border rounded-card p-5 space-y-4"
             >
               <div className="flex items-center justify-center gap-3">
-                <div className="w-5 h-5 border-2 border-[#CBFF4D] border-t-transparent rounded-full animate-spin" />
-                <span className="text-sm text-[#666666]">Analisando o edital e montando seu plano...</span>
+                <div className="w-5 h-5 border-2 border-accent border-t-transparent rounded-full animate-spin" />
+                <span className="text-sm text-muted">Analisando o edital e montando seu plano...</span>
               </div>
-              <div className="w-full h-1.5 bg-[#2A2A2A] rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-card-border rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-[#CBFF4D] rounded-full transition-all duration-200"
+                  className="h-full bg-accent rounded-full transition-all duration-200"
                   style={{ width: `${progressoGeracao}%` }}
                 />
               </div>
@@ -399,8 +399,8 @@ export default function PlanoPage() {
 
         {/* COLUNA DIREITA — PREVIEW */}
         <div className="lg:w-[35%] lg:min-w-[280px]">
-          <div className="bg-card border border-[#2A2A2A] rounded-card p-5 space-y-4 sticky top-8">
-            <span className="inline-block px-2 py-0.5 rounded-[6px] bg-[#66666620] text-[#666666] border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
+          <div className="bg-card border border-card-border rounded-card p-5 space-y-4 sticky top-8">
+            <span className="inline-block px-2 py-0.5 rounded-[6px] bg-[#66666620] text-muted border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
               O QUE VOCÊ VAI RECEBER
             </span>
 
@@ -413,21 +413,21 @@ export default function PlanoPage() {
                 "Replanejamento automático",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2">
-                  <Check size={14} className="text-[#CBFF4D] mt-0.5 flex-shrink-0" />
-                  <span className="text-[13px] text-[#666666]">{item}</span>
+                  <Check size={14} className="text-accent mt-0.5 flex-shrink-0" />
+                  <span className="text-[13px] text-muted">{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="border-t border-[#2A2A2A] pt-4">
-              <div className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card p-4 space-y-2 relative overflow-hidden">
+            <div className="border-t border-card-border pt-4">
+              <div className="bg-background border border-card-border rounded-card p-4 space-y-2 relative overflow-hidden">
                 <div className="flex gap-2">
                   {["S", "T", "Q", "Q", "S", "S", "D"].map((d) => (
-                    <div key={d} className="flex-1 h-16 rounded-[6px] bg-[#CBFF4D]/10 border border-[#2A2A2A]" />
+                    <div key={d} className="flex-1 h-16 rounded-[6px] bg-accent/10 border border-card-border" />
                   ))}
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[11px] text-[#666666] font-semibold uppercase tracking-wider">
+                  <span className="text-[11px] text-muted font-semibold uppercase tracking-wider">
                     SEU PLANO APARECERÁ AQUI
                   </span>
                 </div>
@@ -454,35 +454,35 @@ export default function PlanoPage() {
       {/* HEADER */}
       <div className="flex items-start justify-between">
         <div>
-          <span className="inline-block px-2 py-0.5 rounded-[6px] bg-[#66666620] text-[#666666] border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
+          <span className="inline-block px-2 py-0.5 rounded-[6px] bg-[#66666620] text-muted border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
             PLANO
           </span>
-          <h1 className="text-[28px] font-[800] text-[#FFFFFF] leading-tight mt-1.5">
+          <h1 className="text-[28px] font-[800] text-foreground leading-tight mt-1.5">
             Seu cronograma personalizado
           </h1>
-          <p className="text-[14px] text-[#666666] mt-1">{plano.concurso}</p>
+          <p className="text-[14px] text-muted mt-1">{plano.concurso}</p>
         </div>
         <button
           onClick={handleReplanejar}
-          className="text-xs text-[#666666] hover:text-[#CBFF4D] transition-colors mt-1"
+          className="text-xs text-muted hover:text-accent transition-colors mt-1"
         >
           REPLANEJAR
         </button>
       </div>
 
       {/* PROGRESSO */}
-      <div className="bg-card border border-[#2A2A2A] rounded-card p-5 space-y-3">
+      <div className="bg-card border border-card-border rounded-card p-5 space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-xs text-[#666666] font-mono">Progresso da semana</span>
-          <span className="text-sm font-bold text-[#CBFF4D]">{progresso}%</span>
+          <span className="text-xs text-muted font-mono">Progresso da semana</span>
+          <span className="text-sm font-bold text-accent">{progresso}%</span>
         </div>
-        <div className="w-full h-2 bg-[#2A2A2A] rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-card-border rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#CBFF4D] rounded-full transition-all duration-500"
+            className="h-full bg-accent rounded-full transition-all duration-500"
             style={{ width: `${progresso}%` }}
           />
         </div>
-        <div className="flex items-center justify-between text-[11px] text-[#666666]">
+        <div className="flex items-center justify-between text-[11px] text-muted">
           <span>{concluidas} de {totalTarefas} tarefas</span>
           <span>{plano.semanasRestantes} semanas restantes</span>
         </div>
@@ -498,10 +498,10 @@ export default function PlanoPage() {
               onClick={() => setDiaAtivo(i)}
               className={`flex-1 flex flex-col items-center gap-1 py-2.5 rounded-card transition-all ${
                 diaAtivo === i
-                  ? "bg-[#CBFF4D] text-[#000000] font-bold"
+                  ? "bg-accent text-accent-foreground font-bold"
                   : concluido
-                  ? "bg-[#CBFF4D20] text-[#CBFF4D]"
-                  : "bg-card border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
+                  ? "bg-badge-bg text-accent"
+                  : "bg-card border border-card-border text-muted hover:text-foreground"
               }`}
             >
               <span className="text-xs font-bold">{DIAS_ABREV[d.dia]}</span>
@@ -512,12 +512,12 @@ export default function PlanoPage() {
       </div>
 
       {/* TAREFAS DO DIA */}
-      <div className="bg-card border border-[#2A2A2A] rounded-card overflow-hidden">
-        <div className="px-5 py-4 border-b border-[#2A2A2A] flex items-center justify-between">
-          <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666]">
+      <div className="bg-card border border-card-border rounded-card overflow-hidden">
+        <div className="px-5 py-4 border-b border-card-border flex items-center justify-between">
+          <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
             {dia.dia} · {dia.totalHoras}h
           </h3>
-          <span className="text-[11px] text-[#666666]">
+          <span className="text-[11px] text-muted">
             {dia.tarefas.filter((t) => t.concluido).length}/{dia.tarefas.length}
           </span>
         </div>
@@ -535,21 +535,21 @@ export default function PlanoPage() {
                 onClick={() => toggleTarefa(diaAtivo, i)}
                 className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all ${
                   tarefa.concluido
-                    ? "bg-[#CBFF4D] border-[#CBFF4D]"
-                    : "border-[#2A2A2A] hover:border-[#CBFF4D]"
+                    ? "bg-accent border-accent"
+                    : "border-card-border hover:border-accent"
                 }`}
               >
                 {tarefa.concluido && (
-                  <svg className="w-3 h-3 text-[#000000]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-3 h-3 text-accent-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
                 )}
               </button>
               <div className="flex-1 min-w-0">
-                <p className={`text-sm ${tarefa.concluido ? "text-[#666666] line-through" : "text-[#FFFFFF]"}`}>
+                <p className={`text-sm ${tarefa.concluido ? "text-muted line-through" : "text-foreground"}`}>
                   {tarefa.descricao}
                 </p>
-                <span className="text-[11px] text-[#666666]">{tarefa.materia} · {tarefa.horas}h</span>
+                <span className="text-[11px] text-muted">{tarefa.materia} · {tarefa.horas}h</span>
               </div>
             </motion.div>
           ))}

@@ -138,7 +138,7 @@ export default function EditarMaterialPage() {
         <Link href="/admin/materiais" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
 
-      <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-6">
+      <div className="bg-card border border-card-border rounded-card p-6 space-y-6">
         <div>
           <div className="text-[11px] text-muted font-mono mb-2">{pdfAtual ? "Substituir PDF (opcional)" : "Anexar PDF"}</div>
           <UploadZone onFile={setFile} />
@@ -150,7 +150,7 @@ export default function EditarMaterialPage() {
             <input
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
-              className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
               placeholder="Título do material"
             />
           </div>
@@ -161,7 +161,7 @@ export default function EditarMaterialPage() {
               <select
                 value={materia}
                 onChange={(e) => setMateria(e.target.value)}
-                className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
               >
                 <option value="">Selecione</option>
                 {materias.map((m) => <option key={m} value={m}>{m}</option>)}
@@ -172,7 +172,7 @@ export default function EditarMaterialPage() {
               <input
                 value={subMateria}
                 onChange={(e) => setSubMateria(e.target.value)}
-                className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
                 placeholder="Ex: Princípios"
               />
             </div>
@@ -184,7 +184,7 @@ export default function EditarMaterialPage() {
               <select
                 value={banca}
                 onChange={(e) => setBanca(e.target.value)}
-                className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
               >
                 <option value="">Selecione</option>
                 {bancas.map((b) => <option key={b} value={b}>{b}</option>)}
@@ -195,7 +195,7 @@ export default function EditarMaterialPage() {
               <input
                 value={professor}
                 onChange={(e) => setProfessor(e.target.value)}
-                className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
                 placeholder="Nome do professor"
               />
             </div>
@@ -215,12 +215,12 @@ export default function EditarMaterialPage() {
             />
           </div>
 
-          <label className="flex items-center justify-between text-xs text-muted pt-2 border-t border-[#2A2A2A]">
+          <label className="flex items-center justify-between text-xs text-muted pt-2 border-t border-card-border">
             <span>Recomendar pela IA (badge verde no app)</span>
             <button
               type="button"
               onClick={() => setIaRecommend(!iaRecommend)}
-              className={`w-9 h-5 rounded-full transition-colors relative ${iaRecommend ? "bg-accent" : "bg-[#2A2A2A]"}`}
+              className={`w-9 h-5 rounded-full transition-colors relative ${iaRecommend ? "bg-accent" : "bg-card-border"}`}
             >
               <span className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform ${iaRecommend ? "translate-x-[18px]" : "translate-x-0.5"}`} />
             </button>

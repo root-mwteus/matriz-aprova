@@ -61,7 +61,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const sidebar = (
     <div className="h-full flex flex-col">
-      <div className="p-5 border-b border-[#2A2A2A]">
+      <div className="p-5 border-b border-card-border">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-black font-bold text-sm">M</div>
           <div>
@@ -90,7 +90,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           )
         })}
       </nav>
-      <div className="p-4 border-t border-[#2A2A2A]">
+      <div className="p-4 border-t border-card-border">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">
             {adminInitials}
@@ -113,9 +113,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   )
 
   return (
-    <div className="min-h-screen bg-[#0D0D0D] bg-grid-dots bg-[length:20px_20px]">
+    <div className="min-h-screen bg-background bg-grid-dots bg-[length:20px_20px]">
       {/* TOPBAR */}
-      <header className="fixed top-0 left-0 right-0 z-40 h-[52px] bg-[#111111] border-b border-[#2A2A2A] flex items-center justify-between px-4 lg:pl-[256px]">
+      <header className="fixed top-0 left-0 right-0 z-40 h-[52px] bg-surface border-b border-card-border flex items-center justify-between px-4 lg:pl-[256px]">
         <div className="flex items-center gap-4">
           <button onClick={() => setSidebarOpen(true)} className="lg:hidden text-muted hover:text-foreground">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input
-              className="w-56 bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg pl-9 pr-3 py-1.5 text-xs text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+              className="w-56 bg-background border border-card-border rounded-lg pl-9 pr-3 py-1.5 text-xs text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
               placeholder="Buscar usuário, questão, material..."
             />
           </div>
@@ -147,7 +147,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </header>
 
       {/* SIDEBAR DESKTOP */}
-      <aside className="fixed top-0 left-0 bottom-0 z-30 w-[240px] bg-[#111111] border-r border-[#2A2A2A] hidden lg:flex flex-col">
+      <aside className="fixed top-0 left-0 bottom-0 z-30 w-[240px] bg-surface border-r border-card-border hidden lg:flex flex-col">
         {sidebar}
       </aside>
 
@@ -161,7 +161,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 bottom-0 z-50 w-[240px] bg-[#111111] border-r border-[#2A2A2A] flex flex-col"
+              className="fixed top-0 left-0 bottom-0 z-50 w-[240px] bg-surface border-r border-card-border flex flex-col"
             >
               {sidebar}
             </motion.aside>

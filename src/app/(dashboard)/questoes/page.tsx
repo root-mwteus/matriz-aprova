@@ -79,18 +79,18 @@ export default function QuestoesPage() {
           title="Pratique e evolua"
           subtitle="Resolva questões filtradas por matéria, banca e ano"
         />
-        <span className="text-sm text-[#666666] font-mono mt-1">
+        <span className="text-sm text-muted font-mono mt-1">
           {total} disponíveis
         </span>
       </div>
 
       {/* FILTROS */}
-      <div className="bg-card border border-[#2A2A2A] rounded-card p-4 space-y-4">
+      <div className="bg-card border border-card-border rounded-card p-4 space-y-4">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <select
             value={materia}
             onChange={(e) => setMateria(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           >
             <option value="">Matéria</option>
             {materiasList.map((m) => (
@@ -101,7 +101,7 @@ export default function QuestoesPage() {
           <select
             value={banca}
             onChange={(e) => setBanca(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           >
             <option value="">Banca</option>
             {bancasList.map((b) => (
@@ -112,7 +112,7 @@ export default function QuestoesPage() {
           <select
             value={ano}
             onChange={(e) => setAno(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           >
             <option value="">Ano</option>
             {anosList.map((a) => (
@@ -123,7 +123,7 @@ export default function QuestoesPage() {
           <select
             value={area}
             onChange={(e) => setArea(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           >
             <option value="">Área</option>
             <option value="Concursos Gerais">Concursos Gerais</option>
@@ -136,13 +136,13 @@ export default function QuestoesPage() {
         <div className="flex items-center gap-3">
           <button
             onClick={handleFiltrar}
-            className="bg-[#CBFF4D] text-[#000000] font-bold px-6 py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity"
+            className="bg-accent text-accent-foreground font-bold px-6 py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity"
           >
             FILTRAR
           </button>
           <button
             onClick={handleAleatorio}
-            className="bg-transparent border border-[#2A2A2A] text-[#888888] font-semibold px-6 py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-[#FFFFFF] transition-all"
+            className="bg-transparent border border-card-border text-[#888888] font-semibold px-6 py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-foreground transition-all"
           >
             ALEATÓRIO
           </button>
@@ -161,13 +161,13 @@ export default function QuestoesPage() {
               setMateria(mc.materia)
               router.push(`/questoes/resolver?materia=${encodeURIComponent(mc.materia)}`)
             }}
-            className="bg-card border border-[#2A2A2A] rounded-card p-4 text-left hover:border-[#CBFF4D]/30 transition-colors group"
+            className="bg-card border border-card-border rounded-card p-4 text-left hover:border-accent/30 transition-colors group"
           >
-            <div className="text-xs text-[#666666] font-mono mb-1">{String(i + 1).padStart(2, "0")}</div>
-            <div className="text-sm font-semibold text-[#FFFFFF] group-hover:text-[#CBFF4D] transition-colors">
+            <div className="text-xs text-muted font-mono mb-1">{String(i + 1).padStart(2, "0")}</div>
+            <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
               {mc.materia}
             </div>
-            <div className="text-xs text-[#666666] mt-1">
+            <div className="text-xs text-muted mt-1">
               {mc.count} {mc.count === 1 ? "questão" : "questões"}
             </div>
           </motion.button>
@@ -178,7 +178,7 @@ export default function QuestoesPage() {
       <div className="text-center pt-2">
         <a
           href="/questoes/historico"
-          className="text-xs text-[#666666] hover:text-[#CBFF4D] transition-colors font-mono"
+          className="text-xs text-muted hover:text-accent transition-colors font-mono"
         >
           [ histórico de respostas → ]
         </a>

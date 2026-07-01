@@ -43,10 +43,10 @@ export default function NovaQuestaoPage() {
         <Link href="/admin/questoes" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
 
-      <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-6">
+      <div className="bg-card border border-card-border rounded-card p-6 space-y-6">
         <QuestaoForm value={draft} onChange={setDraft} />
 
-        <div className="flex items-center justify-end pt-4 border-t border-[#2A2A2A]">
+        <div className="flex items-center justify-end pt-4 border-t border-card-border">
           <button
             onClick={handleSave}
             disabled={saving}

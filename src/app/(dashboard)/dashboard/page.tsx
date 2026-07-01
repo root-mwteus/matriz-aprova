@@ -120,7 +120,7 @@ export default function DashboardPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="text-[#666666] text-sm animate-pulse">Carregando...</div>
+        <div className="text-muted text-sm animate-pulse">Carregando...</div>
       </div>
     )
   }
@@ -177,16 +177,16 @@ function UserCard({
   streakCount: number
 }) {
   return (
-    <div className="flex items-center justify-between h-[72px] px-4 bg-card border border-[#2A2A2A] rounded-card">
+    <div className="flex items-center justify-between h-[72px] px-4 bg-card border border-card-border rounded-card">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-[8px] bg-[#CBFF4D] flex items-center justify-center font-bold text-sm text-[#000000] flex-shrink-0">
+        <div className="w-10 h-10 rounded-[8px] bg-accent flex items-center justify-center font-bold text-sm text-accent-foreground flex-shrink-0">
           {initials}
         </div>
         <div>
-          <h2 className="text-sm font-bold text-[#FFFFFF]">
+          <h2 className="text-sm font-bold text-foreground">
             Olá, {profile?.nome?.split(" ")[0] || "Aluno"}
           </h2>
-          <p className="text-sm text-[#666666]">
+          <p className="text-sm text-muted">
             {profile?.area_concurso
               ? `${profile.area_concurso} · concurso`
               : "concurseira"}
@@ -194,8 +194,8 @@ function UserCard({
         </div>
       </div>
       <div className="flex items-center gap-1.5">
-        <span className="text-lg font-bold text-[#CBFF4D]">🔥 {streakCount}</span>
-        <span className="text-xs text-[#666666]">DIAS</span>
+        <span className="text-lg font-bold text-accent">🔥 {streakCount}</span>
+        <span className="text-xs text-muted">DIAS</span>
       </div>
     </div>
   )
@@ -205,7 +205,7 @@ function UserCard({
 
 function StreakBar({ dias, diaIdx }: { dias: boolean[]; diaIdx: number }) {
   return (
-    <div className="bg-card border border-[#2A2A2A] rounded-card p-3 h-[72px] flex items-center">
+    <div className="bg-card border border-card-border rounded-card p-3 h-[72px] flex items-center">
       <div className="flex items-center gap-[6px]">
         {dias.map((ativo, i) => {
           const isHoje = i === diaIdx
@@ -215,18 +215,18 @@ function StreakBar({ dias, diaIdx }: { dias: boolean[]; diaIdx: number }) {
                 className={`w-[32px] h-[32px] rounded-[6px] transition-all ${
                   isHoje
                     ? ativo
-                      ? "bg-[#CBFF4D] border-2 border-[#CBFF4D]"
-                      : "bg-card border-2 border-[#CBFF4D]"
+                      ? "bg-accent border-2 border-accent"
+                      : "bg-card border-2 border-accent"
                     : ativo
-                    ? "bg-[#CBFF4D]"
-                    : "bg-card border border-[#2A2A2A]"
+                    ? "bg-accent"
+                    : "bg-card border border-card-border"
                 }`}
               />
-              <span className={`text-[10px] font-mono ${isHoje ? "text-[#CBFF4D]" : "text-[#666666]"}`}>
+              <span className={`text-[10px] font-mono ${isHoje ? "text-accent" : "text-muted"}`}>
                 {diasSemana[i]}
               </span>
               {isHoje && (
-                <span className="text-[9px] text-[#CBFF4D] uppercase tracking-wider">
+                <span className="text-[9px] text-accent uppercase tracking-wider">
                   hoje
                 </span>
               )}
@@ -242,32 +242,32 @@ function StreakBar({ dias, diaIdx }: { dias: boolean[]; diaIdx: number }) {
 
 function MaterialCard({ material }: { material: Material }) {
   return (
-    <div className="bg-[#CBFF4D] rounded-card p-4 flex items-center relative overflow-hidden h-[110px]">
+    <div className="bg-accent rounded-card p-4 flex items-center relative overflow-hidden h-[110px]">
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
-          <span className="text-[10px] font-bold text-[#000000]/70 uppercase tracking-wider">
+          <span className="text-[10px] font-bold text-accent-foreground/70 uppercase tracking-wider">
             ⚡ PRÓXIMO MATERIAL · SUGERIDO PELA IA
           </span>
-          <span className="px-2 py-0.5 rounded bg-[#000000]/10 text-[10px] font-bold text-[#000000]">
+          <span className="px-2 py-0.5 rounded bg-accent-foreground/10 text-[10px] font-bold text-accent-foreground">
             {material.incidencia_pct ?? 87}% CAI
           </span>
         </div>
 
-        <h3 className="text-sm font-bold text-[#000000] leading-tight truncate">
+        <h3 className="text-sm font-bold text-accent-foreground leading-tight truncate">
           {material.titulo}
         </h3>
 
-        <p className="text-xs text-[#000000]/70 mt-0.5">
+        <p className="text-xs text-accent-foreground/70 mt-0.5">
           {material.materia}{material.banca ? ` · ${material.banca}` : ""}{material.pdf_url ? " · PDF" : ""}
         </p>
 
-        <p className="text-[11px] text-[#000000]/60 mt-0.5">
+        <p className="text-[11px] text-accent-foreground/60 mt-0.5">
           📄 {material.paginas ?? "--"} páginas{material.professor ? ` · Prof. ${material.professor}` : ""}
         </p>
       </div>
 
-      <button className="w-10 h-10 rounded-full bg-[#000000] flex items-center justify-center hover:scale-105 transition-transform flex-shrink-0 ml-3">
-        <svg className="w-5 h-5 text-[#CBFF4D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <button className="w-10 h-10 rounded-full bg-accent-foreground flex items-center justify-center hover:scale-105 transition-transform flex-shrink-0 ml-3">
+        <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
       </button>
@@ -289,22 +289,22 @@ function QuestoesDoDia({
   taxa: number | null
 }) {
   return (
-    <div className="bg-card border border-[#2A2A2A] rounded-card overflow-hidden">
-      <div className="flex items-center justify-between px-5 py-4 border-b border-[#2A2A2A]">
-        <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666]">
+    <div className="bg-card border border-card-border rounded-card overflow-hidden">
+      <div className="flex items-center justify-between px-5 py-4 border-b border-card-border">
+        <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
           QUESTÕES · HOJE
         </h3>
         {taxa !== null && (
-          <span className="text-xs font-bold text-[#CBFF4D]">{taxa}% acerto</span>
+          <span className="text-xs font-bold text-accent">{taxa}% acerto</span>
         )}
       </div>
 
       {questoes.length === 0 ? (
         <div className="px-5 py-12 text-center">
-          <p className="text-sm text-[#666666]">Nenhuma questão respondida hoje</p>
+          <p className="text-sm text-muted">Nenhuma questão respondida hoje</p>
           <a
             href="/questoes"
-            className="inline-block mt-3 text-xs text-[#CBFF4D] font-semibold hover:underline"
+            className="inline-block mt-3 text-xs text-accent font-semibold hover:underline"
           >
             Resolver questões →
           </a>
@@ -318,29 +318,29 @@ function QuestoesDoDia({
                 <div
                   className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
                     correto
-                      ? "bg-[#CBFF4D] text-[#000000]"
-                      : "bg-[#FF4D4D] text-[#FFFFFF]"
+                      ? "bg-accent text-accent-foreground"
+                      : "bg-destructive text-foreground"
                   }`}
                 >
                   {correto ? "✓" : "✗"}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-[#FFFFFF] truncate">
+                  <p className="text-sm text-foreground truncate">
                     {q.enunciado}
                   </p>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="text-[11px] text-[#666666]">
+                    <span className="text-[11px] text-muted">
                       {q.banca || "Banca"}{q.ano ? ` · ${q.ano}` : ""}
                     </span>
                     {!correto && (
-                      <span className="text-[10px] text-[#FF4D4D] font-medium">
+                      <span className="text-[10px] text-destructive font-medium">
                         revisar
                       </span>
                     )}
                   </div>
                 </div>
                 {q.resposta?.tempo_segundos && (
-                  <span className="text-[11px] text-[#666666] font-mono flex-shrink-0">
+                  <span className="text-[11px] text-muted font-mono flex-shrink-0">
                     {Math.floor(q.resposta.tempo_segundos / 60)}m
                   </span>
                 )}
@@ -350,10 +350,10 @@ function QuestoesDoDia({
         </div>
       )}
 
-      <div className="px-5 py-3 border-t border-[#2A2A2A]">
+      <div className="px-5 py-3 border-t border-card-border">
         <a
           href="/questoes"
-          className="text-xs text-[#666666] hover:text-[#CBFF4D] transition-colors font-semibold"
+          className="text-xs text-muted hover:text-accent transition-colors font-semibold"
         >
           VER TODAS →
         </a>

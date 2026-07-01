@@ -16,7 +16,7 @@ const STATUS_LABEL: Record<Edital["status"], string> = {
 const STATUS_STYLE: Record<Edital["status"], string> = {
   aberto: "text-accent bg-accent/10 border border-accent/30",
   previsto: "text-yellow-400 bg-yellow-400/10 border border-yellow-400/30",
-  encerrado: "text-muted bg-[#2A2A2A]/50 border border-[#2A2A2A]",
+  encerrado: "text-muted bg-card-border/50 border border-card-border",
 }
 
 function formatarData(iso: string | null) {
@@ -71,7 +71,7 @@ export default function EditaisPage() {
             className={`text-xs px-3 py-1.5 rounded-lg border font-medium transition-colors ${
               area === a
                 ? "bg-accent/20 text-accent border-accent/40"
-                : "bg-transparent text-muted border-[#2A2A2A] hover:text-foreground"
+                : "bg-transparent text-muted border-card-border hover:text-foreground"
             }`}
           >
             {a}
@@ -82,10 +82,10 @@ export default function EditaisPage() {
       {loading ? (
         <div className="text-muted text-sm">Carregando...</div>
       ) : editaisFiltrados.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-[#2A2A2A] rounded-card">
+        <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-card-border rounded-card">
           <span className="text-5xl mb-4">📋</span>
-          <h2 className="text-lg font-bold text-[#FFFFFF]">Nenhum edital cadastrado</h2>
-          <p className="text-sm text-[#666666] mt-2 max-w-md">
+          <h2 className="text-lg font-bold text-foreground">Nenhum edital cadastrado</h2>
+          <p className="text-sm text-muted mt-2 max-w-md">
             {editais.length === 0
               ? "Em breve novos editais aparecerão aqui."
               : "Nenhum edital encontrado para essa área."}
@@ -96,7 +96,7 @@ export default function EditaisPage() {
           {editaisFiltrados.map((edital) => (
             <div
               key={edital.id}
-              className="bg-card border border-[#2A2A2A] rounded-card p-5 space-y-3 hover:border-accent/30 transition-colors"
+              className="bg-card border border-card-border rounded-card p-5 space-y-3 hover:border-accent/30 transition-colors"
             >
               <div className="flex items-start justify-between gap-2">
                 <div>

@@ -87,9 +87,9 @@ export function CropModal({ pages, initialPage, onCancel, onCropped }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-      <div className="bg-card border border-[#2A2A2A] rounded-card w-full max-w-3xl max-h-[90vh] flex flex-col">
+      <div className="bg-card border border-card-border rounded-card w-full max-w-3xl max-h-[90vh] flex flex-col">
         {/* Cabeçalho */}
-        <div className="flex items-center justify-between p-4 border-b border-[#2A2A2A]">
+        <div className="flex items-center justify-between p-4 border-b border-card-border">
           <div>
             <h3 className="text-sm font-bold text-foreground">Recortar figura do PDF</h3>
             <p className="text-[11px] text-muted">Arraste para desenhar um retângulo sobre a figura.</p>
@@ -98,7 +98,7 @@ export function CropModal({ pages, initialPage, onCancel, onCropped }: Props) {
             <button
               onClick={() => trocarPagina(Math.max(0, idx - 1))}
               disabled={idx === 0}
-              className="text-xs px-2 py-1 rounded border border-[#2A2A2A] text-muted hover:text-foreground disabled:opacity-30"
+              className="text-xs px-2 py-1 rounded border border-card-border text-muted hover:text-foreground disabled:opacity-30"
             >
               ←
             </button>
@@ -106,7 +106,7 @@ export function CropModal({ pages, initialPage, onCancel, onCropped }: Props) {
             <button
               onClick={() => trocarPagina(Math.min(pages.length - 1, idx + 1))}
               disabled={idx === pages.length - 1}
-              className="text-xs px-2 py-1 rounded border border-[#2A2A2A] text-muted hover:text-foreground disabled:opacity-30"
+              className="text-xs px-2 py-1 rounded border border-card-border text-muted hover:text-foreground disabled:opacity-30"
             >
               →
             </button>
@@ -114,7 +114,7 @@ export function CropModal({ pages, initialPage, onCancel, onCropped }: Props) {
         </div>
 
         {/* Área da imagem */}
-        <div className="flex-1 overflow-auto p-4 flex justify-center bg-[#0D0D0D]">
+        <div className="flex-1 overflow-auto p-4 flex justify-center bg-background">
           <div
             className="relative inline-block select-none cursor-crosshair"
             onMouseDown={onMouseDown}
@@ -140,7 +140,7 @@ export function CropModal({ pages, initialPage, onCancel, onCropped }: Props) {
         </div>
 
         {/* Rodapé */}
-        <div className="flex items-center justify-end gap-3 p-4 border-t border-[#2A2A2A]">
+        <div className="flex items-center justify-end gap-3 p-4 border-t border-card-border">
           <button onClick={onCancel} className="text-xs text-muted hover:text-foreground px-4 py-2">
             CANCELAR
           </button>

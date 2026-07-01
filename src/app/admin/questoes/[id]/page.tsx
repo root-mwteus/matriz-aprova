@@ -18,7 +18,7 @@ function FiguraImg({ figura }: { figura: QuestaoFigura }) {
       <img
         src={data.publicUrl}
         alt={figura.legenda || "Figura da questão"}
-        className="max-w-full rounded-lg border border-[#2A2A2A]"
+        className="max-w-full rounded-lg border border-card-border"
       />
       {figura.legenda && (
         <figcaption className="text-[11px] text-muted text-center mt-1">{figura.legenda}</figcaption>
@@ -80,7 +80,7 @@ export default function AdminQuestaoDetailPage() {
       ) : (
         <div className="space-y-5">
           {/* Metadados */}
-          <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-5">
+          <div className="bg-card border border-card-border rounded-card p-6 space-y-5">
             <div className="flex flex-wrap gap-2 text-xs">
               <span className="bg-accent/10 text-accent px-2.5 py-1 rounded-full">{questao.materia}</span>
               {questao.sub_materia && <span className="bg-white/5 text-muted px-2.5 py-1 rounded-full">{questao.sub_materia}</span>}
@@ -97,7 +97,7 @@ export default function AdminQuestaoDetailPage() {
 
             {/* Texto de referência */}
             {questao.texto_referencia && (
-              <div className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg p-4">
+              <div className="bg-background border border-card-border rounded-lg p-4">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-[10px] text-muted font-mono uppercase tracking-widest">Texto de apoio</div>
                   {!questao.mostrar_texto && (
@@ -126,12 +126,12 @@ export default function AdminQuestaoDetailPage() {
                 <div
                   key={alt.letter}
                   className={`flex items-start gap-3 p-3 rounded-lg border ${
-                    i === questao.resposta_correta ? "border-accent bg-accent/5" : "border-[#2A2A2A]"
+                    i === questao.resposta_correta ? "border-accent bg-accent/5" : "border-card-border"
                   }`}
                 >
                   <span
                     className={`flex-shrink-0 w-7 h-7 rounded-lg text-xs font-bold flex items-center justify-center ${
-                      i === questao.resposta_correta ? "bg-accent text-black" : "bg-[#0D0D0D] text-muted border border-[#2A2A2A]"
+                      i === questao.resposta_correta ? "bg-accent text-black" : "bg-background text-muted border border-card-border"
                     }`}
                   >
                     {alt.letter}

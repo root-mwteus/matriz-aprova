@@ -149,24 +149,24 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
       <div>
         <div className="text-[11px] text-muted font-mono mb-3">/ CLASSIFICAÇÃO</div>
         <div className="grid grid-cols-3 gap-3">
-          <select value={value.area} onChange={(e) => set("area", e.target.value)} className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent">
+          <select value={value.area} onChange={(e) => set("area", e.target.value)} className="bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent">
             <option value="">Área</option>
             {AREAS.map((a) => <option key={a} value={a}>{a}</option>)}
           </select>
-          <select value={value.materia} onChange={(e) => set("materia", e.target.value)} className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent">
+          <select value={value.materia} onChange={(e) => set("materia", e.target.value)} className="bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent">
             <option value="">Matéria *</option>
             {MATERIAS.map((m) => <option key={m} value={m}>{m}</option>)}
             {value.materia && !MATERIAS.includes(value.materia) && <option value={value.materia}>{value.materia}</option>}
           </select>
-          <input value={value.subMateria} onChange={(e) => set("subMateria", e.target.value)} className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent" placeholder="Submatéria" />
+          <input value={value.subMateria} onChange={(e) => set("subMateria", e.target.value)} className="bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent" placeholder="Submatéria" />
         </div>
         <div className="grid grid-cols-3 gap-3 mt-3">
-          <select value={value.banca} onChange={(e) => set("banca", e.target.value)} className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent">
+          <select value={value.banca} onChange={(e) => set("banca", e.target.value)} className="bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent">
             <option value="">Banca</option>
             {BANCAS.map((b) => <option key={b} value={b}>{b}</option>)}
             {value.banca && !BANCAS.includes(value.banca) && <option value={value.banca}>{value.banca}</option>}
           </select>
-          <input value={value.ano} onChange={(e) => set("ano", e.target.value)} className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent" placeholder="Ano" />
+          <input value={value.ano} onChange={(e) => set("ano", e.target.value)} className="bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent" placeholder="Ano" />
           <div className="flex items-center gap-2">
             <input type="range" min={0} max={100} value={value.incidencia} onChange={(e) => set("incidencia", Number(e.target.value))} className="flex-1 accent-accent" />
             <span className="text-xs text-accent font-mono w-8 text-right">{value.incidencia}%</span>
@@ -174,7 +174,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
         </div>
       </div>
 
-      <hr className="border-[#2A2A2A]" />
+      <hr className="border-card-border" />
 
       {/* Figuras */}
       <div>
@@ -216,7 +216,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
             {value.figuras.map((fig) => {
               const { data } = supabase.storage.from("questoes-figuras").getPublicUrl(fig.storage_path)
               return (
-                <div key={fig.id} className="flex items-start gap-3 bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg p-3">
+                <div key={fig.id} className="flex items-start gap-3 bg-background border border-card-border rounded-lg p-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={data.publicUrl} alt="" className="w-24 h-16 object-contain bg-white rounded flex-shrink-0" />
                   <div className="flex-1 min-w-0">
@@ -224,7 +224,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
                       value={fig.legenda || ""}
                       onChange={(e) => atualizarLegenda(fig.id, e.target.value)}
                       placeholder="Legenda (opcional)"
-                      className="w-full bg-transparent text-xs text-foreground placeholder:text-muted focus:outline-none border-b border-[#2A2A2A] pb-1"
+                      className="w-full bg-transparent text-xs text-foreground placeholder:text-muted focus:outline-none border-b border-card-border pb-1"
                     />
                     <p className="text-[10px] text-muted mt-1 font-mono truncate">{fig.storage_path}</p>
                   </div>
@@ -245,7 +245,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
         )}
       </div>
 
-      <hr className="border-[#2A2A2A]" />
+      <hr className="border-card-border" />
 
       {/* Texto de referência */}
       <div>
@@ -256,7 +256,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
             <button
               type="button"
               onClick={() => set("mostrarTexto", !value.mostrarTexto)}
-              className={`relative w-9 h-5 rounded-full transition-colors ${value.mostrarTexto ? "bg-accent" : "bg-[#2A2A2A]"}`}
+              className={`relative w-9 h-5 rounded-full transition-colors ${value.mostrarTexto ? "bg-accent" : "bg-card-border"}`}
             >
               <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${value.mostrarTexto ? "translate-x-4" : ""}`} />
             </button>
@@ -266,17 +266,17 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
           value={value.textoReferencia}
           onChange={(e) => set("textoReferencia", e.target.value)}
           rows={value.textoReferencia ? 6 : 2}
-          className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
+          className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
           placeholder="Texto-base / motivador (crônica, poema, artigo, trecho de lei...). Deixe vazio se a questão não depende de um texto."
         />
         {value.textoReferencia && !value.mostrarTexto && (
-          <div className="flex items-center gap-1.5 mt-1.5 text-[11px] text-muted bg-[#0D0D0D] border border-[#2A2A2A] px-3 py-1.5 rounded-lg">
+          <div className="flex items-center gap-1.5 mt-1.5 text-[11px] text-muted bg-background border border-card-border px-3 py-1.5 rounded-lg">
             👁 Texto salvo, mas oculto para o aluno
           </div>
         )}
       </div>
 
-      <hr className="border-[#2A2A2A]" />
+      <hr className="border-card-border" />
 
       {/* Enunciado */}
       <div>
@@ -285,13 +285,13 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
           value={value.enunciado}
           onChange={(e) => set("enunciado", e.target.value)}
           rows={6}
-          className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
+          className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
           placeholder="Digite o enunciado... Use $...$ para LaTeX inline e $$...$$ para display."
         />
         <div className="text-[11px] text-muted font-mono text-right mt-1">{value.enunciado.length} chars</div>
       </div>
 
-      <hr className="border-[#2A2A2A]" />
+      <hr className="border-card-border" />
 
       {/* Alternativas */}
       <div>
@@ -304,14 +304,14 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
               <div
                 key={letter}
                 className={`flex items-center gap-3 p-3 rounded-lg border transition-colors ${
-                  isCorrect ? "border-accent bg-accent/5" : "border-[#2A2A2A] bg-[#0D0D0D]"
+                  isCorrect ? "border-accent bg-accent/5" : "border-card-border bg-background"
                 }`}
               >
                 <button
                   type="button"
                   onClick={() => set("correta", i)}
                   className={`flex-shrink-0 w-8 h-8 rounded-lg text-sm font-bold transition-colors ${
-                    isCorrect ? "bg-accent text-black" : "bg-card text-muted border border-[#2A2A2A]"
+                    isCorrect ? "bg-accent text-black" : "bg-card text-muted border border-card-border"
                   }`}
                 >
                   {letter}
@@ -333,7 +333,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
         </div>
       </div>
 
-      <hr className="border-[#2A2A2A]" />
+      <hr className="border-card-border" />
 
       {/* Gabarito comentado */}
       <div>
@@ -342,7 +342,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
           value={value.explicacao}
           onChange={(e) => set("explicacao", e.target.value)}
           rows={5}
-          className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
+          className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y font-mono"
           placeholder="Explique por que a alternativa está correta... suporta $LaTeX$."
         />
         {!value.explicacao && (
@@ -359,7 +359,7 @@ export function QuestaoForm({ value, onChange, figurasDescricao, onCropFromPdf }
           value={value.referencias}
           onChange={(e) => set("referencias", e.target.value)}
           rows={2}
-          className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y"
+          className="w-full bg-background border border-card-border rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors resize-y"
           placeholder={"Lei nº 8.666/93, art. 23\nSTJ - REsp 1.234.567/SP"}
         />
       </div>

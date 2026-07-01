@@ -123,7 +123,7 @@ export default function UserDetailPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* COLUNA ESQUERDA — Identidade */}
         <div className="space-y-4">
-          <div className="bg-card border border-[#2A2A2A] rounded-card p-6 text-center">
+          <div className="bg-card border border-card-border rounded-card p-6 text-center">
             <div className="w-16 h-16 rounded-xl bg-accent/20 text-accent text-xl font-bold flex items-center justify-center mx-auto mb-3">
               {nomeExibicao.split(" ").map((s) => s[0]).join("").slice(0, 2).toUpperCase()}
             </div>
@@ -153,7 +153,7 @@ export default function UserDetailPage() {
             </div>
           </div>
 
-          <div className="bg-card border border-[#2A2A2A] rounded-card p-5 space-y-3">
+          <div className="bg-card border border-card-border rounded-card p-5 space-y-3">
             <a
               href={`mailto:${perfil.email}`}
               className="block w-full text-center text-sm bg-accent/20 text-accent border border-accent/40 px-4 py-2.5 rounded-lg font-medium hover:bg-accent/30 transition-colors"
@@ -176,7 +176,7 @@ export default function UserDetailPage() {
 
         {/* COLUNA DIREITA — Tabs */}
         <div className="lg:col-span-2">
-          <div className="flex border-b border-[#2A2A2A] mb-5">
+          <div className="flex border-b border-card-border mb-5">
             {tabs.map((t) => (
               <button
                 key={t}
@@ -192,7 +192,7 @@ export default function UserDetailPage() {
 
           {tab === "PROGRESSO" && (
             <div className="space-y-5">
-              <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
+              <div className="bg-card border border-card-border rounded-card p-5">
                 <div className="text-[11px] text-muted font-mono mb-3">STREAK · ÚLTIMOS 30 DIAS</div>
                 <div className="flex gap-1 flex-wrap">
                   {calendarDays.map((d, i) => (
@@ -208,13 +208,13 @@ export default function UserDetailPage() {
 
               <div className="space-y-2">
                 {progressData.map((p) => (
-                  <div key={p.materia} className="bg-card border border-[#2A2A2A] rounded-card p-4">
+                  <div key={p.materia} className="bg-card border border-card-border rounded-card p-4">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm text-foreground font-medium">{p.materia}</span>
                       <span className="text-xs text-muted font-mono">{p.aulas} aulas</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="flex-1 h-1.5 bg-[#2A2A2A] rounded-full overflow-hidden">
+                      <div className="flex-1 h-1.5 bg-card-border rounded-full overflow-hidden">
                         <div className="h-full bg-accent rounded-full" style={{ width: `${p.acertos}%` }} />
                       </div>
                       <span className="text-xs text-muted font-mono">{p.questoes}Q · {p.acertos}%</span>
@@ -226,10 +226,10 @@ export default function UserDetailPage() {
           )}
 
           {tab === "QUESTÕES" && (
-            <div className="bg-card border border-[#2A2A2A] rounded-card overflow-hidden">
+            <div className="bg-card border border-card-border rounded-card overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-[#2A2A2A]">
+                  <tr className="border-b border-card-border">
                     {["Matéria", "Banca", "Ano", "Resultado", "Tempo", "Data"].map((h) => (
                       <th key={h} className="text-left text-[11px] text-muted font-mono font-normal px-4 py-3">{h}</th>
                     ))}
@@ -237,7 +237,7 @@ export default function UserDetailPage() {
                 </thead>
                 <tbody>
                   {questions.map((q, i) => (
-                    <tr key={i} className="border-b border-[#2A2A2A] hover:bg-white/[.03]">
+                    <tr key={i} className="border-b border-card-border hover:bg-white/[.03]">
                       <td className="px-4 py-3 text-foreground">{q.materia}</td>
                       <td className="px-4 py-3 text-muted">{q.banca}</td>
                       <td className="px-4 py-3 text-muted font-mono">{q.ano}</td>
@@ -256,7 +256,7 @@ export default function UserDetailPage() {
           {tab === "SIMULADOS" && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {simulados.map((s, i) => (
-                <div key={i} className="bg-card border border-[#2A2A2A] rounded-card p-5">
+                <div key={i} className="bg-card border border-card-border rounded-card p-5">
                   <div className="text-sm text-foreground font-medium">{s.titulo}</div>
                   <div className="mt-2 flex items-baseline gap-1">
                     <span className="text-2xl font-bold text-accent">{s.pct}%</span>
@@ -269,7 +269,7 @@ export default function UserDetailPage() {
           )}
 
           {tab === "FINANCEIRO" && (
-            <div className="bg-card border border-[#2A2A2A] rounded-card p-8 text-center">
+            <div className="bg-card border border-card-border rounded-card p-8 text-center">
               <p className="text-muted text-sm">Sistema de pagamentos ainda não implementado.</p>
             </div>
           )}

@@ -80,7 +80,7 @@ export default function AdminMateriaisPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-card border border-[#2A2A2A] rounded-card p-4 hover:border-accent/30 transition-colors group"
+              className="bg-card border border-card-border rounded-card p-4 hover:border-accent/30 transition-colors group"
             >
               <div className="flex items-start gap-3">
                 <div className="w-10 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 border border-accent/20">
@@ -92,15 +92,15 @@ export default function AdminMateriaisPage() {
                   <div className="text-sm text-foreground font-medium leading-tight truncate">{m.titulo}</div>
                   <div className="flex flex-wrap gap-1 mt-1.5">
                     {m.materia && <span className="text-[10px] text-accent bg-accent/10 px-1.5 py-0.5 rounded-full">{m.materia}</span>}
-                    {m.banca && <span className="text-[10px] text-muted bg-[#2A2A2A] px-1.5 py-0.5 rounded-full">{m.banca}</span>}
-                    {m.professor && <span className="text-[10px] text-muted bg-[#2A2A2A] px-1.5 py-0.5 rounded-full">{m.professor}</span>}
+                    {m.banca && <span className="text-[10px] text-muted bg-card-border px-1.5 py-0.5 rounded-full">{m.banca}</span>}
+                    {m.professor && <span className="text-[10px] text-muted bg-card-border px-1.5 py-0.5 rounded-full">{m.professor}</span>}
                   </div>
                 </div>
               </div>
               <div className="mt-3 space-y-2">
                 <div className="text-[11px] text-muted font-mono">📄 {m.paginas ?? "—"} páginas</div>
                 <div className="flex items-center gap-2">
-                  <div className="flex-1 h-1.5 bg-[#2A2A2A] rounded-full overflow-hidden">
+                  <div className="flex-1 h-1.5 bg-card-border rounded-full overflow-hidden">
                     <div className="h-full bg-accent rounded-full" style={{ width: `${m.incidencia_pct ?? 0}%` }} />
                   </div>
                   <span className="text-[11px] text-muted font-mono">{m.incidencia_pct ?? 0}% CAI NA BANCA</span>
@@ -111,7 +111,7 @@ export default function AdminMateriaisPage() {
                   </span>
                 )}
               </div>
-              <div className="flex items-center justify-between mt-3 pt-2 border-t border-[#2A2A2A]">
+              <div className="flex items-center justify-between mt-3 pt-2 border-t border-card-border">
                 <span className="text-[11px] text-muted font-mono">{m.pdf_url ? "PDF anexado" : "Sem PDF"}</span>
                 <div className="flex items-center gap-2">
                   <Link href={`/admin/materiais/${m.id}/editar`} className="text-muted hover:text-foreground transition-colors" title="Editar">

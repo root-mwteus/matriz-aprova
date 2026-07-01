@@ -19,7 +19,7 @@ const STATUS_LABEL: Record<Edital["status"], string> = {
 const STATUS_STYLE: Record<Edital["status"], string> = {
   aberto: "text-green-400 bg-green-400/10 border border-green-400/30",
   previsto: "text-yellow-400 bg-yellow-400/10 border border-yellow-400/30",
-  encerrado: "text-muted bg-[#2A2A2A]/50 border border-[#2A2A2A]",
+  encerrado: "text-muted bg-card-border/50 border border-card-border",
 }
 
 type FormState = Omit<Edital, "id" | "created_at">
@@ -157,15 +157,15 @@ export default function AdminEditaisPage() {
       {loading ? (
         <div className="text-muted text-sm">Carregando...</div>
       ) : editais.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-[#2A2A2A] rounded-card">
+        <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-card-border rounded-card">
           <span className="text-5xl mb-4">📋</span>
           <p className="text-sm text-muted">Nenhum edital cadastrado ainda</p>
         </div>
       ) : (
-        <div className="bg-card border border-[#2A2A2A] rounded-card overflow-hidden">
+        <div className="bg-card border border-card-border rounded-card overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-[#2A2A2A] text-left">
+              <tr className="border-b border-card-border text-left">
                 <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">ÓRGÃO</th>
                 <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">ÁREA</th>
                 <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">DATA DA PROVA</th>
@@ -175,7 +175,7 @@ export default function AdminEditaisPage() {
             </thead>
             <tbody>
               {editais.map((edital) => (
-                <tr key={edital.id} className="border-b border-[#2A2A2A] last:border-0">
+                <tr key={edital.id} className="border-b border-card-border last:border-0">
                   <td className="px-4 py-3">
                     <div className="text-foreground font-medium">{edital.orgao}</div>
                     {edital.cargo && <div className="text-muted text-xs">{edital.cargo}</div>}
@@ -206,7 +206,7 @@ export default function AdminEditaisPage() {
 
       {criando && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#00000088" }}>
-          <div className="bg-card border border-[#2A2A2A] rounded-card p-6 w-full max-w-lg space-y-4">
+          <div className="bg-card border border-card-border rounded-card p-6 w-full max-w-lg space-y-4">
             <h3 className="text-foreground font-bold text-base">{editando ? "Editar Edital" : "Novo Edital"}</h3>
 
             <div className="grid grid-cols-2 gap-3">
@@ -215,7 +215,7 @@ export default function AdminEditaisPage() {
                 <input
                   value={form.orgao}
                   onChange={(e) => setForm({ ...form, orgao: e.target.value })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                   placeholder="Ex: Polícia Federal"
                 />
               </div>
@@ -224,7 +224,7 @@ export default function AdminEditaisPage() {
                 <input
                   value={form.cargo || ""}
                   onChange={(e) => setForm({ ...form, cargo: e.target.value })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                   placeholder="Ex: Agente Administrativo"
                 />
               </div>
@@ -233,7 +233,7 @@ export default function AdminEditaisPage() {
                 <input
                   value={form.banca || ""}
                   onChange={(e) => setForm({ ...form, banca: e.target.value })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                   placeholder="Ex: CESPE/CEBRASPE"
                 />
               </div>
@@ -242,7 +242,7 @@ export default function AdminEditaisPage() {
                 <select
                   value={form.area_concurso}
                   onChange={(e) => setForm({ ...form, area_concurso: e.target.value })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                 >
                   {areas.map((a) => <option key={a} value={a}>{a}</option>)}
                 </select>
@@ -253,7 +253,7 @@ export default function AdminEditaisPage() {
                   type="number"
                   value={form.vagas ?? ""}
                   onChange={(e) => setForm({ ...form, vagas: e.target.value ? Number(e.target.value) : null })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                   placeholder="Ex: 120"
                 />
               </div>
@@ -263,7 +263,7 @@ export default function AdminEditaisPage() {
                   type="date"
                   value={form.data_prova || ""}
                   onChange={(e) => setForm({ ...form, data_prova: e.target.value || null })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                 />
               </div>
               <div>
@@ -272,7 +272,7 @@ export default function AdminEditaisPage() {
                   type="date"
                   value={form.data_inscricao_fim || ""}
                   onChange={(e) => setForm({ ...form, data_inscricao_fim: e.target.value || null })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                 />
               </div>
               <div>
@@ -280,7 +280,7 @@ export default function AdminEditaisPage() {
                 <select
                   value={form.status}
                   onChange={(e) => setForm({ ...form, status: e.target.value as Edital["status"] })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                 >
                   {statusOptions.map((s) => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}
                 </select>
@@ -290,14 +290,14 @@ export default function AdminEditaisPage() {
                 <input
                   value={form.link || ""}
                   onChange={(e) => setForm({ ...form, link: e.target.value })}
-                  className="w-full bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
                   placeholder="https://..."
                 />
               </div>
             </div>
 
             <div className="flex justify-end gap-3 pt-2">
-              <button onClick={() => setCriando(false)} className="px-4 py-2 text-sm border border-[#2A2A2A] rounded-lg text-muted hover:text-foreground transition-colors">
+              <button onClick={() => setCriando(false)} className="px-4 py-2 text-sm border border-card-border rounded-lg text-muted hover:text-foreground transition-colors">
                 CANCELAR
               </button>
               <button

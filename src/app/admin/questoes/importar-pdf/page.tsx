@@ -249,7 +249,7 @@ export default function ImportarPdfPage() {
 
       {/* UPLOAD */}
       {fase === "idle" && (
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-5">
+        <div className="bg-card border border-card-border rounded-card p-6 space-y-5">
           <p className="text-sm text-muted">
             Envie o PDF de uma prova. A IA lê página por página e as questões aparecem aqui na hora,
             com fórmulas em LaTeX. Você revisa, recorta as figuras direto do PDF e salva.
@@ -262,7 +262,7 @@ export default function ImportarPdfPage() {
           >
             EXTRAIR QUESTÕES →
           </button>
-          <div className="text-[11px] text-muted bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg p-3 space-y-1">
+          <div className="text-[11px] text-muted bg-background border border-card-border rounded-lg p-3 space-y-1">
             <p>• O PDF é processado no seu navegador — só as imagens das páginas vão para a IA.</p>
             <p>• Figuras/gráficos: use <span className="text-foreground">✂ Recortar do PDF</span> na revisão para capturar a área exata.</p>
             <p>• Nada é salvo no banco até você confirmar.</p>
@@ -272,12 +272,12 @@ export default function ImportarPdfPage() {
 
       {/* PROGRESSO */}
       {fase === "processando" && (
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-6 space-y-3">
+        <div className="bg-card border border-card-border rounded-card p-6 space-y-3">
           <div className="flex items-center justify-between text-sm">
             <span className="text-accent">{statusTxt}</span>
             <span className="text-muted font-mono">{progresso.atual}/{progresso.total}</span>
           </div>
-          <div className="w-full h-2 bg-[#0D0D0D] rounded-full overflow-hidden">
+          <div className="w-full h-2 bg-background rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-accent rounded-full"
               animate={{ width: `${pctProgresso}%` }}
@@ -292,7 +292,7 @@ export default function ImportarPdfPage() {
 
       {/* BANNER DE REVISÃO */}
       {fase === "revisao" && (
-        <div className="flex items-center justify-between bg-card border border-[#2A2A2A] rounded-card p-4">
+        <div className="flex items-center justify-between bg-card border border-card-border rounded-card p-4">
           <span className="text-sm text-muted">
             <span className="text-accent font-mono">{totalIncluidas}/{cards.length}</span> selecionadas para salvar
           </span>
@@ -314,7 +314,7 @@ export default function ImportarPdfPage() {
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   className={`border rounded-card overflow-hidden transition-colors ${
-                    card.incluir ? "border-[#2A2A2A] bg-card" : "border-[#1A1A1A] bg-card/40 opacity-60"
+                    card.incluir ? "border-card-border bg-card" : "border-card bg-card/40 opacity-60"
                   }`}
                 >
                   <div className="flex items-center gap-3 p-4">
@@ -355,7 +355,7 @@ export default function ImportarPdfPage() {
                   </div>
 
                   {card.aberto && (
-                    <div className="border-t border-[#2A2A2A] p-5">
+                    <div className="border-t border-card-border p-5">
                       {!card.completa && card.aviso && (
                         <div className="mb-4 text-[11px] text-orange-400 bg-orange-400/10 border border-orange-400/20 rounded-lg px-3 py-2">
                           ⚠ A IA sinalizou: {card.aviso}
@@ -378,7 +378,7 @@ export default function ImportarPdfPage() {
 
       {/* BARRA DE SALVAR */}
       {fase === "revisao" && cards.length > 0 && (
-        <div className="sticky bottom-4 flex items-center justify-between bg-card border border-[#2A2A2A] rounded-card p-4 shadow-lg">
+        <div className="sticky bottom-4 flex items-center justify-between bg-card border border-card-border rounded-card p-4 shadow-lg">
           <span className="text-sm text-muted">
             {totalIncluidas} {totalIncluidas === 1 ? "questão será salva" : "questões serão salvas"}
           </span>

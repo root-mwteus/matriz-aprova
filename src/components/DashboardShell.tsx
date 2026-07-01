@@ -13,14 +13,14 @@ export default function DashboardShell({
 
   return (
     <div
-      className="min-h-screen bg-[#0D0D0D]"
+      className="min-h-screen bg-background"
       style={{
         display: "grid",
         gridTemplateColumns: "220px 1fr",
       }}
     >
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden lg:block h-screen overflow-y-auto bg-[#111111] border-r border-[#2A2A2A] sticky top-0">
+      <aside className="hidden lg:block h-screen overflow-y-auto bg-surface border-r border-card-border sticky top-0">
         <Sidebar />
       </aside>
 
@@ -45,7 +45,7 @@ export default function DashboardShell({
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 left-0 bottom-0 z-50 w-[220px] bg-[#111111] border-r border-[#2A2A2A] lg:hidden"
+            className="fixed top-0 left-0 bottom-0 z-50 w-[220px] bg-surface border-r border-card-border lg:hidden"
           >
             <Sidebar onClose={() => setSidebarOpen(false)} />
           </motion.aside>
@@ -55,13 +55,13 @@ export default function DashboardShell({
       {/* MAIN CONTENT */}
       <div className="flex flex-col min-h-screen overflow-hidden">
         {/* MOBILE TOPBAR */}
-        <div className="lg:hidden flex items-center justify-between px-4 h-12 border-b border-[#2A2A2A] bg-[#111111] flex-shrink-0">
-          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-[#FFFFFF]">
+        <div className="lg:hidden flex items-center justify-between px-4 h-12 border-b border-card-border bg-surface flex-shrink-0">
+          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-foreground">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <span className="text-sm font-bold tracking-widest text-[#CBFF4D]">MATRIZ APROVA</span>
+          <span className="text-sm font-bold tracking-widest text-accent">MATRIZ APROVA</span>
           <div className="w-5" />
         </div>
 

@@ -47,7 +47,7 @@ export function AdminTable<T extends Record<string, any>>({
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-[#2A2A2A]">
+            <tr className="border-b border-card-border">
               {columns.map((col) => (
                 <th key={col.key} className={`text-left text-[11px] text-muted font-mono font-normal uppercase px-4 py-3 ${col.className || ""}`}>
                   {col.header}
@@ -66,7 +66,7 @@ export function AdminTable<T extends Record<string, any>>({
               </tr>
             ) : (
               data.map((row, idx) => (
-                <tr key={row.id || idx} className="border-b border-[#2A2A2A] hover:bg-white/[.03] transition-colors">
+                <tr key={row.id || idx} className="border-b border-card-border hover:bg-white/[.03] transition-colors">
                   {columns.map((col) => (
                     <td key={col.key} className={`px-4 py-3 ${col.className || ""}`}>
                       {col.render ? col.render(row, idx) : row[col.key]}
@@ -88,14 +88,14 @@ export function AdminTable<T extends Record<string, any>>({
             <button
               onClick={() => onPageChange?.(page - 1)}
               disabled={page <= 1}
-              className="px-3 py-1.5 text-xs border border-[#2A2A2A] rounded-lg text-muted hover:text-foreground transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              className="px-3 py-1.5 text-xs border border-card-border rounded-lg text-muted hover:text-foreground transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             >
               ANTERIOR
             </button>
             <button
               onClick={() => onPageChange?.(page + 1)}
               disabled={page >= totalPages}
-              className="px-3 py-1.5 text-xs border border-[#2A2A2A] rounded-lg text-muted hover:text-foreground transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              className="px-3 py-1.5 text-xs border border-card-border rounded-lg text-muted hover:text-foreground transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             >
               PRÓXIMO
             </button>

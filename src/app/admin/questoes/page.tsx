@@ -133,7 +133,7 @@ export default function AdminQuestoesPage() {
         <div className="flex items-center gap-2">
           <Link
             href="/admin/questoes/importar-pdf"
-            className="text-xs bg-card text-foreground border border-[#2A2A2A] px-4 py-1.5 rounded-lg font-semibold hover:border-accent/40 transition-colors"
+            className="text-xs bg-card text-foreground border border-card-border px-4 py-1.5 rounded-lg font-semibold hover:border-accent/40 transition-colors"
           >
             📄 IMPORTAR PDF
           </Link>
@@ -153,7 +153,7 @@ export default function AdminQuestoesPage() {
             setBusca(e.target.value)
             setPage(1)
           }}
-          className="flex-1 min-w-[200px] bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2 text-xs text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+          className="flex-1 min-w-[200px] bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
           placeholder="Buscar por enunciado..."
         />
         <select
@@ -162,7 +162,7 @@ export default function AdminQuestoesPage() {
             setMateria(e.target.value)
             setPage(1)
           }}
-          className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
+          className="bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
         >
           <option value="">Todas matérias</option>
           {materias.map((m) => (
@@ -171,7 +171,7 @@ export default function AdminQuestoesPage() {
         </select>
       </div>
 
-      <div className="bg-card border border-[#2A2A2A] rounded-card overflow-hidden">
+      <div className="bg-card border border-card-border rounded-card overflow-hidden">
         <AdminTable
           loading={loading}
           columns={[

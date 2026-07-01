@@ -41,7 +41,7 @@ export default function AdminSimuladosPage() {
         <MetricCard label="PIOR MATÉRIA" value="Matemática" variacao="42% de acertos — refaça o plano" variacaoPositiva={false} />
       </div>
 
-      <div className="bg-card border border-[#2A2A2A] rounded-card">
+      <div className="bg-card border border-card-border rounded-card">
         <div className="text-[11px] text-muted font-mono px-5 pt-4 pb-2">/ RANKING GERAL</div>
         <AdminTable
           columns={[
@@ -60,16 +60,16 @@ export default function AdminSimuladosPage() {
         />
       </div>
 
-      <div className="bg-card border border-[#2A2A2A] rounded-card">
+      <div className="bg-card border border-card-border rounded-card">
         <div className="flex items-center gap-3 px-5 pt-4 pb-2">
           <span className="text-[11px] text-muted font-mono">/ SIMULADOS REALIZADOS</span>
-          <select className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-lg px-2 py-1 text-[11px] text-muted focus:outline-none focus:border-accent">
+          <select className="bg-background border border-card-border rounded-lg px-2 py-1 text-[11px] text-muted focus:outline-none focus:border-accent">
             <option>Todos períodos</option>
             <option>Hoje</option>
             <option>Esta semana</option>
             <option>Este mês</option>
           </select>
-          <button className="ml-auto text-xs border border-[#2A2A2A] text-muted hover:text-foreground px-2 py-1 rounded-lg transition-colors">EXPORTAR CSV</button>
+          <button className="ml-auto text-xs border border-card-border text-muted hover:text-foreground px-2 py-1 rounded-lg transition-colors">EXPORTAR CSV</button>
         </div>
         <AdminTable
           columns={[

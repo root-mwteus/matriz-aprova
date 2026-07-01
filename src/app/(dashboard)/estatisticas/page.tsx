@@ -20,7 +20,7 @@ interface Resposta {
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload?.length) {
     return (
-      <div className="bg-card border border-[#2A2A2A] rounded-lg px-3 py-2 shadow-lg">
+      <div className="bg-card border border-card-border rounded-lg px-3 py-2 shadow-lg">
         <p className="text-xs text-foreground font-medium">{label}</p>
         <p className="text-xs text-accent">{payload[0].value}{payload[0].unit || ""}</p>
       </div>
@@ -121,7 +121,7 @@ export default function EstatisticasPage() {
 
   function EmptyState() {
     return (
-      <div className="flex items-center justify-center h-48 text-[#666666] text-sm">
+      <div className="flex items-center justify-center h-48 text-muted text-sm">
         Resolva questões para gerar gráficos
       </div>
     )
@@ -136,8 +136,8 @@ export default function EstatisticasPage() {
       />
 
       <div className="grid lg:grid-cols-2 gap-6">
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666] mb-4">
+        <div className="bg-card border border-card-border rounded-card p-5">
+          <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted mb-4">
             DESEMPENHO POR MATÉRIA
           </h2>
           {loading ? <EmptyState /> : !temDados ? <EmptyState /> : (
@@ -153,8 +153,8 @@ export default function EstatisticasPage() {
           )}
         </div>
 
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666] mb-4">
+        <div className="bg-card border border-card-border rounded-card p-5">
+          <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted mb-4">
             EVOLUÇÃO SEMANAL
           </h2>
           {loading ? <EmptyState /> : !temDados ? <EmptyState /> : (
@@ -170,8 +170,8 @@ export default function EstatisticasPage() {
           )}
         </div>
 
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666] mb-4">
+        <div className="bg-card border border-card-border rounded-card p-5">
+          <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted mb-4">
             TAXA DE ACERTO
           </h2>
           {loading ? <EmptyState /> : !temDados ? <EmptyState /> : (
@@ -192,8 +192,8 @@ export default function EstatisticasPage() {
           )}
         </div>
 
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-5">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666666] mb-4">
+        <div className="bg-card border border-card-border rounded-card p-5">
+          <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted mb-4">
             TEMPO MÉDIO
           </h2>
           {loading ? <EmptyState /> : !temDados || comTempo.length === 0 ? <EmptyState /> : (

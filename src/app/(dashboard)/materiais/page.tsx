@@ -77,18 +77,18 @@ export default function MateriaisPage() {
           title="PDFs selecionados pela IA"
           subtitle="Materiais com maior incidência na sua banca"
         />
-        <span className="text-sm text-[#666666] font-mono mt-1">
+        <span className="text-sm text-muted font-mono mt-1">
           {materiais.length} disponíveis
         </span>
       </div>
 
       {/* FILTROS */}
-      <div className="bg-card border border-[#2A2A2A] rounded-card p-4 space-y-4">
+      <div className="bg-card border border-card-border rounded-card p-4 space-y-4">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <select
             value={materia}
             onChange={(e) => setMateria(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           >
             <option value="">Matéria</option>
             {materiasList.map((m) => (
@@ -99,7 +99,7 @@ export default function MateriaisPage() {
           <select
             value={banca}
             onChange={(e) => setBanca(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           >
             <option value="">Banca</option>
             {bancasList.map((b) => (
@@ -110,7 +110,7 @@ export default function MateriaisPage() {
           <select
             value={professor}
             onChange={(e) => setProfessor(e.target.value)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           >
             <option value="">Professor</option>
             {professores.map((p) => (
@@ -121,7 +121,7 @@ export default function MateriaisPage() {
           <select
             value={ordenacao}
             onChange={(e) => setOrdenacao(e.target.value as Ordenacao)}
-            className="bg-[#0D0D0D] border border-[#2A2A2A] rounded-card px-3 py-3.5 text-sm text-[#FFFFFF] focus:outline-none focus:border-[#CBFF4D] transition-colors"
+            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           >
             <option value="incidencia">Incidência</option>
             <option value="materia">Matéria</option>
@@ -134,8 +134,8 @@ export default function MateriaisPage() {
             onClick={() => setFiltroIA("todos")}
             className={`px-4 py-2 rounded-card text-xs font-semibold transition-all ${
               filtroIA === "todos"
-                ? "bg-[#CBFF4D] text-[#000000] font-bold"
-                : "bg-[#0D0D0D] border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
+                ? "bg-accent text-accent-foreground font-bold"
+                : "bg-background border border-card-border text-muted hover:text-foreground"
             }`}
           >
             Todos
@@ -144,14 +144,14 @@ export default function MateriaisPage() {
             onClick={() => setFiltroIA("ia")}
             className={`px-4 py-2 rounded-card text-xs font-semibold transition-all ${
               filtroIA === "ia"
-                ? "bg-[#CBFF4D] text-[#000000] font-bold"
-                : "bg-[#0D0D0D] border border-[#2A2A2A] text-[#666666] hover:text-[#FFFFFF]"
+                ? "bg-accent text-accent-foreground font-bold"
+                : "bg-background border border-card-border text-muted hover:text-foreground"
             }`}
           >
             Sugeridos pela IA
           </button>
           {filtroIA === "ia" && (
-            <span className="text-[10px] text-[#666666] font-mono">
+            <span className="text-[10px] text-muted font-mono">
               incidência &gt; 70%
             </span>
           )}
@@ -161,12 +161,12 @@ export default function MateriaisPage() {
       {/* LISTAGEM */}
       {loading ? (
         <div className="flex items-center justify-center h-64">
-          <div className="text-[#666666] text-sm animate-pulse">Carregando materiais...</div>
+          <div className="text-muted text-sm animate-pulse">Carregando materiais...</div>
         </div>
       ) : materiais.length === 0 ? (
-        <div className="bg-card border border-[#2A2A2A] rounded-card p-10 text-center space-y-3">
+        <div className="bg-card border border-card-border rounded-card p-10 text-center space-y-3">
           <span className="text-4xl">📚</span>
-          <p className="text-sm text-[#666666]">Nenhum material encontrado.</p>
+          <p className="text-sm text-muted">Nenhum material encontrado.</p>
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -176,45 +176,45 @@ export default function MateriaisPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
-              className="bg-card border border-[#2A2A2A] rounded-card p-5 hover:border-[#CBFF4D]/30 transition-all group flex flex-col"
+              className="bg-card border border-card-border rounded-card p-5 hover:border-accent/30 transition-all group flex flex-col"
             >
               {(m.incidencia_pct ?? 0) > 70 && (
                 <div className="flex items-center justify-between mb-3">
-                  <span className="px-2.5 py-1 rounded-full bg-[#CBFF4D20] text-[#CBFF4D] border border-[#CBFF4D40] text-[10px] font-bold font-mono uppercase">
+                  <span className="px-2.5 py-1 rounded-full bg-badge-bg text-accent border border-badge-border text-[10px] font-bold font-mono uppercase">
                     IA · {m.incidencia_pct}% CAI
                   </span>
                 </div>
               )}
 
-              <h3 className="text-sm font-bold text-[#FFFFFF] group-hover:text-[#CBFF4D] transition-colors leading-snug mb-2">
+              <h3 className="text-sm font-bold text-foreground group-hover:text-accent transition-colors leading-snug mb-2">
                 {m.titulo}
               </h3>
 
               <div className="flex items-center gap-2 mb-3">
                 {m.materia && (
-                  <span className="text-[11px] text-[#666666]">{m.materia}</span>
+                  <span className="text-[11px] text-muted">{m.materia}</span>
                 )}
                 {m.banca && (
                   <>
-                    <span className="text-[11px] text-[#666666]">·</span>
-                    <span className="text-[11px] text-[#666666]">{m.banca}</span>
+                    <span className="text-[11px] text-muted">·</span>
+                    <span className="text-[11px] text-muted">{m.banca}</span>
                   </>
                 )}
               </div>
 
               <div className="flex-1" />
 
-              <div className="flex items-center justify-between pt-3 border-t border-[#2A2A2A]">
-                <span className="text-[11px] text-[#666666]">
+              <div className="flex items-center justify-between pt-3 border-t border-card-border">
+                <span className="text-[11px] text-muted">
                   📄 {m.paginas ?? "--"} páginas{m.professor ? ` · ${m.professor}` : ""}
                 </span>
                 <button
                   onClick={() => handleDownload(m.pdf_url, m.titulo)}
                   disabled={!m.pdf_url}
-                  className="w-8 h-8 rounded-full bg-[#0D0D0D] border border-[#2A2A2A] flex items-center justify-center hover:border-[#CBFF4D] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                  className="w-8 h-8 rounded-full bg-background border border-card-border flex items-center justify-center hover:border-accent transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                   title="Baixar material"
                 >
-                  <svg className="w-4 h-4 text-[#666666]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
                 </button>
