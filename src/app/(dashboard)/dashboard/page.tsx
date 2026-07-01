@@ -179,7 +179,7 @@ function UserCard({
   return (
     <div className="flex items-center justify-between h-[72px] px-4 bg-card border border-card-border rounded-card">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-[8px] bg-accent flex items-center justify-center font-bold text-sm text-accent-foreground flex-shrink-0">
+        <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center font-bold text-sm text-accent-foreground flex-shrink-0">
           {initials}
         </div>
         <div>
@@ -212,7 +212,7 @@ function StreakBar({ dias, diaIdx }: { dias: boolean[]; diaIdx: number }) {
           return (
             <div key={i} className="flex flex-col items-center gap-1">
               <div
-                className={`w-[32px] h-[32px] rounded-[6px] transition-all ${
+                className={`w-[32px] h-[32px] rounded-md transition-all ${
                   isHoje
                     ? ativo
                       ? "bg-accent border-2 border-accent"

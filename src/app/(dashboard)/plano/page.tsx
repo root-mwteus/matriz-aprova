@@ -400,7 +400,7 @@ export default function PlanoPage() {
         {/* COLUNA DIREITA — PREVIEW */}
         <div className="lg:w-[35%] lg:min-w-[280px]">
           <div className="bg-card border border-card-border rounded-card p-5 space-y-4 sticky top-8">
-            <span className="inline-block px-2 py-0.5 rounded-[6px] bg-[#66666620] text-muted border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
+            <span className="inline-block px-2 py-0.5 rounded-md bg-[#66666620] text-muted border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
               O QUE VOCÊ VAI RECEBER
             </span>
 
@@ -423,7 +423,7 @@ export default function PlanoPage() {
               <div className="bg-background border border-card-border rounded-card p-4 space-y-2 relative overflow-hidden">
                 <div className="flex gap-2">
                   {["S", "T", "Q", "Q", "S", "S", "D"].map((d) => (
-                    <div key={d} className="flex-1 h-16 rounded-[6px] bg-accent/10 border border-card-border" />
+                    <div key={d} className="flex-1 h-16 rounded-md bg-accent/10 border border-card-border" />
                   ))}
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -454,7 +454,7 @@ export default function PlanoPage() {
       {/* HEADER */}
       <div className="flex items-start justify-between">
         <div>
-          <span className="inline-block px-2 py-0.5 rounded-[6px] bg-[#66666620] text-muted border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
+          <span className="inline-block px-2 py-0.5 rounded-md bg-[#66666620] text-muted border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
             PLANO
           </span>
           <h1 className="text-[28px] font-[800] text-foreground leading-tight mt-1.5">
