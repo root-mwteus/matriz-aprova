@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { createClient } from "@/lib/supabase/client"
 import type { Profile, Question, UserAnswer, Material } from "@/types"
 import { SITE_NAME } from "@/lib/constants"
+import { calcularStreakSemana } from "@/lib/streak"
 import PageHeader from "@/components/PageHeader"
 
 const diasSemana = ["S", "T", "Q", "Q", "S", "S", "D"]
@@ -72,10 +73,11 @@ export default function DashboardPage() {
         )
       }
 
-      const dia = new Date().getDay()
+      const hoje = new Date()
+      const dia = hoje.getDay()
       const offsetParaSegunda = dia === 0 ? -6 : 1 - dia
-      const segunda = new Date()
-      segunda.setDate(new Date().getDate() + offsetParaSegunda)
+      const segunda = new Date(hoje)
+      segunda.setDate(hoje.getDate() + offsetParaSegunda)
       segunda.setHours(0, 0, 0, 0)
       const domingo = new Date(segunda)
       domingo.setDate(segunda.getDate() + 7)
@@ -87,16 +89,7 @@ export default function DashboardPage() {
         .gte("created_at", segunda.toISOString())
         .lt("created_at", domingo.toISOString())
 
-      const diasDaSemana = Array.from({ length: 7 }, (_, i) => {
-        const d = new Date(segunda)
-        d.setDate(segunda.getDate() + i)
-        return d
-      })
-      setStreak(
-        diasDaSemana.map((d) =>
-          (streakData || []).some((r) => new Date(r.created_at).toDateString() === d.toDateString())
-        )
-      )
+      setStreak(calcularStreakSemana(streakData || []))
 
       const { data: mats } = await supabase
         .from("materials")
