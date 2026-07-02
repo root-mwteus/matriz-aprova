@@ -1,5 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
+import { sendBoasVindas } from "@/lib/email"
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
@@ -26,9 +27,46 @@ export async function GET(request: NextRequest) {
       }
     )
 
-    const { error } = await supabase.auth.exchangeCodeForSession(code)
-    if (!error) {
-      return NextResponse.redirect(`${origin}${next}`)
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code)
+
+    if (!error && data.user) {
+      const user = data.user
+      const isOAuth = user.app_metadata?.provider === "google"
+
+      if (isOAuth) {
+        // Verifica se é um novo usuário Google (sem perfil ainda)
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("id")
+          .eq("id", user.id)
+          .single()
+
+        if (!profile) {
+          const nome = user.user_metadata?.full_name ?? user.email?.split("@")[0] ?? "Estudante"
+          const email = user.email ?? ""
+
+          // Cria perfil automaticamente
+          await supabase.from("profiles").insert({
+            id: user.id,
+            email,
+            nome,
+            area_concurso: "Concursos Gerais",
+            role: "user",
+          })
+
+          // Envia email de boas-vindas (sem bloquear o redirect)
+          sendBoasVindas({ nome, email, area: "Concursos Gerais" }).catch(() => {})
+
+          // Novo usuário Google → onboarding
+          const res = NextResponse.redirect(`${origin}/onboarding`)
+          supabaseResponse.cookies.getAll().forEach((c) => res.cookies.set(c.name, c.value))
+          return res
+        }
+      }
+
+      const res = NextResponse.redirect(`${origin}${next}`)
+      supabaseResponse.cookies.getAll().forEach((c) => res.cookies.set(c.name, c.value))
+      return res
     }
   }
 
