@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@fontsource/space-grotesk/400.css";
-@import "@fontsource/space-grotesk/500.css";
-@import "@fontsource/space-grotesk/600.css";
-@import "@fontsource/space-grotesk/700.css";
-
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,22 +34,11 @@ body {
   }
 }
 
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #2A2A2A;
-  border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #444444;
-}
+/* ── Dashboard scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #444444; }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -75,3 +58,167 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
   border: none;
 }
+
+/* ═══════════════════════════════════════
+   MARKETING — classes compartilhadas
+═══════════════════════════════════════ */
+
+/* Ticker (tape role) */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 40s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+/* Soft pulse dot */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+/* Scan line overlay */
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+.scan-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,0,0,0.04) 3px,
+    rgba(0,0,0,0.04) 4px
+  );
+  pointer-events: none;
+}
+
+/* Matrix grids */
+.matrix-grid {
+  background-image:
+    linear-gradient(rgba(14,17,23,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,17,23,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.dark .matrix-grid {
+  background-image:
+    linear-gradient(rgba(244,241,234,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,241,234,0.04) 1px, transparent 1px);
+}
+.matrix-grid-dark {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.matrix-grid-lime {
+  background-image:
+    linear-gradient(rgba(200,255,61,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,255,61,0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* CTA neobrutalism shadow effects */
+.cta-primary {
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 6px 6px 0 #0E1117;
+}
+.cta-primary:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 #0E1117; }
+.cta-primary:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #0E1117; }
+.dark .cta-primary { box-shadow: 6px 6px 0 #C8FF3D; }
+.dark .cta-primary:hover { box-shadow: 8px 8px 0 #C8FF3D; }
+
+.cta-secondary {
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+}
+.cta-secondary:hover {
+  background: #0E1117; color: #C8FF3D; border-color: #0E1117;
+  transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #C8FF3D;
+}
+.dark .cta-secondary:hover {
+  background: #C8FF3D; color: #0E1117; border-color: #C8FF3D;
+  box-shadow: 6px 6px 0 #F4F1EA;
+}
+
+.cta-ghost { transition: all .2s ease; }
+.cta-ghost:hover { background: #0E1117; color: #C8FF3D; }
+.dark .cta-ghost:hover { background: #C8FF3D; color: #0E1117; border-color: #C8FF3D; }
+
+/* Area cards */
+.area-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 0 0 #0E1117;
+}
+.area-card:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0 #0E1117; }
+.dark .area-card:hover { box-shadow: 10px 10px 0 #C8FF3D; }
+
+/* Feature tiles */
+.feature-tile {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.feature-tile:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 #0E1117; }
+.dark .feature-tile:hover { box-shadow: 8px 8px 0 #C8FF3D; }
+
+/* Label tag */
+.label-tag {
+  @apply inline-flex items-center gap-1.5 text-xs font-mono font-medium tracking-wider uppercase
+         px-2.5 py-1 rounded-md;
+}
+
+/* Highlight marks */
+.highlight-lime {
+  background: linear-gradient(120deg, #C8FF3D 0%, #C8FF3D 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0 85%;
+  padding: 0 2px;
+}
+.highlight-invert {
+  background: #0E1117;
+  color: #C8FF3D;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* FAQ toggle arrow */
+.faq-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.2s;
+}
+details[open] .faq-toggle {
+  transform: rotate(45deg);
+  background: #C8FF3D;
+  color: #0E1117;
+  border-color: #C8FF3D;
+}
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+details summary::-webkit-details-marker { display: none; }
+
+/* Stat numbers */
+.stat-num { font-variant-numeric: tabular-nums; }
+
+/* Mini bars (hero streak chart) */
+@keyframes mini-bar { from { height: 4px; } }
+.mini-bar { animation: mini-bar .8s ease-out forwards; }
+
+/* Grow bar */
+@keyframes grow-bar { from { width: 0; } }
+.grow-bar { animation: grow-bar 1.5s ease-out forwards; }
