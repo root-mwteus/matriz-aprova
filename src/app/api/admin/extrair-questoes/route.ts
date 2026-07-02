@@ -102,6 +102,22 @@ Auto-revisão de completude:
 
 Se a página atual não tiver nenhuma questão que comece nela, retorne "questoes": [].`
 
+// In-memory rate limit por instância serverless (MVP — trocar por Upstash Redis em produção)
+const _limites = new Map<string, { count: number; resetAt: number }>()
+const LIMITE_POR_HORA = 60
+
+function checarLimite(userId: string): boolean {
+  const agora = Date.now()
+  const entrada = _limites.get(userId)
+  if (!entrada || agora > entrada.resetAt) {
+    _limites.set(userId, { count: 1, resetAt: agora + 60 * 60 * 1000 })
+    return true
+  }
+  if (entrada.count >= LIMITE_POR_HORA) return false
+  entrada.count++
+  return true
+}
+
 function getSupabase() {
   const cookieStore = cookies()
   return createServerClient(
@@ -142,6 +158,10 @@ export async function POST(request: Request) {
       .from("profiles").select("role").eq("id", user.id).single()
     if (profile?.role !== "admin") {
       return NextResponse.json({ error: "Acesso restrito a administradores" }, { status: 403 })
+    }
+
+    if (!checarLimite(user.id)) {
+      return NextResponse.json({ error: "Limite de 60 páginas por hora atingido." }, { status: 429 })
     }
 
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })

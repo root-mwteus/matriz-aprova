@@ -83,6 +83,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
     }
 
+    const janela24h = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
+    const { count } = await supabase
+      .from("study_plans")
+      .select("*", { count: "exact", head: true })
+      .eq("user_id", user.id)
+      .gte("created_at", janela24h)
+
+    if (count !== null && count >= 5) {
+      return NextResponse.json({ error: "Limite diário atingido. Você pode gerar até 5 planos por dia." }, { status: 429 })
+    }
+
     const { error: insertError } = await supabase.from("study_plans").insert({
       user_id: user.id,
       semana_inicio: new Date().toISOString().split("T")[0],
