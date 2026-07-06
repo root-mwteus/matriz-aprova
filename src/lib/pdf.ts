@@ -22,28 +22,43 @@ let workerConfigured = false
 async function getPdfjs() {
   const pdfjs = await import("pdfjs-dist")
   if (!workerConfigured) {
-    pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
+    pdfjs.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/6.1.200/pdf.worker.min.mjs"
     workerConfigured = true
   }
   return pdfjs
 }
 
+/** Conta as páginas do PDF sem renderizá-las (rápido — usado para estimativas). */
+export async function countPdfPages(file: File): Promise<number> {
+  const pdfjs = await getPdfjs()
+  const data = await file.arrayBuffer()
+  const pdf = await pdfjs.getDocument({ data }).promise
+  const count = pdf.numPages
+  void pdf.cleanup()
+  return count
+}
+
 /**
- * Renderiza todas as páginas do PDF em imagens.
+ * Renderiza páginas do PDF em imagens.
+ * `startPage`/`endPage` são 1-based e inclusivos (padrão: todas as páginas).
  * `onPage` é chamado a cada página pronta (para progresso incremental).
  */
 export async function renderPdfToPages(
   file: File,
   scale = 2,
-  onPage?: (page: PageImage, total: number) => void
+  onPage?: (page: PageImage, total: number) => void,
+  startPage = 1,
+  endPage?: number,
 ): Promise<PageImage[]> {
   const pdfjs = await getPdfjs()
   const data = await file.arrayBuffer()
   const pdf = await pdfjs.getDocument({ data }).promise
-  const total = pdf.numPages
+  const lastPage = Math.min(endPage ?? pdf.numPages, pdf.numPages)
+  const first = Math.max(1, startPage)
+  const total = Math.max(0, lastPage - first + 1)
   const pages: PageImage[] = []
 
-  for (let i = 1; i <= total; i++) {
+  for (let i = first; i <= lastPage; i++) {
     const page = await pdf.getPage(i)
     const viewport = page.getViewport({ scale })
     const canvas = document.createElement("canvas")

@@ -26,20 +26,22 @@ export default function AdminQuestoesPage() {
   const [page, setPage] = useState(1)
   const [busca, setBusca] = useState("")
   const [materia, setMateria] = useState("")
+  const [banca, setBanca] = useState("")
   const [questoes, setQuestoes] = useState<QuestaoRow[]>([])
   const [materias, setMaterias] = useState<string[]>([])
+  const [bancas, setBancas] = useState<string[]>([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
   const [excluindo, setExcluindo] = useState<QuestaoRow | null>(null)
 
   useEffect(() => {
     const supabase = createClient()
-    supabase
-      .from("questions")
-      .select("materia")
-      .then(({ data }) => {
-        if (data) setMaterias(Array.from(new Set(data.map((d) => d.materia))).sort())
-      })
+    supabase.from("questions").select("materia").then(({ data }) => {
+      if (data) setMaterias(Array.from(new Set(data.map((d) => d.materia))).filter(Boolean).sort())
+    })
+    supabase.from("questions").select("banca").then(({ data }) => {
+      if (data) setBancas(Array.from(new Set(data.map((d) => d.banca))).filter(Boolean).sort() as string[])
+    })
   }, [])
 
   useEffect(() => {
@@ -53,6 +55,7 @@ export default function AdminQuestoesPage() {
 
       if (safe) query = query.ilike("enunciado", `%${safe}%`)
       if (materia) query = query.eq("materia", materia)
+      if (banca) query = query.eq("banca", banca)
 
       const from = (page - 1) * PAGE_SIZE
       const to = from + PAGE_SIZE - 1
@@ -105,7 +108,7 @@ export default function AdminQuestoesPage() {
       active = false
       clearTimeout(timeout)
     }
-  }, [busca, materia, page])
+  }, [busca, materia, banca, page])
 
   async function confirmarExclusao() {
     if (!excluindo) return
@@ -158,15 +161,22 @@ export default function AdminQuestoesPage() {
         />
         <select
           value={materia}
-          onChange={(e) => {
-            setMateria(e.target.value)
-            setPage(1)
-          }}
+          onChange={(e) => { setMateria(e.target.value); setPage(1) }}
           className="bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
         >
           <option value="">Todas matérias</option>
           {materias.map((m) => (
             <option key={m} value={m}>{m}</option>
+          ))}
+        </select>
+        <select
+          value={banca}
+          onChange={(e) => { setBanca(e.target.value); setPage(1) }}
+          className="bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
+        >
+          <option value="">Todas bancas</option>
+          {bancas.map((b) => (
+            <option key={b} value={b}>{b}</option>
           ))}
         </select>
       </div>
