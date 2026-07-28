@@ -1,20 +1,7 @@
 "use client"
 
-import * as Sentry from "@sentry/nextjs"
-import { useEffect } from "react"
 import "./globals.css"
 
-/**
- * Último recurso: erro que derrubou o layout raiz.
- *
- * A versão anterior renderizava a página de erro padrão do Next, em
- * inglês e sem identidade — a única tela do produto que não parecia do
- * produto, justamente no pior momento para isso.
- *
- * Este arquivo não pode depender de nada que possa ter falhado, então
- * não importa componentes da aplicação: só HTML, os tokens do CSS e o
- * botão de recarregar.
- */
 export default function GlobalError({
   error,
   reset,
@@ -22,9 +9,6 @@ export default function GlobalError({
   error: Error & { digest?: string }
   reset: () => void
 }) {
-  useEffect(() => {
-    Sentry.captureException(error)
-  }, [error])
 
   return (
     <html lang="pt-BR" className="dark">
