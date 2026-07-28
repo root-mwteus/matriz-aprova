@@ -118,7 +118,7 @@ export default function EditarMaterialPage() {
     return (
       <div className="space-y-8">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold tracking-title uppercase">Editar Material</h1>
+          <h1 className="text-xl font-semibold text-fg">Editar Material</h1>
           <Link href="/admin/materiais" className="text-sm text-muted hover:text-foreground transition-colors">← VOLTAR</Link>
         </div>
         <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-card-border rounded-card">
@@ -133,7 +133,7 @@ export default function EditarMaterialPage() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-2xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Editar Material</h1>
+          <h1 className="text-xl font-semibold text-fg">Editar Material</h1>
         </div>
         <Link href="/admin/materiais" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
@@ -150,7 +150,7 @@ export default function EditarMaterialPage() {
             <input
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
-              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+              className="field h-10"
               placeholder="Título do material"
             />
           </div>
@@ -161,7 +161,7 @@ export default function EditarMaterialPage() {
               <select
                 value={materia}
                 onChange={(e) => setMateria(e.target.value)}
-                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                className="field h-10"
               >
                 <option value="">Selecione</option>
                 {materias.map((m) => <option key={m} value={m}>{m}</option>)}
@@ -172,7 +172,7 @@ export default function EditarMaterialPage() {
               <input
                 value={subMateria}
                 onChange={(e) => setSubMateria(e.target.value)}
-                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                className="field h-10"
                 placeholder="Ex: Princípios"
               />
             </div>
@@ -184,7 +184,7 @@ export default function EditarMaterialPage() {
               <select
                 value={banca}
                 onChange={(e) => setBanca(e.target.value)}
-                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                className="field h-10"
               >
                 <option value="">Selecione</option>
                 {bancas.map((b) => <option key={b} value={b}>{b}</option>)}
@@ -195,7 +195,7 @@ export default function EditarMaterialPage() {
               <input
                 value={professor}
                 onChange={(e) => setProfessor(e.target.value)}
-                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                className="field h-10"
                 placeholder="Nome do professor"
               />
             </div>
@@ -232,7 +232,7 @@ export default function EditarMaterialPage() {
           disabled={saving}
           className="w-full bg-accent/20 text-accent border border-accent/40 text-sm font-semibold py-3 rounded-lg hover:bg-accent/30 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
         >
-          {saving ? "SALVANDO..." : "SALVAR ALTERAÇÕES →"}
+          {saving ? "Salvando…" : "SALVAR ALTERAÇÕES →"}
         </button>
       </div>
     </motion.div>

@@ -1,11 +1,40 @@
 "use client"
 
-import { useEffect, useState, useCallback } from "react"
-import { useRouter } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { useCallback, useEffect, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { toast } from "sonner"
+import { CalendarDays, Check, Sparkles } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { cn } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
-import { Check } from "lucide-react"
+import {
+  Badge,
+  Button,
+  Checkbox,
+  Field,
+  Input,
+  Panel,
+  PanelHeader,
+  Progress,
+  Skeleton,
+} from "@/components/ui"
+
+/**
+ * Plano de estudos.
+ *
+ * O bug que motivou a reescrita: a tabela `study_plans` guarda apenas
+ * `tarefas`. Concurso, semanas restantes e horas por dia existiam só na
+ * memória de quem acabara de gerar o plano — quem voltava no dia seguinte
+ * via "undefined semanas restantes" no cabeçalho.
+ *
+ * A tela agora deriva tudo do que está salvo (dias e tarefas) e só mostra
+ * os metadados quando eles existem de fato, na sessão da geração. O que
+ * ela ganhou em troca é uma informação melhor: horas planejadas e horas
+ * concluídas, que saem das próprias tarefas.
+ *
+ * A barra falsa de progresso durante a geração também saiu: enchia até
+ * 85% num timer e travava lá, o que faz a espera parecer defeito.
+ */
 
 interface Tarefa {
   materia: string
@@ -22,53 +51,50 @@ interface DiaPlano {
 }
 
 interface Plano {
-  concurso: string
-  dataProva: string
-  horasPorDia: number
-  semanasRestantes: number
-  diasRestantes: number
   dias: DiaPlano[]
-  geradoEm: string
+  /** Só presente na sessão em que o plano foi gerado. */
+  concurso?: string
+  semanasRestantes?: number
 }
 
-const DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 const DIAS_ABREV: Record<string, string> = {
-  Segunda: "S", Terça: "T", Quarta: "Q", Quinta: "Q", Sexta: "S", Sábado: "S", Domingo: "D",
+  Segunda: "Seg",
+  Terça: "Ter",
+  Quarta: "Qua",
+  Quinta: "Qui",
+  Sexta: "Sex",
+  Sábado: "Sáb",
+  Domingo: "Dom",
 }
 
-const sugestoesConcursos = [
-  "Polícia Federal", "TRT", "INSS", "OAB", "PGM", "TCE",
-]
+const SUGESTOES = ["Polícia Federal", "TRT", "INSS", "OAB", "PGM", "TCE"]
 
-function calcularDiasRestantes(dataProva: string): number {
-  if (!dataProva) return 0
+function diasAte(data: string): number {
+  if (!data) return 0
+  const prova = new Date(data + "T00:00:00")
   const hoje = new Date()
-  const prova = new Date(dataProva)
-  const diff = prova.getTime() - hoje.getTime()
-  return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)))
+  hoje.setHours(0, 0, 0, 0)
+  return Math.max(0, Math.ceil((prova.getTime() - hoje.getTime()) / 86_400_000))
 }
 
 export default function PlanoPage() {
   const supabase = createClient()
-  const router = useRouter()
   const [plano, setPlano] = useState<Plano | null>(null)
   const [loading, setLoading] = useState(true)
-  const [erro, setErro] = useState("")
   const [step, setStep] = useState(0)
   const [concurso, setConcurso] = useState("")
   const [dataProva, setDataProva] = useState("")
   const [semData, setSemData] = useState(false)
   const [horas, setHoras] = useState(4)
   const [gerando, setGerando] = useState(false)
-  const [progressoGeracao, setProgressoGeracao] = useState(0)
   const [diaAtivo, setDiaAtivo] = useState(0)
-
-  const diasRestantes = calcularDiasRestantes(dataProva)
 
   useEffect(() => {
     async function load() {
       try {
-        const { data: { user } } = await supabase.auth.getUser()
+        const {
+          data: { user },
+        } = await supabase.auth.getUser()
         if (!user) return
 
         const hoje = new Date().toISOString().split("T")[0]
@@ -81,11 +107,10 @@ export default function PlanoPage() {
           .limit(1)
           .single()
 
-        if (data) {
-          setPlano({ dias: data.tarefas as unknown as DiaPlano[] } as Plano)
-        }
+        if (data?.tarefas) setPlano({ dias: data.tarefas as unknown as DiaPlano[] })
       } catch {
-        setErro("Não foi possível carregar o plano")
+        // Ausência de plano não é erro — é o estado inicial de quem
+        // ainda não gerou nenhum.
       } finally {
         setLoading(false)
       }
@@ -95,45 +120,54 @@ export default function PlanoPage() {
 
   const handleGerar = useCallback(async () => {
     setGerando(true)
-    setProgressoGeracao(0)
 
-    const timer = setInterval(() => {
-      setProgressoGeracao((prev) => Math.min(prev + 2, 85))
-    }, 60)
+    const base = new Date()
+    const dataFim =
+      dataProva || new Date(base.setDate(base.getDate() + 180)).toISOString().split("T")[0]
 
-    const today = new Date()
-    const dataFim = dataProva || new Date(today.setDate(today.getDate() + 180)).toISOString().split("T")[0]
+    try {
+      const res = await fetch("/api/gerar-plano", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ concurso, dataProva: dataFim, horasPorDia: horas }),
+      })
 
-    const body = { concurso, dataProva: dataFim, horasPorDia: horas }
-
-    const res = await fetch("/api/gerar-plano", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    })
-
-    clearInterval(timer)
-    setProgressoGeracao(100)
-
-    setTimeout(async () => {
-      if (res.ok) {
-        const data = await res.json()
-        setPlano(data)
+      if (!res.ok) {
+        const erro = await res.json().catch(() => ({}))
+        toast.error(erro.error || "Não foi possível gerar o plano. Tente novamente.")
+        return
       }
+
+      setPlano(await res.json())
+      setDiaAtivo(0)
+    } catch {
+      toast.error("Falha de conexão ao gerar o plano.")
+    } finally {
       setGerando(false)
-    }, 500)
+    }
   }, [concurso, dataProva, horas])
 
-  const toggleTarefa = useCallback(async (diaIdx: number, tarefaIdx: number) => {
-    if (!plano) return
-    const novosDias = [...plano.dias]
-    const tarefas = [...novosDias[diaIdx].tarefas]
-    tarefas[tarefaIdx] = { ...tarefas[tarefaIdx], concluido: !tarefas[tarefaIdx].concluido }
-    novosDias[diaIdx] = { ...novosDias[diaIdx], tarefas }
-    setPlano({ ...plano, dias: novosDias })
+  const toggleTarefa = useCallback(
+    async (diaIdx: number, tarefaIdx: number) => {
+      if (!plano) return
 
-    const { data: { user } } = await supabase.auth.getUser()
-    if (user) {
+      const novosDias = plano.dias.map((d, i) =>
+        i !== diaIdx
+          ? d
+          : {
+              ...d,
+              tarefas: d.tarefas.map((t, j) =>
+                j !== tarefaIdx ? t : { ...t, concluido: !t.concluido }
+              ),
+            }
+      )
+      setPlano({ ...plano, dias: novosDias })
+
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
+      if (!user) return
+
       const { data: existing } = await supabase
         .from("study_plans")
         .select("id")
@@ -143,432 +177,377 @@ export default function PlanoPage() {
         .single()
 
       if (existing) {
-        await supabase
+        const { error } = await supabase
           .from("study_plans")
           .update({ tarefas: novosDias })
           .eq("id", existing.id)
+        // Antes a falha era silenciosa: a marcação sumia no recarregamento
+        // sem que ninguém soubesse por quê.
+        if (error) toast.error("Não foi possível salvar essa marcação.")
       }
-    }
-  }, [plano, supabase])
-
-  async function handleReplanejar() {
-    setPlano(null)
-    setStep(0)
-  }
-
-  if (erro) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <p className="text-destructive text-sm">{erro}</p>
-      </div>
-    )
-  }
+    },
+    [plano, supabase]
+  )
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-muted text-sm animate-pulse">Carregando plano...</div>
+      <div className="space-y-5">
+        <Skeleton className="h-7 w-56" />
+        <Skeleton className="h-24 w-full rounded-lg" />
+        <Skeleton className="h-64 w-full rounded-lg" />
       </div>
     )
   }
 
-  // ── ONBOARDING / WIZARD (2 colunas) ──
+  /* ══ Assistente de criação ══════════════════════════════ */
   if (!plano) {
+    const podeAvancar = [concurso.trim().length > 0, Boolean(dataProva) || semData, true][step]
+    const restantes = diasAte(dataProva)
+
     return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="flex flex-col lg:flex-row gap-8"
-      >
-        {/* COLUNA ESQUERDA — WIZARD */}
-        <div className="flex-1 lg:max-w-[60%] space-y-6">
-          <PageHeader
-            badge="PLANO"
-            title="Monte seu cronograma"
-            subtitle="Responda 3 perguntas e a IA cria seu plano personalizado"
-          />
+      <div className="animate-rise space-y-6">
+        <PageHeader
+          title="Monte seu cronograma"
+          subtitle="Três respostas e a IA organiza suas semanas até a prova."
+        />
 
-          {/* PROGRESSO DO WIZARD */}
-          <div className="space-y-2">
-            <div className="flex gap-0">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="flex-1">
-                  <div
-                    className={`h-[3px] transition-colors ${
-                      i <= step ? "bg-accent" : "bg-card-border"
-                    }`}
+        <div className="grid gap-5 lg:grid-cols-3">
+          <div className="space-y-4 lg:col-span-2">
+            {/* Passos: rótulo legível em vez de "01 Concurso". */}
+            <ol className="flex items-center gap-2">
+              {["Concurso", "Data", "Rotina"].map((label, i) => (
+                <li key={label} className="flex flex-1 flex-col gap-1.5">
+                  <span
+                    className={cn(
+                      "h-0.5 rounded-full transition-colors duration-DEFAULT",
+                      i <= step ? "bg-accent" : "bg-surface-sunken"
+                    )}
                   />
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-between">
-              {["01 Concurso", "02 Data", "03 Horas"].map((label, i) => (
-                <span
-                  key={i}
-                  className={`text-[10px] uppercase tracking-wider ${
-                    i === step ? "text-accent font-semibold" : "text-muted"
-                  }`}
-                >
-                  {label}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* WIZARD STEPS */}
-          <div className="bg-card border border-card-border rounded-card p-5">
-            <AnimatePresence mode="wait">
-              {step === 0 && (
-                <motion.div
-                  key="step0"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="space-y-4"
-                >
-                  <label className="text-xs text-muted uppercase tracking-wider">
-                    CONCURSO ALVO
-                  </label>
-                  <input
-                    type="text"
-                    value={concurso}
-                    onChange={(e) => setConcurso(e.target.value)}
-                    className="w-full bg-background border border-card-border rounded-card px-4 py-3.5 text-[15px] text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
-                    placeholder="Ex: Polícia Federal, TRT-SP, OAB..."
-                  />
-                  <div className="flex flex-wrap gap-2">
-                    {sugestoesConcursos.map((s) => (
-                      <button
-                        key={s}
-                        onClick={() => setConcurso(s)}
-                        className={`px-3.5 py-1.5 rounded-full border text-xs transition-all ${
-                          concurso === s
-                            ? "border-accent bg-badge-bg text-accent"
-                            : "border-card-border text-muted hover:border-accent"
-                        }`}
-                      >
-                        {s}
-                      </button>
-                    ))}
-                  </div>
-                  <button
-                    onClick={() => setStep(1)}
-                    disabled={!concurso.trim()}
-                    className="w-full bg-accent text-accent-foreground font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-30"
+                  <span
+                    className={cn(
+                      "text-xs",
+                      i === step ? "font-medium text-fg" : "text-fg-faint"
+                    )}
                   >
-                    CONTINUAR →
-                  </button>
-                </motion.div>
-              )}
+                    {label}
+                  </span>
+                </li>
+              ))}
+            </ol>
 
-              {step === 1 && (
+            <Panel>
+              <AnimatePresence mode="wait">
                 <motion.div
-                  key="step1"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
+                  key={step}
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.14 }}
                   className="space-y-4"
                 >
-                  <label className="text-xs text-muted uppercase tracking-wider">
-                    DATA DA PROVA
-                  </label>
-                  <input
-                    type="date"
-                    value={dataProva}
-                    onChange={(e) => {
-                      setDataProva(e.target.value)
-                      setSemData(false)
-                    }}
-                    disabled={semData}
-                    className="w-full bg-background border border-card-border rounded-card px-4 py-3.5 text-[15px] text-foreground focus:outline-none focus:border-accent transition-colors [color-scheme:dark] disabled:opacity-30"
-                  />
-                  {dataProva && !semData && (
-                    <p className="text-sm font-bold text-accent">
-                      Faltam {diasRestantes} dias
-                    </p>
+                  {step === 0 && (
+                    <>
+                      <Field
+                        label="Qual concurso você vai prestar?"
+                        hint="Quanto mais específico, melhor a priorização das matérias."
+                      >
+                        {(props) => (
+                          <Input
+                            {...props}
+                            autoFocus
+                            className="h-10"
+                            placeholder="Ex.: Polícia Federal, TRT-SP, OAB…"
+                            value={concurso}
+                            onChange={(e) => setConcurso(e.target.value)}
+                          />
+                        )}
+                      </Field>
+
+                      <div className="flex flex-wrap gap-1.5">
+                        {SUGESTOES.map((s) => (
+                          <button
+                            key={s}
+                            onClick={() => setConcurso(s)}
+                            className={cn(
+                              "rounded-full border px-2.5 py-1 text-xs",
+                              "transition-colors duration-fast",
+                              concurso === s
+                                ? "border-line-accent bg-accent-soft text-fg"
+                                : "border-line-strong text-fg-muted hover:bg-surface-hover hover:text-fg"
+                            )}
+                          >
+                            {s}
+                          </button>
+                        ))}
+                      </div>
+                    </>
                   )}
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={semData}
-                      onChange={(e) => setSemData(e.target.checked)}
-                      className="w-4 h-4 accent-[#CBFF4D]"
-                    />
-                    <span className="text-xs text-muted">Ainda não sei a data</span>
-                  </label>
-                  <div className="flex gap-3 pt-2">
-                    <button
-                      onClick={() => setStep(0)}
-                      className="flex-1 bg-transparent border border-card-border text-[#888888] font-semibold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-foreground transition-all"
-                    >
-                      ← VOLTAR
-                    </button>
-                    <button
-                      onClick={() => setStep(2)}
-                      disabled={!dataProva && !semData}
-                      className="flex-1 bg-accent text-accent-foreground font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-30"
-                    >
-                      CONTINUAR →
-                    </button>
-                  </div>
-                </motion.div>
-              )}
 
-              {step === 2 && (
-                <motion.div
-                  key="step2"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="space-y-6"
+                  {step === 1 && (
+                    <>
+                      <Field
+                        label="Quando é a prova?"
+                        hint={
+                          dataProva && !semData
+                            ? `Faltam ${restantes} dias.`
+                            : "Sem data, o plano é montado para seis meses."
+                        }
+                      >
+                        {(props) => (
+                          <Input
+                            {...props}
+                            type="date"
+                            min={new Date().toISOString().split("T")[0]}
+                            className="h-10 [color-scheme:dark]"
+                            disabled={semData}
+                            value={dataProva}
+                            onChange={(e) => {
+                              setDataProva(e.target.value)
+                              setSemData(false)
+                            }}
+                          />
+                        )}
+                      </Field>
+
+                      <label className="flex cursor-pointer items-center gap-2 text-sm text-fg-muted">
+                        <Checkbox
+                          checked={semData}
+                          onChange={(e) => {
+                            setSemData(e.target.checked)
+                            if (e.target.checked) setDataProva("")
+                          }}
+                        />
+                        Ainda não sei a data
+                      </label>
+                    </>
+                  )}
+
+                  {step === 2 && (
+                    <>
+                      <div>
+                        <label
+                          htmlFor="horas"
+                          className="flex items-baseline justify-between text-sm font-medium text-fg"
+                        >
+                          Horas de estudo por dia
+                          <span className="text-lg font-semibold tabular-nums text-fg">
+                            {horas}h
+                          </span>
+                        </label>
+
+                        <input
+                          id="horas"
+                          type="range"
+                          min={1}
+                          max={8}
+                          step={0.5}
+                          value={horas}
+                          onChange={(e) => setHoras(parseFloat(e.target.value))}
+                          className="mt-3 h-1.5 w-full cursor-pointer appearance-none rounded-full bg-surface-sunken accent-[var(--accent)]"
+                          style={{
+                            background: `linear-gradient(to right, var(--accent) ${((horas - 1) / 7) * 100}%, var(--surface-sunken) ${((horas - 1) / 7) * 100}%)`,
+                          }}
+                        />
+                        <div className="mt-1.5 flex justify-between text-xs text-fg-faint">
+                          <span>1h</span>
+                          <span>8h</span>
+                        </div>
+                      </div>
+
+                      <p className="rounded-md bg-surface-sunken px-3 py-2 text-sm text-fg-muted">
+                        Nesse ritmo, cerca de{" "}
+                        <strong className="font-medium text-fg">
+                          {Math.max(4, Math.round(180 / horas))} semanas
+                        </strong>{" "}
+                        para cobrir o edital.
+                      </p>
+                    </>
+                  )}
+                </motion.div>
+              </AnimatePresence>
+
+              <div className="mt-5 flex items-center justify-between gap-3 border-t border-line pt-4">
+                <Button
+                  variant="ghost"
+                  disabled={step === 0 || gerando}
+                  onClick={() => setStep(step - 1)}
                 >
-                  <label className="text-xs text-muted uppercase tracking-wider">
-                    HORAS DISPONÍVEIS POR DIA
-                  </label>
+                  Voltar
+                </Button>
 
-                  <div className="text-center">
-                    <span className="text-[32px] font-[800] text-accent">{horas}h</span>
-                    <span className="text-sm text-muted ml-2">/ dia</span>
-                  </div>
+                {step < 2 ? (
+                  <Button variant="accent" disabled={!podeAvancar} onClick={() => setStep(step + 1)}>
+                    Continuar
+                  </Button>
+                ) : (
+                  <Button variant="accent" loading={gerando} onClick={handleGerar}>
+                    <Sparkles size={14} strokeWidth={2} />
+                    Gerar meu plano
+                  </Button>
+                )}
+              </div>
+            </Panel>
 
-                  <div className="relative">
-                    <div className="w-full h-1.5 bg-card-border rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-accent rounded-full transition-all"
-                        style={{ width: `${((horas - 1) / 7) * 100}%` }}
-                      />
-                    </div>
-                    <input
-                      type="range"
-                      min={1}
-                      max={8}
-                      step={0.5}
-                      value={horas}
-                      onChange={(e) => setHoras(parseFloat(e.target.value))}
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                    />
-                    <div
-                      className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-accent rounded-full pointer-events-none transition-all"
-                      style={{
-                        left: `calc(${((horas - 1) / 7) * 100}% - 10px)`,
-                      }}
-                    />
-                  </div>
-
-                  <div className="flex justify-between text-[11px] text-muted">
-                    <span>1h</span>
-                    <span>8h</span>
-                  </div>
-
-                  <p className="text-sm text-muted text-center">
-                    Estimativa: <span className="font-semibold text-foreground">~{Math.max(4, Math.round(180 / horas))} semanas</span> de estudo
-                  </p>
-
-                  <div className="flex gap-3 pt-2">
-                    <button
-                      onClick={() => setStep(1)}
-                      className="flex-1 bg-transparent border border-card-border text-[#888888] font-semibold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:border-[#3A3A3A] hover:text-foreground transition-all"
-                    >
-                      ← VOLTAR
-                    </button>
-                    <button
-                      onClick={handleGerar}
-                      disabled={gerando}
-                      className="flex-1 bg-accent text-accent-foreground font-bold py-3.5 rounded-card text-[13px] uppercase tracking-[0.08em] hover:opacity-88 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
-                    >
-                      {gerando ? (
-                        "GERANDO..."
-                      ) : (
-                        <>
-                          ⚡ GERAR MEU PLANO →
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {gerando && (
+              <p className="text-center text-sm text-fg-subtle">
+                Analisando o edital e distribuindo as matérias. Leva alguns segundos.
+              </p>
+            )}
           </div>
 
-          {/* ESTADO DE GERAÇÃO */}
-          {gerando && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-card border border-card-border rounded-card p-5 space-y-4"
-            >
-              <div className="flex items-center justify-center gap-3">
-                <div className="w-5 h-5 border-2 border-accent border-t-transparent rounded-full animate-spin" />
-                <span className="text-sm text-muted">Analisando o edital e montando seu plano...</span>
-              </div>
-              <div className="w-full h-1.5 bg-card-border rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-accent rounded-full transition-all duration-200"
-                  style={{ width: `${progressoGeracao}%` }}
-                />
-              </div>
-            </motion.div>
-          )}
-        </div>
-
-        {/* COLUNA DIREITA — PREVIEW */}
-        <div className="lg:w-[35%] lg:min-w-[280px]">
-          <div className="bg-card border border-card-border rounded-card p-5 space-y-4 sticky top-8">
-            <span className="inline-block px-2 py-0.5 rounded-md bg-[#66666620] text-muted border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
-              O QUE VOCÊ VAI RECEBER
-            </span>
-
-            <div className="space-y-3">
+          {/* O painel lateral lista o que será entregue — sem a maquete
+              falsa de calendário, que prometia uma tela que não existe. */}
+          <Panel className="h-fit lg:sticky lg:top-24">
+            <h2 className="text-sm font-semibold text-fg">O que você recebe</h2>
+            <ul className="mt-3 space-y-2.5">
               {[
-                "Cronograma semanal por matéria",
-                "Priorização por incidência na banca",
-                "Materiais selecionados pela IA",
+                "Cronograma dia a dia por matéria",
+                "Priorização pela incidência na banca",
                 "Metas diárias ajustáveis",
-                "Replanejamento automático",
+                "Progresso salvo automaticamente",
               ].map((item) => (
-                <div key={item} className="flex items-start gap-2">
-                  <Check size={14} className="text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-[13px] text-muted">{item}</span>
-                </div>
+                <li key={item} className="flex items-start gap-2 text-sm text-fg-muted">
+                  <Check size={13} strokeWidth={2.5} className="mt-1 shrink-0 text-accent-ink" />
+                  {item}
+                </li>
               ))}
-            </div>
-
-            <div className="border-t border-card-border pt-4">
-              <div className="bg-background border border-card-border rounded-card p-4 space-y-2 relative overflow-hidden">
-                <div className="flex gap-2">
-                  {["S", "T", "Q", "Q", "S", "S", "D"].map((d) => (
-                    <div key={d} className="flex-1 h-16 rounded-md bg-accent/10 border border-card-border" />
-                  ))}
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[11px] text-muted font-semibold uppercase tracking-wider">
-                    SEU PLANO APARECERÁ AQUI
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+            </ul>
+          </Panel>
         </div>
-      </motion.div>
+      </div>
     )
   }
 
-  // ── VISUALIZAÇÃO DO PLANO ──
+  /* ══ Plano gerado ═══════════════════════════════════════ */
   const dia = plano.dias[diaAtivo]
   const totalTarefas = plano.dias.reduce((acc, d) => acc + d.tarefas.length, 0)
-  const concluidas = plano.dias.reduce((acc, d) => acc + d.tarefas.filter((t) => t.concluido).length, 0)
+  const concluidas = plano.dias.reduce(
+    (acc, d) => acc + d.tarefas.filter((t) => t.concluido).length,
+    0
+  )
   const progresso = totalTarefas > 0 ? Math.round((concluidas / totalTarefas) * 100) : 0
 
+  // Derivado das tarefas — não depende de metadados que não são salvos.
+  const horasPlanejadas = plano.dias.reduce(
+    (acc, d) => acc + d.tarefas.reduce((s, t) => s + (t.horas || 0), 0),
+    0
+  )
+  const horasFeitas = plano.dias.reduce(
+    (acc, d) => acc + d.tarefas.filter((t) => t.concluido).reduce((s, t) => s + (t.horas || 0), 0),
+    0
+  )
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="space-y-6"
-    >
-      {/* HEADER */}
-      <div className="flex items-start justify-between">
-        <div>
-          <span className="inline-block px-2 py-0.5 rounded-md bg-[#66666620] text-muted border border-[#66666640] text-[10px] font-semibold uppercase font-mono tracking-wider">
-            PLANO
+    <div className="animate-rise space-y-5">
+      <PageHeader
+        title="Seu cronograma"
+        subtitle={plano.concurso ? `Preparação para ${plano.concurso}` : "Semana atual"}
+        actions={
+          <Button variant="secondary" onClick={() => setPlano(null)}>
+            Refazer plano
+          </Button>
+        }
+      />
+
+      <Panel>
+        <div className="flex items-baseline justify-between gap-3">
+          <h2 className="text-sm font-semibold text-fg">Progresso da semana</h2>
+          <span className="text-sm font-medium tabular-nums text-fg">{progresso}%</span>
+        </div>
+
+        <Progress
+          value={progresso}
+          className="mt-3"
+          tone={progresso >= 70 ? "positive" : "accent"}
+          label={`${concluidas} de ${totalTarefas} tarefas concluídas`}
+        />
+
+        <div className="mt-2.5 flex items-center justify-between text-xs tabular-nums text-fg-subtle">
+          <span>
+            {concluidas} de {totalTarefas} tarefas
           </span>
-          <h1 className="text-[28px] font-[800] text-foreground leading-tight mt-1.5">
-            Seu cronograma personalizado
-          </h1>
-          <p className="text-[14px] text-muted mt-1">{plano.concurso}</p>
+          <span>
+            {horasFeitas}h de {horasPlanejadas}h planejadas
+          </span>
         </div>
-        <button
-          onClick={handleReplanejar}
-          className="text-xs text-muted hover:text-accent transition-colors mt-1"
-        >
-          REPLANEJAR
-        </button>
-      </div>
+      </Panel>
 
-      {/* PROGRESSO */}
-      <div className="bg-card border border-card-border rounded-card p-5 space-y-3">
-        <div className="flex items-center justify-between">
-          <span className="text-xs text-muted font-mono">Progresso da semana</span>
-          <span className="text-sm font-bold text-accent">{progresso}%</span>
-        </div>
-        <div className="w-full h-2 bg-card-border rounded-full overflow-hidden">
-          <div
-            className="h-full bg-accent rounded-full transition-all duration-500"
-            style={{ width: `${progresso}%` }}
-          />
-        </div>
-        <div className="flex items-center justify-between text-[11px] text-muted">
-          <span>{concluidas} de {totalTarefas} tarefas</span>
-          <span>{plano.semanasRestantes} semanas restantes</span>
-        </div>
-      </div>
-
-      {/* DIAS DA SEMANA */}
-      <div className="flex items-center gap-1.5">
+      {/* Dias: rótulo de três letras em vez de uma — "S" servia para
+          segunda, sexta e sábado ao mesmo tempo. */}
+      <div className="flex gap-1.5 overflow-x-auto pb-1">
         {plano.dias.map((d, i) => {
-          const concluido = d.tarefas.length > 0 && d.tarefas.every((t) => t.concluido)
+          const completo = d.tarefas.length > 0 && d.tarefas.every((t) => t.concluido)
+          const ativo = diaAtivo === i
           return (
             <button
               key={d.dia}
               onClick={() => setDiaAtivo(i)}
-              className={`flex-1 flex flex-col items-center gap-1 py-2.5 rounded-card transition-all ${
-                diaAtivo === i
-                  ? "bg-accent text-accent-foreground font-bold"
-                  : concluido
-                  ? "bg-badge-bg text-accent"
-                  : "bg-card border border-card-border text-muted hover:text-foreground"
-              }`}
+              aria-current={ativo ? "true" : undefined}
+              className={cn(
+                "flex min-w-[62px] flex-1 flex-col items-center gap-1 rounded-lg border px-2 py-2",
+                "transition-colors duration-fast",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus)]",
+                ativo
+                  ? "border-transparent bg-accent text-fg-on-accent"
+                  : completo
+                    ? "border-line-accent bg-accent-soft text-accent-ink"
+                    : "border-line bg-surface text-fg-muted hover:bg-surface-hover hover:text-fg"
+              )}
             >
-              <span className="text-xs font-bold">{DIAS_ABREV[d.dia]}</span>
-              {concluido && <span className="text-[9px]">✓</span>}
+              <span className="text-xs font-medium">{DIAS_ABREV[d.dia] ?? d.dia}</span>
+              <span className="text-2xs tabular-nums opacity-80">
+                {completo ? "✓" : `${d.tarefas.length}`}
+              </span>
             </button>
           )
         })}
       </div>
 
-      {/* TAREFAS DO DIA */}
-      <div className="bg-card border border-card-border rounded-card overflow-hidden">
-        <div className="px-5 py-4 border-b border-card-border flex items-center justify-between">
-          <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
-            {dia.dia} · {dia.totalHoras}h
-          </h3>
-          <span className="text-[11px] text-muted">
-            {dia.tarefas.filter((t) => t.concluido).length}/{dia.tarefas.length}
-          </span>
-        </div>
+      <Panel flush>
+        <PanelHeader
+          title={dia.dia}
+          description={`${dia.totalHoras}h planejadas`}
+          actions={
+            <Badge size="sm" tone={dia.tarefas.every((t) => t.concluido) ? "positive" : "neutral"}>
+              {dia.tarefas.filter((t) => t.concluido).length}/{dia.tarefas.length}
+            </Badge>
+          }
+        />
 
-        <div className="divide-y divide-[#2A2A2A]/50">
-          {dia.tarefas.map((tarefa, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: i * 0.05 }}
-              className="flex items-start gap-3 px-5 py-3.5"
-            >
-              <button
-                onClick={() => toggleTarefa(diaAtivo, i)}
-                className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all ${
-                  tarefa.concluido
-                    ? "bg-accent border-accent"
-                    : "border-card-border hover:border-accent"
-                }`}
-              >
-                {tarefa.concluido && (
-                  <svg className="w-3 h-3 text-accent-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
-                )}
-              </button>
-              <div className="flex-1 min-w-0">
-                <p className={`text-sm ${tarefa.concluido ? "text-muted line-through" : "text-foreground"}`}>
-                  {tarefa.descricao}
-                </p>
-                <span className="text-[11px] text-muted">{tarefa.materia} · {tarefa.horas}h</span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
+        {dia.tarefas.length === 0 ? (
+          <div className="flex items-center justify-center gap-2 px-4 py-10 text-sm text-fg-subtle">
+            <CalendarDays size={14} strokeWidth={1.75} />
+            Dia livre — sem tarefas planejadas.
+          </div>
+        ) : (
+          <ul>
+            {dia.tarefas.map((tarefa, i) => (
+              <li key={i} className="border-b border-line last:border-0">
+                <label className="flex cursor-pointer items-start gap-3 px-4 py-3 transition-colors duration-fast hover:bg-surface-hover">
+                  <Checkbox
+                    className="mt-0.5"
+                    checked={tarefa.concluido}
+                    onChange={() => toggleTarefa(diaAtivo, i)}
+                  />
+                  <span className="min-w-0 flex-1">
+                    <span
+                      className={cn(
+                        "block text-sm",
+                        tarefa.concluido ? "text-fg-faint line-through" : "text-fg"
+                      )}
+                    >
+                      {tarefa.descricao}
+                    </span>
+                    <span className="mt-0.5 block text-xs text-fg-subtle">
+                      {tarefa.materia} · {tarefa.horas}h
+                    </span>
+                  </span>
+                </label>
+              </li>
+            ))}
+          </ul>
+        )}
+      </Panel>
+    </div>
   )
 }

@@ -1,5 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
+import { AUTH_ROUTES, PROTECTED_ROUTES } from "@/lib/routes"
 
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
@@ -27,19 +28,20 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  const isAuthRoute = request.nextUrl.pathname.startsWith("/login") ||
-    request.nextUrl.pathname.startsWith("/cadastro") ||
-    request.nextUrl.pathname.startsWith("/recuperar-senha")
+  const { pathname } = request.nextUrl
 
-  const isDashboardRoute = request.nextUrl.pathname.startsWith("/dashboard") ||
-    request.nextUrl.pathname.startsWith("/questoes") ||
-    request.nextUrl.pathname.startsWith("/simulados") ||
-    request.nextUrl.pathname.startsWith("/materiais") ||
-    request.nextUrl.pathname.startsWith("/editais") ||
-    request.nextUrl.pathname.startsWith("/plano") ||
-    request.nextUrl.pathname.startsWith("/estatisticas")
-
-  const isAdminRoute = request.nextUrl.pathname.startsWith("/admin")
+  /**
+   * Rotas protegidas.
+   *
+   * Estava escrito como uma cadeia de `startsWith` que precisava ser
+   * lembrada a cada página nova — /comunidade, /cronometro e /onboarding
+   * tinham ficado de fora e só eram barrados depois, pelo layout, já com
+   * o custo de uma renderização. A lista agora é uma constante única,
+   * usada também pelo robots.txt.
+   */
+  const isAuthRoute = AUTH_ROUTES.some((r) => pathname.startsWith(r))
+  const isDashboardRoute = PROTECTED_ROUTES.some((r) => pathname.startsWith(r))
+  const isAdminRoute = pathname.startsWith("/admin")
 
   if (!user && (isDashboardRoute || isAdminRoute)) {
     const url = request.nextUrl.clone()

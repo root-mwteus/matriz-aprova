@@ -1,11 +1,28 @@
 "use client"
 
-import { useEffect, useState, useRef, useCallback } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
+import { ChevronLeft, ChevronRight, Target } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { LatexText } from "@/components/LatexText"
 import type { Question, QuestaoFigura } from "@/types"
+import { cn } from "@/lib/utils"
+import { Badge, Button, EmptyState, Modal, Panel } from "@/components/ui"
+
+/**
+ * Simulado em andamento.
+ *
+ * O defeito principal era de contagem: o tempo restante era decrementado
+ * a cada tick de `setInterval`. O navegador estrangula timers em abas
+ * inativas, então trocar de aba **dava tempo extra** — inaceitável numa
+ * prova cronometrada. Agora o restante é derivado de `cache.inicio`, que
+ * já estava salvo, e o relógio de parede é a única fonte de verdade.
+ *
+ * O navegador de questões era uma fila de 50 quadradinhos de 20px numa
+ * linha só, que estourava a largura e não dizia o que cada estado
+ * significava. Virou grade com legenda.
+ */
 
 interface SimCache {
   questoes: Question[]
@@ -14,18 +31,22 @@ interface SimCache {
   inicio: number
 }
 
+const LETRAS = ["A", "B", "C", "D", "E"]
+
 export default function SimuladoPage() {
   const params = useParams()
   const router = useRouter()
   const supabase = createClient()
+
   const [cache, setCache] = useState<SimCache | null>(null)
   const [indice, setIndice] = useState(0)
   const [loading, setLoading] = useState(true)
-  const [tempoRestante, setTempoRestante] = useState(0)
+  const [agora, setAgora] = useState(() => Date.now())
   const [showModal, setShowModal] = useState(false)
   const [finalizando, setFinalizando] = useState(false)
-  const timerRef = useRef<number>(0)
+
   const finalizarRef = useRef<(auto: boolean) => Promise<void>>()
+  const jaFinalizou = useRef(false)
 
   useEffect(() => {
     const raw = localStorage.getItem(`sim_${params.id}`)
@@ -33,56 +54,54 @@ export default function SimuladoPage() {
       setLoading(false)
       return
     }
-    const data: SimCache = JSON.parse(raw)
-    setCache(data)
-    const elapsed = Math.floor((Date.now() - data.inicio) / 1000)
-    const remaining = Math.max(0, data.tempoLimite * 60 - elapsed)
-    setTempoRestante(remaining)
+    try {
+      setCache(JSON.parse(raw) as SimCache)
+    } catch {
+      localStorage.removeItem(`sim_${params.id}`)
+    }
     setLoading(false)
   }, [params.id])
 
+  // Um único relógio. O intervalo só empurra o "agora"; o restante é
+  // sempre recalculado, então atrasos de tick não acumulam erro.
   useEffect(() => {
-    if (tempoRestante <= 0) return
-    timerRef.current = window.setInterval(() => {
-      setTempoRestante((prev) => {
-        if (prev <= 1) {
-          clearInterval(timerRef.current)
-          finalizarRef.current?.(true)
-          return 0
-        }
-        return prev - 1
-      })
-    }, 1000)
-    return () => clearInterval(timerRef.current)
+    if (!cache) return
+    const id = setInterval(() => setAgora(Date.now()), 500)
+    return () => clearInterval(id)
   }, [cache])
 
-  const salvarResposta = useCallback((questionId: string, alternativa: number) => {
-    if (!cache) return
-    const novasRespostas = { ...cache.respostas, [questionId]: alternativa }
-    const novoCache = { ...cache, respostas: novasRespostas }
-    setCache(novoCache)
-    localStorage.setItem(`sim_${params.id}`, JSON.stringify(novoCache))
-  }, [cache, params.id])
+  const tempoRestante = useMemo(() => {
+    if (!cache) return 0
+    const decorrido = Math.floor((agora - cache.inicio) / 1000)
+    return Math.max(0, cache.tempoLimite * 60 - decorrido)
+  }, [cache, agora])
 
-  const handleFinalizar = useCallback(async (tempoEsgotado = false) => {
-    if (!cache || finalizando) return
+  const salvarResposta = useCallback(
+    (questionId: string, alternativa: number) => {
+      setCache((atual) => {
+        if (!atual) return atual
+        const novo = { ...atual, respostas: { ...atual.respostas, [questionId]: alternativa } }
+        localStorage.setItem(`sim_${params.id}`, JSON.stringify(novo))
+        return novo
+      })
+    },
+    [params.id]
+  )
+
+  const handleFinalizar = useCallback(async () => {
+    if (!cache || jaFinalizou.current) return
+    jaFinalizou.current = true
     setFinalizando(true)
 
-    const total = cache.questoes.length
     let acertos = 0
-    const questoesRespostas: Record<string, number> = {}
-
     for (const q of cache.questoes) {
       const resposta = cache.respostas[q.id]
-      questoesRespostas[q.id] = resposta
-      if (resposta !== undefined && resposta === q.resposta_correta) {
-        acertos++
-      }
+      if (resposta !== undefined && resposta === q.resposta_correta) acertos++
     }
 
     const tempoGasto = cache.tempoLimite * 60 - tempoRestante
 
-    await supabase
+    const { error } = await supabase
       .from("simulations")
       .update({
         pontuacao: acertos,
@@ -96,43 +115,54 @@ export default function SimuladoPage() {
       })
       .eq("id", params.id)
 
+    if (error) {
+      // Sem isso a tela ficava travada em "Finalizando…" para sempre.
+      jaFinalizou.current = false
+      setFinalizando(false)
+      return
+    }
+
     localStorage.removeItem(`sim_${params.id}`)
     router.push(`/simulados/resultado/${params.id}`)
-  }, [cache, finalizando, params.id, supabase, router, tempoRestante])
+  }, [cache, params.id, supabase, router, tempoRestante])
 
-  useEffect(() => { finalizarRef.current = handleFinalizar }, [handleFinalizar])
+  useEffect(() => {
+    finalizarRef.current = handleFinalizar
+  }, [handleFinalizar])
 
-  const formatTempo = (s: number) => {
-    const min = String(Math.floor(s / 60)).padStart(2, "0")
-    const seg = String(s % 60).padStart(2, "0")
-    return `${min}:${seg}`
-  }
+  // Tempo esgotado encerra sozinho.
+  useEffect(() => {
+    if (cache && tempoRestante === 0 && !jaFinalizou.current) {
+      finalizarRef.current?.(true)
+    }
+  }, [cache, tempoRestante])
 
-  const letras = ["A", "B", "C", "D", "E"]
+  const formatTempo = (s: number) =>
+    `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-muted text-sm animate-pulse">Carregando simulado...</div>
+      <div className="mx-auto max-w-[720px] space-y-4">
+        <div className="skeleton h-12 w-full" />
+        <div className="skeleton h-[420px] w-full" />
       </div>
     )
   }
 
   if (!cache) {
     return (
-      <div className="space-y-6">
-        <h1 className="text-lg font-bold tracking-title uppercase text-foreground">SIMULADO</h1>
-        <div className="bg-card border border-card-border rounded-card p-10 text-center space-y-4">
-          <span className="text-5xl">🎯</span>
-          <p className="text-muted">Simulado não encontrado.</p>
-          <button
-            onClick={() => router.push("/simulados")}
-            className="bg-accent text-accent-foreground font-bold px-6 py-3 rounded-card text-sm hover:bg-accent/90 transition-all"
-          >
-            NOVO SIMULADO
-          </button>
-        </div>
-      </div>
+      <Panel flush className="mx-auto max-w-[560px]">
+        <EmptyState
+          icon={<Target size={16} strokeWidth={1.75} />}
+          title="Simulado não encontrado"
+          description="Ele já foi finalizado ou foi aberto em outro navegador."
+          action={
+            <Button variant="accent" onClick={() => router.push("/simulados")}>
+              Montar novo simulado
+            </Button>
+          }
+        />
+      </Panel>
     )
   }
 
@@ -140,194 +170,247 @@ export default function SimuladoPage() {
   if (!questao) return null
 
   const respondidas = Object.keys(cache.respostas).length
-  const progresso = ((indice + 1) / cache.questoes.length) * 100
+  const total = cache.questoes.length
   const pctTimer = (tempoRestante / (cache.tempoLimite * 60)) * 100
-  const timerUrgente = tempoRestante < 300
+  const urgente = tempoRestante < 300
 
   return (
-    <div className="space-y-4">
-      {/* HEADER FIXO */}
-      <div className="bg-card border border-card-border rounded-card p-4 flex items-center justify-between">
-        <span className="text-xs font-bold tracking-wider text-foreground uppercase">
-          SIMULADO
-        </span>
-        <div className={`text-lg font-bold font-mono ${timerUrgente ? "text-red-400" : "text-accent"}`}>
-          {formatTempo(tempoRestante)}
+    <div className="mx-auto max-w-[720px] space-y-4">
+      {/* ── Cabeçalho fixo ──────────────────────────────────── */}
+      <div className="sticky top-topbar z-10 -mx-4 bg-canvas/90 px-4 pb-3 pt-1 backdrop-blur-md lg:-mx-8 lg:px-8">
+        <div className="flex items-center justify-between gap-3">
+          <span className="text-sm text-fg-subtle tabular-nums">
+            Questão {indice + 1} de {total}
+          </span>
+
+          <time
+            aria-live={urgente ? "polite" : "off"}
+            className={cn(
+              "font-mono text-lg font-semibold tabular-nums",
+              urgente ? "text-negative" : "text-fg"
+            )}
+          >
+            {formatTempo(tempoRestante)}
+          </time>
+
+          <span className="text-sm text-fg-subtle tabular-nums">
+            {respondidas}/{total} respondidas
+          </span>
         </div>
-        <span className="text-xs text-muted font-mono">
-          Q {indice + 1}/{cache.questoes.length}
-        </span>
+
+        <div className="mt-2 h-0.5 w-full overflow-hidden rounded-full bg-surface-sunken">
+          <div
+            className={cn(
+              "h-full rounded-full transition-[width] duration-1000 ease-linear",
+              urgente ? "bg-negative" : "bg-accent"
+            )}
+            style={{ width: `${pctTimer}%` }}
+          />
+        </div>
       </div>
 
-      {/* TIMER BAR */}
-      <div className="w-full h-1 bg-card-border rounded-full overflow-hidden">
-        <div
-          className={`h-full rounded-full transition-all duration-1000 ${
-            timerUrgente ? "bg-red-500" : "bg-accent"
-          }`}
-          style={{ width: `${pctTimer}%` }}
-        />
-      </div>
-
-      {/* QUESTÃO */}
+      {/* ── Questão ─────────────────────────────────────────── */}
       <AnimatePresence mode="wait">
         <motion.div
           key={questao.id}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          className="bg-card border border-card-border rounded-card overflow-hidden"
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={{ duration: 0.16, ease: [0.16, 1, 0.3, 1] }}
         >
-          {questao.mostrar_texto && questao.texto_referencia && (
-            <div className="px-5 py-4 border-b border-card-border bg-white/[.02]">
-              <div className="text-[10px] text-muted font-mono uppercase tracking-widest mb-2">Texto de apoio</div>
-              <LatexText text={questao.texto_referencia} block className="text-sm text-foreground/80 leading-relaxed" />
+          <Panel flush>
+            <div className="flex flex-wrap items-center gap-1.5 border-b border-line px-5 py-3">
+              <Badge size="sm">{questao.materia}</Badge>
+              {questao.banca && <Badge size="sm">{questao.banca}</Badge>}
+              {questao.ano && <Badge size="sm">{questao.ano}</Badge>}
             </div>
-          )}
 
-          <div className="px-5 py-6 border-b border-card-border">
-            {questao.figuras?.length > 0 && (
-              <div className="mb-4 space-y-2">
-                {(questao.figuras as QuestaoFigura[]).map((fig) => {
-                  const supabase = createClient()
-                  const { data } = supabase.storage.from("questoes-figuras").getPublicUrl(fig.storage_path)
-                  return (
-                    <figure key={fig.id}>
-                      <img src={data.publicUrl} alt={fig.legenda || ""} className="max-w-full rounded-lg" />
-                      {fig.legenda && <figcaption className="text-[11px] text-muted text-center mt-1">{fig.legenda}</figcaption>}
-                    </figure>
-                  )
-                })}
+            {questao.mostrar_texto && questao.texto_referencia && (
+              <div className="border-b border-line bg-surface-sunken px-5 py-4">
+                <p className="mb-2 text-2xs font-medium uppercase tracking-wide text-fg-faint">
+                  Texto de apoio
+                </p>
+                <LatexText
+                  text={questao.texto_referencia}
+                  block
+                  className="text-base leading-relaxed text-fg-muted"
+                />
               </div>
             )}
-            <div className="flex items-start gap-3">
-              <span className="text-xs text-muted font-mono mt-0.5 flex-shrink-0">
-                {String(indice + 1).padStart(2, "0")}
-              </span>
-              <LatexText text={questao.enunciado} block className="text-sm text-foreground leading-relaxed flex-1" />
+
+            <div className="px-5 py-5">
+              {questao.figuras?.length > 0 && (
+                <div className="mb-4 space-y-3">
+                  {(questao.figuras as QuestaoFigura[]).map((fig) => {
+                    const client = createClient()
+                    const { data } = client.storage
+                      .from("questoes-figuras")
+                      .getPublicUrl(fig.storage_path)
+                    return (
+                      <figure key={fig.id}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={data.publicUrl}
+                          alt={fig.legenda || "Figura da questão"}
+                          className="max-w-full rounded-md border border-line"
+                        />
+                        {fig.legenda && (
+                          <figcaption className="mt-1.5 text-center text-xs text-fg-subtle">
+                            {fig.legenda}
+                          </figcaption>
+                        )}
+                      </figure>
+                    )
+                  })}
+                </div>
+              )}
+
+              <LatexText
+                text={questao.enunciado}
+                block
+                className="text-base leading-relaxed text-fg"
+              />
             </div>
-          </div>
 
-          <div className="px-5 py-4 space-y-2.5">
-            {questao.alternativas.map((alt, i) => {
-              const selecionada = cache.respostas[questao.id] === i
-              return (
-                <button
-                  key={i}
-                  onClick={() => salvarResposta(questao.id, i)}
-                  className={`w-full flex items-start gap-3 px-4 py-3 rounded-card border transition-all text-left text-sm ${
-                    selecionada
-                      ? "bg-accent/10 border-accent text-accent"
-                      : "bg-transparent border border-card-border text-foreground hover:border-accent/50"
-                  }`}
-                >
-                  <span className="font-bold flex-shrink-0 w-5">{letras[i]}</span>
-                  <LatexText text={alt.text || ""} className="flex-1" />
-                  {selecionada && <span className="text-accent flex-shrink-0">✓</span>}
-                </button>
-              )
-            })}
-          </div>
-
-          {/* NAVEGAÇÃO */}
-          <div className="px-5 py-4 border-t border-card-border">
-            <div className="flex items-center justify-between gap-3">
-              <button
-                onClick={() => setIndice(Math.max(0, indice - 1))}
-                disabled={indice === 0}
-                className="px-5 py-2.5 rounded-card text-sm font-semibold bg-background border border-card-border text-muted hover:text-foreground disabled:opacity-30 transition-all"
-              >
-                ←
-              </button>
-
-              <div className="flex items-center gap-1.5">
-                {cache.questoes.map((q, i) => {
-                  const respondida = cache.respostas[q.id] !== undefined
-                  return (
-                    <button
-                      key={q.id}
-                      onClick={() => setIndice(i)}
-                      className={`w-5 h-5 rounded text-[10px] font-bold transition-all ${
-                        i === indice
-                          ? "bg-accent text-accent-foreground"
-                          : respondida
-                          ? "bg-accent/30 text-accent"
-                          : "bg-card-border text-muted"
-                      }`}
+            <div role="radiogroup" aria-label="Alternativas" className="space-y-1.5 px-5 pb-5">
+              {questao.alternativas.map((alt, i) => {
+                const selecionada = cache.respostas[questao.id] === i
+                return (
+                  <button
+                    key={i}
+                    role="radio"
+                    aria-checked={selecionada}
+                    onClick={() => salvarResposta(questao.id, i)}
+                    className={cn(
+                      "flex w-full items-start gap-3 rounded-lg border px-3.5 py-3 text-left",
+                      "transition-[border-color,background-color] duration-fast",
+                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus)]",
+                      selecionada
+                        ? "border-line-accent bg-accent-soft"
+                        : "border-line hover:border-line-strong hover:bg-surface-hover"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "grid h-5 w-5 shrink-0 place-items-center rounded-[5px] border text-xs font-medium",
+                        selecionada
+                          ? "border-line-accent text-accent-ink"
+                          : "border-line-strong text-fg-subtle"
+                      )}
                     >
-                      {i + 1}
-                    </button>
-                  )
-                })}
-              </div>
-
-              <button
-                onClick={() => setIndice(Math.min(cache.questoes.length - 1, indice + 1))}
-                disabled={indice === cache.questoes.length - 1}
-                className="px-5 py-2.5 rounded-card text-sm font-semibold bg-background border border-card-border text-muted hover:text-foreground disabled:opacity-30 transition-all"
-              >
-                →
-              </button>
+                      {LETRAS[i]}
+                    </span>
+                    <LatexText
+                      text={alt.text || ""}
+                      className="flex-1 text-base leading-relaxed text-fg"
+                    />
+                  </button>
+                )
+              })}
             </div>
-          </div>
+
+            <div className="flex items-center justify-between gap-3 border-t border-line px-5 py-3">
+              <Button
+                variant="secondary"
+                disabled={indice === 0}
+                onClick={() => setIndice(indice - 1)}
+              >
+                <ChevronLeft size={14} strokeWidth={2} />
+                Anterior
+              </Button>
+
+              {indice === total - 1 ? (
+                <Button variant="accent" onClick={() => setShowModal(true)}>
+                  Finalizar simulado
+                </Button>
+              ) : (
+                <Button variant="secondary" onClick={() => setIndice(indice + 1)}>
+                  Próxima
+                  <ChevronRight size={14} strokeWidth={2} />
+                </Button>
+              )}
+            </div>
+          </Panel>
         </motion.div>
       </AnimatePresence>
 
-      {/* PROGRESSO */}
-      <div className="flex items-center justify-between text-xs text-muted">
-        <span>{respondidas}/{cache.questoes.length} respondidas</span>
-        <button
-          onClick={() => setShowModal(true)}
-          className="text-red-400 hover:text-red-300 font-semibold transition-colors"
-        >
-          FINALIZAR
-        </button>
-      </div>
+      {/* ── Navegador ───────────────────────────────────────── */}
+      <Panel>
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="text-sm font-semibold text-fg">Todas as questões</h2>
+          <div className="flex items-center gap-3 text-2xs text-fg-subtle">
+            <span className="inline-flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-[3px] bg-accent" aria-hidden />
+              atual
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span
+                className="h-2.5 w-2.5 rounded-[3px] border border-line-accent bg-accent-soft"
+                aria-hidden
+              />
+              respondida
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-[3px] bg-surface-sunken" aria-hidden />
+              em branco
+            </span>
+          </div>
+        </div>
 
-      {/* MODAL DE CONFIRMAÇÃO */}
-      <AnimatePresence>
-        {showModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              className="bg-card border border-card-border rounded-card p-6 max-w-sm w-full space-y-4"
-            >
-              <h3 className="text-sm font-bold tracking-wider text-foreground uppercase">
-                Finalizar simulado?
-              </h3>
-              <p className="text-sm text-muted">
-                Você respondeu {respondidas} de {cache.questoes.length} questões.
-                {respondidas < cache.questoes.length && (
-                  <span className="text-red-400 block mt-1">
-                    {cache.questoes.length - respondidas} questões não respondidas serão consideradas erradas.
-                  </span>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {cache.questoes.map((q, i) => {
+            const respondida = cache.respostas[q.id] !== undefined
+            const atual = i === indice
+            return (
+              <button
+                key={q.id}
+                onClick={() => setIndice(i)}
+                aria-label={`Questão ${i + 1}${respondida ? ", respondida" : ", em branco"}`}
+                aria-current={atual ? "true" : undefined}
+                className={cn(
+                  "h-7 w-7 rounded-[6px] text-xs font-medium tabular-nums",
+                  "transition-colors duration-fast",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus)]",
+                  atual
+                    ? "bg-accent text-fg-on-accent"
+                    : respondida
+                      ? "border border-line-accent bg-accent-soft text-accent-ink"
+                      : "bg-surface-sunken text-fg-subtle hover:bg-surface-hover hover:text-fg"
                 )}
-              </p>
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="flex-1 bg-background border border-card-border text-foreground font-semibold py-3 rounded-card text-sm hover:bg-white/5 transition-all"
-                >
-                  CONTINUAR
-                </button>
-                <button
-                  onClick={() => handleFinalizar()}
-                  disabled={finalizando}
-                  className="flex-1 bg-red-500 text-white font-bold py-3 rounded-card text-sm hover:bg-red-600 transition-all disabled:opacity-50"
-                >
-                  {finalizando ? "FINALIZANDO..." : "FINALIZAR"}
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              >
+                {i + 1}
+              </button>
+            )
+          })}
+        </div>
+
+        <div className="mt-4 flex justify-end border-t border-line pt-3">
+          <Button variant="ghost" onClick={() => setShowModal(true)}>
+            Finalizar agora
+          </Button>
+        </div>
+      </Panel>
+
+      <Modal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        title="Finalizar simulado?"
+        description={
+          respondidas < total
+            ? `Você respondeu ${respondidas} de ${total}. As ${total - respondidas} em branco contam como erro.`
+            : `Você respondeu todas as ${total} questões.`
+        }
+        footer={
+          <>
+            <Button variant="ghost" onClick={() => setShowModal(false)} disabled={finalizando}>
+              Continuar prova
+            </Button>
+            <Button variant="accent" onClick={handleFinalizar} loading={finalizando}>
+              Finalizar e ver resultado
+            </Button>
+          </>
+        }
+      />
     </div>
   )
 }

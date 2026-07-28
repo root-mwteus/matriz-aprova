@@ -143,7 +143,7 @@ export default function AdminEditaisPage() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Editais</h1>
+          <h1 className="text-xl font-semibold text-fg">Editais</h1>
           <span className="text-xs text-muted font-mono">{editais.length}</span>
         </div>
         <button
@@ -166,11 +166,11 @@ export default function AdminEditaisPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-card-border text-left">
-                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">ÓRGÃO</th>
-                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">ÁREA</th>
-                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">DATA DA PROVA</th>
-                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">STATUS</th>
-                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal text-right">AÇÕES</th>
+                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">Órgão</th>
+                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">Área</th>
+                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">Data da prova</th>
+                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal">Status</th>
+                <th className="px-4 py-3 text-[11px] text-muted font-mono font-normal text-right">Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -215,7 +215,7 @@ export default function AdminEditaisPage() {
                 <input
                   value={form.orgao}
                   onChange={(e) => setForm({ ...form, orgao: e.target.value })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                   placeholder="Ex: Polícia Federal"
                 />
               </div>
@@ -224,7 +224,7 @@ export default function AdminEditaisPage() {
                 <input
                   value={form.cargo || ""}
                   onChange={(e) => setForm({ ...form, cargo: e.target.value })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                   placeholder="Ex: Agente Administrativo"
                 />
               </div>
@@ -233,7 +233,7 @@ export default function AdminEditaisPage() {
                 <input
                   value={form.banca || ""}
                   onChange={(e) => setForm({ ...form, banca: e.target.value })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                   placeholder="Ex: CESPE/CEBRASPE"
                 />
               </div>
@@ -242,7 +242,7 @@ export default function AdminEditaisPage() {
                 <select
                   value={form.area_concurso}
                   onChange={(e) => setForm({ ...form, area_concurso: e.target.value })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                 >
                   {areas.map((a) => <option key={a} value={a}>{a}</option>)}
                 </select>
@@ -253,7 +253,7 @@ export default function AdminEditaisPage() {
                   type="number"
                   value={form.vagas ?? ""}
                   onChange={(e) => setForm({ ...form, vagas: e.target.value ? Number(e.target.value) : null })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                   placeholder="Ex: 120"
                 />
               </div>
@@ -263,7 +263,7 @@ export default function AdminEditaisPage() {
                   type="date"
                   value={form.data_prova || ""}
                   onChange={(e) => setForm({ ...form, data_prova: e.target.value || null })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                 />
               </div>
               <div>
@@ -272,7 +272,7 @@ export default function AdminEditaisPage() {
                   type="date"
                   value={form.data_inscricao_fim || ""}
                   onChange={(e) => setForm({ ...form, data_inscricao_fim: e.target.value || null })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                 />
               </div>
               <div>
@@ -280,7 +280,7 @@ export default function AdminEditaisPage() {
                 <select
                   value={form.status}
                   onChange={(e) => setForm({ ...form, status: e.target.value as Edital["status"] })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                 >
                   {statusOptions.map((s) => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}
                 </select>
@@ -290,7 +290,7 @@ export default function AdminEditaisPage() {
                 <input
                   value={form.link || ""}
                   onChange={(e) => setForm({ ...form, link: e.target.value })}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                   placeholder="https://..."
                 />
               </div>
@@ -305,7 +305,7 @@ export default function AdminEditaisPage() {
                 disabled={salvando}
                 className="px-4 py-2 text-sm bg-accent/20 text-accent border border-accent/40 rounded-lg font-semibold hover:bg-accent/30 transition-colors disabled:opacity-50"
               >
-                {salvando ? "SALVANDO..." : editando ? "SALVAR ALTERAÇÕES" : "CRIAR EDITAL"}
+                {salvando ? "Salvando…" : editando ? "SALVAR ALTERAÇÕES" : "CRIAR EDITAL"}
               </button>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function AdminEditaisPage() {
         open={!!excluindo}
         title="Excluir edital"
         description={`Tem certeza que deseja excluir o edital de "${excluindo?.orgao}"? Essa ação não pode ser desfeita.`}
-        confirmLabel="EXCLUIR"
+        confirmLabel="Excluir"
         confirmDestructive
         onConfirm={confirmarExclusao}
         onCancel={() => setExcluindo(null)}

@@ -33,7 +33,7 @@ export default function AdminSimuladosPage() {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
-      <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Simulados</h1>
+      <h1 className="text-xl font-semibold text-fg">Simulados</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <MetricCard label="REALIZADOS HOJE/SEMANA/TOTAL" value="12 / 84 · 1.247" />
@@ -51,7 +51,7 @@ export default function AdminSimuladosPage() {
               render: (_row: any, idx: number) => <Medal pos={idx + 1} />,
             },
             { key: "aluno", header: "ALUNO", render: (row) => <span className="text-foreground text-sm">{row.aluno}</span> },
-            { key: "area", header: "ÁREA", render: (row) => <span className="text-xs text-accent bg-accent/10 px-2 py-0.5 rounded-full">{row.area}</span> },
+            { key: "area", header: "Área", render: (row) => <span className="text-xs text-accent bg-accent/10 px-2 py-0.5 rounded-full">{row.area}</span> },
             { key: "pontuacao", header: "PONTUAÇÃO", render: (row) => <span className="text-accent font-semibold font-mono">{row.pontuacao}%</span> },
             { key: "simulados", header: "SIMULADOS", render: (row) => <span className="text-muted font-mono">{row.simulados}</span> },
             { key: "ultima", header: "ÚLTIMA PROVA", render: (row) => <span className="text-muted font-mono text-xs">{row.ultima}</span> },
@@ -63,13 +63,13 @@ export default function AdminSimuladosPage() {
       <div className="bg-card border border-card-border rounded-card">
         <div className="flex items-center gap-3 px-5 pt-4 pb-2">
           <span className="text-[11px] text-muted font-mono">/ SIMULADOS REALIZADOS</span>
-          <select className="bg-background border border-card-border rounded-lg px-2 py-1 text-[11px] text-muted focus:outline-none focus:border-accent">
+          <select className="field h-7 w-auto text-xs">
             <option>Todos períodos</option>
             <option>Hoje</option>
             <option>Esta semana</option>
             <option>Este mês</option>
           </select>
-          <button className="ml-auto text-xs border border-card-border text-muted hover:text-foreground px-2 py-1 rounded-lg transition-colors">EXPORTAR CSV</button>
+          <button className="ml-auto text-xs border border-card-border text-muted hover:text-foreground px-2 py-1 rounded-lg transition-colors">Exportar CSV</button>
         </div>
         <AdminTable
           columns={[

@@ -193,7 +193,7 @@ export default function UserDetailPage() {
           {tab === "PROGRESSO" && (
             <div className="space-y-5">
               <div className="bg-card border border-card-border rounded-card p-5">
-                <div className="text-[11px] text-muted font-mono mb-3">STREAK · ÚLTIMOS 30 DIAS</div>
+                <div className="mb-3 text-xs font-medium text-fg-subtle">Atividade nos últimos 30 dias</div>
                 <div className="flex gap-1 flex-wrap">
                   {calendarDays.map((d, i) => (
                     <div

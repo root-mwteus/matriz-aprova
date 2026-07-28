@@ -1,6 +1,31 @@
+# Dependências
 node_modules/
-.env*
+
+# Build
 .next/
+out/
 tsconfig.tsbuildinfo
-# Sentry Config File
+next-env.d.ts
+
+# Variáveis de ambiente — nunca versionar
+.env*
+!.env.example
+
+# Sentry
 .env.sentry-build-plugin
+.sentryclirc
+
+# Deploy
+.vercel
+
+# Cobertura de testes
+coverage/
+
+# Sistema operacional / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+
+# Cópias locais do próprio projeto (não aninhar repositórios aqui)
+/matriz-aprova/

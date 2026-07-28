@@ -1,6 +1,16 @@
 "use client"
 
 import { ReactNode } from "react"
+import { Panel, Stat } from "@/components/ui"
+
+/**
+ * Cartão de métrica do admin — fachada sobre Panel + Stat.
+ *
+ * A variação chegava como texto ("12%") e um booleano separado dizendo
+ * se era alta ou baixa: dois campos para um dado só, fáceis de deixar
+ * inconsistentes. Continuam aceitos, mas são convertidos num número com
+ * sinal, que é o que o componente de estatística entende.
+ */
 
 interface MetricCardProps {
   label: string
@@ -11,17 +21,18 @@ interface MetricCardProps {
 }
 
 export function MetricCard({ label, value, variacao, variacaoPositiva = true, children }: MetricCardProps) {
+  const parsed = variacao ? Number(variacao.replace(/[^\d.,-]/g, "").replace(",", ".")) : null
+  const delta = parsed != null && !Number.isNaN(parsed) ? (variacaoPositiva ? parsed : -parsed) : null
+
   return (
-    <div className="bg-card border border-card-border rounded-card p-5 relative overflow-hidden">
-      <div className="text-[11px] text-muted font-mono mb-1">{label}</div>
-      <div className="text-2xl font-bold text-foreground">{value}</div>
-      {variacao && (
-        <div className={`text-xs mt-1 flex items-center gap-1 ${variacaoPositiva ? "text-accent" : "text-red-400"}`}>
-          <span>{variacaoPositiva ? "↑" : "↓"}</span>
-          {variacao}
-        </div>
-      )}
+    <Panel>
+      <Stat
+        label={label}
+        value={value}
+        delta={delta}
+        deltaLabel={delta != null ? "vs. mês anterior" : undefined}
+      />
       {children && <div className="mt-3">{children}</div>}
-    </div>
+    </Panel>
   )
 }

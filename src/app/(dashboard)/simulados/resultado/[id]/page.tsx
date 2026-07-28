@@ -2,8 +2,32 @@
 
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { motion } from "framer-motion"
+import { Check, Minus, Trophy, X } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { cn } from "@/lib/utils"
+import {
+  Badge,
+  Button,
+  EmptyState,
+  Panel,
+  PanelHeader,
+  Progress,
+  Skeleton,
+  Stat,
+} from "@/components/ui"
+
+/**
+ * Resultado do simulado.
+ *
+ * Duas correções de conteúdo, além do visual:
+ *
+ * · o botão "Ver gabarito completo" levava para /questoes/resolver, que
+ *   não tem relação com este simulado — e o gabarito já está nesta mesma
+ *   página. As ações passaram a ser o que faz sentido a seguir: refazer
+ *   ou conferir o ranking;
+ * · o gabarito mostrava só a alternativa marcada. Sem a correta ao lado,
+ *   não dava para aprender nada com um erro.
+ */
 
 interface QuestaoResultado {
   id: string
@@ -18,6 +42,8 @@ interface ResultadoData {
   tempo_total: number
   created_at: string
 }
+
+const letra = (i: number) => String.fromCharCode(65 + i)
 
 export default function ResultadoPage() {
   const params = useParams()
@@ -49,142 +75,193 @@ export default function ResultadoPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-muted text-sm animate-pulse">Carregando resultado...</div>
+      <div className="mx-auto max-w-[640px] space-y-5">
+        <Panel className="space-y-3">
+          <Skeleton className="h-3 w-24" />
+          <Skeleton className="h-9 w-32" />
+          <Skeleton className="h-1.5 w-full" />
+        </Panel>
+        <Skeleton className="h-64 w-full rounded-lg" />
       </div>
     )
   }
 
   if (!data) {
     return (
-      <div className="bg-card border border-card-border rounded-card p-10 text-center space-y-4">
-        <span className="text-5xl">🏆</span>
-        <p className="text-muted">Resultado não encontrado.</p>
-        <button
-          onClick={() => router.push("/simulados")}
-          className="bg-accent text-accent-foreground font-bold px-6 py-3 rounded-card text-sm hover:bg-accent/90 transition-all"
-        >
-          NOVO SIMULADO
-        </button>
-      </div>
+      <Panel flush className="mx-auto max-w-[560px]">
+        <EmptyState
+          icon={<Trophy size={16} strokeWidth={1.75} />}
+          title="Resultado não encontrado"
+          description="Este simulado não existe ou foi removido."
+          action={
+            <Button variant="accent" onClick={() => router.push("/simulados")}>
+              Montar novo simulado
+            </Button>
+          }
+        />
+      </Panel>
     )
   }
 
   const total = data.questoes.length
   const acertos = data.pontuacao
-  const erros = total - acertos
+  const brancos = data.questoes.filter((q) => q.resposta_dada === null).length
+  const erros = total - acertos - brancos
   const pct = total > 0 ? Math.round((acertos / total) * 100) : 0
 
-  const materias: Record<string, { acertos: number; erros: number; total: number }> = {}
+  const materias: Record<string, { acertos: number; total: number }> = {}
   for (const q of data.questoes) {
-    if (!materias[q.materia]) materias[q.materia] = { acertos: 0, erros: 0, total: 0 }
+    if (!materias[q.materia]) materias[q.materia] = { acertos: 0, total: 0 }
     materias[q.materia].total++
     if (q.resposta_dada !== null && q.resposta_dada === q.resposta_correta) {
       materias[q.materia].acertos++
-    } else {
-      materias[q.materia].erros++
     }
   }
 
+  const porMateria = Object.entries(materias)
+    .map(([materia, info]) => ({
+      materia,
+      ...info,
+      pct: info.total > 0 ? Math.round((info.acertos / info.total) * 100) : 0,
+    }))
+    .sort((a, b) => b.pct - a.pct)
+
+  const tom = pct >= 70 ? "positive" : pct >= 50 ? "caution" : "negative"
   const tempoMin = Math.floor(data.tempo_total / 60)
   const tempoSeg = data.tempo_total % 60
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="max-w-[480px] mx-auto space-y-6"
-    >
-      {/* PLACAR */}
-      <div className="bg-card border border-card-border rounded-card p-8 text-center space-y-4">
-        <div className="text-6xl font-bold text-accent">
-          {acertos}
-          <span className="text-2xl text-muted">/{total}</span>
+    <div className="mx-auto max-w-[640px] animate-rise space-y-5">
+      {/* ── Placar ──────────────────────────────────────────── */}
+      <Panel>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-xs font-medium text-fg-subtle">Resultado</p>
+            <p className="mt-1.5 text-4xl font-semibold tabular-nums text-fg">
+              {acertos}
+              <span className="text-xl text-fg-faint">/{total}</span>
+            </p>
+          </div>
+          <Badge tone={tom} className="mt-1">
+            {pct}% de acerto
+          </Badge>
         </div>
-        <div className="text-3xl font-bold text-foreground">{pct}%</div>
-        <p className="text-sm text-muted">
-          {tempoMin}m {tempoSeg}s · {new Date(data.created_at).toLocaleDateString("pt-BR")}
-        </p>
-      </div>
 
-      {/* POR MATÉRIA */}
-      <div className="bg-card border border-card-border rounded-card overflow-hidden">
-        <div className="px-5 py-4 border-b border-card-border">
-          <h3 className="text-xs font-bold tracking-wider text-foreground uppercase">
-            DESEMPENHO POR MATÉRIA
-          </h3>
+        <Progress value={pct} tone={tom} className="mt-4" label={`${pct}% de acerto`} />
+
+        <div className="mt-4 grid grid-cols-2 gap-4 border-t border-line pt-4 sm:grid-cols-4">
+          <Stat label="Acertos" value={acertos} />
+          <Stat label="Erros" value={erros} />
+          <Stat label="Em branco" value={brancos} />
+          <Stat label="Tempo" value={`${tempoMin}m ${tempoSeg}s`} />
         </div>
-        <div className="divide-y divide-card-border/50">
-          {Object.entries(materias).map(([materia, info]) => {
-            const pctMat = info.total > 0 ? Math.round((info.acertos / info.total) * 100) : 0
-            return (
-              <div key={materia} className="px-5 py-3.5 flex items-center justify-between text-sm">
-                <span className="text-foreground">{materia}</span>
-                <div className="flex items-center gap-4 text-xs">
-                  <span className="text-accent">{info.acertos} acertos</span>
-                  <span className="text-red-400">{info.erros} erros</span>
-                  <span className="text-muted font-mono">{pctMat}%</span>
-                </div>
-              </div>
-            )
+
+        <p className="mt-4 text-xs text-fg-faint">
+          Realizado em{" "}
+          {new Date(data.created_at).toLocaleDateString("pt-BR", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
           })}
-        </div>
-      </div>
+        </p>
+      </Panel>
 
-      {/* GABARITO */}
-      <div className="bg-card border border-card-border rounded-card overflow-hidden">
-        <div className="px-5 py-4 border-b border-card-border">
-          <h3 className="text-xs font-bold tracking-wider text-foreground uppercase">
-            GABARITO
-          </h3>
-        </div>
-        <div className="divide-y divide-card-border/50">
-          {data.questoes.map((q, i) => {
-            const acertou = q.resposta_dada !== null && q.resposta_dada === q.resposta_correta
-            const respondeu = q.resposta_dada !== null
-            return (
-              <div key={q.id} className="px-5 py-3 flex items-center justify-between text-sm">
-                <div className="flex items-center gap-3">
-                  <span
-                    className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
-                      acertou
-                        ? "bg-accent/20 text-accent"
-                        : respondeu
-                        ? "bg-red-500/20 text-red-400"
-                        : "bg-card-border text-muted"
-                    }`}
-                  >
-                    {acertou ? "✓" : respondeu ? "✗" : "–"}
-                  </span>
-                  <span className="text-muted font-mono text-xs">Q{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-muted text-xs">{q.materia}</span>
-                </div>
-                <span className="text-muted text-xs">
-                  {respondeu
-                    ? `Sua: ${String.fromCharCode(65 + q.resposta_dada!)}`
-                    : "Não respondida"}
+      {/* ── Por matéria ─────────────────────────────────────── */}
+      <Panel flush>
+        <PanelHeader title="Desempenho por matéria" description="Da melhor para a pior" />
+        <ul>
+          {porMateria.map((m) => (
+            <li key={m.materia} className="border-b border-line px-4 py-3 last:border-0">
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="truncate text-sm text-fg">{m.materia}</span>
+                <span className="shrink-0 text-sm tabular-nums text-fg-muted">
+                  {m.acertos}/{m.total}
+                  <span className="ml-2 text-fg-faint">{m.pct}%</span>
                 </span>
               </div>
+              <Progress
+                value={m.pct}
+                size="sm"
+                tone={m.pct >= 70 ? "positive" : m.pct >= 50 ? "caution" : "negative"}
+                className="mt-2"
+              />
+            </li>
+          ))}
+        </ul>
+      </Panel>
+
+      {/* ── Gabarito ────────────────────────────────────────── */}
+      <Panel flush>
+        <PanelHeader title="Gabarito" description={`${total} questões`} />
+        <ul>
+          {data.questoes.map((q, i) => {
+            const respondeu = q.resposta_dada !== null
+            const acertou = respondeu && q.resposta_dada === q.resposta_correta
+
+            return (
+              <li
+                key={q.id}
+                className="flex items-center gap-3 border-b border-line px-4 py-2.5 last:border-0"
+              >
+                <span
+                  aria-hidden
+                  className={cn(
+                    "grid h-5 w-5 shrink-0 place-items-center rounded-full",
+                    acertou
+                      ? "bg-positive-soft text-positive"
+                      : respondeu
+                        ? "bg-negative-soft text-negative"
+                        : "bg-surface-sunken text-fg-faint"
+                  )}
+                >
+                  {acertou ? (
+                    <Check size={11} strokeWidth={3} />
+                  ) : respondeu ? (
+                    <X size={11} strokeWidth={3} />
+                  ) : (
+                    <Minus size={11} strokeWidth={3} />
+                  )}
+                </span>
+
+                <span className="w-7 shrink-0 text-xs tabular-nums text-fg-faint">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <span className="min-w-0 flex-1 truncate text-sm text-fg-muted">{q.materia}</span>
+
+                {/* A alternativa correta aparece sempre que houve erro — é
+                    o que transforma o gabarito em revisão. */}
+                <span className="shrink-0 text-sm tabular-nums">
+                  <span className="sr-only">
+                    {acertou ? "Acertou. " : respondeu ? "Errou. " : "Em branco. "}
+                  </span>
+                  {respondeu ? (
+                    <span className={acertou ? "text-positive" : "text-negative"}>
+                      {letra(q.resposta_dada!)}
+                    </span>
+                  ) : (
+                    <span className="text-fg-faint">—</span>
+                  )}
+                  {!acertou && (
+                    <span className="ml-2 text-xs text-fg-subtle">
+                      correta <span className="text-positive">{letra(q.resposta_correta)}</span>
+                    </span>
+                  )}
+                </span>
+              </li>
             )
           })}
-        </div>
-      </div>
+        </ul>
+      </Panel>
 
-      {/* AÇÕES */}
-      <div className="flex flex-col sm:flex-row gap-3">
-        <button
-          onClick={() => router.push("/questoes/resolver")}
-          className="flex-1 bg-accent text-accent-foreground font-bold py-3.5 rounded-card text-sm hover:bg-accent/90 transition-all"
-        >
-          VER GABARITO COMPLETO
-        </button>
-        <button
-          onClick={() => router.push("/simulados")}
-          className="flex-1 bg-transparent border border-foreground/20 text-foreground font-semibold py-3.5 rounded-card text-sm hover:bg-white/5 transition-all"
-        >
-          NOVO SIMULADO
-        </button>
+      <div className="flex flex-col gap-2 sm:flex-row">
+        <Button variant="accent" size="lg" block onClick={() => router.push("/simulados")}>
+          Fazer outro simulado
+        </Button>
+        <Button variant="secondary" size="lg" block onClick={() => router.push("/simulados/ranking")}>
+          Ver ranking
+        </Button>
       </div>
-    </motion.div>
+    </div>
   )
 }

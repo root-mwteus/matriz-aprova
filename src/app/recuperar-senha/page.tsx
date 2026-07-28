@@ -2,11 +2,19 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { MailCheck } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { forgotSchema, type ForgotData } from "@/lib/auth-validation"
-import { SITE_NAME } from "@/lib/constants"
+import { AuthError, AuthShell } from "@/components/auth/AuthShell"
+import { Button, Field, Input } from "@/components/ui"
 
+/**
+ * Recuperação de senha.
+ *
+ * O estado de sucesso confirma sem afirmar que a conta existe: "se houver
+ * uma conta com esse e-mail". A versão anterior dizia "Enviamos um link
+ * para X", o que transformava a tela num verificador de cadastros.
+ */
 export default function ForgotPasswordPage() {
   const supabase = createClient()
   const [form, setForm] = useState<ForgotData>({ email: "" })
@@ -40,7 +48,7 @@ export default function ForgotPasswordPage() {
     })
 
     if (error) {
-      setErrors({ api: error.message })
+      setErrors({ api: "Não foi possível enviar o link agora. Tente novamente em instantes." })
       setLoading(false)
       return
     }
@@ -49,89 +57,72 @@ export default function ForgotPasswordPage() {
     setLoading(false)
   }
 
-  return (
-    <div className="min-h-screen bg-background bg-grid-dots bg-[length:20px_20px] flex flex-col items-center justify-center px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="w-full max-w-md space-y-8"
-      >
-        <div className="text-center space-y-2">
-          <Link href="/" className="inline-block text-2xl font-bold tracking-wider text-foreground hover:text-accent transition-colors">
-            {SITE_NAME}
-          </Link>
-          <p className="text-muted text-sm">Recupere sua senha</p>
-        </div>
+  if (sent) {
+    return (
+      <AuthShell title="Verifique seu e-mail">
+        <div className="flex flex-col items-center py-2 text-center">
+          <span className="grid h-10 w-10 place-items-center rounded-full bg-positive-soft text-positive">
+            <MailCheck size={18} strokeWidth={1.75} />
+          </span>
 
-        <div className="bg-card border border-card-border rounded-card p-8">
-          {sent ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center space-y-4"
+          <p className="mt-4 text-base text-fg-muted">
+            Se houver uma conta com <strong className="font-medium text-fg">{form.email}</strong>,
+            o link de redefinição chega em alguns minutos.
+          </p>
+
+          <p className="mt-2 text-sm text-fg-subtle">
+            Não recebeu? Confira a caixa de spam antes de tentar de novo.
+          </p>
+
+          <div className="mt-6 flex w-full flex-col gap-2">
+            <Link
+              href="/login"
+              className="inline-flex h-10 w-full items-center justify-center rounded-md bg-accent text-sm font-medium text-fg-on-accent shadow-xs transition-colors duration-fast hover:bg-accent-hover"
             >
-              <div className="text-5xl mb-2">📧</div>
-              <h2 className="text-lg font-bold tracking-title uppercase text-foreground">
-                Email enviado!
-              </h2>
-              <p className="text-sm text-muted leading-relaxed">
-                Enviamos um link de recuperação para{" "}
-                <strong className="text-foreground">{form.email}</strong>.
-                Verifique sua caixa de entrada e siga as instruções.
-              </p>
-              <Link
-                href="/login"
-                className="inline-block mt-4 bg-accent text-accent-foreground font-bold px-8 py-3 rounded-card hover:bg-accent/90 transition-all text-sm tracking-wider"
-              >
-                VOLTAR AO LOGIN
-              </Link>
-            </motion.div>
-          ) : (
-            <form onSubmit={handleReset} className="space-y-5">
-              <p className="text-sm text-muted leading-relaxed">
-                Digite seu email cadastrado e enviaremos um link para redefinir sua senha.
-              </p>
-
-              <div className="space-y-1">
-                <label className="block text-sm text-muted">Email</label>
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-background border border-card-border rounded-card px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent transition-colors"
-                  placeholder="seu@email.com"
-                />
-                {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
-              </div>
-
-              {errors.api && (
-                <motion.p
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-sm text-red-400 bg-red-400/10 border border-red-400/30 rounded-card px-4 py-2"
-                >
-                  {errors.api}
-                </motion.p>
-              )}
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-accent text-accent-foreground font-bold py-3.5 rounded-card hover:bg-accent/90 transition-all disabled:opacity-50 text-sm tracking-wider"
-              >
-                {loading ? "ENVIANDO..." : "ENVIAR LINK"}
-              </button>
-
-              <p className="text-center text-sm text-muted">
-                <Link href="/login" className="text-accent hover:underline">
-                  Voltar ao login
-                </Link>
-              </p>
-            </form>
-          )}
+              Voltar ao login
+            </Link>
+            <Button variant="ghost" size="lg" block onClick={() => setSent(false)}>
+              Usar outro e-mail
+            </Button>
+          </div>
         </div>
-      </motion.div>
-    </div>
+      </AuthShell>
+    )
+  }
+
+  return (
+    <AuthShell
+      title="Recuperar senha"
+      description="Enviaremos um link para você criar uma senha nova."
+      footer={
+        <Link href="/login" className="font-medium text-accent-ink hover:underline">
+          Voltar ao login
+        </Link>
+      }
+    >
+      <form onSubmit={handleReset} className="space-y-4" noValidate>
+        <Field label="E-mail cadastrado" error={errors.email}>
+          {(props) => (
+            <Input
+              {...props}
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              autoFocus
+              placeholder="seu@email.com"
+              className="h-10"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+            />
+          )}
+        </Field>
+
+        <AuthError>{errors.api}</AuthError>
+
+        <Button type="submit" variant="accent" size="lg" block loading={loading}>
+          Enviar link
+        </Button>
+      </form>
+    </AuthShell>
   )
 }

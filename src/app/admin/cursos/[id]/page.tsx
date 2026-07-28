@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -42,11 +42,10 @@ export default function CursoEditorPage() {
   const [modulos, setModulos] = useState<ModuloComAulas[]>([])
   const [editAula, setEditAula] = useState<{ moduloId: string; aula: Lesson } | null>(null)
 
-  useEffect(() => {
-    carregar()
-  }, [params.id])
-
-  async function carregar() {
+  // `useCallback` + dependência declarada: sem isso o efeito capturava
+  // uma versão antiga de `carregar` e o lint apontava o risco de o
+  // recarregamento usar um `params.id` defasado.
+  const carregar = useCallback(async () => {
     setLoading(true)
     const supabase = createClient()
 
@@ -85,7 +84,11 @@ export default function CursoEditorPage() {
 
     setModulos((modulosData || []).map((m) => ({ ...m, aulas: aulasPorModulo[m.id] || [] })))
     setLoading(false)
-  }
+  }, [params.id])
+
+  useEffect(() => {
+    carregar()
+  }, [carregar])
 
   async function salvarInformacoes() {
     if (!titulo.trim()) {
@@ -210,7 +213,7 @@ export default function CursoEditorPage() {
     return (
       <div className="space-y-8">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold tracking-title uppercase">Editar Curso</h1>
+          <h1 className="text-xl font-semibold text-fg">Editar Curso</h1>
           <Link href="/admin/cursos" className="text-sm text-muted hover:text-foreground transition-colors">← VOLTAR</Link>
         </div>
         <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-card-border rounded-card">
@@ -225,7 +228,7 @@ export default function CursoEditorPage() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-3xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Editar Curso</h1>
+          <h1 className="text-xl font-semibold text-fg">Editar Curso</h1>
         </div>
         <Link href="/admin/cursos" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
@@ -251,7 +254,7 @@ export default function CursoEditorPage() {
             <input
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
-              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+              className="field h-10"
             />
           </div>
           <div>
@@ -259,7 +262,7 @@ export default function CursoEditorPage() {
             <select
               value={area}
               onChange={(e) => setArea(e.target.value)}
-              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+              className="field h-10"
             >
               {areas.map((a) => <option key={a} value={a}>{a}</option>)}
             </select>
@@ -270,7 +273,7 @@ export default function CursoEditorPage() {
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
               rows={4}
-              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent resize-y"
+              className="field h-auto py-2 resize-y"
             />
           </div>
           <div className="pt-3 border-t border-card-border flex items-center justify-between">
@@ -288,7 +291,7 @@ export default function CursoEditorPage() {
               disabled={salvandoInfo}
               className="text-xs bg-accent/20 text-accent border border-accent/40 px-6 py-2.5 rounded-lg font-semibold hover:bg-accent/30 transition-colors disabled:opacity-50"
             >
-              {salvandoInfo ? "SALVANDO..." : "SALVAR INFORMAÇÕES →"}
+              {salvandoInfo ? "Salvando…" : "SALVAR INFORMAÇÕES →"}
             </button>
           </div>
         </div>
@@ -358,7 +361,7 @@ export default function CursoEditorPage() {
                 <label className="block text-xs text-muted mb-1.5 font-mono">Título da Aula</label>
                 <input
                   id="edit-aula-titulo"
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                   defaultValue={editAula.aula.titulo}
                 />
               </div>
@@ -366,7 +369,7 @@ export default function CursoEditorPage() {
                 <label className="block text-xs text-muted mb-1.5 font-mono">URL do Vídeo</label>
                 <input
                   id="edit-aula-video"
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                  className="field h-10"
                   defaultValue={editAula.aula.video_url || ""}
                   placeholder="https://youtube.com/watch?v=..."
                 />
@@ -375,7 +378,7 @@ export default function CursoEditorPage() {
                 <label className="block text-xs text-muted mb-1.5 font-mono">Duração</label>
                 <input
                   id="edit-aula-duracao"
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                   defaultValue={formatarDuracao(editAula.aula.duracao_segundos)}
                   placeholder="MM:SS"
                 />

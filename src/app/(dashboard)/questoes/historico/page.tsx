@@ -1,17 +1,30 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useMemo, useState } from "react"
+import { Check, FileQuestion, X } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import type { Question, UserAnswer } from "@/types"
+import { cn } from "@/lib/utils"
+import PageHeader from "@/components/PageHeader"
+import { Badge, Button, EmptyState, Panel, PanelFooter, Skeleton, Tabs } from "@/components/ui"
 
-type Filtro = "todas" | "corretas" | "erradas" | "revisar"
+/**
+ * Histórico de respostas.
+ *
+ * Os filtros viraram abas com contagem: antes eram três botões idênticos
+ * que não diziam quantos itens havia em cada recorte, então descobrir se
+ * havia erros exigia clicar em "Erradas" para ver.
+ *
+ * O rodapé com o resumo em uma linha corrida ("120 respondidas · 80
+ * corretas · 40 erradas") subiu para o cabeçalho, onde é lido antes da
+ * lista em vez de depois de rolá-la inteira.
+ */
 
-type RespostaComQuestao = UserAnswer & {
-  question: Question
-}
+type Filtro = "todas" | "corretas" | "erradas"
 
-const ITEMS_POR_PAGINA = 15
+type RespostaComQuestao = UserAnswer & { question: Question }
+
+const POR_PAGINA = 15
 
 export default function HistoricoPage() {
   const supabase = createClient()
@@ -19,163 +32,159 @@ export default function HistoricoPage() {
   const [filtro, setFiltro] = useState<Filtro>("todas")
   const [pagina, setPagina] = useState(0)
   const [loading, setLoading] = useState(true)
-  const [total, setTotal] = useState(0)
 
   useEffect(() => {
     async function load() {
-      const { data: { user } } = await supabase.auth.getUser()
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
       if (!user) return
 
-      let query = supabase
+      const { data } = await supabase
         .from("user_answers")
         .select("*, question:question_id(*)")
         .eq("user_id", user.id)
         .order("created_at", { ascending: false })
 
-      const { count } = await supabase
-        .from("user_answers")
-        .select("*", { count: "exact", head: true })
-        .eq("user_id", user.id)
-      setTotal(count ?? 0)
-
-      const { data } = await query
-
-      if (data) {
-        setRespostas(data as unknown as RespostaComQuestao[])
-      }
+      if (data) setRespostas(data as unknown as RespostaComQuestao[])
       setLoading(false)
     }
     load()
   }, [supabase])
 
-  const filtradas = respostas.filter((r) => {
-    if (filtro === "corretas") return r.correto
-    if (filtro === "erradas") return !r.correto
-    return true
-  })
-
-  const paginadas = filtradas.slice(0, (pagina + 1) * ITEMS_POR_PAGINA)
-  const temMais = filtradas.length > paginadas.length
   const acertos = respostas.filter((r) => r.correto).length
+  const erros = respostas.length - acertos
   const taxa = respostas.length > 0 ? Math.round((acertos / respostas.length) * 100) : null
 
-  const filtros: { key: Filtro; label: string }[] = [
-    { key: "todas", label: "Todas" },
-    { key: "corretas", label: "Corretas" },
-    { key: "erradas", label: "Erradas" },
-  ]
+  const filtradas = useMemo(
+    () =>
+      respostas.filter((r) => {
+        if (filtro === "corretas") return r.correto
+        if (filtro === "erradas") return !r.correto
+        return true
+      }),
+    [respostas, filtro]
+  )
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-muted text-sm animate-pulse">Carregando histórico...</div>
-      </div>
-    )
-  }
+  const visiveis = filtradas.slice(0, (pagina + 1) * POR_PAGINA)
+  const temMais = filtradas.length > visiveis.length
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="space-y-6"
-    >
-      {/* HEADER */}
-      <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold tracking-title uppercase text-foreground">
-          / HISTÓRICO
-        </h1>
-        {taxa !== null && (
-          <span className="text-sm text-accent font-bold">{taxa}%</span>
-        )}
-      </div>
+    <div className="animate-rise space-y-5">
+      <PageHeader
+        title="Histórico"
+        subtitle={
+          loading
+            ? "Carregando suas respostas…"
+            : respostas.length === 0
+              ? "Nenhuma questão respondida ainda."
+              : `${respostas.length} ${respostas.length === 1 ? "questão respondida" : "questões respondidas"}.`
+        }
+        actions={
+          taxa != null && (
+            <Badge tone={taxa >= 70 ? "positive" : "caution"} dot>
+              {taxa}% de acerto
+            </Badge>
+          )
+        }
+      />
 
-      {/* FILTROS */}
-      <div className="flex items-center gap-2">
-        {filtros.map((f) => (
-          <button
-            key={f.key}
-            onClick={() => { setFiltro(f.key); setPagina(0) }}
-            className={`px-4 py-2 rounded-card text-xs font-semibold transition-all ${
-              filtro === f.key
-                ? "bg-accent text-accent-foreground"
-                : "bg-card border border-card-border text-muted hover:text-foreground"
-            }`}
-          >
-            {f.label}
-          </button>
-        ))}
-      </div>
+      <Tabs
+        value={filtro}
+        onChange={(v) => {
+          setFiltro(v)
+          setPagina(0)
+        }}
+        items={[
+          { value: "todas", label: "Todas", count: respostas.length },
+          { value: "corretas", label: "Corretas", count: acertos },
+          { value: "erradas", label: "Erradas", count: erros },
+        ]}
+      />
 
-      {/* LISTA */}
-      {paginadas.length === 0 ? (
-        <div className="bg-card border border-card-border rounded-card p-10 text-center space-y-3">
-          <span className="text-4xl">📝</span>
-          <p className="text-sm text-muted">Nenhuma questão respondida ainda.</p>
-          <a
-            href="/questoes"
-            className="inline-block text-xs text-accent font-semibold hover:underline"
-          >
-            Resolver questões →
-          </a>
-        </div>
-      ) : (
-        <div className="bg-card border border-card-border rounded-card overflow-hidden">
-          {paginadas.map((r, i) => (
-            <div
-              key={r.id}
-              className={`px-5 py-4 flex items-start gap-3 ${
-                i < paginadas.length - 1 ? "border-b border-card-border/50" : ""
-              }`}
-            >
-              <span
-                className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold mt-0.5 flex-shrink-0 ${
-                  r.correto
-                    ? "bg-accent/20 text-accent"
-                    : "bg-red-500/20 text-red-400"
-                }`}
-              >
-                {r.correto ? "✓" : "✗"}
-              </span>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm text-foreground truncate">
-                  {r.question?.enunciado ?? "Questão"}
-                </p>
-                <div className="flex items-center gap-2 mt-0.5">
-                  <span className="text-[11px] text-muted">
-                    {r.question?.materia || ""}
-                    {r.question?.banca ? ` · ${r.question.banca}` : ""}
-                    {r.question?.ano ? ` · ${r.question.ano}` : ""}
+      <Panel flush>
+        {loading ? (
+          <ul>
+            {Array.from({ length: 6 }).map((_, i) => (
+              <li key={i} className="flex gap-3 border-b border-line px-4 py-3.5 last:border-0">
+                <Skeleton className="h-5 w-5 shrink-0 rounded-full" />
+                <div className="flex-1 space-y-1.5">
+                  <Skeleton className="h-3" style={{ width: `${80 - i * 6}%` }} />
+                  <Skeleton className="h-2.5 w-32" />
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : visiveis.length === 0 ? (
+          <EmptyState
+            icon={<FileQuestion size={16} strokeWidth={1.75} />}
+            title={
+              filtro === "erradas"
+                ? "Nenhum erro por aqui"
+                : filtro === "corretas"
+                  ? "Nenhum acerto registrado"
+                  : "Nenhuma questão respondida ainda"
+            }
+            description={
+              filtro === "erradas"
+                ? "Todas as questões respondidas até agora estão corretas."
+                : "Comece resolvendo algumas questões — o histórico aparece aqui."
+            }
+            action={
+              filtro === "todas" ? (
+                <Button variant="secondary" onClick={() => (window.location.href = "/questoes")}>
+                  Resolver questões
+                </Button>
+              ) : undefined
+            }
+          />
+        ) : (
+          <>
+            <ul>
+              {visiveis.map((r) => (
+                <li
+                  key={r.id}
+                  className="flex items-start gap-3 border-b border-line px-4 py-3.5 transition-colors duration-fast last:border-0 hover:bg-surface-hover"
+                >
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full",
+                      r.correto ? "bg-positive-soft text-positive" : "bg-negative-soft text-negative"
+                    )}
+                  >
+                    {r.correto ? <Check size={11} strokeWidth={3} /> : <X size={11} strokeWidth={3} />}
                   </span>
-                  {!r.correto && (
-                    <span className="text-[10px] text-red-400 font-medium">
-                      revisar
+
+                  <div className="min-w-0 flex-1">
+                    <p className="line-clamp-2 text-sm text-fg">{r.question?.enunciado ?? "Questão"}</p>
+                    <p className="mt-1 text-xs text-fg-subtle">
+                      <span className="sr-only">{r.correto ? "Acertou. " : "Errou. "}</span>
+                      {[r.question?.materia, r.question?.banca, r.question?.ano]
+                        .filter(Boolean)
+                        .join(" · ") || "Sem classificação"}
+                    </p>
+                  </div>
+
+                  {r.tempo_segundos != null && (
+                    <span className="shrink-0 text-xs tabular-nums text-fg-faint">
+                      {Math.floor(r.tempo_segundos / 60)}m {r.tempo_segundos % 60}s
                     </span>
                   )}
-                </div>
-              </div>
-              {r.tempo_segundos && (
-                <span className="text-[11px] text-muted flex-shrink-0">
-                  {Math.floor(r.tempo_segundos / 60)}m {r.tempo_segundos % 60}s
-                </span>
-              )}
-            </div>
-          ))}
+                </li>
+              ))}
+            </ul>
 
-          {temMais && (
-            <button
-              onClick={() => setPagina(pagina + 1)}
-              className="w-full py-4 text-xs text-muted hover:text-accent transition-colors font-mono"
-            >
-              [ carregar mais ↓ ]
-            </button>
-          )}
-        </div>
-      )}
-
-      {/* FOOTER */}
-      <div className="text-center text-[11px] text-muted font-mono">
-        {total} {total === 1 ? "questão respondida" : "questões respondidas"} · {acertos} corretas · {total - acertos} erradas
-      </div>
-    </motion.div>
+            {temMais && (
+              <PanelFooter className="justify-center">
+                <Button variant="ghost" size="sm" onClick={() => setPagina(pagina + 1)}>
+                  Carregar mais {Math.min(POR_PAGINA, filtradas.length - visiveis.length)}
+                </Button>
+              </PanelFooter>
+            )}
+          </>
+        )}
+      </Panel>
+    </div>
   )
 }

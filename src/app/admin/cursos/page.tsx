@@ -117,7 +117,7 @@ export default function AdminCursosPage() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Cursos</h1>
+          <h1 className="text-xl font-semibold text-fg">Cursos</h1>
           <span className="text-xs text-muted font-mono">{cursos.length}</span>
         </div>
         <button
@@ -174,7 +174,7 @@ export default function AdminCursosPage() {
                       EDITAR
                     </Link>
                     <button onClick={() => togglePublicado(curso)} className="text-[11px] text-muted hover:text-foreground">
-                      {curso.publicado ? "DESPUBLICAR" : "PUBLICAR"}
+                      {curso.publicado ? "DESPUBLICAR" : "Publicar"}
                     </button>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function AdminCursosPage() {
                 <input
                   value={novoTitulo}
                   onChange={(e) => setNovoTitulo(e.target.value)}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                   placeholder="Título do curso"
                 />
               </div>
@@ -203,7 +203,7 @@ export default function AdminCursosPage() {
                 <select
                   value={novaArea}
                   onChange={(e) => setNovaArea(e.target.value)}
-                  className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                  className="field h-10"
                 >
                   {areas.map((a) => <option key={a} value={a}>{a}</option>)}
                 </select>

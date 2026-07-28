@@ -3,176 +3,302 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
+import {
+  LayoutGrid,
+  Users,
+  FileQuestion,
+  BookOpen,
+  PlayCircle,
+  ClipboardList,
+  Target,
+  Wallet,
+  Menu as MenuIcon,
+  X,
+  Lock,
+  LogOut,
+  ChevronsUpDown,
+  ExternalLink,
+  type LucideIcon,
+} from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { cn } from "@/lib/utils"
+import {
+  Avatar,
+  Badge,
+  IconButton,
+  Menu,
+  MenuItem,
+  MenuSeparator,
+  Tooltip,
+} from "@/components/ui"
 
-const navItems = [
-  { href: "/admin/dashboard", label: "Dashboard", icon: "⬡" },
-  { href: "/admin/usuarios", label: "Usuários", icon: "◎" },
-  { href: "/admin/questoes", label: "Questões", icon: "≡" },
-  { href: "/admin/materiais", label: "Materiais", icon: "↓" },
-  { href: "/admin/cursos", label: "Cursos", icon: "▷" },
-  { href: "/admin/editais", label: "Editais", icon: "📋" },
-  { href: "/admin/simulados", label: "Simulados", icon: "◈" },
-  { href: "/admin/financeiro", label: "Financeiro", icon: "$" },
+/**
+ * Painel administrativo.
+ *
+ * Mesma estrutura e mesmos componentes da aplicação — o que muda é só a
+ * marcação "Admin" na barra. Manter dois shells diferentes significava
+ * corrigir cada ajuste duas vezes, e os dois iam divergindo.
+ *
+ * Os ícones de texto (⬡ ◎ ≡ ▷ ◈ $) foram trocados por ícones de verdade:
+ * glifos tipográficos renderizam com peso e tamanho imprevisíveis entre
+ * sistemas, e não havia relação entre o símbolo e a seção.
+ */
+
+interface AdminNav {
+  href: string
+  label: string
+  icon: LucideIcon
+  soon?: boolean
+}
+
+const navGroups: { label: string; items: AdminNav[] }[] = [
+  {
+    label: "Operação",
+    items: [
+      { href: "/admin/dashboard", label: "Visão geral", icon: LayoutGrid },
+      { href: "/admin/usuarios", label: "Usuários", icon: Users },
+      { href: "/admin/financeiro", label: "Financeiro", icon: Wallet },
+    ],
+  },
+  {
+    label: "Acervo",
+    items: [
+      { href: "/admin/questoes", label: "Questões", icon: FileQuestion, soon: true },
+      { href: "/admin/materiais", label: "Materiais", icon: BookOpen },
+      { href: "/admin/cursos", label: "Cursos", icon: PlayCircle },
+      { href: "/admin/editais", label: "Editais", icon: ClipboardList },
+      { href: "/admin/simulados", label: "Simulados", icon: Target },
+    ],
+  },
 ]
+
+const labels: Record<string, string> = {
+  dashboard: "Visão geral",
+  usuarios: "Usuários",
+  questoes: "Questões",
+  materiais: "Materiais",
+  cursos: "Cursos",
+  editais: "Editais",
+  simulados: "Simulados",
+  financeiro: "Financeiro",
+  novo: "Novo",
+  nova: "Nova",
+  editar: "Editar",
+}
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const router = useRouter()
   const supabase = createClient()
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [adminName, setAdminName] = useState("Admin")
-  const [adminInitials, setAdminInitials] = useState("A")
-  const [clock, setClock] = useState("")
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [admin, setAdmin] = useState<{ nome: string; email?: string } | null>(null)
+
+  useEffect(() => setDrawerOpen(false), [pathname])
 
   useEffect(() => {
-    const update = () => {
-      const now = new Date()
-      setClock(now.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }))
-    }
-    update()
-    const id = setInterval(update, 10000)
-    return () => clearInterval(id)
-  }, [])
-
-  useEffect(() => {
+    let active = true
     supabase.auth.getUser().then(({ data: { user } }) => {
       if (!user) return
-      supabase.from("profiles").select("nome").eq("id", user.id).single().then(({ data }) => {
-        if (data?.nome) {
-          setAdminName(data.nome)
-          setAdminInitials(data.nome.split(" ").map((s: string) => s[0]).join("").slice(0, 2).toUpperCase())
-        }
-      })
+      supabase
+        .from("profiles")
+        .select("nome")
+        .eq("id", user.id)
+        .single()
+        .then(({ data }) => {
+          if (active) setAdmin({ nome: data?.nome ?? "Admin", email: user.email })
+        })
     })
+    return () => {
+      active = false
+    }
   }, [supabase])
 
-  async function handleSignOut() {
+  async function signOut() {
     await supabase.auth.signOut()
     router.push("/login")
     router.refresh()
   }
 
-  function isActive(href: string) {
-    if (href === "/admin/dashboard") return pathname === "/admin/dashboard"
-    return pathname.startsWith(href)
-  }
+  const current = pathname.split("/").filter(Boolean).slice(1)
 
   const sidebar = (
-    <div className="h-full flex flex-col">
-      <div className="p-5 border-b border-card-border">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-black font-bold text-sm">M</div>
-          <div>
-            <div className="text-[10px] text-muted uppercase tracking-wider font-mono">Admin · Painel</div>
-            <div className="text-[10px] text-muted font-mono">V2026</div>
-          </div>
-        </div>
+    <nav className="flex h-full flex-col bg-surface" aria-label="Navegação do painel">
+      <div className="flex h-topbar shrink-0 items-center gap-2 border-b border-line px-3">
+        <span
+          aria-hidden
+          className="grid h-6 w-6 place-items-center rounded-[7px] bg-accent text-[11px] font-bold text-fg-on-accent"
+        >
+          M
+        </span>
+        <span className="text-sm font-semibold text-fg">Matriz</span>
+        <Badge size="sm" className="ml-0.5">
+          Admin
+        </Badge>
       </div>
-      <nav className="flex-1 py-3 space-y-0.5 px-2 overflow-y-auto">
-        {navItems.map((item) => {
-          const active = isActive(item.href)
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setSidebarOpen(false)}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${
-                active
-                  ? "text-accent bg-[#CBFF4D15] border-l-2 border-accent"
-                  : "text-muted hover:text-foreground hover:bg-white/[.03]"
-              }`}
+
+      <div className="flex-1 overflow-y-auto px-2 py-3">
+        {navGroups.map((group, gi) => (
+          <div key={group.label} className={cn(gi > 0 && "mt-5")}>
+            <p className="px-2 pb-1.5 text-2xs font-medium uppercase tracking-wide text-fg-faint">
+              {group.label}
+            </p>
+            <ul className="space-y-px">
+              {group.items.map((item) => {
+                const Icon = item.icon
+
+                if (item.soon) {
+                  return (
+                    <li key={item.href}>
+                      <Tooltip content="Em breve" side="right" wrapperClassName="w-full">
+                        <span
+                          aria-disabled="true"
+                          className="flex w-full cursor-not-allowed select-none items-center gap-2.5 rounded-md px-2 py-1.5 text-sm text-fg-faint"
+                        >
+                          <Icon size={15} strokeWidth={1.75} className="shrink-0" />
+                          <span className="flex-1 text-left">{item.label}</span>
+                          <Lock size={11} strokeWidth={2} />
+                        </span>
+                      </Tooltip>
+                    </li>
+                  )
+                }
+
+                const active = pathname === item.href || pathname.startsWith(item.href + "/")
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "flex items-center gap-2.5 rounded-md px-2 py-1.5 text-sm transition-colors duration-fast",
+                        active
+                          ? "bg-surface-active font-medium text-fg"
+                          : "text-fg-muted hover:bg-surface-hover hover:text-fg"
+                      )}
+                    >
+                      <Icon
+                        size={15}
+                        strokeWidth={1.75}
+                        className={cn("shrink-0", active ? "text-accent-ink" : "text-fg-faint")}
+                      />
+                      <span className="truncate">{item.label}</span>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="shrink-0 border-t border-line p-2">
+        <Menu
+          align="start"
+          className="w-[204px]"
+          trigger={
+            <button
+              type="button"
+              className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left transition-colors duration-fast hover:bg-surface-hover"
             >
-              <span className="w-5 text-center font-mono">{item.icon}</span>
-              <span>{item.label}</span>
-            </Link>
-          )
-        })}
-      </nav>
-      <div className="p-4 border-t border-card-border">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">
-            {adminInitials}
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-sm text-foreground truncate">{adminName}</div>
-            <div className="flex items-center gap-1.5 mt-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-              <span className="text-[10px] text-green-400 font-mono">ONLINE</span>
-            </div>
-          </div>
-          <button onClick={handleSignOut} className="text-muted hover:text-red-400 transition-colors" title="Sair">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-            </svg>
-          </button>
-        </div>
+              <Avatar name={admin?.nome} size={24} />
+              <span className="min-w-0 flex-1">
+                <span className="block truncate text-sm font-medium text-fg">
+                  {admin?.nome ?? "Admin"}
+                </span>
+                <span className="block truncate text-2xs text-fg-subtle">{admin?.email ?? "—"}</span>
+              </span>
+              <ChevronsUpDown size={13} strokeWidth={2} className="shrink-0 text-fg-faint" />
+            </button>
+          }
+        >
+          <MenuItem icon={<ExternalLink />} onClick={() => router.push("/dashboard")}>
+            Ver como aluno
+          </MenuItem>
+          <MenuSeparator />
+          <MenuItem icon={<LogOut />} destructive onClick={signOut}>
+            Sair da conta
+          </MenuItem>
+        </Menu>
       </div>
-    </div>
+    </nav>
   )
 
   return (
-    <div className="min-h-screen bg-background bg-grid-dots bg-[length:20px_20px]">
-      {/* TOPBAR */}
-      <header className="fixed top-0 left-0 right-0 z-40 h-[52px] bg-surface border-b border-card-border flex items-center justify-between px-4 lg:pl-[256px]">
-        <div className="flex items-center gap-4">
-          <button onClick={() => setSidebarOpen(true)} className="lg:hidden text-muted hover:text-foreground">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-          <div className="text-xs text-muted font-mono tracking-wider">
-            ADMIN / <span className="text-foreground">{pathname.split("/").pop()?.toUpperCase() || "DASHBOARD"}</span>
-          </div>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="relative hidden md:block">
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input
-              className="w-56 bg-background border border-card-border rounded-lg pl-9 pr-3 py-1.5 text-xs text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
-              placeholder="Buscar usuário, questão, material..."
-            />
-          </div>
-          <button className="relative text-muted hover:text-foreground transition-colors">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-            </svg>
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-accent text-black text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
-          </button>
-          <span className="text-[11px] text-muted font-mono hidden sm:block">{clock}</span>
-        </div>
-      </header>
-
-      {/* SIDEBAR DESKTOP */}
-      <aside className="fixed top-0 left-0 bottom-0 z-30 w-[240px] bg-surface border-r border-card-border hidden lg:flex flex-col">
+    <div className="dark min-h-screen bg-canvas text-fg">
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-sidebar border-r border-line lg:block">
         {sidebar}
       </aside>
 
-      {/* SIDEBAR MOBILE */}
       <AnimatePresence>
-        {sidebarOpen && (
+        {drawerOpen && (
           <>
-            <div className="fixed inset-0 bg-black/60 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.14 }}
+              onClick={() => setDrawerOpen(false)}
+              className="fixed inset-0 z-40 bg-[color:var(--overlay)] lg:hidden"
+            />
             <motion.aside
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 bottom-0 z-50 w-[240px] bg-surface border-r border-card-border flex flex-col"
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed inset-y-0 left-0 z-50 w-sidebar border-r border-line lg:hidden"
             >
               {sidebar}
+              <IconButton
+                label="Fechar menu"
+                variant="ghost"
+                size="sm"
+                onClick={() => setDrawerOpen(false)}
+                className="absolute right-2 top-2.5"
+              >
+                <X size={15} strokeWidth={2} />
+              </IconButton>
             </motion.aside>
           </>
         )}
       </AnimatePresence>
 
-      {/* CONTENT */}
-      <main className="pt-[52px] lg:pl-[240px]">
-        <div className="p-6">{children}</div>
-      </main>
+      <div className="lg:pl-sidebar">
+        <header className="sticky top-0 z-20 flex h-topbar items-center gap-3 border-b border-line bg-[color:var(--surface)]/80 px-4 backdrop-blur-md lg:px-6">
+          <IconButton
+            label="Abrir menu"
+            variant="ghost"
+            size="sm"
+            onClick={() => setDrawerOpen(true)}
+            className="lg:hidden"
+          >
+            <MenuIcon size={16} strokeWidth={2} />
+          </IconButton>
+
+          <nav aria-label="Trilha de navegação" className="min-w-0">
+            <ol className="flex items-center gap-1.5 text-sm">
+              <li className="hidden text-fg-subtle sm:block">Admin</li>
+              {current.map((segment, i) => (
+                <li key={segment + i} className="flex items-center gap-1.5">
+                  <span aria-hidden className="hidden text-fg-faint sm:inline">
+                    /
+                  </span>
+                  <span
+                    className={cn(
+                      "truncate",
+                      i === current.length - 1 ? "font-medium text-fg" : "text-fg-subtle"
+                    )}
+                  >
+                    {labels[segment] ?? "Detalhe"}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </header>
+
+        <main className="mx-auto w-full max-w-content px-4 py-6 lg:px-8 lg:py-8">{children}</main>
+      </div>
     </div>
   )
 }

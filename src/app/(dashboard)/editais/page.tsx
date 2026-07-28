@@ -1,27 +1,43 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import PageHeader from "@/components/PageHeader"
+import { ArrowUpRight, ClipboardList } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import type { Edital } from "@/types"
+import PageHeader from "@/components/PageHeader"
+import { Badge, EmptyState, ErrorState, Panel, Segmented, Skeleton } from "@/components/ui"
 
-const areas = ["Todas", "Concursos", "OAB", "Militar", "ENEM"]
+/**
+ * Editais.
+ *
+ * A ficha era uma pilha de rótulos em caixa alta ("BANCA:", "VAGAS:",
+ * "PROVA:") que ocupava mais espaço do que os valores. Virou uma grade de
+ * pares rótulo/valor, com os rótulos discretos e os dados em destaque.
+ *
+ * A data da prova ganhou a contagem de dias restantes — é a informação
+ * que motiva a visita à página, e ela não estava em lugar nenhum.
+ */
 
-const STATUS_LABEL: Record<Edital["status"], string> = {
-  aberto: "ABERTO",
-  previsto: "PREVISTO",
-  encerrado: "ENCERRADO",
-}
+const AREAS = ["Todas", "Concursos", "OAB", "Militar", "ENEM"]
 
-const STATUS_STYLE: Record<Edital["status"], string> = {
-  aberto: "text-accent bg-accent/10 border border-accent/30",
-  previsto: "text-yellow-400 bg-yellow-400/10 border border-yellow-400/30",
-  encerrado: "text-muted bg-card-border/50 border border-card-border",
+const STATUS: Record<Edital["status"], { label: string; tone: "positive" | "caution" | "neutral" }> = {
+  aberto: { label: "Inscrições abertas", tone: "positive" },
+  previsto: { label: "Previsto", tone: "caution" },
+  encerrado: { label: "Encerrado", tone: "neutral" },
 }
 
 function formatarData(iso: string | null) {
   if (!iso) return "—"
   return new Date(iso + "T00:00:00").toLocaleDateString("pt-BR")
+}
+
+function diasAte(iso: string | null) {
+  if (!iso) return null
+  const alvo = new Date(iso + "T00:00:00")
+  const hoje = new Date()
+  hoje.setHours(0, 0, 0, 0)
+  const dias = Math.round((alvo.getTime() - hoje.getTime()) / 86_400_000)
+  return dias >= 0 ? dias : null
 }
 
 export default function EditaisPage() {
@@ -33,23 +49,28 @@ export default function EditaisPage() {
   useEffect(() => {
     async function load() {
       try {
-      const supabase = createClient()
-      const { data: { user } } = await supabase.auth.getUser()
+        const supabase = createClient()
+        const {
+          data: { user },
+        } = await supabase.auth.getUser()
 
-      const { data: editaisData } = await supabase
-        .from("editais")
-        .select("*")
-        .order("data_prova", { ascending: true, nullsFirst: false })
+        const { data: editaisData } = await supabase
+          .from("editais")
+          .select("*")
+          .order("data_prova", { ascending: true, nullsFirst: false })
 
-      setEditais(editaisData || [])
+        setEditais(editaisData || [])
 
-      if (user) {
-        const { data: perfil } = await supabase.from("profiles").select("area_concurso").eq("id", user.id).single()
-        if (perfil?.area_concurso && areas.includes(perfil.area_concurso)) {
-          setArea(perfil.area_concurso)
+        if (user) {
+          const { data: perfil } = await supabase
+            .from("profiles")
+            .select("area_concurso")
+            .eq("id", user.id)
+            .single()
+          if (perfil?.area_concurso && AREAS.includes(perfil.area_concurso)) {
+            setArea(perfil.area_concurso)
+          }
         }
-      }
-
       } catch {
         setErro("Não foi possível carregar os editais")
       } finally {
@@ -59,86 +80,106 @@ export default function EditaisPage() {
     load()
   }, [])
 
-  const editaisFiltrados = area === "Todas" ? editais : editais.filter((e) => e.area_concurso === area)
+  const filtrados = area === "Todas" ? editais : editais.filter((e) => e.area_concurso === area)
+
+  if (erro) return <ErrorState description={erro} onRetry={() => window.location.reload()} />
 
   return (
-    <div className="space-y-8">
+    <div className="animate-rise space-y-6">
       <PageHeader
-        badge="EDITAIS"
-        title="Acompanhe os concursos"
-        subtitle="Monitore editais e datas importantes"
+        title="Editais"
+        subtitle="Concursos abertos e previstos, com as datas que importam."
+        actions={
+          <Segmented
+            size="sm"
+            value={area}
+            onChange={setArea}
+            items={AREAS.map((a) => ({ value: a, label: a }))}
+          />
+        }
       />
 
-      <div className="flex flex-wrap gap-2">
-        {areas.map((a) => (
-          <button
-            key={a}
-            onClick={() => setArea(a)}
-            className={`text-xs px-3 py-1.5 rounded-lg border font-medium transition-colors ${
-              area === a
-                ? "bg-accent/20 text-accent border-accent/40"
-                : "bg-transparent text-muted border-card-border hover:text-foreground"
-            }`}
-          >
-            {a}
-          </button>
-        ))}
-      </div>
-
-      {erro ? (
-        <div className="flex items-center justify-center py-20">
-          <p className="text-destructive text-sm">{erro}</p>
-        </div>
-      ) : loading ? (
-        <div className="text-muted text-sm">Carregando...</div>
-      ) : editaisFiltrados.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 text-center bg-card border border-card-border rounded-card">
-          <span className="text-5xl mb-4">📋</span>
-          <h2 className="text-lg font-bold text-foreground">Nenhum edital cadastrado</h2>
-          <p className="text-sm text-muted mt-2 max-w-md">
-            {editais.length === 0
-              ? "Em breve novos editais aparecerão aqui."
-              : "Nenhum edital encontrado para essa área."}
-          </p>
-        </div>
-      ) : (
+      {loading ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {editaisFiltrados.map((edital) => (
-            <div
-              key={edital.id}
-              className="bg-card border border-card-border rounded-card p-5 space-y-3 hover:border-accent/30 transition-colors"
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <div className="text-foreground font-medium text-sm leading-tight">{edital.orgao}</div>
-                  {edital.cargo && <div className="text-muted text-xs mt-0.5">{edital.cargo}</div>}
-                </div>
-                <span className={`text-[11px] font-medium px-2 py-0.5 rounded-full shrink-0 ${STATUS_STYLE[edital.status]}`}>
-                  {STATUS_LABEL[edital.status]}
-                </span>
-              </div>
-
-              <div className="space-y-1 text-xs text-muted font-mono">
-                {edital.banca && <div>BANCA: {edital.banca}</div>}
-                {edital.vagas != null && <div>VAGAS: {edital.vagas}</div>}
-                <div>PROVA: {formatarData(edital.data_prova)}</div>
-                <div>INSCRIÇÕES ATÉ: {formatarData(edital.data_inscricao_fim)}</div>
-              </div>
-
-              {edital.link && (
-                <a
-                  href={edital.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-[11px] text-accent hover:underline font-medium pt-1"
-                >
-                  VER EDITAL →
-                </a>
-              )}
-            </div>
+          {Array.from({ length: 6 }).map((_, i) => (
+            <Panel key={i} className="space-y-3">
+              <Skeleton className="h-4 w-3/4" />
+              <Skeleton className="h-3 w-1/2" />
+              <Skeleton className="h-12 w-full" />
+            </Panel>
           ))}
         </div>
+      ) : filtrados.length === 0 ? (
+        <Panel flush>
+          <EmptyState
+            icon={<ClipboardList size={16} strokeWidth={1.75} />}
+            title={editais.length === 0 ? "Nenhum edital cadastrado" : "Nenhum edital nessa área"}
+            description={
+              editais.length === 0
+                ? "Novos editais aparecem aqui assim que forem publicados."
+                : "Troque a área acima para ver os demais concursos."
+            }
+          />
+        </Panel>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {filtrados.map((edital) => {
+            const dias = diasAte(edital.data_prova)
+            const status = STATUS[edital.status]
+
+            return (
+              <Panel key={edital.id} className="flex flex-col">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <h3 className="text-base font-semibold leading-snug text-fg">{edital.orgao}</h3>
+                    {edital.cargo && <p className="mt-0.5 text-sm text-fg-subtle">{edital.cargo}</p>}
+                  </div>
+                  <Badge tone={status.tone} size="sm" dot className="shrink-0">
+                    {status.label}
+                  </Badge>
+                </div>
+
+                <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5 border-t border-line pt-3">
+                  {edital.banca && <Campo termo="Banca" valor={edital.banca} />}
+                  {edital.vagas != null && <Campo termo="Vagas" valor={String(edital.vagas)} />}
+                  <Campo
+                    termo="Prova"
+                    valor={formatarData(edital.data_prova)}
+                    nota={dias != null ? (dias === 0 ? "é hoje" : `em ${dias} dias`) : undefined}
+                  />
+                  <Campo termo="Inscrições até" valor={formatarData(edital.data_inscricao_fim)} />
+                </dl>
+
+                <div className="flex-1" />
+
+                {edital.link && (
+                  <a
+                    href={edital.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent-ink transition-opacity duration-fast hover:opacity-80"
+                  >
+                    Ver edital completo
+                    <ArrowUpRight size={13} strokeWidth={2} />
+                  </a>
+                )}
+              </Panel>
+            )
+          })}
+        </div>
       )}
+    </div>
+  )
+}
+
+function Campo({ termo, valor, nota }: { termo: string; valor: string; nota?: string }) {
+  return (
+    <div className="min-w-0">
+      <dt className="text-2xs uppercase tracking-wide text-fg-faint">{termo}</dt>
+      <dd className="truncate text-sm tabular-nums text-fg">
+        {valor}
+        {nota && <span className="ml-1.5 text-xs text-accent-ink">{nota}</span>}
+      </dd>
     </div>
   )
 }

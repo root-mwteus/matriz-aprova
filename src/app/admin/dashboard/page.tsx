@@ -225,12 +225,12 @@ export default function AdminDashboard() {
           loading={loading}
           columns={[
             { key: "nome", header: "ALUNO", render: (row) => <span className="text-foreground text-sm">{row.nome || row.email}</span> },
-            { key: "area_concurso", header: "ÁREA", render: (row) => <span className="text-muted text-xs">{row.area_concurso || "—"}</span> },
-            { key: "email", header: "EMAIL", render: (row) => <span className="text-muted font-mono text-xs">{row.email}</span> },
+            { key: "area_concurso", header: "Área", render: (row) => <span className="text-muted text-xs">{row.area_concurso || "—"}</span> },
+            { key: "email", header: "E-mail", render: (row) => <span className="text-muted font-mono text-xs">{row.email}</span> },
             { key: "created_at", header: "CADASTRO", render: (row) => <span className="text-muted font-mono text-xs">{formatarData(row.created_at)}</span> },
             {
               key: "acoes",
-              header: "AÇÕES",
+              header: "Ações",
               render: (row) => (
                 <Link href={`/admin/usuarios/${row.id}`} className="text-[11px] text-accent hover:underline">
                   VER PERFIL

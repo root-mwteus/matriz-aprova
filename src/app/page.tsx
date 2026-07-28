@@ -59,7 +59,7 @@ export default function HomePage() {
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 bg-ink dark:bg-lime text-paper dark:text-ink px-3 py-1.5 rounded-full mb-6">
                 <span className="w-1.5 h-1.5 bg-lime dark:bg-ink rounded-full pulse-soft"></span>
-                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest font-semibold">18.247 concurseiros estudando agora</span>
+                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest font-semibold">Milhares de concurseiros aprovados</span>
               </div>
 
               <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-ink dark:text-paper leading-[0.95]">
@@ -227,17 +227,17 @@ export default function HomePage() {
       <div className="bg-lime border-y-2 border-ink overflow-hidden py-3">
         <div className="ticker-track whitespace-nowrap font-mono text-sm font-bold text-ink">
           <div className="inline-flex items-center gap-8 px-8">
-            <span>★ +850.000 QUESTÕES</span><span>★</span>
-            <span>+2.300 MATERIAIS EM PDF</span><span>★</span>
-            <span>40+ BANCAS MAPEADAS</span><span>★</span>
+            <span>★ BANCO DE QUESTÕES</span><span>★</span>
+            <span>MATERIAIS EM PDF</span><span>★</span>
+            <span>MÚLTIPLAS BANCAS</span><span>★</span>
             <span>IA PREDITIVA</span><span>★</span>
             <span>4 ÁREAS · 1 ACESSO</span><span>★</span>
             <span>R$ 89,99 / ANO</span><span>★</span>
           </div>
           <div className="inline-flex items-center gap-8 px-8" aria-hidden="true">
-            <span>★ +850.000 QUESTÕES</span><span>★</span>
-            <span>+2.300 MATERIAIS EM PDF</span><span>★</span>
-            <span>40+ BANCAS MAPEADAS</span><span>★</span>
+            <span>★ BANCO DE QUESTÕES</span><span>★</span>
+            <span>MATERIAIS EM PDF</span><span>★</span>
+            <span>MÚLTIPLAS BANCAS</span><span>★</span>
             <span>IA PREDITIVA</span><span>★</span>
             <span>4 ÁREAS · 1 ACESSO</span><span>★</span>
             <span>R$ 89,99 / ANO</span><span>★</span>
@@ -445,8 +445,8 @@ export default function HomePage() {
                 </div>
               </div>
               <h3 className="font-display font-bold text-xl mb-2.5">Banca de Questões</h3>
-              <p className="text-sm text-ink/65 leading-relaxed mb-5">+850 mil questões atualizadas, filtráveis por banca, ano, assunto e dificuldade. Todas comentadas.</p>
-              <div className="font-mono text-xs text-ink/50 pt-4 border-t border-ink/10">CESPE · FGV · FCC · VUNESP · +35</div>
+              <p className="text-sm text-ink/65 leading-relaxed mb-5">Questões atualizadas, filtráveis por banca, ano, assunto e dificuldade. Todas comentadas.</p>
+              <div className="font-mono text-xs text-ink/50 pt-4 border-t border-ink/10">CESPE · FGV · FCC · VUNESP · múltiplas bancas</div>
             </div>
 
             <div className="feature-tile bg-lime text-ink rounded-2xl p-6 border-2 border-ink relative">
@@ -475,7 +475,7 @@ export default function HomePage() {
               </div>
               <h3 className="font-display font-bold text-xl mb-2.5">PDFs Cirúrgicos</h3>
               <p className="text-sm text-ink/65 leading-relaxed mb-5">Materiais enxutos de 10 a 30 páginas. Linguagem direta, esquemas visuais, sem encheção. Só o que cai.</p>
-              <div className="font-mono text-xs text-ink/50 pt-4 border-t border-ink/10">+2.300 PDFs · download liberado</div>
+              <div className="font-mono text-xs text-ink/50 pt-4 border-t border-ink/10">Materiais · download liberado</div>
             </div>
 
             <div className="feature-tile bg-paper text-ink rounded-2xl p-6 border-2 border-ink">
@@ -635,8 +635,8 @@ export default function HomePage() {
                 <div className="divide-y divide-ink/10 border-y-2 border-ink/10">
                   {[
                     ["01", <>Acesso às <strong>4 áreas</strong> (Concursos, OAB, Militar, ENEM)</>],
-                    ["02", <>Banca com <strong>+850.000 questões</strong></>],
-                    ["03", <><strong>+2.300 materiais em PDF</strong> cirúrgicos</>],
+                    ["02", <>Banco de <strong>questões</strong> comentadas</>],
+                    ["03", <><strong>Materiais em PDF</strong> cirúrgicos</>],
                     ["04", <><strong>IA Preditiva</strong> da sua banca</>],
                     ["05", "Simulados com ranking nacional"],
                     ["06", "Plano de estudos personalizado"],

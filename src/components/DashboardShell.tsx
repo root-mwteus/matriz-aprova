@@ -1,74 +1,168 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { AnimatePresence, motion } from "framer-motion"
+import { Menu as MenuIcon, Search, X, ChevronRight } from "lucide-react"
 import Sidebar from "@/components/Sidebar"
+import { CommandPalette, useCommandPalette } from "@/components/CommandPalette"
+import { breadcrumbsFor } from "@/lib/navigation"
+import { cn } from "@/lib/utils"
+import { IconButton, Kbd } from "@/components/ui"
 
-export default function DashboardShell({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+/**
+ * Estrutura da aplicação.
+ *
+ * Duas colunas fixas e um único ponto de rolagem — o conteúdo. Sidebar e
+ * barra superior não rolam, então nunca se perde a referência de onde se
+ * está numa lista longa.
+ *
+ * A aplicação assume o tema escuro (`dark` na raiz): é uma ferramenta de
+ * sessão longa, e o marketing continua respeitando a preferência do
+ * sistema, com seu próprio escopo de cor.
+ */
+
+export default function DashboardShell({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const { open: paletteOpen, setOpen: setPaletteOpen } = useCommandPalette()
+
+  // Navegar fecha o menu mobile — sem isso o painel cobre a página
+  // recém-aberta e a pessoa precisa fechá-lo à mão.
+  useEffect(() => setDrawerOpen(false), [pathname])
+
+  const crumbs = breadcrumbsFor(pathname)
 
   return (
-    <div
-      className="min-h-screen bg-background"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "220px 1fr",
-      }}
-    >
-      {/* DESKTOP SIDEBAR */}
-      <aside className="hidden lg:block h-screen overflow-y-auto bg-surface border-r border-card-border sticky top-0">
+    <div className="dark min-h-screen bg-canvas text-fg">
+      {/* ── Sidebar fixa (desktop) ─────────────────────────────── */}
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-sidebar border-r border-line lg:block">
         <Sidebar />
       </aside>
 
-      {/* MOBILE OVERLAY */}
+      {/* ── Gaveta (mobile) ────────────────────────────────────── */}
       <AnimatePresence>
-        {sidebarOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 z-40 lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          />
+        {drawerOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.14 }}
+              onClick={() => setDrawerOpen(false)}
+              className="fixed inset-0 z-40 bg-[color:var(--overlay)] lg:hidden"
+            />
+            <motion.aside
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed inset-y-0 left-0 z-50 w-sidebar border-r border-line lg:hidden"
+            >
+              <Sidebar onNavigate={() => setDrawerOpen(false)} />
+              <IconButton
+                label="Fechar menu"
+                variant="ghost"
+                size="sm"
+                onClick={() => setDrawerOpen(false)}
+                className="absolute right-2 top-2.5"
+              >
+                <X size={15} strokeWidth={2} />
+              </IconButton>
+            </motion.aside>
+          </>
         )}
       </AnimatePresence>
 
-      {/* MOBILE SIDEBAR DRAWER */}
-      <AnimatePresence>
-        {sidebarOpen && (
-          <motion.aside
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 left-0 bottom-0 z-50 w-[220px] bg-surface border-r border-card-border lg:hidden"
+      <div className="lg:pl-sidebar">
+        {/* ── Barra superior ───────────────────────────────────── */}
+        <header
+          className={cn(
+            "sticky top-0 z-20 flex h-topbar items-center gap-3 border-b border-line",
+            "bg-[color:var(--surface)]/80 px-4 backdrop-blur-md lg:px-6"
+          )}
+        >
+          <IconButton
+            label="Abrir menu"
+            variant="ghost"
+            size="sm"
+            onClick={() => setDrawerOpen(true)}
+            className="lg:hidden"
           >
-            <Sidebar onClose={() => setSidebarOpen(false)} />
-          </motion.aside>
-        )}
-      </AnimatePresence>
+            <MenuIcon size={16} strokeWidth={2} />
+          </IconButton>
 
-      {/* MAIN CONTENT */}
-      <div className="flex flex-col min-h-screen overflow-hidden">
-        {/* MOBILE TOPBAR */}
-        <div className="lg:hidden flex items-center justify-between px-4 h-12 border-b border-card-border bg-surface flex-shrink-0">
-          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-foreground">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          <Breadcrumbs crumbs={crumbs} />
+
+          <div className="flex-1" />
+
+          {/* Busca: campo falso no desktop (abre a paleta), ícone no mobile.
+              Um input real aqui seria uma segunda forma de fazer a mesma
+              coisa, com atalho diferente. */}
+          <button
+            onClick={() => setPaletteOpen(true)}
+            className={cn(
+              "hidden h-8 items-center gap-2 rounded-md border border-line bg-surface-sunken px-2.5",
+              "text-sm text-fg-subtle transition-colors duration-fast",
+              "hover:border-line-strong hover:text-fg-muted sm:flex"
+            )}
+          >
+            <Search size={13} strokeWidth={2} />
+            <span className="pr-6">Buscar</span>
+            <Kbd>⌘K</Kbd>
           </button>
-          <span className="text-sm font-bold tracking-widest text-accent">MATRIZ APROVA</span>
-          <div className="w-5" />
-        </div>
+          <IconButton
+            label="Buscar"
+            variant="ghost"
+            size="sm"
+            onClick={() => setPaletteOpen(true)}
+            className="sm:hidden"
+          >
+            <Search size={16} strokeWidth={2} />
+          </IconButton>
+        </header>
 
-        <main className="flex-1 px-10 py-8 max-w-[960px] w-full mx-auto">
-          {children}
-        </main>
+        {/* ── Conteúdo ─────────────────────────────────────────── */}
+        <main className="mx-auto w-full max-w-content px-4 py-6 lg:px-8 lg:py-8">{children}</main>
       </div>
+
+      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
     </div>
+  )
+}
+
+/**
+ * Trilha de navegação. Colapsa para o último nível no mobile — a trilha
+ * completa consumiria a largura toda e empurraria a busca para fora.
+ */
+function Breadcrumbs({ crumbs }: { crumbs: { label: string; href: string; terminal?: boolean }[] }) {
+  if (crumbs.length === 0) return null
+
+  return (
+    <nav aria-label="Trilha de navegação" className="min-w-0">
+      <ol className="flex items-center gap-1 text-sm">
+        {crumbs.map((crumb, i) => {
+          const last = i === crumbs.length - 1
+          return (
+            <li key={crumb.href} className={cn("flex items-center gap-1", !last && "hidden sm:flex")}>
+              {i > 0 && <ChevronRight size={13} className="shrink-0 text-fg-faint" aria-hidden />}
+              {last || crumb.terminal ? (
+                <span aria-current={last ? "page" : undefined} className="truncate font-medium text-fg">
+                  {crumb.label}
+                </span>
+              ) : (
+                <Link
+                  href={crumb.href}
+                  className="truncate text-fg-subtle transition-colors duration-fast hover:text-fg"
+                >
+                  {crumb.label}
+                </Link>
+              )}
+            </li>
+          )
+        })}
+      </ol>
+    </nav>
   )
 }

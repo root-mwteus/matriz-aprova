@@ -51,7 +51,7 @@ export default function NovoSimuladoPage() {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-title uppercase">Novo Simulado</h1>
+          <h1 className="text-xl font-semibold text-fg">Novo Simulado</h1>
           <p className="text-sm text-muted mt-1">Configure o simulado</p>
         </div>
         <Link
@@ -70,7 +70,7 @@ export default function NovoSimuladoPage() {
             value={form.title}
             onChange={(e) => setForm({ ...form, title: e.target.value })}
             required
-            className="w-full bg-background border border-card-border rounded-card px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors"
+            className="field h-10"
             placeholder="Ex: Simulado Completo - Direito Constitucional"
           />
         </div>
@@ -81,7 +81,7 @@ export default function NovoSimuladoPage() {
             value={form.description}
             onChange={(e) => setForm({ ...form, description: e.target.value })}
             rows={2}
-            className="w-full bg-background border border-card-border rounded-card px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors resize-y"
+            className="field h-auto py-2 resize-y"
             placeholder="Descreva o simulado..."
           />
         </div>
@@ -95,7 +95,7 @@ export default function NovoSimuladoPage() {
               onChange={(e) => setForm({ ...form, time_limit_minutes: parseInt(e.target.value) })}
               min={1}
               required
-              className="w-full bg-background border border-card-border rounded-card px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors"
+              className="field h-10"
             />
           </div>
 
@@ -108,7 +108,7 @@ export default function NovoSimuladoPage() {
               min={1}
               max={100}
               required
-              className="w-full bg-background border border-card-border rounded-card px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors"
+              className="field h-10"
             />
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function NovoSimuladoPage() {
               <select
                 value={form.filters.subject_id}
                 onChange={(e) => setForm({ ...form, filters: { ...form.filters, subject_id: e.target.value } })}
-                className="w-full bg-background border border-card-border rounded-card px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors"
+                className="field h-10"
               >
                 <option value="">Todas</option>
                 <option value="português">Português</option>
@@ -136,7 +136,7 @@ export default function NovoSimuladoPage() {
               <select
                 value={form.filters.bank}
                 onChange={(e) => setForm({ ...form, filters: { ...form.filters, bank: e.target.value } })}
-                className="w-full bg-background border border-card-border rounded-card px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors"
+                className="field h-10"
               >
                 <option value="">Todas</option>
                 <option value="CESPE/CEBRASPE">CESPE/CEBRASPE</option>
@@ -150,7 +150,7 @@ export default function NovoSimuladoPage() {
               <select
                 value={form.filters.level}
                 onChange={(e) => setForm({ ...form, filters: { ...form.filters, level: e.target.value } })}
-                className="w-full bg-background border border-card-border rounded-card px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors"
+                className="field h-10"
               >
                 <option value="">Todos</option>
                 <option value="facil">Fácil</option>

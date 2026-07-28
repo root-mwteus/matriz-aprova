@@ -1,8 +1,24 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { useRouter } from "next/navigation"
+import { Trophy } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { cn } from "@/lib/utils"
+import PageHeader from "@/components/PageHeader"
+import { Avatar, Badge, Button, EmptyState, Panel, PanelHeader, Skeleton } from "@/components/ui"
+
+/**
+ * Ranking.
+ *
+ * O problema aqui era de desempenho, não de aparência: o nome de cada
+ * participante era buscado com uma consulta dentro do laço — até 200
+ * idas ao banco, em sequência, antes da tela pintar. Agora os perfis
+ * vêm em uma consulta só, com `in(...)` sobre os ids únicos.
+ *
+ * O pódio deixou de usar ouro/prata/bronze como única distinção: as três
+ * primeiras posições ganham peso tipográfico, e a cor virou reforço.
+ */
 
 interface RankingEntry {
   user_id: string
@@ -16,40 +32,39 @@ interface RankingEntry {
 
 export default function RankingPage() {
   const supabase = createClient()
+  const router = useRouter()
   const [ranking, setRanking] = useState<RankingEntry[]>([])
   const [userId, setUserId] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function load() {
-      const { data: { user } } = await supabase.auth.getUser()
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
       setUserId(user?.id ?? null)
 
       const { data: simulations } = await supabase
         .from("simulations")
-        .select("*")
+        .select("user_id, pontuacao, questoes, tempo_total, created_at")
         .not("pontuacao", "eq", -1)
         .order("created_at", { ascending: false })
         .limit(200)
 
-      if (!simulations) { setLoading(false); return }
+      if (!simulations?.length) {
+        setLoading(false)
+        return
+      }
 
-      const melhores = new Map<string, RankingEntry>()
-
+      // Melhor resultado de cada pessoa, sem tocar no banco.
+      const melhores = new Map<string, Omit<RankingEntry, "nome">>()
       for (const s of simulations) {
         const total = s.questoes?.length || 0
         const pct = total > 0 ? Math.round((s.pontuacao / total) * 100) : 0
-
-        if (!melhores.has(s.user_id) || (melhores.get(s.user_id)?.pct ?? 0) < pct) {
-          const { data: perfil } = await supabase
-            .from("profiles")
-            .select("nome")
-            .eq("id", s.user_id)
-            .single()
-
+        const atual = melhores.get(s.user_id)
+        if (!atual || atual.pct < pct) {
           melhores.set(s.user_id, {
             user_id: s.user_id,
-            nome: perfil?.nome || "Anônimo",
             pontuacao: s.pontuacao,
             total,
             tempo_total: s.tempo_total,
@@ -59,109 +74,136 @@ export default function RankingPage() {
         }
       }
 
-      const ordenado = Array.from(melhores.values())
-        .sort((a, b) => b.pct - a.pct || a.tempo_total - b.tempo_total)
-        .slice(0, 50)
+      // Uma consulta para todos os nomes, em vez de uma por linha.
+      const { data: perfis } = await supabase
+        .from("profiles")
+        .select("id, nome")
+        .in("id", Array.from(melhores.keys()))
 
-      setRanking(ordenado)
+      const nomes = new Map(perfis?.map((p) => [p.id, p.nome]) ?? [])
+
+      setRanking(
+        Array.from(melhores.values())
+          .map((e) => ({ ...e, nome: nomes.get(e.user_id) || "Anônimo" }))
+          // Empate em percentual é desempatado pelo tempo — quem fez o
+          // mesmo em menos tempo fica na frente.
+          .sort((a, b) => b.pct - a.pct || a.tempo_total - b.tempo_total)
+          .slice(0, 50)
+      )
       setLoading(false)
     }
     load()
   }, [supabase])
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-muted text-sm animate-pulse">Carregando ranking...</div>
-      </div>
-    )
-  }
-
-  const userPos = ranking.findIndex((e) => e.user_id === userId) + 1
+  const minhaPosicao = ranking.findIndex((e) => e.user_id === userId) + 1
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="max-w-[480px] mx-auto space-y-6"
-    >
-      {/* HEADER */}
-      <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold tracking-title uppercase text-foreground">
-          / RANKING
-        </h1>
-        <a
-          href="/simulados"
-          className="text-xs text-muted hover:text-accent transition-colors font-mono"
-        >
-          [ simulados ]
-        </a>
-      </div>
+    <div className="mx-auto max-w-[640px] animate-rise space-y-5">
+      <PageHeader
+        title="Ranking"
+        subtitle="Melhor resultado de cada participante nos últimos simulados."
+        actions={
+          <Button variant="secondary" onClick={() => router.push("/simulados")}>
+            Fazer simulado
+          </Button>
+        }
+      />
 
-      {/* POSIÇÃO DO USUÁRIO */}
-      {userPos > 0 && (
-        <div className="bg-card border border-card-border rounded-card p-5 text-center space-y-1">
-          <span className="text-xs text-muted font-mono">SUA POSIÇÃO</span>
-          <div className="text-4xl font-bold text-accent">#{userPos}</div>
-          {userPos === 1 && (
-            <span className="inline-block px-3 py-1 rounded-full bg-badge-bg text-accent border border-badge-border text-xs font-bold">
-              🏆 #1 DA SEMANA
-            </span>
+      {minhaPosicao > 0 && (
+        <Panel className="flex items-center justify-between gap-4">
+          <div>
+            <p className="text-xs font-medium text-fg-subtle">Sua posição</p>
+            <p className="mt-1 text-2xl font-semibold tabular-nums text-fg">
+              {minhaPosicao}º
+              <span className="ml-1.5 text-base font-normal text-fg-faint">
+                de {ranking.length}
+              </span>
+            </p>
+          </div>
+          {minhaPosicao === 1 && (
+            <Badge tone="accent" className="shrink-0">
+              <Trophy size={11} strokeWidth={2} />
+              Primeiro lugar
+            </Badge>
           )}
-        </div>
+        </Panel>
       )}
 
-      {/* LISTAGEM */}
-      <div className="bg-card border border-card-border rounded-card overflow-hidden">
-        <div className="px-5 py-4 border-b border-card-border">
-          <h3 className="text-xs font-bold tracking-wider text-foreground uppercase">
-            MELHORES RESULTADOS
-          </h3>
-        </div>
+      <Panel flush>
+        <PanelHeader title="Melhores resultados" description="Ordenado por acerto e tempo" />
 
-        {ranking.length === 0 ? (
-          <div className="px-5 py-10 text-center text-sm text-muted">
-            Nenhum resultado ainda. Seja o primeiro!
-          </div>
+        {loading ? (
+          <ul>
+            {Array.from({ length: 6 }).map((_, i) => (
+              <li key={i} className="flex items-center gap-3 border-b border-line px-4 py-3 last:border-0">
+                <Skeleton className="h-4 w-6" />
+                <Skeleton className="h-6 w-6 rounded-full" />
+                <Skeleton className="h-3 flex-1" style={{ maxWidth: `${60 - i * 5}%` }} />
+                <Skeleton className="h-3 w-10" />
+              </li>
+            ))}
+          </ul>
+        ) : ranking.length === 0 ? (
+          <EmptyState
+            icon={<Trophy size={16} strokeWidth={1.75} />}
+            title="Nenhum resultado ainda"
+            description="Faça o primeiro simulado e abra o ranking."
+            action={
+              <Button variant="accent" onClick={() => router.push("/simulados")}>
+                Montar simulado
+              </Button>
+            }
+          />
         ) : (
-          <div className="divide-y divide-card-border/50">
+          <ul>
             {ranking.map((entry, i) => {
-              const isUser = entry.user_id === userId
+              const euMesmo = entry.user_id === userId
+              const podio = i < 3
+
               return (
-                <div
+                <li
                   key={entry.user_id}
-                  className={`px-5 py-3.5 flex items-center gap-3 ${
-                    isUser ? "bg-accent/5" : ""
-                  }`}
+                  className={cn(
+                    "flex items-center gap-3 border-b border-line px-4 py-3 last:border-0",
+                    euMesmo && "bg-accent-soft"
+                  )}
                 >
-                  <span className={`w-7 text-sm font-bold ${
-                    i === 0 ? "text-yellow-400" : i === 1 ? "text-gray-300" : i === 2 ? "text-amber-600" : "text-muted"
-                  }`}>
-                    #{i + 1}
+                  <span
+                    className={cn(
+                      "w-7 shrink-0 text-sm tabular-nums",
+                      podio ? "font-semibold text-fg" : "text-fg-faint"
+                    )}
+                  >
+                    {i + 1}º
                   </span>
-                  <div className="flex-1 min-w-0">
-                    <span className="text-sm text-foreground truncate block">
+
+                  <Avatar name={entry.nome} size={26} />
+
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm text-fg">
                       {entry.nome}
-                      {isUser && (
-                        <span className="text-[10px] text-muted ml-2">(você)</span>
-                      )}
-                    </span>
-                    <span className="text-[11px] text-muted">
-                      {entry.pontuacao}/{entry.total} acertos
-                    </span>
+                      {euMesmo && <span className="ml-1.5 text-xs text-fg-subtle">(você)</span>}
+                    </p>
+                    <p className="text-xs tabular-nums text-fg-subtle">
+                      {entry.pontuacao}/{entry.total} acertos ·{" "}
+                      {Math.floor(entry.tempo_total / 60)} min
+                    </p>
                   </div>
-                  <div className="text-right">
-                    <div className="text-sm font-bold text-accent">{entry.pct}%</div>
-                    <div className="text-[10px] text-muted">
-                      {Math.floor(entry.tempo_total / 60)}m
-                    </div>
-                  </div>
-                </div>
+
+                  <span
+                    className={cn(
+                      "shrink-0 text-sm tabular-nums",
+                      podio ? "font-semibold text-fg" : "text-fg-muted"
+                    )}
+                  >
+                    {entry.pct}%
+                  </span>
+                </li>
               )
             })}
-          </div>
+          </ul>
         )}
-      </div>
-    </motion.div>
+      </Panel>
+    </div>
   )
 }

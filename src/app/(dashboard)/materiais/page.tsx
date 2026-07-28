@@ -1,25 +1,38 @@
 "use client"
 
-import { useEffect, useState, useCallback } from "react"
-import { motion } from "framer-motion"
+import { useCallback, useEffect, useState } from "react"
 import { toast } from "sonner"
+import { BookOpen, Download, FileText } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { BANCAS, MATERIAS } from "@/lib/constants"
 import type { Material } from "@/types"
 import PageHeader from "@/components/PageHeader"
+import {
+  Badge,
+  Button,
+  EmptyState,
+  FilterSelect,
+  IconButton,
+  Panel,
+  Segmented,
+  Skeleton,
+  Toolbar,
+} from "@/components/ui"
+
+/**
+ * Biblioteca de materiais.
+ *
+ * A lista virou grade de fichas de altura uniforme: título, contexto e
+ * ação sempre nas mesmas coordenadas, o que permite comparar itens em
+ * varredura vertical sem reler a estrutura de cada um.
+ *
+ * O par de botões "Todos / Sugeridos pela IA" era duas ações que pareciam
+ * dois estados; virou um controle segmentado, que mostra a opção
+ * escolhida e a alternativa lado a lado.
+ */
 
 type Ordenacao = "incidencia" | "materia" | "recentes"
 type FiltroIA = "todos" | "ia"
-
-const materiasList = [
-  "Português", "Matemática", "Direito Constitucional", "Direito Administrativo",
-  "Informática", "Raciocínio Lógico", "História", "Geografia",
-  "Atualidades", "Legislação", "Direito Penal", "Direito Civil",
-]
-
-const bancasList = [
-  "CESPE/CEBRASPE", "FGV", "VUNESP", "FCC", "IBFC",
-  "CONSULPLAN", "QUADRIX", "CESGRANRIO",
-]
 
 export default function MateriaisPage() {
   const supabase = createClient()
@@ -30,9 +43,11 @@ export default function MateriaisPage() {
   const [professor, setProfessor] = useState("")
   const [ordenacao, setOrdenacao] = useState<Ordenacao>("incidencia")
   const [filtroIA, setFiltroIA] = useState<FiltroIA>("todos")
+  const [professores, setProfessores] = useState<string[]>([])
 
   useEffect(() => {
     async function load() {
+      setLoading(true)
       let query = supabase.from("materials").select("*")
 
       if (materia) query = query.eq("materia", materia)
@@ -40,12 +55,21 @@ export default function MateriaisPage() {
       if (professor) query = query.ilike("professor", `%${professor}%`)
       if (filtroIA === "ia") query = query.gt("incidencia_pct", 70)
 
-      if (ordenacao === "incidencia") query = query.order("incidencia_pct", { ascending: false, nullsFirst: false })
+      if (ordenacao === "incidencia")
+        query = query.order("incidencia_pct", { ascending: false, nullsFirst: false })
       else if (ordenacao === "materia") query = query.order("materia", { ascending: true })
       else query = query.order("created_at", { ascending: false })
 
       const { data } = await query
-      if (data) setMateriais(data)
+      if (data) {
+        setMateriais(data)
+        // A lista de professores vinha do resultado já filtrado: escolher
+        // um professor apagava os demais do próprio filtro. Só cresce.
+        setProfessores((atuais) => {
+          const nomes = new Set([...atuais, ...data.map((m) => m.professor).filter(Boolean)])
+          return Array.from(nomes).sort() as string[]
+        })
+      }
       setLoading(false)
     }
     load()
@@ -63,166 +87,130 @@ export default function MateriaisPage() {
     }
   }, [])
 
-  const professores = Array.from(new Set(materiais.map((m) => m.professor).filter(Boolean))) as string[]
+  const temFiltro = Boolean(materia || banca || professor)
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="space-y-6"
-    >
-      <div className="flex items-start justify-between">
-        <PageHeader
-          badge="MATERIAIS"
-          title="PDFs selecionados pela IA"
-          subtitle="Materiais com maior incidência na sua banca"
-        />
-        <span className="text-sm text-muted font-mono mt-1">
-          {materiais.length} disponíveis
-        </span>
-      </div>
+    <div className="animate-rise space-y-6">
+      <PageHeader
+        title="Materiais"
+        subtitle="PDFs ordenados pela incidência nas provas da sua banca."
+      />
 
-      {/* FILTROS */}
-      <div className="bg-card border border-card-border rounded-card p-4 space-y-4">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <select
-            value={materia}
-            onChange={(e) => setMateria(e.target.value)}
-            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
-          >
-            <option value="">Matéria</option>
-            {materiasList.map((m) => (
-              <option key={m} value={m}>{m}</option>
-            ))}
-          </select>
+      <div className="space-y-3">
+        <Toolbar
+          onClear={() => {
+            setMateria("")
+            setBanca("")
+            setProfessor("")
+          }}
+          hasFilters={temFiltro}
+          trailing={
+            <Segmented
+              size="sm"
+              value={ordenacao}
+              onChange={(v) => setOrdenacao(v as Ordenacao)}
+              items={[
+                { value: "incidencia", label: "Incidência" },
+                { value: "materia", label: "Matéria" },
+                { value: "recentes", label: "Recentes" },
+              ]}
+            />
+          }
+        >
+          <FilterSelect label="Matéria" value={materia} onChange={setMateria} options={[...MATERIAS]} />
+          <FilterSelect label="Banca" value={banca} onChange={setBanca} options={[...BANCAS]} />
+          <FilterSelect label="Professor" value={professor} onChange={setProfessor} options={professores} />
+        </Toolbar>
 
-          <select
-            value={banca}
-            onChange={(e) => setBanca(e.target.value)}
-            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
-          >
-            <option value="">Banca</option>
-            {bancasList.map((b) => (
-              <option key={b} value={b}>{b}</option>
-            ))}
-          </select>
-
-          <select
-            value={professor}
-            onChange={(e) => setProfessor(e.target.value)}
-            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
-          >
-            <option value="">Professor</option>
-            {professores.map((p) => (
-              <option key={p} value={p}>{p}</option>
-            ))}
-          </select>
-
-          <select
-            value={ordenacao}
-            onChange={(e) => setOrdenacao(e.target.value as Ordenacao)}
-            className="bg-background border border-card-border rounded-card px-3 py-3.5 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
-          >
-            <option value="incidencia">Incidência</option>
-            <option value="materia">Matéria</option>
-            <option value="recentes">Mais recentes</option>
-          </select>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setFiltroIA("todos")}
-            className={`px-4 py-2 rounded-card text-xs font-semibold transition-all ${
-              filtroIA === "todos"
-                ? "bg-accent text-accent-foreground font-bold"
-                : "bg-background border border-card-border text-muted hover:text-foreground"
-            }`}
-          >
-            Todos
-          </button>
-          <button
-            onClick={() => setFiltroIA("ia")}
-            className={`px-4 py-2 rounded-card text-xs font-semibold transition-all ${
-              filtroIA === "ia"
-                ? "bg-accent text-accent-foreground font-bold"
-                : "bg-background border border-card-border text-muted hover:text-foreground"
-            }`}
-          >
-            Sugeridos pela IA
-          </button>
-          {filtroIA === "ia" && (
-            <span className="text-[10px] text-muted font-mono">
-              incidência &gt; 70%
-            </span>
-          )}
+        <div className="flex items-center gap-3">
+          <Segmented
+            size="sm"
+            value={filtroIA}
+            onChange={(v) => setFiltroIA(v as FiltroIA)}
+            items={[
+              { value: "todos", label: "Todos" },
+              { value: "ia", label: "Alta incidência" },
+            ]}
+          />
+          <span className="text-xs text-fg-faint">
+            {filtroIA === "ia"
+              ? "Apenas materiais com incidência acima de 70%"
+              : `${materiais.length} ${materiais.length === 1 ? "material" : "materiais"}`}
+          </span>
         </div>
       </div>
 
-      {/* LISTAGEM */}
       {loading ? (
-        <div className="flex items-center justify-center h-64">
-          <div className="text-muted text-sm animate-pulse">Carregando materiais...</div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <Panel key={i} className="space-y-3">
+              <Skeleton className="h-4 w-4/5" />
+              <Skeleton className="h-3 w-1/2" />
+              <Skeleton className="h-8 w-full" />
+            </Panel>
+          ))}
         </div>
       ) : materiais.length === 0 ? (
-        <div className="bg-card border border-card-border rounded-card p-10 text-center space-y-3">
-          <span className="text-4xl">📚</span>
-          <p className="text-sm text-muted">Nenhum material encontrado.</p>
-        </div>
+        <Panel flush>
+          <EmptyState
+            icon={<BookOpen size={16} strokeWidth={1.75} />}
+            title="Nenhum material encontrado"
+            description="Nenhum PDF corresponde a esses filtros. Tente ampliar a busca."
+            action={
+              temFiltro ? (
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                    setMateria("")
+                    setBanca("")
+                    setProfessor("")
+                  }}
+                >
+                  Limpar filtros
+                </Button>
+              ) : undefined
+            }
+          />
+        </Panel>
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {materiais.map((m, i) => (
-            <motion.div
-              key={m.id}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.04 }}
-              className="bg-card border border-card-border rounded-card p-5 hover:border-accent/30 transition-all group flex flex-col"
-            >
-              {(m.incidencia_pct ?? 0) > 70 && (
-                <div className="flex items-center justify-between mb-3">
-                  <span className="px-2.5 py-1 rounded-full bg-badge-bg text-accent border border-badge-border text-[10px] font-bold font-mono uppercase">
-                    IA · {m.incidencia_pct}% CAI
-                  </span>
-                </div>
-              )}
-
-              <h3 className="text-sm font-bold text-foreground group-hover:text-accent transition-colors leading-snug mb-2">
-                {m.titulo}
-              </h3>
-
-              <div className="flex items-center gap-2 mb-3">
-                {m.materia && (
-                  <span className="text-[11px] text-muted">{m.materia}</span>
-                )}
-                {m.banca && (
-                  <>
-                    <span className="text-[11px] text-muted">·</span>
-                    <span className="text-[11px] text-muted">{m.banca}</span>
-                  </>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {materiais.map((m) => (
+            <Panel key={m.id} className="flex flex-col">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-base font-semibold leading-snug text-fg">{m.titulo}</h3>
+                {(m.incidencia_pct ?? 0) > 70 && (
+                  <Badge tone="accent" size="sm" className="mt-0.5 shrink-0">
+                    {m.incidencia_pct}%
+                  </Badge>
                 )}
               </div>
+
+              <p className="mt-1.5 text-sm text-fg-subtle">
+                {[m.materia, m.banca].filter(Boolean).join(" · ") || "Sem classificação"}
+              </p>
 
               <div className="flex-1" />
 
-              <div className="flex items-center justify-between pt-3 border-t border-card-border">
-                <span className="text-[11px] text-muted">
-                  📄 {m.paginas ?? "--"} páginas{m.professor ? ` · ${m.professor}` : ""}
+              <div className="mt-4 flex items-center justify-between border-t border-line pt-3">
+                <span className="inline-flex items-center gap-1.5 text-xs text-fg-faint">
+                  <FileText size={12} strokeWidth={1.75} />
+                  {m.paginas ? `${m.paginas} pág.` : "PDF"}
+                  {m.professor ? ` · ${m.professor}` : ""}
                 </span>
-                <button
-                  onClick={() => handleDownload(m.pdf_url, m.titulo)}
+                <IconButton
+                  label={`Baixar ${m.titulo}`}
+                  variant="ghost"
+                  size="sm"
                   disabled={!m.pdf_url}
-                  className="w-8 h-8 rounded-full bg-background border border-card-border flex items-center justify-center hover:border-accent transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-                  title="Baixar material"
+                  onClick={() => handleDownload(m.pdf_url, m.titulo)}
                 >
-                  <svg className="w-4 h-4 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                </button>
+                  <Download size={14} strokeWidth={1.75} />
+                </IconButton>
               </div>
-            </motion.div>
+            </Panel>
           ))}
         </div>
       )}
-    </motion.div>
+    </div>
   )
 }

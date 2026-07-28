@@ -73,7 +73,7 @@ export default function NovoMaterialPage() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-2xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Novo Material</h1>
+          <h1 className="text-xl font-semibold text-fg">Novo Material</h1>
         </div>
         <Link href="/admin/materiais" className="text-xs text-muted hover:text-foreground font-mono">← VOLTAR</Link>
       </div>
@@ -87,7 +87,7 @@ export default function NovoMaterialPage() {
             <input
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
-              className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+              className="field h-10"
               placeholder="Título do material"
             />
           </div>
@@ -98,7 +98,7 @@ export default function NovoMaterialPage() {
               <select
                 value={materia}
                 onChange={(e) => setMateria(e.target.value)}
-                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                className="field h-10"
               >
                 <option value="">Selecione</option>
                 {materias.map((m) => <option key={m} value={m}>{m}</option>)}
@@ -109,7 +109,7 @@ export default function NovoMaterialPage() {
               <input
                 value={subMateria}
                 onChange={(e) => setSubMateria(e.target.value)}
-                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                className="field h-10"
                 placeholder="Ex: Princípios"
               />
             </div>
@@ -121,7 +121,7 @@ export default function NovoMaterialPage() {
               <select
                 value={banca}
                 onChange={(e) => setBanca(e.target.value)}
-                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-accent"
+                className="field h-10"
               >
                 <option value="">Selecione</option>
                 {bancas.map((b) => <option key={b} value={b}>{b}</option>)}
@@ -132,7 +132,7 @@ export default function NovoMaterialPage() {
               <input
                 value={professor}
                 onChange={(e) => setProfessor(e.target.value)}
-                className="w-full bg-background border border-card-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent"
+                className="field h-10"
                 placeholder="Nome do professor"
               />
             </div>

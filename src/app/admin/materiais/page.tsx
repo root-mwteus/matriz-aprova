@@ -54,7 +54,7 @@ export default function AdminMateriaisPage() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Materiais · PDF</h1>
+          <h1 className="text-xl font-semibold text-fg">Materiais · PDF</h1>
           <span className="text-xs text-muted font-mono">{materiais.length}</span>
         </div>
         <Link
@@ -135,7 +135,7 @@ export default function AdminMateriaisPage() {
         open={!!excluindo}
         title="Excluir material"
         description="Tem certeza que deseja excluir este material? O PDF também será removido do armazenamento."
-        confirmLabel="EXCLUIR"
+        confirmLabel="Excluir"
         confirmDestructive
         onConfirm={confirmarExclusao}
         onCancel={() => setExcluindo(null)}

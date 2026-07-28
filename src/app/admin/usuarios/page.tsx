@@ -103,7 +103,7 @@ export default function AdminUsuariosPage() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-bold tracking-title uppercase text-foreground">/ Usuários</h1>
+          <h1 className="text-xl font-semibold text-fg">Usuários</h1>
           <span className="text-xs text-muted font-mono">{total}</span>
         </div>
       </div>
@@ -112,13 +112,13 @@ export default function AdminUsuariosPage() {
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          className="flex-1 min-w-[200px] bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+          className="field h-8 flex-1 min-w-[200px]"
           placeholder="Buscar por nome ou email..."
         />
         <select
           value={area}
           onChange={(e) => setArea(e.target.value)}
-          className="bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
+          className="field h-8 w-auto"
         >
           <option value="todas">Todas as áreas</option>
           <option value="Concursos">Concursos</option>
@@ -129,7 +129,7 @@ export default function AdminUsuariosPage() {
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value as "recentes" | "antigos")}
-          className="bg-background border border-card-border rounded-lg px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
+          className="field h-8 w-auto"
         >
           <option value="recentes">Mais recentes</option>
           <option value="antigos">Mais antigos</option>
@@ -155,7 +155,7 @@ export default function AdminUsuariosPage() {
             },
             {
               key: "area_concurso",
-              header: "ÁREA",
+              header: "Área",
               render: (row) => (
                 <span className="text-[11px] text-accent bg-accent/10 px-2 py-0.5 rounded-full">
                   {row.area_concurso || "Não informado"}
@@ -169,12 +169,12 @@ export default function AdminUsuariosPage() {
             },
             {
               key: "acoes",
-              header: "AÇÕES",
+              header: "Ações",
               render: (row) => (
                 <div className="flex items-center gap-2">
                   <Link href={`/admin/usuarios/${row.id}`} className="text-[11px] text-accent hover:underline">VER</Link>
                   <span className="text-muted text-[11px]">|</span>
-                  <a href={`mailto:${row.email}`} className="text-[11px] text-muted hover:text-foreground">EMAIL</a>
+                  <a href={`mailto:${row.email}`} className="text-[11px] text-muted hover:text-foreground">E-mail</a>
                 </div>
               ),
             },
