@@ -4,6 +4,11 @@ const nextConfig = {
   images: {
     domains: [],
   },
+  // Pacotes ESM-only que o webpack não consegue fazer require() —
+  // deixa o Node.js carregar nativamente em vez de tentar empacotar.
+  experimental: {
+    serverExternalPackages: ["@apm-js-collab/tracing-hooks"],
+  },
   // Cabeçalhos de segurança em um lugar só. Estavam duplicados aqui e no
   // vercel.json, com listas diferentes — o que valia dependia de qual
   // camada respondia primeiro.
