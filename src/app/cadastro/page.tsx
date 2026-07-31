@@ -50,14 +50,23 @@ export default function RegisterPage() {
     setLoading(true)
     setErrors({})
 
-    const { data, error } = await supabase.auth.signUp({
-      email: form.email,
-      password: form.password,
-      options: {
-        data: { nome: form.nome, area_concurso: form.area_concurso },
-        emailRedirectTo: `${window.location.origin}/auth/callback`,
-      },
-    })
+    let data, error
+    try {
+      const res = await supabase.auth.signUp({
+        email: form.email,
+        password: form.password,
+        options: {
+          data: { nome: form.nome, area_concurso: form.area_concurso },
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
+        },
+      })
+      data = res.data
+      error = res.error
+    } catch (e) {
+      setErrors({ api: e instanceof Error ? e.message : "Erro inesperado ao criar conta" })
+      setLoading(false)
+      return
+    }
 
     if (error) {
       setErrors({ api: error.message })

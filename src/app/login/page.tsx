@@ -49,14 +49,20 @@ function LoginContent() {
     setLoading(true)
     setErrors({})
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email: form.email,
-      password: form.password,
-    })
+    let error
+    try {
+      const res = await supabase.auth.signInWithPassword({
+        email: form.email,
+        password: form.password,
+      })
+      error = res.error
+    } catch (e) {
+      setErrors({ api: "Erro inesperado. Tente novamente." })
+      setLoading(false)
+      return
+    }
 
     if (error) {
-      // Mensagem única de propósito: dizer qual dos dois está errado
-      // permitiria descobrir quais e-mails têm conta.
       setErrors({ api: "E-mail ou senha incorretos." })
       setLoading(false)
       return
