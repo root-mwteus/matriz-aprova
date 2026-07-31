@@ -12,17 +12,5 @@ export function createClient() {
     auth: {
       flowType: "pkce",
     },
-    global: {
-      fetch: (input, init) => {
-        const urlStr = String(input)
-        console.log("[supabase-fetch]", urlStr)
-        try {
-          return fetch(input, init)
-        } catch (e) {
-          console.error("[supabase-fetch-error]", urlStr, e)
-          throw e
-        }
-      },
-    },
   })
 }
