@@ -10,6 +10,7 @@ next-env.d.ts
 # Variáveis de ambiente — nunca versionar
 .env*
 !.env.example
+.env.local
 
 # Sentry
 .env.sentry-build-plugin
