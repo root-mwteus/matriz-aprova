@@ -1,4 +1,4 @@
-import { createBrowserClient } from "@supabase/ssr"
+import { createClient as createSupabaseClient } from "@supabase/supabase-js"
 
 export function createClient() {
   const url = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim()
@@ -8,11 +8,20 @@ export function createClient() {
   if (!key) throw new Error("NEXT_PUBLIC_SUPABASE_ANON_KEY não definida")
   new URL(url)
 
-  return createBrowserClient(url, key, {
+  return createSupabaseClient(url, key, {
+    auth: {
+      flowType: "pkce",
+    },
     global: {
       fetch: (input, init) => {
-        console.log("[supabase-fetch]", String(input))
-        return fetch(input, init)
+        const urlStr = String(input)
+        console.log("[supabase-fetch]", urlStr)
+        try {
+          return fetch(input, init)
+        } catch (e) {
+          console.error("[supabase-fetch-error]", urlStr, e)
+          throw e
+        }
       },
     },
   })
