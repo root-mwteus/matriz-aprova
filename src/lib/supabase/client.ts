@@ -8,5 +8,12 @@ export function createClient() {
   if (!key) throw new Error("NEXT_PUBLIC_SUPABASE_ANON_KEY não definida")
   new URL(url)
 
-  return createBrowserClient(url, key)
+  return createBrowserClient(url, key, {
+    global: {
+      fetch: (input, init) => {
+        console.log("[supabase-fetch]", String(input))
+        return fetch(input, init)
+      },
+    },
+  })
 }
