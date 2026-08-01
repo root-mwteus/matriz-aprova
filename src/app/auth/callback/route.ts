@@ -5,6 +5,7 @@ import { sendBoasVindas } from "@/lib/email"
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get("code")
+  const type = searchParams.get("type")
   const next = searchParams.get("next") ?? "/dashboard"
 
   if (code) {
@@ -31,6 +32,16 @@ export async function GET(request: NextRequest) {
 
     if (!error && data.user) {
       const user = data.user
+
+      // Link de recuperação de senha: trocou o código, mas ainda falta o
+      // usuário definir a nova senha — mandar direto pro /dashboard faria
+      // o link "funcionar" sem resetar nada.
+      if (type === "recovery") {
+        const res = NextResponse.redirect(`${origin}/auth/redefinir-senha`)
+        supabaseResponse.cookies.getAll().forEach((c) => res.cookies.set(c.name, c.value))
+        return res
+      }
+
       const isOAuth = user.app_metadata?.provider === "google"
 
       if (isOAuth) {

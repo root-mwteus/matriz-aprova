@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { loginSchema, registerSchema, forgotSchema } from "../auth-validation"
+import { loginSchema, registerSchema, forgotSchema, redefinirSenhaSchema } from "../auth-validation"
 
 describe("loginSchema", () => {
   it("aceita email e senha válidos", () => {
@@ -54,5 +54,23 @@ describe("forgotSchema", () => {
     const result = forgotSchema.safeParse({ email: "invalido" })
     expect(result.success).toBe(false)
     expect(result.error?.issues[0].message).toBe("Email inválido")
+  })
+})
+
+describe("redefinirSenhaSchema", () => {
+  it("aceita senhas iguais com 6+ caracteres", () => {
+    expect(redefinirSenhaSchema.safeParse({ password: "nova123", confirmar: "nova123" }).success).toBe(true)
+  })
+
+  it("rejeita senhas diferentes", () => {
+    const result = redefinirSenhaSchema.safeParse({ password: "nova123", confirmar: "outra99" })
+    expect(result.success).toBe(false)
+    expect(result.error?.issues[0].message).toBe("As senhas não coincidem")
+  })
+
+  it("rejeita senha curta", () => {
+    const result = redefinirSenhaSchema.safeParse({ password: "123", confirmar: "123" })
+    expect(result.success).toBe(false)
+    expect(result.error?.issues[0].message).toBe("A senha deve ter no mínimo 6 caracteres")
   })
 })
