@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server"
 import { z } from "zod"
 import { createClient } from "@/lib/supabase/server"
+import { createServiceClient } from "@/lib/supabase/service"
+import { requireUser } from "@/lib/supabase/auth"
 
 export const dynamic = "force-dynamic"
 
@@ -11,14 +13,12 @@ const CriarGrupoSchema = z.object({
 })
 
 export async function GET() {
-  const supabase = createClient()
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const user = await requireUser()
   if (!user) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
   }
+
+  const supabase = createClient()
 
   const { data: grupos, error } = await supabase
     .from("grupos")
@@ -38,8 +38,11 @@ export async function GET() {
     ids.length
       ? supabase.from("membros").select("grupo_id, user_id").in("grupo_id", ids)
       : { data: [] },
+    // O RLS de `profiles` só expõe o próprio perfil — com a chave anônima
+    // todo criador alheio viraria "Anônimo". O nome vem pelo service client,
+    // depois de autenticar o usuário no servidor.
     criadores.length
-      ? supabase.from("profiles").select("id, nome").in("id", criadores)
+      ? createServiceClient().from("profiles").select("id, nome").in("id", criadores)
       : { data: [] },
   ])
 
@@ -68,19 +71,17 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const parsed = CriarGrupoSchema.safeParse(await request.json())
+  const parsed = CriarGrupoSchema.safeParse(await request.json().catch(() => null))
   if (!parsed.success) {
     return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 })
   }
 
-  const supabase = createClient()
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const user = await requireUser()
   if (!user) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
   }
+
+  const supabase = createClient()
 
   const { data: grupo, error } = await supabase
     .from("grupos")

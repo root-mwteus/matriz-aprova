@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server"
-import { createServerClient, type CookieOptions } from "@supabase/ssr"
-import { cookies } from "next/headers"
 import { z } from "zod"
 import OpenAI from "openai"
 import { MATERIAS } from "@/lib/constants"
+import { createClient } from "@/lib/supabase/server"
+import { requireUser } from "@/lib/supabase/auth"
 
 const DIAS = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"] as const
 
@@ -139,7 +139,7 @@ Regras:
 
 export async function POST(request: Request) {
   try {
-    const parsed = GeraPlanoSchema.safeParse(await request.json())
+    const parsed = GeraPlanoSchema.safeParse(await request.json().catch(() => null))
     if (!parsed.success) {
       return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 })
     }
@@ -147,24 +147,12 @@ export async function POST(request: Request) {
 
     // Autenticação e rate-limit ANTES da IA: chamada à OpenAI custa
     // crédito e não pode ser feita por quem não está logado.
-    const cookieStore = cookies()
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          get(name: string) { return cookieStore.get(name)?.value },
-          set(name: string, value: string, options: CookieOptions) { cookieStore.set({ name, value, ...options }) },
-          remove(name: string, options: CookieOptions) { cookieStore.set({ name, value: "", ...options }) },
-        },
-      }
-    )
-
-    const { data: { user } } = await supabase.auth.getUser()
-
+    const user = await requireUser()
     if (!user) {
       return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
     }
+
+    const supabase = createClient()
 
     const janela24h = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
     const { count } = await supabase

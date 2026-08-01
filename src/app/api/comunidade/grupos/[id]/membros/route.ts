@@ -1,17 +1,23 @@
 import { NextResponse } from "next/server"
+import { z } from "zod"
 import { createClient } from "@/lib/supabase/server"
+import { requireUser } from "@/lib/supabase/auth"
 
 export const dynamic = "force-dynamic"
 
-export async function POST(_request: Request, { params }: { params: { id: string } }) {
-  const supabase = createClient()
+const GrupoIdSchema = z.string().uuid()
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+export async function POST(_request: Request, { params }: { params: { id: string } }) {
+  const user = await requireUser()
   if (!user) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
   }
+
+  if (!GrupoIdSchema.safeParse(params.id).success) {
+    return NextResponse.json({ error: "Grupo inválido" }, { status: 400 })
+  }
+
+  const supabase = createClient()
 
   const { error } = await supabase
     .from("membros")
@@ -26,14 +32,16 @@ export async function POST(_request: Request, { params }: { params: { id: string
 }
 
 export async function DELETE(_request: Request, { params }: { params: { id: string } }) {
-  const supabase = createClient()
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const user = await requireUser()
   if (!user) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
   }
+
+  if (!GrupoIdSchema.safeParse(params.id).success) {
+    return NextResponse.json({ error: "Grupo inválido" }, { status: 400 })
+  }
+
+  const supabase = createClient()
 
   const { error } = await supabase.from("membros").delete().eq("grupo_id", params.id).eq("user_id", user.id)
 

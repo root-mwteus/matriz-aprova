@@ -1,6 +1,12 @@
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Init lazy: o construtor do Resend lança exceção síncrona sem API key.
+// Este módulo é importado pelo /auth/callback, que não pode quebrar só
+// porque o Resend ainda não foi configurado.
+function getResend(): Resend | null {
+  if (!process.env.RESEND_API_KEY) return null
+  return new Resend(process.env.RESEND_API_KEY)
+}
 
 // Trocar para "noreply@matrizaprova.com" após verificar o domínio no Resend
 const FROM = process.env.NODE_ENV === "production"
@@ -16,6 +22,10 @@ export async function sendBoasVindas({
   email: string
   area: string
 }) {
+  const resend = getResend()
+  if (!resend) {
+    return { data: null, error: new Error("Resend não configurado (RESEND_API_KEY ausente)") }
+  }
   return resend.emails.send({
     from: FROM,
     to: email,

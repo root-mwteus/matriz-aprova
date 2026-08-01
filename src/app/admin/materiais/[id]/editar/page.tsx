@@ -7,9 +7,7 @@ import { motion } from "framer-motion"
 import { toast } from "sonner"
 import { UploadZone } from "@/components/admin/UploadZone"
 import { createClient } from "@/lib/supabase/client"
-
-const materias = ["Português", "Matemática", "Direito Constitucional", "Direito Administrativo", "Informática", "Raciocínio Lógico"]
-const bancas = ["CESPE/CEBRASPE", "FGV", "VUNESP", "FCC", "IBFC", "CONSULPLAN", "QUADRIX", "CESGRANRIO"]
+import { BANCAS, MATERIAS } from "@/lib/constants"
 
 export default function EditarMaterialPage() {
   const params = useParams<{ id: string }>()
@@ -164,7 +162,7 @@ export default function EditarMaterialPage() {
                 className="field h-10"
               >
                 <option value="">Selecione</option>
-                {materias.map((m) => <option key={m} value={m}>{m}</option>)}
+                {MATERIAS.map((m) => <option key={m} value={m}>{m}</option>)}
               </select>
             </div>
             <div>
@@ -187,7 +185,7 @@ export default function EditarMaterialPage() {
                 className="field h-10"
               >
                 <option value="">Selecione</option>
-                {bancas.map((b) => <option key={b} value={b}>{b}</option>)}
+                {BANCAS.map((b) => <option key={b} value={b}>{b}</option>)}
               </select>
             </div>
             <div>

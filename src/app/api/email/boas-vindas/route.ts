@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { z } from "zod"
 import { sendBoasVindas } from "@/lib/email"
-import { createClient } from "@/lib/supabase/server"
+import { requireUser } from "@/lib/supabase/auth"
 
 // Mapa simples: user_id → { count, resetAt }
 // O rate-limit é por usuário autenticado, não por IP (IP é forjável e
@@ -32,8 +32,7 @@ const BoasVindasSchema = z.object({
 })
 
 export async function POST(req: Request) {
-  const supabase = createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await requireUser()
 
   if (!user) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 })

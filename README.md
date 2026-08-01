@@ -13,7 +13,7 @@ Milhares de questões comentadas, simulados inteligentes, materiais em PDF e pla
 
 ## Pré-requisitos
 
-- Node.js 18+
+- Node.js 20+
 - npm
 - Conta no [Supabase](https://supabase.com) (grátis)
 - Conta na [Vercel](https://vercel.com) (grátis)
@@ -45,6 +45,10 @@ cp .env.example .env.local
    - `Site URL`: `http://localhost:3000`
    - Redirect URLs: `http://localhost:3000/auth/callback`
 6. (Opcional) Ative o provedor Google em Authentication > Providers
+7. **Bancos já existentes**: rode também as migrations em `supabase/` na
+   ordem (`supabase-migration-001` … `supabase-migration-012`), pulando as
+   que já foram aplicadas — o `supabase-schema.sql` é o estado final
+   consolidado e serve apenas para setups novos.
 
 ## Desenvolvimento
 
@@ -98,6 +102,8 @@ src/
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
    - `SUPABASE_SERVICE_ROLE_KEY`
    - `NEXT_PUBLIC_SITE_URL` (URL do seu deploy)
+   - `OPENAI_API_KEY` (plano de estudos por IA)
+   - `RESEND_API_KEY` (e-mails de boas-vindas e recuperação de senha)
 4. No Supabase, atualize:
    - **Authentication > Settings > Site URL**: URL da Vercel
    - **Authentication > Settings > Redirect URLs**: `https://seu-site.vercel.app/auth/callback`

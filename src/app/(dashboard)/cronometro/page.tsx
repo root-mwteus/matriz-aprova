@@ -126,9 +126,17 @@ export default function CronometroPage() {
       return
     }
     setSalvando(true)
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    if (!user) {
+      toast.error("Sessão expirada. Faça login novamente")
+      setSalvando(false)
+      return
+    }
     const { data, error } = await supabase
       .from("study_sessions")
-      .insert({ materia, tempo_minutos: minutos })
+      .insert({ user_id: user.id, materia, tempo_minutos: minutos })
       .select("id")
       .single()
 

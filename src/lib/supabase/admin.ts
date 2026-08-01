@@ -1,6 +1,6 @@
 import { type SupabaseClient } from "@supabase/supabase-js"
 import { createServiceClient } from "@/lib/supabase/service"
-import { createClient as createServerClient } from "@/lib/supabase/server"
+import { getSessionUser } from "@/lib/supabase/auth"
 
 /**
  * Acesso administrativo aos dados.
@@ -16,15 +16,8 @@ import { createClient as createServerClient } from "@/lib/supabase/server"
 export type AdminSupabase = SupabaseClient
 
 export async function requireAdmin() {
-  const supabase = createServerClient()
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-  if (!user) return null
-
-  const { data: perfil } = await supabase.from("profiles").select("role").eq("id", user.id).single()
-  if (perfil?.role !== "admin") return null
+  const session = await getSessionUser()
+  if (!session || session.suspenso || session.role !== "admin") return null
 
   if (!process.env.SUPABASE_SERVICE_ROLE_KEY) return null
 

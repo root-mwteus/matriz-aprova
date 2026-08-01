@@ -40,7 +40,6 @@ export interface AdminMaterial {
   paginas: number | null
   pdf_url: string | null
   incidencia_pct: number | null
-  downloads: number
   ia_recommend: boolean
   created_at: string
 }

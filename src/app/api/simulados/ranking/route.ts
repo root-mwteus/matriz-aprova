@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase/server"
 import { createServiceClient } from "@/lib/supabase/service"
+import { requireUser } from "@/lib/supabase/auth"
 
 export const dynamic = "force-dynamic"
 
@@ -32,10 +32,7 @@ interface MelhorResultado {
 }
 
 export async function GET() {
-  const supabase = createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const user = await requireUser()
 
   if (!user) {
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 })

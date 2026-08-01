@@ -18,7 +18,7 @@ export default function GlobalError({
             <h1 className="text-2xl font-semibold text-fg">Algo deu errado</h1>
 
             <p className="mt-2 text-base text-fg-muted">
-              O erro foi registrado e nossa equipe já foi avisada. Tente novamente.
+              Algo falhou na renderização desta página. Tente novamente.
             </p>
 
             <div className="mt-7 flex items-center justify-center gap-2">
@@ -36,8 +36,8 @@ export default function GlobalError({
               </a>
             </div>
 
-            {/* O código identifica esta ocorrência no Sentry — é o que o
-                suporte precisa pedir a quem relata o problema. */}
+            {/* O digest identifica a ocorrência — útil para reportar ao
+                suporte junto com o passo a passo do erro. */}
             {error.digest && (
               <p className="mt-6 font-mono text-xs text-fg-faint">Código: {error.digest}</p>
             )}

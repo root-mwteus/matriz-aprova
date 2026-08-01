@@ -343,9 +343,10 @@ CREATE POLICY "Usuário insere apenas suas próprias simulações"
   ON public.simulations FOR INSERT
   WITH CHECK (auth.uid() = user_id);
 
-CREATE POLICY "Usuário atualiza apenas suas próprias simulações"
-  ON public.simulations FOR UPDATE
-  USING (auth.uid() = user_id);
+-- Sem policy de UPDATE de cliente: finalizar um simulado (gravar
+-- pontuação) passa obrigatoriamente por /api/simulados/[id]/finalizar,
+-- que recomputa os acertos no servidor — o usuário não pode inflar a
+-- própria pontuação direto pela API do Supabase.
 
 CREATE POLICY "Usuário exclui apenas suas próprias simulações"
   ON public.simulations FOR DELETE
@@ -439,7 +440,13 @@ CREATE POLICY "Admin exclui materiais do storage"
 
 CREATE POLICY "Autenticados leem materiais do storage"
   ON storage.objects FOR SELECT
-  USING (bucket_id = 'materiais' AND auth.role() = 'authenticated');
+  USING (
+    bucket_id = 'materiais'
+    AND EXISTS (
+      SELECT 1 FROM public.materials m
+      WHERE m.pdf_url = storage.objects.name
+    )
+  );
 
 -- Bucket público para figuras de questões (conteúdo educacional)
 INSERT INTO storage.buckets (id, name, public)
@@ -557,3 +564,41 @@ CREATE POLICY "Usuário exclui apenas suas próprias sessões"
 
 CREATE INDEX idx_study_sessions_user          ON public.study_sessions(user_id);
 CREATE INDEX idx_study_sessions_registrado_em ON public.study_sessions(registrado_em);
+
+-- ============================================================
+-- 16. EDITAIS (catálogo de concursos, curado pelo admin)
+-- ============================================================
+CREATE TABLE public.editais (
+  id                 uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  orgao              text NOT NULL,
+  cargo              text,
+  banca              text,
+  area_concurso      text NOT NULL,
+  vagas              integer,
+  data_prova         date,
+  data_inscricao_fim date,
+  link               text,
+  status             text NOT NULL DEFAULT 'aberto' CHECK (status IN ('aberto', 'encerrado', 'previsto')),
+  created_at         timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.editais ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Editais visíveis para todos autenticados"
+  ON public.editais FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+CREATE POLICY "Apenas admin gerencia editais"
+  ON public.editais FOR INSERT
+  WITH CHECK (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE POLICY "Apenas admin edita editais"
+  ON public.editais FOR UPDATE
+  USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE POLICY "Apenas admin exclui editais"
+  ON public.editais FOR DELETE
+  USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE INDEX idx_editais_area_concurso ON public.editais(area_concurso);
+CREATE INDEX idx_editais_status ON public.editais(status);
