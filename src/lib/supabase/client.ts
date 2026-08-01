@@ -1,4 +1,4 @@
-import { createBrowserClient } from "@supabase/ssr"
+import { createClient as createSupabaseClient } from "@supabase/supabase-js"
 
 const ANON_KEY_PATTERN = /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/
 
@@ -21,5 +21,9 @@ export function createClient() {
     )
   }
 
-  return createBrowserClient(url, key)
+  return createSupabaseClient(url, key, {
+    auth: {
+      flowType: "pkce",
+    },
+  })
 }

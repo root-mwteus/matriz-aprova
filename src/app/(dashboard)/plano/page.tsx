@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { toast } from "sonner"
 import { CalendarDays, Check, Sparkles } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { resolveApiUrl } from "@/lib/fetch-utils"
 import { cn } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
 import {
@@ -126,7 +127,7 @@ export default function PlanoPage() {
       dataProva || new Date(base.setDate(base.getDate() + 180)).toISOString().split("T")[0]
 
     try {
-      const res = await fetch("/api/gerar-plano", {
+      const res = await fetch(resolveApiUrl("/api/gerar-plano"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ concurso, dataProva: dataFim, horasPorDia: horas }),

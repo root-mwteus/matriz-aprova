@@ -6,6 +6,7 @@ import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
 import { registerSchema, type RegisterData } from "@/lib/auth-validation"
 import { AREAS } from "@/lib/constants"
+import { resolveApiUrl } from "@/lib/fetch-utils"
 import { AuthDivider, AuthError, AuthShell } from "@/components/auth/AuthShell"
 import { GoogleButton, PasswordInput } from "@/components/auth/GoogleButton"
 import { Button, Field, Input, Select } from "@/components/ui"
@@ -85,7 +86,7 @@ export default function RegisterPage() {
     }
 
     // E-mail de boas-vindas: falhar aqui não pode travar o cadastro.
-    fetch("/api/email/boas-vindas", {
+    fetch(resolveApiUrl("/api/email/boas-vindas"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nome: form.nome, email: form.email, area: form.area_concurso }),
