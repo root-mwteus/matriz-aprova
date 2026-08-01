@@ -29,7 +29,7 @@ cd matriz-aprova
 npm install
 
 # Configure as variáveis de ambiente
-cp .env.local.example .env.local
+cp .env.example .env.local
 ```
 
 ## Configuração do Supabase

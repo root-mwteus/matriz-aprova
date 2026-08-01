@@ -6,7 +6,11 @@ export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get("code")
   const type = searchParams.get("type")
-  const next = searchParams.get("next") ?? "/dashboard"
+
+  // Só aceita caminhos relativos internos — `//host.com` ou `\host.com`
+  // sairiam do nosso domínio (open redirect).
+  const rawNext = searchParams.get("next") ?? "/dashboard"
+  const next = rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "/dashboard"
 
   if (code) {
     const supabaseResponse = NextResponse.next({ request })
