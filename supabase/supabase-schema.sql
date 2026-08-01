@@ -22,11 +22,12 @@ CREATE POLICY "Usuário vê apenas seu próprio perfil"
 
 CREATE POLICY "Usuário edita apenas seu próprio perfil"
   ON public.profiles FOR UPDATE
-  USING (auth.uid() = id);
+  USING (auth.uid() = id)
+  WITH CHECK (auth.uid() = id AND role = 'user' AND suspenso = false);
 
 CREATE POLICY "Sistema pode inserir perfil"
   ON public.profiles FOR INSERT
-  WITH CHECK (auth.uid() = id);
+  WITH CHECK (auth.uid() = id AND role = 'user' AND suspenso = false);
 
 CREATE POLICY "Admin vê todos os perfis"
   ON public.profiles FOR SELECT
