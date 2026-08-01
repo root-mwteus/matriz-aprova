@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react"
 import { Plus, Users } from "lucide-react"
-import { createClient } from "@/lib/supabase/client"
+import { toast } from "sonner"
 import { MATERIAS } from "@/lib/constants"
 import PageHeader from "@/components/PageHeader"
 import {
@@ -19,18 +19,6 @@ import {
   Textarea,
 } from "@/components/ui"
 
-/**
- * Comunidade.
- *
- * O formulário de novo grupo agora valida antes de habilitar o envio e
- * mostra o motivo — o botão desabilitado sem explicação deixava a pessoa
- * sem saber qual campo faltava.
- *
- * A ficha do grupo perdeu o quadrado de ícone: eram três ícones idênticos
- * lado a lado, sem distinguir nada. O espaço foi para o nome e a
- * descrição, que é o que diferencia um grupo do outro.
- */
-
 interface StudyGroup {
   id: string
   nome: string
@@ -39,58 +27,93 @@ interface StudyGroup {
   membros_count: number
   criado_em: string
   criador_id: string
+  criador_nome: string
+  sou_membro: boolean
 }
 
 export default function ComunidadePage() {
-  const supabase = createClient()
   const [grupos, setGrupos] = useState<StudyGroup[]>([])
   const [loading, setLoading] = useState(true)
   const [busca, setBusca] = useState("")
   const [criando, setCriando] = useState(false)
+  const [enviando, setEnviando] = useState(false)
+  const [alternando, setAlternando] = useState<string | null>(null)
   const [novoGrupo, setNovoGrupo] = useState({ nome: "", descricao: "", materia: "" })
 
   useEffect(() => {
-    async function load() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser()
-      if (!user) return
+    let active = true
 
-      // Dados de exemplo até a tabela de grupos existir no banco.
-      const hoje = new Date().toISOString()
-      setGrupos([
-        {
-          id: "1",
-          nome: "Direito Constitucional CESPE",
-          descricao: "Questões de Direito Constitucional das bancas CESPE e CEBRASPE.",
-          materia: "Direito Constitucional",
-          membros_count: 24,
-          criado_em: hoje,
-          criador_id: "abc123",
-        },
-        {
-          id: "2",
-          nome: "OAB 1ª Fase FGV",
-          descricao: "Preparação para a primeira fase do exame de ordem.",
-          materia: "OAB",
-          membros_count: 18,
-          criado_em: hoje,
-          criador_id: "abc123",
-        },
-        {
-          id: "3",
-          nome: "Português para Concursos",
-          descricao: "Gramática e interpretação com foco em questões de prova.",
-          materia: "Português",
-          membros_count: 31,
-          criado_em: hoje,
-          criador_id: "abc123",
-        },
-      ])
-      setLoading(false)
+    fetch("/api/comunidade/grupos")
+      .then((res) => res.json())
+      .then((data) => {
+        if (!active || data.error) return
+        setGrupos(data.grupos)
+        setLoading(false)
+      })
+      .catch((err) => {
+        console.error("Erro ao carregar grupos:", err)
+        if (active) setLoading(false)
+      })
+
+    return () => {
+      active = false
     }
-    load()
-  }, [supabase])
+  }, [])
+
+  async function alternarParticipacao(grupo: StudyGroup) {
+    setAlternando(grupo.id)
+    const metodo = grupo.sou_membro ? "DELETE" : "POST"
+    try {
+      const res = await fetch(`/api/comunidade/grupos/${grupo.id}/membros`, { method: metodo })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || "Erro ao atualizar participação")
+
+      setGrupos((atual) =>
+        atual.map((g) =>
+          g.id === grupo.id
+            ? { ...g, sou_membro: !g.sou_membro, membros_count: g.membros_count + (g.sou_membro ? -1 : 1) }
+            : g
+        )
+      )
+    } catch (err) {
+      console.error(err)
+      toast.error("Não foi possível atualizar a participação")
+    }
+    setAlternando(null)
+  }
+
+  async function criarGrupo() {
+    if (!podeCriar) return
+    setEnviando(true)
+    try {
+      const res = await fetch("/api/comunidade/grupos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(novoGrupo),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || "Erro ao criar grupo")
+
+      const grupo = {
+        id: data.id,
+        nome: novoGrupo.nome.trim(),
+        descricao: novoGrupo.descricao.trim(),
+        materia: novoGrupo.materia,
+        membros_count: 1,
+        criado_em: new Date().toISOString(),
+        criador_id: "",
+        criador_nome: "",
+        sou_membro: true,
+      }
+      setGrupos((atual) => [grupo, ...atual])
+      setNovoGrupo({ nome: "", descricao: "", materia: "" })
+      setCriando(false)
+    } catch (err) {
+      console.error(err)
+      toast.error("Não foi possível criar o grupo")
+    }
+    setEnviando(false)
+  }
 
   const filtrados = useMemo(() => {
     const q = busca.toLowerCase().trim()
@@ -169,7 +192,14 @@ export default function ComunidadePage() {
 
               <div className="mt-4 flex items-center justify-between border-t border-line pt-3">
                 <span className="truncate text-xs text-fg-subtle">{grupo.materia}</span>
-                <span className="shrink-0 text-sm font-medium text-accent-ink">Entrar</span>
+                <Button
+                  variant={grupo.sou_membro ? "secondary" : "accent"}
+                  size="sm"
+                  disabled={alternando === grupo.id}
+                  onClick={() => alternarParticipacao(grupo)}
+                >
+                  {alternando === grupo.id ? "…" : grupo.sou_membro ? "Sair" : "Entrar"}
+                </Button>
               </div>
             </Panel>
           ))}
@@ -187,8 +217,8 @@ export default function ComunidadePage() {
             <Button variant="ghost" onClick={() => setCriando(false)}>
               Cancelar
             </Button>
-            <Button variant="accent" disabled={!podeCriar} onClick={() => setCriando(false)}>
-              Criar grupo
+            <Button variant="accent" disabled={!podeCriar || enviando} onClick={criarGrupo}>
+              {enviando ? "Criando…" : "Criar grupo"}
             </Button>
           </>
         }

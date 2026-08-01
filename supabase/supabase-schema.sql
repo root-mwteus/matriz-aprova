@@ -442,3 +442,72 @@ CREATE POLICY "Admin exclui figuras de questoes"
     bucket_id = 'questoes-figuras'
     AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
   );
+
+-- ============================================================
+-- 14. GRUPOS E MEMBROS (comunidade)
+-- ============================================================
+CREATE TABLE public.grupos (
+  id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  nome       text NOT NULL CHECK (char_length(nome) >= 3),
+  descricao  text NOT NULL DEFAULT '',
+  materia    text NOT NULL,
+  criador_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+
+CREATE TABLE public.membros (
+  id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  grupo_id   uuid NOT NULL REFERENCES public.grupos(id) ON DELETE CASCADE,
+  user_id    uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (grupo_id, user_id)
+);
+
+ALTER TABLE public.grupos ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.membros ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Autenticados leem grupos"
+  ON public.grupos FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+CREATE POLICY "Usuário cria grupo"
+  ON public.grupos FOR INSERT
+  WITH CHECK (auth.uid() = criador_id);
+
+CREATE POLICY "Admin edita grupos"
+  ON public.grupos FOR UPDATE
+  USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE POLICY "Admin exclui grupos"
+  ON public.grupos FOR DELETE
+  USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE POLICY "Autenticados leem membros"
+  ON public.membros FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+CREATE POLICY "Usuário participa de grupo"
+  ON public.membros FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Usuário sai de grupo"
+  ON public.membros FOR DELETE
+  USING (auth.uid() = user_id);
+
+CREATE INDEX idx_grupos_materia ON public.grupos(materia);
+CREATE INDEX idx_membros_grupo  ON public.membros(grupo_id);
+CREATE INDEX idx_membros_user   ON public.membros(user_id);
+
+CREATE OR REPLACE FUNCTION public.handle_novo_grupo()
+RETURNS trigger AS $$
+BEGIN
+  INSERT INTO public.membros (grupo_id, user_id)
+  VALUES (new.id, new.criador_id);
+  RETURN new;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE OR REPLACE TRIGGER on_grupo_created
+  AFTER INSERT ON public.grupos
+  FOR EACH ROW
+  EXECUTE FUNCTION public.handle_novo_grupo();
