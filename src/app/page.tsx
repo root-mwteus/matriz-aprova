@@ -788,8 +788,8 @@ export default function HomePage() {
               <ul className="space-y-2.5 text-sm">
                 <li><Link href="/cadastro" className="hover:text-paper transition">Testar grátis →</Link></li>
                 <li><Link href="/login" className="hover:text-paper transition">Acessar app →</Link></li>
-                <li><a href="#" className="hover:text-paper transition">Termos de Uso</a></li>
-                <li><a href="#" className="hover:text-paper transition">Política de Privacidade</a></li>
+                <li><Link href="/termos" className="hover:text-paper transition">Termos de Uso</Link></li>
+                <li><Link href="/privacidade" className="hover:text-paper transition">Política de Privacidade</Link></li>
                 <li><a href="mailto:suporte@matrizaprova.com" className="hover:text-paper transition">suporte@matrizaprova.com</a></li>
               </ul>
             </div>
