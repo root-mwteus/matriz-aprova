@@ -1,17 +1,21 @@
-import { NextRequest, NextResponse } from "next/server"
+import { NextResponse } from "next/server"
+import { z } from "zod"
 import { sendBoasVindas } from "@/lib/email"
+import { createClient } from "@/lib/supabase/server"
 
-// Mapa simples: IP → { count, resetAt }
-const ipMap = new Map<string, { count: number; resetAt: number }>()
+// Mapa simples: user_id → { count, resetAt }
+// O rate-limit é por usuário autenticado, não por IP (IP é forjável e
+// compartilhado em rede corporativa/CFTV).
+const userMap = new Map<string, { count: number; resetAt: number }>()
 const WINDOW_MS = 60 * 60 * 1000 // 1 hora
 const MAX_REQUESTS = 5
 
-function checkRateLimit(ip: string): boolean {
+function checkRateLimit(userId: string): boolean {
   const now = Date.now()
-  const entry = ipMap.get(ip)
+  const entry = userMap.get(userId)
 
   if (!entry || now > entry.resetAt) {
-    ipMap.set(ip, { count: 1, resetAt: now + WINDOW_MS })
+    userMap.set(userId, { count: 1, resetAt: now + WINDOW_MS })
     return true
   }
 
@@ -21,23 +25,39 @@ function checkRateLimit(ip: string): boolean {
   return true
 }
 
-export async function POST(req: NextRequest) {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown"
+const BoasVindasSchema = z.object({
+  email: z.string().email(),
+  nome: z.string().min(1).max(100),
+  area: z.string().max(100).optional(),
+})
 
-  if (!checkRateLimit(ip)) {
+export async function POST(req: Request) {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (!user) {
+    return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
+  }
+
+  if (!checkRateLimit(user.id)) {
     return NextResponse.json({ error: "muitas requisições" }, { status: 429 })
   }
 
-  const body = await req.json().catch(() => null)
-
-  if (!body?.email || !body?.nome) {
+  const parsed = BoasVindasSchema.safeParse(await req.json().catch(() => null))
+  if (!parsed.success) {
     return NextResponse.json({ error: "email e nome obrigatórios" }, { status: 400 })
   }
 
+  // Só envia para o e-mail da própria sessão — impede usar a API como
+  // relay de spam para terceiros.
+  if (parsed.data.email !== user.email) {
+    return NextResponse.json({ error: "email não pertence à conta" }, { status: 403 })
+  }
+
   const { error } = await sendBoasVindas({
-    nome: body.nome,
-    email: body.email,
-    area: body.area ?? "Concursos",
+    nome: parsed.data.nome,
+    email: parsed.data.email,
+    area: parsed.data.area ?? "Concursos",
   })
 
   if (error) {

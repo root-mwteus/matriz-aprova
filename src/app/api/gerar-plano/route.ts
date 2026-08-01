@@ -145,18 +145,8 @@ export async function POST(request: Request) {
     }
     const body = parsed.data
 
-    // IA primeiro, com o gerador local como plano B — a geração não pode
-    // quebrar por timeout, cota ou indisponibilidade da OpenAI.
-    let plan: ReturnType<typeof gerarPlanoLocal> | null = null
-    try {
-      plan = await gerarComIA(body)
-    } catch (err) {
-      console.error("Erro na geração por IA, usando fallback local:", err)
-    }
-    if (!plan) {
-      plan = gerarPlanoLocal(body.concurso, body.dataProva, body.horasPorDia)
-    }
-
+    // Autenticação e rate-limit ANTES da IA: chamada à OpenAI custa
+    // crédito e não pode ser feita por quem não está logado.
     const cookieStore = cookies()
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -185,6 +175,18 @@ export async function POST(request: Request) {
 
     if (count !== null && count >= 5) {
       return NextResponse.json({ error: "Limite diário atingido. Você pode gerar até 5 planos por dia." }, { status: 429 })
+    }
+
+    // IA primeiro, com o gerador local como plano B — a geração não pode
+    // quebrar por timeout, cota ou indisponibilidade da OpenAI.
+    let plan: ReturnType<typeof gerarPlanoLocal> | null = null
+    try {
+      plan = await gerarComIA(body)
+    } catch (err) {
+      console.error("Erro na geração por IA, usando fallback local:", err)
+    }
+    if (!plan) {
+      plan = gerarPlanoLocal(body.concurso, body.dataProva, body.horasPorDia)
     }
 
     const { error: insertError } = await supabase.from("study_plans").insert({

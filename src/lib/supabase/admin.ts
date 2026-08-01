@@ -1,4 +1,5 @@
-import { createClient as createSupabaseClient, type SupabaseClient } from "@supabase/supabase-js"
+import { type SupabaseClient } from "@supabase/supabase-js"
+import { createServiceClient } from "@/lib/supabase/service"
 import { createClient as createServerClient } from "@/lib/supabase/server"
 
 /**
@@ -14,7 +15,7 @@ import { createClient as createServerClient } from "@/lib/supabase/server"
 
 export type AdminSupabase = SupabaseClient
 
-export async function requireAdmin(): Promise<AdminSupabase | null> {
+export async function requireAdmin() {
   const supabase = createServerClient()
 
   const {
@@ -27,7 +28,5 @@ export async function requireAdmin(): Promise<AdminSupabase | null> {
 
   if (!process.env.SUPABASE_SERVICE_ROLE_KEY) return null
 
-  return createSupabaseClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY, {
-    auth: { autoRefreshToken: false, persistSession: false },
-  })
+  return createServiceClient()
 }

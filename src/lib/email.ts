@@ -28,6 +28,15 @@ export async function sendBoasVindas({
   })
 }
 
+function esc(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+}
+
 function boasVindasText(nome: string, area: string) {
   return `Olá, ${nome}!
 
@@ -44,6 +53,8 @@ matrizaprova.com`
 }
 
 function boasVindasHtml(nome: string, area: string) {
+  const nomeEsc = esc(nome)
+  const areaEsc = esc(area)
   return `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -69,10 +80,10 @@ function boasVindasHtml(nome: string, area: string) {
             <td style="background-color:#0E1117;border-radius:16px;padding:40px 36px">
               <p style="margin:0 0 14px;color:#9FD41C;font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:3px">conta criada com sucesso</p>
               <h1 style="margin:0 0 16px;color:#FFFFFF;font-size:26px;font-weight:700;line-height:1.2">
-                Bem-vindo, ${nome}!
+                Bem-vindo, ${nomeEsc}!
               </h1>
               <p style="margin:0 0 28px;color:rgba(255,255,255,0.65);font-size:15px;line-height:1.65">
-                Sua conta está pronta. Você está no modo <strong style="color:#FFFFFF">${area}</strong> — a IA já está mapeando o que você precisa estudar para a sua aprovação.
+                Sua conta está pronta. Você está no modo <strong style="color:#FFFFFF">${areaEsc}</strong> — a IA já está mapeando o que você precisa estudar para a sua aprovação.
               </p>
               <a href="https://matrizaprova.com/dashboard"
                  style="display:inline-block;background-color:#C8FF3D;color:#0E1117;font-weight:700;font-size:13px;padding:14px 28px;border-radius:8px;text-decoration:none">

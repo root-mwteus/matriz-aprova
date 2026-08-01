@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Trophy } from "lucide-react"
-import { createClient } from "@/lib/supabase/client"
 import { cn } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
 import { Avatar, Badge, Button, EmptyState, Panel, PanelHeader, Skeleton } from "@/components/ui"
@@ -11,10 +10,10 @@ import { Avatar, Badge, Button, EmptyState, Panel, PanelHeader, Skeleton } from 
 /**
  * Ranking.
  *
- * O problema aqui era de desempenho, não de aparência: o nome de cada
- * participante era buscado com uma consulta dentro do laço — até 200
- * idas ao banco, em sequência, antes da tela pintar. Agora os perfis
- * vêm em uma consulta só, com `in(...)` sobre os ids únicos.
+ * O ranking não pode ser lido com a chave anônima: o RLS de `simulations`
+ * só expõe as linhas do próprio usuário. A página busca a lista pronta em
+ * /api/simulados/ranking, que usa service_role no servidor e devolve os
+ * melhores resultados de todos, já ordenados.
  *
  * O pódio deixou de usar ouro/prata/bronze como única distinção: as três
  * primeiras posições ganham peso tipográfico, e a cor virou reforço.
@@ -31,7 +30,6 @@ interface RankingEntry {
 }
 
 export default function RankingPage() {
-  const supabase = createClient()
   const router = useRouter()
   const [ranking, setRanking] = useState<RankingEntry[]>([])
   const [userId, setUserId] = useState<string | null>(null)
@@ -39,61 +37,21 @@ export default function RankingPage() {
 
   useEffect(() => {
     async function load() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser()
-      setUserId(user?.id ?? null)
-
-      const { data: simulations } = await supabase
-        .from("simulations")
-        .select("user_id, pontuacao, questoes, tempo_total, created_at")
-        .not("pontuacao", "eq", -1)
-        .order("created_at", { ascending: false })
-        .limit(200)
-
-      if (!simulations?.length) {
-        setLoading(false)
-        return
-      }
-
-      // Melhor resultado de cada pessoa, sem tocar no banco.
-      const melhores = new Map<string, Omit<RankingEntry, "nome">>()
-      for (const s of simulations) {
-        const total = s.questoes?.length || 0
-        const pct = total > 0 ? Math.round((s.pontuacao / total) * 100) : 0
-        const atual = melhores.get(s.user_id)
-        if (!atual || atual.pct < pct) {
-          melhores.set(s.user_id, {
-            user_id: s.user_id,
-            pontuacao: s.pontuacao,
-            total,
-            tempo_total: s.tempo_total,
-            pct,
-            created_at: s.created_at,
-          })
+      try {
+        const res = await fetch("/api/simulados/ranking", { cache: "no-store" })
+        if (res.status !== 200) {
+          router.push("/login")
+          return
         }
+        const data = await res.json()
+        setRanking(data.ranking ?? [])
+        setUserId(data.userId ?? null)
+      } finally {
+        setLoading(false)
       }
-
-      // Uma consulta para todos os nomes, em vez de uma por linha.
-      const { data: perfis } = await supabase
-        .from("profiles")
-        .select("id, nome")
-        .in("id", Array.from(melhores.keys()))
-
-      const nomes = new Map(perfis?.map((p) => [p.id, p.nome]) ?? [])
-
-      setRanking(
-        Array.from(melhores.values())
-          .map((e) => ({ ...e, nome: nomes.get(e.user_id) || "Anônimo" }))
-          // Empate em percentual é desempatado pelo tempo — quem fez o
-          // mesmo em menos tempo fica na frente.
-          .sort((a, b) => b.pct - a.pct || a.tempo_total - b.tempo_total)
-          .slice(0, 50)
-      )
-      setLoading(false)
     }
     load()
-  }, [supabase])
+  }, [router])
 
   const minhaPosicao = ranking.findIndex((e) => e.user_id === userId) + 1
 

@@ -29,13 +29,31 @@ CREATE POLICY "Sistema pode inserir perfil"
   ON public.profiles FOR INSERT
   WITH CHECK (auth.uid() = id AND role = 'user' AND suspenso = false);
 
+-- SECURITY DEFINER: roda como o dono (que ignora RLS), então o SELECT em
+-- profiles NÃO re-dispara as policies de profiles — evita "infinite
+-- recursion detected in policy for relation profiles".
+CREATE OR REPLACE FUNCTION public.is_admin()
+RETURNS boolean
+LANGUAGE sql
+SECURITY DEFINER
+STABLE
+SET search_path = public
+AS $$
+  SELECT EXISTS (
+    SELECT 1 FROM public.profiles
+    WHERE id = auth.uid() AND role = 'admin'
+  );
+$$;
+
+GRANT EXECUTE ON FUNCTION public.is_admin() TO authenticated;
+
 CREATE POLICY "Admin vê todos os perfis"
   ON public.profiles FOR SELECT
-  USING (EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'admin'));
+  USING (public.is_admin());
 
 CREATE POLICY "Admin atualiza qualquer perfil"
   ON public.profiles FOR UPDATE
-  USING (EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'admin'));
+  USING (public.is_admin());
 
 CREATE INDEX idx_profiles_email ON public.profiles(email);
 CREATE INDEX idx_profiles_role  ON public.profiles(role);

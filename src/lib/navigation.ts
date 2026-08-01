@@ -42,7 +42,7 @@ export const navigation: NavGroup[] = [
     items: [
       { href: "/dashboard", label: "Painel", icon: LayoutDashboard },
       { href: "/questoes", label: "Questões", icon: FileQuestion },
-      { href: "/simulados", label: "Simulados", icon: Target, soon: true },
+      { href: "/simulados", label: "Simulados", icon: Target },
       { href: "/cronometro", label: "Cronômetro", icon: Timer },
     ],
   },
