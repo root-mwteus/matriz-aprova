@@ -46,10 +46,9 @@ export default function TermosPage() {
       <section className={secao}>
         <h2 className={h2}>4. Assinatura, cobrança e reembolso</h2>
         <p className={paragrafo}>
-          O plano pago é cobrado de forma recorrente (mensal ou anual, conforme o plano contratado) até o
-          cancelamento. Você pode cancelar a qualquer momento, e o acesso permanece ativo até o fim do período já
-          pago. Em caso de arrependimento dentro de 7 dias após a primeira compra, o valor será integralmente
-          reembolsado conforme o Código de Defesa do Consumidor.
+          O plano é contratado em pagamento único com acesso vitalício. Você paga uma vez e o acesso permanece
+          ativo sem renovação automática ou cobranças recorrentes. Em caso de arrependimento dentro de 7 dias após
+          a compra, o valor será integralmente reembolsado conforme o Código de Defesa do Consumidor.
         </p>
       </section>
 

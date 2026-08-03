@@ -88,7 +88,7 @@ export default function OABPage() {
 
               <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-start gap-4">
                 <a href="/#preco" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink" style={{ background: COLOR, color: COLOR_TEXT }}>
-                  GARANTIR ACESSO · R$ 89,99 <span className="font-mono">→</span>
+                  GARANTIR ACESSO · R$ 49,99 <span className="font-mono">→</span>
                 </a>
                 <Link href="/cadastro" className="cta-secondary inline-flex items-center justify-center gap-2 bg-paper dark:bg-transparent text-ink dark:text-paper font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink dark:border-paper/50">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -349,11 +349,11 @@ export default function OABPage() {
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="label-tag mb-6" style={{ borderColor: `${COLOR_TEXT}66` }}>◆ 1 plano · 4 áreas</span>
           <h2 className="mt-5 font-display font-bold text-4xl sm:text-5xl lg:text-7xl leading-[1]">
-            R$ 89,99 hoje.<br />
+            R$ 49,99 hoje.<br />
             Sua vaga em OAB <span style={{ background: COLOR_TEXT, color: COLOR, padding: '0 12px' }}>amanhã.</span>
           </h2>
           <p className="mt-6 text-lg opacity-80 max-w-xl mx-auto">
-            Pagamento único anual. Acesso liberado também para Concursos, Militar e ENEM.
+            Pagamento único · acesso vitalício. Acesso liberado também para Concursos, Militar e ENEM.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
             <a href="/#preco" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-lg px-8 py-5 rounded-xl border-2 border-white/30" style={{ background: COLOR_TEXT, color: COLOR }}>
@@ -385,7 +385,7 @@ export default function OABPage() {
               ["A Matriz cobre as duas fases?", "Sim. 1ª fase completa com as 17 disciplinas e questões da FGV. 2ª fase com modelos de peças nas 6 especialidades, comentados por advogados aprovados."],
               ["As peças da 2ª fase são corrigidas?", "Temos modelos comentados de peças aceitas pela FGV em cada especialidade, com análise dos critérios de pontuação. Não é correção individualizada, mas é o que funciona."],
               ["Posso testar antes de pagar?", 'Sim. Temos um plano gratuito de demonstração com acesso limitado a PDFs e questões. Não precisa de cartão. É só clicar em "Testar grátis" e você entra no app na mesma hora.'],
-              ["Por quanto tempo eu tenho acesso?", "12 meses completos. Com 1 pagamento você libera as 4 áreas (Concursos, OAB, Militar, ENEM)."],
+              ["Por quanto tempo eu tenho acesso?", "Acesso vitalício. Com 1 pagamento você libera as 4 áreas (Concursos, OAB, Militar, ENEM)."],
               ["E se eu não gostar? Tem reembolso?", "Sim. 7 dias de garantia incondicional. Devolvemos 100%, sem perguntas."],
             ] as [string, string][]).map(([q, a]) => (
               <details key={q} className="bg-paper-2 dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-xl">

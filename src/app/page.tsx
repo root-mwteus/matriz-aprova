@@ -74,7 +74,7 @@ export default function HomePage() {
 
               <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-start gap-4">
                 <a href="#preco" className="cta-primary inline-flex items-center justify-center gap-3 bg-lime text-ink font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink">
-                  GARANTIR ACESSO · R$ 89,99
+                  GARANTIR ACESSO · R$ 49,99
                   <span className="font-mono">→</span>
                 </a>
                 <Link href="/cadastro" className="cta-secondary inline-flex items-center justify-center gap-2 bg-paper dark:bg-transparent text-ink dark:text-paper font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink dark:border-paper/50">
@@ -90,7 +90,7 @@ export default function HomePage() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink/60 dark:text-paper/60">
-                <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> Pagamento único anual</span>
+                <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> Plano vitalício · 1 pagamento</span>
                 <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> 7 dias de garantia</span>
                 <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> Sem mensalidade</span>
               </div>
@@ -232,7 +232,7 @@ export default function HomePage() {
             <span>MÚLTIPLAS BANCAS</span><span>★</span>
             <span>IA PREDITIVA</span><span>★</span>
             <span>4 ÁREAS · 1 ACESSO</span><span>★</span>
-            <span>R$ 89,99 / ANO</span><span>★</span>
+            <span>R$ 49,99 · VITALÍCIO</span><span>★</span>
           </div>
           <div className="inline-flex items-center gap-8 px-8" aria-hidden="true">
             <span>★ BANCO DE QUESTÕES</span><span>★</span>
@@ -240,7 +240,7 @@ export default function HomePage() {
             <span>MÚLTIPLAS BANCAS</span><span>★</span>
             <span>IA PREDITIVA</span><span>★</span>
             <span>4 ÁREAS · 1 ACESSO</span><span>★</span>
-            <span>R$ 89,99 / ANO</span><span>★</span>
+            <span>R$ 49,99 · VITALÍCIO</span><span>★</span>
           </div>
         </div>
       </div>
@@ -599,11 +599,11 @@ export default function HomePage() {
               <div className="flex items-center gap-3">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-ink/50">№ 01 / único</span>
                 <span className="font-mono text-xs uppercase tracking-widest text-ink/30">·</span>
-                <span className="font-display font-bold text-lg">PLANO ANUAL MATRIZ</span>
+                <span className="font-display font-bold text-lg">PLANO VITALÍCIO MATRIZ</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="bg-ink text-lime font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">⚡ economia 70%</span>
-                <span className="font-mono text-xs uppercase tracking-widest text-ink/50 hidden sm:inline">12 meses</span>
+                <span className="bg-ink text-lime font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">⚡ economia 83%</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-ink/50 hidden sm:inline">vitalício</span>
               </div>
             </div>
 
@@ -615,18 +615,18 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-baseline gap-1 leading-none">
                   <span className="font-display text-2xl font-bold text-ink">R$</span>
-                  <span className="font-display text-7xl sm:text-8xl lg:text-9xl font-bold text-ink stat-num">89</span>
+                  <span className="font-display text-7xl sm:text-8xl lg:text-9xl font-bold text-ink stat-num">49</span>
                   <span className="font-display text-3xl font-bold text-ink">,99</span>
                 </div>
                 <div className="mt-4 space-y-1">
-                  <div className="font-mono text-xs text-ink/70">à vista · pix ou cartão</div>
-                  <div className="font-mono text-xs text-ink/70">ou 12× de R$ 8,99 no cartão</div>
+                  <div className="font-mono text-xs text-ink/70">pagamento único · pix ou cartão</div>
+                  <div className="font-mono text-xs text-ink/70">ou 12× de R$ 4,17 no cartão</div>
                 </div>
                 <div className="mt-5 inline-flex items-center gap-2 bg-lime border-2 border-ink px-3 py-1.5 rounded-full">
                   <svg className="w-4 h-4 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <span className="font-mono text-xs font-bold text-ink uppercase tracking-widest">só R$ 7,49 por mês</span>
+                  <span className="font-mono text-xs font-bold text-ink uppercase tracking-widest">só R$ 4,17 por mês</span>
                 </div>
               </div>
 
@@ -700,9 +700,9 @@ export default function HomePage() {
           <div className="space-y-3">
             {([
               ["Posso testar antes de pagar?", 'Sim. Temos um plano gratuito de demonstração com acesso limitado a PDFs e questões. Não precisa de cartão. É só clicar em "Testar grátis" e você entra no app na mesma hora.'],
-              ["Por quanto tempo eu tenho acesso?", "Acesso de 12 meses completos a partir da compra. Durante esse período você usa tudo sem qualquer limite: questões, PDFs, simulados, IA e métricas. Vale para as 4 áreas."],
+              ["Por quanto tempo eu tenho acesso?", "Acesso vitalício. Você paga uma vez e usa o plano para sempre, sem qualquer limite: questões, PDFs, simulados, IA e métricas. Vale para as 4 áreas."],
               ["Posso estudar para mais de uma área?", "Sim. Com 1 pagamento você libera Concursos, OAB, Militar e ENEM simultaneamente. Sem limite de acesso entre áreas."],
-              ["Quais são as formas de pagamento?", "PIX (liberação imediata), cartão de crédito em até 12x de R$ 8,99 e boleto bancário. Ambiente 100% seguro."],
+              ["Quais são as formas de pagamento?", "PIX (liberação imediata), cartão de crédito em até 12x de R$ 4,17 e boleto bancário. Ambiente 100% seguro."],
               ["As questões e PDFs são atualizados?", "Sim. Toda semana incluímos novas questões assim que novas provas são aplicadas. Os PDFs são revisados a cada mudança de legislação ou edital."],
               ["E se eu não gostar? Tem reembolso?", "Sim, sem burocracia. 7 dias de garantia incondicional. Não gostou, devolvemos 100% do valor — sem perguntas."],
               ["Como a IA me ajuda na prática?", "A IA analisa milhares de provas anteriores da sua banca, identifica os tópicos mais cobrados e cruza com seu desempenho. Ela te diz exatamente o que estudar hoje para maximizar seus acertos."],
@@ -728,7 +728,7 @@ export default function HomePage() {
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-center">
           <span className="label-tag text-ink border-ink/40 mb-6">◆ a próxima coordenada é sua</span>
           <h2 className="mt-5 font-display font-bold text-4xl sm:text-5xl lg:text-7xl text-ink leading-[1]">
-            R$ 89,99 hoje.<br />
+            R$ 49,99 hoje.<br />
             Um <span className="bg-ink text-lime px-3">salário público</span> amanhã.
           </h2>
           <p className="mt-6 text-lg text-ink/80 max-w-xl mx-auto">
