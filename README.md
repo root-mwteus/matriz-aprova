@@ -46,9 +46,20 @@ cp .env.example .env.local
    - Redirect URLs: `http://localhost:3000/auth/callback`
 6. (Opcional) Ative o provedor Google em Authentication > Providers
 7. **Bancos já existentes**: rode também as migrations em `supabase/` na
-   ordem (`supabase-migration-001` … `supabase-migration-012`), pulando as
+   ordem (`supabase-migration-001` … `supabase-migration-013`), pulando as
    que já foram aplicadas — o `supabase-schema.sql` é o estado final
    consolidado e serve apenas para setups novos.
+
+## Pagamentos (Mercado Pago)
+
+Para vender o plano vitalício (R$ 49,99):
+
+1. Crie um app em [Mercado Pago Developers](https://www.mercadopago.com.br/developers)
+2. Copie a credencial de produção (ou de teste) em **Seus projetos > Credenciais**
+3. Defina `MERCADOPAGO_ACCESS_TOKEN` no `.env.local` e na Vercel
+4. No painel do Mercado Pago, configure o webhook `https://matrizaprova.com/api/pagamentos/webhook`
+5. O fluxo: `/assinar` cria a preferência no Checkout Pro e o webhook
+   promove o `profiles.plano` para `vitalicio` quando o pagamento aprova
 
 ## Desenvolvimento
 

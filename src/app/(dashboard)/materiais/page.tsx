@@ -1,6 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { BookOpen, Download, FileText } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
@@ -36,6 +37,7 @@ type FiltroIA = "todos" | "ia"
 
 export default function MateriaisPage() {
   const supabase = createClient()
+  const router = useRouter()
   const [materiais, setMateriais] = useState<Material[]>([])
   const [loading, setLoading] = useState(true)
   const [materia, setMateria] = useState("")
@@ -75,17 +77,23 @@ export default function MateriaisPage() {
     load()
   }, [supabase, materia, banca, professor, ordenacao, filtroIA])
 
-  const handleDownload = useCallback(async (url: string | null, titulo: string) => {
-    if (!url) return
-    const supabase = createClient()
-    const { data, error } = await supabase.storage.from("materiais").createSignedUrl(url, 60)
-    if (data?.signedUrl) {
-      window.open(data.signedUrl, "_blank")
-    } else {
-      console.error("Erro ao gerar URL do material:", error)
+  const handleDownload = useCallback(async (id: string, titulo: string) => {
+    try {
+      const res = await fetch(`/api/materiais/${id}/baixar`)
+      const data = await res.json()
+      if (res.status === 403 && data.precisaPlano) {
+        router.push("/assinar")
+        return
+      }
+      if (!res.ok) throw new Error(data.error)
+      if (data.signedUrl) {
+        window.open(data.signedUrl, "_blank")
+      }
+    } catch {
+      console.error("Erro ao gerar URL do material")
       toast.error(`Não foi possível abrir "${titulo}"`)
     }
-  }, [])
+  }, [router])
 
   const temFiltro = Boolean(materia || banca || professor)
 
@@ -202,7 +210,7 @@ export default function MateriaisPage() {
                   variant="ghost"
                   size="sm"
                   disabled={!m.pdf_url}
-                  onClick={() => handleDownload(m.pdf_url, m.titulo)}
+                  onClick={() => handleDownload(m.id, m.titulo)}
                 >
                   <Download size={14} strokeWidth={1.75} />
                 </IconButton>

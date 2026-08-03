@@ -129,6 +129,20 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
 
       {/* ── Conta ─────────────────────────────────────────────── */}
       <div className="shrink-0 border-t border-line p-2">
+        <Link
+          href="/assinar"
+          className={cn(
+            "mb-1 flex items-center justify-between rounded-md px-2 py-1.5",
+            "transition-colors duration-fast hover:bg-surface-hover"
+          )}
+        >
+          <span className="text-2xs font-medium uppercase tracking-wide text-fg-faint">
+            {profile?.plano === "vitalicio" ? "Vitalício" : "Demo"}
+          </span>
+          {profile?.plano !== "vitalicio" && (
+            <span className="text-2xs font-medium text-accent-ink">Assinar →</span>
+          )}
+        </Link>
         <Menu
           align="start"
           className="w-[204px]"

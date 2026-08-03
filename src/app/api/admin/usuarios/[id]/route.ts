@@ -35,7 +35,7 @@ export async function GET(_request: Request, { params }: { params: { id: string 
 
   const { data: perfil, error: perfilError } = await supabase
     .from("profiles")
-    .select("id, nome, email, area_concurso, data_prova, created_at, suspenso")
+    .select("id, nome, email, area_concurso, data_prova, created_at, suspenso, plano")
     .eq("id", params.id)
     .single()
 
@@ -53,12 +53,14 @@ export async function GET(_request: Request, { params }: { params: { id: string 
     { count: planos },
     { count: aulasConcluidas },
     { data: simulacoes },
+    { data: pagamentos },
   ] = await Promise.all([
     supabase.from("user_answers").select("question_id, correto, tempo_segundos, created_at").eq("user_id", params.id).order("created_at", { ascending: false }).limit(200),
     supabase.from("user_answers").select("created_at").eq("user_id", params.id).gte("created_at", trintaDiasAtras.toISOString()),
     supabase.from("study_plans").select("*", { count: "exact", head: true }).eq("user_id", params.id),
     supabase.from("progress").select("*", { count: "exact", head: true }).eq("user_id", params.id).eq("concluido", true),
     supabase.from("simulations").select("id, questoes, pontuacao, tempo_total, created_at").eq("user_id", params.id).not("pontuacao", "eq", -1).order("created_at", { ascending: false }).limit(20),
+    supabase.from("pagamentos").select("*").eq("user_id", params.id).order("created_at", { ascending: false }),
   ])
 
   const questaoMap = await buscarQuestoes(supabase, (respostas ?? []).map((r) => r.question_id))
@@ -126,5 +128,37 @@ export async function GET(_request: Request, { params }: { params: { id: string 
     questoes: questoesRecentes,
     simulados,
     calendario,
+    pagamentos: (pagamentos ?? []).map((p) => ({
+      id: p.id,
+      mp_payment_id: p.mp_payment_id,
+      status: p.status,
+      valor: p.valor,
+      created_at: formatarData(p.created_at),
+    })),
   })
+}
+
+/** Troca manual do plano (usado pelo admin para ativar vitalício sem pagamento). */
+export async function PATCH(_request: Request, { params }: { params: { id: string } }) {
+  const supabase = await requireAdmin()
+  if (!supabase) {
+    return NextResponse.json({ error: "Não autorizado" }, { status: 403 })
+  }
+
+  const { plano } = await _request.json().catch(() => ({}))
+  if (plano !== "demo" && plano !== "vitalicio") {
+    return NextResponse.json({ error: "Plano inválido" }, { status: 400 })
+  }
+
+  const { error } = await supabase
+    .from("profiles")
+    .update({ plano })
+    .eq("id", params.id)
+
+  if (error) {
+    console.error("admin: erro ao atualizar plano", error)
+    return NextResponse.json({ error: "Falha ao atualizar o plano" }, { status: 500 })
+  }
+
+  return NextResponse.json({ ok: true })
 }
