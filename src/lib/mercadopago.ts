@@ -37,6 +37,21 @@ export interface MpPreference {
   sandbox_init_point?: string
 }
 
+/** Token de teste começa com TEST-. Em produção é APP_USR-. */
+export function isTestMode() {
+  return process.env.MERCADOPAGO_ACCESS_TOKEN?.startsWith("TEST-") ?? false
+}
+
+/**
+ * Link de checkout correto para o modo atual. Em teste o `init_point`
+ * leva ao checkout de produção, que rejeita cartão de teste — por isso
+ * o sandbox_init_point é usado com credencial TEST-.
+ */
+export function initPointDaPreferencia(pref: MpPreference) {
+  if (isTestMode()) return pref.sandbox_init_point ?? pref.init_point
+  return pref.init_point
+}
+
 export interface MpPayment {
   id: number
   status: "approved" | "pending" | "rejected" | "cancelled" | "refunded"

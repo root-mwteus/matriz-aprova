@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { requireUser } from "@/lib/supabase/auth"
 import { createServiceClient } from "@/lib/supabase/service"
-import { criarPreferencia, PLANO_VITALICIO } from "@/lib/mercadopago"
+import { criarPreferencia, initPointDaPreferencia, PLANO_VITALICIO } from "@/lib/mercadopago"
 
 /**
  * POST /api/pagamentos/checkout
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
       email: perfil?.email ?? user.email ?? "",
       preferenciaId,
     })
-    initPoint = preferencia.init_point
+    initPoint = initPointDaPreferencia(preferencia)
   } catch (e) {
     console.error("checkout: falha ao criar preferência", e)
     return NextResponse.json({ error: "Falha ao iniciar o pagamento. Tente novamente." }, { status: 502 })
