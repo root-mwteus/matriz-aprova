@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 512 512" width="512" height="512">
+  <title>Matriz Aprovação</title>
   <rect width="512" height="512" fill="#C2F04C"/>
   <g transform="scale(16)">
     <path d="M8 23V9h3.4l4.6 7.4L20.6 9H24v14h-3.2v-8.7L16.6 21h-1.2l-4.2-6.7V23H8z" fill="#16210A"/>
