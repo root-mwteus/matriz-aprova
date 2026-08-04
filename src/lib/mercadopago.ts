@@ -7,7 +7,9 @@ import { SITE_URL } from "@/lib/constants"
  * o `init_point` da preferência e redireciona; o webhook confirma o
  * pagamento e promove o perfil para vitalício.
  *
- * Preço em centavos (inteiro), como a API do MP espera.
+ * Preço interno em centavos (inteiro), como nossa tabela `pagamentos`
+ * guarda. Na preferência do Checkout Pro o MP espera o valor em reais
+ * (`unit_price`), então dividimos por 100 na hora de enviar.
  */
 
 export const PLANO_VITALICIO = {
@@ -57,7 +59,7 @@ export async function criarPreferencia(opts: {
           id: "plano-vitalicio",
           title: PLANO_VITALICIO.titulo,
           quantity: 1,
-          unit_price: PLANO_VITALICIO.valorCentavos,
+          unit_price: PLANO_VITALICIO.valorCentavos / 100,
           currency_id: "BRL",
         },
       ],
