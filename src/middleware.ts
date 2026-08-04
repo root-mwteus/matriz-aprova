@@ -46,6 +46,8 @@ export async function middleware(request: NextRequest) {
   if (!user && (isDashboardRoute || isAdminRoute)) {
     const url = request.nextUrl.clone()
     url.pathname = "/login"
+    // Preserva o destino: após logar, o usuário volta para onde tentava ir.
+    url.searchParams.set("next", `${pathname}${request.nextUrl.search}`)
     return NextResponse.redirect(url)
   }
 

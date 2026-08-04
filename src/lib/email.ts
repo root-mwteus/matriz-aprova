@@ -8,7 +8,9 @@ function getResend(): Resend | null {
   return new Resend(process.env.RESEND_API_KEY)
 }
 
-// Trocar para "noreply@matrizaprova.com" após verificar o domínio no Resend
+// Em produção envia do domínio verificado. Se o Resend recusar com
+// "domain is not verified", falta adicionar o domínio e os registros DNS
+// em https://resend.com/domains (verificado a partir do código em 03/08).
 const FROM = process.env.NODE_ENV === "production"
   ? "Matriz Aprovação <noreply@matrizaprova.com>"
   : "Matriz Aprovação <onboarding@resend.dev>"

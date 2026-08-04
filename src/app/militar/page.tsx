@@ -87,9 +87,9 @@ export default function MilitarPage() {
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-start gap-4">
-                <a href="/#preco" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink" style={{ background: COLOR, color: COLOR_TEXT }}>
+                <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink" style={{ background: COLOR, color: COLOR_TEXT }}>
                   GARANTIR ACESSO · R$ 49,99 <span className="font-mono">→</span>
-                </a>
+                </Link>
                 <Link href="/cadastro" className="cta-secondary inline-flex items-center justify-center gap-2 bg-paper dark:bg-transparent text-ink dark:text-paper font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink dark:border-paper/50">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -356,9 +356,9 @@ export default function MilitarPage() {
           </h2>
           <p className="mt-6 text-lg opacity-80 max-w-xl mx-auto">Pagamento único · acesso vitalício. Acesso liberado também para Concursos, OAB e ENEM.</p>
           <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
-            <a href="/#preco" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-lg px-8 py-5 rounded-xl border-2 border-white/30" style={{ background: COLOR_TEXT, color: COLOR }}>
+            <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-lg px-8 py-5 rounded-xl border-2 border-white/30" style={{ background: COLOR_TEXT, color: COLOR }}>
               QUERO COMEÇAR AGORA <span className="font-mono">→</span>
-            </a>
+            </Link>
             <Link href="/cadastro" className="inline-flex items-center justify-center gap-2 font-display font-bold text-base px-7 py-5 rounded-xl border-2 border-white/30 transition hover:opacity-80" style={{ background: COLOR, color: COLOR_TEXT }}>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
