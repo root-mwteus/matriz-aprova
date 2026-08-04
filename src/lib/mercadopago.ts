@@ -1,3 +1,4 @@
+import { createHmac, timingSafeEqual } from "crypto"
 import { SITE_URL } from "@/lib/constants"
 
 /**
@@ -119,4 +120,43 @@ export function parsePaymentId(raw: unknown): string | null {
   if (typeof raw === "string" && /^\d+$/.test(raw)) return raw
   if (typeof raw === "number" && Number.isInteger(raw)) return String(raw)
   return null
+}
+
+/**
+ * Valida a assinatura HMAC-SHA256 do webhook do Mercado Pago.
+ *
+ * O MP assina cada notificação com a "secret signature" configurada em
+ * Tus integraciones → Webhooks. O header `x-signature` tem o formato
+ * `ts=<timestamp>,v1=<hmac>` e o HMAC cobre o manifest:
+ *
+ *   `<data.id do query> + <ts> + <raw body>`
+ *
+ * Retorna false se o header/secret faltar ou o hash não bater. Sem o
+ * secret configurado (MERCADOPAGO_WEBHOOK_SECRET) rejeita tudo — nunca
+ * aceita webhook sem verificação.
+ */
+export function verificarAssinaturaWebhook(opts: {
+  xSignature: string | null
+  dataId: string | null
+  rawBody: string
+}): boolean {
+  const { xSignature, dataId, rawBody } = opts
+
+  if (!xSignature) return false
+  const secret = process.env.MERCADOPAGO_WEBHOOK_SECRET
+  if (!secret) return false
+
+  const tsMatch = /(?:^|,)\s*ts=(\d+)/.exec(xSignature)
+  const v1Match = /(?:^|,)\s*v1=([a-f0-9]{64})/.exec(xSignature)
+  if (!tsMatch || !v1Match || !dataId) return false
+
+  const ts = tsMatch[1]
+  const v1 = v1Match[1]
+
+  const manifest = `${dataId}${ts}${rawBody}`
+  const digest = createHmac("sha256", secret).update(manifest).digest()
+
+  const received = Buffer.from(v1, "hex")
+  if (digest.length !== received.length) return false
+  return timingSafeEqual(digest, received)
 }

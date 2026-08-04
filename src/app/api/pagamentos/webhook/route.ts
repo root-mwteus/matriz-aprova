@@ -1,15 +1,21 @@
 import { NextResponse } from "next/server"
 import { createServiceClient } from "@/lib/supabase/service"
-import { buscarPagamento, parsePaymentId, PLANO_VITALICIO } from "@/lib/mercadopago"
+import {
+  buscarPagamento,
+  parsePaymentId,
+  PLANO_VITALICIO,
+  verificarAssinaturaWebhook,
+} from "@/lib/mercadopago"
 
 /**
  * POST /api/pagamentos/webhook
  *
  * O Mercado Pago notifica eventos de pagamento aqui. O fluxo:
- *  1. Confirma o id do pagamento com a API do MP (access token).
- *  2. Valida: external_reference (user_id), valor e status approved.
- *  3. Idempotente: um `mp_payment_id` já processado não re-executa.
- *  4. Promove o perfil para vitalício e registra o pagamento.
+ *  1. Valida a assinatura HMAC (`x-signature`) com a secret do MP.
+ *  2. Confirma o id do pagamento com a API do MP (access token).
+ *  3. Valida: external_reference (user_id), valor e status approved.
+ *  4. Idempotente: um `mp_payment_id` já processado não re-executa.
+ *  5. Promove o perfil para vitalício e registra o pagamento.
  *
  * Sempre responde 200 para o MP parar de reenviar — inclusive para
  * eventos irrelevantes e body inválido. Erros reais são logados.
@@ -17,7 +23,25 @@ import { buscarPagamento, parsePaymentId, PLANO_VITALICIO } from "@/lib/mercadop
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json().catch(() => null)
+    const rawBody = await request.clone().text()
+
+    const dataId =
+      new URL(request.url).searchParams.get("data.id") ??
+      JSON.parse(rawBody || "{}")?.data?.id ??
+      JSON.parse(rawBody || "{}")?.id
+
+    const assinaturaValida = verificarAssinaturaWebhook({
+      xSignature: request.headers.get("x-signature"),
+      dataId: typeof dataId === "string" ? dataId : null,
+      rawBody,
+    })
+
+    if (!assinaturaValida) {
+      console.error("webhook: assinatura inválida", request.headers.get("x-signature"))
+      return NextResponse.json({ ok: false }, { status: 401 })
+    }
+
+    const body = JSON.parse(rawBody || "{}")
 
     const paymentId = parsePaymentId(body?.data?.id ?? body?.id)
     if (!paymentId) {
