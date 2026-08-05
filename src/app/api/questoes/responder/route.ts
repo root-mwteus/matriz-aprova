@@ -6,12 +6,31 @@ import { createServiceClient } from "@/lib/supabase/service"
  * POST /api/questoes/responder
  *
  * Registra a resposta de uma questão. A resposta e o gabarito são
- * conferidos no servidor — o cliente não decide o `correto`.
+ * conferidos no servidor — o cliente não decide o `correto`. Só o
+ * plano vitalício pode responder questões — o demo recebe 403.
  */
 export async function POST(request: Request) {
   const user = await requireUser()
   if (!user) {
     return NextResponse.json({ error: "Não autorizado" }, { status: 401 })
+  }
+
+  const service = createServiceClient()
+
+  const { data: perfil } = await service
+    .from("profiles")
+    .select("plano")
+    .eq("id", user.id)
+    .single()
+
+  if (perfil?.plano !== "vitalicio") {
+    return NextResponse.json(
+      {
+        error: "Questões comentadas estão disponíveis no plano vitalício.",
+        precisaPlano: true,
+      },
+      { status: 403 }
+    )
   }
 
   let body: { question_id?: string; resposta_dada?: number; tempo_segundos?: number }
@@ -24,8 +43,6 @@ export async function POST(request: Request) {
   if (!body.question_id || typeof body.resposta_dada !== "number") {
     return NextResponse.json({ error: "question_id e resposta_dada são obrigatórios" }, { status: 400 })
   }
-
-  const service = createServiceClient()
 
   const { data: questao } = await service
     .from("questions")

@@ -35,12 +35,28 @@ export async function POST(request: Request, { params }: { params: { id: string 
     return NextResponse.json({ error: "Não autenticado" }, { status: 401 })
   }
 
+  const service = createServiceClient()
+
+  const { data: perfil } = await service
+    .from("profiles")
+    .select("plano")
+    .eq("id", user.id)
+    .single()
+
+  if (perfil?.plano !== "vitalicio") {
+    return NextResponse.json(
+      {
+        error: "Simulados estão disponíveis no plano vitalício.",
+        precisaPlano: true,
+      },
+      { status: 403 }
+    )
+  }
+
   const parsed = FinalizarSchema.safeParse(await request.json().catch(() => null))
   if (!parsed.success) {
     return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 })
   }
-
-  const service = createServiceClient()
 
   const { data: sim } = await service
     .from("simulations")

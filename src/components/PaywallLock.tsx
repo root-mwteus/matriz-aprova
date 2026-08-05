@@ -13,7 +13,7 @@ import { Button, Panel } from "@/components/ui"
  * Trava do plano demo.
  *
  * Envolve o conteúdo do painel: enquanto o usuário está no plano demo,
- * qualquer rota fora das liberadas (painel e assinatura) fica borrada
+ * qualquer rota fora das liberadas (somente o painel) fica borrada
  * atrás de um cadeado, com o CTA de assinatura destacado no centro da
  * tela. O conteúdo real continua visível sob o blur — mostra o que o
  * plano vitalício desbloqueia em vez de esconder tudo.
@@ -27,7 +27,7 @@ interface ConfigData {
 }
 
 /** Rotas que o plano demo pode acessar normalmente (sub-rotas inclusas). */
-const ROTAS_LIBERADAS = ["/dashboard", "/questoes", "/simulados"]
+const ROTAS_LIBERADAS = ["/dashboard"]
 
 export default function PaywallLock({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()

@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic"
  * Lido direto pelo cliente, o RLS de `simulations` só mostra as linhas
  * do próprio usuário — o ranking ficaria com uma única posição. Esta
  * rota autentica o usuário e usa service_role no servidor para ler os
- * resultados de todos.
+ * resultados de todos. Só o plano vitalício acessa o ranking.
  */
 
 interface SimulacaoRow {
@@ -39,6 +39,22 @@ export async function GET() {
   }
 
   const service = createServiceClient()
+
+  const { data: perfil } = await service
+    .from("profiles")
+    .select("plano")
+    .eq("id", user.id)
+    .single()
+
+  if (perfil?.plano !== "vitalicio") {
+    return NextResponse.json(
+      {
+        error: "O ranking nacional está disponível no plano vitalício.",
+        precisaPlano: true,
+      },
+      { status: 403 }
+    )
+  }
 
   const { data: simulations } = await service
     .from("simulations")

@@ -196,7 +196,7 @@ function boasVindasHtml(nome: string, area: string) {
                   <td style="background-color:#C8FF3D;border-radius:12px;padding:20px 22px;text-align:left">
                     <p style="margin:0 0 6px;color:#0E1117;font-size:14px;font-weight:700">Está no plano demo — explore à vontade.</p>
                     <p style="margin:0;color:rgba(14,17,23,0.75);font-size:13px;line-height:1.6">
-                      Questões, PDFs e simulados com limite diário no modo demo. Quando quiser liberar as 4 áreas com acesso vitalício, é um único pagamento.
+                      No plano demo você tem acesso ao painel. Questões, simulados, PDFs e o resto da plataforma desbloqueiam com o vitalício, em um único pagamento.
                       <a href="https://matrizaprova.com/assinar" style="color:#0E1117;font-weight:700;text-decoration:underline">Ver o plano vitalício →</a>
                     </p>
                   </td>
