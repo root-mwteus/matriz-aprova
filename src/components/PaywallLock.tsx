@@ -27,7 +27,7 @@ interface ConfigData {
 }
 
 /** Rotas que o plano demo pode acessar normalmente. */
-const ROTAS_LIBERADAS = ["/dashboard", "/assinar"]
+const ROTAS_LIBERADAS = ["/dashboard"]
 
 export default function PaywallLock({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()

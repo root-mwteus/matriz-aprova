@@ -36,9 +36,8 @@ export default function DashboardShell({ children }: { children: React.ReactNode
 
   const crumbs = breadcrumbsFor(pathname)
 
-  // Rotas que o plano demo acessa normalmente: o banner de aviso aparece
-  // só nelas; nas demais o PaywallLock assume com o cadeado em destaque.
-  const rotaLiberada = pathname === "/dashboard" || pathname === "/assinar"
+  // O plano demo acessa normalmente o Painel; /assinar é uma página de
+  // vendas fora deste shell e nunca chega aqui.
 
   return (
     <div className="dark min-h-screen bg-canvas text-fg">
@@ -130,7 +129,7 @@ export default function DashboardShell({ children }: { children: React.ReactNode
         </header>
 
         {/* ── Aviso de plano demo ─────────────────────────────── */}
-        {rotaLiberada && <PaywallBanner />}
+        <PaywallBanner />
 
         {/* ── Conteúdo ─────────────────────────────────────────── */}
         <main className="mx-auto w-full max-w-content px-4 py-6 lg:px-8 lg:py-8">
