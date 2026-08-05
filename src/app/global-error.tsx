@@ -1,6 +1,7 @@
 "use client"
 
-import "./globals.css"
+import * as Sentry from "@sentry/nextjs"
+import { useEffect } from "react"
 
 export default function GlobalError({
   error,
@@ -9,40 +10,45 @@ export default function GlobalError({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  useEffect(() => {
+    Sentry.captureException(error)
+  }, [error])
 
   return (
-    <html lang="pt-BR" className="dark">
-      <body className="antialiased">
-        <div className="flex min-h-screen items-center justify-center bg-canvas px-6">
-          <div className="w-full max-w-sm text-center">
-            <h1 className="text-2xl font-semibold text-fg">Algo deu errado</h1>
-
-            <p className="mt-2 text-base text-fg-muted">
-              Algo falhou na renderização desta página. Tente novamente.
-            </p>
-
-            <div className="mt-7 flex items-center justify-center gap-2">
-              <button
-                onClick={reset}
-                className="inline-flex h-[34px] items-center rounded-md bg-solid px-3.5 text-sm font-medium text-fg-on-solid shadow-xs transition-colors duration-fast hover:bg-solid-hover"
-              >
-                Tentar novamente
-              </button>
-              <a
-                href="/"
-                className="inline-flex h-[34px] items-center rounded-md border border-line-strong bg-surface px-3.5 text-sm font-medium text-fg shadow-xs transition-colors duration-fast hover:bg-surface-hover"
-              >
-                Voltar ao início
-              </a>
-            </div>
-
-            {/* O digest identifica a ocorrência — útil para reportar ao
-                suporte junto com o passo a passo do erro. */}
-            {error.digest && (
-              <p className="mt-6 font-mono text-xs text-fg-faint">Código: {error.digest}</p>
-            )}
-          </div>
-        </div>
+    <html lang="pt-BR">
+      <body style={{ margin: 0, background: "#08090A", color: "#F7F8F9", fontFamily: "sans-serif" }}>
+        <main
+          style={{
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "16px",
+            padding: "24px",
+            textAlign: "center",
+          }}
+        >
+          <h1 style={{ fontSize: "28px", margin: 0 }}>Algo deu errado.</h1>
+          <p style={{ fontSize: "15px", color: "#9BA3AF", margin: 0, maxWidth: 420 }}>
+            O erro foi registrado e nossa equipe já foi avisada. Tente novamente.
+          </p>
+          <button
+            onClick={() => reset()}
+            style={{
+              background: "#C2F04C",
+              color: "#16210A",
+              border: "none",
+              borderRadius: "10px",
+              padding: "12px 24px",
+              fontSize: "15px",
+              fontWeight: 600,
+              cursor: "pointer",
+            }}
+          >
+            Tentar novamente
+          </button>
+        </main>
       </body>
     </html>
   )
