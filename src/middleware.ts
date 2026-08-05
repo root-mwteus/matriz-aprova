@@ -46,6 +46,8 @@ export async function middleware(request: NextRequest) {
   if (!user && (isDashboardRoute || isAdminRoute)) {
     const url = request.nextUrl.clone()
     url.pathname = "/login"
+    // Preserva o destino: após logar, o usuário volta para onde tentava ir.
+    url.searchParams.set("next", `${pathname}${request.nextUrl.search}`)
     return NextResponse.redirect(url)
   }
 
@@ -80,8 +82,13 @@ export async function middleware(request: NextRequest) {
   return supabaseResponse
 }
 
+/**
+ * O matcher só roda nas rotas que importam: as protegidas, o /admin e as
+ * telas de entrada. /api autentica por conta própria em cada rota, e as
+ * páginas públicas não precisam de uma chamada a getUser() a cada visita.
+ */
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!api|auth|concursos|oab|militar|enem|_next/static|_next/image|favicon.ico|$|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 }

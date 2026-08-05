@@ -13,6 +13,7 @@ interface Aluno {
   nome: string | null
   email: string
   area_concurso: string | null
+  plano: "demo" | "vitalicio"
   created_at: string
 }
 
@@ -63,7 +64,7 @@ export default function AdminUsuariosPage() {
     async function load() {
       let query = supabase
         .from("profiles")
-        .select("id, nome, email, area_concurso, created_at", { count: "exact" })
+        .select("id, nome, email, area_concurso, plano, created_at", { count: "exact" })
         .eq("role", "user")
 
       if (search) {
@@ -161,6 +162,18 @@ export default function AdminUsuariosPage() {
                   {row.area_concurso || "Não informado"}
                 </span>
               ),
+            },
+            {
+              key: "plano",
+              header: "PLANO",
+              render: (row) =>
+                row.plano === "vitalicio" ? (
+                  <span className="text-[11px] font-medium text-[#2EB872] bg-[#2EB872]/10 px-2 py-0.5 rounded-full">
+                    Vitalício
+                  </span>
+                ) : (
+                  <span className="text-[11px] text-muted bg-black/5 px-2 py-0.5 rounded-full">Demo</span>
+                ),
             },
             {
               key: "created_at",

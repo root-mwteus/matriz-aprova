@@ -6,10 +6,6 @@ import { MetricCard } from "@/components/admin/MetricCard"
 import { AdminTable } from "@/components/admin/AdminTable"
 import { motion } from "framer-motion"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
-import { createClient } from "@/lib/supabase/client"
-
-const DIAS_SEMANA = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"]
-const AREA_CORES = ["#CBFF4D", "#888888", "#4DCBFF", "#F0F0A8", "#FF8C42", "#A84DFF"]
 
 interface RecentUser {
   id: string
@@ -17,6 +13,18 @@ interface RecentUser {
   email: string
   area_concurso: string | null
   created_at: string
+}
+
+interface DashboardDados {
+  totalAlunos: number
+  novosAlunos7d: number
+  totalRespostas: number
+  totalPlanos: number
+  totalSimulados: number
+  taxaAcerto: number
+  weekData: { dia: string; questoes: number }[]
+  areaData: { area: string; valor: number; cor: string }[]
+  recentUsers: RecentUser[]
 }
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -50,79 +58,35 @@ export default function AdminDashboard() {
   const [totalAlunos, setTotalAlunos] = useState(0)
   const [novosAlunos7d, setNovosAlunos7d] = useState(0)
   const [totalRespostas, setTotalRespostas] = useState(0)
+  const [totalPlanos, setTotalPlanos] = useState(0)
+  const [totalSimulados, setTotalSimulados] = useState(0)
   const [taxaAcerto, setTaxaAcerto] = useState(0)
   const [weekData, setWeekData] = useState<{ dia: string; questoes: number }[]>([])
   const [areaData, setAreaData] = useState<{ area: string; valor: number; cor: string }[]>([])
   const [recentUsers, setRecentUsers] = useState<RecentUser[]>([])
 
   useEffect(() => {
-    const supabase = createClient()
     let active = true
 
     async function load() {
-      const hoje = new Date()
-      const seteDiasAtras = new Date(hoje)
-      seteDiasAtras.setDate(seteDiasAtras.getDate() - 6)
-      seteDiasAtras.setHours(0, 0, 0, 0)
-
-      const [
-        { count: alunosCount },
-        { count: novosCount },
-        { count: respostasCount },
-        { count: corretasCount },
-        { data: respostasSemana },
-        { data: areaRows },
-        { data: recentes },
-      ] = await Promise.all([
-        supabase.from("profiles").select("*", { count: "exact", head: true }).eq("role", "user"),
-        supabase.from("profiles").select("*", { count: "exact", head: true }).eq("role", "user").gte("created_at", seteDiasAtras.toISOString()),
-        supabase.from("user_answers").select("*", { count: "exact", head: true }),
-        supabase.from("user_answers").select("*", { count: "exact", head: true }).eq("correto", true),
-        supabase.from("user_answers").select("created_at").gte("created_at", seteDiasAtras.toISOString()),
-        supabase.from("profiles").select("area_concurso").eq("role", "user"),
-        supabase
-          .from("profiles")
-          .select("id, nome, email, area_concurso, created_at")
-          .eq("role", "user")
-          .order("created_at", { ascending: false })
-          .limit(5),
-      ])
+      const res = await fetch("/api/admin/dashboard")
+      const dados: DashboardDados = await res.json()
 
       if (!active) return
-
-      const dias: { date: Date; dia: string; questoes: number }[] = []
-      for (let i = 6; i >= 0; i--) {
-        const d = new Date(hoje)
-        d.setDate(d.getDate() - i)
-        dias.push({ date: d, dia: DIAS_SEMANA[d.getDay()], questoes: 0 })
+      if (res.status !== 200) {
+        setLoading(false)
+        return
       }
-      respostasSemana?.forEach((r) => {
-        const dataResposta = new Date(r.created_at)
-        const bucket = dias.find((d) => d.date.toDateString() === dataResposta.toDateString())
-        if (bucket) bucket.questoes += 1
-      })
 
-      const contagemArea = new Map<string, number>()
-      areaRows?.forEach((r) => {
-        const area = r.area_concurso || "Não informado"
-        contagemArea.set(area, (contagemArea.get(area) || 0) + 1)
-      })
-      const totalComArea = areaRows?.length || 0
-      const distribuicao = Array.from(contagemArea.entries())
-        .sort((a, b) => b[1] - a[1])
-        .map(([area, qtd], i) => ({
-          area,
-          valor: totalComArea ? Math.round((qtd / totalComArea) * 100) : 0,
-          cor: AREA_CORES[i % AREA_CORES.length],
-        }))
-
-      setTotalAlunos(alunosCount ?? 0)
-      setNovosAlunos7d(novosCount ?? 0)
-      setTotalRespostas(respostasCount ?? 0)
-      setTaxaAcerto(respostasCount ? Math.round(((corretasCount ?? 0) / respostasCount) * 100) : 0)
-      setWeekData(dias.map(({ dia, questoes }) => ({ dia, questoes })))
-      setAreaData(distribuicao)
-      setRecentUsers(recentes ?? [])
+      setTotalAlunos(dados.totalAlunos)
+      setNovosAlunos7d(dados.novosAlunos7d)
+      setTotalRespostas(dados.totalRespostas)
+      setTotalPlanos(dados.totalPlanos)
+      setTotalSimulados(dados.totalSimulados)
+      setTaxaAcerto(dados.taxaAcerto)
+      setWeekData(dados.weekData)
+      setAreaData(dados.areaData)
+      setRecentUsers(dados.recentUsers)
       setLoading(false)
     }
 
@@ -170,6 +134,12 @@ export default function AdminDashboard() {
         </motion.div>
         <motion.div variants={itemAnim}>
           <MetricCard label="/ TAXA DE ACERTO MÉDIA" value={loading ? "—" : `${taxaAcerto}%`} />
+        </motion.div>
+        <motion.div variants={itemAnim}>
+          <MetricCard label="/ PLANOS GERADOS" value={loading ? "—" : totalPlanos.toLocaleString("pt-BR")} />
+        </motion.div>
+        <motion.div variants={itemAnim}>
+          <MetricCard label="/ SIMULADOS REALIZADOS" value={loading ? "—" : totalSimulados.toLocaleString("pt-BR")} />
         </motion.div>
       </div>
 

@@ -47,6 +47,7 @@ export function ResolverContent() {
   const [loading, setLoading] = useState(true)
   const [salvando, setSalvando] = useState(false)
   const [tempo, setTempo] = useState(0)
+  const [limite, setLimite] = useState(false)
 
   const timerRef = useRef<number>(0)
   const startTimeRef = useRef<number>(Date.now())
@@ -97,21 +98,27 @@ export function ResolverContent() {
     setConfirmada(true)
     setSalvando(true)
 
-    const correto = selecionada === questao.resposta_correta
-    const {
-      data: { user },
-    } = await supabase.auth.getUser()
-    if (user) {
-      await supabase.from("user_answers").insert({
-        user_id: user.id,
-        question_id: questao.id,
-        resposta_dada: selecionada,
-        correto,
-        tempo_segundos: tempo,
+    try {
+      const res = await fetch("/api/questoes/responder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question_id: questao.id,
+          resposta_dada: selecionada,
+          tempo_segundos: tempo,
+        }),
       })
+
+      if (res.status === 403) {
+        setLimite(true)
+      } else if (!res.ok) {
+        console.error("responder: falha ao salvar resposta", res.status)
+      }
+    } catch {
+      console.error("responder: falha de conexão ao salvar resposta")
     }
     setSalvando(false)
-  }, [selecionada, questao, confirmada, supabase, tempo])
+  }, [selecionada, questao, confirmada, tempo])
 
   const handleProxima = useCallback(() => {
     if (indice < questoes.length - 1) {
@@ -222,6 +229,21 @@ export function ResolverContent() {
           style={{ width: `${progresso}%` }}
         />
       </div>
+
+      {/* Limite diário do plano demo atingido */}
+      {limite && (
+        <div className="mb-5 flex flex-col items-start justify-between gap-3 rounded-lg border border-line-accent bg-accent-soft px-4 py-3 sm:flex-row sm:items-center">
+          <div>
+            <p className="text-sm font-medium text-fg">Limite diário de questões atingido</p>
+            <p className="text-sm text-fg-muted">
+              No plano demo você resolve até 10 questões por dia. Assine o vitalício e estude sem limite.
+            </p>
+          </div>
+          <Button onClick={() => router.push("/assinar")} size="sm">
+            Ver plano vitalício →
+          </Button>
+        </div>
+      )}
 
       <AnimatePresence mode="wait">
         <motion.div

@@ -87,10 +87,10 @@ export default function ConcursosPage() {
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-start gap-4">
-                <a href="/#preco" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink" style={{ background: COLOR, color: COLOR_TEXT }}>
-                  GARANTIR ACESSO · R$ 89,99
+                <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink" style={{ background: COLOR, color: COLOR_TEXT }}>
+                  GARANTIR ACESSO · R$ 49,99
                   <span className="font-mono">→</span>
-                </a>
+                </Link>
                 <Link href="/cadastro" className="cta-secondary inline-flex items-center justify-center gap-2 bg-paper dark:bg-transparent text-ink dark:text-paper font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink dark:border-paper/50">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -365,16 +365,16 @@ export default function ConcursosPage() {
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="label-tag mb-6" style={{ borderColor: `${COLOR_TEXT}66` }}>◆ 1 plano · 4 áreas</span>
           <h2 className="mt-5 font-display font-bold text-4xl sm:text-5xl lg:text-7xl leading-[1]">
-            R$ 89,99 hoje.<br />
+            R$ 49,99 hoje.<br />
             Sua vaga em Concursos <span style={{ background: COLOR_TEXT, color: COLOR, padding: '0 12px' }}>amanhã.</span>
           </h2>
           <p className="mt-6 text-lg opacity-80 max-w-xl mx-auto">
-            Pagamento único anual. Acesso liberado também para OAB, Militar e ENEM.
+            Pagamento único · acesso vitalício. Acesso liberado também para OAB, Militar e ENEM.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
-            <a href="/#preco" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-lg px-8 py-5 rounded-xl border-2 border-ink" style={{ background: COLOR_TEXT, color: COLOR }}>
+            <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 font-display font-bold text-lg px-8 py-5 rounded-xl border-2 border-ink" style={{ background: COLOR_TEXT, color: COLOR }}>
               QUERO COMEÇAR AGORA <span className="font-mono">→</span>
-            </a>
+            </Link>
             <Link href="/cadastro" className="inline-flex items-center justify-center gap-2 font-display font-bold text-base px-7 py-5 rounded-xl border-2 border-ink transition hover:opacity-80" style={{ background: COLOR, color: COLOR_TEXT }}>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -401,7 +401,7 @@ export default function ConcursosPage() {
               ["A Matriz cobre o concurso que vou prestar?", "Cobrimos 76 editais ativos das principais carreiras: tribunais, fiscal, bancário, policial, jurídico e administrativo. Quase 100% dos concursos federais e a maioria dos estaduais e municipais relevantes."],
               ["Tem material para a fase discursiva?", "Sim. Temos módulos de redação técnica e discursiva, com correção comentada e modelos de peças aceitas em cada banca."],
               ["Posso testar antes de pagar?", 'Sim. Temos um plano gratuito de demonstração com acesso limitado a PDFs e questões. Não precisa de cartão. É só clicar em "Testar grátis" e você entra no app na mesma hora.'],
-              ["Por quanto tempo eu tenho acesso?", "12 meses completos. Com 1 pagamento você libera as 4 áreas (Concursos, OAB, Militar, ENEM)."],
+              ["Por quanto tempo eu tenho acesso?", "Acesso vitalício. Com 1 pagamento você libera as 4 áreas (Concursos, OAB, Militar, ENEM)."],
               ["E se eu não gostar? Tem reembolso?", "Sim. 7 dias de garantia incondicional. Devolvemos 100%, sem perguntas."],
             ] as [string, string][]).map(([q, a]) => (
               <details key={q} className="bg-paper-2 dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-xl">
@@ -451,8 +451,8 @@ export default function ConcursosPage() {
               <ul className="space-y-2.5 text-sm">
                 <li><Link href="/cadastro" className="hover:text-paper transition">Testar grátis →</Link></li>
                 <li><Link href="/login" className="hover:text-paper transition">Acessar app →</Link></li>
-                <li><a href="#" className="hover:text-paper transition">Termos de Uso</a></li>
-                <li><a href="#" className="hover:text-paper transition">Política de Privacidade</a></li>
+                <li><Link href="/termos" className="hover:text-paper transition">Termos de Uso</Link></li>
+                <li><Link href="/privacidade" className="hover:text-paper transition">Política de Privacidade</Link></li>
                 <li><a href="mailto:suporte@matrizaprova.com" className="hover:text-paper transition">suporte@matrizaprova.com</a></li>
               </ul>
             </div>

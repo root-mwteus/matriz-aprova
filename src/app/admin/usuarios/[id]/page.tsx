@@ -18,35 +18,55 @@ interface Perfil {
   data_prova: string | null
   created_at: string
   suspenso: boolean
+  plano: "demo" | "vitalicio"
 }
 
-const progressData = [
-  { materia: "Direito Constitucional", aulas: "12/15", questoes: 234, acertos: 78 },
-  { materia: "Direito Civil", aulas: "8/10", questoes: 156, acertos: 65 },
-  { materia: "Direito Penal", aulas: "10/10", questoes: 198, acertos: 82 },
-  { materia: "Direito Processual", aulas: "5/12", questoes: 89, acertos: 45 },
-  { materia: "Ética", aulas: "3/4", questoes: 67, acertos: 91 },
-]
+interface ProgressoItem {
+  materia: string
+  questoes: number
+  acertos: number
+  pct: number
+}
 
-const questions = [
-  { materia: "Direito Constitucional", banca: "FGV", ano: "2024", resultado: "✓", tempo: "01:23", data: "28/06" },
-  { materia: "Direito Civil", banca: "CESPE", ano: "2023", resultado: "✗", tempo: "02:45", data: "28/06" },
-  { materia: "Direito Penal", banca: "FCC", ano: "2024", resultado: "✓", tempo: "00:58", data: "27/06" },
-]
+interface QuestaoItem {
+  materia: string
+  banca: string
+  ano: string
+  resultado: string
+  tempo: string
+  data: string
+}
 
-const simulados = [
-  { titulo: "Simulado OAB 01", questoes: 30, acertos: 22, pct: 73, data: "25/06/2026" },
-  { titulo: "Simulado OAB 02", questoes: 30, acertos: 25, pct: 83, data: "20/06/2026" },
-]
+interface SimuladoItem {
+  id: string
+  titulo: string
+  questoes: number
+  acertos: number
+  pct: number
+  data: string
+}
 
-const calendarDays = Array.from({ length: 30 }, (_, i) => {
-  const d = new Date()
-  d.setDate(d.getDate() - (29 - i))
-  return {
-    day: d.getDate(),
-    active: Math.random() > 0.5,
+interface PagamentoItem {
+  id: string
+  mp_payment_id: string | null
+  status: string
+  valor: number
+  created_at: string
+}
+
+interface UserDetailData {
+  perfil: Perfil
+  resumo: {
+    planos: number
+    aulasConcluidas: number
+    simulados: number
   }
-})
+  progresso: ProgressoItem[]
+  questoes: QuestaoItem[]
+  simulados: SimuladoItem[]
+  calendario: { day: number; active: boolean }[]
+  pagamentos: PagamentoItem[]
+}
 
 function formatarData(iso: string | null) {
   if (!iso) return "—"
@@ -57,28 +77,32 @@ export default function UserDetailPage() {
   const params = useParams<{ id: string }>()
   const [tab, setTab] = useState("PROGRESSO")
   const [showConfirm, setShowConfirm] = useState(false)
-  const [perfil, setPerfil] = useState<Perfil | null>(null)
+  const [dados, setDados] = useState<UserDetailData | null>(null)
   const [loading, setLoading] = useState(true)
+  const [notFound, setNotFound] = useState(false)
   const [updating, setUpdating] = useState(false)
 
   useEffect(() => {
-    const supabase = createClient()
     let active = true
 
-    supabase
-      .from("profiles")
-      .select("id, nome, email, area_concurso, data_prova, created_at, suspenso")
-      .eq("id", params.id)
-      .single()
-      .then(({ data, error }) => {
-        if (!active) return
-        if (error) {
-          console.error("Erro ao carregar perfil:", error)
-          toast.error("Não foi possível carregar este usuário")
-        } else {
-          setPerfil(data)
+    fetch(`/api/admin/usuarios/${params.id}`)
+      .then(async (res) => {
+        if (res.status === 404) {
+          if (active) setNotFound(true)
+          return null
         }
+        if (!res.ok) throw new Error("Falha ao carregar usuário")
+        return res.json()
+      })
+      .then((data: UserDetailData | null) => {
+        if (!active) return
+        if (data) setDados(data)
         setLoading(false)
+      })
+      .catch((err) => {
+        console.error("Erro ao carregar usuário:", err)
+        toast.error("Não foi possível carregar este usuário")
+        if (active) setLoading(false)
       })
 
     return () => {
@@ -87,31 +111,51 @@ export default function UserDetailPage() {
   }, [params.id])
 
   async function confirmarSuspensao() {
-    if (!perfil) return
+    if (!dados?.perfil) return
     setUpdating(true)
-    const novoStatus = !perfil.suspenso
+    const novoStatus = !dados.perfil.suspenso
     const supabase = createClient()
-    const { error } = await supabase.from("profiles").update({ suspenso: novoStatus }).eq("id", perfil.id)
+    const { error } = await supabase.from("profiles").update({ suspenso: novoStatus }).eq("id", dados.perfil.id)
 
     if (error) {
       console.error("Erro ao atualizar status da conta:", error)
       toast.error("Erro ao atualizar status da conta")
     } else {
-      setPerfil({ ...perfil, suspenso: novoStatus })
+      setDados({ ...dados, perfil: { ...dados.perfil, suspenso: novoStatus } })
       toast.success(novoStatus ? "Conta suspensa com sucesso" : "Conta reativada com sucesso")
     }
     setUpdating(false)
     setShowConfirm(false)
   }
 
+  async function mudarPlano(plano: "demo" | "vitalicio") {
+    if (!dados?.perfil) return
+    if (dados.perfil.plano === plano) return
+    setUpdating(true)
+    try {
+      const res = await fetch(`/api/admin/usuarios/${dados.perfil.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plano }),
+      })
+      if (!res.ok) throw new Error()
+      setDados({ ...dados, perfil: { ...dados.perfil, plano } })
+      toast.success(plano === "vitalicio" ? "Plano vitalício ativado" : "Plano revertido para demo")
+    } catch {
+      toast.error("Não foi possível alterar o plano")
+    }
+    setUpdating(false)
+  }
+
   if (loading) {
     return <div className="text-muted text-sm">Carregando...</div>
   }
 
-  if (!perfil) {
+  if (notFound || !dados) {
     return <div className="text-muted text-sm">Usuário não encontrado.</div>
   }
 
+  const { perfil, resumo, progresso, questoes, simulados, calendario } = dados
   const nomeExibicao = perfil.nome || perfil.email
 
   return (
@@ -148,9 +192,20 @@ export default function UserDetailPage() {
               </div>
               <div className="flex justify-between text-muted">
                 <span>Plano</span>
-                <span className="text-muted">Indisponível (pagamentos a implementar)</span>
+                {perfil.plano === "vitalicio" ? (
+                  <span className="text-[11px] font-medium text-[#2EB872] bg-[#2EB872]/10 px-2 py-0.5 rounded-full">Vitalício</span>
+                ) : (
+                  <span className="text-[11px] text-muted bg-black/5 px-2 py-0.5 rounded-full">Demo</span>
+                )}
               </div>
             </div>
+            <button
+              onClick={() => mudarPlano(perfil.plano === "vitalicio" ? "demo" : "vitalicio")}
+              disabled={updating}
+              className="mt-3 w-full text-sm px-4 py-2 rounded-lg font-medium border border-accent/40 text-accent bg-accent/10 hover:bg-accent/20 transition-colors disabled:opacity-50"
+            >
+              {perfil.plano === "vitalicio" ? "REVERTER PARA DEMO" : "ATIVAR VITALÍCIO"}
+            </button>
           </div>
 
           <div className="bg-card border border-card-border rounded-card p-5 space-y-3">
@@ -195,7 +250,7 @@ export default function UserDetailPage() {
               <div className="bg-card border border-card-border rounded-card p-5">
                 <div className="mb-3 text-xs font-medium text-fg-subtle">Atividade nos últimos 30 dias</div>
                 <div className="flex gap-1 flex-wrap">
-                  {calendarDays.map((d, i) => (
+                  {calendario.map((d, i) => (
                     <div
                       key={i}
                       className="w-3 h-3 rounded-sm"
@@ -204,23 +259,32 @@ export default function UserDetailPage() {
                     />
                   ))}
                 </div>
+                <div className="mt-3 text-[11px] text-muted font-mono">
+                  {resumo.planos} planos gerados · {resumo.aulasConcluidas} aulas concluídas · {resumo.simulados} simulados
+                </div>
               </div>
 
               <div className="space-y-2">
-                {progressData.map((p) => (
-                  <div key={p.materia} className="bg-card border border-card-border rounded-card p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-foreground font-medium">{p.materia}</span>
-                      <span className="text-xs text-muted font-mono">{p.aulas} aulas</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="flex-1 h-1.5 bg-card-border rounded-full overflow-hidden">
-                        <div className="h-full bg-accent rounded-full" style={{ width: `${p.acertos}%` }} />
-                      </div>
-                      <span className="text-xs text-muted font-mono">{p.questoes}Q · {p.acertos}%</span>
-                    </div>
+                {progresso.length === 0 ? (
+                  <div className="bg-card border border-card-border rounded-card p-8 text-center text-sm text-muted">
+                    Nenhuma questão respondida ainda.
                   </div>
-                ))}
+                ) : (
+                  progresso.map((p) => (
+                    <div key={p.materia} className="bg-card border border-card-border rounded-card p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm text-foreground font-medium">{p.materia}</span>
+                        <span className="text-xs text-muted font-mono">{p.acertos} acertos</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1 h-1.5 bg-card-border rounded-full overflow-hidden">
+                          <div className="h-full bg-accent rounded-full" style={{ width: `${p.pct}%` }} />
+                        </div>
+                        <span className="text-xs text-muted font-mono">{p.questoes}Q · {p.pct}%</span>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           )}
@@ -236,18 +300,24 @@ export default function UserDetailPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {questions.map((q, i) => (
-                    <tr key={i} className="border-b border-card-border hover:bg-white/[.03]">
-                      <td className="px-4 py-3 text-foreground">{q.materia}</td>
-                      <td className="px-4 py-3 text-muted">{q.banca}</td>
-                      <td className="px-4 py-3 text-muted font-mono">{q.ano}</td>
-                      <td className="px-4 py-3">
-                        <span className={q.resultado === "✓" ? "text-green-400" : "text-red-400"}>{q.resultado}</span>
-                      </td>
-                      <td className="px-4 py-3 text-muted font-mono">{q.tempo}</td>
-                      <td className="px-4 py-3 text-muted font-mono">{q.data}</td>
+                  {questoes.length === 0 ? (
+                    <tr>
+                      <td colSpan={6} className="px-4 py-8 text-center text-sm text-muted">Nenhuma questão respondida.</td>
                     </tr>
-                  ))}
+                  ) : (
+                    questoes.map((q, i) => (
+                      <tr key={i} className="border-b border-card-border hover:bg-white/[.03]">
+                        <td className="px-4 py-3 text-foreground">{q.materia}</td>
+                        <td className="px-4 py-3 text-muted">{q.banca}</td>
+                        <td className="px-4 py-3 text-muted font-mono">{q.ano}</td>
+                        <td className="px-4 py-3">
+                          <span className={q.resultado === "✓" ? "text-green-400" : "text-red-400"}>{q.resultado}</span>
+                        </td>
+                        <td className="px-4 py-3 text-muted font-mono">{q.tempo}</td>
+                        <td className="px-4 py-3 text-muted font-mono">{q.data}</td>
+                      </tr>
+                    ))
+                  )}
                 </tbody>
               </table>
             </div>
@@ -255,22 +325,64 @@ export default function UserDetailPage() {
 
           {tab === "SIMULADOS" && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {simulados.map((s, i) => (
-                <div key={i} className="bg-card border border-card-border rounded-card p-5">
-                  <div className="text-sm text-foreground font-medium">{s.titulo}</div>
-                  <div className="mt-2 flex items-baseline gap-1">
-                    <span className="text-2xl font-bold text-accent">{s.pct}%</span>
-                    <span className="text-xs text-muted">({s.acertos}/{s.questoes})</span>
-                  </div>
-                  <div className="text-xs text-muted mt-2 font-mono">{s.data}</div>
+              {simulados.length === 0 ? (
+                <div className="col-span-full bg-card border border-card-border rounded-card p-8 text-center text-sm text-muted">
+                  Nenhum simulado finalizado.
                 </div>
-              ))}
+              ) : (
+                simulados.map((s) => (
+                  <div key={s.id} className="bg-card border border-card-border rounded-card p-5">
+                    <div className="text-sm text-foreground font-medium">{s.titulo}</div>
+                    <div className="mt-2 flex items-baseline gap-1">
+                      <span className="text-2xl font-bold text-accent">{s.pct}%</span>
+                      <span className="text-xs text-muted">({s.acertos}/{s.questoes})</span>
+                    </div>
+                    <div className="text-xs text-muted mt-2 font-mono">{s.data}</div>
+                  </div>
+                ))
+              )}
             </div>
           )}
 
           {tab === "FINANCEIRO" && (
-            <div className="bg-card border border-card-border rounded-card p-8 text-center">
-              <p className="text-muted text-sm">Sistema de pagamentos ainda não implementado.</p>
+            <div className="bg-card border border-card-border rounded-card overflow-hidden">
+              {dados.pagamentos.length === 0 ? (
+                <div className="p-8 text-center text-sm text-muted">Nenhum pagamento registrado.</div>
+              ) : (
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-card-border">
+                      {["Pagamento MP", "Status", "Valor", "Data"].map((h) => (
+                        <th key={h} className="text-left text-[11px] text-muted font-mono font-normal px-4 py-3">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {dados.pagamentos.map((p) => (
+                      <tr key={p.id} className="border-b border-card-border hover:bg-white/[.03]">
+                        <td className="px-4 py-3 text-muted font-mono">{p.mp_payment_id ?? "—"}</td>
+                        <td className="px-4 py-3">
+                          <span
+                            className={`text-[11px] px-2 py-0.5 rounded-full uppercase tracking-wider ${
+                              p.status === "approved"
+                                ? "text-[#2EB872] bg-[#2EB872]/10"
+                                : p.status === "pending"
+                                  ? "text-yellow-400 bg-yellow-400/10"
+                                  : "text-red-400 bg-red-400/10"
+                            }`}
+                          >
+                            {p.status}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 text-foreground font-mono">
+                          {new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(p.valor / 100)}
+                        </td>
+                        <td className="px-4 py-3 text-muted font-mono">{p.created_at}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
             </div>
           )}
         </div>

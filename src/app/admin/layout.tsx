@@ -64,7 +64,7 @@ const navGroups: { label: string; items: AdminNav[] }[] = [
   {
     label: "Acervo",
     items: [
-      { href: "/admin/questoes", label: "Questões", icon: FileQuestion, soon: true },
+      { href: "/admin/questoes", label: "Questões", icon: FileQuestion },
       { href: "/admin/materiais", label: "Materiais", icon: BookOpen },
       { href: "/admin/cursos", label: "Cursos", icon: PlayCircle },
       { href: "/admin/editais", label: "Editais", icon: ClipboardList },

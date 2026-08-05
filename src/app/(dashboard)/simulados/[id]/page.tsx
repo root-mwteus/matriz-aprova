@@ -36,7 +36,6 @@ const LETRAS = ["A", "B", "C", "D", "E"]
 export default function SimuladoPage() {
   const params = useParams()
   const router = useRouter()
-  const supabase = createClient()
 
   const [cache, setCache] = useState<SimCache | null>(null)
   const [indice, setIndice] = useState(0)
@@ -93,30 +92,27 @@ export default function SimuladoPage() {
     jaFinalizou.current = true
     setFinalizando(true)
 
-    let acertos = 0
-    for (const q of cache.questoes) {
-      const resposta = cache.respostas[q.id]
-      if (resposta !== undefined && resposta === q.resposta_correta) acertos++
-    }
-
+    // A finalização passa pelo servidor: lá os acertos são recomputados a
+    // partir do gabarito e gravados — o cliente não toca mais em
+    // `simulations` (a migração 012 removeu o UPDATE direto, evitando
+    // inflar a própria pontuação no ranking).
     const tempoGasto = cache.tempoLimite * 60 - tempoRestante
 
-    const { error } = await supabase
-      .from("simulations")
-      .update({
-        pontuacao: acertos,
-        tempo_total: tempoGasto,
-        questoes: cache.questoes.map((q) => ({
-          id: q.id,
-          materia: q.materia,
-          resposta_correta: q.resposta_correta,
-          resposta_dada: cache.respostas[q.id] ?? null,
-        })),
+    let res: Response
+    try {
+      res = await fetch(`/api/simulados/${params.id}/finalizar`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ respostas: cache.respostas, tempoTotal: tempoGasto }),
       })
-      .eq("id", params.id)
+    } catch {
+      // Rede caiu — libera para tentar de novo em vez de travar a tela.
+      jaFinalizou.current = false
+      setFinalizando(false)
+      return
+    }
 
-    if (error) {
-      // Sem isso a tela ficava travada em "Finalizando…" para sempre.
+    if (!res.ok) {
       jaFinalizou.current = false
       setFinalizando(false)
       return
@@ -124,7 +120,7 @@ export default function SimuladoPage() {
 
     localStorage.removeItem(`sim_${params.id}`)
     router.push(`/simulados/resultado/${params.id}`)
-  }, [cache, params.id, supabase, router, tempoRestante])
+  }, [cache, params.id, router, tempoRestante])
 
   useEffect(() => {
     finalizarRef.current = handleFinalizar

@@ -5,6 +5,7 @@ import { Pause, Play, RotateCcw, Timer, Trash2 } from "lucide-react"
 import { toast } from "sonner"
 import { MATERIAS } from "@/lib/constants"
 import { cn } from "@/lib/utils"
+import { createClient } from "@/lib/supabase/client"
 import PageHeader from "@/components/PageHeader"
 import {
   Badge,
@@ -44,9 +45,11 @@ interface StudySession {
 const META_DIARIA_MIN = 240
 
 export default function CronometroPage() {
+  const supabase = createClient()
   const [decorrido, setDecorrido] = useState(0)
   const [rodando, setRodando] = useState(false)
   const [sessoes, setSessoes] = useState<StudySession[]>([])
+  const [carregando, setCarregando] = useState(true)
   const [salvando, setSalvando] = useState(false)
   const [confirmarReset, setConfirmarReset] = useState(false)
   const [materia, setMateria] = useState<string>(MATERIAS[0])
@@ -55,6 +58,38 @@ export default function CronometroPage() {
   // inativas, ao contrário de um contador incrementado por tick.
   const inicioRef = useRef<number | null>(null)
   const acumuladoRef = useRef(0)
+
+  useEffect(() => {
+    let active = true
+
+    async function carregar() {
+      const hoje = new Date()
+      const inicioDia = new Date(hoje)
+      inicioDia.setHours(0, 0, 0, 0)
+      const fimDia = new Date(hoje)
+      fimDia.setHours(23, 59, 59, 999)
+
+      const { data } = await supabase
+        .from("study_sessions")
+        .select("id, materia, tempo_minutos, registrado_em")
+        .gte("registrado_em", inicioDia.toISOString())
+        .lte("registrado_em", fimDia.toISOString())
+        .order("registrado_em", { ascending: false })
+
+      if (!active) return
+      setSessoes((data as StudySession[]) ?? [])
+      setCarregando(false)
+    }
+
+    carregar().catch((err) => {
+      console.error("Erro ao carregar sessões:", err)
+      if (active) setCarregando(false)
+    })
+
+    return () => {
+      active = false
+    }
+  }, [supabase])
 
   useEffect(() => {
     if (!rodando) return
@@ -84,15 +119,37 @@ export default function CronometroPage() {
     setConfirmarReset(false)
   }
 
-  function salvar() {
+  async function salvar() {
     const minutos = Math.floor(decorrido / 60)
     if (minutos < 1) {
       toast.error("A sessão precisa de pelo menos um minuto")
       return
     }
+    setSalvando(true)
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    if (!user) {
+      toast.error("Sessão expirada. Faça login novamente")
+      setSalvando(false)
+      return
+    }
+    const { data, error } = await supabase
+      .from("study_sessions")
+      .insert({ user_id: user.id, materia, tempo_minutos: minutos })
+      .select("id")
+      .single()
+
+    if (error || !data) {
+      console.error("Erro ao salvar sessão:", error)
+      toast.error("Não foi possível salvar a sessão")
+      setSalvando(false)
+      return
+    }
+
     setSessoes((atuais) => [
       {
-        id: Date.now().toString(),
+        id: data.id,
         materia,
         tempo_minutos: minutos,
         registrado_em: new Date().toISOString(),
@@ -102,6 +159,15 @@ export default function CronometroPage() {
     toast.success(`${minutos} min registrados em ${materia}`)
     setSalvando(false)
     zerar()
+  }
+
+  async function removerSessao(id: string) {
+    setSessoes((atuais) => atuais.filter((x) => x.id !== id))
+    const { error } = await supabase.from("study_sessions").delete().eq("id", id)
+    if (error) {
+      console.error("Erro ao remover sessão:", error)
+      toast.error("Não foi possível remover a sessão")
+    }
   }
 
   const horas = Math.floor(decorrido / 3600)
@@ -197,7 +263,16 @@ export default function CronometroPage() {
           description={totalMinutos > 0 ? `${totalMinutos} minutos no total` : undefined}
         />
 
-        {sessoes.length === 0 ? (
+        {carregando ? (
+          <ul>
+            {Array.from({ length: 3 }).map((_, i) => (
+              <li key={i} className="border-b border-line px-4 py-3 last:border-0">
+                <div className="skeleton h-3.5 w-1/3" />
+                <div className="skeleton mt-2 h-3 w-16" />
+              </li>
+            ))}
+          </ul>
+        ) : sessoes.length === 0 ? (
           <EmptyState
             icon={<Timer size={16} strokeWidth={1.75} />}
             title="Nenhuma sessão registrada"
@@ -227,7 +302,7 @@ export default function CronometroPage() {
                   label={`Remover sessão de ${s.materia}`}
                   variant="ghost"
                   size="sm"
-                  onClick={() => setSessoes((atuais) => atuais.filter((x) => x.id !== s.id))}
+                  onClick={() => removerSessao(s.id)}
                 >
                   <Trash2 size={14} strokeWidth={1.75} />
                 </IconButton>
@@ -248,8 +323,8 @@ export default function CronometroPage() {
             <Button variant="ghost" onClick={() => setSalvando(false)}>
               Cancelar
             </Button>
-            <Button variant="accent" onClick={salvar}>
-              Salvar
+            <Button variant="accent" onClick={salvar} disabled={salvando}>
+              {salvando ? "Salvando…" : "Salvar"}
             </Button>
           </>
         }

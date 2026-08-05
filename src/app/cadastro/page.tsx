@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { Suspense, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
 import { registerSchema, type RegisterData } from "@/lib/auth-validation"
 import { AREAS } from "@/lib/constants"
 import { resolveApiUrl } from "@/lib/fetch-utils"
+import { safeNext } from "@/lib/utils"
 import { AuthDivider, AuthError, AuthShell } from "@/components/auth/AuthShell"
 import { GoogleButton, PasswordInput } from "@/components/auth/GoogleButton"
 import { Button, Field, Input, Select } from "@/components/ui"
@@ -18,9 +19,11 @@ import { Button, Field, Input, Select } from "@/components/ui"
  * de placeholder; agora vem de `constants` e o placeholder é o próprio
  * `option` desabilitado, igual ao resto do produto.
  */
-export default function RegisterPage() {
+function RegisterContent() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const supabase = createClient()
+  const next = safeNext(searchParams.get("next"))
   const [form, setForm] = useState<RegisterData>({
     nome: "",
     email: "",
@@ -92,7 +95,7 @@ export default function RegisterPage() {
       body: JSON.stringify({ nome: form.nome, email: form.email, area: form.area_concurso }),
     }).catch(() => {})
 
-    router.push("/onboarding")
+    router.push(next ? `/onboarding?next=${encodeURIComponent(next)}` : "/onboarding")
     router.refresh()
   }
 
@@ -103,7 +106,10 @@ export default function RegisterPage() {
       footer={
         <>
           Já tem conta?{" "}
-          <Link href="/login" className="font-medium text-accent-ink hover:underline">
+          <Link
+            href={next ? `/login?next=${encodeURIComponent(next)}` : "/login"}
+            className="font-medium text-accent-ink hover:underline"
+          >
             Entrar
           </Link>
         </>
@@ -186,5 +192,13 @@ export default function RegisterPage() {
 
       <GoogleButton label="Cadastrar com Google" onError={(m) => setErrors({ api: m })} />
     </AuthShell>
+  )
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={null}>
+      <RegisterContent />
+    </Suspense>
   )
 }

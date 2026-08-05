@@ -1,11 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
+import { Suspense, useEffect, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
 import { AREAS } from "@/lib/constants"
-import { cn } from "@/lib/utils"
+import { cn, safeNext } from "@/lib/utils"
 import { AuthShell } from "@/components/auth/AuthShell"
 import { Button, Field, Input } from "@/components/ui"
 
@@ -21,9 +21,11 @@ import { Button, Field, Input } from "@/components/ui"
  * contagem regressiva — e grava no perfil. Ambas continuam puláveis: um
  * cadastro não deve ser refém do preenchimento perfeito.
  */
-export default function OnboardingPage() {
+function OnboardingContent() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const supabase = createClient()
+  const next = safeNext(searchParams.get("next"))
   const [area, setArea] = useState("")
   const [dataProva, setDataProva] = useState("")
   const [salvando, setSalvando] = useState(false)
@@ -66,7 +68,7 @@ export default function OnboardingPage() {
       }
     }
 
-    router.push("/dashboard")
+    router.push(next ?? "/dashboard")
     router.refresh()
   }
 
@@ -128,12 +130,20 @@ export default function OnboardingPage() {
             size="lg"
             block
             disabled={salvando}
-            onClick={() => router.push("/dashboard")}
+            onClick={() => router.push(next ?? "/dashboard")}
           >
             Pular por enquanto
           </Button>
         </div>
       </div>
     </AuthShell>
+  )
+}
+
+export default function OnboardingPage() {
+  return (
+    <Suspense fallback={null}>
+      <OnboardingContent />
+    </Suspense>
   )
 }

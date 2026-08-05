@@ -5,6 +5,7 @@ export interface Profile {
   area_concurso: string | null
   data_prova: string | null
   role: "user" | "admin"
+  plano: "demo" | "vitalicio"
   created_at: string
 }
 

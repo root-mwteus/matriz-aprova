@@ -13,7 +13,7 @@ Milhares de questões comentadas, simulados inteligentes, materiais em PDF e pla
 
 ## Pré-requisitos
 
-- Node.js 18+
+- Node.js 20+
 - npm
 - Conta no [Supabase](https://supabase.com) (grátis)
 - Conta na [Vercel](https://vercel.com) (grátis)
@@ -29,7 +29,7 @@ cd matriz-aprova
 npm install
 
 # Configure as variáveis de ambiente
-cp .env.local.example .env.local
+cp .env.example .env.local
 ```
 
 ## Configuração do Supabase
@@ -45,6 +45,21 @@ cp .env.local.example .env.local
    - `Site URL`: `http://localhost:3000`
    - Redirect URLs: `http://localhost:3000/auth/callback`
 6. (Opcional) Ative o provedor Google em Authentication > Providers
+7. **Bancos já existentes**: rode também as migrations em `supabase/` na
+   ordem (`supabase-migration-001` … `supabase-migration-013`), pulando as
+   que já foram aplicadas — o `supabase-schema.sql` é o estado final
+   consolidado e serve apenas para setups novos.
+
+## Pagamentos (Mercado Pago)
+
+Para vender o plano vitalício (R$ 49,99):
+
+1. Crie um app em [Mercado Pago Developers](https://www.mercadopago.com.br/developers)
+2. Copie a credencial de produção (ou de teste) em **Seus projetos > Credenciais**
+3. Defina `MERCADOPAGO_ACCESS_TOKEN` no `.env.local` e na Vercel
+4. No painel do Mercado Pago, configure o webhook `https://matrizaprova.com/api/pagamentos/webhook`
+5. O fluxo: `/assinar` cria a preferência no Checkout Pro e o webhook
+   promove o `profiles.plano` para `vitalicio` quando o pagamento aprova
 
 ## Desenvolvimento
 
@@ -98,6 +113,8 @@ src/
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
    - `SUPABASE_SERVICE_ROLE_KEY`
    - `NEXT_PUBLIC_SITE_URL` (URL do seu deploy)
+   - `OPENAI_API_KEY` (plano de estudos por IA)
+   - `RESEND_API_KEY` (e-mails de boas-vindas e recuperação de senha)
 4. No Supabase, atualize:
    - **Authentication > Settings > Site URL**: URL da Vercel
    - **Authentication > Settings > Redirect URLs**: `https://seu-site.vercel.app/auth/callback`

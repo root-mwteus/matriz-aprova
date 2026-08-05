@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
 import { loginSchema, type LoginData } from "@/lib/auth-validation"
+import { safeNext } from "@/lib/utils"
 import { AuthDivider, AuthError, AuthShell } from "@/components/auth/AuthShell"
 import { GoogleButton, PasswordInput } from "@/components/auth/GoogleButton"
 import { Button, Field, Input } from "@/components/ui"
@@ -27,6 +28,7 @@ function LoginContent() {
   const [errors, setErrors] = useState<Partial<Record<keyof LoginData | "api", string>>>({})
   const [loading, setLoading] = useState(false)
   const contaSuspensa = searchParams.get("suspenso") === "1"
+  const next = safeNext(searchParams.get("next"))
 
   function validate(): boolean {
     const result = loginSchema.safeParse(form)
@@ -68,7 +70,7 @@ function LoginContent() {
       return
     }
 
-    router.push("/dashboard")
+    router.push(safeNext(searchParams.get("next")) ?? "/dashboard")
     router.refresh()
   }
 
@@ -79,7 +81,10 @@ function LoginContent() {
       footer={
         <>
           Ainda não tem conta?{" "}
-          <Link href="/cadastro" className="font-medium text-accent-ink hover:underline">
+          <Link
+            href={next ? `/cadastro?next=${encodeURIComponent(next)}` : "/cadastro"}
+            className="font-medium text-accent-ink hover:underline"
+          >
             Criar conta
           </Link>
         </>

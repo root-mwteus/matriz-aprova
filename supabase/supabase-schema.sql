@@ -22,19 +22,38 @@ CREATE POLICY "Usuário vê apenas seu próprio perfil"
 
 CREATE POLICY "Usuário edita apenas seu próprio perfil"
   ON public.profiles FOR UPDATE
-  USING (auth.uid() = id);
+  USING (auth.uid() = id)
+  WITH CHECK (auth.uid() = id AND role = 'user' AND suspenso = false);
 
 CREATE POLICY "Sistema pode inserir perfil"
   ON public.profiles FOR INSERT
-  WITH CHECK (auth.uid() = id);
+  WITH CHECK (auth.uid() = id AND role = 'user' AND suspenso = false);
+
+-- SECURITY DEFINER: roda como o dono (que ignora RLS), então o SELECT em
+-- profiles NÃO re-dispara as policies de profiles — evita "infinite
+-- recursion detected in policy for relation profiles".
+CREATE OR REPLACE FUNCTION public.is_admin()
+RETURNS boolean
+LANGUAGE sql
+SECURITY DEFINER
+STABLE
+SET search_path = public
+AS $$
+  SELECT EXISTS (
+    SELECT 1 FROM public.profiles
+    WHERE id = auth.uid() AND role = 'admin'
+  );
+$$;
+
+GRANT EXECUTE ON FUNCTION public.is_admin() TO authenticated;
 
 CREATE POLICY "Admin vê todos os perfis"
   ON public.profiles FOR SELECT
-  USING (EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'admin'));
+  USING (public.is_admin());
 
 CREATE POLICY "Admin atualiza qualquer perfil"
   ON public.profiles FOR UPDATE
-  USING (EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = auth.uid() AND p.role = 'admin'));
+  USING (public.is_admin());
 
 CREATE INDEX idx_profiles_email ON public.profiles(email);
 CREATE INDEX idx_profiles_role  ON public.profiles(role);
@@ -324,9 +343,10 @@ CREATE POLICY "Usuário insere apenas suas próprias simulações"
   ON public.simulations FOR INSERT
   WITH CHECK (auth.uid() = user_id);
 
-CREATE POLICY "Usuário atualiza apenas suas próprias simulações"
-  ON public.simulations FOR UPDATE
-  USING (auth.uid() = user_id);
+-- Sem policy de UPDATE de cliente: finalizar um simulado (gravar
+-- pontuação) passa obrigatoriamente por /api/simulados/[id]/finalizar,
+-- que recomputa os acertos no servidor — o usuário não pode inflar a
+-- própria pontuação direto pela API do Supabase.
 
 CREATE POLICY "Usuário exclui apenas suas próprias simulações"
   ON public.simulations FOR DELETE
@@ -420,7 +440,13 @@ CREATE POLICY "Admin exclui materiais do storage"
 
 CREATE POLICY "Autenticados leem materiais do storage"
   ON storage.objects FOR SELECT
-  USING (bucket_id = 'materiais' AND auth.role() = 'authenticated');
+  USING (
+    bucket_id = 'materiais'
+    AND EXISTS (
+      SELECT 1 FROM public.materials m
+      WHERE m.pdf_url = storage.objects.name
+    )
+  );
 
 -- Bucket público para figuras de questões (conteúdo educacional)
 INSERT INTO storage.buckets (id, name, public)
@@ -441,3 +467,138 @@ CREATE POLICY "Admin exclui figuras de questoes"
     bucket_id = 'questoes-figuras'
     AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
   );
+
+-- ============================================================
+-- 14. GRUPOS E MEMBROS (comunidade)
+-- ============================================================
+CREATE TABLE public.grupos (
+  id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  nome       text NOT NULL CHECK (char_length(nome) >= 3),
+  descricao  text NOT NULL DEFAULT '',
+  materia    text NOT NULL,
+  criador_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+
+CREATE TABLE public.membros (
+  id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  grupo_id   uuid NOT NULL REFERENCES public.grupos(id) ON DELETE CASCADE,
+  user_id    uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (grupo_id, user_id)
+);
+
+ALTER TABLE public.grupos ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.membros ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Autenticados leem grupos"
+  ON public.grupos FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+CREATE POLICY "Usuário cria grupo"
+  ON public.grupos FOR INSERT
+  WITH CHECK (auth.uid() = criador_id);
+
+CREATE POLICY "Admin edita grupos"
+  ON public.grupos FOR UPDATE
+  USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE POLICY "Admin exclui grupos"
+  ON public.grupos FOR DELETE
+  USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE POLICY "Autenticados leem membros"
+  ON public.membros FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+CREATE POLICY "Usuário participa de grupo"
+  ON public.membros FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Usuário sai de grupo"
+  ON public.membros FOR DELETE
+  USING (auth.uid() = user_id);
+
+CREATE INDEX idx_grupos_materia ON public.grupos(materia);
+CREATE INDEX idx_membros_grupo  ON public.membros(grupo_id);
+CREATE INDEX idx_membros_user   ON public.membros(user_id);
+
+CREATE OR REPLACE FUNCTION public.handle_novo_grupo()
+RETURNS trigger AS $$
+BEGIN
+  INSERT INTO public.membros (grupo_id, user_id)
+  VALUES (new.id, new.criador_id);
+  RETURN new;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE OR REPLACE TRIGGER on_grupo_created
+  AFTER INSERT ON public.grupos
+  FOR EACH ROW
+  EXECUTE FUNCTION public.handle_novo_grupo();
+
+-- ============================================================
+-- 15. SESSÕES DE ESTUDO (cronômetro)
+-- ============================================================
+CREATE TABLE public.study_sessions (
+  id             uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id        uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  materia        text NOT NULL,
+  tempo_minutos  integer NOT NULL CHECK (tempo_minutos > 0),
+  registrado_em  timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.study_sessions ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Usuário vê apenas suas próprias sessões"
+  ON public.study_sessions FOR SELECT
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Usuário insere apenas suas próprias sessões"
+  ON public.study_sessions FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Usuário exclui apenas suas próprias sessões"
+  ON public.study_sessions FOR DELETE
+  USING (auth.uid() = user_id);
+
+CREATE INDEX idx_study_sessions_user          ON public.study_sessions(user_id);
+CREATE INDEX idx_study_sessions_registrado_em ON public.study_sessions(registrado_em);
+
+-- ============================================================
+-- 16. EDITAIS (catálogo de concursos, curado pelo admin)
+-- ============================================================
+CREATE TABLE public.editais (
+  id                 uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  orgao              text NOT NULL,
+  cargo              text,
+  banca              text,
+  area_concurso      text NOT NULL,
+  vagas              integer,
+  data_prova         date,
+  data_inscricao_fim date,
+  link               text,
+  status             text NOT NULL DEFAULT 'aberto' CHECK (status IN ('aberto', 'encerrado', 'previsto')),
+  created_at         timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.editais ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Editais visíveis para todos autenticados"
+  ON public.editais FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+CREATE POLICY "Apenas admin gerencia editais"
+  ON public.editais FOR INSERT
+  WITH CHECK (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE POLICY "Apenas admin edita editais"
+  ON public.editais FOR UPDATE
+  USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE POLICY "Apenas admin exclui editais"
+  ON public.editais FOR DELETE
+  USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
+
+CREATE INDEX idx_editais_area_concurso ON public.editais(area_concurso);
+CREATE INDEX idx_editais_status ON public.editais(status);

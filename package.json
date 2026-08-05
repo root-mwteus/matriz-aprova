@@ -2,6 +2,9 @@
   "name": "matriz-aprova",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,7 +14,6 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@fontsource/space-grotesk": "^5.0.18",
     "@supabase/ssr": "^0.4.0",
     "@supabase/supabase-js": "^2.43.0",
     "@vercel/analytics": "^2.0.1",
@@ -21,7 +23,6 @@
     "lucide-react": "^1.22.0",
     "next": "14.2.4",
     "openai": "^6.45.0",
-    "pdfjs-dist": "^6.1.200",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "recharts": "^2.12.7",
