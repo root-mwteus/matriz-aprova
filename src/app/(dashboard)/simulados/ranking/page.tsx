@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation"
 import { Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
-import PaywallGate from "@/components/PaywallGate"
 import { Avatar, Badge, Button, EmptyState, Panel, PanelHeader, Skeleton } from "@/components/ui"
 
 /**
@@ -68,26 +67,23 @@ export default function RankingPage() {
         }
       />
 
-      <PaywallGate title="O ranking nacional é exclusivo do plano vitalício">
-        {minhaPosicao > 0 && (
-        <Panel className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-xs font-medium text-fg-subtle">Sua posição</p>
-            <p className="mt-1 text-2xl font-semibold tabular-nums text-fg">
-              {minhaPosicao}º
-              <span className="ml-1.5 text-base font-normal text-fg-faint">
-                de {ranking.length}
-              </span>
-            </p>
-          </div>
-          {minhaPosicao === 1 && (
-            <Badge tone="accent" className="shrink-0">
-              <Trophy size={11} strokeWidth={2} />
-              Primeiro lugar
-            </Badge>
-          )}
-        </Panel>
-      )}
+      <Panel className="flex items-center justify-between gap-4">
+        <div>
+          <p className="text-xs font-medium text-fg-subtle">Sua posição</p>
+          <p className="mt-1 text-2xl font-semibold tabular-nums text-fg">
+            {minhaPosicao}º
+            <span className="ml-1.5 text-base font-normal text-fg-faint">
+              de {ranking.length}
+            </span>
+          </p>
+        </div>
+        {minhaPosicao === 1 && (
+          <Badge tone="accent" className="shrink-0">
+            <Trophy size={11} strokeWidth={2} />
+            Primeiro lugar
+          </Badge>
+        )}
+      </Panel>
 
       <Panel flush>
         <PanelHeader title="Melhores resultados" description="Ordenado por acerto e tempo" />
@@ -164,7 +160,6 @@ export default function RankingPage() {
           </ul>
         )}
       </Panel>
-      </PaywallGate>
     </div>
   )
 }

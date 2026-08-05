@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { Menu as MenuIcon, Search, X, ChevronRight } from "lucide-react"
 import Sidebar from "@/components/Sidebar"
 import PaywallBanner from "@/components/PaywallBanner"
+import PaywallLock from "@/components/PaywallLock"
 import { CommandPalette, useCommandPalette } from "@/components/CommandPalette"
 import { breadcrumbsFor } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
@@ -34,6 +35,10 @@ export default function DashboardShell({ children }: { children: React.ReactNode
   useEffect(() => setDrawerOpen(false), [pathname])
 
   const crumbs = breadcrumbsFor(pathname)
+
+  // Rotas que o plano demo acessa normalmente: o banner de aviso aparece
+  // só nelas; nas demais o PaywallLock assume com o cadeado em destaque.
+  const rotaLiberada = pathname === "/dashboard" || pathname === "/assinar"
 
   return (
     <div className="dark min-h-screen bg-canvas text-fg">
@@ -125,10 +130,12 @@ export default function DashboardShell({ children }: { children: React.ReactNode
         </header>
 
         {/* ── Aviso de plano demo ─────────────────────────────── */}
-        <PaywallBanner />
+        {rotaLiberada && <PaywallBanner />}
 
         {/* ── Conteúdo ─────────────────────────────────────────── */}
-        <main className="mx-auto w-full max-w-content px-4 py-6 lg:px-8 lg:py-8">{children}</main>
+        <main className="mx-auto w-full max-w-content px-4 py-6 lg:px-8 lg:py-8">
+          <PaywallLock>{children}</PaywallLock>
+        </main>
       </div>
 
       <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />

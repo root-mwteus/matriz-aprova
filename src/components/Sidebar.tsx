@@ -27,6 +27,7 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
   const router = useRouter()
   const supabase = createClient()
   const [profile, setProfile] = useState<Profile | null>(null)
+  const demo = profile != null && profile.plano !== "vitalicio"
 
   useEffect(() => {
     let active = true
@@ -98,6 +99,9 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
                 }
 
                 const active = isRouteActive(pathname, item.href)
+                // No plano demo, só o Painel (e a assinatura, fora da
+                // navegação) ficam liberados; o resto ganha cadeado.
+                const travado = demo && item.href !== "/dashboard"
                 return (
                   <li key={item.href}>
                     <Link
@@ -118,6 +122,7 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
                         className={cn("shrink-0", active ? "text-accent-ink" : "text-fg-faint")}
                       />
                       <span className="truncate">{item.label}</span>
+                      {travado && <Lock size={11} strokeWidth={2} className="shrink-0 text-fg-faint" />}
                     </Link>
                   </li>
                 )
