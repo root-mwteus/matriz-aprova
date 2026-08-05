@@ -26,8 +26,9 @@ interface ConfigData {
   avisoBloqueio: string
 }
 
-/** Rotas que o plano demo pode acessar normalmente (sub-rotas inclusas). */
-const ROTAS_LIBERADAS = ["/dashboard"]
+/** O plano demo não acessa nenhuma rota do painel — tudo fica borrado
+ *  atrás do cadeado até assinar o vitalício. */
+const ROTAS_LIBERADAS: string[] = []
 
 export default function PaywallLock({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
