@@ -6,7 +6,18 @@ export interface Profile {
   data_prova: string | null
   role: "user" | "admin"
   plano: "demo" | "vitalicio"
+  suspenso?: boolean
   created_at: string
+}
+
+export interface ConfigPagamentos {
+  titulo_plano: string
+  descricao_plano: string
+  valor_centavos: number
+  beneficios: string[]
+  limite_questoes_demo: number
+  aviso_bloqueio: string
+  pagamentos_ativos: boolean
 }
 
 export interface Edital {

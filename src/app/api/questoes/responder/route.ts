@@ -1,16 +1,15 @@
 import { NextResponse } from "next/server"
 import { requireUser } from "@/lib/supabase/auth"
 import { createServiceClient } from "@/lib/supabase/service"
-
-/** Limite diário de questões no plano demo. */
-const LIMITE_DIARIO_DEMO = 10
+import { getConfigPagamentos } from "@/lib/pagamentos-config"
 
 /**
  * POST /api/questoes/responder
  *
  * Registra a resposta de uma questão. No plano demo, impõe o limite
- * diário (10/dia); no vitalício, sem limite. A resposta e o gabarito
- * são conferidos no servidor — o cliente não decide o `correto`.
+ * diário (configurável no painel admin); no vitalício, sem limite. A
+ * resposta e o gabarito são conferidos no servidor — o cliente não
+ * decide o `correto`.
  */
 export async function POST(request: Request) {
   const user = await requireUser()
@@ -30,6 +29,7 @@ export async function POST(request: Request) {
   }
 
   const service = createServiceClient()
+  const config = await getConfigPagamentos(service)
 
   const { data: perfil } = await service
     .from("profiles")
@@ -47,11 +47,12 @@ export async function POST(request: Request) {
       .eq("user_id", user.id)
       .gte("created_at", hojeInicio.toISOString())
 
-    if ((count ?? 0) >= LIMITE_DIARIO_DEMO) {
+    if ((count ?? 0) >= config.limite_questoes_demo) {
       return NextResponse.json(
         {
-          error: `Você atingiu o limite de ${LIMITE_DIARIO_DEMO} questões por dia no plano demo. Assine o plano vitalício para resolver sem limite.`,
+          error: `Você atingiu o limite de ${config.limite_questoes_demo} questões por dia no plano demo. Assine o plano vitalício para resolver sem limite.`,
           limite: true,
+          limiteDiario: config.limite_questoes_demo,
         },
         { status: 403 }
       )

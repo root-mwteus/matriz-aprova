@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
+import PaywallGate from "@/components/PaywallGate"
 import { Avatar, Badge, Button, EmptyState, Panel, PanelHeader, Skeleton } from "@/components/ui"
 
 /**
@@ -67,7 +68,8 @@ export default function RankingPage() {
         }
       />
 
-      {minhaPosicao > 0 && (
+      <PaywallGate title="O ranking nacional é exclusivo do plano vitalício">
+        {minhaPosicao > 0 && (
         <Panel className="flex items-center justify-between gap-4">
           <div>
             <p className="text-xs font-medium text-fg-subtle">Sua posição</p>
@@ -162,6 +164,7 @@ export default function RankingPage() {
           </ul>
         )}
       </Panel>
+      </PaywallGate>
     </div>
   )
 }

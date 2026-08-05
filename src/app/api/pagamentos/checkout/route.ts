@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server"
 import { requireUser } from "@/lib/supabase/auth"
 import { createServiceClient } from "@/lib/supabase/service"
-import { criarPreferencia, initPointDaPreferencia, PLANO_VITALICIO } from "@/lib/mercadopago"
+import { criarPreferencia, initPointDaPreferencia } from "@/lib/mercadopago"
+import { getConfigPagamentos } from "@/lib/pagamentos-config"
 
 /**
  * POST /api/pagamentos/checkout
@@ -9,7 +10,8 @@ import { criarPreferencia, initPointDaPreferencia, PLANO_VITALICIO } from "@/lib
  * Autentica o usuário, cria uma preferência de Checkout Pro no Mercado
  * Pago e grava um pagamento pendente. Retorna o `init_point` para o
  * front redirecionar. Idempotente por usuário: quem já é vitalício não
- * pode abrir um checkout novo.
+ * pode abrir um checkout novo. Título e preço vêm da config editável
+ * no painel admin.
  */
 
 export async function POST(request: Request) {
@@ -19,6 +21,15 @@ export async function POST(request: Request) {
   }
 
   const service = createServiceClient()
+
+  const config = await getConfigPagamentos(service)
+
+  if (!config.pagamentos_ativos) {
+    return NextResponse.json(
+      { error: "Os pagamentos estão temporariamente desativados. Tente novamente mais tarde." },
+      { status: 503 }
+    )
+  }
 
   const { data: perfil } = await service
     .from("profiles")
@@ -38,6 +49,8 @@ export async function POST(request: Request) {
       userId: user.id,
       email: perfil?.email ?? user.email ?? "",
       preferenciaId,
+      titulo: config.titulo_plano,
+      valorCentavos: config.valor_centavos,
     })
     initPoint = initPointDaPreferencia(preferencia)
   } catch (e) {
@@ -49,7 +62,7 @@ export async function POST(request: Request) {
     user_id: user.id,
     mp_preference_id: preferenciaId,
     status: "pending",
-    valor: PLANO_VITALICIO.valorCentavos,
+    valor: config.valor_centavos,
   })
 
   if (error) {

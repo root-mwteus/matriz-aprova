@@ -48,9 +48,19 @@ export function ResolverContent() {
   const [salvando, setSalvando] = useState(false)
   const [tempo, setTempo] = useState(0)
   const [limite, setLimite] = useState(false)
+  const [limiteDiario, setLimiteDiario] = useState(10)
 
   const timerRef = useRef<number>(0)
   const startTimeRef = useRef<number>(Date.now())
+
+  useEffect(() => {
+    fetch("/api/pagamentos/config")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.limiteQuestoesDemo != null) setLimiteDiario(data.limiteQuestoesDemo)
+      })
+      .catch(() => {})
+  }, [])
 
   useEffect(() => {
     async function load() {
@@ -236,7 +246,7 @@ export function ResolverContent() {
           <div>
             <p className="text-sm font-medium text-fg">Limite diário de questões atingido</p>
             <p className="text-sm text-fg-muted">
-              No plano demo você resolve até 10 questões por dia. Assine o vitalício e estude sem limite.
+              No plano demo você resolve até {limiteDiario} questões por dia. Assine o vitalício e estude sem limite.
             </p>
           </div>
           <Button onClick={() => router.push("/assinar")} size="sm">

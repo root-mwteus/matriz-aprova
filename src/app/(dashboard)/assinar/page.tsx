@@ -4,22 +4,31 @@ import { useCallback, useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
-import { PLANO_VITALICIO } from "@/lib/mercadopago"
+import { formatarValor } from "@/lib/pagamentos-config"
 import PageHeader from "@/components/PageHeader"
 import { Panel } from "@/components/ui"
 
-const BENEFICIOS = [
-  "Acesso às 4 áreas (Concursos, OAB, Militar, ENEM)",
-  "Banco de questões comentadas sem limite",
-  "Materiais em PDF completos",
-  "IA Preditiva da sua banca",
-  "Simulados com ranking nacional",
-  "Plano de estudos personalizado",
-]
+/**
+ * Página de assinatura.
+ *
+ * Título, preço, benefícios e avisos vêm da config `config_pagamentos`
+ * (editável no painel admin), via /api/pagamentos/config — não há mais
+ * valores fixos em código para o plano.
+ */
+
+interface ConfigData {
+  tituloPlano: string
+  descricaoPlano: string
+  valorCentavos: number
+  beneficios: string[]
+  limiteQuestoesDemo: number
+  pagamentosAtivos: boolean
+}
 
 export default function AssinarPage() {
   const router = useRouter()
   const [plano, setPlano] = useState<string | null>(null)
+  const [config, setConfig] = useState<ConfigData | null>(null)
   const [carregando, setCarregando] = useState(true)
   const [pagando, setPagando] = useState(false)
   const [resultado, setResultado] = useState<string | null>(null)
@@ -30,6 +39,19 @@ export default function AssinarPage() {
   useEffect(() => {
     setResultado(resultadoParam)
   }, [resultadoParam])
+
+  useEffect(() => {
+    let active = true
+    fetch("/api/pagamentos/config")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (active && data) setConfig(data)
+      })
+      .catch(() => {})
+    return () => {
+      active = false
+    }
+  }, [])
 
   const carregarPerfil = useCallback(async () => {
     const supabase = createClient()
@@ -115,7 +137,7 @@ export default function AssinarPage() {
           </div>
           <button
             onClick={() => router.push("/dashboard")}
-            className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-contrast transition-opacity hover:opacity-90"
+            className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-fg-on-accent transition-opacity hover:opacity-90"
           >
             Voltar ao dashboard
           </button>
@@ -124,12 +146,16 @@ export default function AssinarPage() {
     )
   }
 
+  const titulo = config?.tituloPlano ?? "Plano vitalício"
+  const descricao = config?.descricaoPlano ?? "Um pagamento. Acesso completo para sempre."
+  const valorCentavos = config?.valorCentavos ?? 4999
+  const beneficios = config?.beneficios ?? []
+  const limiteQuestoesDemo = config?.limiteQuestoesDemo ?? 10
+  const pagamentosAtivos = config?.pagamentosAtivos ?? true
+
   return (
     <div className="animate-rise space-y-6">
-      <PageHeader
-        title="Plano vitalício"
-        subtitle="Um pagamento. Acesso completo para sempre."
-      />
+      <PageHeader title={titulo} subtitle={descricao} />
 
       {resultado === "success" && (
         <div className="rounded-lg border border-line-accent bg-accent-soft px-4 py-3 text-sm text-fg">
@@ -152,19 +178,18 @@ export default function AssinarPage() {
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="text-sm text-fg-muted">Plano</p>
-              <p className="text-lg font-semibold text-fg">Vitalício · acesso total</p>
+              <p className="text-lg font-semibold text-fg">{titulo} · acesso total</p>
             </div>
             <div className="text-right">
               <div className="flex items-baseline gap-1">
-                <span className="font-mono text-lg font-semibold text-fg">R$</span>
-                <span className="font-mono text-4xl font-bold text-fg">49,99</span>
+                <span className="font-mono text-4xl font-bold text-fg">{formatarValor(valorCentavos)}</span>
               </div>
               <p className="text-xs text-fg-muted">pagamento único · sem mensalidade</p>
             </div>
           </div>
 
           <ul className="space-y-2.5">
-            {BENEFICIOS.map((b) => (
+            {beneficios.map((b) => (
               <li key={b} className="flex items-start gap-2.5 text-sm text-fg-muted">
                 <span className="mt-0.5 text-accent">✓</span>
                 {b}
@@ -172,22 +197,30 @@ export default function AssinarPage() {
             ))}
           </ul>
 
-          <button
-            onClick={pagar}
-            disabled={pagando}
-            className="w-full rounded-lg bg-accent px-4 py-3 text-sm font-semibold text-accent-contrast transition-opacity hover:opacity-90 disabled:opacity-50"
-          >
-            {pagando ? "Abrindo Mercado Pago…" : "PAGAR COM MERCADO PAGO →"}
-          </button>
-          <p className="text-center text-xs text-fg-faint">
-            PIX · cartão de crédito · boleto · garantia de 7 dias
-          </p>
+          {!pagamentosAtivos ? (
+            <div className="rounded-lg border border-line-strong bg-surface-hover px-4 py-3 text-sm text-fg-muted">
+              Os pagamentos estão temporariamente desativados. Tente novamente mais tarde.
+            </div>
+          ) : (
+            <>
+              <button
+                onClick={pagar}
+                disabled={pagando}
+                className="w-full rounded-lg bg-accent px-4 py-3 text-sm font-semibold text-fg-on-accent transition-opacity hover:opacity-90 disabled:opacity-50"
+              >
+                {pagando ? "Abrindo Mercado Pago…" : "PAGAR COM MERCADO PAGO →"}
+              </button>
+              <p className="text-center text-xs text-fg-faint">
+                PIX · cartão de crédito · boleto · garantia de 7 dias
+              </p>
+            </>
+          )}
         </Panel>
 
         <Panel className="space-y-3">
           <p className="text-sm font-semibold text-fg">O que o plano demo tem?</p>
           <ul className="space-y-2 text-sm text-fg-muted">
-            <li className="flex items-start gap-2"><span className="text-accent">✓</span>10 questões por dia</li>
+            <li className="flex items-start gap-2"><span className="text-accent">✓</span>{limiteQuestoesDemo} questões por dia</li>
             <li className="flex items-start gap-2"><span className="text-accent">✓</span>Simulados liberados</li>
             <li className="flex items-start gap-2"><span className="text-accent">✓</span>Plano de estudos com IA</li>
           </ul>

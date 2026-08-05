@@ -46,7 +46,7 @@ cp .env.example .env.local
    - Redirect URLs: `http://localhost:3000/auth/callback`
 6. (Opcional) Ative o provedor Google em Authentication > Providers
 7. **Bancos já existentes**: rode também as migrations em `supabase/` na
-   ordem (`supabase-migration-001` … `supabase-migration-013`), pulando as
+   ordem (`supabase-migration-001` … `supabase-migration-014`), pulando as
    que já foram aplicadas — o `supabase-schema.sql` é o estado final
    consolidado e serve apenas para setups novos.
 
@@ -60,6 +60,17 @@ Para vender o plano vitalício (R$ 49,99):
 4. No painel do Mercado Pago, configure o webhook `https://matrizaprova.com/api/pagamentos/webhook`
 5. O fluxo: `/assinar` cria a preferência no Checkout Pro e o webhook
    promove o `profiles.plano` para `vitalicio` quando o pagamento aprova
+
+### Editável pelo painel admin
+
+O título, o preço, os benefícios, o limite diário do plano demo e o
+aviso de bloqueio são editáveis em **Admin > Financeiro** (tabela
+`config_pagamentos`, migration 014). A mudança vale imediatamente para
+novos pagamentos — não precisa mexer em código.
+
+O usuário que cria conta começa no plano demo: o acesso completo fica
+bloqueado com um aviso de "assine para desbloquear" (banner no painel,
+limite diário de questões e seções premium como o ranking nacional).
 
 ## Desenvolvimento
 

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { AnimatePresence, motion } from "framer-motion"
 import { Menu as MenuIcon, Search, X, ChevronRight } from "lucide-react"
 import Sidebar from "@/components/Sidebar"
+import PaywallBanner from "@/components/PaywallBanner"
 import { CommandPalette, useCommandPalette } from "@/components/CommandPalette"
 import { breadcrumbsFor } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
@@ -122,6 +123,9 @@ export default function DashboardShell({ children }: { children: React.ReactNode
             <Search size={16} strokeWidth={2} />
           </IconButton>
         </header>
+
+        {/* ── Aviso de plano demo ─────────────────────────────── */}
+        <PaywallBanner />
 
         {/* ── Conteúdo ─────────────────────────────────────────── */}
         <main className="mx-auto w-full max-w-content px-4 py-6 lg:px-8 lg:py-8">{children}</main>

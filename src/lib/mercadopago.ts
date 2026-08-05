@@ -65,7 +65,14 @@ export async function criarPreferencia(opts: {
   userId: string
   email: string
   preferenciaId: string
+  /** Título do item no checkout — vem da config editável do admin. */
+  titulo?: string
+  /** Preço em centavos — vem da config editável do admin. */
+  valorCentavos?: number
 }): Promise<MpPreference> {
+  const titulo = opts.titulo ?? PLANO_VITALICIO.titulo
+  const valorCentavos = opts.valorCentavos ?? PLANO_VITALICIO.valorCentavos
+
   const res = await fetch(`${API_BASE}/checkout/preferences`, {
     method: "POST",
     headers: headers(),
@@ -73,9 +80,9 @@ export async function criarPreferencia(opts: {
       items: [
         {
           id: "plano-vitalicio",
-          title: PLANO_VITALICIO.titulo,
+          title: titulo,
           quantity: 1,
-          unit_price: PLANO_VITALICIO.valorCentavos / 100,
+          unit_price: valorCentavos / 100,
           currency_id: "BRL",
         },
       ],

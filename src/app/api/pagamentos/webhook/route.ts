@@ -1,11 +1,7 @@
 import { NextResponse } from "next/server"
 import { createServiceClient } from "@/lib/supabase/service"
-import {
-  buscarPagamento,
-  parsePaymentId,
-  PLANO_VITALICIO,
-  verificarAssinaturaWebhook,
-} from "@/lib/mercadopago"
+import { buscarPagamento, parsePaymentId, verificarAssinaturaWebhook } from "@/lib/mercadopago"
+import { getConfigPagamentos } from "@/lib/pagamentos-config"
 
 /**
  * POST /api/pagamentos/webhook
@@ -64,6 +60,7 @@ export async function POST(request: Request) {
     }
 
     const service = createServiceClient()
+    const config = await getConfigPagamentos(service)
 
     const { data: existente } = await service
       .from("pagamentos")
@@ -75,7 +72,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true })
     }
 
-    if (Math.round(pagamento.transaction_amount * 100) !== PLANO_VITALICIO.valorCentavos) {
+    if (Math.round(pagamento.transaction_amount * 100) !== config.valor_centavos) {
       console.error("webhook: valor inesperado no pagamento", paymentId, pagamento.transaction_amount)
       return NextResponse.json({ ok: true })
     }
@@ -99,7 +96,7 @@ export async function POST(request: Request) {
   }
 }
 
-async function registrar(mpPaymentId: string, status: string, userId?: string) {
+async function registrar(mpPaymentId: string, status: string, userId?: string, valorCentavos?: number) {
   try {
     const service = createServiceClient()
     const { data: existente } = await service
@@ -118,11 +115,13 @@ async function registrar(mpPaymentId: string, status: string, userId?: string) {
 
     if (!userId) return
 
+    const config = await getConfigPagamentos(service)
+
     await service.from("pagamentos").insert({
       user_id: userId,
       mp_payment_id: mpPaymentId,
       status,
-      valor: PLANO_VITALICIO.valorCentavos,
+      valor: valorCentavos ?? config.valor_centavos,
     })
   } catch (e) {
     console.error("webhook: falha ao registrar pagamento", e)
