@@ -41,7 +41,7 @@ export async function PUT(request: Request) {
   }
 
   const body = await request.json().catch(() => ({}))
-  const { tituloPlano, descricaoPlano, valorTexto, beneficios, limiteQuestoesDemo, avisoBloqueio, pagamentosAtivos } = body
+  const { tituloPlano, descricaoPlano, valorTexto, beneficios, avisoBloqueio, pagamentosAtivos } = body
 
   if (typeof tituloPlano !== "string" || tituloPlano.trim().length === 0) {
     return NextResponse.json({ error: "Título do plano é obrigatório" }, { status: 400 })
@@ -62,11 +62,6 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: "Lista de benefícios inválida" }, { status: 400 })
   }
 
-  const limite = Number(limiteQuestoesDemo)
-  if (!Number.isInteger(limite) || limite < 0) {
-    return NextResponse.json({ error: "Limite diário do demo deve ser um número inteiro >= 0" }, { status: 400 })
-  }
-
   if (typeof avisoBloqueio !== "string" || avisoBloqueio.trim().length === 0) {
     return NextResponse.json({ error: "Aviso de bloqueio é obrigatório" }, { status: 400 })
   }
@@ -78,7 +73,6 @@ export async function PUT(request: Request) {
       descricao_plano: descricaoPlano.trim(),
       valor_centavos: valorCentavos,
       beneficios: beneficios.map((b: string) => b.trim()).filter(Boolean),
-      limite_questoes_demo: limite,
       aviso_bloqueio: avisoBloqueio.trim(),
       pagamentos_ativos: pagamentosAtivos === true,
       updated_at: new Date().toISOString(),

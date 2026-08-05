@@ -18,7 +18,6 @@ export async function GET() {
     descricaoPlano: config.descricao_plano,
     valorCentavos: config.valor_centavos,
     beneficios: config.beneficios,
-    limiteQuestoesDemo: config.limite_questoes_demo,
     avisoBloqueio: config.aviso_bloqueio,
     pagamentosAtivos: config.pagamentos_ativos,
     modoTeste: isTestMode(),

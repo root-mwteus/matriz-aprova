@@ -26,8 +26,8 @@ interface ConfigData {
   avisoBloqueio: string
 }
 
-/** Rotas que o plano demo pode acessar normalmente. */
-const ROTAS_LIBERADAS = ["/dashboard"]
+/** Rotas que o plano demo pode acessar normalmente (sub-rotas inclusas). */
+const ROTAS_LIBERADAS = ["/dashboard", "/questoes", "/simulados"]
 
 export default function PaywallLock({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()

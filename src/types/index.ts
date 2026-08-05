@@ -15,7 +15,6 @@ export interface ConfigPagamentos {
   descricao_plano: string
   valor_centavos: number
   beneficios: string[]
-  limite_questoes_demo: number
   aviso_bloqueio: string
   pagamentos_ativos: boolean
 }

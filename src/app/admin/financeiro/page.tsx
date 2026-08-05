@@ -22,7 +22,6 @@ interface ConfigData {
   descricao_plano: string
   valor_centavos: number
   beneficios: string[]
-  limite_questoes_demo: number
   aviso_bloqueio: string
   pagamentos_ativos: boolean
 }
@@ -67,7 +66,6 @@ export default function AdminFinanceiroPage() {
   const [valorTexto, setValorTexto] = useState("")
   const [beneficios, setBeneficios] = useState<string[]>([])
   const [novoBeneficio, setNovoBeneficio] = useState("")
-  const [limiteQuestoesDemo, setLimiteQuestoesDemo] = useState(10)
   const [avisoBloqueio, setAvisoBloqueio] = useState("")
   const [pagamentosAtivos, setPagamentosAtivos] = useState(true)
 
@@ -86,7 +84,6 @@ export default function AdminFinanceiroPage() {
     setDescricaoPlano(c.descricao_plano)
     setValorTexto((c.valor_centavos / 100).toFixed(2).replace(".", ","))
     setBeneficios(c.beneficios)
-    setLimiteQuestoesDemo(c.limite_questoes_demo)
     setAvisoBloqueio(c.aviso_bloqueio)
     setPagamentosAtivos(c.pagamentos_ativos)
   }, [])
@@ -135,7 +132,6 @@ export default function AdminFinanceiroPage() {
           descricaoPlano,
           valorTexto,
           beneficios,
-          limiteQuestoesDemo,
           avisoBloqueio,
           pagamentosAtivos,
         }),
@@ -265,20 +261,6 @@ export default function AdminFinanceiroPage() {
                 placeholder="Você está no plano demo. Assine o plano vitalício para desbloquear o acesso completo."
               />
               <p className="text-[11px] text-muted">Aparece no banner do painel e nas telas bloqueadas.</p>
-            </div>
-
-            <div className="space-y-1.5">
-              <label className="text-xs font-medium text-foreground" htmlFor="limite-demo">
-                Limite diário de questões do plano demo
-              </label>
-              <input
-                id="limite-demo"
-                type="number"
-                min={0}
-                value={limiteQuestoesDemo}
-                onChange={(e) => setLimiteQuestoesDemo(Number(e.target.value))}
-                className="field h-9 w-40"
-              />
             </div>
 
             <div className="space-y-2">

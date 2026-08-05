@@ -23,7 +23,6 @@ interface ConfigData {
   descricaoPlano: string
   valorCentavos: number
   beneficios: string[]
-  limiteQuestoesDemo: number
   pagamentosAtivos: boolean
 }
 
@@ -121,7 +120,6 @@ export default function AssinarPage() {
   const descricao = config?.descricaoPlano ?? "Um pagamento. Acesso completo para sempre."
   const valorCentavos = config?.valorCentavos ?? 4999
   const beneficios = config?.beneficios ?? []
-  const limiteQuestoesDemo = config?.limiteQuestoesDemo ?? 10
   const pagamentosAtivos = config?.pagamentosAtivos ?? true
 
   return (
@@ -236,7 +234,7 @@ export default function AssinarPage() {
                   <ul className="space-y-2 text-sm text-fg-muted">
                     <li className="flex items-start gap-2">
                       <span className="text-accent">✓</span>
-                      {limiteQuestoesDemo} questões por dia passam a ser ilimitadas
+                      Questões comentadas sem limite
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-accent">✓</span>

@@ -47,20 +47,9 @@ export function ResolverContent() {
   const [loading, setLoading] = useState(true)
   const [salvando, setSalvando] = useState(false)
   const [tempo, setTempo] = useState(0)
-  const [limite, setLimite] = useState(false)
-  const [limiteDiario, setLimiteDiario] = useState(10)
 
   const timerRef = useRef<number>(0)
   const startTimeRef = useRef<number>(Date.now())
-
-  useEffect(() => {
-    fetch("/api/pagamentos/config")
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => {
-        if (data?.limiteQuestoesDemo != null) setLimiteDiario(data.limiteQuestoesDemo)
-      })
-      .catch(() => {})
-  }, [])
 
   useEffect(() => {
     async function load() {
@@ -119,9 +108,7 @@ export function ResolverContent() {
         }),
       })
 
-      if (res.status === 403) {
-        setLimite(true)
-      } else if (!res.ok) {
+      if (!res.ok) {
         console.error("responder: falha ao salvar resposta", res.status)
       }
     } catch {
@@ -241,20 +228,6 @@ export function ResolverContent() {
       </div>
 
       {/* Limite diário do plano demo atingido */}
-      {limite && (
-        <div className="mb-5 flex flex-col items-start justify-between gap-3 rounded-lg border border-line-accent bg-accent-soft px-4 py-3 sm:flex-row sm:items-center">
-          <div>
-            <p className="text-sm font-medium text-fg">Limite diário de questões atingido</p>
-            <p className="text-sm text-fg-muted">
-              No plano demo você resolve até {limiteDiario} questões por dia. Assine o vitalício e estude sem limite.
-            </p>
-          </div>
-          <Button onClick={() => router.push("/assinar")} size="sm">
-            Ver plano vitalício →
-          </Button>
-        </div>
-      )}
-
       <AnimatePresence mode="wait">
         <motion.div
           key={questao.id}

@@ -68,12 +68,12 @@ aviso de bloqueio são editáveis em **Admin > Financeiro** (tabela
 `config_pagamentos`, migration 014). A mudança vale imediatamente para
 novos pagamentos — não precisa mexer em código.
 
-O usuário que cria conta começa no plano demo: apenas o Painel fica
-liberado — todo o resto do app é bloqueado com blur e cadeado (na
-navegação lateral e no centro da tela, com CTA de assinatura em
-destaque) e há um banner de aviso no Painel e na página /assinar. As
-APIs também bloqueiam no servidor, então não basta contornar a
-interface.
+O usuário que cria conta começa no plano demo: Painel, Questões e
+Simulados ficam liberados — o resto do app (materiais, plano de
+estudos, estatísticas, comunidade etc.) é bloqueado com blur e cadeado
+(na navegação lateral e no centro da tela, com CTA de assinatura em
+destaque) e há um banner de aviso no Painel. As APIs também bloqueiam
+no servidor, então não basta contornar a interface.
 
 ## Desenvolvimento
 

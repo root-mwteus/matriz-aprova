@@ -20,7 +20,6 @@ export interface ConfigPagamentos {
   /** Preço em centavos (inteiro), como a tabela `pagamentos.valor`. */
   valor_centavos: number
   beneficios: string[]
-  limite_questoes_demo: number
   aviso_bloqueio: string
   pagamentos_ativos: boolean
 }
@@ -37,7 +36,6 @@ export const CONFIG_PAGAMENTOS_DEFAULT: ConfigPagamentos = {
     "Simulados com ranking nacional",
     "Plano de estudos personalizado",
   ],
-  limite_questoes_demo: 10,
   aviso_bloqueio:
     "Você está no plano demo. Assine o plano vitalício para desbloquear o acesso completo à plataforma.",
   pagamentos_ativos: true,
@@ -77,10 +75,6 @@ export async function getConfigPagamentos(
     descricao_plano: data.descricao_plano ?? CONFIG_PAGAMENTOS_DEFAULT.descricao_plano,
     valor_centavos: Number(data.valor_centavos) || CONFIG_PAGAMENTOS_DEFAULT.valor_centavos,
     beneficios: Array.isArray(data.beneficios) ? data.beneficios : CONFIG_PAGAMENTOS_DEFAULT.beneficios,
-    limite_questoes_demo:
-      Number(data.limite_questoes_demo) >= 0
-        ? Number(data.limite_questoes_demo)
-        : CONFIG_PAGAMENTOS_DEFAULT.limite_questoes_demo,
     aviso_bloqueio: data.aviso_bloqueio ?? CONFIG_PAGAMENTOS_DEFAULT.aviso_bloqueio,
     pagamentos_ativos: data.pagamentos_ativos !== false,
   }
