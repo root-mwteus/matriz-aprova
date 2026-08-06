@@ -45,6 +45,18 @@ export function Modal({
   const dialogRef = useRef<HTMLDivElement>(null)
   const restoreFocus = useRef<HTMLElement | null>(null)
 
+  // `onClose` costuma chegar como arrow inline — identidade nova a cada
+  // render do pai. Se entrar direto nas dependências do efeito abaixo,
+  // ele reexecuta a cada tecla digitada num campo do modal, e o cleanup
+  // devolve o foco ao botão que abriu o diálogo: a digitação "pula" e o
+  // cursor morre no meio do texto. O ref guarda a versão atual sem
+  // re-disparar o efeito.
+  const onCloseRef = useRef(onClose)
+  useEffect(() => {
+    onCloseRef.current = onClose
+  }, [onClose])
+  const stableOnClose = useCallback(() => onCloseRef.current(), [])
+
   const focusables = useCallback(
     () =>
       Array.from(
@@ -69,7 +81,7 @@ export function Modal({
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape" && dismissable) {
         e.stopPropagation()
-        onClose()
+        stableOnClose()
         return
       }
       if (e.key !== "Tab") return
@@ -96,7 +108,7 @@ export function Modal({
       document.body.style.overflow = overflow
       restoreFocus.current?.focus?.()
     }
-  }, [open, onClose, dismissable, focusables])
+  }, [open, stableOnClose, dismissable, focusables])
 
   if (!open || typeof document === "undefined") return null
 
