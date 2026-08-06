@@ -99,9 +99,8 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
                 }
 
                 const active = isRouteActive(pathname, item.href)
-                // No plano demo, só o Painel fica liberado; o resto
-                // ganha cadeado.
-                const travado = demo && item.href !== "/dashboard"
+                // No plano demo tudo fica travado até assinar o vitalício.
+                const travado = demo
                 return (
                   <li key={item.href}>
                     <Link

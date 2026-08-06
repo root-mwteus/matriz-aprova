@@ -1,10 +1,13 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import { Plus, Users } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { MessageCircle, Plus, Trophy, Users } from "lucide-react"
 import { toast } from "sonner"
 import { MATERIAS } from "@/lib/constants"
 import PageHeader from "@/components/PageHeader"
+import Chat from "@/components/comunidade/Chat"
+import Ranking from "@/components/comunidade/Ranking"
 import {
   Badge,
   Button,
@@ -16,6 +19,7 @@ import {
   SearchInput,
   Select,
   Skeleton,
+  Tabs,
   Textarea,
 } from "@/components/ui"
 
@@ -31,7 +35,11 @@ interface StudyGroup {
   sou_membro: boolean
 }
 
+type Aba = "grupos" | "ranking" | "chat"
+
 export default function ComunidadePage() {
+  const router = useRouter()
+  const [aba, setAba] = useState<Aba>("grupos")
   const [grupos, setGrupos] = useState<StudyGroup[]>([])
   const [loading, setLoading] = useState(true)
   const [busca, setBusca] = useState("")
@@ -129,7 +137,7 @@ export default function ComunidadePage() {
     <div className="animate-rise space-y-6">
       <PageHeader
         title="Comunidade"
-        subtitle="Grupos de estudo por matéria e por banca."
+        subtitle="Grupos de estudo, ranking de questões e chat ao vivo."
         actions={
           <Button variant="accent" onClick={() => setCriando(true)}>
             <Plus size={14} strokeWidth={2.5} />
@@ -138,71 +146,102 @@ export default function ComunidadePage() {
         }
       />
 
-      <div className="max-w-sm">
-        <SearchInput
-          value={busca}
-          onChange={(e) => setBusca(e.target.value)}
-          placeholder="Buscar por nome ou matéria…"
-        />
-      </div>
+      <Tabs
+        items={[
+          { value: "grupos", label: "Grupos" },
+          { value: "ranking", label: "Ranking" },
+          { value: "chat", label: "Chat ao vivo" },
+        ]}
+        value={aba}
+        onChange={setAba}
+      />
 
-      {loading ? (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <Panel key={i} className="space-y-3">
-              <Skeleton className="h-4 w-2/3" />
-              <Skeleton className="h-3 w-full" />
-              <Skeleton className="h-3 w-4/5" />
+      {aba === "grupos" && (
+        <div className="space-y-4">
+          <div className="max-w-sm">
+            <SearchInput
+              value={busca}
+              onChange={(e) => setBusca(e.target.value)}
+              placeholder="Buscar por nome ou matéria…"
+            />
+          </div>
+
+          {loading ? (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <Panel key={i} className="space-y-3">
+                  <Skeleton className="h-4 w-2/3" />
+                  <Skeleton className="h-3 w-full" />
+                  <Skeleton className="h-3 w-4/5" />
+                </Panel>
+              ))}
+            </div>
+          ) : filtrados.length === 0 ? (
+            <Panel flush>
+              <EmptyState
+                icon={<Users size={16} strokeWidth={1.75} />}
+                title={busca ? "Nenhum grupo encontrado" : "Ainda não há grupos"}
+                description={
+                  busca
+                    ? `Nada corresponde a “${busca}”. Tente outro termo.`
+                    : "Crie o primeiro grupo e convide outros concurseiros."
+                }
+                action={
+                  !busca ? (
+                    <Button variant="secondary" onClick={() => setCriando(true)}>
+                      Criar o primeiro grupo
+                    </Button>
+                  ) : undefined
+                }
+              />
             </Panel>
-          ))}
+          ) : (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {filtrados.map((grupo) => (
+                <Panel key={grupo.id} interactive className="flex flex-col" onClick={() => router.push(`/comunidade/${grupo.id}`)}>
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="text-base font-semibold leading-snug text-fg">{grupo.nome}</h3>
+                    <Badge size="sm" className="shrink-0 tabular-nums">
+                      {grupo.membros_count}
+                    </Badge>
+                  </div>
+
+                  <p className="mt-1.5 line-clamp-2 text-sm text-fg-muted">{grupo.descricao}</p>
+
+                  <div className="flex-1" />
+
+                  <div className="mt-4 flex items-center justify-between border-t border-line pt-3">
+                    <span className="truncate text-xs text-fg-subtle">{grupo.materia}</span>
+                    <Button
+                      variant={grupo.sou_membro ? "secondary" : "accent"}
+                      size="sm"
+                      disabled={alternando === grupo.id}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        alternarParticipacao(grupo)
+                      }}
+                    >
+                      {alternando === grupo.id ? "…" : grupo.sou_membro ? "Sair" : "Entrar"}
+                    </Button>
+                  </div>
+                </Panel>
+              ))}
+            </div>
+          )}
         </div>
-      ) : filtrados.length === 0 ? (
-        <Panel flush>
-          <EmptyState
-            icon={<Users size={16} strokeWidth={1.75} />}
-            title={busca ? "Nenhum grupo encontrado" : "Ainda não há grupos"}
-            description={
-              busca
-                ? `Nada corresponde a “${busca}”. Tente outro termo.`
-                : "Crie o primeiro grupo e convide outros concurseiros."
-            }
-            action={
-              !busca ? (
-                <Button variant="secondary" onClick={() => setCriando(true)}>
-                  Criar o primeiro grupo
-                </Button>
-              ) : undefined
-            }
-          />
-        </Panel>
-      ) : (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {filtrados.map((grupo) => (
-            <Panel key={grupo.id} interactive className="flex flex-col">
-              <div className="flex items-start justify-between gap-2">
-                <h3 className="text-base font-semibold leading-snug text-fg">{grupo.nome}</h3>
-                <Badge size="sm" className="shrink-0 tabular-nums">
-                  {grupo.membros_count}
-                </Badge>
-              </div>
+      )}
 
-              <p className="mt-1.5 line-clamp-2 text-sm text-fg-muted">{grupo.descricao}</p>
+      {aba === "ranking" && (
+        <Ranking className="mx-auto max-w-[640px]" />
+      )}
 
-              <div className="flex-1" />
-
-              <div className="mt-4 flex items-center justify-between border-t border-line pt-3">
-                <span className="truncate text-xs text-fg-subtle">{grupo.materia}</span>
-                <Button
-                  variant={grupo.sou_membro ? "secondary" : "accent"}
-                  size="sm"
-                  disabled={alternando === grupo.id}
-                  onClick={() => alternarParticipacao(grupo)}
-                >
-                  {alternando === grupo.id ? "…" : grupo.sou_membro ? "Sair" : "Entrar"}
-                </Button>
-              </div>
-            </Panel>
-          ))}
+      {aba === "chat" && (
+        <div className="mx-auto max-w-[720px]">
+          <div className="mb-3 flex items-center gap-2 text-sm text-fg-subtle">
+            <MessageCircle size={14} strokeWidth={2} className="text-fg-faint" />
+            Sala geral da comunidade. Entre num grupo para conversar com ele.
+          </div>
+          <Chat className="h-[560px]" />
         </div>
       )}
 
