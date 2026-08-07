@@ -1,3 +1,5 @@
+import { withSentryConfig } from "@sentry/nextjs"
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
@@ -41,4 +43,14 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+export default withSentryConfig(nextConfig, {
+  org: "matriz-aprova",
+  // TODO: confirmar o slug do projeto em Settings > Projects e habilitar
+  // source maps (`release.create` + `sourcemaps.disable: false`).
+  project: "matriz-aprova-nextjs",
+  silent: !process.env.CI,
+  hideSourceMaps: true,
+  disableLogger: true,
+  release: { create: false, finalize: false },
+  sourcemaps: { disable: true },
+})
