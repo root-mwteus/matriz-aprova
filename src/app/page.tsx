@@ -48,37 +48,36 @@ export default function HomePage() {
       </header>
 
       {/* ── HERO ── */}
-      <section className="relative bg-paper dark:bg-ink overflow-hidden border-b-2 border-ink dark:border-paper/10">
-        <div className="absolute inset-0 matrix-grid"></div>
-        <div className="absolute top-24 right-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block">[ 04 · 12 ]</div>
-        <div className="absolute bottom-20 left-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block">[ 18 · 03 ]</div>
+      <section className="relative bg-paper dark:bg-ink overflow-hidden border-b-2 border-ink dark:border-paper/10" aria-labelledby="hero-title">
+        <div className="absolute inset-0 matrix-grid opacity-50"></div>
+        <div className="absolute top-24 right-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow">[ 04 · 12 ]</div>
+        <div className="absolute bottom-20 left-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow" style={{animationDelay: '1s'}}>[ 18 · 03 ]</div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-20 lg:pt-20 lg:pb-28">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 bg-ink dark:bg-lime text-paper dark:text-ink px-3 py-1.5 rounded-full mb-6">
+            <div className="lg:col-span-7 animate-rise">
+              <div className="inline-flex items-center gap-2 bg-ink dark:bg-lime text-paper dark:text-ink px-3 py-1.5 rounded-full mb-6 shadow-lg">
                 <span className="w-1.5 h-1.5 bg-lime dark:bg-ink rounded-full pulse-soft"></span>
-                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest font-semibold">Milhares de concurseiros aprovados</span>
+                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest font-semibold">+4.812 aprovados em 2024 e 2025</span>
               </div>
 
-              <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-ink dark:text-paper leading-[0.95]">
-                Estude o que <br />
-                <span className="highlight-lime">realmente cai.</span><br />
-                Passe <span className="highlight-invert">mais rápido.</span>
+              <h1 id="hero-title" className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-ink dark:text-paper leading-[0.95]">
+                Estude <span className="highlight-lime">o que cai.</span><br />
+                Passe <span className="highlight-invert">em menos tempo.</span>
               </h1>
 
-              <p className="mt-7 text-lg text-ink/70 dark:text-paper/70 max-w-xl leading-relaxed">
-                A <strong className="text-ink dark:text-paper">Matriz</strong> é a plataforma de estudos com <strong className="text-ink dark:text-paper">IA preditiva</strong> que mapeia o padrão da sua banca e te entrega o estudo cirúrgico — em PDFs enxutos, simulados reais e questões comentadas.
+              <p className="mt-7 text-lg text-ink/70 dark:text-paper/70 max-w-2xl leading-relaxed">
+                A <strong className="text-ink dark:text-paper">Matriz</strong> usa <strong className="text-ink dark:text-paper">IA preditiva</strong> treinada em 10 anos de provas da sua banca. Entregamos <strong className="text-ink dark:text-paper">PDFs cirúrgicos</strong>, <strong className="text-ink dark:text-paper">simulados no estilo real</strong> e <strong className="text-ink dark:text-paper">questões comentadas</strong> — só o que tem chance real de cair.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-start gap-4">
-                <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 bg-lime text-ink font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink">
-                  GARANTIR ACESSO · R$ 49,99
-                  <span className="font-mono">→</span>
+                <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 bg-lime text-ink font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink group">
+                  QUERO MINHA APROVAÇÃO · R$ 49,99
+                  <span className="font-mono group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
-                <Link href="/cadastro" className="cta-secondary inline-flex items-center justify-center gap-2 bg-paper dark:bg-transparent text-ink dark:text-paper font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink dark:border-paper/50">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <Link href="/cadastro" className="cta-secondary inline-flex items-center justify-center gap-2 bg-paper dark:bg-transparent text-ink dark:text-paper font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink dark:border-paper/50 group">
+                  <svg className="w-4 h-4 group-hover:rotate-90 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                   TESTAR GRÁTIS
@@ -86,20 +85,43 @@ export default function HomePage() {
               </div>
 
               <div className="mt-3 font-mono text-xs text-ink/50 dark:text-paper/50">
-                sem cartão · acesso ao app imediato · com limitações no plano demo
+                sem cartão · acesso imediato · limitações no plano demo
               </div>
 
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink/60 dark:text-paper/60">
                 <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> Plano vitalício · 1 pagamento</span>
-                <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> 7 dias de garantia</span>
-                <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> Sem mensalidade</span>
+                <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> 7 dias garantia incondicional</span>
+                <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> Sem mensalidade · sem renovação</span>
+              </div>
+
+              {/* Trust Bar */}
+              <div className="mt-10 pt-8 border-t-2 border-ink/10 dark:border-paper/10 flex flex-wrap items-center gap-6 text-sm text-ink/50 dark:text-paper/50">
+                <div className="flex items-center gap-2 font-mono text-xs">
+                  <svg className="w-3.5 h-3.5 text-lime-dark dark:text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Pagamento seguro</span>
+                </div>
+                <div className="flex items-center gap-2 font-mono text-xs">
+                  <svg className="w-3.5 h-3.5 text-lime-dark dark:text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  <span>PIX · Cartão · Boleto</span>
+                </div>
+                <div className="flex items-center gap-2 font-mono text-xs">
+                  <svg className="w-3.5 h-3.5 text-lime-dark dark:text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  <span>Acesso imediato</span>
+                </div>
               </div>
             </div>
 
             {/* App mockup */}
-            <div className="lg:col-span-5">
-              <div className="bg-ink text-paper rounded-2xl border-2 border-ink relative overflow-hidden">
+            <div className="lg:col-span-5 relative">
+              <div className="bg-ink text-paper rounded-2xl border-2 border-ink relative overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 matrix-grid-dark"></div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-lime/10 rounded-full blur-3xl hidden lg:block"></div>
 
                 <div className="relative flex items-center justify-between px-5 py-3 border-b border-paper/10 bg-ink-2">
                   <div className="flex items-center gap-1.5">
@@ -108,23 +130,28 @@ export default function HomePage() {
                     <div className="w-2.5 h-2.5 rounded-full bg-paper/20"></div>
                   </div>
                   <div className="font-mono text-[10px] text-paper/50">app.matrizaprova.com</div>
-                  <div className="font-mono text-[10px] text-lime">● online</div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="relative">
+                      <span className="w-1.5 h-1.5 bg-lime rounded-full pulse-soft"></span>
+                    </span>
+                    <span className="font-mono text-[10px] text-lime">online</span>
+                  </div>
                 </div>
 
                 <div className="relative p-5 space-y-3">
-                  {/* Streak card */}
-                  <div className="bg-ink-2 rounded-xl p-4 border border-paper/10">
+                  {/* Streak card - enhanced */}
+                  <div className="bg-ink-2 rounded-xl p-4 border border-paper/10 hover:border-lime/30 transition-colors duration-300 group">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-9 h-9 rounded-lg bg-area-concursos flex items-center justify-center text-ink font-display font-bold text-sm">LM</div>
+                        <div className="w-9 h-9 rounded-lg bg-area-concursos flex items-center justify-center text-ink font-display font-bold text-sm group-hover:scale-110 transition-transform">LM</div>
                         <div>
                           <div className="text-sm font-semibold text-paper leading-tight">Olá, Luiza</div>
-                          <div className="font-mono text-[10px] text-paper/50">concurseira · TRT</div>
+                          <div className="font-mono text-[10px] text-paper/50">concurseira · TRT-RJ</div>
                         </div>
                       </div>
                       <div className="text-right">
                         <div className="font-display font-bold text-xl text-lime stat-num leading-none">18</div>
-                        <div className="font-mono text-[9px] uppercase tracking-widest text-paper/50">dias</div>
+                        <div className="font-mono text-[9px] uppercase tracking-widest text-paper/50">dias seguidos</div>
                       </div>
                     </div>
                     <div className="flex items-end gap-1 h-8 mt-2">
@@ -141,15 +168,19 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  {/* Próximo material */}
-                  <div className="bg-lime text-ink rounded-xl p-4 relative overflow-hidden scan-line">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="font-mono text-[10px] uppercase tracking-widest text-ink/70 font-bold">📄 próximo material · sugerido pela ia</div>
-                      <div className="bg-ink text-lime font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">87% CAI</div>
+                  {/* Próximo material - AI suggested */}
+                  <div className="bg-lime text-ink rounded-xl p-4 relative overflow-hidden scan-line group">
+                    <div className="absolute -top-2 -right-2 w-16 h-16 bg-ink/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="flex items-center justify-between mb-3 relative z-10">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-[10px] uppercase tracking-widest text-ink/70 font-bold">📄 Próximo material</div>
+                        <span className="bg-ink text-lime font-mono text-[8px] px-2 py-0.5 rounded-full font-bold">sugerido pela IA</span>
+                      </div>
+                      <div className="bg-ink text-lime font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">87% chance</div>
                     </div>
-                    <div className="font-display font-bold text-lg text-ink leading-tight mb-1">Atos Administrativos</div>
-                    <div className="text-xs text-ink/70 mb-3">Direito Administrativo · CESPE · PDF</div>
-                    <div className="flex items-center justify-between">
+                    <div className="font-display font-bold text-lg text-ink leading-tight mb-1 relative z-10">Atos Administrativos</div>
+                    <div className="text-xs text-ink/70 mb-3 relative z-10">Direito Administrativo · CESPE · PDF</div>
+                    <div className="flex items-center justify-between relative z-10">
                       <div className="flex items-center gap-2 font-mono text-xs text-ink/80">
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -158,23 +189,26 @@ export default function HomePage() {
                         <span className="text-ink/40">·</span>
                         <span>Prof. Sandra Cunha</span>
                       </div>
-                      <div className="w-8 h-8 bg-ink rounded-full flex items-center justify-center">
-                        <svg className="w-3.5 h-3.5 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <div className="w-8 h-8 bg-ink rounded-full flex items-center justify-center group-hover:bg-lime group-hover:text-ink transition-colors">
+                        <svg className="w-3.5 h-3.5 text-lime group-hover:text-ink transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
                       </div>
                     </div>
                   </div>
 
-                  {/* Questões */}
-                  <div className="bg-ink-2 rounded-xl border border-paper/10 overflow-hidden">
+                  {/* Questões do dia */}
+                  <div className="bg-ink-2 rounded-xl border border-paper/10 overflow-hidden hover:border-lime/30 transition-colors duration-300">
                     <div className="flex items-center justify-between px-4 py-2.5 border-b border-paper/10">
                       <div className="font-mono text-[10px] uppercase tracking-widest text-paper/60 font-semibold">/ questões · hoje</div>
-                      <div className="font-mono text-[10px] text-lime stat-num">74% acerto</div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-lime rounded-full pulse-soft"></div>
+                        <span className="font-mono text-[10px] text-lime stat-num">74% acerto</span>
+                      </div>
                     </div>
                     <div className="divide-y divide-paper/5">
-                      <div className="flex items-center gap-3 px-4 py-2.5">
-                        <div className="w-5 h-5 bg-lime/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="flex items-center gap-3 px-4 py-2.5 hover:bg-paper/5 transition-colors group">
+                        <div className="w-5 h-5 bg-lime/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                           <svg className="w-3 h-3 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
@@ -185,8 +219,8 @@ export default function HomePage() {
                         </div>
                         <div className="font-mono text-[10px] text-paper/50">00:42</div>
                       </div>
-                      <div className="flex items-center gap-3 px-4 py-2.5">
-                        <div className="w-5 h-5 bg-lime/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="flex items-center gap-3 px-4 py-2.5 hover:bg-paper/5 transition-colors group">
+                        <div className="w-5 h-5 bg-lime/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                           <svg className="w-3 h-3 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
@@ -197,8 +231,8 @@ export default function HomePage() {
                         </div>
                         <div className="font-mono text-[10px] text-paper/50">01:08</div>
                       </div>
-                      <div className="flex items-center gap-3 px-4 py-2.5">
-                        <div className="w-5 h-5 bg-area-oab/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="flex items-center gap-3 px-4 py-2.5 hover:bg-paper/5 transition-colors group">
+                        <div className="w-5 h-5 bg-area-oab/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                           <svg className="w-3 h-3 text-area-oab" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                           </svg>
@@ -215,8 +249,13 @@ export default function HomePage() {
               </div>
 
               <div className="mt-3 flex justify-between font-mono text-[10px] text-ink/40 dark:text-paper/40 px-2">
-                <span>[ MATRIZ.v2026 · prévia do app ]</span>
-                <Link href="/cadastro" className="hover:text-ink dark:hover:text-paper underline underline-offset-2">testar agora →</Link>
+                <span>[ MATRIZ.v2026 · prévia interativa do app ]</span>
+                <Link href="/cadastro" className="hover:text-ink dark:hover:text-paper underline underline-offset-2 flex items-center gap-1">testar agora →</Link>
+              </div>
+              
+              {/* Mobile hint */}
+              <div className="mt-4 lg:hidden text-center">
+                <p className="font-mono text-xs text-ink/50 dark:text-paper/50">Arraste para ver mais →</p>
               </div>
             </div>
           </div>
