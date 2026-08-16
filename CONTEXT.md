@@ -116,6 +116,18 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
   `encontrarConcurso`, `concursosPorArea`), `gerar-plano.ts` (gerador determinístico
   por semanas, 3 fases, `calcularSemanas` 1–52), `prompt.ts` (refino de focos via IA,
   `gpt-4o-mini`, nunca lança)
+- `materiais/` — template visual `template-apostila.tex`, prompt econômico
+  `prompts/prompt-apostila.txt`, apostilas em Markdown e o conversor
+  `gerar-latex.mjs` (md → LaTeX preenchendo o template; gere `.tex` ao lado de
+  cada `.md` com `node materiais/gerar-latex.mjs`), compiláveis com XeLaTeX
+  para PDF: Português/interpretação de texto, Direito Constitucional/princípios
+  fundamentais, Direito Administrativo/princípios da Administração Pública,
+  Raciocínio Lógico/proposições e conectivos, Informática/segurança da informação
+  e Direito Penal/princípios e aplicação da lei penal. Também inclui Direito
+  Processual Penal/inquérito policial, Direito do Trabalho/relação de emprego,
+  Direito Tributário/princípios e limitações ao poder de tributar, Direito
+  Previdenciário/benefícios e regras gerais do RGPS e Contabilidade/patrimônio
+  e equação contábil.
 - `pagamentos-config.ts` — `config_pagamentos` id=1; `formatarValor`, `parseValorParaCentavos`,
   desconto indicação 10% (`desconto_indicacao_pct`)
 - `login-alert.ts` — UA parsing, IP de headers, `notifyLogin`, `registrarLoginEvento`

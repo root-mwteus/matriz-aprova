@@ -1,0 +1,335 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Direito Penal: Princípios e aplicação da lei penal\par}
+  \vspace{0.4cm}
+  {\sffamily\large PRF, Polícia Federal, Polícia Civil RJ e OAB\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    em conflito de leis no tempo, compare a consequência para o réu. A lei posterior mais benéfica pode retroagir; a mais severa não pode.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad Cebraspe e FGV\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+Este tema é a base para interpretar qualquer questão de Direito Penal. As bancas exploram principalmente:
+
+\begin{enumerate}
+  \item legalidade e anterioridade da lei penal;
+  \item irretroatividade da lei mais severa e retroatividade da lei benéfica;
+  \item lei temporária e lei excepcional;
+  \item tempo do crime e lugar do crime;
+  \item territorialidade e extraterritorialidade;
+  \item diferença entre abolitio criminis, novatio legis in mellius e lei penal mais
+\end{enumerate}
+
+   grave.
+
+\textbf{Regra de prova:} em conflito de leis no tempo, compare a consequência para o réu. A lei posterior mais benéfica pode retroagir; a mais severa não pode.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Princípio da legalidade}
+
+O art. 1º do Código Penal estabelece: \textbf{não há crime sem lei anterior que o defina. Não há pena sem prévia cominação legal.} A Constituição reproduz a garantia no art. 5º, XXXIX.
+
+O princípio contém quatro exigências tradicionais:
+
+\begin{itemize}
+  \item \textbf{lex praevia:} a lei deve ser anterior ao fato;
+  \item \textbf{lex scripta:} crime e pena devem estar previstos em lei escrita;
+  \item \textbf{lex stricta:} não se admite analogia para prejudicar o acusado;
+  \item \textbf{lex certa:} o tipo penal deve ser suficientemente determinado.
+\end{itemize}
+
+Medida provisória não pode definir crime nem aumentar pena. A matéria penal exige lei em sentido formal, observada a competência constitucional.
+
+\subsection*{2. Anterioridade e irretroatividade}
+
+A lei penal deve existir antes da prática do fato. Uma lei posterior mais grave
+
+Exemplo: se uma lei aumenta a pena de determinado crime em janeiro, ela não pode ser aplicada a fato praticado em dezembro do ano anterior.
+
+A regra não é absoluta em favor da lei antiga. A Constituição e o Código Penal determinam que a lei posterior \textbf{mais benéfica} retroage para beneficiar o réu, mesmo que já exista condenação definitiva.
+
+\subsection*{3. Lei penal mais benéfica}
+
+\subsubsection*{3.1. Abolitio criminis}
+
+Ocorre quando a lei nova deixa de considerar o fato como crime. A lei posterior retroage e extingue os efeitos penais da condenação. Permanecem, quando cabível, efeitos civis ou administrativos que não sejam propriamente penais.
+
+\subsubsection*{3.2. Novatio legis in mellius}
+
+A lei nova mantém o crime, mas melhora a situação do réu: reduz pena, amplia benefício, cria causa de diminuição ou estabelece tratamento menos rigoroso. A lei retroage para alcançar fatos anteriores.
+
+\subsubsection*{3.3. Novatio legis in pejus}
+
+A lei nova piora a situação do acusado. Não retroage e só se aplica aos fatos praticados depois de sua entrada em vigor.
+
+\subsubsection*{3.4. Lei intermediária}
+
+Se uma lei mais benéfica vigorou entre a data do fato e o julgamento, ela pode ser aplicada mesmo que já tenha sido revogada quando a decisão for proferida. O que importa é que tenha sido a lei mais favorável no período relevante.
+
+\subsection*{4. Lei temporária e lei excepcional}
+
+O art. 3º do Código Penal determina que a lei excepcional ou temporária, embora decorrido o período de sua duração ou cessadas as circunstâncias que a determinaram, aplica-se ao fato praticado durante sua vigência.
+
+\begin{itemize}
+  \item \textbf{Lei temporária:} já possui prazo de vigência definido.
+  \item \textbf{Lei excepcional:} vigora enquanto durar uma situação excepcional, como guerra, calamidade ou emergência prevista na própria lei.
+\end{itemize}
+
+Essas leis possuem ultratividade: continuam sendo aplicadas aos fatos praticados durante sua vigência, mesmo depois de deixarem de vigorar.
+
+\subsection*{5. Tempo do crime}
+
+O art. 4º do Código Penal adota a teoria da atividade: considera-se praticado o crime no momento da ação ou omissão, ainda que o resultado ocorra depois.
+
+Exemplo: um agente efetua disparo quando ainda é menor de 18 anos, mas a vítima morre depois de ele completar essa idade. Para definir a imputabilidade pelo tempo do crime, considera-se o momento da ação.
+
+Nos crimes omissivos, o marco é o momento em que o agente deveria ter agido e não agiu.
+
+\subsection*{6. Lugar do crime}
+
+O art. 6º adota a teoria da ubiquidade: considera-se praticado o crime no lugar em que ocorreu a ação ou omissão, no todo ou em parte, bem como onde se produziu ou deveria produzir-se o resultado.
+
+Comparação importante:
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Questão} & \textbf{Teoria adotada} \\
+\midrule
+ tempo do crime & atividade: momento da ação ou omissão \\
+ lugar do crime & ubiquidade: ação/omissão ou resultado \\
+ consumação & depende da estrutura do tipo penal \\
+\bottomrule
+\end{tabularx}
+
+
+Não confunda lugar do crime com competência processual. A teoria do art. 6º é regra de aplicação da lei penal no espaço.
+
+\subsection*{7. Territorialidade}
+
+O art. 5º determina que se aplica a lei brasileira, sem prejuízo de convenções, tratados e regras de Direito Internacional, ao crime cometido no território nacional.
+
+O território jurídico brasileiro inclui o espaço terrestre, águas interiores, mar territorial e espaço aéreo correspondente, conforme as normas aplicáveis.
+
+Para fins penais, também são consideradas extensão do território nacional as embarcações e aeronaves brasileiras, mercantes ou de propriedade privada, quando estiverem em alto-mar ou no espaço aéreo correspondente. Embarcações e aeronaves brasileiras públicas ou a serviço do governo são extensão do território nacional onde quer que se encontrem.
+
+\subsection*{8. Extraterritorialidade}
+
+Extraterritorialidade é a aplicação da lei brasileira a crime cometido fora do território nacional. O art. 7º prevê hipóteses incondicionadas e condicionadas.
+
+\subsubsection*{8.1. Extraterritorialidade incondicionada}
+
+Aplica-se a lei brasileira, ainda que o agente seja absolvido ou condenado no estrangeiro, aos crimes:
+
+\begin{itemize}
+  \item contra a vida ou a liberdade do Presidente da República;
+  \item contra o patrimônio ou a fé pública da União, do Distrito Federal, de Estado, de Território, de Município, de empresa pública, sociedade de economia mista, autarquia ou fundação instituída pelo Poder Público;
+  \item contra a administração pública, por quem está a seu serviço;
+  \item de genocídio, quando o agente for brasileiro ou domiciliado no Brasil.
+\end{itemize}
+
+\subsubsection*{8.2. Extraterritorialidade condicionada}
+
+Depende do atendimento das condições legais, como entrada do agente no Brasil, dupla tipicidade, possibilidade de extradição e ausência de absolvição ou cumprimento de pena no estrangeiro, conforme o caso.
+
+Entre as hipóteses estão crimes que o Brasil se obrigou a reprimir por tratado, crimes praticados por brasileiro e crimes praticados em aeronaves ou embarcações brasileiras privadas quando não julgados no estrangeiro.
+
+\subsection*{9. Pena cumprida no estrangeiro}
+
+O art. 8º prevê que a pena cumprida no estrangeiro atenua a pena imposta no Brasil pelo mesmo crime, quando diversas, ou nela é computada, quando idênticas. A regra evita dupla punição integral pelo mesmo fato.
+
+\subsection*{10. Contagem de prazo e legislação especial}
+
+O art. 10 determina que o dia do começo inclui-se no cômputo do prazo. Contam- se os dias, meses e anos pelo calendário comum. O art. 12 estabelece que as regras gerais do Código Penal aplicam-se aos fatos incriminados por lei especial, se esta não dispuser de modo diferente.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item Tempo do crime = momento da ação ou omissão, pela teoria da atividade.
+  \item Lugar do crime = ação/omissão ou resultado, pela teoria da ubiquidade.
+  \item Lei benéfica retroage mesmo após o trânsito em julgado.
+  \item Lei mais grave não retroage.
+  \item Lei temporária e excepcional têm ultratividade.
+  \item Legalidade impede analogia contra o réu, mas analogia favorável é admitida.
+  \item Territorialidade brasileira não significa aplicação exclusiva da lei brasileira em qualquer situação internacional.
+\end{itemize}
+
+\section*{Exemplos resolvidos}
+
+\subsection*{Exemplo 1}
+
+Uma lei reduz a pena de crime cometido antes de sua publicação. O processo já tem sentença definitiva. A lei pode ser aplicada?
+
+\textbf{Sim.} A lei penal posterior mais benéfica retroage, mesmo depois do trânsito em julgado.
+
+\subsection*{Exemplo 2}
+
+Um crime começa no Brasil e produz resultado em outro país. Qual lei pode ser considerada pela regra geral do Código Penal?
+
+\textbf{A lei brasileira pode incidir}, pois a teoria da ubiquidade considera lugar do crime tanto o local da ação ou omissão quanto o local do resultado.
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Tema} & \textbf{Regra} \\
+\midrule
+ legalidade & não há crime ou pena sem lei anterior \\
+ lei benéfica & retroage \\
+ lei mais grave & não retroage \\
+ lei temporária/excepcional & ultratividade \\
+ tempo do crime & atividade \\
+ lugar do crime & ubiquidade \\
+ território & aplica-se, em regra, a lei brasileira \\
+ prazo penal & inclui o dia do começo \\
+ lei especial & regras gerais do CP aplicam-se se não houver disposição diferente \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+O Código Penal adota, quanto ao tempo do crime, a teoria:
+
+A) do resultado. \\ B) da ubiquidade. \\ C) da atividade. \\ D) da territorialidade. \\ E) da causalidade adequada.
+
+\begin{alerta}
+\textbf{Gabarito: C.} Considera-se praticado o crime no momento da ação ou omissão, mesmo que o resultado ocorra posteriormente.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+Lei posterior que deixa de considerar determinada conduta como crime:
+
+A) aplica-se apenas a fatos futuros. \\ B) retroage e extingue os efeitos penais da condenação. \\ C) não pode alcançar processos em andamento. \\ D) só se aplica se o Ministério Público concordar. \\ E) é sempre considerada lei excepcional.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Ocorre abolitio criminis, com retroatividade da lei penal mais benéfica.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+Pela teoria da ubiquidade, considera-se lugar do crime:
+
+A) apenas o local da consumação. \\ B) apenas o local da ação. \\ C) o local da ação ou omissão e o local do resultado ou onde ele deveria ocorrer. \\ D) apenas o domicílio da vítima. \\ E) exclusivamente o território brasileiro.
+
+\begin{alerta}
+\textbf{Gabarito: C.} É a regra do art. 6º do Código Penal.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+As leis temporárias e excepcionais:
+
+A) nunca se aplicam após o fim de sua vigência. \\ B) aplicam-se aos fatos praticados durante sua vigência. \\ C) retroagem sempre para prejudicar o réu. \\ D) só podem tratar de matéria civil. \\ E) dependem de decisão judicial para existir.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Essas leis possuem ultratividade quanto aos fatos praticados durante sua vigência.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+A analogia no Direito Penal:
+
+A) é sempre proibida, inclusive para beneficiar o réu. \\ B) pode criar crime novo quando houver lacuna. \\ C) pode ser utilizada para prejudicar o acusado. \\ D) não pode criar crime ou agravar pena, mas pode ser admitida em benefício do réu. \\ E) substitui a exigência de lei anterior.
+
+\begin{alerta}
+\textbf{Gabarito: D.} A legalidade impede analogia in malam partem. A interpretação favorável não viola a garantia constitucional.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Sei o conteúdo do princípio da legalidade.
+  \item[$\square$] Diferencio lei benéfica, lei mais grave e abolitio criminis.
+  \item[$\square$] Lembro da ultratividade das leis temporárias e excepcionais.
+  \item[$\square$] Sei que o tempo do crime segue a teoria da atividade.
+  \item[$\square$] Sei que o lugar do crime segue a teoria da ubiquidade.
+  \item[$\square$] Diferencio territorialidade de extraterritorialidade.
+  \item[$\square$] Conheço as categorias básicas de extraterritorialidade.
+  \item[$\square$] Sei que o dia do começo entra na contagem do prazo penal.
+\end{itemize}
+
+\end{document}

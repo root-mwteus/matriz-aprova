@@ -1,0 +1,321 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Português: Interpretação de texto\par}
+  \vspace{0.4cm}
+  {\sffamily\large concursos gerais, OAB, carreiras militares e ENEM\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    a alternativa correta precisa ser comprovada pelo texto. Uma alternativa apenas possível, provável ou compatível com o conhecimento de mundo não basta.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad adaptação necessária ao edital e à banca\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+Interpretação não é procurar uma frase que pareça correta. É reconstruir o sentido produzido pelo texto e verificar se a alternativa mantém esse sentido. As cobranças mais frequentes são:
+
+\begin{enumerate}
+  \item identificação da ideia central e da finalidade do texto;
+  \item distinção entre informação explícita e inferência autorizada;
+  \item relação entre partes do texto, especialmente causa, oposição, conclusão e
+\end{enumerate}
+
+   explicação;
+
+\begin{enumerate}
+  \item efeito de sentido de palavras, expressões, pontuação e conectivos;
+  \item compatibilidade entre uma afirmação da alternativa e o texto inteiro.
+\end{enumerate}
+
+\textbf{Regra de prova:} a alternativa correta precisa ser comprovada pelo texto. Uma alternativa apenas possível, provável ou compatível com o conhecimento de mundo não basta.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Tema, ideia central e finalidade}
+
+O \textbf{tema} é o assunto geral. A \textbf{ideia central} é o que o texto afirma sobre esse assunto. A \textbf{finalidade} é o objetivo comunicativo: informar, criticar, convencer, explicar, narrar, orientar, ironizar ou provocar reflexão.
+
+Exemplo:
+
+\begin{alerta}
+O uso de aplicativos facilitou o acesso a serviços públicos, mas também transferiu ao cidadão a responsabilidade de resolver falhas que antes eram atendidas presencialmente.
+\end{alerta}
+
+\begin{itemize}
+  \item Tema: uso de aplicativos em serviços públicos.
+  \item Ideia central: a digitalização facilita o acesso, mas pode transferir custos e responsabilidades ao cidadão.
+  \item Finalidade provável: analisar criticamente uma consequência da digitalização.
+\end{itemize}
+
+Para localizar a ideia central, observe título, início, conclusão e repetições. Uma informação repetida com palavras diferentes costuma indicar o eixo do texto.
+
+\subsection*{2. Informação explícita e inferência}
+
+Informação \textbf{explícita} está declarada. Inferência é uma conclusão necessária obtida pela combinação de informações do próprio texto.
+
+Se o texto afirma que "a procura cresceu após a redução do preço", pode-se inferir que existe relação temporal entre redução e crescimento. Não se pode, sem outra informação, afirmar que a redução foi a única causa, que o produto ficou melhor ou que o crescimento continuará.
+
+Use o teste da prova textual:
+
+\begin{enumerate}
+  \item localize a passagem relacionada à alternativa;
+  \item substitua a alternativa por uma pergunta: o texto permite essa conclusão?
+  \item elimine palavras absolutas que extrapolem o que foi escrito.
+\end{enumerate}
+
+\subsection*{3. Pressuposto e subentendido}
+
+O \textbf{pressuposto} é uma informação acionada por uma palavra ou construção. Em "a empresa voltou a contratar", o verbo \textit{voltar} pressupõe que ela já contratou antes. O pressuposto permanece mesmo quando a frase é negada: "a empresa não voltou a contratar" ainda pressupõe contratação anterior.
+
+O \textbf{subentendido} depende mais do contexto e da intenção. Em uma situação em que alguém pergunta "Você vai mesmo entregar isso hoje?", o advérbio \textit{mesmo} pode sugerir dúvida, embora a dúvida não seja afirmada diretamente.
+
+\subsection*{4. Conectivos e relações de sentido}
+
+Conectivos organizam a argumentação. Não basta decorar a palavra: é preciso observar a relação entre as orações.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Relação} & \textbf{Exemplos} & \textbf{Efeito} \\
+\midrule
+ adição & e, também, além disso & acrescenta informação \\
+ oposição & mas, porém, contudo & contrapõe ideias \\
+ causa & porque, visto que, já que & apresenta motivo \\
+ consequência & portanto, por isso, assim & apresenta resultado \\
+ condição & se, caso, desde que & estabelece hipótese \\
+ concessão & embora, ainda que & admite obstáculo sem impedir o fato \\
+ conclusão & logo, assim, desse modo & fecha o raciocínio \\
+\bottomrule
+\end{tabularx}
+
+
+Trocar um conectivo pode alterar completamente a relação lógica. Em questões de reescrita, compare não apenas o vocabulário, mas também causa, tempo, condição, oposição e conclusão.
+
+\subsection*{5. Referência e coesão}
+
+Pronomes e expressões retomam ou antecipam informações.
+
+\begin{alerta}
+A diretora conversou com a equipe antes de \textbf{ela} divulgar o resultado.
+\end{alerta}
+
+O pronome pode gerar ambiguidade se houver mais de um antecedente possível. Para resolver a questão, procure concordância, posição no período e sentido global. A referência não deve ser escolhida apenas pela palavra mais próxima.
+
+Também há elipse: um termo fica oculto, mas é recuperado pelo contexto. Em "João preferiu o relatório; Maria, o parecer", o verbo \textit{preferiu} está oculto na segunda oração.
+
+\subsection*{6. Vocabulário no contexto}
+
+O sentido de uma palavra depende da situação. \textit{Frio} pode indicar temperatura, distanciamento emocional ou cálculo racional. Em prova, substitua a palavra pela opção indicada e releia o período inteiro. A substituição só é válida se preservar sentido, classe gramatical e tom.
+
+Ironia merece atenção especial: o autor pode afirmar literalmente uma coisa para sugerir a crítica do contrário. A identificação depende de contraste, exagero, contexto e sinais de avaliação.
+
+\subsection*{7. Argumentação e ponto de vista}
+
+Textos argumentativos apresentam uma tese e razões para sustentá-la. Pergunte:
+
+\begin{itemize}
+  \item qual posição o autor defende?
+  \item quais fatos ou exemplos funcionam como evidência?
+  \item há oposição a uma opinião anterior?
+  \item a conclusão é explícita ou decorre do conjunto?
+\end{itemize}
+
+Não confunda opinião do autor com opinião citada. Expressões como "segundo", "para os críticos" e "alguns defendem" introduzem vozes de terceiros.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item \textbf{Certo/errado:} uma palavra absoluta como \textit{sempre}, \textit{nunca}, \textit{somente} ou \textit{necessariamente} pode tornar a afirmação incorreta.
+  \item \textbf{Reescrita:} confira se a troca preserva sentido, relação lógica, tempo e referência dos pronomes.
+  \item \textbf{Inferência:} escolha apenas a conclusão obrigatória pelo texto, não a que parece razoável fora dele.
+  \item \textbf{Título:} o título pode resumir o tema, mas não substitui a ideia central.
+  \item \textbf{Vocabulário:} o sentido contextual prevalece sobre o sentido de dicionário.
+\end{itemize}
+
+\subsection*{Exemplos resolvidos}
+
+\subsubsection*{Exemplo 1}
+
+Texto: "A biblioteca ampliou o horário, mas o número de empréstimos permaneceu estável. A direção decidiu, então, investir na divulgação do acervo."
+
+\textbf{Pergunta:} a decisão da direção decorreu da percepção de que:
+
+A) o horário ampliado reduziu o interesse dos leitores. \\ B) o acervo era insuficiente. \\ C) a ampliação do horário não aumentou os empréstimos. \\ D) os leitores preferiam comprar livros. \\ E) a biblioteca deveria reduzir o atendimento.
+
+\begin{alerta}
+\textbf{Gabarito: C.} O texto liga a estabilidade dos empréstimos à decisão de investir em divulgação. As demais alternativas acrescentam informações não apresentadas.
+\end{alerta}
+
+\subsubsection*{Exemplo 2}
+
+Texto: "Embora a ferramenta reduza o tempo de busca, seu uso exige critérios: resultados rápidos não são necessariamente resultados confiáveis."
+
+O conectivo \textit{embora} introduz uma ideia de:
+
+A) causa. B) condição. C) conclusão. D) concessão. E) finalidade.
+
+\begin{alerta}
+\textbf{Gabarito: D.} A oração admite uma vantagem da ferramenta, mas apresenta uma restrição que impede a conclusão de que rapidez garante confiabilidade.
+\end{alerta}
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Pergunta} & \textbf{Procedimento} \\
+\midrule
+ Qual é o tema? & assunto geral, sem a opinião completa \\
+ Qual é a ideia central? & afirmação principal sobre o tema \\
+ O que é inferência? & conclusão necessária a partir do texto \\
+ Como avaliar conectivo? & observe a relação entre as orações \\
+ Como avaliar vocabulário? & substitua e releia o período inteiro \\
+ Como detectar extrapolação? & procure informação que não está comprovada \\
+ Como lidar com "sempre"? & verifique se o texto realmente autoriza totalidade \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+"A automatização não elimina a necessidade de trabalho humano; modifica as habilidades exigidas e desloca o esforço para tarefas de análise."
+
+A ideia central é que a automatização:
+
+A) elimina trabalhos de análise. \\ B) torna desnecessárias as habilidades humanas. \\ C) transforma as habilidades necessárias ao trabalho. \\ D) reduz todo esforço profissional. \\ E) impede a análise de dados.
+
+\begin{alerta}
+\textbf{Gabarito: C.} A alternativa reproduz a relação expressa por "modifica as habilidades exigidas". As demais apresentam generalizações que contradizem ou extrapolam o texto.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+Em "O projeto foi retomado", o verbo \textit{retomar} pressupõe que o projeto:
+
+A) foi concluído. B) havia sido iniciado antes. C) foi rejeitado. D) será alterado. E) é obrigatório.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Retomar significa voltar a realizar algo interrompido ou já iniciado.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+No período "O relatório é extenso; portanto, sua leitura exige planejamento", o termo \textit{portanto} estabelece relação de:
+
+A) oposição. B) causa. C) condição. D) conclusão. E) concessão.
+
+\begin{alerta}
+\textbf{Gabarito: D.} A segunda oração apresenta a conclusão decorrente da primeira.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+Se um texto afirma que uma medida "pode reduzir custos", é correto concluir que a medida:
+
+A) sempre reduz custos. B) já reduziu custos. C) necessariamente será adotada. D) tem potencial de reduzir custos. E) reduz custos sem efeitos colaterais.
+
+\begin{alerta}
+\textbf{Gabarito: D.} O verbo modal \textit{pode} indica possibilidade, não certeza.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+Em uma questão de reescrita, a troca de "porém" por "portanto" é inadequada quando:
+
+A) há uma conclusão explícita. B) há adição de argumentos. C) o período apresenta oposição. D) o período apresenta causa. E) o texto termina uma explicação.
+
+\begin{alerta}
+\textbf{Gabarito: C.} \textit{Porém} introduz oposição; \textit{portanto} introduz conclusão. A troca altera a relação lógica original.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Separei tema de ideia central.
+  \item[$\square$] Procurei a prova textual antes de aceitar uma inferência.
+  \item[$\square$] Identifiquei a relação dos conectivos.
+  \item[$\square$] Verifiquei pressupostos e referências pronominais.
+  \item[$\square$] Analisei palavras no contexto, não isoladamente.
+  \item[$\square$] Desconfiei de alternativas absolutas ou com informação nova.
+  \item[$\square$] Conferi se a reescrita preserva sentido e lógica.
+  \item[$\square$] Resolvi as questões sem usar conhecimento externo ao texto.
+\end{itemize}
+
+\end{document}

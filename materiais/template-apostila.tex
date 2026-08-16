@@ -1,0 +1,92 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries \TITULO\par}
+  \vspace{0.4cm}
+  {\sffamily\large \SUBTITULO\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    \FOCO
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em \DATA\quad ·\quad \BANCA\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\CONTEUDO
+
+\end{document}

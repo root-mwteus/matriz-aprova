@@ -1,0 +1,324 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Direito Processual Penal: Inquérito Policial\par}
+  \vspace{0.4cm}
+  {\sffamily\large Polícia Federal, PRF, Polícia Civil RJ e OAB\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    inquérito não é processo. Ele reúne elementos para formar a convicção inicial do titular da ação penal, mas não substitui a prova produzida sob contraditório judicial.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad Cebraspe e FGV\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+O inquérito policial é uma das portas de entrada da persecução penal. As questões cobram:
+
+\begin{enumerate}
+  \item conceito e finalidade;
+  \item natureza administrativa e caráter informativo;
+  \item características: escrito, sigiloso, inquisitivo e dispensável;
+  \item formas de instauração;
+  \item prazos de conclusão;
+  \item indiciamento, arquivamento e valor dos elementos informativos.
+\end{enumerate}
+
+\textbf{Regra de prova:} inquérito não é processo. Ele reúne elementos para formar a convicção inicial do titular da ação penal, mas não substitui a prova produzida sob contraditório judicial.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Conceito e finalidade}
+
+Inquérito policial é procedimento administrativo, conduzido pela autoridade policial, destinado à apuração da infração penal e de sua autoria.
+
+Sua finalidade é reunir elementos sobre:
+
+\begin{itemize}
+  \item \textbf{materialidade:} existência do crime;
+  \item \textbf{autoria:} possível responsável pela infração;
+  \item \textbf{circunstâncias:} modo, tempo, local, motivo e consequências do fato.
+\end{itemize}
+
+Esses elementos ajudam o Ministério Público ou o ofendido, conforme a espécie de ação penal, a decidir se há justa causa para iniciar o processo.
+
+O art. 4º do CPP atribui à polícia judiciária a apuração das infrações penais e de sua autoria. A competência da polícia judiciária não exclui a possibilidade de investigação por outras autoridades em hipóteses constitucionalmente ou legalmente admitidas.
+
+\subsection*{2. Natureza administrativa}
+
+O inquérito ocorre antes do processo e possui natureza administrativa. O delegado de polícia conduz a investigação, mas não exerce função jurisdicional nem é titular da ação penal pública.
+
+O inquérito não é uma etapa obrigatória de todo processo. Se já existirem elementos suficientes de materialidade e autoria, o titular da ação pode oferecer denúncia ou queixa sem prévio inquérito.
+
+\subsection*{3. Características}
+
+\subsubsection*{3.1. Escrito}
+
+O art. 9º do CPP determina que todas as peças do inquérito serão reduzidas a escrito ou datilografadas e, nesse caso, rubricadas pela autoridade. Na prática atual, atos podem ser documentados por meios digitais, desde que preservadas autenticidade, integridade e documentação do procedimento.
+
+\subsubsection*{3.2. Sigilo relativo}
+
+O art. 20 permite que a autoridade assegure o sigilo necessário à elucidação do fato ou exigido pelo interesse da sociedade.
+
+O sigilo é relativo, não absoluto. O defensor possui direito de acesso aos elementos já documentados que digam respeito ao exercício da defesa, conforme a Súmula Vinculante 14 do STF. O acesso pode ser restringido quanto a diligências em andamento cujo conhecimento comprometa sua realização.
+
+\subsubsection*{3.3. Inquisitivo}
+
+O inquérito não possui a mesma estrutura contraditória do processo judicial. Não há, nessa fase, contraditório pleno e ampla defesa com a mesma extensão do processo.
+
+Isso não autoriza violência, arbitrariedade ou violação de direitos. O investigado mantém direitos fundamentais, como integridade física, silêncio, assistência de advogado e controle judicial de medidas invasivas.
+
+\subsubsection*{3.4. Dispensável}
+
+O inquérito é dispensável quando outros elementos já permitem o oferecimento da ação penal. Ele é instrumento de investigação, não condição indispensável para a denúncia ou queixa.
+
+\subsubsection*{3.5. Oficialidade e oficiosidade}
+
+A atividade de polícia judiciária é estatal. Nos crimes de ação pública incondicionada, a autoridade policial deve agir de ofício ao tomar conhecimento da infração, respeitadas as exigências legais.
+
+Oficiosidade não se aplica da mesma forma às ações que dependem de representação da vítima ou de requisição do Ministro da Justiça. Nesses casos, falta a condição necessária para iniciar validamente a investigação ou a persecução, conforme o ato exigido pela lei.
+
+\subsubsection*{3.6. Indisponibilidade}
+
+O delegado não pode arquivar o inquérito por conta própria. Se entender que não há elementos, deve elaborar a manifestação cabível e encaminhar os autos na forma legal. O arquivamento depende do procedimento previsto na legislação e do controle das instituições competentes.
+
+\subsection*{4. Instauração}
+
+O art. 5º do CPP prevê formas de início do inquérito nos crimes de ação pública:
+
+\begin{itemize}
+  \item de ofício, por portaria, quando a autoridade toma conhecimento do fato;
+  \item por requisição da autoridade judiciária ou do Ministério Público;
+  \item por requerimento do ofendido ou de quem possa representá-lo.
+\end{itemize}
+
+Nos crimes de ação pública condicionada, a investigação depende da representação ou requisição exigida em lei. Nos crimes de ação privada, depende do requerimento de quem tenha legitimidade para oferecer a queixa.
+
+O requerimento do ofendido deve conter, sempre que possível, a narração do fato, a individualização do suspeito, as razões da convicção e a indicação de testemunhas. O indeferimento do requerimento pode ser objeto de recurso ao chefe de polícia, conforme o art. 5º, § 2º, do CPP.
+
+\subsection*{5. Providências investigativas}
+
+Ao tomar conhecimento da infração, a autoridade deve preservar o local quando necessário, apreender objetos relacionados ao fato, colher provas, ouvir ofendido e investigado, realizar reconhecimentos e acareações e determinar perícias quando cabíveis, entre outras diligências.
+
+Medidas que envolvem reserva de jurisdição, como determinadas buscas, interceptações e prisões, dependem de decisão judicial nos termos da lei. A autoridade policial não pode substituir o juiz em providências que exigem autorização judicial.
+
+\subsection*{6. Indiciamento}
+
+Indiciamento é o ato fundamentado pelo qual a autoridade policial aponta o investigado como provável autor ou partícipe, após análise técnico-jurídica dos elementos colhidos.
+
+Não se confunde com condenação, denúncia ou recebimento da acusação. O indiciamento ocorre na investigação e não vincula o Ministério Público ou o juiz quanto ao resultado final.
+
+\subsection*{7. Prazos no CPP}
+
+No procedimento comum do Código de Processo Penal, o inquérito deve terminar:
+
+\begin{itemize}
+  \item em \textbf{10 dias}, se o indiciado estiver preso;
+  \item em \textbf{30 dias}, se estiver solto, mediante fiança ou sem ela.
+\end{itemize}
+
+Existem prazos específicos em leis especiais. Por isso, a resposta depende do regime aplicável ao caso. Em prova sobre a regra geral do CPP, memorize 10 dias para preso e 30 dias para solto.
+
+O prazo de conclusão não transforma automaticamente todos os elementos em ilícitos quando ultrapassado. A consequência depende da situação, da existência de prisão e da legislação aplicável.
+
+\subsection*{8. Relatório e arquivamento}
+
+Ao concluir a investigação, a autoridade policial deve elaborar relatório minucioso e remeter os autos à autoridade competente. O relatório organiza os elementos encontrados; não é sentença e não determina a responsabilidade penal.
+
+O delegado não pode arquivar o inquérito. O arquivamento segue o procedimento legal e não pode ser tratado como decisão unilateral da autoridade policial.
+
+O Ministério Público também não exerce livremente a função de arquivamento fora do procedimento legal. A disciplina atual deve ser estudada conforme o CPP, legislação complementar e entendimento jurisprudencial vigente.
+
+\subsection*{9. Valor probatório}
+
+Os elementos do inquérito são, em regra, elementos informativos. O art. 155 do CPP determina que o juiz forme sua convicção pela prova produzida em contraditório judicial, não podendo fundamentar sua decisão exclusivamente nos elementos informativos colhidos na investigação, ressalvadas provas cautelares, não repetíveis e antecipadas.
+
+Assim, o inquérito pode orientar a acusação e contribuir para a decisão, mas não deve, sozinho, substituir a prova judicial quando a prova puder ser produzida em contraditório.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item Inquérito é procedimento administrativo, não processo judicial.
+  \item É dispensável, escrito e sigiloso de forma relativa.
+  \item O delegado não pode arquivar o inquérito.
+  \item A Súmula Vinculante 14 garante acesso da defesa aos elementos já documentados.
+  \item Investigação não se confunde com condenação ou denúncia.
+  \item Regra geral do CPP: 10 dias preso e 30 dias solto.
+  \item O juiz não pode fundamentar a condenação exclusivamente no inquérito, salvo as ressalvas do art. 155 do CPP.
+\end{itemize}
+
+\section*{Exemplos resolvidos}
+
+\subsection*{Exemplo 1}
+
+O delegado conclui que não há provas suficientes e determina o arquivamento definitivo do inquérito. O ato é válido?
+
+\textbf{Não.} A autoridade policial não pode arquivar o inquérito por iniciativa própria. Deve elaborar o relatório e encaminhar os autos conforme o procedimento legal.
+
+\subsection*{Exemplo 2}
+
+O advogado solicita acesso a depoimentos já juntados ao inquérito, mas a autoridade nega todo o acesso alegando sigilo. A negativa é válida?
+
+\textbf{Não integralmente.} O sigilo pode proteger diligências em andamento, mas a defesa tem direito de acessar elementos já documentados relacionados ao exercício da defesa, conforme a Súmula Vinculante 14.
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Tema} & \textbf{Regra} \\
+\midrule
+ natureza & procedimento administrativo \\
+ finalidade & apurar materialidade, autoria e circunstâncias \\
+ contraditório & não há contraditório pleno como no processo \\
+ sigilo & relativo e necessário à investigação \\
+ acesso da defesa & elementos já documentados, conforme SV 14 \\
+ arquivamento & delegado não pode determinar \\
+ dispensa & ação pode ser proposta com outros elementos suficientes \\
+ prazo CPP & 10 dias preso; 30 dias solto \\
+ valor & elementos informativos; não bastam isoladamente para condenar, como regra \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+O inquérito policial é corretamente definido como:
+
+A) processo judicial obrigatório para toda ação penal. \\ B) procedimento administrativo destinado à apuração da infração e autoria. \\ C) sentença preliminar proferida pelo delegado. \\ D) fase de contraditório pleno. \\ E) ato privativo do Poder Judiciário.
+
+\begin{alerta}
+\textbf{Gabarito: B.} O inquérito é procedimento administrativo e informativo, conduzido pela autoridade policial.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+Sobre o sigilo do inquérito policial, é correto afirmar que:
+
+A) é absoluto para qualquer pessoa, inclusive o defensor. \\ B) impede acesso a todos os elementos, mesmo os já documentados. \\ C) é relativo e não impede o acesso da defesa aos elementos já documentados. \\ D) permite ocultar indefinidamente qualquer ato da investigação. \\ E) só existe em crimes hediondos.
+
+\begin{alerta}
+\textbf{Gabarito: C.} A defesa tem acesso aos elementos já documentados relacionados ao exercício de suas prerrogativas, conforme a SV 14.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+No procedimento comum do CPP, o prazo para conclusão do inquérito é, em regra:
+
+A) 5 dias para preso e 10 dias para solto. \\ B) 10 dias para preso e 30 dias para solto. \\ C) 15 dias para preso e 45 dias para solto. \\ D) 30 dias em qualquer situação. \\ E) 90 dias em qualquer situação.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Essa é a regra do art. 10 do CPP, sem prejuízo de prazos especiais previstos em outras leis.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+É correto afirmar que o delegado de polícia:
+
+A) pode arquivar o inquérito quando não encontrar autoria. \\ B) pode condenar o investigado ao concluir o relatório. \\ C) não pode arquivar o inquérito por decisão própria. \\ D) deve oferecer denúncia em toda investigação. \\ E) substitui o juiz na decretação de toda medida cautelar.
+
+\begin{alerta}
+\textbf{Gabarito: C.} A autoridade policial conduz a investigação, mas não é titular da ação penal nem pode arquivar o inquérito por conta própria.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+Conforme a regra do art. 155 do CPP, o juiz:
+
+A) deve condenar sempre que houver confissão no inquérito. \\ B) pode fundamentar condenação exclusivamente em elementos informativos. \\ C) deve formar convicção pela prova produzida em contraditório judicial, ressalvadas hipóteses legais. \\ D) não pode considerar qualquer elemento da investigação. \\ E) está vinculado ao relatório policial.
+
+\begin{alerta}
+\textbf{Gabarito: C.} O artigo privilegia a prova judicial, sem excluir provas cautelares, não repetíveis e antecipadas nos termos legais.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Diferencio inquérito de processo.
+  \item[$\square$] Sei sua finalidade e natureza administrativa.
+  \item[$\square$] Memorizei as principais características.
+  \item[$\square$] Sei que o sigilo é relativo.
+  \item[$\square$] Conheço o alcance da Súmula Vinculante 14.
+  \item[$\square$] Sei que o delegado não pode arquivar o inquérito.
+  \item[$\square$] Memorizei os prazos gerais do art. 10 do CPP.
+  \item[$\square$] Diferencio elementos informativos de prova judicial.
+\end{itemize}
+
+\end{document}

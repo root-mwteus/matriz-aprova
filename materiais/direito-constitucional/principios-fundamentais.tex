@@ -1,0 +1,359 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Direito Constitucional: Princípios fundamentais\par}
+  \vspace{0.4cm}
+  {\sffamily\large Receita Federal, CGU, PRF, Polícia Federal, INSS, TRT, TCU/TCE, Câmara e OAB\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad Cebraspe, FGV, FCC e similares\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+Os princípios fundamentais aparecem com frequência em questões literais, associações entre conceitos e situações envolvendo soberania, cidadania, separação de Poderes, objetivos da República e relações internacionais.
+
+Pontos de maior incidência:
+
+\begin{enumerate}
+  \item fundamentos da República Federativa do Brasil;
+  \item diferença entre fundamentos, objetivos e princípios internacionais;
+  \item titularidade e exercício do poder;
+  \item separação e independência dos Poderes;
+  \item objetivos fundamentais do art. 3º;
+  \item princípios que regem o Brasil nas relações internacionais.
+\end{enumerate}
+
+\textbf{Atenção:} a banca costuma trocar a categoria do princípio. Cidadania é fundamento; erradicar a pobreza é objetivo; prevalência dos direitos humanos é princípio internacional.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Estado brasileiro e fundamentos da República}
+
+O art. 1º afirma que a República Federativa do Brasil, formada pela união indissolúvel dos Estados, Municípios e Distrito Federal, constitui-se em Estado Democrático de Direito.
+
+Essa frase reúne características importantes:
+
+\begin{itemize}
+  \item \textbf{República:} forma de governo baseada, entre outros elementos, na temporariedade e na responsabilidade dos governantes.
+  \item \textbf{Federação:} forma de Estado em que há repartição constitucional de competências entre entes autônomos.
+  \item \textbf{Estado Democrático de Direito:} o poder é limitado pela Constituição e a legitimidade estatal depende da participação popular e da proteção de direitos fundamentais.
+  \item \textbf{União indissolúvel:} não existe direito de secessão dos entes federados.
+\end{itemize}
+
+O parágrafo único do art. 1º estabelece que \textbf{todo o poder emana do povo}, que o exerce por meio de representantes eleitos ou diretamente, nos termos da Constituição. O Brasil adota, portanto, democracia representativa com instrumentos de participação direta.
+
+\subsection*{2. Os cinco fundamentos: SO-CI-DI-VA-PLU}
+
+O art. 1º, nos incisos I a V, apresenta os fundamentos da República:
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Inciso} & \textbf{Fundamento} & \textbf{Ideia central} \\
+\midrule
+ I & soberania & independência do Estado no plano externo e poder supremo no interno \\
+ II & cidadania & participação política e pertencimento à comunidade estatal \\
+ III & dignidade da pessoa humana & valor central da ordem constitucional \\
+ IV & valores sociais do trabalho e da livre iniciativa & equilíbrio entre trabalho, atividade econômica e justiça social \\
+ V & pluralismo político & convivência de diferentes ideias, grupos e projetos políticos \\
+\bottomrule
+\end{tabularx}
+
+
+Uma forma de memorização é \textbf{SO-CI-DI-VA-PLU}: soberania, cidadania, dignidade, valores sociais do trabalho e livre iniciativa, pluralismo político.
+
+\subsubsection*{2.1. Soberania}
+
+Soberania não se confunde com autonomia. A República Federativa do Brasil é soberana; Estados, Municípios e Distrito Federal são autônomos nos limites da Constituição. A autonomia dos entes federados não equivale à independência.
+
+\subsubsection*{2.2. Cidadania}
+
+Cidadania é fundamento da República, mas os direitos políticos são apenas uma de suas manifestações. O conceito também envolve participação na vida pública e possibilidade de influenciar as decisões estatais.
+
+\subsubsection*{2.3. Dignidade da pessoa humana}
+
+A dignidade orienta a interpretação dos direitos fundamentais e limita o exercício do poder estatal. Não autoriza, sozinha, qualquer conclusão específica sem análise do caso, mas funciona como vetor interpretativo central.
+
+\subsubsection*{2.4. Trabalho e livre iniciativa}
+
+A Constituição protege tanto os valores sociais do trabalho quanto a livre iniciativa. A ordem constitucional não adota uma visão de liberdade econômica sem responsabilidade social nem elimina a iniciativa privada.
+
+\subsubsection*{2.5. Pluralismo político}
+
+Pluralismo político é mais amplo que a existência de vários partidos. Protege a diversidade de opiniões, ideologias, associações e projetos de sociedade, desde que respeitados os limites constitucionais.
+
+\subsection*{3. Separação dos Poderes}
+
+O art. 2º estabelece que são Poderes da União, independentes e harmônicos entre si, o Legislativo, o Executivo e o Judiciário.
+
+São características complementares:
+
+\begin{itemize}
+  \item \textbf{independência:} cada Poder possui funções, organização e garantias próprias;
+  \item \textbf{harmonia:} os Poderes devem cooperar e respeitar os limites recíprocos;
+  \item \textbf{não exclusividade absoluta:} cada Poder exerce uma função típica, mas também pode exercer funções atípicas previstas na Constituição.
+\end{itemize}
+
+O Legislativo tem como função típica legislar e fiscalizar. O Executivo tem como função típica administrar. O Judiciário tem como função típica exercer a jurisdição. Em situações constitucionais, cada um pode exercer funções secundárias: o Executivo edita atos normativos autorizados, o Legislativo administra sua estrutura e o Judiciário organiza seus serviços, por exemplo.
+
+Essa distribuição não significa que um Poder possa substituir livremente o outro. A atuação atípica precisa ter fundamento constitucional ou legal e respeitar controles institucionais.
+
+\subsection*{4. Objetivos fundamentais da República}
+
+O art. 3º apresenta objetivos fundamentais, isto é, metas que orientam a ação do Estado brasileiro:
+
+\begin{enumerate}
+  \item construir uma sociedade livre, justa e solidária;
+  \item garantir o desenvolvimento nacional;
+  \item erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e
+\end{enumerate}
+
+   regionais;
+
+\begin{enumerate}
+  \item promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade
+\end{enumerate}
+
+   e quaisquer outras formas de discriminação.
+
+Memorização: \textbf{sociedade, desenvolvimento, pobreza/desigualdades e bem de todos}.
+
+Os objetivos não são apenas declarações políticas sem efeito. Eles orientam a formulação de políticas públicas, a interpretação constitucional e o controle de medidas estatais. Também não devem ser confundidos com os fundamentos do art. 1º.
+
+\subsubsection*{4.1. Erradicar e reduzir}
+
+O texto usa verbos diferentes:
+
+\begin{itemize}
+  \item erradicar a pobreza e a marginalização;
+  \item reduzir as desigualdades sociais e regionais.
+\end{itemize}
+
+Em questão literal, trocar esses verbos pode tornar a alternativa incorreta.
+
+\subsection*{5. Relações internacionais}
+
+O art. 4º lista os princípios que regem o Brasil em suas relações internacionais:
+
+\begin{itemize}
+  \item independência nacional;
+  \item prevalência dos direitos humanos;
+  \item autodeterminação dos povos;
+  \item não intervenção;
+  \item igualdade entre os Estados;
+  \item defesa da paz;
+  \item solução pacífica dos conflitos;
+  \item repúdio ao terrorismo e ao racismo;
+  \item cooperação entre os povos para o progresso da humanidade;
+  \item concessão de asilo político.
+\end{itemize}
+
+Memorização por blocos:
+
+\begin{enumerate}
+  \item \textbf{autonomia:} independência nacional, autodeterminação e não intervenção;
+  \item \textbf{igualdade e paz:} igualdade entre Estados, defesa da paz e solução
+\end{enumerate}
+
+   pacífica;
+
+\begin{enumerate}
+  \item \textbf{direitos humanos:} prevalência dos direitos humanos, repúdio ao
+\end{enumerate}
+
+   terrorismo e ao racismo, asilo político;
+
+\begin{enumerate}
+  \item \textbf{cooperação:} cooperação entre os povos para o progresso da humanidade.
+\end{enumerate}
+
+O parágrafo único do art. 4º determina que a República Federativa do Brasil buscará a integração econômica, política, social e cultural dos povos da América Latina, visando à formação de uma comunidade latino-americana de nações.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item \textbf{Troca de categoria:} cidadania aparece como objetivo, ou redução das desigualdades aparece como fundamento.
+  \item \textbf{Troca de verbo:} a Constituição fala em reduzir desigualdades, não erradicá-las.
+  \item \textbf{Federalismo:} Estados e Municípios são autônomos, não soberanos.
+  \item \textbf{Poder popular:} o poder emana do povo, não exclusivamente dos eleitos.
+  \item \textbf{Lista internacional:} igualdade entre os Estados não significa superioridade de um Estado sobre os demais.
+  \item \textbf{Separação:} independência não elimina harmonia; harmonia não elimina controle recíproco.
+\end{itemize}
+
+\section*{Exemplos resolvidos}
+
+\subsection*{Exemplo 1}
+
+Um Estado da Federação decide declarar sua independência do Brasil por meio de plebiscito estadual. A medida é compatível com a Constituição?
+
+\textbf{Não.} A República Federativa do Brasil é formada pela união indissolúvel dos Estados, Municípios e Distrito Federal. Os entes federados possuem autonomia, mas não soberania nem direito constitucional de secessão.
+
+\subsection*{Exemplo 2}
+
+Uma alternativa afirma: "A erradicação das desigualdades regionais é um dos fundamentos da República".
+
+\textbf{Incorreta.} A redução das desigualdades sociais e regionais é objetivo fundamental do art. 3º, III. Fundamentos estão no art. 1º e incluem soberania, cidadania, dignidade, valores sociais do trabalho e livre iniciativa e pluralismo político.
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Categoria} & \textbf{Conteúdo principal} \\
+\midrule
+ Forma de Estado & Federação \\
+ Forma de governo & República \\
+ Regime político & Democracia \\
+ Fundamento central & Dignidade da pessoa humana \\
+ Poder & Emana do povo \\
+ Poderes & Legislativo, Executivo e Judiciário \\
+ Objetivos & sociedade, desenvolvimento, redução das desigualdades e bem de todos \\
+ Relações internacionais & direitos humanos, paz, não intervenção e cooperação \\
+ Entes federados & autônomos, não soberanos \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+Assinale a alternativa que apresenta apenas fundamentos da República Federativa do Brasil.
+
+A) Soberania, cidadania e dignidade da pessoa humana. \\ B) Defesa da paz, pluralismo político e desenvolvimento nacional. \\ C) Erradicação da pobreza, livre iniciativa e não intervenção. \\ D) Prevalência dos direitos humanos, cidadania e igualdade entre os Estados. \\ E) Construção de sociedade justa, soberania e defesa da paz.
+
+\begin{alerta}
+\textbf{Gabarito: A.} Os três elementos estão no art. 1º. As demais alternativas misturam fundamentos com objetivos ou princípios internacionais.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+De acordo com a Constituição Federal, o poder:
+
+A) emana exclusivamente dos representantes eleitos. \\ B) emana do povo e pode ser exercido diretamente, nos termos da Constituição. \\ C) pertence aos Poderes da União. \\ D) é exercido apenas por meio de plebiscitos. \\ E) decorre da soberania dos Estados.
+
+\begin{alerta}
+\textbf{Gabarito: B.} O parágrafo único do art. 1º prevê exercício por representantes eleitos ou diretamente, conforme a Constituição.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+É objetivo fundamental da República Federativa do Brasil:
+
+A) garantir a soberania dos Municípios. \\ B) erradicar as desigualdades regionais. \\ C) reduzir as desigualdades sociais e regionais. \\ D) assegurar a intervenção nos Estados estrangeiros. \\ E) estabelecer uma religião oficial.
+
+\begin{alerta}
+\textbf{Gabarito: C.} O art. 3º, III, prevê erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+É princípio que rege o Brasil nas relações internacionais:
+
+A) dependência econômica. \\ B) intervenção obrigatória. \\ C) superioridade militar. \\ D) prevalência dos direitos humanos. \\ E) submissão dos Estados menores.
+
+\begin{alerta}
+\textbf{Gabarito: D.} A prevalência dos direitos humanos está expressamente no art. 4º, II.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+Sobre a separação dos Poderes, a Constituição estabelece que Legislativo, Executivo e Judiciário são:
+
+A) subordinados entre si. \\ B) independentes e harmônicos entre si. \\ C) independentes e sem qualquer forma de controle recíproco. \\ D) hierarquizados conforme a função exercida. \\ E) órgãos exclusivos da União, sem funções atípicas.
+
+\begin{alerta}
+\textbf{Gabarito: B.} É a redação literal do art. 2º. Independência e harmonia coexistem, e a Constituição admite o exercício de funções típicas e atípicas.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Sei diferenciar República, Federação e Estado Democrático de Direito.
+  \item[$\square$] Memorizei os cinco fundamentos do art. 1º.
+  \item[$\square$] Sei que o poder emana do povo.
+  \item[$\square$] Diferencio autonomia de soberania.
+  \item[$\square$] Sei os três Poderes e as ideias de independência e harmonia.
+  \item[$\square$] Memorizei os quatro objetivos do art. 3º.
+  \item[$\square$] Não troco "reduzir desigualdades" por "erradicar desigualdades".
+  \item[$\square$] Reconheço os principais princípios internacionais do art. 4º.
+\end{itemize}
+
+\end{document}

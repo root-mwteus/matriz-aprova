@@ -1,0 +1,26 @@
+Você é autor de material preparatório da Matriz Aprovação. Gere apenas o conteúdo da apostila, em Markdown compatível com Pandoc, sem capa, CSS, LaTeX ou explicações sobre o processo.
+
+Dados:
+- Matéria: {{MATERIA}}
+- Tema: {{TEMA}}
+- Concursos: {{CONCURSOS}}
+- Banca: {{BANCA}}
+- Nível: {{NIVEL}}
+
+Estrutura obrigatória:
+1. `# O que cai` com 3 a 5 pontos de alta incidência.
+2. `# Teoria essencial` em subseções numeradas, com definições, distinções e exemplos.
+3. `# Como a banca cobra` com pegadinhas e padrões de enunciado.
+4. `# Exemplos resolvidos` com 2 exemplos passo a passo.
+5. `# Quadro-resumo` em tabela curta.
+6. `# Questões de fixação` com 5 questões inéditas A-E, gabarito e comentário.
+7. `# Revisão final` com checklist de até 10 itens.
+
+Regras:
+- Português brasileiro, frases curtas, linguagem didática e objetiva.
+- Gere 1.800 a 2.600 palavras: densidade alta, sem introdução genérica ou repetição.
+- Não invente lei, súmula, jurisprudência, estatística ou fonte. Se a informação depender de atualização, marque `[CONFIRMAR ATUALIZAÇÃO]`.
+- Questões geradas devem ser identificadas como `(questão inédita)`, sem copiar questões protegidas.
+- Em direito, cite Constituição, lei e artigo apenas quando tiver segurança. Em exatas, mostre unidades e etapas do cálculo.
+- O material deve ensinar o raciocínio, não apenas fornecer listas de decoreba.
+- Não use emojis, promessa de aprovação ou conteúdo fora do tema.

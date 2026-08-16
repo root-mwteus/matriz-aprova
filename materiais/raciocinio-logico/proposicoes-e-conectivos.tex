@@ -1,0 +1,432 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Raciocínio Lógico: Proposições e conectivos\par}
+  \vspace{0.4cm}
+  {\sffamily\large Receita Federal, CGU, PRF, Polícia Federal, INSS, TRT, TCU/TCE, Câmara e Petrobras\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    antes de montar uma tabela, traduza o enunciado para símbolos. A maior parte dos erros nasce de interpretar mal o conectivo.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad Cebraspe, FCC e similares\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+Este é o ponto de partida para lógica proposicional. As questões normalmente exploram classificação de frases, negação, conectivos, valor lógico e equivalências básicas.
+
+Pontos de maior incidência:
+
+\begin{enumerate}
+  \item reconhecer se uma frase é ou não uma proposição;
+  \item identificar proposições simples e compostas;
+  \item interpretar \texttt{e}, \texttt{ou}, \texttt{se... então} e \texttt{se e somente se};
+  \item negar corretamente uma proposição composta;
+  \item calcular o número de linhas de uma tabela-verdade;
+  \item diferenciar condição suficiente de condição necessária.
+\end{enumerate}
+
+\textbf{Regra de prova:} antes de montar uma tabela, traduza o enunciado para símbolos. A maior parte dos erros nasce de interpretar mal o conectivo.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Proposição}
+
+Proposição é uma frase declarativa que pode ser classificada como verdadeira ou falsa, mas nunca como verdadeira e falsa ao mesmo tempo.
+
+São proposições:
+
+\begin{itemize}
+  \item "Brasília é a capital do Brasil." — pode ser classificada como verdadeira.
+  \item "7 é um número par." — pode ser classificada como falsa.
+  \item "A prova começa às oito horas." — será verdadeira ou falsa conforme os fatos.
+\end{itemize}
+
+Não são proposições:
+
+\begin{itemize}
+  \item frases interrogativas: "Você estudou?";
+  \item frases imperativas: "Resolva a questão.";
+  \item frases exclamativas: "Que prova difícil!";
+  \item frases sem valor lógico definido: "Este material é excelente." Sem contexto e critério objetivo, a frase pode expressar opinião.
+\end{itemize}
+
+Uma frase declarativa com variável aberta também não é proposição enquanto a variável não for definida. "x + 2 = 5" não possui valor lógico único; para \texttt{x = 3}, torna-se verdadeira.
+
+\subsection*{2. Proposição simples e composta}
+
+Proposição \textbf{simples} não contém outra proposição ligada por conectivo lógico. Pode ser representada por uma letra:
+
+\begin{alerta}
+p: O aluno revisou o conteúdo.
+\end{alerta}
+
+Proposição \textbf{composta} resulta da combinação de proposições simples:
+
+\begin{alerta}
+p: O aluno revisou o conteúdo. q: O aluno resolveu questões. p e q: O aluno revisou o conteúdo e resolveu questões.
+\end{alerta}
+
+As letras \texttt{p}, \texttt{q}, \texttt{r} representam proposições. Os símbolos mais usados são:
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Símbolo} & \textbf{Nome} & \textbf{Leitura} \\
+\midrule
+ \texttt{¬p} & negação & não p \\
+ \texttt{p ∧ q} & conjunção & p e q \\
+ \texttt{p ∨ q} & disjunção inclusiva & p ou q \\
+ \texttt{p ⊻ q} & disjunção exclusiva & ou p ou q, mas não ambos \\
+ \texttt{p → q} & condicional & se p, então q \\
+ \texttt{p ↔ q} & bicondicional & p se e somente se q \\
+\bottomrule
+\end{tabularx}
+
+
+\subsection*{3. Negação}
+
+A negação inverte o valor lógico da proposição. Se \texttt{p} é verdadeira, \texttt{¬p} é falsa; se \texttt{p} é falsa, \texttt{¬p} é verdadeira.
+
+Na linguagem comum, a negação de "O candidato foi aprovado" é "O candidato não foi aprovado". Para uma frase com quantificador, cuidado:
+
+\begin{itemize}
+  \item negação de "todos estudaram" = "pelo menos um não estudou";
+  \item negação de "algum estudou" = "nenhum estudou";
+  \item negação de "nenhum estudou" = "algum estudou".
+\end{itemize}
+
+Não se deve negar "todos" apenas trocando por "nenhum". Basta um contraexemplo para negar uma afirmação universal.
+
+\subsection*{4. Conjunção: \texttt{p ∧ q}}
+
+A conjunção é verdadeira somente quando as duas proposições são verdadeiras.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{p} & \textbf{q} & \textbf{p ∧ q} \\
+\midrule
+ V & V & V \\
+ V & F & F \\
+ F & V & F \\
+ F & F & F \\
+\bottomrule
+\end{tabularx}
+
+
+Na frase "O candidato estudou Direito Constitucional e Direito Administrativo", as duas informações precisam ser verdadeiras.
+
+A negação da conjunção segue a primeira lei de De Morgan:
+
+\texttt{¬(p ∧ q) ↔ (¬p ∨ ¬q)}
+
+Em palavras: não é verdade que p e q equivale a p não ocorrer ou q não ocorrer. Exemplo: "Não é verdade que Ana estudou Português e Matemática" equivale a "Ana não estudou Português ou Ana não estudou Matemática".
+
+\subsection*{5. Disjunção inclusiva: \texttt{p ∨ q}}
+
+O "ou" inclusivo é falso somente quando as duas proposições são falsas.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{p} & \textbf{q} & \textbf{p ∨ q} \\
+\midrule
+ V & V & V \\
+ V & F & V \\
+ F & V & V \\
+ F & F & F \\
+\bottomrule
+\end{tabularx}
+
+
+Em uma questão, "o candidato estudará Português ou Raciocínio Lógico" pode permitir que ele estude os dois, salvo se o contexto indicar exclusividade.
+
+A negação segue a segunda lei de De Morgan:
+
+\texttt{¬(p ∨ q) ↔ (¬p ∧ ¬q)}
+
+\subsection*{6. Disjunção exclusiva: \texttt{p ⊻ q}}
+
+A disjunção exclusiva é verdadeira quando exatamente uma proposição é verdadeira. Se as duas forem verdadeiras, o resultado é falso.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{p} & \textbf{q} & \textbf{p ⊻ q} \\
+\midrule
+ V & V & F \\
+ V & F & V \\
+ F & V & V \\
+ F & F & F \\
+\bottomrule
+\end{tabularx}
+
+
+Expressões como "ou... ou...", "mas não ambos" e "exatamente uma das duas" normalmente indicam exclusividade.
+
+\subsection*{7. Condicional: \texttt{p → q}}
+
+Lê-se "se p, então q". A primeira proposição é o \textbf{antecedente} e a segunda é o \textbf{consequente}. O condicional só é falso quando o antecedente é verdadeiro e o consequente é falso.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{p} & \textbf{q} & \textbf{p → q} \\
+\midrule
+ V & V & V \\
+ V & F & F \\
+ F & V & V \\
+ F & F & V \\
+\bottomrule
+\end{tabularx}
+
+
+Exemplo: "Se o candidato estuda, então resolve questões" só é desmentida por um caso em que o candidato estuda e não resolve questões.
+
+A equivalência fundamental é:
+
+\texttt{p → q ↔ ¬p ∨ q}
+
+A \textbf{contrapositiva} também é equivalente:
+
+\texttt{p → q ↔ ¬q → ¬p}
+
+Portanto, "Se estudo, então melhoro" equivale a "Se não melhoro, então não estudo". Atenção: a conversa e a inversa não são equivalentes:
+
+\begin{itemize}
+  \item conversa: \texttt{q → p};
+  \item inversa: \texttt{¬p → ¬q}.
+\end{itemize}
+
+\subsection*{8. Bicondicional: \texttt{p ↔ q}}
+
+Lê-se "p se e somente se q". É verdadeira quando as duas proposições têm o mesmo valor lógico.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{p} & \textbf{q} & \textbf{p ↔ q} \\
+\midrule
+ V & V & V \\
+ V & F & F \\
+ F & V & F \\
+ F & F & V \\
+\bottomrule
+\end{tabularx}
+
+
+O bicondicional equivale a dois condicionais simultâneos:
+
+\texttt{p ↔ q ↔ (p → q) ∧ (q → p)}
+
+Ele expressa condição necessária e suficiente. Se "ser aprovado é condição necessária e suficiente para receber o certificado", aprovação implica certificado e certificado implica aprovação.
+
+\subsection*{9. Tabela-verdade}
+
+Se uma proposição composta possui \texttt{n} proposições simples distintas, a tabela terá \texttt{2\textasciicircum{}n} linhas.
+
+\begin{itemize}
+  \item 1 proposição simples: \texttt{2\textasciicircum{}1 = 2} linhas;
+  \item 2 proposições simples: \texttt{2\textasciicircum{}2 = 4} linhas;
+  \item 3 proposições simples: \texttt{2\textasciicircum{}3 = 8} linhas;
+  \item 4 proposições simples: \texttt{2\textasciicircum{}4 = 16} linhas.
+\end{itemize}
+
+Conte proposições simples distintas, não o número de letras que aparecem. Em \texttt{p ∨ p}, existe apenas uma proposição simples: a tabela tem 2 linhas.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item Frase interrogativa ou imperativa não é proposição.
+  \item "Ou" normalmente é inclusivo, salvo indicação de exclusividade.
+  \item Condicional só é falso em \texttt{V → F}.
+  \item A contrapositiva preserva equivalência; conversa e inversa, não.
+  \item A negação de "e" vira "ou"; a negação de "ou" vira "e".
+  \item A negação de "todos" é "pelo menos um não".
+  \item O número de linhas é \texttt{2\textasciicircum{}n}, considerando proposições simples distintas.
+\end{itemize}
+
+\section*{Exemplos resolvidos}
+
+\subsection*{Exemplo 1}
+
+Classifique: "Estude ou resolva questões, mas não faça as duas atividades."
+
+O trecho "mas não faça as duas" indica disjunção exclusiva. Se \texttt{p} é estudar e \texttt{q} é resolver questões, a forma é \texttt{p ⊻ q}.
+
+\subsection*{Exemplo 2}
+
+Qual é a negação de "Se o sistema funciona, então o relatório é emitido"?
+
+Para negar um condicional, mantenha o antecedente e negue o consequente:
+
+\texttt{¬(p → q) ↔ p ∧ ¬q}
+
+Resposta: "O sistema funciona e o relatório não é emitido."
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Estrutura} & \textbf{Quando é falsa?} \\
+\midrule
+ \texttt{¬p} & quando p é verdadeira \\
+ \texttt{p ∧ q} & quando pelo menos uma é falsa \\
+ \texttt{p ∨ q} & quando as duas são falsas \\
+ \texttt{p ⊻ q} & quando as duas têm o mesmo valor \\
+ \texttt{p → q} & somente quando p é V e q é F \\
+ \texttt{p ↔ q} & quando p e q têm valores diferentes \\
+\bottomrule
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Negação} & \textbf{Equivalência} \\
+\midrule
+ \texttt{¬(p ∧ q)} & \texttt{¬p ∨ ¬q} \\
+ \texttt{¬(p ∨ q)} & \texttt{¬p ∧ ¬q} \\
+ \texttt{¬(p → q)} & \texttt{p ∧ ¬q} \\
+ \texttt{p → q} & \texttt{¬p ∨ q} \\
+ \texttt{p → q} & \texttt{¬q → ¬p} \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+Assinale a frase que é uma proposição lógica.
+
+A) Estude mais para a prova! \\ B) Qual é o horário da prova? \\ C) Brasília é a capital do Brasil. \\ D) Que excelente resultado! \\ E) x + 1 = 4.
+
+\begin{alerta}
+\textbf{Gabarito: C.} É frase declarativa com valor lógico definido. A alternativa E possui variável aberta e não determina um único valor lógico.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+O valor de \texttt{p → q} é falso quando:
+
+A) p é falsa e q é falsa. \\ B) p é falsa e q é verdadeira. \\ C) p é verdadeira e q é falsa. \\ D) p e q são verdadeiras. \\ E) p e q têm o mesmo valor.
+
+\begin{alerta}
+\textbf{Gabarito: C.} O condicional só é falso quando o antecedente é verdadeiro e o consequente é falso.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+A negação de "O candidato estudou Direito Constitucional e Direito Administrativo" é:
+
+A) O candidato não estudou nenhuma das duas matérias. \\ B) O candidato estudou uma das duas matérias. \\ C) O candidato não estudou Direito Constitucional ou não estudou Direito Administrativo. \\ D) O candidato estudou Direito Constitucional e não estudou Administrativo. \\ E) O candidato estudou Direito Administrativo ou as duas matérias.
+
+\begin{alerta}
+\textbf{Gabarito: C.} Pela lei de De Morgan, a negação de \texttt{p ∧ q} é \texttt{¬p ∨ ¬q}.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+Uma tabela-verdade de uma proposição composta com três proposições simples distintas possui:
+
+A) 3 linhas. B) 6 linhas. C) 8 linhas. D) 9 linhas. E) 12 linhas.
+
+\begin{alerta}
+\textbf{Gabarito: C.} O total é \texttt{2\textasciicircum{}3 = 8} linhas.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+A proposição \texttt{p → q} é logicamente equivalente a:
+
+A) \texttt{p ∧ q}. B) \texttt{p ∨ q}. C) \texttt{¬p ∧ q}. D) \texttt{¬p ∨ q}. E) \texttt{p ↔ q}.
+
+\begin{alerta}
+\textbf{Gabarito: D.} Essa é a equivalência fundamental do condicional: \texttt{p → q ↔ ¬p ∨ q}.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Sei identificar uma proposição.
+  \item[$\square$] Diferencio proposição simples de composta.
+  \item[$\square$] Sei as condições de falsidade dos seis conectivos principais.
+  \item[$\square$] Sei negar conjunção, disjunção e condicional.
+  \item[$\square$] Lembro que o condicional só é falso em \texttt{V → F}.
+  \item[$\square$] Sei usar a contrapositiva.
+  \item[$\square$] Diferencio "ou" inclusivo de exclusivo.
+  \item[$\square$] Calculo tabelas com \texttt{2\textasciicircum{}n} linhas.
+\end{itemize}
+
+\end{document}

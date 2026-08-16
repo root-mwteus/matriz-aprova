@@ -1,0 +1,278 @@
+# O que cai
+
+**Matéria:** Direito do Trabalho  
+**Tema:** Relação de emprego e requisitos do vínculo  
+**Concursos-alvo:** TRT e OAB  
+**Bancas de referência:** FCC e FGV  
+**Base normativa:** CLT, arts. 2º, 3º, 6º e 9º
+
+O vínculo de emprego é reconhecido quando estão presentes, conjuntamente, os
+requisitos jurídicos da relação empregatícia. As questões costumam explorar:
+
+1. pessoa física;
+2. pessoalidade;
+3. não eventualidade ou habitualidade;
+4. onerosidade;
+5. subordinação jurídica;
+6. diferença entre empregado, empregador, autônomo, eventual e estagiário.
+
+**Regra de prova:** não basta existir pagamento. O vínculo depende da análise
+conjunta dos requisitos e da realidade da prestação, não apenas do nome dado ao
+contrato.
+
+# Teoria essencial
+
+## 1. Empregado
+
+O art. 3º da CLT considera empregado toda pessoa física que prestar serviços de
+natureza não eventual a empregador, sob a dependência deste e mediante salário.
+
+A leitura do dispositivo permite identificar os requisitos clássicos:
+
+- pessoa física;
+- pessoalidade;
+- não eventualidade;
+- onerosidade;
+- subordinação jurídica.
+
+A ausência de qualquer elemento pode afastar a relação de emprego, embora seja
+necessário analisar o caso concreto e a legislação específica aplicável.
+
+## 2. Pessoa física
+
+Empregado é pessoa natural. Uma pessoa jurídica pode prestar serviço a outra
+empresa por contrato civil ou empresarial, mas não é empregada como pessoa
+jurídica.
+
+O fato de o trabalhador possuir CNPJ ou emitir nota fiscal não elimina, por si
+só, a possibilidade de reconhecimento do vínculo. Se a prestação real possuir
+os requisitos dos arts. 2º e 3º da CLT, a forma documental não deve ocultar a
+realidade.
+
+## 3. Pessoalidade
+
+O trabalho deve ser prestado pela própria pessoa contratada. O empregado não
+pode se substituir livremente por terceiro sem autorização do empregador.
+
+A pessoalidade não exige que o trabalhador nunca possa faltar. Férias,
+licenças e substituições autorizadas não eliminam o requisito. O ponto central
+é a impossibilidade de substituição livre e permanente por escolha do prestador.
+
+## 4. Não eventualidade
+
+Não eventualidade significa inserção do trabalho na dinâmica normal da
+atividade e expectativa de continuidade. Não é sinônimo obrigatório de trabalho
+diário.
+
+Um trabalhador pode trabalhar em determinados dias da semana e ainda assim
+ser empregado, desde que exista habitualidade e continuidade compatíveis com a
+atividade.
+
+O trabalho eventual, por outro lado, é prestado de forma ocasional, sem
+integração estável à atividade do tomador. A análise não depende apenas do
+número de dias, mas da natureza e da continuidade do serviço.
+
+## 5. Onerosidade
+
+Onerosidade é a existência de contraprestação econômica pelo trabalho. O salário
+pode ser pago em dinheiro ou, dentro dos limites legais, envolver utilidades.
+
+Não há vínculo de emprego quando a atividade é verdadeiramente gratuita, como
+em determinadas atividades voluntárias regidas por legislação própria. Se
+existir contraprestação disfarçada, a realidade deve ser investigada.
+
+## 6. Subordinação jurídica
+
+Subordinação jurídica é a sujeição do trabalhador ao poder de direção do
+empregador. Ela pode envolver ordens, fiscalização, controle de horários,
+metas, procedimentos e sanções.
+
+Não é necessário que o empregador dê ordens a todo momento. A subordinação
+pode ser estrutural: o trabalhador está inserido na organização e nos meios de
+produção do tomador, submetendo-se à sua dinâmica empresarial.
+
+Subordinação econômica não é requisito autônomo. Um trabalhador pode depender
+financeiramente de uma empresa sem ser empregado, e pode existir relação de
+emprego mesmo quando o trabalhador possui outras fontes de renda.
+
+## 7. Empregador
+
+O art. 2º da CLT considera empregador a empresa, individual ou coletiva, que,
+assumindo os riscos da atividade econômica, admite, assalaria e dirige a
+prestação pessoal de serviço.
+
+O empregador assume o risco do empreendimento. Em regra, não pode transferir
+ao empregado os riscos econômicos próprios da atividade empresarial.
+
+O empregador exerce poder diretivo, que inclui organizar, fiscalizar e
+disciplinar o trabalho, sempre dentro da Constituição, da lei, do contrato e
+dos direitos fundamentais.
+
+## 8. Trabalho presencial e a distância
+
+O art. 6º da CLT estabelece que não há distinção entre o trabalho realizado no
+estabelecimento do empregador, no domicílio do empregado ou a distância, desde
+que presentes os pressupostos da relação de emprego.
+
+O local de trabalho, isoladamente, não decide se existe vínculo. O trabalho
+remoto pode ser empregatício; da mesma forma, trabalho presencial pode ser
+autônomo se não estiverem presentes os requisitos do vínculo.
+
+## 9. Primazia da realidade
+
+Na análise trabalhista, os fatos efetivamente praticados têm grande relevância.
+O contrato pode chamar o trabalhador de parceiro, associado, prestador ou
+autônomo, mas a nomenclatura não prevalece se a execução demonstrar relação de
+emprego.
+
+O art. 9º da CLT considera nulos os atos praticados com o objetivo de desvirtuar,
+impedir ou fraudar a aplicação dos preceitos trabalhistas.
+
+Isso não significa que todo contrato civil ou empresarial seja fraude. É
+necessário verificar se a autonomia existe de fato e se os requisitos do vínculo
+estão presentes no cotidiano.
+
+## 10. Distinções importantes
+
+### 10.1. Autônomo
+
+O autônomo organiza sua própria atividade e não se submete à subordinação
+jurídica típica. Pode prestar serviços com habitualidade, receber pagamento e
+ser pessoa física; o elemento decisivo é a autonomia real.
+
+### 10.2. Eventual
+
+O eventual presta serviço ocasional, sem continuidade ou integração permanente
+à atividade do tomador. Pode receber pagamento, mas falta a não eventualidade.
+
+### 10.3. Estagiário
+
+O estágio regular possui finalidade educacional e deve observar os requisitos da
+Lei nº 11.788/2008. O descumprimento das exigências legais pode caracterizar
+desvirtuamento e gerar consequências trabalhistas.
+
+### 10.4. Voluntário
+
+O serviço voluntário é atividade não remunerada prestada a entidade pública ou
+instituição privada sem fins lucrativos, conforme legislação própria. Uma
+relação apresentada como voluntária, mas com remuneração e requisitos de emprego,
+deve ser examinada pela realidade.
+
+# Como a banca cobra
+
+- Pessoa jurídica não é empregada, mas o CNPJ não impede vínculo se houver
+  fraude e prestação pessoal subordinada.
+- Não eventualidade não exige trabalho todos os dias.
+- Pessoalidade não impede férias ou substituição autorizada.
+- O local de trabalho não define sozinho a existência do vínculo.
+- Subordinação jurídica é mais importante que dependência econômica.
+- O empregador assume os riscos da atividade econômica.
+- A primazia da realidade pode afastar o rótulo contratual.
+- Contrato autônomo válido exige autonomia efetiva, não apenas documento.
+
+# Exemplos resolvidos
+
+## Exemplo 1
+
+Uma empresa contrata uma pessoa como "prestadora autônoma", mas exige horário,
+controla sua rotina, impede substituição e paga mensalmente. Há possibilidade
+de vínculo?
+
+**Sim.** O nome do contrato não é decisivo. A prestação pessoal, habitual,
+onerosa e subordinada pode preencher os requisitos do art. 3º da CLT.
+
+## Exemplo 2
+
+Uma pessoa é chamada uma única vez para reparar um equipamento específico e não
+se integra à atividade da empresa. O pagamento, sozinho, cria vínculo?
+
+**Não.** O pagamento indica onerosidade, mas pode faltar não eventualidade e
+subordinação. O caso se aproxima de prestação eventual ou autônoma.
+
+# Quadro-resumo
+
+| Requisito | Pergunta de prova |
+|---|---|
+| pessoa física | quem presta é pessoa natural? |
+| pessoalidade | pode se substituir livremente? |
+| não eventualidade | existe continuidade e integração à atividade? |
+| onerosidade | há contraprestação pelo trabalho? |
+| subordinação | o tomador dirige e fiscaliza a prestação? |
+| primazia da realidade | os fatos correspondem ao contrato escrito? |
+
+# Questões de fixação
+
+## Questão 1 — (questão inédita)
+
+É requisito clássico da relação de emprego:
+
+A) autonomia plena do trabalhador.  
+B) eventualidade.  
+C) pessoalidade.  
+D) gratuidade.  
+E) ausência de direção do tomador.
+
+**Gabarito: C.** Pessoalidade é um dos requisitos do art. 3º da CLT. Autonomia,
+eventualidade e gratuidade apontam para relações distintas, conforme o caso.
+
+## Questão 2 — (questão inédita)
+
+O trabalho realizado em domicílio ou a distância:
+
+A) nunca pode configurar emprego.  
+B) só configura emprego se houver controle presencial.  
+C) pode configurar emprego se presentes os pressupostos da relação.  
+D) é sempre trabalho autônomo.  
+E) elimina a subordinação jurídica.
+
+**Gabarito: C.** O art. 6º da CLT não distingue o local de trabalho quando os
+requisitos do vínculo estão presentes.
+
+## Questão 3 — (questão inédita)
+
+O princípio da primazia da realidade indica que:
+
+A) o nome dado ao contrato sempre prevalece.  
+B) os fatos efetivamente praticados são relevantes para qualificar a relação.  
+C) todo contrato civil é fraudulento.  
+D) apenas documentos escritos podem provar o vínculo.  
+E) a autonomia é presumida mesmo quando há ordens diárias.
+
+**Gabarito: B.** A realidade da prestação pode revelar vínculo diverso daquele
+descrito formalmente.
+
+## Questão 4 — (questão inédita)
+
+Subordinação jurídica corresponde:
+
+A) à simples necessidade financeira do trabalhador.  
+B) à obrigação de o trabalhador possuir apenas um cliente.  
+C) ao poder de direção, fiscalização e organização do empregador.  
+D) à inexistência de salário.  
+E) à prestação necessariamente presencial.
+
+**Gabarito: C.** A subordinação jurídica decorre da sujeição ao poder diretivo
+do empregador; não se confunde com dependência econômica.
+
+## Questão 5 — (questão inédita)
+
+O empregador, conforme a CLT, caracteriza-se por:
+
+A) não assumir nenhum risco da atividade econômica.  
+B) admitir, assalariar e dirigir a prestação pessoal de serviço, assumindo os riscos da atividade.  
+C) não poder fiscalizar a prestação.  
+D) contratar somente pessoas jurídicas.  
+E) atuar sempre sem finalidade econômica.
+
+**Gabarito: B.** É a definição central do art. 2º da CLT.
+
+# Revisão final
+
+- [ ] Memorizei os cinco requisitos do vínculo.
+- [ ] Sei explicar pessoalidade e não eventualidade.
+- [ ] Diferencio subordinação jurídica de dependência econômica.
+- [ ] Sei que trabalho remoto também pode ser emprego.
+- [ ] Conheço a primazia da realidade.
+- [ ] Sei que o empregador assume os riscos da atividade.
+- [ ] Diferencio empregado, autônomo e eventual.
+- [ ] Sei que estágio irregular pode ser desvirtuado.

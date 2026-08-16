@@ -1,0 +1,344 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Direito Previdenciário: Benefícios e regras gerais do RGPS\par}
+  \vspace{0.4cm}
+  {\sffamily\large INSS\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    cada benefício tem requisitos próprios (carência, idade, tempo de contribuição ou qualidade de segurado). A banca testa se você sabe quando cada requisito é exigido — não decore apenas os nomes.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad Cebraspe\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+O Direito Previdenciário é o carro-chefe dos concursos do INSS. Os pontos de maior incidência são:
+
+\begin{enumerate}
+  \item princípios e objetivos da seguridade social;
+  \item conceito de segurado, dependentes e carência;
+  \item espécies de benefícios e requisitos de concessão;
+  \item cálculo da aposentadoria, salário de benefício e teto;
+  \item regras de manutenção e perda da qualidade de segurado;
+  \item impossibilidade de acumulação de benefícios.
+\end{enumerate}
+
+\textbf{Regra de prova:} cada benefício tem requisitos próprios (carência, idade, tempo de contribuição ou qualidade de segurado). A banca testa se você sabe quando cada requisito é exigido — não decore apenas os nomes.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Seguridade social}
+
+A seguridade social compreende um conjunto integrado de ações de iniciativa dos poderes públicos e da sociedade, destinadas a assegurar os direitos relativos à saúde, à previdência e à assistência social (art. 194 da CF).
+
+\begin{itemize}
+  \item \textbf{Saúde:} direito de todos e dever do Estado, independentemente de contribuição (art. 196 da CF).
+  \item \textbf{Previdência social:} regime contributivo e de filiação obrigatória.
+  \item \textbf{Assistência social:} será prestada a quem dela necessitar, independente de contribuição à seguridade (art. 203 da CF).
+\end{itemize}
+
+A previdência e a assistência são distintas da saúde: aquelas exigem contribuição (a previdência) ou situação de necessidade (a assistência), e a saúde é universal.
+
+\subsection*{2. Princípios constitucionais (art. 194, parágrafo único, da CF)}
+
+A seguridade social se organiza com base em princípios como:
+
+\begin{itemize}
+  \item universalidade da cobertura e do atendimento;
+  \item uniformidade e equivalência dos benefícios e serviços às populações urbanas e rurais;
+  \item seletividade e distributividade na prestação dos benefícios e serviços;
+  \item irredutibilidade do valor dos benefícios;
+  \item equidade na forma de participação no custeio;
+  \item diversidade da base de financiamento;
+  \item caráter democrático e descentralizado da administração.
+\end{itemize}
+
+\subsection*{3. Filiação, inscrição e carência}
+
+\begin{itemize}
+  \item \textbf{Filiação:} vínculo jurídico que une a pessoa ao RGPS. É a forma de ingresso.
+  \item \textbf{Inscrição:} ato administrativo de cadastramento (NIT/PIS/PASEP).
+  \item \textbf{Carência:} número mínimo de contribuições mensais indispensáveis para que o segurado faça jus ao benefício. Não confunda com tempo de contribuição, que é o período efetivo contado para a aposentadoria.
+\end{itemize}
+
+O art. 24 da Lei nº 8.213/1991 estabelece, em regra, carência de \textbf{180 contribuições mensais} para a maioria dos benefícios. Há exceções (ex.: salário-maternidade exige menos em algumas hipóteses) e benefícios sem carência (ex.: auxílio-acidente, pensão por morte, salário-família).
+
+\subsection*{4. Segurados obrigatórios}
+
+São segurados obrigatórios do RGPS (art. 12 da Lei nº 8.213/1991):
+
+\begin{itemize}
+  \item empregado (inclusive doméstico);
+  \item empregado doméstico;
+  \item trabalhador avulso;
+  \item contribuinte individual;
+  \item segurado especial (trabalhador rural em regime de economia familiar).
+\end{itemize}
+
+O segurado facultativo é aquele que não exerce atividade remunerada, mas decide contribuir (ex.: estudante, dona de casa, desempregado).
+
+\subsection*{5. Dependentes}
+
+Dependentes são as pessoas que fazem jus à pensão por morte e ao auxílio- reclusão. A ordem de prioridade é prevista no art. 16 da Lei nº 8.213/1991:
+
+\begin{itemize}
+  \item \textbf{1ª classe:} cônjuge, companheiro(a) e filho não emancipado menor de 21 anos, ou inválido, ou com deficiência;
+  \item \textbf{2ª classe:} pais;
+  \item \textbf{3ª classe:} irmão não emancipado menor de 21 anos, ou inválido, ou com deficiência.
+\end{itemize}
+
+A existência de dependente de classe anterior exclui os das classes seguintes do direito aos benefícios, em regra.
+
+\subsection*{6. Qualidade de segurado}
+
+Qualidade de segurado é a situação de quem está filiado ao RGPS e mantém a condição de segurado. Ela se perde após o fim do período de graça.
+
+\begin{itemize}
+  \item \textbf{Período de graça:} tempo durante o qual o segurado mantém a qualidade mesmo sem contribuir. Em regra, é de \textbf{12 meses}, prorrogável em até 24 meses para o segurado que comprovou mais de 120 contribuições sem interrupção que acarrete a perda da qualidade, além de outras hipóteses legais (ex.: desemprego comprovado, 12 meses a mais).
+  \item Ao perder a qualidade de segurado, o segurado não pode fazer jus a benefícios que dela dependam (ex.: auxílio-doença, pensão por morte dos dependentes), salvo se recolocar na condição.
+\end{itemize}
+
+\subsection*{7. Benefícios previdenciários (art. 18 da Lei nº 8.213/1991)}
+
+Os principais benefícios do RGPS:
+
+\begin{itemize}
+  \item aposentadoria por tempo de contribuição;
+  \item aposentadoria por idade;
+  \item aposentadoria por invalidez;
+  \item aposentadoria especial;
+  \item auxílio-doença (auxílio por incapacidade temporária);
+  \item auxílio-acidente;
+  \item pensão por morte;
+  \item auxílio-reclusão;
+  \item salário-família;
+  \item salário-maternidade.
+\end{itemize}
+
+\subsubsection*{7.1. Aposentadoria por idade}
+
+Regra geral (pós-EC 103/2019): aposentadoria por idade aos \textbf{65 anos (homem) e 62 anos (mulher)}, com \textbf{15 anos de contribuição (mulher)} e \textbf{20 anos de contribuição (homem)} — atenção às regras de transição e ao segurado especial.
+
+\subsubsection*{7.2. Aposentadoria por tempo de contribuição}
+
+A EC 103/2019 extinguiu, para quem ingressou após sua vigência, a aposentadoria por tempo de contribuição como regra geral, substituída por regras de pontos, idade mínima e tempo de contribuição mínima (ex.: 30 anos para mulher e 35 para homem, com pedágios e regras de transição para quem já era filiado).
+
+\subsubsection*{7.3. Aposentadoria por invalidez}
+
+Concedida quando o segurado é considerado permanentemente incapacitado para o trabalho, insuscetível de reabilitação. Exige carência (regra geral 12 contribuições) e manutenção da qualidade de segurado, com exceções (ex.: nos casos de doença, o início da incapacidade pode retroagir, e em acidente de trabalho não se exige carência).
+
+\subsubsection*{7.4. Auxílio por incapacidade temporária (auxílio-doença)}
+
+Concedido ao segurado que ficar temporariamente incapacitado para o trabalho por mais de 15 dias consecutivos. Exige carência (12 contribuições, com exceções) e qualidade de segurado.
+
+\subsubsection*{7.5. Pensão por morte}
+
+Benefício devido aos dependentes do segurado que falecer. Não exige carência, mas exige a qualidade de segurado do falecido na data do óbito (com exceções, ex.: período de graça e contribuições posteriores ao último recolhimento).
+
+\subsubsection*{7.6. Auxílio-reclusão}
+
+Devido aos dependentes do segurado recolhido à prisão, em regime fechado ou semiaberto. Exige qualidade de segurado e observância de teto de renda do segurado, nos termos da lei. O dependente que também for segurado não recebe o benefício enquanto preso, salvo hipóteses legais.
+
+\subsection*{8. Salário de benefício e teto}
+
+\begin{itemize}
+  \item \textbf{Salário de benefício:} valor básico usado no cálculo da renda mensal dos benefícios. As regras variam conforme o benefício e o grupo de segurados, e foram alteradas pela EC 103/2019.
+  \item \textbf{Teto do RGPS:} limite máximo do salário de contribuição e do salário de benefício, fixado por portaria anual do INSS. Nenhuma aposentadoria pode superar o teto, salvo hipóteses legais específicas (ex.: cumulação lícita em casos residuais).
+\end{itemize}
+
+\subsection*{9. Acumulação de benefícios}
+
+Em regra, é vedada a acumulação de mais de uma aposentadoria do RGPS. A EC 103/2019 estabeleceu que, para benefícios acumuláveis (ex.: aposentadoria + pensão por morte), aplica-se a regra do melhor benefício, observadas as proporções previstas na lei, de forma que a soma não ultrapasse o teto.
+
+Em provas, atenção: aposentadoria + pensão por morte pode ser acumulada com as limitações legais; duas aposentadorias do RGPS, em regra, não.
+
+\subsection*{10. Irredutibilidade e revisão}
+
+O valor dos benefícios não pode ser reduzido (princípio da irredutibilidade). O INSS deve manter o poder aquisitivo dos benefícios com reajustes periódicos, conforme previsto na Constituição e na legislação previdenciária.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item Carência (180 contribuições) não se confunde com tempo de contribuição.
+  \item Pensão por morte e auxílio-reclusão não exigem carência, mas exigem qualidade de segurado.
+  \item Auxílio-doença e aposentadoria por invalidez exigem, em regra, 12 contribuições de carência.
+  \item Qualidade de segurado não é o mesmo que filiação: filiação é o vínculo; qualidade é a manutenção da condição.
+  \item A EC 103/2019 extinguiu a aposentadoria por tempo de contribuição como regra geral para novos filiados.
+  \item Aposentadoria + pensão por morte podem ser acumuladas, com regras de limite; duas aposentadorias, em regra, não.
+  \item Saúde é universal; previdência exige contribuição; assistência independe de contribuição.
+\end{itemize}
+
+\section*{Exemplos resolvidos}
+
+\subsection*{Exemplo 1}
+
+Um segurado com 66 anos de idade e 12 anos de contribuição como homem solicita aposentadoria por idade. Ele tem direito?
+
+\textbf{Não, em regra.} Para o homem, a aposentadoria por idade exige 65 anos E 20 anos de contribuição (regra pós-EC 103/2019, com atenção às regras de transição). Falta o tempo mínimo de contribuição.
+
+\subsection*{Exemplo 2}
+
+Um segurado falece sem ter contribuído o suficiente para a carência, mas estava na qualidade de segurado. Os dependentes têm direito à pensão por morte?
+
+\textbf{Sim, em regra.} A pensão por morte não exige carência. Desde que o falecido mantivesse a qualidade de segurado na data do óbito, os dependentes fazem jus ao benefício (com exceções legais).
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Benefício} & \textbf{Carência} & \textbf{Qualidade de segurado} \\
+\midrule
+ Aposentadoria por idade & Sim (15/20 anos, conforme sexo e regra) & Sim \\
+ Aposentadoria por invalidez & 12 contribuições (exceções) & Sim (exceções) \\
+ Auxílio-doença & 12 contribuições (exceções) & Sim \\
+ Pensão por morte & Não exige & Sim (do falecido) \\
+ Auxílio-reclusão & Não exige & Sim (do segurado preso) \\
+ Salário-família & Não exige & Sim \\
+ Salário-maternidade & Varia & Sim \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+Em regra, a carência exigida para a maioria dos benefícios previdenciários do RGPS é de:
+
+A) 12 contribuições mensais. \\ B) 180 contribuições mensais. \\ C) 24 contribuições mensais. \\ D) 90 contribuições mensais. \\ E) 36 contribuições mensais.
+
+\begin{alerta}
+\textbf{Gabarito: B.} O art. 24 da Lei nº 8.213/1991 fixa, em regra, 180 contribuições mensais como carência, com exceções específicas.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+A pensão por morte é devida aos dependentes quando o segurado falecido:
+
+A) tiver cumprido carência de 180 contribuições. \\ B) mantinha a qualidade de segurado na data do óbito, sem exigência de carência. \\ C) tiver mais de 65 anos. \\ D) tiver contribuído por pelo menos 12 meses no último ano. \\ E) estiver em gozo de aposentadoria por idade.
+
+\begin{alerta}
+\textbf{Gabarito: B.} A pensão por morte não exige carência, mas exige qualidade de segurado do falecido, ressalvadas as exceções legais.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+São beneficiários que integram a primeira classe de dependentes do RGPS:
+
+A) pais do segurado. \\ B) irmão não emancipado menor de 21 anos. \\ C) cônjuge, companheiro(a) e filho não emancipado menor de 21 anos ou inválido. \\ D) qualquer parente até o terceiro grau. \\ E) somente o cônjuge.
+
+\begin{alerta}
+\textbf{Gabarito: C.} A primeira classe reúne cônjuge, companheiro(a) e filhos nas condições previstas no art. 16 da Lei nº 8.213/1991.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+Com a EC 103/2019, para os segurados que ingressarem no RGPS após sua vigência:
+
+A) a aposentadoria por tempo de contribuição deixou de ser a regra geral. \\ B) a aposentadoria por idade foi extinta. \\ C) a pensão por morte passou a exigir carência. \\ D) o auxílio-doença foi extinto. \\ E) o salário-maternidade passou a exigir 180 contribuições.
+
+\begin{alerta}
+\textbf{Gabarito: A.} A EC 103/2019 extinguiu a aposentadoria por tempo de contribuição como regra geral, criando regras de idade mínima, pontos e pedágios, com regras de transição.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+Sobre a acumulação de benefícios do RGPS, é correto afirmar que:
+
+A) duas aposentadorias do RGPS podem ser acumuladas sem limite. \\ B) aposentadoria e pensão por morte podem ser acumuladas, observadas as regras legais de proporção e teto. \\ C) nenhuma aposentadoria pode ser acumulada com pensão por morte. \\ D) todos os benefícios podem ser acumulados livremente. \\ E) apenas aposentadoria por invalidez pode ser acumulada com pensão por morte.
+
+\begin{alerta}
+\textbf{Gabarito: B.} A EC 103/2019 permite a acumulação de aposentadoria com pensão por morte, aplicando-se a regra do melhor benefício com as limitações legais; duas aposentadorias do RGPS, em regra, não são acumuláveis.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Sei diferenciar filiação, inscrição, carência e qualidade de segurado.
+  \item[$\square$] Memorizei a regra geral de carência de 180 contribuições.
+  \item[$\square$] Sei que pensão por morte e auxílio-reclusão não exigem carência.
+  \item[$\square$] Conheço a ordem de classes de dependentes.
+  \item[$\square$] Sei que auxílio-doença e aposentadoria por invalidez exigem 12 contribuições de carência, em regra.
+  \item[$\square$] Conheço o efeito da EC 103/2019 sobre a aposentadoria por tempo de contribuição.
+  \item[$\square$] Entendo a regra de acumulação de aposentadoria com pensão por morte.
+  \item[$\square$] Sei que saúde é universal e previdência/assistência têm requisitos próprios.
+\end{itemize}
+
+\end{document}

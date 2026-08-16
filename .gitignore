@@ -22,6 +22,18 @@ next-env.d.ts
 # Cobertura de testes
 coverage/
 
+# Artefatos de compilação LaTeX (apostilas em materiais/)
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.compile1.log
+*.compile2.log
+materiais/**/*.pdf
+
 # Sistema operacional / editor
 .DS_Store
 Thumbs.db

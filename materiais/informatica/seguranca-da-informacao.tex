@@ -1,0 +1,355 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Informática: Segurança da Informação\par}
+  \vspace{0.4cm}
+  {\sffamily\large Receita Federal, CGU, PRF, Polícia Federal, INSS, TRT, TCU/TCE, Câmara e Petrobras\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad Cebraspe, FCC e bancas semelhantes\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+Segurança da Informação costuma ser cobrada por conceitos, situações práticas e diferenças entre ameaças. Os pontos mais importantes são:
+
+\begin{enumerate}
+  \item princípios da segurança: confidencialidade, integridade, disponibilidade,
+\end{enumerate}
+
+   autenticidade e não repúdio;
+
+\begin{enumerate}
+  \item malware e formas de infecção;
+  \item phishing, engenharia social e spoofing;
+  \item senhas, autenticação multifator e controle de acesso;
+  \item backup, criptografia e certificados digitais;
+  \item diferença entre firewall, antivírus e mecanismos de detecção.
+\end{enumerate}
+
+\textbf{Atenção:} segurança não é apenas instalar antivírus. Ela combina pessoas, processos, controles físicos e tecnologias.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Princípios da Segurança da Informação}
+
+\subsubsection*{1.1. Confidencialidade}
+
+Confidencialidade é garantir que a informação seja acessada somente por pessoas ou sistemas autorizados. Controle de permissões, criptografia e classificação da informação são mecanismos relacionados a esse princípio.
+
+Uma quebra de confidencialidade ocorre quando um arquivo sigiloso é copiado ou visualizado por pessoa sem autorização, ainda que o conteúdo não seja alterado.
+
+\subsubsection*{1.2. Integridade}
+
+Integridade é preservar a exatidão, a completude e a não alteração indevida da informação. Hashes, assinaturas digitais e controle de versões ajudam a verificar se um arquivo foi modificado.
+
+Se alguém altera o valor de uma nota em um sistema sem autorização, há quebra de integridade. O arquivo pode continuar disponível e acessível, mas seu conteúdo deixou de ser confiável.
+
+\subsubsection*{1.3. Disponibilidade}
+
+Disponibilidade é permitir que usuários autorizados acessem a informação e os serviços quando necessários. Redundância, manutenção, nobreak, backups, monitoramento e proteção contra ataques de negação de serviço contribuem para esse princípio.
+
+\subsubsection*{1.4. Autenticidade}
+
+Autenticidade permite verificar a identidade de uma pessoa, sistema ou origem de uma mensagem. Login, certificado digital e assinatura digital podem ajudar nesse processo.
+
+Autenticidade não é a mesma coisa que autorização. A primeira responde "quem é?"; a segunda responde "o que essa identidade pode fazer?".
+
+\subsubsection*{1.5. Não repúdio}
+
+Não repúdio busca impedir que o autor de uma ação negue posteriormente sua realização. Assinaturas digitais e registros confiáveis de auditoria podem contribuir para esse objetivo.
+
+\subsection*{2. Malware}
+
+Malware é software malicioso criado para causar dano, obter acesso indevido, roubar informações ou explorar recursos do dispositivo.
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Tipo} & \textbf{Característica} \\
+\midrule
+ vírus & depende de arquivo hospedeiro e normalmente precisa de alguma ação para se propagar \\
+ worm & propaga-se automaticamente por redes ou sistemas vulneráveis \\
+ trojan & disfarça-se de programa legítimo para induzir a instalação \\
+ ransomware & bloqueia ou cifra dados e exige pagamento ou outra vantagem \\
+ spyware & monitora atividades e coleta informações \\
+ keylogger & registra teclas digitadas, inclusive senhas \\
+ adware & exibe publicidade indesejada; pode também rastrear hábitos \\
+ rootkit & busca ocultar presença e manter acesso privilegiado \\
+ bot & transforma o dispositivo em parte de uma rede controlada \\
+\bottomrule
+\end{tabularx}
+
+
+Um arquivo infectado por vírus pode contaminar outros quando é executado ou compartilhado. O worm não precisa necessariamente de um arquivo hospedeiro e é conhecido pela capacidade de propagação automática.
+
+\subsection*{3. Engenharia social e phishing}
+
+Engenharia social explora comportamento humano para obter acesso, informação ou vantagem. O atacante pode usar autoridade falsa, urgência, medo, curiosidade ou recompensa.
+
+\textbf{Phishing} é uma fraude que tenta induzir a vítima a clicar em link, abrir arquivo ou fornecer dados, geralmente por e-mail, mensagem ou página falsa.
+
+Variações comuns:
+
+\begin{itemize}
+  \item \textbf{spear phishing:} ataque direcionado a uma pessoa ou organização;
+  \item \textbf{smishing:} phishing por SMS ou aplicativo de mensagens;
+  \item \textbf{vishing:} fraude por ligação ou voz;
+  \item \textbf{pharming:} redirecionamento para página falsa, mesmo quando a vítima tenta acessar um endereço legítimo.
+\end{itemize}
+
+\textbf{Spoofing} é falsificação de identidade, origem ou endereço. Pode envolver e-mail, número de telefone, endereço IP, DNS ou página visualmente semelhante.
+
+Cuidados: conferir domínio, não confiar apenas no nome exibido, evitar links inesperados, confirmar solicitações por canal independente e nunca fornecer senha ou código de autenticação por mensagem.
+
+\subsection*{4. Senhas e autenticação}
+
+Autenticação é o processo de verificar a identidade. Os fatores de autenticação são normalmente classificados como:
+
+\begin{itemize}
+  \item algo que o usuário \textbf{sabe}: senha ou PIN;
+  \item algo que o usuário \textbf{possui}: token, celular ou cartão;
+  \item algo que o usuário \textbf{é}: impressão digital ou reconhecimento facial.
+\end{itemize}
+
+Autenticação multifator combina fatores diferentes. Digitar senha e depois confirmar um código em aplicativo usa conhecimento e posse. Usar duas senhas continua sendo, em regra, um único fator: algo que o usuário sabe.
+
+Uma boa senha deve ser exclusiva, longa e não baseada em informações públicas. O armazenamento seguro deve usar funções de derivação e mecanismos adequados, nunca guardar senhas em texto puro.
+
+\subsection*{5. Criptografia, hash e assinatura digital}
+
+Criptografia transforma uma informação legível em conteúdo protegido por meio de algoritmo e chave.
+
+\subsubsection*{5.1. Criptografia simétrica}
+
+Usa a mesma chave para cifrar e decifrar. É eficiente para grandes volumes de dados, mas exige que a chave seja compartilhada com segurança.
+
+\subsubsection*{5.2. Criptografia assimétrica}
+
+Usa um par de chaves relacionadas: pública e privada. A chave pública pode ser compartilhada; a privada deve permanecer protegida.
+
+Para confidencialidade, uma mensagem pode ser cifrada com a chave pública do destinatário, que a decifra com sua chave privada. Para assinatura digital, usa-se a chave privada do signatário, e a verificação é feita com a chave pública correspondente.
+
+\subsubsection*{5.3. Hash}
+
+Hash é uma função que produz um resumo de tamanho definido a partir de uma entrada. Uma alteração no arquivo tende a produzir outro resumo. Hash não é criptografia reversível: não existe, em condições normais, uma chave para "desfazer" o hash.
+
+\subsubsection*{5.4. Assinatura digital}
+
+Assinatura digital ajuda a verificar autoria, integridade e, em determinados contextos, não repúdio. Ela não é simplesmente uma imagem da assinatura manuscrita colada em um documento.
+
+\subsection*{6. Firewall, antivírus e IDS/IPS}
+
+\begin{itemize}
+  \item \textbf{Firewall:} controla tráfego de rede com base em regras. Pode bloquear ou permitir conexões de acordo com origem, destino, porta, protocolo e outros critérios.
+  \item \textbf{Antivírus/antimalware:} identifica, bloqueia ou remove códigos maliciosos.
+  \item \textbf{IDS:} detecta e alerta sobre atividades suspeitas.
+  \item \textbf{IPS:} além de detectar, pode bloquear ou impedir a atividade identificada.
+\end{itemize}
+
+Nenhum desses mecanismos garante proteção absoluta. Segurança depende de configuração, atualização, monitoramento e comportamento seguro.
+
+\subsection*{7. Backup}
+
+Backup é uma cópia de dados para recuperação em caso de perda, corrupção, falha, ataque ou exclusão acidental.
+
+A estratégia \textbf{3-2-1} recomenda manter:
+
+\begin{itemize}
+  \item pelo menos 3 cópias dos dados;
+  \item em 2 tipos de mídia diferentes;
+  \item pelo menos 1 cópia fora do ambiente principal.
+\end{itemize}
+
+Backup conectado permanentemente ao computador pode ser atingido por ransomware. É necessário testar a restauração: uma cópia que nunca foi recuperada pode não ser utilizável quando necessária.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item Confidencialidade trata de acesso; integridade trata de alteração; disponibilidade trata de acesso no momento necessário.
+  \item Autenticação identifica; autorização define permissões.
+  \item Hash não é criptografia reversível.
+  \item MFA exige fatores diferentes, não apenas duas senhas.
+  \item Worm se propaga automaticamente; trojan depende de disfarce e indução.
+  \item Firewall controla tráfego; antivírus atua contra código malicioso.
+  \item Backup é cópia de recuperação, não simplesmente sincronização.
+\end{itemize}
+
+\section*{Exemplos resolvidos}
+
+\subsection*{Exemplo 1}
+
+Um atacante modifica o valor de uma transferência bancária, mas o usuário continua conseguindo acessar o sistema. Qual princípio foi violado?
+
+\textbf{Integridade.} O dado foi alterado indevidamente. A disponibilidade foi mantida, e não há informação suficiente para afirmar quebra de confidencialidade.
+
+\subsection*{Exemplo 2}
+
+Uma mensagem solicita que o usuário clique em um link para evitar o bloqueio imediato da conta. A página imita o banco e pede senha e código. Qual é o ataque?
+
+\textbf{Phishing}, com uso de engenharia social. A urgência é usada para induzir a vítima a fornecer credenciais em uma página falsa.
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Conceito} & \textbf{Pergunta principal} \\
+\midrule
+ confidencialidade & quem pode acessar? \\
+ integridade & o conteúdo foi alterado? \\
+ disponibilidade & o serviço está acessível quando necessário? \\
+ autenticidade & quem é o autor ou usuário? \\
+ autorização & o que ele pode fazer? \\
+ vírus & usa arquivo hospedeiro \\
+ worm & propaga-se automaticamente \\
+ trojan & disfarça-se de programa legítimo \\
+ ransomware & bloqueia ou cifra dados \\
+ hash & verifica resumo, não é reversível \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+Um usuário autorizado acessa um arquivo, mas encontra seu conteúdo alterado sem permissão. O principal princípio afetado é:
+
+A) confidencialidade. \\ B) integridade. \\ C) disponibilidade. \\ D) autenticidade. \\ E) não repúdio.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Integridade protege a exatidão e a não alteração indevida da informação.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+A combinação de senha e código gerado por aplicativo caracteriza:
+
+A) duas senhas do mesmo fator. \\ B) autenticação multifator. \\ C) criptografia simétrica. \\ D) assinatura digital. \\ E) autorização sem autenticação.
+
+\begin{alerta}
+\textbf{Gabarito: B.} A senha é algo que o usuário sabe; o aplicativo ou dispositivo é algo que possui. São fatores diferentes.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+Assinale a alternativa correta sobre malware.
+
+A) Worm sempre precisa de arquivo hospedeiro. \\ B) Trojan é um mecanismo de backup. \\ C) Ransomware pode cifrar dados e exigir pagamento. \\ D) Spyware é um protocolo de criptografia. \\ E) Rootkit é um equipamento de rede.
+
+\begin{alerta}
+\textbf{Gabarito: C.} Ransomware pode impedir o acesso aos dados por meio de criptografia e exigir resgate.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+Sobre hash, é correto afirmar que:
+
+A) sempre permite recuperar o arquivo original com a chave pública. \\ B) é sinônimo de criptografia simétrica. \\ C) gera um resumo usado, entre outras finalidades, para verificar alterações. \\ D) impede qualquer tipo de malware. \\ E) exige duas senhas para funcionar.
+
+\begin{alerta}
+\textbf{Gabarito: C.} Hash produz um resumo e pode ser usado para verificar integridade; não é uma cifra reversível.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+Na estratégia de backup 3-2-1, recomenda-se:
+
+A) 3 cópias, em 2 tipos de mídia, com 1 fora do ambiente principal. \\ B) 3 senhas, em 2 usuários, com 1 administrador. \\ C) 3 firewalls, em 2 redes, com 1 cópia local. \\ D) 3 antivírus, em 2 computadores, com 1 arquivo. \\ E) 3 cópias exclusivamente online.
+
+\begin{alerta}
+\textbf{Gabarito: A.} A estratégia combina redundância, mídias diferentes e uma cópia fora do ambiente principal.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Diferencio confidencialidade, integridade e disponibilidade.
+  \item[$\square$] Sei separar autenticação de autorização.
+  \item[$\square$] Reconheço vírus, worm, trojan, ransomware e spyware.
+  \item[$\square$] Identifico phishing, smishing, vishing e spoofing.
+  \item[$\square$] Sei o que caracteriza autenticação multifator.
+  \item[$\square$] Diferencio criptografia simétrica e assimétrica.
+  \item[$\square$] Sei que hash não é reversível como uma cifra.
+  \item[$\square$] Diferencio firewall, antivírus, IDS e IPS.
+  \item[$\square$] Sei aplicar a regra de backup 3-2-1.
+\end{itemize}
+
+\end{document}
