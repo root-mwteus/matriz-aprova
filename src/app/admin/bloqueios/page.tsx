@@ -129,14 +129,16 @@ export default function AdminBloqueiosPage() {
                       salvar(nova)
                     }}
                     className={cn(
-                      "relative h-6 w-11 shrink-0 rounded-full transition-colors duration-fast",
-                      linha.bloqueado ? "bg-caution" : "bg-surface-sunken border border-line"
+                      "relative h-6 w-11 shrink-0 rounded-full border-2 transition-colors duration-fast",
+                      linha.bloqueado
+                        ? "border-caution bg-caution ring-2 ring-caution/25"
+                        : "border-line-strong bg-surface-sunken hover:border-fg-muted"
                     )}
                   >
                     <span
                       className={cn(
-                        "absolute top-0.5 h-5 w-5 rounded-full bg-canvas shadow transition-transform duration-fast",
-                        linha.bloqueado ? "translate-x-[22px]" : "translate-x-0.5"
+                        "absolute top-0.5 h-[18px] w-[18px] rounded-full bg-canvas shadow transition-transform duration-fast",
+                        linha.bloqueado ? "translate-x-[21px]" : "translate-x-[3px]"
                       )}
                     />
                   </button>
