@@ -59,6 +59,7 @@ const navGroups: { label: string; items: AdminNav[] }[] = [
       { href: "/admin/dashboard", label: "Visão geral", icon: LayoutGrid },
       { href: "/admin/usuarios", label: "Usuários", icon: Users },
       { href: "/admin/financeiro", label: "Financeiro", icon: Wallet },
+      { href: "/admin/bloqueios", label: "Bloqueios", icon: Lock },
     ],
   },
   {
@@ -82,6 +83,7 @@ const labels: Record<string, string> = {
   editais: "Editais",
   simulados: "Simulados",
   financeiro: "Financeiro",
+  bloqueios: "Bloqueios",
   novo: "Novo",
   nova: "Nova",
   editar: "Editar",

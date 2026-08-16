@@ -8,6 +8,7 @@ import { Menu as MenuIcon, Search, X, ChevronRight } from "lucide-react"
 import Sidebar from "@/components/Sidebar"
 import PaywallBanner from "@/components/PaywallBanner"
 import PaywallLock from "@/components/PaywallLock"
+import SecaoLock from "@/components/SecaoLock"
 import { CommandPalette, useCommandPalette } from "@/components/CommandPalette"
 import { breadcrumbsFor } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
@@ -133,7 +134,12 @@ export default function DashboardShell({ children }: { children: React.ReactNode
 
         {/* ── Conteúdo ─────────────────────────────────────────── */}
         <main className="mx-auto w-full max-w-content px-4 py-6 lg:px-8 lg:py-8">
-          <PaywallLock>{children}</PaywallLock>
+          {/* Paywall (plano demo) por fora; bloqueio de seção por
+              dentro — se os dois valerem, o CTA de assinar é o que
+              importa mostrar. */}
+          <PaywallLock>
+            <SecaoLock>{children}</SecaoLock>
+          </PaywallLock>
         </main>
       </div>
 
