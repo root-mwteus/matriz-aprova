@@ -63,8 +63,8 @@ export default function HomePage() {
               </div>
 
               <h1 id="hero-title" className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-ink dark:text-paper leading-[1.02] tracking-tight">
-                Estude <span className="highlight-lime">o que cai.</span><br />
-                <span className="highlight-invert"> Passe em menos tempo.</span>
+                Estude o que cai.<br />
+                Passe <span className="text-lime-dark dark:text-lime">em menos tempo.</span>
               </h1>
 
               <p className="mt-7 text-lg text-ink/70 dark:text-paper/70 max-w-2xl leading-relaxed">
