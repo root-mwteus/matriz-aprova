@@ -91,10 +91,15 @@ function RegisterContent() {
     // Sessão única: quando o cadastro já entra logado (confirmação de
     // e-mail desativada), registra a sessão antes de navegar. Com
     // confirmação ativada não há sessão ainda — o link de e-mail passa
-    // pelo /auth/callback, que registra.
+    // pelo /auth/callback, que registra. `notify: false` porque o
+    // boas-vindas abaixo já avisa o primeiro acesso.
     if (data.session) {
       try {
-        await fetch(resolveApiUrl("/api/auth/sessao"), { method: "POST" })
+        await fetch(resolveApiUrl("/api/auth/sessao"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ notify: false }),
+        })
       } catch {}
     }
 

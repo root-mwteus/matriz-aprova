@@ -1,5 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
+import { notifyLogin } from "@/lib/login-alert"
 import { registerCurrentSession } from "@/lib/supabase/register-session"
 import { sendBoasVindas } from "@/lib/email"
 
@@ -44,10 +45,27 @@ export async function GET(request: NextRequest) {
       // destino já derrubaria por não ser a mais recente.
       await registerCurrentSession(supabase)
 
+      // Aviso de novo acesso por e-mail — não pode atrasar o redirect.
+      // Novo usuário Google fica de fora: ele já recebe o boas-vindas
+      // logo abaixo, e dois e-mails na criação da conta é só ruído.
+      const enviarAvisoLogin = () => {
+        if (!user.email) return
+        notifyLogin({
+          nome:
+            user.user_metadata?.nome ??
+            user.user_metadata?.full_name ??
+            user.email.split("@")[0],
+          email: user.email,
+          headers: request.headers,
+        }).catch(() => {})
+      }
+
       // Link de recuperação de senha: trocou o código, mas ainda falta o
       // usuário definir a nova senha — mandar direto pro /dashboard faria
-      // o link "funcionar" sem resetar nada.
+      // o link "funcionar" sem resetar nada. Aviso é especialmente útil
+      // aqui: quem acabou de recuperar a senha precisa saber de acessos.
       if (type === "recovery") {
+        enviarAvisoLogin()
         const res = NextResponse.redirect(`${origin}/auth/redefinir-senha`)
         supabaseResponse.cookies.getAll().forEach((c) => res.cookies.set(c.name, c.value))
         return res
@@ -85,6 +103,8 @@ export async function GET(request: NextRequest) {
           return res
         }
       }
+
+      enviarAvisoLogin()
 
       const res = NextResponse.redirect(`${origin}${next}`)
       supabaseResponse.cookies.getAll().forEach((c) => res.cookies.set(c.name, c.value))

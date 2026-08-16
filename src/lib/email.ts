@@ -40,6 +40,43 @@ export async function sendBoasVindas({
   })
 }
 
+/**
+ * Aviso de segurança: novo login na conta. Enviado a cada entrada
+ * (senha, Google, link de e-mail/recuperação) com dispositivo, IP e
+ * horário — é o e-mail que permite o usuário perceber um acesso que
+ * não foi dele. Transacional: sem header de descadastro.
+ */
+export async function sendAvisoLogin({
+  nome,
+  email,
+  navegador,
+  sistema,
+  ip,
+}: {
+  nome: string
+  email: string
+  navegador: string
+  sistema: string
+  ip: string | null
+}) {
+  const resend = getResend()
+  if (!resend) {
+    return { data: null, error: new Error("Resend não configurado (RESEND_API_KEY ausente)") }
+  }
+  const quando = new Intl.DateTimeFormat("pt-BR", {
+    dateStyle: "full",
+    timeStyle: "short",
+    timeZone: "America/Sao_Paulo",
+  }).format(new Date())
+  return resend.emails.send({
+    from: FROM,
+    to: email,
+    subject: `Novo acesso à sua conta — ${navegador} no ${sistema}`,
+    text: avisoLoginText({ nome, navegador, sistema, ip, quando }),
+    html: avisoLoginHtml({ nome, navegador, sistema, ip, quando }),
+  })
+}
+
 function esc(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -69,6 +106,150 @@ Se você não criou esta conta, ignore este email.
 ---
 Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
 suporte@matrizaprova.com · matrizaprova.com`
+}
+
+function avisoLoginText({
+  nome,
+  navegador,
+  sistema,
+  ip,
+  quando,
+}: {
+  nome: string
+  navegador: string
+  sistema: string
+  ip: string | null
+  quando: string
+}) {
+  return `Olá, ${nome}!
+
+Um novo acesso à sua conta na Matriz Aprovação acaba de acontecer.
+
+Dispositivo: ${navegador} no ${sistema}
+IP: ${ip ?? "não identificado"}
+Quando: ${quando} (horário de Brasília)
+
+Por segurança, a Matriz Aprovação mantém apenas uma sessão ativa por conta — se havia outra sessão aberta, ela foi desconectada.
+
+Não foi você? Altere sua senha imediatamente:
+https://matrizaprova.com/recuperar-senha
+
+Se foi você, pode ignorar este email com segurança.
+
+---
+Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
+suporte@matrizaprova.com · matrizaprova.com`
+}
+
+function avisoLoginHtml({
+  nome,
+  navegador,
+  sistema,
+  ip,
+  quando,
+}: {
+  nome: string
+  navegador: string
+  sistema: string
+  ip: string | null
+  quando: string
+}) {
+  const nomeEsc = esc(nome)
+  const dispositivoEsc = esc(`${navegador} no ${sistema}`)
+  const ipEsc = esc(ip ?? "Não identificado")
+  const quandoEsc = esc(quando)
+  const linha = (rotulo: string, valor: string) =>
+    `<tr>
+      <td style="padding:10px 0;color:rgba(255,255,255,0.45);font-size:11px;font-family:monospace;text-transform:uppercase;letter-spacing:2px;width:110px">${rotulo}</td>
+      <td style="padding:10px 0;color:#FFFFFF;font-size:14px;font-weight:700">${valor}</td>
+    </tr>`
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>Novo acesso à sua conta</title>
+</head>
+<body style="margin:0;padding:0;background-color:#EDE9E0;font-family:Arial,Helvetica,sans-serif;color:#0E1117">
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all">
+    Novo acesso à sua conta na Matriz Aprovação. Se não foi você, altere sua senha.
+  </div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:32px 16px 10px">
+        <a href="https://matrizaprova.com" style="text-decoration:none">
+          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprovação"
+               style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:16px 16px 40px">
+        <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:600px">
+
+          <tr>
+            <td style="background-color:#0E1117;border-radius:16px;padding:40px 36px;text-align:left">
+              <p style="margin:0 0 14px;color:#C8FF3D;font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:3px">segurança da conta</p>
+              <h1 style="margin:0 0 16px;color:#FFFFFF;font-size:27px;font-weight:700;line-height:1.25">
+                Novo acesso à sua conta, ${nomeEsc}
+              </h1>
+              <p style="margin:0 0 10px;color:rgba(255,255,255,0.68);font-size:15px;line-height:1.7">
+                Um novo login acaba de acontecer na sua conta na Matriz Aprovação:
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid rgba(255,255,255,0.12)">
+                ${linha("Dispositivo", dispositivoEsc)}
+                ${linha("IP", ipEsc)}
+                ${linha("Quando", `${quandoEsc} (Brasília)`)}
+              </table>
+              <p style="margin:22px 0 0;color:rgba(255,255,255,0.68);font-size:13px;line-height:1.7">
+                Por segurança, mantemos apenas <strong style="color:#FFFFFF">uma sessão ativa por conta</strong> —
+                se havia outra sessão aberta, ela foi desconectada.
+              </p>
+              <p style="margin:24px 0 0;color:rgba(255,255,255,0.32);font-size:11px;line-height:1.5">
+                Se foi você, pode ignorar este email com segurança.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:28px 0 0">
+              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td style="background-color:#C8FF3D;border-radius:12px;padding:20px 22px;text-align:left">
+                    <p style="margin:0 0 6px;color:#0E1117;font-size:14px;font-weight:700">Não foi você?</p>
+                    <p style="margin:0;color:rgba(14,17,23,0.75);font-size:13px;line-height:1.6">
+                      Alguém pode ter sua senha. Altere-a imediatamente em
+                      <a href="https://matrizaprova.com/recuperar-senha" style="color:#0E1117;font-weight:700;text-decoration:underline">recuperar senha</a>
+                      e avise o suporte.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:32px 0 0;text-align:center">
+              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
+              <p style="margin:0;color:#6B7280;font-size:11px">
+                <a href="mailto:suporte@matrizaprova.com" style="color:#6B7280;text-decoration:none">suporte@matrizaprova.com</a>
+                &nbsp;·&nbsp;
+                <a href="https://matrizaprova.com" style="color:#6B7280;text-decoration:none">matrizaprova.com</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`
 }
 
 function boasVindasHtml(nome: string, area: string) {
