@@ -8,6 +8,9 @@ import {
   BarChart3,
   Users,
   Timer,
+  Trophy,
+  Swords,
+  ShieldCheck,
   type LucideIcon,
 } from "lucide-react"
 
@@ -59,6 +62,9 @@ export const navigation: NavGroup[] = [
     items: [
       { href: "/estatisticas", label: "Estatísticas", icon: BarChart3 },
       { href: "/comunidade", label: "Comunidade", icon: Users },
+      { href: "/comunidade/ligas", label: "Ligas", icon: Trophy },
+      { href: "/comunidade/duelos", label: "Duelos", icon: Swords },
+      { href: "/seguranca", label: "Segurança", icon: ShieldCheck },
     ],
   },
 ]
@@ -76,6 +82,9 @@ const segmentLabels: Record<string, string> = {
   editais: "Editais",
   estatisticas: "Estatísticas",
   comunidade: "Comunidade",
+  ligas: "Ligas",
+  duelos: "Duelos",
+  seguranca: "Segurança",
   cronometro: "Cronômetro",
   plano: "Plano de estudos",
   dashboard: "Painel",

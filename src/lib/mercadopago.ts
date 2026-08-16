@@ -59,6 +59,8 @@ export interface MpPayment {
   status_detail?: string
   transaction_amount: number
   external_reference?: string
+  /** Espelha a metadata da preferência — hoje, o preferencia_id local. */
+  metadata?: { preferencia_id?: string }
 }
 
 export async function criarPreferencia(opts: {

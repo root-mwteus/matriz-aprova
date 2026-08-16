@@ -1,10 +1,14 @@
+import type { SupabaseClient } from "@supabase/supabase-js"
 import { sendAvisoLogin } from "@/lib/email"
+import { createServiceClient } from "@/lib/supabase/service"
+import { parseSessionId } from "@/lib/supabase/session"
 
 /**
- * Aviso de novo login por e-mail (Resend). Chamado nos pontos onde uma
- * sessão nasce: login por senha (/api/auth/sessao) e o callback de
- * Google/e-mail/recuperação. Falha silenciosa — nunca pode travar um
- * login ou redirect por causa do Resend.
+ * Aviso de novo login por e-mail (Resend) + histórico de acessos da
+ * conta (`login_events`, exibido em /seguranca). Chamado nos pontos
+ * onde uma sessão nasce: login por senha (/api/auth/sessao) e o
+ * callback de Google/e-mail/recuperação. Falha silenciosa — nunca
+ * pode travar um login ou redirect por causa do Resend.
  */
 
 export function describeUserAgent(userAgent: string): { navegador: string; sistema: string } {
@@ -58,5 +62,33 @@ export async function notifyLogin({
     if (error) console.error("[aviso-login]", error)
   } catch (e) {
     console.error("[aviso-login]", e)
+  }
+}
+
+/**
+ * Registra o acesso em `login_events` (service role — sem policy de
+ * INSERT, o cliente não forja histórico). O `session_id` permite marcar
+ * na página /seguranca qual entrada é o dispositivo atual.
+ */
+export async function registrarLoginEvento(
+  supabase: SupabaseClient,
+  headers: Headers
+): Promise<void> {
+  try {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession()
+    if (!session) return
+
+    const { navegador, sistema } = describeUserAgent(headers.get("user-agent") ?? "")
+    await createServiceClient().from("login_events").insert({
+      user_id: session.user.id,
+      navegador,
+      sistema,
+      ip: ipFromHeaders(headers),
+      session_id: parseSessionId(session.access_token),
+    })
+  } catch (e) {
+    console.error("[login-event]", e)
   }
 }

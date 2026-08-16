@@ -23,6 +23,7 @@ export const PROTECTED_ROUTES = [
   "/cronometro",
   "/onboarding",
   "/assinar",
+  "/seguranca",
 ] as const
 
 /** Telas de entrada — quem já tem sessão é mandado para o painel. */

@@ -22,6 +22,8 @@ export interface ConfigPagamentos {
   beneficios: string[]
   aviso_bloqueio: string
   pagamentos_ativos: boolean
+  /** % de desconto para quem criou a conta com código de indicação. */
+  desconto_indicacao_pct: number
 }
 
 export const CONFIG_PAGAMENTOS_DEFAULT: ConfigPagamentos = {
@@ -39,6 +41,7 @@ export const CONFIG_PAGAMENTOS_DEFAULT: ConfigPagamentos = {
   aviso_bloqueio:
     "Você está no plano demo. Assine o plano vitalício para desbloquear o acesso completo à plataforma.",
   pagamentos_ativos: true,
+  desconto_indicacao_pct: 10,
 }
 
 export function formatarValor(centavos: number): string {
@@ -77,5 +80,7 @@ export async function getConfigPagamentos(
     beneficios: Array.isArray(data.beneficios) ? data.beneficios : CONFIG_PAGAMENTOS_DEFAULT.beneficios,
     aviso_bloqueio: data.aviso_bloqueio ?? CONFIG_PAGAMENTOS_DEFAULT.aviso_bloqueio,
     pagamentos_ativos: data.pagamentos_ativos !== false,
+    desconto_indicacao_pct:
+      Number(data.desconto_indicacao_pct) || CONFIG_PAGAMENTOS_DEFAULT.desconto_indicacao_pct,
   }
 }

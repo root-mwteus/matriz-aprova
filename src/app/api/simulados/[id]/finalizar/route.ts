@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 import { requireUser } from "@/lib/supabase/auth"
 import { createServiceClient } from "@/lib/supabase/service"
+import { PONTOS, registrarPontosLiga } from "@/lib/liga"
 
 export const dynamic = "force-dynamic"
 
@@ -99,6 +100,9 @@ export async function POST(request: Request, { params }: { params: { id: string 
     console.error("Erro ao finalizar simulado:", error)
     return NextResponse.json({ error: "Erro ao finalizar simulado" }, { status: 500 })
   }
+
+  // Liga da semana: simulado fechado soma 5. Falha silenciosa.
+  await registrarPontosLiga(service, user.id, PONTOS.SIMULADO)
 
   return NextResponse.json({ pontuacao: acertos, tempo_total: parsed.data.tempoTotal })
 }

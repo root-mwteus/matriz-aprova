@@ -24,6 +24,9 @@ function RegisterContent() {
   const searchParams = useSearchParams()
   const supabase = createClient()
   const next = safeNext(searchParams.get("next"))
+  // Indicação: ?ref=CODIGO — usado após o cadastro para vincular o
+  // desconto vitalício a quem compartilhou o link.
+  const ref = searchParams.get("ref")?.trim().toUpperCase() || null
   const [form, setForm] = useState<RegisterData>({
     nome: "",
     email: "",
@@ -109,6 +112,16 @@ function RegisterContent() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nome: form.nome, email: form.email, area: form.area_concurso }),
     }).catch(() => {})
+
+    // Vincula a indicação (?ref=), se houver. Falha silenciosa: sem
+    // vínculo o cadastro segue normal, só perde o desconto.
+    if (ref && data.user) {
+      fetch(resolveApiUrl("/api/indicacoes"), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ codigo: ref }),
+      }).catch(() => {})
+    }
 
     router.push(next ? `/onboarding?next=${encodeURIComponent(next)}` : "/onboarding")
     router.refresh()

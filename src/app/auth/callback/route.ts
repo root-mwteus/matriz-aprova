@@ -1,6 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
-import { notifyLogin } from "@/lib/login-alert"
+import { notifyLogin, registrarLoginEvento } from "@/lib/login-alert"
 import { registerCurrentSession } from "@/lib/supabase/register-session"
 import { sendBoasVindas } from "@/lib/email"
 
@@ -44,6 +44,7 @@ export async function GET(request: NextRequest) {
       // como a ativa antes de qualquer redirect, senão o middleware do
       // destino já derrubaria por não ser a mais recente.
       await registerCurrentSession(supabase)
+      await registrarLoginEvento(supabase, request.headers)
 
       // Aviso de novo acesso por e-mail — não pode atrasar o redirect.
       // Novo usuário Google fica de fora: ele já recebe o boas-vindas

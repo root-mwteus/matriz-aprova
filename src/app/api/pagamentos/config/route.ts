@@ -20,6 +20,7 @@ export async function GET() {
     beneficios: config.beneficios,
     avisoBloqueio: config.aviso_bloqueio,
     pagamentosAtivos: config.pagamentos_ativos,
+    descontoIndicacaoPct: config.desconto_indicacao_pct,
     modoTeste: isTestMode(),
   })
 }

@@ -41,6 +41,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Você já tem acesso vitalício", jaAtivo: true }, { status: 400 })
   }
 
+  // Indicação: quem criou conta com código de alguém tem UMA indicação
+  // pendente — o desconto sai do preço cheio aqui, e o valor gravado na
+  // linha de `pagamentos` é o que o webhook valida. Sem isso, o webhook
+  // compararia contra o preço cheio e rejeitaria o pagamento com
+  // desconto (pago e não promovido).
+  const { data: indicacao } = await service
+    .from("indicacoes")
+    .select("id")
+    .eq("indicado_id", user.id)
+    .eq("status", "pendente")
+    .maybeSingle()
+
+  const pct = indicacao ? Math.min(Math.max(config.desconto_indicacao_pct, 0), 90) : 0
+  const valorFinal = pct > 0 ? Math.round((config.valor_centavos * (100 - pct)) / 100) : config.valor_centavos
+
   const preferenciaId = crypto.randomUUID()
 
   let initPoint: string
@@ -50,7 +65,7 @@ export async function POST(request: Request) {
       email: perfil?.email ?? user.email ?? "",
       preferenciaId,
       titulo: config.titulo_plano,
-      valorCentavos: config.valor_centavos,
+      valorCentavos: valorFinal,
     })
     initPoint = initPointDaPreferencia(preferencia)
   } catch (e) {
@@ -62,7 +77,7 @@ export async function POST(request: Request) {
     user_id: user.id,
     mp_preference_id: preferenciaId,
     status: "pending",
-    valor: config.valor_centavos,
+    valor: valorFinal,
   })
 
   if (error) {

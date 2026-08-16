@@ -41,6 +41,44 @@ export async function sendBoasVindas({
 }
 
 /**
+ * Alerta de novo edital na área do usuário. Enviado pelo cron diário
+ * (/api/cron/editais-alertas) — dedupe garantido pela tabela
+ * edital_alertas, então cada edital chega no máximo uma vez.
+ */
+export async function sendAlertaEdital({
+  nome,
+  email,
+  orgao,
+  cargo,
+  banca,
+  vagas,
+  dataProva,
+  link,
+}: {
+  nome: string
+  email: string
+  orgao: string
+  cargo?: string | null
+  banca?: string | null
+  vagas?: number | null
+  dataProva?: string | null
+  link?: string | null
+}) {
+  const resend = getResend()
+  if (!resend) {
+    return { data: null, error: new Error("Resend não configurado (RESEND_API_KEY ausente)") }
+  }
+  const titulo = `${orgao}${cargo ? ` — ${cargo}` : ""}`
+  return resend.emails.send({
+    from: FROM,
+    to: email,
+    subject: `Novo edital na sua área: ${titulo}`,
+    text: alertaEditalText({ nome, titulo, banca, vagas, dataProva, link }),
+    html: alertaEditalHtml({ nome, titulo, banca, vagas, dataProva, link }),
+  })
+}
+
+/**
  * Aviso de segurança: novo login na conta. Enviado a cada entrada
  * (senha, Google, link de e-mail/recuperação) com dispositivo, IP e
  * horário — é o e-mail que permite o usuário perceber um acesso que
@@ -84,6 +122,157 @@ function esc(value: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;")
+}
+
+function alertaEditalDados({
+  titulo,
+  banca,
+  vagas,
+  dataProva,
+  link,
+}: {
+  titulo: string
+  banca?: string | null
+  vagas?: number | null
+  dataProva?: string | null
+  link?: string | null
+}) {
+  const linhas: string[] = []
+  if (banca) linhas.push(`Banca: ${banca}`)
+  if (vagas != null) linhas.push(`Vagas: ${vagas}`)
+  if (dataProva) {
+    const fmt = new Date(`${dataProva}T00:00:00`).toLocaleDateString("pt-BR")
+    linhas.push(`Data da prova: ${fmt}`)
+  }
+  return { linhas, link: link || "https://matrizaprova.com/editais" }
+}
+
+function alertaEditalText({
+  nome,
+  titulo,
+  banca,
+  vagas,
+  dataProva,
+  link,
+}: {
+  nome: string
+  titulo: string
+  banca?: string | null
+  vagas?: number | null
+  dataProva?: string | null
+  link?: string | null
+}) {
+  const { linhas, link: url } = alertaEditalDados({ titulo, banca, vagas, dataProva, link })
+  return `Olá, ${nome}!
+
+Um novo edital acabou de sair na sua área de concurso:
+
+${titulo}
+${linhas.join("\n")}
+
+Veja o edital completo: ${url}
+
+Acesse o app: https://matrizaprova.com/editais
+
+---
+Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
+suporte@matrizaprova.com · matrizaprova.com`
+}
+
+function alertaEditalHtml({
+  nome,
+  titulo,
+  banca,
+  vagas,
+  dataProva,
+  link,
+}: {
+  nome: string
+  titulo: string
+  banca?: string | null
+  vagas?: number | null
+  dataProva?: string | null
+  link?: string | null
+}) {
+  const nomeEsc = esc(nome)
+  const tituloEsc = esc(titulo)
+  const { linhas, link: url } = alertaEditalDados({ titulo, banca, vagas, dataProva, link })
+  const linhasEsc = linhas.map(esc)
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>Novo edital na sua área</title>
+</head>
+<body style="margin:0;padding:0;background-color:#EDE9E0;font-family:Arial,Helvetica,sans-serif;color:#0E1117">
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all">
+    Um novo edital acabou de sair na sua área de concurso.
+  </div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:32px 16px 10px">
+        <a href="https://matrizaprova.com" style="text-decoration:none">
+          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprovação"
+               style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:16px 16px 40px">
+        <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:600px">
+
+          <tr>
+            <td style="background-color:#0E1117;border-radius:16px;padding:40px 36px;text-align:left">
+              <p style="margin:0 0 14px;color:#C8FF3D;font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:3px">novo edital</p>
+              <h1 style="margin:0 0 16px;color:#FFFFFF;font-size:24px;font-weight:700;line-height:1.3">
+                ${tituloEsc}
+              </h1>
+              <p style="margin:0 0 22px;color:rgba(255,255,255,0.68);font-size:15px;line-height:1.7">
+                ${nomeEsc}, um edital da sua área de concurso acabou de sair:
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid rgba(255,255,255,0.12)">
+                ${linhasEsc
+                  .map(
+                    (l) => `<tr><td style="padding:10px 0;color:rgba(255,255,255,0.68);font-size:14px;line-height:1.6">${l}</td></tr>`
+                  )
+                  .join("")}
+              </table>
+              <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:8px">
+                <tr>
+                  <td style="border-radius:10px">
+                    <a href="${esc(url)}"
+                       style="display:inline-block;background-color:#C8FF3D;color:#0E1117;font-weight:700;font-size:14px;padding:15px 30px;border-radius:10px;text-decoration:none">
+                      Ver o edital →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:32px 0 0;text-align:center">
+              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
+              <p style="margin:0;color:#6B7280;font-size:11px">
+                <a href="mailto:suporte@matrizaprova.com" style="color:#6B7280;text-decoration:none">suporte@matrizaprova.com</a>
+                &nbsp;·&nbsp;
+                <a href="https://matrizaprova.com" style="color:#6B7280;text-decoration:none">matrizaprova.com</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`
 }
 
 function boasVindasText(nome: string, area: string) {

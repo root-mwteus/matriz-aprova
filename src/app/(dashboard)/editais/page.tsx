@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ArrowUpRight, ClipboardList } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import type { Edital } from "@/types"
+import { diasAte as diasAteBase } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
 import { Badge, EmptyState, ErrorState, Panel, Segmented, Skeleton } from "@/components/ui"
 
@@ -33,10 +34,7 @@ function formatarData(iso: string | null) {
 
 function diasAte(iso: string | null) {
   if (!iso) return null
-  const alvo = new Date(iso + "T00:00:00")
-  const hoje = new Date()
-  hoje.setHours(0, 0, 0, 0)
-  const dias = Math.round((alvo.getTime() - hoje.getTime()) / 86_400_000)
+  const dias = diasAteBase(iso)
   return dias >= 0 ? dias : null
 }
 

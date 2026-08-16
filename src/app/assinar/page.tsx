@@ -18,6 +18,8 @@ import {
   Clock,
   Inbox,
   ArrowRight,
+  Copy,
+  Gift,
 } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { formatarValor } from "@/lib/pagamentos-config"
@@ -39,6 +41,7 @@ interface ConfigData {
   valorCentavos: number
   beneficios: string[]
   pagamentosAtivos: boolean
+  descontoIndicacaoPct?: number
 }
 
 const RECURSOS_GRATIS: string[] = []
@@ -80,6 +83,21 @@ export default function AssinarPage() {
   const [carregando, setCarregando] = useState(true)
   const [pagando, setPagando] = useState(false)
   const [resultado, setResultado] = useState<string | null>(null)
+  const [indicacao, setIndicacao] = useState<{ codigo: string | null; usos: number } | null>(null)
+
+  // Código de indicação (só faz sentido para quem tem conta).
+  useEffect(() => {
+    let active = true
+    fetch("/api/indicacoes")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (active && data) setIndicacao({ codigo: data.codigo ?? null, usos: data.usos ?? 0 })
+      })
+      .catch(() => {})
+    return () => {
+      active = false
+    }
+  }, [])
 
   const resultadoParam =
     typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("resultado") : null
@@ -321,6 +339,40 @@ export default function AssinarPage() {
                   </div>
                 </div>
               </div>
+
+              {/* ── Indique e ganhe ───────────────────────────────── */}
+              {indicacao?.codigo && plano !== "vitalicio" && (
+                <section className="mx-auto mt-12 w-full max-w-md animate-rise">
+                  <div className="feature-tile rounded-xl border border-line bg-surface p-5 text-center">
+                    <span className="mx-auto grid h-9 w-9 place-items-center rounded-lg bg-accent-soft text-accent">
+                      <Gift size={18} strokeWidth={2} />
+                    </span>
+                    <h3 className="mt-3 text-sm font-semibold text-fg">Indique e ganhe desconto</h3>
+                    <p className="mt-1 text-sm text-fg-muted">
+                      Amigos que criam conta com seu código ganham{" "}
+                      {config?.descontoIndicacaoPct ?? 10}% off no vitalício.
+                      {indicacao.usos > 0 && ` ${indicacao.usos} ${indicacao.usos === 1 ? "pessoa já usou" : "pessoas já usaram"} seu código.`}
+                    </p>
+                    <div className="mt-3 flex items-center gap-2">
+                      <code className="flex-1 rounded-lg border border-line bg-surface-sunken px-3 py-2 font-mono text-sm font-bold tracking-widest text-fg">
+                        {indicacao.codigo}
+                      </code>
+                      <Button
+                        variant="secondary"
+                        onClick={() => {
+                          navigator.clipboard
+                            .writeText(`${window.location.origin}/cadastro?ref=${indicacao.codigo}`)
+                            .then(() => toast.success("Link copiado!"))
+                            .catch(() => {})
+                        }}
+                      >
+                        <Copy size={14} strokeWidth={2} />
+                        Copiar link
+                      </Button>
+                    </div>
+                  </div>
+                </section>
+              )}
 
               {/* ── Funcionalidades ──────────────────────────────── */}
               <section className="mt-20 w-full animate-rise">

@@ -72,7 +72,23 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true })
     }
 
-    if (Math.round(pagamento.transaction_amount * 100) !== config.valor_centavos) {
+    // A linha criada no checkout carrega o valor combinado na hora —
+    // checar contra config.valor_centavos rejeitaria qualquer preço
+    // diferente do padrão (desconto de indicação, reajuste antigo).
+    const preferenciaId = pagamento.metadata?.preferencia_id
+    const { data: linhaCheckout } = preferenciaId
+      ? await service
+          .from("pagamentos")
+          .select("id, valor")
+          .eq("mp_preference_id", preferenciaId)
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle()
+      : { data: null }
+
+    const valorEsperado = linhaCheckout?.valor ?? config.valor_centavos
+
+    if (Math.round(pagamento.transaction_amount * 100) !== valorEsperado) {
       console.error("webhook: valor inesperado no pagamento", paymentId, pagamento.transaction_amount)
       return NextResponse.json({ ok: true })
     }
@@ -87,7 +103,23 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true })
     }
 
-    await registrar(paymentId, "approved", userId)
+    if (linhaCheckout) {
+      // Atualiza a linha do checkout em vez de criar outra — a tabela
+      // fica com uma linha por compra, ligada ao payment id do MP.
+      await service
+        .from("pagamentos")
+        .update({ mp_payment_id: paymentId, status: "approved", updated_at: new Date().toISOString() })
+        .eq("id", linhaCheckout.id)
+    } else {
+      await registrar(paymentId, "approved", userId, valorEsperado)
+    }
+
+    // Indicação consumida: o desconto foi usado nesta compra.
+    await service
+      .from("indicacoes")
+      .update({ status: "usada", usada_em: new Date().toISOString() })
+      .eq("indicado_id", userId)
+      .eq("status", "pendente")
 
     return NextResponse.json({ ok: true })
   } catch (e) {

@@ -6,7 +6,7 @@ import { ArrowUpRight, Check, FileQuestion, X } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import type { Profile, Question, UserAnswer, Material } from "@/types"
 import { calcularStreakSemana } from "@/lib/streak"
-import { cn } from "@/lib/utils"
+import { cn, diasAte } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
 import {
   Badge,
@@ -186,6 +186,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="space-y-5">
+          <ProvaPanel dataProva={profile?.data_prova ?? null} loading={loading} />
           <SemanaPanel dias={streak} diaIdx={diaIdx} loading={loading} />
           {material && <SugestaoPanel material={material} />}
         </div>
@@ -284,6 +285,91 @@ function AtividadeRecente({
           <ArrowUpRight size={13} strokeWidth={2} />
         </Link>
       </PanelFooter>
+    </Panel>
+  )
+}
+
+/* ── Prova ──────────────────────────────────────────────────── */
+
+/**
+ * Contagem regressiva até a prova (profiles.data_prova — guardada no
+ * onboarding e até agora nunca exibida). Sem data, vira o convite
+ * para defini-la: a contagem só existe se a data existir.
+ */
+function ProvaPanel({ dataProva, loading }: { dataProva: string | null; loading: boolean }) {
+  if (loading) {
+    return (
+      <Panel>
+        <Skeleton className="h-3 w-24" />
+        <Skeleton className="mt-3 h-9 w-20" />
+        <Skeleton className="mt-2 h-3 w-36" />
+      </Panel>
+    )
+  }
+
+  if (!dataProva) {
+    return (
+      <Panel>
+        <div className="flex items-baseline justify-between">
+          <h3 className="text-sm font-semibold text-fg">Dia da prova</h3>
+        </div>
+        <p className="mt-2 text-sm text-fg-subtle">
+          Defina a data da sua prova para acompanhar a contagem e ajustar o plano de estudos.
+        </p>
+        <Button
+          variant="secondary"
+          className="mt-3"
+          size="sm"
+          onClick={() => (window.location.href = "/onboarding")}
+        >
+          Definir data da prova
+        </Button>
+      </Panel>
+    )
+  }
+
+  const dias = diasAte(dataProva)
+  const dataFormatada = new Date(`${dataProva}T00:00:00`).toLocaleDateString("pt-BR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })
+
+  return (
+    <Panel>
+      <div className="flex items-baseline justify-between gap-2">
+        <h3 className="text-sm font-semibold text-fg">Dia da prova</h3>
+        {dias >= 0 && dias <= 30 ? (
+          <Badge tone="caution">Reta final</Badge>
+        ) : (
+          <Badge>Ritmo constante</Badge>
+        )}
+      </div>
+
+      {dias < 0 ? (
+        <>
+          <p className="mt-3 text-2xl font-semibold text-fg">Boa prova!</p>
+          <p className="mt-1 text-xs text-fg-subtle">Sua prova foi em {dataFormatada}.</p>
+        </>
+      ) : (
+        <>
+          <p className="mt-3 text-4xl font-semibold tabular-nums text-fg">
+            {dias}
+            <span className="ml-1.5 text-sm font-normal text-fg-subtle">
+              {dias === 1 ? "dia" : "dias"}
+            </span>
+          </p>
+          <p className="mt-1 text-xs text-fg-subtle">
+            {dias === 0 ? "é hoje · " : ""}
+            {dataFormatada}
+          </p>
+          {dias > 0 && dias <= 30 && (
+            <p className="mt-2 text-xs text-fg-muted">
+              Último mês: priorize revisão e simulados cronometrados.
+            </p>
+          )}
+        </>
+      )}
     </Panel>
   )
 }

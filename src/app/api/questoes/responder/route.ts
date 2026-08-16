@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import { requireUser } from "@/lib/supabase/auth"
 import { createServiceClient } from "@/lib/supabase/service"
+import { PONTOS, registrarPontosLiga } from "@/lib/liga"
 
 /**
  * POST /api/questoes/responder
@@ -68,6 +69,14 @@ export async function POST(request: Request) {
     console.error("responder: erro ao salvar resposta", error)
     return NextResponse.json({ error: "Falha ao registrar a resposta" }, { status: 500 })
   }
+
+  // Liga da semana: respondeu soma 1, acertou soma mais 2. Falha
+  // silenciosa — ponto é enfeite, resposta é o produto.
+  await registrarPontosLiga(
+    service,
+    user.id,
+    PONTOS.RESPOSTA + (correto ? PONTOS.ACERTO : 0)
+  )
 
   return NextResponse.json({ ok: true })
 }
