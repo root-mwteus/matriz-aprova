@@ -461,18 +461,41 @@ h1 { letter-spacing: -0.028em; }
   @apply inline-flex items-center gap-1.5 text-xs font-mono font-medium tracking-wider uppercase px-2.5 py-1 rounded-md;
 }
 
+/* Destaques de headline. A faixa lime é o marca-texto da marca; em
+   dark ela fica translúcida porque texto claro sobre lime sólido
+   perde contraste. `box-decoration-break: clone` preserva o estilo
+   quando a frase quebra de linha. */
 .highlight-lime {
-  background: linear-gradient(120deg, #c8ff3d 0%, #c8ff3d 100%);
+  background-image: linear-gradient(120deg, rgba(200, 255, 61, 0.95), rgba(200, 255, 61, 0.8));
   background-repeat: no-repeat;
-  background-size: 100% 40%;
-  background-position: 0 85%;
-  padding: 0 2px;
+  background-size: 100% 0.42em;
+  background-position: 0 82%;
+  padding: 0 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  animation: highlight-sweep 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+.dark .highlight-lime {
+  background-image: linear-gradient(120deg, rgba(200, 255, 61, 0.3), rgba(200, 255, 61, 0.16));
 }
 .highlight-invert {
   background: #0e1117;
   color: #c8ff3d;
-  padding: 0 4px;
-  border-radius: 4px;
+  padding: 0.02em 0.18em;
+  border-radius: 0.16em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  box-shadow: 0.12em 0.12em 0 rgba(200, 255, 61, 0.9);
+}
+.dark .highlight-invert {
+  box-shadow: 0.12em 0.12em 0 rgba(200, 255, 61, 0.35);
+}
+
+@keyframes highlight-sweep {
+  from { background-size: 0% 0.42em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .highlight-lime { animation: none; }
 }
 
 .faq-toggle {

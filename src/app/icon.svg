@@ -1,4 +1,11 @@
+<!-- Marca da Matriz Aprovação: a mesma grade 2×2 do header —
+     três células apagadas, uma acesa em lime. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <rect width="32" height="32" rx="8" fill="#C2F04C"/>
-  <path d="M8 23V9h3.4l4.6 7.4L20.6 9H24v14h-3.2v-8.7L16.6 21h-1.2l-4.2-6.7V23H8z" fill="#16210A"/>
+  <rect width="32" height="32" rx="8" fill="#0E1117"/>
+  <g fill="#F4F1EA" fill-opacity="0.3">
+    <rect x="7" y="7" width="8.5" height="8.5" rx="1.8"/>
+    <rect x="16.5" y="7" width="8.5" height="8.5" rx="1.8"/>
+    <rect x="7" y="16.5" width="8.5" height="8.5" rx="1.8"/>
+  </g>
+  <rect x="16.5" y="16.5" width="8.5" height="8.5" rx="1.8" fill="#C8FF3D"/>
 </svg>

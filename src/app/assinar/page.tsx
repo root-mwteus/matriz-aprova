@@ -441,7 +441,7 @@ export default function AssinarPage() {
         </main>
 
         <footer className="pb-4 text-center text-xs text-fg-faint">
-          © {new Date().getFullYear()} {SITE_NAME.toLowerCase().replace(/\s+/g, "")}.com.br · Acesso vitalício · Pagamento único
+          © {new Date().getFullYear()} matrizaprova.com · Acesso vitalício · Pagamento único
         </footer>
       </div>
     </div>

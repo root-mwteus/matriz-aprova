@@ -1,0 +1,168 @@
+# CONTEXT — MATRIZ APROVA
+
+Documento único de contexto do projeto. Leia este arquivo para entender a base
+sem explorar o código todo. Mantenha atualizado ao mudar arquivos, tabelas ou rotas.
+
+## Visão geral
+
+Plataforma de estudos para concursos (site vitrine + painel pago). Plano pago é
+**vitalício** via Mercado Pago Checkout Pro; usuários novos entram como plano
+**demo** (100% trancado — `ROTAS_LIBERADAS = []` em `src/components/PaywallLock.tsx`).
+O conteúdo do produto: questões com alternativas A–E (KaTeX), simulados com
+correção no servidor, materiais em PDF, editais com alertas, plano de estudos por IA
+(OpenAI), cronômetro, comunidade (chat/grupos/ranking), ligas semanais, duelos 1v1.
+
+Código, comentários, nomes de rota/tabela e textos de UI: **pt-BR**. Sem comentários
+desnecessários em código novo (comentários de "porquê" em blocos são aceitos e usados).
+
+## Stack
+
+- **Next.js 14.2.4** (App Router, `src/app`), React 18, TypeScript 5.4
+- **Supabase**: Auth (email+senha, Google OAuth, PKCE), Postgres (RLS), Storage, Realtime
+  - `@supabase/ssr 0.4.0` + `@supabase/supabase-js 2.43`
+  - Clients: `src/lib/supabase/client.ts` (browser PKCE), `server.ts` (server/cookies),
+    `service.ts` (service-role, bypass RLS), `auth.ts` (requireUser/requireUserSupabase),
+    `session.ts` (sessão única), `register-session.ts`, `admin.ts` (requireAdmin via service role)
+- **Mercado Pago** Checkout Pro (webhook com assinatura HMAC) — `src/lib/mercadopago.ts`
+- **Resend** e-mails transacionais — `src/lib/email.ts`
+- **OpenAI** geração de plano de estudos — `src/lib/gerar-plano` (fallback local)
+- **UI**: Tailwind 3, framer-motion, lucide-react, sonner (toasts), recharts (gráficos),
+  katex (LaTeX em questões), UI kit em `src/components/ui/`
+- **Sentry** + Vercel Analytics; vitest para testes (`npm test`)
+
+## Comandos
+
+```bash
+npm run dev        # dev server
+npm test           # vitest run (testes em src/**/__tests__/*.test.ts)
+npm run lint       # next lint
+npx tsc --noEmit   # typecheck
+npm run build      # produção
+```
+
+Validação esperada antes de concluir feature: **58/58 testes, lint limpo, tsc limpo.**
+
+## Rotas do app (`src/app`)
+
+### Públicas / marketing
+- `/` landing, `/concursos` `/oab` `/militar` `/enem` (áreas), `/assinar` (checkout),
+  `/termos` `/privacidade`, `/login` `/cadastro` `/recuperar-senha` (AuthShell),
+  `/onboarding` (pós-cadastro), `/auth/redefinir-senha`
+
+### Painel `(dashboard)` — protegidas por middleware (`PROTECTED_ROUTES` em `src/lib/routes.ts`)
+- `/dashboard` `/plano` `/seguranca` `/cronometro` `/materiais` `/editais` `/estatisticas`
+- `/questoes` `/questoes/resolver` `/questoes/[id]` `/questoes/historico`
+- `/simulados` `/simulados/[id]` `/simulados/resultado/[id]` `/simulados/ranking`
+- `/comunidade` `/comunidade/[id]` `/comunidade/ligas` `/comunidade/duelos`
+- Layout único `DashboardShell`: sidebar, breadcrumbs, CommandPalette (⌘K),
+  PaywallBanner + PaywallLock (demo) + SecaoLock (bloqueio admin por seção)
+
+### Admin `/admin` — `requireAdmin` no middleware
+- `/admin/dashboard` `/admin/usuarios` `/admin/usuarios/[id]` `/admin/financeiro`
+  `/admin/questoes(+novo,editar)` `/admin/simulados` `/admin/editais` `/admin/materiais`
+  `/admin/cursos(+[id])` `/admin/bloqueios`
+- Nav e breadcrumbs em `src/app/admin/layout.tsx` (`navGroups` + `labels`)
+
+## APIs (`src/app/api`)
+
+- `auth/sessao` — registra sessão + evento de login + e-mail de alerta
+- `pagamentos/checkout` — preferência MP (preço da config, desconto de indicação, idempotente)
+- `pagamentos/webhook` — HMAC, valida valor/status, idempotente por `mp_payment_id`, sempre 200
+- `pagamentos/config` — público (preço/título)
+- `questoes/responder` — valida no servidor, vitalício apenas
+- `simulados/ranking` · `simulados/[id]/finalizar` — scoring no servidor, anti-cheat, máx 3h
+- `seguranca/logins` — histórico + sessão atual
+- `comunidade/*` — chat, grupos, membros, ligas (`ranking_liga`), ranking, nomes em lote
+- `duelos` · `duelos/[id]` · `duelos/[id]/responder` — fila rápida com UPDATE condicional
+- `indicacoes` — GET código/usos, POST registra (UNIQUE por indicado)
+- `gerar-plano` — OpenAI + fallback local
+- `materiais/[id]/baixar` — signed URL 60s, vitalício
+- `email/boas-vindas` — rate limit 5/h, só e-mail da própria sessão
+- `cron/editais-alertas` — Bearer CRON_SECRET, dedupe por PK `edital_alertas`
+- `admin/*` — dashboard, usuarios/[id], simulados, pagamentos, pagamentos/config (PUT valor texto "49,99")
+
+## Componentes principais (`src/components`)
+
+- `DashboardShell` — shell do painel (drawer, dark, breadcrumbs); empilha
+  `PaywallLock` > `SecaoLock` > children
+- `Sidebar`, `CommandPalette`, `PageHeader`
+- `PaywallBanner` (dispensável, localStorage `paywall_dispensado`), `PaywallLock`
+  (blur+cadeado, `ROTAS_LIBERADAS = []`), `SecaoLock` (lê `bloqueios_secao`, só visual)
+- `LatexText` (KaTeX, 4 delimitadores + fallback Unicode)
+- `comunidade/Chat` (Realtime `mensagens`, presence, digitando), `comunidade/Ranking`
+- `AuthShell`, `GoogleButton`, `PasswordInput`, `ThemeToggle`
+- Admin: `QuestaoForm`, `UploadZone`, `AdminTable`, `MetricCard`, `ConfirmModal`, `StatusBadge`
+- UI kit: `src/components/ui/` (Button, Field, Panel, Badge, Skeleton, Stat, Modal,
+  Menu, Tooltip, Tabs, Table/DataTable/Pagination, Toolbar/FilterSelect, EmptyState, IconButton)
+- Charts: `src/components/charts/ChartKit.tsx` (useChartTheme lê CSS vars `--chart-1..4`,
+  ChartFrame com alternativa em tabela p/ acessibilidade)
+
+## Lib (`src/lib`)
+
+- `constants.ts` — SITE_NAME, 12 MATERIAS, 8 BANCAS, 4 AREAS, 11 ANOS
+- `navigation.ts` — 3 grupos (Estudar/Conteúdo/Acompanhar), breadcrumbs, `isRouteActive`
+- `routes.ts` — `PROTECTED_ROUTES`, `AUTH_ROUTES`, `PUBLIC_ROUTES`
+- `auth-validation.ts` — zod: login/register/forgot/redefinirSenha
+- `mercadopago.ts` — Checkout Pro; `isTestMode` (TEST-); HMAC webhook; parse payment_id
+- `email.ts` — Resend: `sendBoasVindas`, `sendAlertaEdital`, `sendAvisoLogin`;
+  FROM `onboarding@resend.dev` (dev) vs `noreply@matrizaprova.com` (prod)
+- `liga.ts` — PONTOS (resposta 1, acerto 2, simulado 5, duelo 10/5/2); semana inicia 2ª UTC
+- `duelo.ts` — 5 questões, busca 2min, partida 10min, desempate por tempo
+- `bloqueios.ts` — `SECOES_PAINEL` (8 seções) + `secaoDaRota` (prefixo mais longo)
+- `pagamentos-config.ts` — `config_pagamentos` id=1; `formatarValor`, `parseValorParaCentavos`,
+  desconto indicação 10% (`desconto_indicacao_pct`)
+- `login-alert.ts` — UA parsing, IP de headers, `notifyLogin`, `registrarLoginEvento`
+- `supabase/` — client, server, service, auth, session, register-session, admin
+- `utils.ts` — `cn`, `diasAte`, formatadores
+
+## Banco de dados (Supabase)
+
+Migrações em `supabase/supabase-migration-NNN-*.sql` (avulsas, **não** em
+`supabase/migrations/`). `supabase-schema.sql` consolidado está DESATUALIZADO
+(a partir da 013+; as migrações são a fonte da verdade).
+
+**Tabelas:** `profiles` (plano demo/vitalício, `suspended`, `codigo_indicacao`),
+`questions` (5 alternativas, matéria/banca/área), `user_answers`, `simulations`,
+`pagamentos` (referencia `config_pagamentos.valor` no webhook), `config_pagamentos`
+(id=1, singleton), `editais`, `edital_alertas` (PK dedupe alertas),
+`courses`/`modules`/`lessons`/`progress`, `materials`, `mensagens`/`grupos`/`membros`,
+`study_sessions`, `study_plans`, `user_sessions` (sessão única), `login_events`,
+`liga_pontos`, `duelos`, `indicacoes` (código de indicação + usos), `bloqueios_secao`
+(secao PK, bloqueado, mensagem).
+
+**Funções:** `is_admin()` (SECURITY DEFINER), `gerar_codigo_indicacao()`,
+`ranking_questoes`, `ranking_grupo`, `ranking_liga`, `somar_pontos_liga`.
+
+**RLS:** por usuário em profiles/user_answers/simulations; admin via `profiles.role = 'admin'`
+(escrita de questões/editais/bloqueios); leitura de bloqueios para qualquer autenticado;
+escritas de sessão/indicacoes/login_events via service role (sem policy client).
+
+**Storage:** `materiais` (privado), `questoes-figuras` (público), `pdf-provas` (privado).
+
+## Integrações / env (`NEXT_PUBLIC_SUPABASE_URL`, `..._ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`,
+`NEXT_PUBLIC_SITE_URL`, `OPENAI_API_KEY`, `RESEND_API_KEY`, `CRON_SECRET`,
+`MERCADOPAGO_ACCESS_TOKEN`, `MERCADOPAGO_WEBHOOK_SECRET`, `NEXT_PUBLIC_SENTRY_DSN`,
+`SENTRY_AUTH_TOKEN`)
+
+- Vercel: cron `/api/cron/editais-alertas` `0 12 * * *` (região `gru1`)
+- `SUPABASE_SERVICE_ROLE_KEY` é necessária para registrar sessão/indicacao/login_event
+- `CRON_SECRET` obrigatória no cron (Bearer) — sem ela o cron recusa tudo
+
+## Status de migrações (pendências de deploy)
+
+Criadas e validadas em código, **NÃO aplicadas** no Supabase ainda:
+- `017-sessao-unica` (user_sessions)
+- `018-alertas-dispositivos` (edital_alertas, login_events)
+- `019-ligas-duelos` (liga_pontos, duelos, RPCs)
+- `020-indicacoes` (indicacoes, codigo_indicacao, desconto_indicacao_pct)
+- `021-bloqueios-secao` (bloqueios_secao + seed)
+
+Passos para ativação em produção: rodar migrações em ordem no SQL Editor do Supabase,
+configurar `SUPABASE_SERVICE_ROLE_KEY` e `CRON_SECRET` (local + Vercel), fazer deploy.
+
+## Regras de trabalho
+
+- Antes de implementar, apresentar plano (skill `implementation-planner`); aguardar aprovação.
+- Usar `SECOES_PAINEL` como fonte da verdade p/ seções do painel; adicionar novas seções lá + seed.
+- Validação final sempre: `npm test`, `npm run lint`, `npx tsc --noEmit`.
+- Nunca commitar sem pedido explícito. Não criar arquivos de docs sem pedido (este arquivo foi pedido).
