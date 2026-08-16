@@ -67,6 +67,13 @@ export default function DuelosPage() {
         if (data.precisaPlano) setPrecisaPlano(true)
         throw new Error(data.error ?? "Falha ao buscar oponente")
       }
+      // Quem puxa o pareamento recebe a partida pronta na resposta —
+      // vai direto pras questões, sem passar pela fase de espera.
+      if (data.status === "ativo" && data.duelo) {
+        setDuelo(data.duelo)
+        setFase("partida")
+        return
+      }
       setFase("buscando")
       setDuelo({ id: data.id, status: data.status })
     } catch (e) {
