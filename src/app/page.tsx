@@ -59,7 +59,7 @@ export default function HomePage() {
             <div className="lg:col-span-7 animate-rise">
               <div className="inline-flex items-center gap-2 bg-ink dark:bg-lime text-paper dark:text-ink px-3 py-1.5 rounded-full mb-6 shadow-lg">
                 <span className="w-1.5 h-1.5 bg-lime dark:bg-ink rounded-full pulse-soft"></span>
-                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest font-semibold">+4.812 aprovados em 2024 e 2025</span>
+                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest font-semibold">Plataforma Desenvolvida por Aprovados.</span>
               </div>
 
               <h1 id="hero-title" className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-ink dark:text-paper leading-[1.02] tracking-tight">

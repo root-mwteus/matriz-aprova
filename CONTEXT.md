@@ -25,7 +25,8 @@ desnecessários em código novo (comentários de "porquê" em blocos são aceito
     `session.ts` (sessão única), `register-session.ts`, `admin.ts` (requireAdmin via service role)
 - **Mercado Pago** Checkout Pro (webhook com assinatura HMAC) — `src/lib/mercadopago.ts`
 - **Resend** e-mails transacionais — `src/lib/email.ts`
-- **OpenAI** geração de plano de estudos — `src/lib/gerar-plano` (fallback local)
+- **OpenAI** refino de focos do plano de estudos — `src/lib/gerar-plano`
+  (gerador determinístico por semanas com curadoria; IA opcional, fallback local)
 - **UI**: Tailwind 3, framer-motion, lucide-react, sonner (toasts), recharts (gráficos),
   katex (LaTeX em questões), UI kit em `src/components/ui/`
 - **Sentry** + Vercel Analytics; vitest para testes (`npm test`)
@@ -40,7 +41,7 @@ npx tsc --noEmit   # typecheck
 npm run build      # produção
 ```
 
-Validação esperada antes de concluir feature: **58/58 testes, lint limpo, tsc limpo.**
+Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc limpo.**
 
 ## Rotas do app (`src/app`)
 
@@ -75,7 +76,9 @@ Validação esperada antes de concluir feature: **58/58 testes, lint limpo, tsc 
 - `comunidade/*` — chat, grupos, membros, ligas (`ranking_liga`), ranking, nomes em lote
 - `duelos` · `duelos/[id]` · `duelos/[id]/responder` — fila rápida com UPDATE condicional
 - `indicacoes` — GET código/usos, POST registra (UNIQUE por indicado)
-- `gerar-plano` — OpenAI + fallback local
+- `gerar-plano` — curadoria por concurso + semanas até a prova, persistência
+  em `planos_estudo`/`plano_semanas`, refino de focos via IA (fallback local)
+- `plano/desbloquear-semana` — liberação progressiva de semanas (concluída OU data passou)
 - `materiais/[id]/baixar` — signed URL 60s, vitalício
 - `email/boas-vindas` — rate limit 5/h, só e-mail da própria sessão
 - `cron/editais-alertas` — Bearer CRON_SECRET, dedupe por PK `edital_alertas`
@@ -109,6 +112,10 @@ Validação esperada antes de concluir feature: **58/58 testes, lint limpo, tsc 
 - `liga.ts` — PONTOS (resposta 1, acerto 2, simulado 5, duelo 10/5/2); semana inicia 2ª UTC
 - `duelo.ts` — 5 questões, busca 2min, partida 10min, desempate por tempo
 - `bloqueios.ts` — `SECOES_PAINEL` (8 seções) + `secaoDaRota` (prefixo mais longo)
+- `gerar-plano/` — `planos-concursos.ts` (curadoria de 21 concursos, `PLANO_PADRAO`,
+  `encontrarConcurso`, `concursosPorArea`), `gerar-plano.ts` (gerador determinístico
+  por semanas, 3 fases, `calcularSemanas` 1–52), `prompt.ts` (refino de focos via IA,
+  `gpt-4o-mini`, nunca lança)
 - `pagamentos-config.ts` — `config_pagamentos` id=1; `formatarValor`, `parseValorParaCentavos`,
   desconto indicação 10% (`desconto_indicacao_pct`)
 - `login-alert.ts` — UA parsing, IP de headers, `notifyLogin`, `registrarLoginEvento`
@@ -126,7 +133,10 @@ Migrações em `supabase/supabase-migration-NNN-*.sql` (avulsas, **não** em
 `pagamentos` (referencia `config_pagamentos.valor` no webhook), `config_pagamentos`
 (id=1, singleton), `editais`, `edital_alertas` (PK dedupe alertas),
 `courses`/`modules`/`lessons`/`progress`, `materials`, `mensagens`/`grupos`/`membros`,
-`study_sessions`, `study_plans`, `user_sessions` (sessão única), `login_events`,
+`study_sessions`, `study_plans` (legado, 1 semana), `planos_estudo` (concurso,
+data_prova, horas_por_dia, semanas_total, semana_liberada) + `plano_semanas`
+(plano_id, numero, semana_inicio, foco, tarefas jsonb, concluido),
+`user_sessions` (sessão única), `login_events`,
 `liga_pontos`, `duelos`, `indicacoes` (código de indicação + usos), `bloqueios_secao`
 (secao PK, bloqueado, mensagem).
 
@@ -156,6 +166,7 @@ Criadas e validadas em código, **NÃO aplicadas** no Supabase ainda:
 - `019-ligas-duelos` (liga_pontos, duelos, RPCs)
 - `020-indicacoes` (indicacoes, codigo_indicacao, desconto_indicacao_pct)
 - `021-bloqueios-secao` (bloqueios_secao + seed)
+- `022-planos-semanas` (planos_estudo, plano_semanas, profiles.concurso_alvo)
 
 Passos para ativação em produção: rodar migrações em ordem no SQL Editor do Supabase,
 configurar `SUPABASE_SERVICE_ROLE_KEY` e `CRON_SECRET` (local + Vercel), fazer deploy.

@@ -51,6 +51,7 @@ export async function GET(_request: Request, { params }: { params: { id: string 
     { data: respostas },
     { data: datasAtividade },
     { count: planos },
+    { count: planosSemanais },
     { count: aulasConcluidas },
     { data: simulacoes },
     { data: pagamentos },
@@ -58,6 +59,7 @@ export async function GET(_request: Request, { params }: { params: { id: string 
     supabase.from("user_answers").select("question_id, correto, tempo_segundos, created_at").eq("user_id", params.id).order("created_at", { ascending: false }).limit(200),
     supabase.from("user_answers").select("created_at").eq("user_id", params.id).gte("created_at", trintaDiasAtras.toISOString()),
     supabase.from("study_plans").select("*", { count: "exact", head: true }).eq("user_id", params.id),
+    supabase.from("planos_estudo").select("*", { count: "exact", head: true }).eq("user_id", params.id),
     supabase.from("progress").select("*", { count: "exact", head: true }).eq("user_id", params.id).eq("concluido", true),
     supabase.from("simulations").select("id, questoes, pontuacao, tempo_total, created_at").eq("user_id", params.id).not("pontuacao", "eq", -1).order("created_at", { ascending: false }).limit(20),
     supabase.from("pagamentos").select("*").eq("user_id", params.id).order("created_at", { ascending: false }),
@@ -120,7 +122,7 @@ export async function GET(_request: Request, { params }: { params: { id: string 
   return NextResponse.json({
     perfil,
     resumo: {
-      planos: planos ?? 0,
+      planos: (planos ?? 0) + (planosSemanais ?? 0),
       aulasConcluidas: aulasConcluidas ?? 0,
       simulados: simulados.length,
     },
