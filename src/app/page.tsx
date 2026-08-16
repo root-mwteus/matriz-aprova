@@ -62,7 +62,7 @@ export default function HomePage() {
                 <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest font-semibold">+4.812 aprovados em 2024 e 2025</span>
               </div>
 
-              <h1 id="hero-title" className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-ink dark:text-paper leading-[0.95]">
+              <h1 id="hero-title" className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-ink dark:text-paper leading-[1.02] tracking-tight">
                 Estude <span className="highlight-lime">o que cai.</span><br />
                 Passe <span className="highlight-invert">em menos tempo.</span>
               </h1>
@@ -543,7 +543,7 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
             <div>
               <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-5">◆ aprovados</span>
-              <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink dark:text-paper leading-[1.05]">
+              <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink dark:text-paper leading-[1.12]">
                 Nome no <span className="highlight-lime">diário oficial.</span><br />
                 Carreira no <span className="highlight-invert">serviço público.</span>
               </h2>
