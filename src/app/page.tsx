@@ -173,7 +173,7 @@ export default function HomePage() {
                     <div className="absolute -top-2 -right-2 w-16 h-16 bg-ink/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="flex items-center justify-between mb-3 relative z-10">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-[10px] uppercase tracking-widest text-ink/70 font-bold">📄 Próximo material</div>
+                        <span className="font-mono text-[10px] uppercase tracking-widest text-ink/70 font-bold">📄 Próximo material</span>
                         <span className="bg-ink text-lime font-mono text-[8px] px-2 py-0.5 rounded-full font-bold">sugerido pela IA</span>
                       </div>
                       <div className="bg-ink text-lime font-mono text-[9px] px-2 py-0.5 rounded-full font-bold">87% chance</div>

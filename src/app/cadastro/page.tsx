@@ -88,6 +88,16 @@ function RegisterContent() {
       })
     }
 
+    // Sessão única: quando o cadastro já entra logado (confirmação de
+    // e-mail desativada), registra a sessão antes de navegar. Com
+    // confirmação ativada não há sessão ainda — o link de e-mail passa
+    // pelo /auth/callback, que registra.
+    if (data.session) {
+      try {
+        await fetch(resolveApiUrl("/api/auth/sessao"), { method: "POST" })
+      } catch {}
+    }
+
     // E-mail de boas-vindas: falhar aqui não pode travar o cadastro.
     fetch(resolveApiUrl("/api/email/boas-vindas"), {
       method: "POST",

@@ -1,5 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
+import { registerCurrentSession } from "@/lib/supabase/register-session"
 import { sendBoasVindas } from "@/lib/email"
 
 export async function GET(request: NextRequest) {
@@ -36,6 +37,12 @@ export async function GET(request: NextRequest) {
 
     if (!error && data.user) {
       const user = data.user
+
+      // Sessão única: o código trocado criou uma sessão nova (Google,
+      // confirmação de e-mail ou recuperação de senha) — registra ela
+      // como a ativa antes de qualquer redirect, senão o middleware do
+      // destino já derrubaria por não ser a mais recente.
+      await registerCurrentSession(supabase)
 
       // Link de recuperação de senha: trocou o código, mas ainda falta o
       // usuário definir a nova senha — mandar direto pro /dashboard faria

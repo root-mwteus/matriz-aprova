@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
 import { loginSchema, type LoginData } from "@/lib/auth-validation"
+import { resolveApiUrl } from "@/lib/fetch-utils"
 import { safeNext } from "@/lib/utils"
 import { AuthDivider, AuthError, AuthShell } from "@/components/auth/AuthShell"
 import { GoogleButton, PasswordInput } from "@/components/auth/GoogleButton"
@@ -28,6 +29,7 @@ function LoginContent() {
   const [errors, setErrors] = useState<Partial<Record<keyof LoginData | "api", string>>>({})
   const [loading, setLoading] = useState(false)
   const contaSuspensa = searchParams.get("suspenso") === "1"
+  const sessaoSubstituida = searchParams.get("sessao") === "1"
   const next = safeNext(searchParams.get("next"))
 
   function validate(): boolean {
@@ -70,6 +72,13 @@ function LoginContent() {
       return
     }
 
+    // Sessão única: registra ESTA sessão como a ativa da conta. Tem que
+    // ser antes do push — o middleware da rota de destino já vai conferir
+    // se ela é a mais recente.
+    try {
+      await fetch(resolveApiUrl("/api/auth/sessao"), { method: "POST" })
+    } catch {}
+
     router.push(safeNext(searchParams.get("next")) ?? "/dashboard")
     router.refresh()
   }
@@ -94,6 +103,14 @@ function LoginContent() {
         <div className="mb-4">
           <AuthError>
             Sua conta foi suspensa. Entre em contato com o suporte para mais informações.
+          </AuthError>
+        </div>
+      )}
+
+      {sessaoSubstituida && (
+        <div className="mb-4">
+          <AuthError>
+            Sua conta foi conectada em outro dispositivo. Para continuar aqui, entre novamente.
           </AuthError>
         </div>
       )}

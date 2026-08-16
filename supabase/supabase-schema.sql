@@ -602,3 +602,23 @@ CREATE POLICY "Apenas admin exclui editais"
 
 CREATE INDEX idx_editais_area_concurso ON public.editais(area_concurso);
 CREATE INDEX idx_editais_status ON public.editais(status);
+
+-- ============================================================
+-- 17. USER_SESSIONS (sessão única por conta)
+--
+-- Guarda qual é a sessão ativa de cada usuário (claim `session_id`
+-- do access token). No login a nova sessão sobrescreve a anterior;
+-- middleware e rotas /api derrubam a sessão que não casa com o
+-- registro. Escrita é exclusiva da service role.
+-- ============================================================
+CREATE TABLE public.user_sessions (
+  user_id    uuid PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  session_id text NOT NULL,
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.user_sessions ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Usuário lê apenas a própria sessão"
+  ON public.user_sessions FOR SELECT TO authenticated
+  USING (auth.uid() = user_id);

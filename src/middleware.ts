@@ -1,6 +1,7 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 import { AUTH_ROUTES, PROTECTED_ROUTES } from "@/lib/routes"
+import { isSessionRevoked } from "@/lib/supabase/session"
 
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
@@ -70,6 +71,26 @@ export async function middleware(request: NextRequest) {
       url.pathname = "/login"
       url.searchParams.set("suspenso", "1")
       return NextResponse.redirect(url)
+    }
+
+    /**
+     * Sessão única: outro dispositivo entrou na conta e registrou outra
+     * sessão. Não há chamada ao GoTrue aqui — o refresh token antigo até
+     * continua válido lá, mas o check de session_id o rejeita em qualquer
+     * rota protegida/API; basta limpar o cookie local para o usuário cair
+     * na tela de login sem risco de loop.
+     */
+    if (await isSessionRevoked(supabase)) {
+      const url = request.nextUrl.clone()
+      url.pathname = "/login"
+      url.searchParams.set("sessao", "1")
+      const redirect = NextResponse.redirect(url)
+      request.cookies.getAll().forEach((cookie) => {
+        if (cookie.name.startsWith("sb-") && cookie.name.includes("auth-token")) {
+          redirect.cookies.set({ name: cookie.name, value: "", path: "/", maxAge: 0 })
+        }
+      })
+      return redirect
     }
 
     if (isAdminRoute && profile?.role !== "admin") {
