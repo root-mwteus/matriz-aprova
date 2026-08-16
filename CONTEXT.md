@@ -67,6 +67,9 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
 ## APIs (`src/app/api`)
 
 - `auth/sessao` — registra sessão + evento de login + e-mail de alerta
+- `auth/recuperar-senha` — POST público; gera link recovery via admin client
+  (`generateLink`) e envia pela Resend (`sendRecuperarSenha`); resposta neutra
+  p/ não vazar cadastros; rate-limit 5/h por IP
 - `pagamentos/checkout` — preferência MP (preço da config, desconto de indicação, idempotente)
 - `pagamentos/webhook` — HMAC, valida valor/status, idempotente por `mp_payment_id`, sempre 200
 - `pagamentos/config` — público (preço/título)
@@ -107,7 +110,8 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
 - `routes.ts` — `PROTECTED_ROUTES`, `AUTH_ROUTES`, `PUBLIC_ROUTES`
 - `auth-validation.ts` — zod: login/register/forgot/redefinirSenha
 - `mercadopago.ts` — Checkout Pro; `isTestMode` (TEST-); HMAC webhook; parse payment_id
-- `email.ts` — Resend: `sendBoasVindas`, `sendAlertaEdital`, `sendAvisoLogin`;
+- `email.ts` — Resend: `sendBoasVindas`, `sendAlertaEdital`, `sendAvisoLogin`,
+  `sendRecuperarSenha`;
   FROM `onboarding@resend.dev` (dev) vs `noreply@matrizaprova.com` (prod)
 - `liga.ts` — PONTOS (resposta 1, acerto 2, simulado 5, duelo 10/5/2); semana inicia 2ª UTC
 - `duelo.ts` — 5 questões, busca 2min, partida 10min, desempate por tempo

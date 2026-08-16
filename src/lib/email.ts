@@ -115,6 +115,34 @@ export async function sendAvisoLogin({
   })
 }
 
+/**
+ * Link de redefinição de senha. Disparado pelo endpoint
+ * /api/auth/recuperar-senha, que gera o link com o admin client (sem o
+ * Supabase enviar o e-mail dele) e entrega por aqui com o visual da casa.
+ * É transacional: sem header de descadastro.
+ */
+export async function sendRecuperarSenha({
+  nome,
+  email,
+  link,
+}: {
+  nome: string
+  email: string
+  link: string
+}) {
+  const resend = getResend()
+  if (!resend) {
+    return { data: null, error: new Error("Resend não configurado (RESEND_API_KEY ausente)") }
+  }
+  return resend.emails.send({
+    from: FROM,
+    to: email,
+    subject: "Recuperar acesso à sua conta",
+    text: recuperarSenhaText({ nome, link }),
+    html: recuperarSenhaHtml({ nome, link }),
+  })
+}
+
 function esc(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -250,6 +278,127 @@ function alertaEditalHtml({
                        style="display:inline-block;background-color:#C8FF3D;color:#0E1117;font-weight:700;font-size:14px;padding:15px 30px;border-radius:10px;text-decoration:none">
                       Ver o edital →
                     </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:32px 0 0;text-align:center">
+              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
+              <p style="margin:0;color:#6B7280;font-size:11px">
+                <a href="mailto:suporte@matrizaprova.com" style="color:#6B7280;text-decoration:none">suporte@matrizaprova.com</a>
+                &nbsp;·&nbsp;
+                <a href="https://matrizaprova.com" style="color:#6B7280;text-decoration:none">matrizaprova.com</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`
+}
+
+function recuperarSenhaText({
+  nome,
+  link,
+}: {
+  nome: string
+  link: string
+}) {
+  return `Olá, ${nome}!
+
+Você pediu para criar uma senha nova na Matriz Aprovação.
+
+Para criar a nova senha, use este link:
+${link}
+
+O link expira em 1 hora. Se você não pediu isso, ignore este email — sua senha continua a mesma.
+
+Não consegue usar o link? Copie e cole o endereço no navegador, ou peça um novo link em https://matrizaprova.com/recuperar-senha.
+
+---
+Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
+suporte@matrizaprova.com · matrizaprova.com`
+}
+
+function recuperarSenhaHtml({
+  nome,
+  link,
+}: {
+  nome: string
+  link: string
+}) {
+  const nomeEsc = esc(nome)
+  const linkEsc = esc(link)
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>Criar nova senha</title>
+</head>
+<body style="margin:0;padding:0;background-color:#EDE9E0;font-family:Arial,Helvetica,sans-serif;color:#0E1117">
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all">
+    Use o link para criar uma senha nova na sua conta.
+  </div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:32px 16px 10px">
+        <a href="https://matrizaprova.com" style="text-decoration:none">
+          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprovação"
+               style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td align="center" style="padding:16px 16px 40px">
+        <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:600px">
+
+          <tr>
+            <td style="background-color:#0E1117;border-radius:16px;padding:40px 36px;text-align:left">
+              <p style="margin:0 0 14px;color:#C8FF3D;font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:3px">redefinição de senha</p>
+              <h1 style="margin:0 0 16px;color:#FFFFFF;font-size:27px;font-weight:700;line-height:1.25">
+                Criar nova senha, ${nomeEsc}
+              </h1>
+              <p style="margin:0 0 22px;color:rgba(255,255,255,0.68);font-size:15px;line-height:1.7">
+                Você pediu para criar uma senha nova na Matriz Aprovação. O link abaixo vale por 1 hora:
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="border-radius:10px">
+                    <a href="${linkEsc}"
+                       style="display:inline-block;background-color:#C8FF3D;color:#0E1117;font-weight:700;font-size:14px;padding:15px 30px;border-radius:10px;text-decoration:none">
+                      Criar nova senha →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:22px 0 0;color:rgba(255,255,255,0.32);font-size:11px;line-height:1.5">
+                Se o botão não funcionar, copie e cole este endereço no navegador:<br>
+                <span style="color:rgba(255,255,255,0.55);word-break:break-all">${linkEsc}</span>
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:28px 0 0">
+              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td style="background-color:#FFFFFF;border:1px solid #E4DFD2;border-radius:12px;padding:20px 22px;text-align:left">
+                    <p style="margin:0 0 6px;color:#0E1117;font-size:14px;font-weight:700">Não foi você?</p>
+                    <p style="margin:0;color:#6B7280;font-size:13px;line-height:1.6">
+                      Se não foi você quem pediu, pode ignorar este email — a senha continua a mesma.
+                    </p>
                   </td>
                 </tr>
               </table>

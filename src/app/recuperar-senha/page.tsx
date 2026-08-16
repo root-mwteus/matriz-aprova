@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Link from "next/link"
 import { MailCheck } from "lucide-react"
-import { createClient } from "@/lib/supabase/client"
 import { forgotSchema, type ForgotData } from "@/lib/auth-validation"
 import { AuthError, AuthShell } from "@/components/auth/AuthShell"
 import { Button, Field, Input } from "@/components/ui"
@@ -16,7 +15,6 @@ import { Button, Field, Input } from "@/components/ui"
  * para X", o que transformava a tela num verificador de cadastros.
  */
 export default function ForgotPasswordPage() {
-  const supabase = createClient()
   const [form, setForm] = useState<ForgotData>({ email: "" })
   const [errors, setErrors] = useState<Partial<Record<keyof ForgotData | "api", string>>>({})
   const [sent, setSent] = useState(false)
@@ -43,11 +41,13 @@ export default function ForgotPasswordPage() {
     setLoading(true)
     setErrors({})
 
-    const { error } = await supabase.auth.resetPasswordForEmail(form.email, {
-      redirectTo: `${window.location.origin}/auth/callback`,
+    const res = await fetch("/api/auth/recuperar-senha", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: form.email }),
     })
 
-    if (error) {
+    if (!res.ok) {
       setErrors({ api: "Não foi possível enviar o link agora. Tente novamente em instantes." })
       setLoading(false)
       return
