@@ -74,7 +74,8 @@ CREATE POLICY "Perfil faz upload na própria pasta"
 DROP POLICY IF EXISTS "Perfil atualiza a própria pasta" ON storage.objects;
 CREATE POLICY "Perfil atualiza a própria pasta"
   ON storage.objects FOR UPDATE
-  USING (bucket_id = 'perfis' AND auth.uid()::text = (storage.foldername(name))[1]);
+  USING (bucket_id = 'perfis' AND auth.uid()::text = (storage.foldername(name))[1])
+  WITH CHECK (bucket_id = 'perfis' AND auth.uid()::text = (storage.foldername(name))[1]);
 
 DROP POLICY IF EXISTS "Perfil exclui da própria pasta" ON storage.objects;
 CREATE POLICY "Perfil exclui da própria pasta"
@@ -94,6 +95,10 @@ DROP POLICY IF EXISTS "Admin atualiza molduras no storage" ON storage.objects;
 CREATE POLICY "Admin atualiza molduras no storage"
   ON storage.objects FOR UPDATE
   USING (
+    bucket_id = 'molduras'
+    AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
+  )
+  WITH CHECK (
     bucket_id = 'molduras'
     AND EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin')
   );

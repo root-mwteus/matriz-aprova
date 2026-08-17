@@ -109,7 +109,7 @@ export default function PerfilPage() {
     setFile(file)
   }
 
-  async function salvar() {
+    async function salvar() {
     if (!profile) return
     setSalvando(true)
     setSalvo(false)
