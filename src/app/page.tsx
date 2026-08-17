@@ -145,7 +145,7 @@ export default function HomePage() {
                       <div className="flex items-center gap-2.5">
                         <div className="w-9 h-9 rounded-lg bg-area-concursos flex items-center justify-center text-ink font-display font-bold text-sm group-hover:scale-110 transition-transform">LM</div>
                         <div>
-                          <div className="text-sm font-semibold text-paper leading-tight">Olá, Luiza</div>
+                          <div className="text-sm font-semibold text-paper leading-tight">Olá, Luiza!</div>
                           <div className="font-mono text-[10px] text-paper/50">concurseira · TRT-RJ</div>
                         </div>
                       </div>
