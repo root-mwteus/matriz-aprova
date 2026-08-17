@@ -1,0 +1,362 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Português: Gramática aplicada a concursos\par}
+  \vspace{0.4cm}
+  {\sffamily\large concursos gerais, OAB, carreiras militares e ENEM\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    antes de escolher a forma correta, identifique a relação sintática que justifica a regra. A análise da função costuma resolver a questão mais rapidamente do que a memorização de listas.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad adaptação necessária ao edital e à banca\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+Em provas de Português, a gramática aparece principalmente em questões de reescrita, correção de frases, preenchimento de lacunas e análise de efeitos de sentido. A banca raramente cobra uma definição isolada sem contexto.
+
+Os pontos de maior incidência são:
+
+\begin{enumerate}
+  \item função sintática e relação entre os termos da oração;
+  \item concordância verbal e nominal em estruturas com sujeito deslocado ou oração
+\end{enumerate}
+
+   intercalada;
+
+\begin{enumerate}
+  \item regência verbal e nominal, especialmente com pronomes relativos;
+  \item emprego da crase em locuções, nomes femininos e expressões de tempo;
+  \item pontuação, colocação pronominal e manutenção do sentido na reescrita.
+\end{enumerate}
+
+\textbf{Regra de prova:} antes de escolher a forma correta, identifique a relação sintática que justifica a regra. A análise da função costuma resolver a questão mais rapidamente do que a memorização de listas.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Classes de palavras e funções sintáticas}
+
+Classe de palavra é a categoria morfológica. Função sintática é o papel que a palavra exerce na oração. A mesma classe pode desempenhar funções diferentes.
+
+Em “O servidor apresentou o relatório”, \textit{servidor} é substantivo e exerce a função de sujeito. Em “O relatório do servidor foi aprovado”, \textit{servidor} continua sendo substantivo, mas integra o complemento nominal do substantivo “relatório”.
+
+Para analisar uma oração, localize primeiro o verbo. Depois, pergunte quem pratica ou sofre a ação, qual é o complemento exigido e quais termos apenas caracterizam ou explicam outros termos.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Função} & \textbf{Pergunta útil} & \textbf{Exemplo} \\
+\midrule
+ sujeito & quem é o responsável pelo verbo? & \textbf{A equipe} revisou o texto. \\
+ objeto direto & o verbo pede o quê? & Revisou \textbf{o texto}. \\
+ objeto indireto & o verbo pede preposição? & Depende \textbf{de análise}. \\
+ complemento nominal & quem recebe o sentido de um nome? & respeito \textbf{às normas} \\
+ adjunto adnominal & quem caracteriza o nome? & \textbf{novo} relatório \\
+ adjunto adverbial & em que circunstância? & respondeu \textbf{rapidamente} \\
+ predicativo & que característica se atribui? & O relatório está \textbf{completo}. \\
+\bottomrule
+\end{tabularx}
+
+
+Não confunda complemento nominal com adjunto adnominal. O complemento nominal completa o sentido de um nome abstrato e normalmente indica o alvo da relação: “necessidade \textbf{de apoio}”, “respeito \textbf{às regras}”. O adjunto adnominal pode indicar agente, posse, origem ou característica: “apoio \textbf{do servidor}”, “regras \textbf{do edital}”.
+
+\subsection*{2. Concordância verbal}
+
+O verbo concorda, em regra, com o núcleo do sujeito, não necessariamente com a palavra mais próxima. Em “A lista de documentos foi publicada”, o núcleo é “lista”, portanto o verbo fica no singular.
+
+\subsubsection*{2.1. Sujeito composto}
+
+Com sujeito composto anteposto, o verbo vai normalmente para o plural: “A comissão e o candidato analisaram o resultado”. Quando o sujeito composto vem depois do verbo, pode haver concordância com o conjunto ou com o núcleo mais próximo, conforme a construção: “Chegaram a comissão e os candidatos” é a forma mais clara e recomendável em prova.
+
+Se os núcleos forem ligados por “ou”, observe o sentido. A exclusão admite singular: “Pedro ou Ana apresentará o recurso”. A inclusão ou a possibilidade de ambos favorece o plural: “Pedro ou Ana apresentarão propostas diferentes”.
+
+\subsubsection*{2.2. Verbos impessoais}
+
+O verbo \textit{haver}, com sentido de existir ou ocorrer, é impessoal e permanece no singular: “Havia muitas dúvidas”; “Houve mudanças no edital”. O termo posterior é objeto direto, não sujeito.
+
+O verbo \textit{fazer}, indicando tempo decorrido ou fenômeno climático, também fica no singular: “Faz três anos que o curso começou”; “Fazia dias frios naquela região”.
+
+Com o verbo \textit{existir}, há sujeito e a concordância é normal: “Existiam muitas dúvidas”; “Existiram mudanças no edital”.
+
+\subsubsection*{2.3. Partícula “se”}
+
+Quando o “se” é partícula apassivadora, o verbo concorda com o sujeito paciente: “Publicaram-se os resultados” equivale a “Os resultados foram publicados”.
+
+Quando o “se” é índice de indeterminação do sujeito, o verbo fica no singular: “Precisa-se de servidores”; “Confia-se em bons critérios”. A presença de preposição antes do termo impede a transformação para voz passiva.
+
+\subsection*{3. Concordância nominal}
+
+Adjetivos, artigos, pronomes e numerais concordam com o substantivo a que se referem. Em “foram publicadas as novas regras”, “publicadas” concorda com “regras”, ainda que o substantivo apareça depois do verbo.
+
+As expressões “é proibido”, “é necessário”, “é bom” e “é permitido” ficam invariáveis quando o substantivo é usado sem determinante: “É proibido entrada”. Com determinante, concordam: “É proibida a entrada”. Em textos formais, a forma mais segura é usar o determinante e fazer a concordância explícita.
+
+As palavras “bastante”, “meio” e “só” variam quando têm valor adjetivo ou pronominal. “Havia bastantes questões” significa “muitas questões”; “os alunos estavam bastante atentos” traz advérbio, portanto sem variação. “Ela estava meio cansada” traz advérbio; “meias palavras” traz adjetivo.
+
+\subsection*{4. Regência verbal e nominal}
+
+Regência é a relação de dependência entre um termo regente e seu complemento. Alguns verbos mudam de sentido conforme a preposição.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Verbo} & \textbf{Construção padrão} & \textbf{Exemplo} \\
+\midrule
+ assistir, ver & assistir \textbf{a} algo & Assistiu à aula. \\
+ aspirar, desejar & aspirar algo & Aspirava o cargo. \\
+ aspirar, respirar & aspirar \textbf{a} algo & Aspirou ao ar puro. \\
+ visar, ter como objetivo & visar \textbf{a} algo & A medida visa à segurança. \\
+ obedecer & obedecer \textbf{a} algo & Obedeceu às normas. \\
+ preferir & preferir X \textbf{a} Y & Prefiro revisão a improviso. \\
+ informar & informar alguém \textbf{de/sobre} algo & Informou o aluno do prazo. \\
+\bottomrule
+\end{tabularx}
+
+
+Na norma-padrão, “preferir” não deve ser intensificado por “mais”: prefira “Prefiro estudar a descansar” a “Prefiro mais estudar do que descansar”.
+
+Pronomes relativos também exigem atenção. A preposição deve aparecer antes de “que”, “quem” ou “o qual” quando o verbo ou nome a exigir: “A regra \textbf{a que} me referi foi alterada”; “O assunto \textbf{sobre o qual} conversamos é relevante”.
+
+\subsection*{5. Crase}
+
+Crase é a fusão da preposição \textit{a} com outro \textit{a}. O sinal grave indica essa fusão, não apenas a presença de uma palavra feminina.
+
+Use o teste de substituição por um termo masculino. Se surgir “ao”, haverá crase no feminino: “referiu-se \textbf{ao} edital” / “referiu-se \textbf{à} norma”. Também ocorre crase em locuções adverbiais, prepositivas e conjuntivas femininas: “à noite”, “às vezes”, “à medida que”, “à procura de”.
+
+Não ocorre crase:
+
+\begin{itemize}
+  \item antes de palavra masculina: “a prazo”, “a bordo”;
+  \item antes de verbo: “começou a estudar”;
+  \item antes de pronomes pessoais, em regra: “entregou a ela”;
+  \item quando há apenas artigo, sem preposição exigida: “visitou a escola”;
+  \item em expressões com palavras repetidas: “cara a cara”, “gota a gota”.
+\end{itemize}
+
+Com nomes próprios femininos, o uso depende da presença de artigo: “referiu-se à Bahia”, mas “viajou a Brasília”. Se o nome admite artigo, faça o teste “voltei da”: “voltei da Bahia” indica “fui à Bahia”; “voltei de Brasília” indica “fui a Brasília”.
+
+Em indicação de horas determinadas, emprega-se crase: “A prova começará às oito horas”. Em duração ou tempo futuro, a estrutura pode trazer apenas preposição: “O atendimento funciona de oito a dez horas”.
+
+\subsection*{6. Pontuação e sentido}
+
+A vírgula não deve separar sujeito e predicado nem verbo e objeto direto quando a ordem é direta: “A comissão analisou o recurso”. A vírgula pode ser necessária quando há termo intercalado: “A comissão, após a reunião, analisou o recurso”.
+
+Use vírgulas para isolar:
+
+\begin{itemize}
+  \item vocativo: “Candidato, confira os documentos”;
+  \item aposto explicativo: “Brasília, capital do país, recebe o evento”;
+  \item oração subordinada adverbial anteposta: “Quando terminar a prova, revise as respostas”;
+  \item expressão intercalada: “O resultado, segundo a comissão, será publicado hoje”.
+\end{itemize}
+
+Orações adjetivas explicativas aparecem entre vírgulas e se referem ao conjunto ou a um antecedente já definido: “Os servidores, que participaram do curso, receberam certificado”. A oração restritiva não usa vírgulas: “Os servidores que participaram do curso receberam certificado”. No segundo caso, apenas parte dos servidores participou.
+
+Os dois-pontos introduzem explicação, enumeração, citação ou consequência anunciada. O ponto e vírgula separa partes extensas ou itens de uma enumeração que já contenham vírgulas. A pontuação deve ser analisada também pelo efeito de sentido, não apenas pela pausa na leitura.
+
+\subsection*{7. Colocação pronominal}
+
+A próclise ocorre quando o pronome vem antes do verbo. Palavras atrativas como “não”, pronomes relativos, conjunções subordinativas e advérbios favorecem essa posição: “Não \textbf{se} esqueça do prazo”; “O documento que \textbf{se} perdeu foi localizado”.
+
+A mesóclise ocorre com futuro do presente ou futuro do pretérito quando não há palavra atrativa: “Publicar-se-á o resultado”; “Far-se-ia nova análise”. Em prova, se houver palavra atrativa, ela prevalece: “Não se publicará o resultado”.
+
+A ênclise aparece quando o pronome vem depois do verbo, especialmente no início de oração formal: “Apresentaram-se os documentos”. Na linguagem brasileira, a posição pode variar, mas questões de norma-padrão exigem atenção ao contexto e à presença de atratores.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item Troca o sujeito de lugar para fazer o candidato concordar com o termo mais próximo.
+  \item Usa “haver” e “existir” na mesma questão para testar a diferença entre verbo impessoal e verbo com sujeito.
+  \item Oferece duas regências possíveis, mas com sentidos diferentes, como “aspirar ao cargo” e “aspirar o ar”.
+  \item Coloca crase antes de verbo, palavra masculina ou pronome pessoal.
+  \item Retira ou acrescenta vírgulas em oração adjetiva para alterar o alcance da informação.
+  \item Mantém a frase gramatical, mas muda a relação de sentido ao substituir “embora”, “portanto”, “porque” ou “caso”.
+\end{itemize}
+
+\subsection*{Exemplos resolvidos}
+
+\subsubsection*{Exemplo 1}
+
+Analise: “Havia, no arquivo, documentos que comprovavam a alteração.”
+
+\begin{enumerate}
+  \item “Havia” tem sentido de existência e é impessoal.
+  \item “Documentos” não é sujeito; é objeto direto.
+  \item Portanto, o verbo deve permanecer no singular.
+  \item A expressão “no arquivo” está intercalada e foi corretamente isolada por
+\end{enumerate}
+
+   vírgulas.
+
+Forma incorreta: “Haviam, no arquivo, documentos...”. A concordância seria possível com “existiam”: “Existiam, no arquivo, documentos...”.
+
+\subsubsection*{Exemplo 2}
+
+Complete: “A candidata dirigiu-se \_\_\_ comissão e entregou o recurso \_\_\_ servidora responsável.”
+
+\begin{enumerate}
+  \item O verbo “dirigir-se” rege a preposição “a”.
+  \item “Comissão” e “servidora” são femininos e admitem artigo “a”.
+  \item Em ambos os casos ocorre a fusão de “a” + “a”.
+\end{enumerate}
+
+Resposta: “A candidata dirigiu-se \textbf{à comissão} e entregou o recurso \textbf{à servidora} responsável.”
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Ponto} & \textbf{Regra rápida} & \textbf{Cuidado} \\
+\midrule
+ haver = existir & singular & “existir” concorda normalmente \\
+ fazer = tempo & singular & não confundir com “fazer” comum \\
+ partícula apassivadora & verbo concorda & “vendem-se casas” \\
+ crase & preposição + artigo & não ocorre antes de verbo \\
+ vírgula & isola termos intercalados & não separa sujeito e predicado \\
+ oração restritiva & sem vírgulas & delimita o grupo mencionado \\
+ próclise & palavra atrativa antes & “não se”, “que se” \\
+ relativo & mantém a regência & “a que”, “de que”, “com quem” \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+Assinale a alternativa correta quanto à concordância verbal.
+
+A) Haviam dúvidas sobre o procedimento. B) Fazem três meses que o edital foi publicado. C) Existia novas orientações no documento. D) Havia novas orientações no documento. E) Deve haverem alterações no cronograma.
+
+\begin{alerta}
+\textbf{Gabarito: D.} “Haver”, com sentido de existir, é impessoal e fica no singular. Em A e E, “haver” também deveria ficar no singular. Em B, “fazer” indicando tempo decorrido é impessoal. Em C, “orientações” exige “existiam”.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+Complete corretamente: “O servidor informou o candidato \_\_\_ mudança e referiu-se \_\_\_ norma publicada ontem.”
+
+A) a / a B) à / à C) da / a D) sobre a / à E) à / a
+
+\begin{alerta}
+\textbf{Gabarito: D.} “Informar alguém sobre algo” é construção adequada: “informou o candidato sobre a mudança”. “Referir-se” rege a preposição “a”, que se funde ao artigo de “norma”: “à norma”.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+Assinale a frase em que a vírgula altera o sentido ao transformar a oração restritiva em explicativa.
+
+A) Os alunos que revisaram acertaram a questão. B) Os alunos, que revisaram, acertaram a questão. C) A equipe analisou o recurso ontem. D) Depois da prova, a equipe saiu. E) A equipe, ontem, analisou o recurso.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Com vírgulas, “que revisaram” passa a ser uma oração explicativa, sugerindo que todos os alunos revisaram. Sem vírgulas, a oração restringe o grupo aos alunos que revisaram.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+De acordo com a norma-padrão, assinale a alternativa correta.
+
+A) A medida visa a proteção do candidato. B) A medida visa à proteção do candidato. C) A medida visa na proteção do candidato. D) A medida visa com a proteção do candidato. E) A medida visa pela proteção do candidato.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Com sentido de ter como objetivo, “visar” rege a preposição “a”. Diante de “a proteção”, ocorre crase: “visa à proteção”.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+Em “O relatório a que o parecer se refere foi arquivado”, a preposição “a” antes do pronome relativo está presente porque:
+
+A) o substantivo “relatório” exige preposição. B) o verbo “referir-se” exige preposição. C) todo pronome relativo exige crase. D) a oração está na voz passiva. E) o termo “parecer” é sujeito oculto.
+
+\begin{alerta}
+\textbf{Gabarito: B.} O verbo “referir-se” rege a preposição “a”: referir-se a algo. O pronome relativo retoma “relatório”, formando “a que”. Não há crase porque o pronome “que” não recebe artigo feminino nesse caso.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Identifiquei o núcleo do sujeito antes de flexionar o verbo.
+  \item[$\square$] Diferenciei “haver” de “existir”.
+  \item[$\square$] Separei complemento nominal de adjunto adnominal.
+  \item[$\square$] Conferi a preposição exigida pelo verbo.
+  \item[$\square$] Usei o teste “ao” para verificar a crase.
+  \item[$\square$] Evitei separar sujeito e predicado por vírgula.
+  \item[$\square$] Diferenciei oração restritiva de explicativa.
+  \item[$\square$] Observei palavras atrativas na colocação pronominal.
+  \item[$\square$] Reanalisei o sentido depois de qualquer troca de conectivo.
+\end{itemize}
+
+\end{document}

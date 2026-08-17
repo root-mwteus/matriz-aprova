@@ -1,0 +1,393 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Matemática: Matemática geral para provas\par}
+  \vspace{0.4cm}
+  {\sffamily\large concursos gerais, carreiras militares, ENEM, escolas técnicas e vestibulares\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    transforme o enunciado em uma representação simples, mantenha as unidades compatíveis e confira se o resultado responde ao que foi perguntado.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad Cebraspe, FGV, FCC, Vunesp, EsPCEx, AFA, EEAR e ENEM\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+Matemática de prova não é uma coleção de fórmulas isoladas. A banca apresenta uma situação, exige a tradução para uma operação e cobra atenção a unidades, sinais, ordem de grandeza e interpretação. Este material reúne os tópicos mais recorrentes para construir uma base rápida e aplicável.
+
+O estudo deve priorizar: operações e frações; razão, proporção e regra de três; porcentagem; equações e sistemas; produtos notáveis e fatoração; funções; progressões; geometria; trigonometria; contagem e probabilidade; estatística; e matemática financeira. Em todos eles, registre os dados, escolha a relação adequada e só depois substitua os valores.
+
+\textbf{Regra de prova:} transforme o enunciado em uma representação simples, mantenha as unidades compatíveis e confira se o resultado responde ao que foi perguntado.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Operações, frações e ordem de cálculo}
+
+Respeite a ordem: parênteses, colchetes e chaves; potências e raízes; multiplicações e divisões; adições e subtrações. Operações no mesmo nível são feitas da esquerda para a direita. Em \texttt{18 - 2 x 5}, primeiro vem a multiplicação: \texttt{18 - 10 = 8}.
+
+Frações representam divisão. Para somar ou subtrair, use denominador comum. O mínimo múltiplo comum dos denominadores reduz o trabalho. Para multiplicar, multiplique numeradores e denominadores; para dividir, multiplique pela fração inversa. Assim, \texttt{2/3 + 5/6 = 4/6 + 5/6 = 9/6 = 3/2}, enquanto \texttt{(3/4) / (2/5) = (3/4) x (5/2) = 15/8}.
+
+Em uma fração de uma quantidade, multiplique: \texttt{3/5 de 40 = (3 x 40)/5 = 24}.
+
+Potências obedecem a \texttt{a\textasciicircum{}m x a\textasciicircum{}n = a\textasciicircum{}(m+n)}, \texttt{a\textasciicircum{}m / a\textasciicircum{}n = a\textasciicircum{}(m-n)} para \texttt{a} diferente de zero, e \texttt{(a\textasciicircum{}m)\textasciicircum{}n = a\textasciicircum{}(m x n)}. A raiz quadrada é o número não negativo cujo quadrado produz o radicando. Em provas, simplifique antes de calcular e identifique se o resultado deve ser inteiro, decimal ou fração.
+
+\subsection*{2. Razão, proporção e regra de três}
+
+Razão é uma comparação por quociente: a razão entre \texttt{a} e \texttt{b} é \texttt{a/b}, com \texttt{b} diferente de zero. Uma proporção é uma igualdade entre razões. Em \texttt{a/b = c/d}, o produto dos meios é igual ao produto dos extremos: \texttt{a x d = b x c}.
+
+Na regra de três direta, as grandezas crescem ou diminuem juntas. Se 4 cadernos custam 28 reais, 7 cadernos custam \texttt{28 x 7 / 4 = 49} reais. Na regra inversa, uma grandeza aumenta enquanto a outra diminui. Se 6 trabalhadores fazem uma tarefa em 10 dias, mantendo o mesmo ritmo, 12 trabalhadores fazem em \texttt{6 x 10 / 12 = 5} dias.
+
+Em regra de três composta, compare cada grandeza com a incógnita, marcando-a como direta ou inversa. Uma alternativa segura é montar a relação usando produtos: horas de trabalho = trabalhadores x dias x horas por dia, quando a produção é fixa. Antes de resolver, converta minutos em horas, metros em quilômetros e percentuais em números decimais quando necessário.
+
+\subsection*{3. Porcentagem}
+
+Porcentagem é uma razão de denominador 100. \texttt{p\%} equivale a \texttt{p/100}. Para calcular 18\% de 250, faça \texttt{0,18 x 250 = 45}. Um aumento de \texttt{p\%} multiplica por \texttt{1 + p/100}; uma redução multiplica por \texttt{1 - p/100}.
+
+Percentuais sucessivos não devem ser somados automaticamente. Um produto que aumenta 20\% e depois diminui 20\% termina com fator \texttt{1,20 x 0,80 = 0,96}, ou seja, redução total de 4\%. Para descobrir o percentual de variação, use \texttt{(valor final - valor inicial) / valor inicial x 100}.
+
+Em problemas de lucro, desconto e acréscimo, identifique a base: desconto de 15\% sobre 200 produz preço \texttt{200 x 0,85 = 170}. Se 170 é o preço após desconto de 15\%, o preço original não é 200; é \texttt{170/0,85 = 200}. Essa inversão aparece bastante em questões de preço e salário.
+
+\subsection*{4. Equações e sistemas}
+
+Uma equação é uma igualdade com incógnita. Preserve a igualdade fazendo a mesma operação nos dois membros. Na equação \texttt{3x - 7 = 11}, some 7 e divida por 3: \texttt{3x = 18}, portanto \texttt{x = 6}. mesma operação nos dois membros. Na equação \texttt{3x - 7 = 11}, some 7 e divida por 3: \texttt{3x = 18}, portanto \texttt{x = 6}.
+
+Na equação quadrática \texttt{ax\textasciicircum{}2 + bx + c = 0}, com \texttt{a} diferente de zero, use \texttt{delta = b\textasciicircum{}2 - 4ac} e \texttt{x = (-b mais ou menos raiz de delta)/(2a)}. Se delta é positivo, há duas raízes reais; se é zero, uma raiz real dupla; se é negativo, não há raiz real. Quando possível, fatorar é mais rápido: \texttt{x\textasciicircum{}2 - 5x + 6 = 0} vira \texttt{(x - 2)(x - 3) = 0}, logo \texttt{x = 2} ou \texttt{x = 3}.
+
+Em um sistema linear, elimine uma incógnita somando ou subtraindo equações. Para \texttt{x + y = 17} e \texttt{x - y = 5}, a soma dá \texttt{2x = 22}, então \texttt{x = 11} e \texttt{y = 6}. O método da substituição também é útil quando uma equação já está isolada. Confira os valores nas duas equações, principalmente em alternativas.
+
+\subsection*{5. Produtos notáveis e fatoração}
+
+Os produtos mais úteis são: \texttt{(a + b)\textasciicircum{}2 = a\textasciicircum{}2 + 2ab + b\textasciicircum{}2}; \texttt{(a - b)\textasciicircum{}2 = a\textasciicircum{}2 - 2ab + b\textasciicircum{}2}; e \texttt{(a + b)(a - b) = a\textasciicircum{}2 - b\textasciicircum{}2}. Também aparece \texttt{(a + b)\textasciicircum{}3 = a\textasciicircum{}3 + 3a\textasciicircum{}2b + 3ab\textasciicircum{}2 + b\textasciicircum{}3}.
+
+Fatorar é escrever uma expressão como produto. Coloque o fator comum em evidência: \texttt{6x\textasciicircum{}2 + 9x = 3x(2x + 3)}. Na diferença de quadrados, \texttt{x\textasciicircum{}2 - 25 = (x - 5)(x + 5)}. No trinômio \texttt{x\textasciicircum{}2 + bx + c}, procure dois números cuja soma seja \texttt{b} e cujo produto seja \texttt{c}. A fatoração simplifica frações algébricas, resolve equações e revela zeros de funções.
+
+\subsection*{6. Funções afim e quadrática}
+
+Uma função associa cada entrada a uma saída. Na função afim \texttt{f(x) = ax + b}, \texttt{a} é a taxa de variação e \texttt{b} é o valor inicial, pois \texttt{f(0) = b}. Se \texttt{a > 0}, a função cresce; se \texttt{a < 0}, decresce. A raiz é \texttt{x = -b/a}, quando \texttt{a} é diferente de zero. Em um gráfico, \texttt{a} é a inclinação da reta.
+
+Se dois pontos \texttt{(x1,y1)} e \texttt{(x2,y2)} são conhecidos, a taxa é \texttt{a = (y2 - y1)/(x2 - x1)}. Depois, use um dos pontos para achar \texttt{b}. Essa técnica modela tarifa fixa mais consumo, conversão de temperatura e custo de produção.
+
+A função quadrática \texttt{f(x) = ax\textasciicircum{}2 + bx + c} tem gráfico parabólico. O vértice tem abscissa \texttt{xv = -b/(2a)} e ordenada \texttt{yv = -delta/(4a)}. Se \texttt{a > 0}, o vértice é mínimo; se \texttt{a < 0}, é máximo. As raízes, quando reais, indicam os pontos em que o gráfico cruza o eixo horizontal. Em problemas de área ou lucro, o vértice frequentemente representa o valor otimizado.
+
+\subsection*{7. PA e PG}
+
+Na progressão aritmética, a diferença entre termos é constante e recebe o nome de razão \texttt{r}. O termo geral é \texttt{an = a1 + (n - 1)r} e a soma dos \texttt{n} termos é \texttt{Sn = n(a1 + an)/2}. Se \texttt{a1 = 4} e \texttt{r = 3}, então \texttt{a5 = 4 + 4 x 3 = 16}.
+
+Na progressão geométrica, cada termo é obtido multiplicando o anterior por uma razão \texttt{q}. O termo geral é \texttt{an = a1 x q\textasciicircum{}(n - 1)}. Para \texttt{q} diferente de 1, \texttt{Sn = a1(q\textasciicircum{}n - 1)/(q - 1)}. Se \texttt{|q| < 1}, a soma infinita é \texttt{S = a1/(1 - q)}. Em crescimento populacional, juros compostos e duplicações, procure PG; em aumentos constantes, procure PA.
+
+\subsection*{8. Geometria plana e espacial}
+
+Ângulos complementares somam 90 graus e suplementares somam 180 graus. A soma dos ângulos internos de um triângulo é 180 graus. Em um polígono de \texttt{n} lados, a soma é \texttt{(n - 2) x 180 graus}; cada ângulo interno de um polígono regular é essa soma dividida por \texttt{n}.
+
+Áreas essenciais: retângulo \texttt{A = base x altura}; triângulo \texttt{A = base x altura/2}; paralelogramo \texttt{A = base x altura}; trapézio \texttt{A = (base maior + base menor) x altura/2}; círculo \texttt{A = pi x r\textasciicircum{}2}. Comprimento da circunferência é \texttt{2 x pi x r}. Use \texttt{pi} conforme a questão, normalmente 3,14 ou 22/7.
+
+O teorema de Pitágoras vale no triângulo retângulo: \texttt{hipotenusa\textasciicircum{}2 = cateto1\textasciicircum{}2  + cateto2\textasciicircum{}2}. Em triângulos semelhantes, lados correspondentes são proporcionais e áreas variam com o quadrado da razão de semelhança.
+
+Volumes: prisma e cilindro \texttt{V = área da base x altura}; pirâmide e cone \texttt{V = área da base x altura/3}; esfera \texttt{V = 4 x pi x r\textasciicircum{}3/3}. Áreas laterais e totais exigem distinguir a superfície lateral da base. Em sólidos semelhantes, comprimentos variam por \texttt{k}, áreas por \texttt{k\textasciicircum{}2} e volumes por \texttt{k\textasciicircum{}3}.
+
+\subsection*{9. Trigonometria básica}
+
+Em triângulo retângulo, para um ângulo agudo: \texttt{sen = cateto oposto/hipotenusa}, \texttt{cos = cateto adjacente/hipotenusa} e \texttt{tg = cateto oposto/cateto adjacente}. Os valores notáveis são: 30 graus, \texttt{sen = 1/2}, \texttt{cos = raiz de 3/2}, \texttt{tg = raiz de 3/3}; 45 graus, \texttt{sen = cos = raiz de 2/2}, \texttt{tg = 1}; 60 graus, \texttt{sen = raiz de 3/2}, \texttt{cos = 1/2}, \texttt{tg = raiz de 3}.
+
+A identidade fundamental é \texttt{sen\textasciicircum{}2(x) + cos\textasciicircum{}2(x) = 1}. Para alturas e distâncias, faça um desenho, indique o ângulo e identifique os lados antes de escolher a razão. Se o ângulo está no solo e a altura é o lado oposto, a tangente costuma ser a mais direta.
+
+\subsection*{10. Análise combinatória e probabilidade}
+
+O princípio multiplicativo diz que, se uma escolha tem \texttt{m} opções e a seguinte tem \texttt{n}, o total é \texttt{m x n}. Permutação de \texttt{n} objetos distintos é \texttt{n!}. Arranjos de \texttt{n} elementos tomados \texttt{p} a \texttt{p} são \texttt{A(n,p) = n!/(n-p)!}. Combinações são \texttt{C(n,p) = n!/[p!(n-p)!]}, usadas quando a ordem não importa. Sempre pergunte: trocar a ordem produz resultado diferente?
+
+Probabilidade em espaço equiprovável é \texttt{P(A) = casos favoráveis/casos possíveis}. O complemento é \texttt{P(não A) = 1 - P(A)}. Para eventos independentes, multiplique probabilidades. Para eventos mutuamente exclusivos, some-as. Em situações condicionais, \texttt{P(A dado B) = P(A e B)/P(B)}. Diagramas de árvore ajudam quando há retiradas sucessivas sem reposição, pois o total muda após cada retirada.
+
+\subsection*{11. Estatística}
+
+A média aritmética é a soma dos valores dividida pela quantidade. Se os dados  têm pesos, use média ponderada: \texttt{soma(valor x peso)/soma dos pesos}. A mediana é o termo central após ordenar; com quantidade par, é a média dos dois centrais. A moda é o valor mais frequente.
+
+Amplitude é \texttt{maior valor - menor valor}. A variância mede a dispersão em torno da média e o desvio padrão é sua raiz quadrada. Para questões escolares, a leitura de gráficos exige conferir escala, unidade e se o eixo começa em zero. Uma média alta não significa que todos os valores são altos; compare também mediana e amplitude.
+
+\subsection*{12. Matemática financeira}
+
+Em juros simples, os juros incidem sempre sobre o capital inicial: \texttt{J = C x i x t} e \texttt{M = C + J = C(1 + i x t)}. Em juros compostos, há juros sobre juros: \texttt{M = C(1 + i)\textasciicircum{}t}, com \texttt{J = M - C}. A taxa e o tempo devem estar na mesma unidade. Uma taxa mensal não pode ser aplicada diretamente a um prazo anual sem conversão.
+
+Desconto simples por fora costuma usar \texttt{D = N x i x t}, em que \texttt{N} é o valor nominal, e o valor atual é \texttt{A = N - D}. Em uma sequência de descontos, use os fatores multiplicativos: desconto de 10\% seguido de 5\% deixa \texttt{0,90 x 0,95 = 0,855} do valor inicial, equivalendo a desconto total de 14,5\%.
+
+\subsubsection*{Aplicação e conferência}
+
+Nos problemas de operações, faça uma estimativa antes do cálculo exato. Se \texttt{398 x 0,24} aparece, o resultado deve ficar próximo de 100, não de 1.000. Para decimais, retire temporariamente as vírgulas, efetue a operação com inteiros e reposicione a vírgula contando as casas decimais dos fatores. Em expressões com frações, a barra deve ser entendida como parênteses: em \texttt{1/(2 + 3)}, o denominador é todo \texttt{2 + 3}, e não apenas o número 2.
+
+Na regra de três, não coloque grandezas diferentes na mesma coluna sem indicar o que está sendo comparado. Se uma receita para 4 pessoas usa 300 gramas de arroz, a relação \texttt{300/4} tem unidade gramas por pessoa. Para 10 pessoas, \texttt{300 x 10/4 = 750} gramas. Já em produtividade, mais trabalhadores diminuem o tempo, portanto o produto trabalhadores x tempo deve ser preservado. Uma tabela com setas para cima e para baixo ajuda a evitar a inversão.
+
+Em percentuais, a palavra "de" indica multiplicação. Assim, 30\% de 80 é 24, mas aumentar 80 em 30\% produz 104. Em um problema de população, saldo ou estoque, use o valor inicial como base de cada alteração. Se a base mudar, o percentual equivalente também muda. Essa é a razão de dois descontos de 10\% representarem redução de 19\%, e não de 20\%: \texttt{0,90 x 0,90 = 0,81}.
+
+Ao montar uma equação, defina a incógnita com unidade. Se \texttt{x} é a idade atual, "daqui a 5 anos" vira \texttt{x + 5}, e "há 3 anos" vira \texttt{x - 3}. Se \texttt{x} é uma quantidade de objetos, imponha que \texttt{x} seja inteiro e não negativo. Em equações com denominadores, exclua valores que zeram o denominador antes de multiplicar os dois membros. Em problemas de velocidade, use \texttt{distância = velocidade x tempo} e converta km/h para m/s multiplicando por \texttt{5/18}.
+
+Para funções, uma tabela com alguns pares \texttt{(x, f(x))} é uma forma de verificar o modelo. Na afim, diferenças iguais em intervalos iguais indicam crescimento linear. Na quadrática, diferenças de primeira ordem variam, mas diferenças de segunda ordem são constantes. O domínio pode ser restringido pelo contexto: tempo não é negativo, número de pessoas é inteiro e dimensões são positivas. Não aceite uma raiz algébrica que viola essas condições.
+
+Em progressões, identifique o índice inicial. Se a sequência começa em \texttt{a0}, o termo geral pode aparecer como \texttt{an = a0 + n x r} na PA ou \texttt{an = a0 x q\textasciicircum{}n} na PG. Compare a fórmula com os primeiros termos para não deslocar o índice. Em soma de PA, emparelhe primeiro e último termo: todos os pares têm a mesma soma. Em PG, conte quantas multiplicações separam o primeiro termo do termo solicitado.
+
+Na geometria, decomponha figuras compostas em partes conhecidas e some áreas; para regiões vazias, subtraia a área interna da externa. Perímetro mede contorno e área mede superfície, por isso não se somam diretamente. Ao ampliar um desenho, uma escala \texttt{1:50} significa que 1 unidade no desenho representa 50 na realidade; para área, o fator é \texttt{50\textasciicircum{}2}, e para volume, \texttt{50\textasciicircum{}3}. Em uma figura espacial, conte as dimensões antes de escolher a fórmula.
+
+Na trigonometria, os valores notáveis podem ser reconstruídos com os triângulos 30-60-90 e 45-45-90. Não confunda seno com cosseno: ambos usam a hipotenusa, mas trocam os catetos. Se o problema fornece dois lados e pede um ângulo, use a razão conhecida e, se necessário, a tabela ou a calculadora autorizada. Em distâncias inacessíveis, a tangente relaciona altura e distância horizontal sem exigir a hipotenusa.
+
+Na análise combinatória, conte primeiro sem restrições e depois trate as restrições. Para objetos juntos, considere o bloco; para posições proibidas, subtraia os casos inválidos. Se há repetição, a permutação de \texttt{n} objetos com repetições de quantidades \texttt{a}, \texttt{b} e \texttt{c} é \texttt{n!/(a! x b! x c!)}. Em probabilidade, uma contagem bem feita vem antes da divisão. Quando o evento pedido é "ao menos um", frequentemente é mais rápido calcular o complemento "nenhum".
+
+Em estatística, ordenar os dados é obrigatório para achar mediana e quartis. Se todos os valores recebem a mesma constante, a média e a mediana aumentam por essa constante, mas a amplitude não muda. Se todos são multiplicados por um fator positivo, média, mediana e amplitude são multiplicadas pelo fator. Em gráficos, compare variações absolutas e relativas: passar de 20 para 30 é mais 10 unidades, mas crescimento relativo de 50\%.
+
+Em finanças, transforme 2\% em \texttt{0,02}, nunca em \texttt{2}. Se o prazo é 18 meses e a taxa é anual simples, use \texttt{t = 18/12 = 1,5 ano}, desde que a convenção da questão seja proporcional. Em compostos, taxa efetiva anual e taxa mensal não são convertidas apenas multiplicando por 12: uma taxa mensal \texttt{i} corresponde a \texttt{(1 + i)\textasciicircum{}12 - 1} ao ano. Em parcelas, não compare somente o valor mensal; compare o montante total e identifique se há entrada, desconto ou juros.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item Em cálculos longos, a alternativa costuma denunciar erro de sinal ou de unidade; estime o resultado antes de finalizar.
+  \item Frações de uma quantidade são multiplicações, mas a soma de frações exige denominador comum.
+  \item Regra direta acompanha o crescimento; regra inversa conserva o produto.
+  \item Percentuais sucessivos são multiplicados, não somados sem análise.
+  \item Em equações, a solução deve ser testada no enunciado e respeitar domínio, como comprimento positivo.
+  \item Na função, diferencie valor inicial, taxa de variação, raiz e vértice.
+  \item Em geometria, área usa unidade ao quadrado e volume usa unidade ao cubo.
+  \item Em combinatória, decidir se a ordem importa é mais importante que decorar fórmulas.
+  \item Probabilidade sem reposição altera o espaço de casos possíveis.
+  \item Na financeira, juros simples são lineares e compostos são exponenciais.
+\end{itemize}
+
+\subsection*{Exemplos resolvidos}
+
+\subsubsection*{Exemplo 1 — porcentagem e preço}
+
+Uma inscrição de 240 reais recebe desconto de 12\% para pagamento antecipado. O desconto é \texttt{0,12 x 240 = 28,80}. Logo, o preço pago é \texttt{240 - 28,80 = 211,20} reais. Se o preço final fosse dado e o inicial fosse pedido, dividiríamos pelo fator \texttt{0,88}, em vez de subtrair 12\% do valor final.
+
+\subsubsection*{Exemplo 2 — sistema aplicado}
+
+Em uma papelaria, 2 cadernos e 3 canetas custam 31 reais, enquanto 1 caderno e 2 canetas custam 19 reais. Seja \texttt{c} o preço do caderno e \texttt{p} o da caneta: \texttt{2c + 3p = 31} e \texttt{c + 2p = 19}. Multiplicando a segunda por 2, temos \texttt{2c + 4p = 38}. Subtraindo a primeira, \texttt{p = 7}; então \texttt{c + 14 = 19}, logo \texttt{c = 5}. A substituição final confirma os dois preços.
+
+\subsubsection*{Exemplo 3 — função quadrática}
+
+Um terreno retangular tem perímetro 40 metros. Se uma dimensão é \texttt{x}, a outra é \texttt{20 - x}, e a área é \texttt{A(x) = x(20 - x) = -x\textasciicircum{}2 + 20x}. Como \texttt{a = -1}, há máximo no vértice: \texttt{xv = -20/(2 x -1) = 10}. A outra dimensão também é 10 e a área máxima é \texttt{100 m2}. O domínio físico é \texttt{0 < x < 20}.
+
+\subsubsection*{Exemplo 4 — contagem e probabilidade}
+
+De um grupo de 5 candidatos, serão escolhidos 2 para uma comissão. Como a ordem não importa, o total é \texttt{C(5,2) = 5!/(2! x 3!) = 10}. Se apenas 3 dos candidatos têm curso de primeiros socorros, a chance de os dois escolhidos terem esse curso é \texttt{C(3,2)/C(5,2) = 3/10}, ou 30\%.
+
+\subsubsection*{Exemplo 5 — juros compostos}
+
+Um capital de 1.000 reais rende 10\% ao mês por 2 meses. O montante é \texttt{M = 1000 x (1,10)\textasciicircum{}2 = 1000 x 1,21 = 1210}. Portanto, os juros são \texttt{1210 - 1000 = 210} reais. Em juros simples, no mesmo período, seriam \texttt{1000 x 0,10 x 2 = 200} reais.
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Tópico} & \textbf{Relação principal} & \textbf{Atenção de prova} \\
+\midrule
+ Frações & somar com denominador comum; dividir pelo inverso & simplificar e conservar sinais \\
+ Proporção & \texttt{a/b = c/d} implica \texttt{a x d = b x c} & conferir grandezas diretas ou inversas \\
+ Porcentagem & aumento: \texttt{valor x (1 + taxa)} & percentuais sucessivos multiplicam fatores \\
+ Equação quadrática & \texttt{delta = b\textasciicircum{}2 - 4ac} & respeitar domínio e interpretar raízes \\
+ Função afim & \texttt{f(x) = ax + b} & \texttt{a} é a inclinação e \texttt{b} é o valor inicial \\
+ PA & \texttt{an = a1 + (n - 1)r} & diferença constante \\
+ PG & \texttt{an = a1 x q\textasciicircum{}(n - 1)} & razão multiplicativa \\
+ Triângulo & \texttt{A = base x altura/2} & altura é perpendicular à base \\
+ Sólidos & \texttt{V = área da base x altura} em prismas & unidade cúbica \\
+ Pitágoras & \texttt{h\textasciicircum{}2 = c1\textasciicircum{}2 + c2\textasciicircum{}2} & somente triângulo retângulo \\
+ Combinação & \texttt{C(n,p) = n!/[p!(n-p)!]} & ordem não importa \\
+ Probabilidade & favoráveis sobre possíveis & sem reposição muda os denominadores \\
+ Média & soma dividida pela quantidade & média ponderada usa pesos \\
+ Juros simples & \texttt{M = C(1 + i x t)} & base é sempre o capital inicial \\
+ Juros compostos & \texttt{M = C(1 + i)\textasciicircum{}t} & alinhar taxa e período \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1}
+
+Uma equipe percorreu \texttt{3/8} de uma trilha de 24 km pela manhã e \texttt{1/4} da trilha à tarde. Qual distância ainda faltou?
+
+A) 6 km \\ B) 8 km \\ C) 9 km \\ D) 11 km \\ E) 15 km
+
+\begin{alerta}
+\textbf{Gabarito: C.} As partes percorridas somam \texttt{3/8 + 1/4 = 3/8 + 2/8 = 5/8}. Isso corresponde a \texttt{24 x 5/8 = 15} km. Restam \texttt{24 - 15 = 9} km.
+\end{alerta}
+
+\subsection*{Questão 2}
+
+Se 8 máquinas produzem uma encomenda em 15 horas, quantas horas serão necessárias para 10 máquinas iguais, no mesmo ritmo?
+
+A) 10 \\ B) 12 \\ C) 13 \\ D) 18 \\ E) 20
+
+\begin{alerta}
+\textbf{Gabarito: B.} É uma relação inversa: máquinas x horas é constante. \texttt{8 x 15 = 10 x t}, então \texttt{t = 120/10 = 12} horas.
+\end{alerta}
+
+\subsection*{Questão 3}
+
+Um produto de 320 reais sofre aumento de 25\% e depois desconto de 20\% sobre o novo preço. O preço final é:
+
+A) 300 reais \\ B) 320 reais \\ C) 325 reais \\ D) 336 reais \\ E) 360 reais
+
+\begin{alerta}
+\textbf{Gabarito: B.} O aumento gera \texttt{320 x 1,25 = 400}. O desconto gera \texttt{400 x 0,80 = 320}. Os percentuais se anulam apenas porque os fatores são inversos neste caso.
+\end{alerta}
+
+\subsection*{Questão 4}
+
+O sistema \texttt{2x + y = 13} e \texttt{x - y = 2} tem como solução:
+
+A) \texttt{(3, 4)} \\ B) \texttt{(4, 5)} \\ C) \texttt{(5, 3)} \\ D) \texttt{(6, 1)} \\ E) \texttt{(7, -1)}
+
+\begin{alerta}
+\textbf{Gabarito: C.} Somando as equações, \texttt{3x = 15}, logo \texttt{x = 5}. Na segunda, \texttt{5 - y = 2}, portanto \texttt{y = 3}.
+\end{alerta}
+
+\subsection*{Questão 5}
+
+O quinto termo da PA \texttt{7, 11, 15, ...} e a soma dos cinco primeiros termos são,
+
+A) 19 e 55 \\ B) 23 e 75 \\ C) 23 e 85 \\ D) 27 e 85 \\ E) 27 e 95
+
+\begin{alerta}
+\textbf{Gabarito: B.} A razão é 4. \texttt{a5 = 7 + 4 x 4 = 23}. A soma é \texttt{S5 = 5(7 + 23)/2 = 5 x 30/2 = 75}, portanto a alternativa correta é B.
+\end{alerta}
+
+\subsection*{Questão 6}
+
+Um retângulo tem diagonal 13 cm e um dos lados mede 5 cm. Sua área é:
+
+A) 30 cm2 \\ B) 40 cm2 \\ C) 60 cm2 \\ D) 65 cm2 \\ E) 78 cm2
+
+\begin{alerta}
+\textbf{Gabarito: C.} Pelo teorema de Pitágoras, o outro lado satisfaz \texttt{13\textasciicircum{}2 = 5\textasciicircum{}2 + x\textasciicircum{}2}; então \texttt{x\textasciicircum{}2 = 169 - 25 = 144} e \texttt{x = 12}. A área é \texttt{5 x 12 = 60 cm2}.
+\end{alerta}
+
+\subsection*{Questão 7}
+
+Uma urna tem 4 bolas brancas e 6 pretas. Retirando uma bola ao acaso, a probabilidade de ela não ser preta é:
+
+A) 20\% \\ B) 30\% \\ C) 40\% \\ D) 60\% \\ E) 70\%
+
+\begin{alerta}
+\textbf{Gabarito: C.} Não ser preta significa ser branca. Há 4 casos favoráveis em 10 possíveis: \texttt{4/10 = 0,4 = 40\%}.
+\end{alerta}
+
+\subsection*{Questão 8}
+
+As notas 6, 8 e 10 têm pesos 1, 2 e 2, respectivamente. A média ponderada é:
+
+A) 7,2 \\ B) 7,6 \\ C) 8,0 \\ D) 8,2 \\ E) 8,4
+
+\begin{alerta}
+\textbf{Gabarito: E.} A soma ponderada é \texttt{6 x 1 + 8 x 2 + 10 x 2 = 42}. A soma dos pesos é 5. Assim, a média é \texttt{42/5 = 8,4}. A média simples não deve ser usada porque as notas têm pesos diferentes.
+\end{alerta}
+
+\subsection*{Questão 9}
+
+Um capital de 2.000 reais é aplicado a juros simples de 3\% ao mês durante 4 meses. O montante obtido é:
+
+A) 2.060 reais \\ B) 2.120 reais \\ C) 2.180 reais \\ D) 2.240 reais \\ E) 2.360 reais
+
+\begin{alerta}
+\textbf{Gabarito: D.} Os juros são \texttt{J = 2000 x 0,03 x 4 = 240}. Logo, \texttt{M = 2000 + 240 = 2240} reais.
+\end{alerta}
+
+\subsection*{Questão 10}
+
+Quantos números de três algarismos distintos podem ser formados com os dígitos 1, 2, 3, 4 e 5?
+
+A) 10 \\ B) 15 \\ C) 20 \\ D) 30 \\ E) 60
+
+\begin{alerta}
+\textbf{Gabarito: E.} Para a centena há 5 escolhas, para a dezena restam 4 e para  a unidade restam 3. Pelo princípio multiplicativo, \texttt{5 x 4 x 3 = 60}.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{enumerate}
+  \item Resolva operações respeitando a ordem e reduza frações antes de comparar.
+  \item Em proporções, verifique se a relação é direta ou inversa e uniformize as unidades.
+  \item Converta porcentagem em fator: \texttt{1 + taxa} para aumento e \texttt{1 - taxa} para desconto.
+  \item Em sistemas, elimine uma incógnita e confira a solução nas equações originais.
+  \item Use produtos notáveis para expandir e fatoração para simplificar ou encontrar raízes.
+  \item Na função afim, interprete a inclinação; na quadrática, procure raízes e vértice.
+  \item Diferencie PA, com diferença constante, de PG, com razão multiplicativa.
+  \item Desenhe figuras, use Pitágoras apenas em triângulos retângulos e controle unidades de área e volume.
+  \item Em contagem, decida se a ordem importa; em probabilidade, defina casos possíveis e favoráveis.
+  \item Leia média, mediana e dispersão juntas e alinhe taxa e tempo em juros.
+\end{enumerate}
+
+Na prova, não abandone a estimativa. Um comprimento negativo, uma probabilidade maior que 1 ou uma área incompatível com o desenho indicam erro de modelagem. A sequência mais segura é: ler, destacar dados, escrever a relação, calcular, testar e marcar a alternativa. Em questões de múltipla escolha, substitua as alternativas quando a expressão permitir uma verificação rápida; em questões discursivas, deixe claras as unidades e as etapas intermediárias. Se o resultado for decimal periódico, mantenha a fração até o fim para evitar arredondamentos. Quando duas alternativas parecem próximas, volte ao enunciado e verifique se a pergunta pede valor, variação, porcentagem, área, perímetro ou probabilidade. Essa rotina reduz erros de leitura e mantém o cálculo objetivo, tanto em provas de concurso quanto no ENEM.
+
+\end{document}

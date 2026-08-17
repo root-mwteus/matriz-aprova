@@ -1,0 +1,484 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Português: Português completo: leitura, gramática e redação oficial\par}
+  \vspace{0.4cm}
+  {\sffamily\large concursos gerais, carreiras militares, OAB e ENEM\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    primeiro descubra a relação que a frase estabelece; depois aplique a regra. Em interpretação, a alternativa correta é a que o texto autoriza, não a que apenas parece razoável.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad adaptação necessária ao edital e à banca\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+Português de prova não é uma coleção de regras isoladas. A banca combina leitura, gramática e produção de sentido: pergunta o que um texto afirma, por que uma palavra foi empregada, se uma reescrita mantém a relação lógica e se determinada estrutura está de acordo com a norma-padrão.
+
+Os eixos mais frequentes são:
+
+\begin{enumerate}
+  \item compreensão global, inferência, ponto de vista e finalidade;
+  \item tipologia textual, gêneros e organização argumentativa;
+  \item coesão, coerência, conectivos, referenciação e progressão temática;
+  \item sentido contextual, polissemia, sinonímia, antonímia, ambiguidade e ironia;
+  \item classes de palavras, formação de palavras e funções sintáticas;
+  \item período simples e composto, coordenação, subordinação e orações reduzidas;
+  \item concordância, regência, crase, colocação pronominal e pontuação;
+  \item ortografia, acentuação, redação oficial e adequação da linguagem.
+\end{enumerate}
+
+\textbf{Regra de prova:} primeiro descubra a relação que a frase estabelece; depois aplique a regra. Em interpretação, a alternativa correta é a que o texto autoriza, não a que apenas parece razoável.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Leitura: localizar o que o texto realmente diz}
+
+O \textbf{tema} é o assunto geral. A \textbf{ideia central} é a afirmação principal feita sobre esse assunto. A \textbf{finalidade} corresponde ao objetivo comunicativo: informar, explicar, criticar, convencer, orientar, narrar, instruir ou provocar reflexão. Um título pode indicar o tema, mas não necessariamente revela a tese.
+
+Em um texto sobre tecnologia na escola, por exemplo, o tema pode ser a digitalização do ensino; a ideia central pode ser que ferramentas digitais ampliam possibilidades, mas exigem mediação pedagógica; e a finalidade pode ser avaliar criticamente seu uso.
+
+Para encontrar a ideia central, observe o título, a introdução, a conclusão, as palavras repetidas e as relações de oposição. O trecho iniciado por “mas”, “no entanto” ou “ainda assim” muitas vezes apresenta a informação que o autor deseja destacar. Não confunda exemplo com tese: o exemplo serve para sustentar uma ideia mais ampla.
+
+\textbf{Informação explícita} está declarada. \textbf{Inferência} é uma conclusão necessária obtida pela combinação de informações do texto. Se um aviso informa que o prazo foi prorrogado até sexta-feira, pode-se inferir que o prazo anterior foi alterado; não se pode afirmar que todos os interessados pediram a prorrogação.
+
+Os verbos e os modalizadores também importam. “Pode”, “tende a”, “é possível” e “certamente” não têm a mesma força. A alternativa que troca uma possibilidade por uma certeza pode alterar o sentido. Do mesmo modo, “alguns” não equivale a “todos”, e “principalmente” não equivale a “exclusivamente”.
+
+O \textbf{pressuposto} é ativado por uma palavra ou construção. “O setor voltou a funcionar” pressupõe que ele funcionou antes. O pressuposto permanece na negação: “o setor não voltou a funcionar” ainda sugere funcionamento anterior. O \textbf{subentendido} depende mais do contexto e da intenção. Uma pergunta como “Você vai entregar o relatório hoje mesmo?” pode subentender dúvida ou cobrança, sem declarar diretamente nenhuma delas.
+
+Na argumentação, separe a voz do autor das vozes citadas. “Segundo os críticos, a medida é insuficiente” não significa que o autor concorde com os críticos. Aspas, verbos como “afirmar”, “alegar” e “defender”, além de expressões como “por outro lado”, ajudam a identificar essa distância.
+
+\subsection*{2. Tipologia e gêneros textuais}
+
+As \textbf{tipologias} são formas de organização predominantes. Um mesmo gênero pode combinar várias delas.
+
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+ \textbf{Tipologia} & \textbf{Característica principal} & \textbf{Exemplos de ocorrência} \\
+\midrule
+ narração & apresenta ações, personagens, tempo e espaço & conto, relato, notícia \\
+ descrição & caracteriza seres, objetos, ambientes ou estados & anúncio, laudo, trecho literário \\
+ exposição & explica informações sem necessariamente defendê-las & verbete, aula, reportagem \\
+ argumentação & apresenta tese, razões, evidências e conclusão & editorial, artigo, redação \\
+ injunção & orienta, ordena ou instrui o leitor & edital, manual, receita \\
+\bottomrule
+\end{tabularx}
+
+
+O \textbf{gênero} é uma forma social de comunicação, com finalidade, público e estrutura próprios. Notícia tende a informar sobre um fato; editorial expressa a posição institucional de um veículo; anúncio busca persuadir; requerimento solicita providência formal; ata registra acontecimentos; relatório organiza dados e conclusões.
+
+Não basta identificar um texto pela presença de verbos no passado ou de uma opinião. Uma notícia pode conter descrição e explicação; uma crônica pode narrar e argumentar; uma questão discursiva pode instruir e avaliar. A pergunta correta é: que finalidade predomina e como o texto organiza seus recursos?
+
+Na argumentação, procure \textbf{tese}, \textbf{argumentos}, \textbf{evidências}, eventual \textbf{contra-argumento} e \textbf{conclusão}. Dados estatísticos, exemplos, comparação, causa e consequência são estratégias argumentativas. Uma generalização sem prova, uma falsa relação causal ou um ataque à pessoa podem enfraquecer o raciocínio, ainda que a conclusão pareça atraente.
+
+\subsection*{3. Coesão, coerência e semântica}
+
+\textbf{Coerência} é a compatibilidade global entre as ideias. \textbf{Coesão} é a conexão linguística que amarra as partes do texto. Um texto pode ter frases gramaticais, mas ser incoerente se suas ideias se contradisserem sem explicação.
+
+Os conectivos indicam relações. “E” soma; “mas”, “porém” e “contudo” opõem; “porque”, “visto que” e “já que” introduzem causa; “portanto”, “logo” e “por isso” indicam conclusão ou consequência; “embora” e “ainda que” expressam concessão; “se” e “caso” apresentam condição; “para que” introduz finalidade. O valor depende da relação efetiva, não de uma lista decorada.
+
+Na coesão referencial, pronomes e expressões retomam ou antecipam termos: “A comissão publicou o parecer. \textbf{Ela} também enviou o documento ao setor.” Há coesão por substituição, repetição controlada, elipse e sinonímia. A repetição excessiva pode empobrecer o texto, mas a substituição por um pronome ambíguo pode prejudicar a clareza.
+
+Em “A diretora informou à servidora que ela deveria revisar o documento”, o pronome “ela” tem mais de um antecedente possível. Em texto formal, prefira repetir o nome ou reorganizar: “A diretora informou à servidora que esta deveria revisar o documento”. Mesmo assim, “esta” não resolve todo contexto; clareza deve prevalecer sobre a economia.
+
+Na semântica, considere o contexto. \textbf{Sinonímia} é aproximação de sentido, não identidade absoluta. \textbf{Polissemia} ocorre quando uma palavra assume sentidos relacionados: “cabeça” pode nomear parte do corpo ou liderança. \textbf{Homonímia} é a coincidência formal entre palavras de origens ou sentidos distintos. \textbf{Denotação} é o uso mais literal; \textbf{conotação} acrescenta valor figurado ou subjetivo.
+
+Ambiguidade pode ser lexical ou estrutural. “O banco fechou” admite instituição financeira ou assento; “o policial viu o suspeito com o binóculo” não deixa claro quem segurava o instrumento. A ironia depende do contraste entre a formulação literal e a situação. Em “Que pontualidade!”, dito após longa espera, o sentido é avaliativo e não elogioso.
+
+\subsection*{4. Classes de palavras e formação}
+
+As classes \textbf{variáveis} são substantivo, artigo, adjetivo, numeral, pronome e verbo; \textbf{invariáveis} são advérbio, preposição, conjunção e interjeição.
+
+\begin{itemize}
+  \item \textbf{Substantivo:} nomeia seres, ações, estados ou conceitos: “estudo”, “justiça”.
+  \item \textbf{Artigo:} determina ou generaliza o substantivo: “o edital”, “um edital”.
+  \item \textbf{Adjetivo:} caracteriza o substantivo: “prova difícil”.
+  \item \textbf{Pronome:} retoma, acompanha ou substitui o nome: “aquela questão”.
+  \item \textbf{Numeral:} indica quantidade, ordem, multiplicação ou fração.
+  \item \textbf{Verbo:} expressa ação, estado, fenômeno, tempo e modo.
+  \item \textbf{Advérbio:} modifica verbo, adjetivo ou outro advérbio: “estudou ontem”.
+  \item \textbf{Preposição:} relaciona termos: “necessidade de revisão”.
+  \item \textbf{Conjunção:} liga orações ou termos com valor lógico.
+  \item \textbf{Interjeição:} manifesta emoção, chamado ou reação.
+\end{itemize}
+
+Classe e função não são a mesma coisa. Em “O candidato respondeu rápido”, “rápido” pode ser adjetivo com valor predicativo ou advérbio, conforme o sentido e a análise adotada; em “respondeu rapidamente”, a forma adverbial é inequívoca. Em “O estudo do candidato avançou”, “do candidato” pode indicar posse ou agente; em “a necessidade de estudo”, o termo completa o sentido do nome abstrato.
+
+Na \textbf{formação de palavras}, derivação acrescenta afixos ou altera a base: “feliz” gera “infeliz” por prefixação; “felizmente”, por sufixação; “anoitecer”, por parassíntese quando prefixo e sufixo entram simultaneamente. Derivação regressiva reduz a palavra, como “pesca” de “pescar”; imprópria muda a classe sem alterar a forma, como “o jantar” a partir de “jantar”. Composição reúne bases: “passatempo” é justaposição; “aguardente” é aglutinação, pois há alteração fonética.
+
+\subsection*{5. Sintaxe da oração e do período}
+
+Localize o verbo para identificar a oração. No período simples há uma oração; no composto, duas ou mais. O \textbf{sujeito} é o termo de que se declara algo. Pode ser simples, composto, oculto, indeterminado ou inexistente. Em “Havia dúvidas”, o verbo “haver” significa existir e é impessoal; “dúvidas” é objeto direto, não sujeito.
+
+O \textbf{predicado} pode ser verbal, nominal ou verbo-nominal. O objeto direto não exige preposição obrigatória; o objeto indireto exige. O predicativo atribui característica ao sujeito ou ao objeto. O complemento nominal completa um nome, adjetivo ou advérbio e costuma indicar o alvo: “respeito às normas”. O adjunto adnominal caracteriza, determina, indica posse ou agente: “as normas do edital”.
+
+Na coordenação, as orações são sintaticamente independentes: “Revisou o texto e enviou o recurso”. Podem ser sindéticas aditivas, adversativas, alternativas, conclusivas ou explicativas. Na subordinação, uma oração exerce função em outra:
+
+\begin{itemize}
+  \item substantiva: “É necessário \textbf{que todos revisem}”; funciona como termo nominal;
+  \item adjetiva: “O recurso \textbf{que foi protocolado} será analisado”; caracteriza nome;
+  \item adverbial: “\textbf{Quando terminar}, confira os dados”; indica circunstância.
+\end{itemize}
+
+A oração adjetiva \textbf{restritiva} não vem entre vírgulas e limita o antecedente. A \textbf{explicativa} vem isolada e acrescenta informação sobre um antecedente já definido. A pontuação, portanto, pode mudar a extensão do grupo mencionado.
+
+Orações reduzidas usam infinitivo, gerúndio ou particípio: “Ao concluir a prova, revise”; “Concluída a prova, aguarde”. Para classificá-las, desenvolva mentalmente a oração e observe o sentido.
+
+\subsection*{6. Concordância verbal e nominal}
+
+O verbo concorda com o núcleo do sujeito, não com o termo mais próximo: “A lista de documentos foi publicada”. Com sujeito composto anteposto, use o plural: “A comissão e o candidato analisaram o resultado”. Com sujeito posterior, o plural é geralmente a opção mais clara: “Chegaram os fiscais”.
+
+“Haver”, no sentido de existir ou ocorrer, e “fazer”, indicando tempo decorrido ou fenômeno climático, ficam no singular: “Houve mudanças”; “Faz dois anos”. “Existir” concorda normalmente: “Existem mudanças”. Com “se”, diferencie: “Publicaram-se os resultados” equivale a “Os resultados foram publicados”, mas “Precisa-se de servidores” mantém o verbo no singular por indeterminação do sujeito.
+
+Na concordância nominal, determinantes e adjetivos acompanham o substantivo: “foram publicadas as novas regras”. “É proibido entrada” é possível sem determinante, mas “É proibida a entrada” exige concordância. “Bastante” varia quando significa “muitos” (“bastantes questões”) e fica invariável como advérbio (“estudou bastante”). “Meio” é invariável como advérbio (“meio cansada”) e varia como numeral ou adjetivo (“meias palavras”).
+
+\subsection*{7. Regência e crase}
+
+Regência define a preposição exigida. Alguns casos recorrentes são: assistir a algo no sentido de ver; obedecer a; aspirar a no sentido de desejar e aspirar algo no sentido de respirar; visar a no sentido de ter como objetivo; preferir X a Y; informar alguém de ou sobre algo.
+
+Com pronomes relativos, conserve a preposição exigida: “A norma a que me referi” e “o assunto sobre o qual conversamos”. Em “o cargo a que aspira”, o verbo “aspirar”, com sentido de desejar, exige “a”.
+
+Crase é a fusão da preposição “a” com artigo ou pronome iniciado por “a”. Teste o masculino: se aparecer “ao”, use “à” no feminino. “Referiu-se ao edital” leva a “referiu-se à norma”. Ocorre também em locuções femininas: “à noite”, “às vezes”, “à medida que”.
+
+Não há crase antes de verbo, palavra masculina, pronome pessoal e expressões com palavras repetidas: “a estudar”, “a prazo”, “a ela”, “cara a cara”. Em horas determinadas: “às oito horas”. Antes de nome próprio, observe o artigo: “foi à Bahia”, mas “viajou a Brasília”. O teste “voltei da” ajuda: voltei da Bahia, logo fui à Bahia; voltei de Brasília, logo fui a Brasília.
+
+\subsection*{8. Colocação pronominal}
+
+Na \textbf{próclise}, o pronome vem antes do verbo: “Não se esqueça”; “Quem lhe informou?”. Atraem o pronome palavras negativas, pronomes relativos, interrogativos e indefinidos, conjunções subordinativas e advérbios sem pausa: “Nunca me disseram”; “Quando se encerra a sessão...”.
+
+Na \textbf{ênclise}, o pronome vem depois: “Informaram-me o resultado”; “Revise o texto e envie-o”. Na norma tradicional, não se inicia oração com pronome átono: prefira “Informaram-me” a “Me informaram” em redação formal. Na \textbf{mesóclise}, o pronome aparece no meio do futuro do presente ou do pretérito, quando não houver palavra atrativa: “Enviar-se-á o documento”; “Convidar-me-iam para a reunião”. Em locuções, a posição pode variar conforme o auxiliar, a palavra atrativa e o registro; a forma mais segura é manter o pronome junto ao verbo que o rege e evitar ambiguidade.
+
+\subsection*{9. Pontuação}
+
+A vírgula não separa sujeito e predicado nem verbo e objeto em ordem direta: “A comissão analisou o recurso”. Ela isola vocativo, aposto explicativo, expressão intercalada, oração adverbial anteposta e oração adjetiva explicativa.
+
+Compare: “Os servidores que participaram foram certificados” limita o grupo aos participantes; “Os servidores, que participaram, foram certificados” apresenta a participação como informação adicional sobre todos. Em orações coordenadas, a vírgula pode marcar oposição ou separar estruturas extensas: “Estudou muito, mas não revisou”.
+
+Os dois-pontos introduzem explicação, enumeração, citação ou consequência. O ponto e vírgula separa itens complexos ou orações relacionadas quando a vírgula seria insuficiente. O travessão pode marcar fala, intercalação ou destaque. A pontuação não é apenas pausa respiratória: altera foco, extensão e relação de sentido.
+
+\subsection*{10. Ortografia e acentuação}
+
+A ortografia oficial exige atenção a grafias parecidas. “Há” indica tempo passado ou existência; “a” indica tempo futuro ou distância: “Há dois dias” e “daqui a dois dias”. “Mal” é o contrário de bem; “mau”, o contrário de bom. “Onde” deve ser usado com ideia de lugar fixo; “aonde”, com movimento regido por “a”. “Por que” aparece em pergunta direta ou indireta; “porque” introduz explicação; “por quê” ocorre no final; “porquê” é substantivo.
+
+Monossílabos tônicos terminados em a(s), e(s), o(s) recebem acento: “pá”, “mês”, “pôs”. Oxítonas terminadas em a(s), e(s), o(s), em(ns) também: “café”, “armazém”. Paroxítonas são acentuadas em terminações específicas, como “l fácil”, “órgão”, “têxtil”, “júri” e “hífen”. Todas as proparoxítonas são acentuadas: “lâmpada”, “público”, “método”.
+
+O acordo ortográfico retirou o trema de palavras portuguesas, eliminou acento de alguns ditongos abertos em paroxítonas (“ideia”, “assembleia”) e de “oo” e “ee” em formas como “voo” e “leem”. O acento diferencial permanece em pares como “pôr” e “por”, “pôde” e “pode”.
+
+\subsection*{11. Redação oficial}
+
+A redação oficial deve apresentar clareza, concisão, objetividade, formalidade, impessoalidade, padronização e correção. O texto não busca impressionar com palavras difíceis; busca permitir que o destinatário entenda e execute o que foi solicitado.
+
+Evite subjetivismo, intimidade, gírias, excessos de adjetivos, frases longas sem conexão e fórmulas vazias. Identifique o assunto, o destinatário, a providência esperada e o prazo. Use parágrafos curtos, sequência lógica e vocabulário preciso. A impessoalidade não significa ausência de responsabilidade: significa foco no interesse público e no ato administrativo, não em impressões pessoais.
+
+Ofícios e comunicações formais devem trazer identificação adequada, assunto, desenvolvimento, pedido ou encaminhamento e fecho compatível. O fecho deve ser padronizado; “Atenciosamente” é usual entre autoridades de mesma hierarquia ou em situações gerais, enquanto “Respeitosamente” é empregado quando o destinatário ocupa posição hierarquicamente superior. O gênero e o manual do órgão podem determinar detalhes próprios.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item \textbf{Interpretação:} alternativa parcialmente correta pode ser anulada por uma palavra absoluta ou por extrapolar uma informação.
+  \item \textbf{Reescrita:} confira sentido, conectivo, referência pronominal, tempo verbal, pontuação e regência, não apenas a correção de cada palavra.
+  \item \textbf{Sintaxe:} localize o verbo e o núcleo do sujeito antes de classificar termos.
+  \item \textbf{Concordância:} ignore expressões intercaladas e locuções preposicionadas ao procurar o núcleo.
+  \item \textbf{Regência e crase:} substitua o termo feminino por um masculino e verifique a preposição exigida pelo verbo.
+  \item \textbf{Pontuação:} pergunte se a vírgula restringe, explica, intercala ou separa orações; não escolha pelo critério de “pausa”.
+  \item \textbf{Semântica:} leia a palavra no período completo; o dicionário isolado não resolve o sentido contextual.
+  \item \textbf{Redação oficial:} avalie clareza, impessoalidade, concisão e adequação ao gênero, além da gramática.
+\end{itemize}
+
+\subsection*{Exemplos resolvidos}
+
+\subsubsection*{Exemplo 1: inferência}
+
+Texto: “A prefeitura ampliou os canais digitais de atendimento. Apesar disso, as filas presenciais não desapareceram, pois parte da população ainda enfrenta dificuldades de acesso à internet.”
+
+\textbf{Pergunta:} o texto permite concluir que:
+
+A) os canais digitais fracassaram completamente. \\ B) o atendimento presencial deixou de ser necessário. \\ C) a digitalização não alcança igualmente toda a população. \\ D) a população rejeita o atendimento pela internet. \\ E) a prefeitura reduziu os serviços presenciais.
+
+\begin{alerta}
+\textbf{Gabarito: C.} A dificuldade de acesso explica a permanência das filas e autoriza a conclusão de que a digitalização tem alcance desigual. As demais alternativas exageram ou acrescentam informação.
+\end{alerta}
+
+\subsubsection*{Exemplo 2: pontuação e sentido}
+
+“Os candidatos que entregaram os documentos receberam protocolo.” A oração é restritiva: apenas os candidatos que entregaram os documentos receberam protocolo. Com vírgulas, “Os candidatos, que entregaram os documentos, receberam protocolo”, a participação passa a ser apresentada como característica de todos. Logo, a pontuação modifica o conjunto de candidatos abrangido.
+
+\subsubsection*{Exemplo 3: regência e crase}
+
+Em “A comissão assistiu à apresentação e obedeceu às normas”, “assistir”, no sentido de ver, e “obedecer” exigem a preposição “a”. Como “apresentação” e “normas” admitem artigo feminino, ocorre a fusão: “à” e “às”.
+
+\subsubsection*{Exemplo 4: concordância}
+
+Em “Publicaram-se os resultados”, “os resultados” é sujeito paciente e o verbo concorda no plural. Em “Precisa-se de servidores”, “de servidores” é objeto indireto; o sujeito é indeterminado e o verbo permanece no singular.
+
+\subsubsection*{Exemplo 5: redação oficial}
+
+“Venho por meio deste solicitar que Vossa Senhoria possa, se possível, estar verificando a questão com a máxima urgência” é prolixo e pouco direto. Uma versão melhor é: “Solicito a verificação da questão com urgência”. A segunda forma conserva a finalidade e melhora clareza, concisão e objetividade.
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Tema} & \textbf{Pergunta de controle} \\
+\midrule
+ interpretação & a alternativa é comprovada pelo texto? \\
+ tipologia & qual organização e finalidade predominam? \\
+ coesão & que termo o pronome ou conectivo retoma? \\
+ semântica & o sentido foi preservado no contexto? \\
+ classes & qual é a categoria da palavra e qual sua função? \\
+ sintaxe & quantos verbos e que relação há entre as orações? \\
+ concordância & qual é o núcleo do sujeito ou do nome? \\
+ regência & qual preposição o termo regente exige? \\
+ crase & há preposição “a” mais artigo ou pronome “a”? \\
+ colocação & existe palavra atrativa para próclise? \\
+ pontuação & a vírgula restringe, explica ou intercala? \\
+ ortografia & o sentido exige “há/a”, “mal/mau” ou “por que”? \\
+ redação oficial & o texto é claro, impessoal e adequado ao gênero? \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{1.}
+
+Leia: “A divulgação científica aproxima pesquisas do público, mas não elimina a necessidade de explicar métodos e limites. Uma informação acessível não é uma informação simplificada a ponto de perder sua precisão.”
+
+A ideia central é que:
+
+A) a divulgação deve substituir a pesquisa acadêmica. \\ B) a linguagem acessível é incompatível com precisão. \\ C) a divulgação científica exige equilíbrio entre compreensão e rigor. \\ D) métodos científicos devem ser omitidos para o público geral. \\ E) informações complexas não podem ser divulgadas.
+
+\subsection*{2.}
+
+Em “Embora o sistema seja rápido, o usuário deve conferir a fonte”, o termo “embora” introduz relação de:
+
+A) causa. \\ B) concessão. \\ C) condição. \\ D) finalidade. \\ E) conclusão.
+
+\subsection*{3.}
+
+Assinale a frase de acordo com a norma-padrão:
+
+A) Haviam muitos candidatos na sala. \\ B) Fazem três meses que o edital foi publicado. \\ C) Publicaram-se o resultado definitivo. \\ D) Houveram dúvidas sobre o procedimento. \\ E) Precisa-se de servidores experientes para os setores.
+
+\subsection*{4.}
+
+Complete corretamente: “O servidor informou \_\_\_ candidata que deveria obedecer \_\_\_ normas do edital e encaminhou o pedido \_\_\_ direção.”
+
+A) a / as / a \\ B) à / às / à \\ C) à / as / a \\ D) a / às / à \\ E) à / a / à
+
+\subsection*{5.}
+
+Assinale a alternativa em que a pontuação preserva a ideia de que somente parte dos relatórios foi revisada:
+
+A) Os relatórios, que foram revisados, seguirão para publicação. \\ B) Os relatórios que foram revisados seguirão para publicação. \\ C) Os relatórios que foram revisados, seguirão para publicação. \\ D) Os relatórios, que foram revisados seguirão para publicação. \\ E) Os relatórios foram revisados, que seguirão para publicação.
+
+\subsection*{6.}
+
+Em “A comissão analisou cuidadosamente o recurso”, a palavra “cuidadosamente” exerce função de:
+
+A) adjunto adnominal. \\ B) objeto direto. \\ C) predicativo do sujeito. \\ D) adjunto adverbial. \\ E) complemento nominal.
+
+\subsection*{7.}
+
+Assinale a alternativa correta quanto à colocação pronominal em registro formal:
+
+A) Me entregaram o documento ontem. \\ B) Nunca disseram-me a razão da mudança. \\ C) Quando encerrou-se a sessão, todos saíram. \\ D) Não se devem ignorar os prazos. \\ E) Se publicará o resultado amanhã.
+
+\subsection*{8.}
+
+Em “O candidato preferiu revisar o texto a improvisar”, a construção está adequada porque:
+
+A) “preferir” exige a forma “mais... do que”. \\ B) “preferir” relaciona dois termos por meio de “a”. \\ C) o verbo “preferir” não admite dois complementos. \\ D) a preposição correta seria “de”. \\ E) a forma padrão exige “preferiu do que”.
+
+\subsection*{9.}
+
+Assinale a grafia correta:
+
+A) O prazo terminou a dois dias. \\ B) Não sei porque o sistema falhou. \\ C) O servidor agiu mal, mas não é um mau profissional. \\ D) Aonde fica o arquivo digital? \\ E) O setor informou o por quê da alteração no início da frase.
+
+\subsection*{10.}
+
+Em redação oficial, a formulação mais adequada é:
+
+A) A gente gostaria que vocês dessem uma olhada no problema. \\ B) Venho através desta pedir, com todo respeito, uma solução rápida. \\ C) Solicito a análise do processo e o encaminhamento da resposta até sexta-feira. \\ D) É de suma importância que talvez seja verificada a questão. \\ E) Peço encarecidamente que Vossa Senhoria possa estar verificando o caso.
+
+\subsection*{Gabarito e comentários}
+
+\begin{enumerate}
+  \item \textbf{C.} O texto defende o equilíbrio entre acessibilidade e precisão; não
+\end{enumerate}
+
+propõe simplificação que elimine método ou rigor.
+
+\begin{enumerate}
+  \item \textbf{B.} “Embora” introduz concessão: reconhece uma qualidade do sistema, mas
+\end{enumerate}
+
+apresenta uma orientação que permanece válida.
+
+\begin{enumerate}
+  \item \textbf{E.} “Precisa-se de servidores experientes” apresenta índice de
+\end{enumerate}
+
+indeterminação do sujeito, por isso o verbo fica no singular. Em A, “haver” no sentido de existir fica no singular; em B, “fazer” indicando tempo também; C deveria ser “Publicaram-se os resultados”; D deveria ser “Houve dúvidas”.
+
+\begin{enumerate}
+  \item \textbf{B.} “Informar alguém” pede objeto direto sem preposição, mas, diante de
+\end{enumerate}
+
+“a candidata”, ocorre “informou à candidata” pela combinação exigida na frase; “obedecer às normas” e “à direção” exigem preposição e artigo.
+
+\begin{enumerate}
+  \item \textbf{B.} Sem vírgulas, a oração restringe os relatórios aos que foram revisados.
+\end{enumerate}
+
+\begin{enumerate}
+  \item \textbf{D.} “Cuidadosamente” indica o modo como a comissão analisou o recurso e
+\end{enumerate}
+
+modifica o verbo.
+
+\begin{enumerate}
+  \item \textbf{D.} A palavra negativa “não” atrai o pronome: “Não se devem ignorar”.
+\end{enumerate}
+
+\begin{enumerate}
+  \item \textbf{B.} A regência tradicional é “preferir X a Y”, sem “mais” ou “do que”.
+\end{enumerate}
+
+\begin{enumerate}
+  \item \textbf{C.} “Mal” opõe-se a “bem” e “mau”, a “bom”. No item A, o correto é “há dois
+\end{enumerate}
+
+dias”; em B, no meio da explicação, “por que”; em D, pergunta sobre lugar fixo usa “onde”; em E, no início da frase, “porquê” seria substantivo, mas exigiria artigo ou outro determinante.
+
+\begin{enumerate}
+  \item \textbf{C.} A redação é objetiva, impessoal, clara e apresenta providência e prazo.
+\end{enumerate}
+
+\section*{Revisão final}
+
+Antes da prova, revise o conteúdo em quatro movimentos:
+
+\begin{enumerate}
+  \item Leia o texto inteiro e identifique tema, tese, finalidade, vozes citadas e
+\end{enumerate}
+
+   relações marcadas por conectivos.
+
+\begin{enumerate}
+  \item Em cada frase, localize os verbos, separe as orações, encontre o núcleo do
+\end{enumerate}
+
+   sujeito e identifique os complementos exigidos.
+
+\begin{enumerate}
+  \item Nas questões de reescrita, compare sentido, referência, tempo, regência,
+\end{enumerate}
+
+   concordância, crase e pontuação; correção local não garante equivalência.
+
+\begin{enumerate}
+  \item Na redação oficial, elimine pessoalidade, excesso, vagueza e informalidade;
+\end{enumerate}
+
+   deixe explícitos assunto, responsável, ação e prazo.
+
+Checklist de alta incidência:
+
+\begin{itemize}
+  \item ideia central não é o mesmo que tema;
+  \item inferência precisa ser necessária, não apenas provável;
+  \item conectivo deve ser interpretado pela relação entre as orações;
+  \item pronome ambíguo compromete coesão e clareza;
+  \item classe morfológica não se confunde com função sintática;
+  \item “haver” existencial e “fazer” temporal ficam no singular;
+  \item “existir” concorda com o sujeito;
+  \item “se” pode apassivar ou indeterminar o sujeito;
+  \item regência determina a preposição e pode determinar a crase;
+  \item oração restritiva não se isola por vírgulas;
+  \item palavra atrativa favorece próclise;
+  \item proparoxítonas são sempre acentuadas;
+  \item “há” indica passado ou existência; “a”, futuro ou distância;
+  \item redação oficial é clara, impessoal, concisa e padronizada.
+\end{itemize}
+
+Na dúvida, volte à estrutura: quem faz o quê, em que circunstância, ligado por qual relação e com qual efeito de sentido. Essa sequência reduz a dependência de decoreba e transforma a gramática em ferramenta de leitura e decisão.
+
+\end{document}

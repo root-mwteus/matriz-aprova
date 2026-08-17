@@ -124,12 +124,15 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
   `prompts/prompt-apostila.txt`, apostilas em Markdown e o conversor
   `gerar-latex.mjs` (md → LaTeX preenchendo o template; gere `.tex` ao lado de
   cada `.md` com `node materiais/gerar-latex.mjs`), compiláveis com XeLaTeX
-  para PDF: Português/interpretação de texto, Direito Constitucional/princípios
+  para PDF: Português/interpretação de texto, gramática aplicada e Português completo, Matemática/matemática geral,
+  Direito Constitucional/princípios
   fundamentais, Direito Administrativo/princípios da Administração Pública,
   Raciocínio Lógico/proposições e conectivos, Informática/segurança da informação
   e Direito Penal/princípios e aplicação da lei penal. Também inclui Direito
-  Processual Penal/inquérito policial, Direito do Trabalho/relação de emprego,
-  Direito Tributário/princípios e limitações ao poder de tributar, Direito
+  Processual Penal/inquérito policial, Física/cinemática e dinâmica, Química/fundamentos e estequiometria,
+  Direito do Trabalho/relação de emprego,
+  Direito Tributário/princípios e limitações ao poder de tributar, Redação/texto
+  dissertativo-argumentativo para ENEM, Direito
   Previdenciário/benefícios e regras gerais do RGPS e Contabilidade/patrimônio
   e equação contábil.
 - `pagamentos-config.ts` — `config_pagamentos` id=1; `formatarValor`, `parseValorParaCentavos`,

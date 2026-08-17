@@ -1,0 +1,368 @@
+\documentclass[11pt,a4paper]{article}
+
+% Template visual Matriz Aprovação. Compile com XeLaTeX ou LuaLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\IfFontExistsTF{Aptos}{
+  \setmainfont{Aptos}
+  \setsansfont{Aptos}
+}{
+  \IfFontExistsTF{Calibri}{
+    \setmainfont{Calibri}
+    \setsansfont{Calibri}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setmainfont{TeX Gyre Heros}
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \setmainfont{Latin Modern Sans}
+      \setsansfont{Latin Modern Sans}
+    }
+  }
+}
+\usepackage[a4paper,margin=2cm,headheight=16pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{matrizlime}{HTML}{CBFF4D}
+\definecolor{matrizink}{HTML}{101313}
+\definecolor{matrizmuted}{HTML}{596363}
+\definecolor{matrizline}{HTML}{DDE3DF}
+\definecolor{matrizsoft}{HTML}{F3F7EC}
+
+\hypersetup{colorlinks=true,linkcolor=matrizink,urlcolor=matrizink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{\small MATRIZ APROVAÇÃO}}
+\rhead{\textsf{\small APOSTILA}}
+\cfoot{\textsf{\small \thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{matrizline}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{matrizink}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{matrizink}}{\thesubsection}{0.6em}{}
+\setlist{nosep,leftmargin=*}
+
+\newtcolorbox{foco}{colback=matrizsoft,colframe=matrizlime,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{lei}{colback=matrizink,colframe=matrizink,coltext=white,boxrule=0pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+\newtcolorbox{alerta}{colback=white,colframe=matrizline,boxrule=0.6pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt}
+
+% Logo usada na capa. Caminho relativo à pasta onde o .tex é compilado
+% (materiais/<disciplina>/). Ajuste se a estrutura mudar.
+\newcommand{\logomatriz}{../../public/logo.png}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{\logomatriz}\par
+  \end{center}
+  \vspace{2.2cm}
+  {\sffamily\fontsize{28}{32}\selectfont\bfseries Apostila — Redação: Texto dissertativo-argumentativo para o ENEM\par}
+  \vspace{0.4cm}
+  {\sffamily\large ENEM\par}
+  \vfill
+  \begin{foco}
+    \textsf{\textbf{Foco da apostila}}\\[3pt]
+    cada parágrafo precisa cumprir uma função. A introdução delimita o problema e apresenta a tese; os desenvolvimentos provam a tese; a conclusão retoma o raciocínio e detalha a intervenção.
+  \end{foco}
+  \vspace{0.7cm}
+  {\sffamily\small Atualizado em 16 de agosto de 2026\quad ·\quad INEP\par}
+  \vspace{1cm}
+  {\sffamily\small matrizaprova.com\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Conteúdo gerado entra aqui.
+\section*{O que cai}
+
+A redação do ENEM exige um texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa. O participante deve defender um ponto de vista sobre um tema de ordem social, científica, cultural ou política e apresentar uma proposta de intervenção para o problema discutido.
+
+Os pontos decisivos são:
+
+\begin{enumerate}
+  \item compreender exatamente o recorte temático e não escrever sobre um assunto
+\end{enumerate}
+
+   apenas relacionado;
+
+\begin{enumerate}
+  \item apresentar tese clara e argumentos desenvolvidos;
+  \item organizar introdução, desenvolvimento e conclusão com progressão lógica;
+  \item usar repertório sociocultural pertinente e articulado ao argumento;
+  \item propor intervenção detalhada, viável e compatível com os direitos humanos.
+\end{enumerate}
+
+\textbf{Regra de prova:} cada parágrafo precisa cumprir uma função. A introdução delimita o problema e apresenta a tese; os desenvolvimentos provam a tese; a conclusão retoma o raciocínio e detalha a intervenção.
+
+\section*{Teoria essencial}
+
+\subsection*{1. Entender o tema e o recorte}
+
+Antes de escrever, transforme o tema em uma pergunta-problema. O tema pode apresentar uma situação, um grupo afetado, uma causa ou uma consequência. Todos esses elementos formam o recorte que precisa aparecer no texto.
+
+Faça três marcações:
+
+\begin{enumerate}
+  \item \textbf{assunto geral:} sobre o que se fala;
+  \item \textbf{problema específico:} qual dificuldade deve ser discutida;
+  \item \textbf{comando implícito:} o texto deve explicar causas, consequências,
+\end{enumerate}
+
+   desafios ou formas de enfrentamento.
+
+Se o tema for “desafios para combater um problema no Brasil”, não basta definir o problema nem escrever uma lista de soluções. É preciso explicar por que ele persiste e como pode ser enfrentado no contexto brasileiro.
+
+O tangenciamento ocorre quando o texto aborda apenas uma parte secundária do tema. Para evitar isso, repita mentalmente o recorte em cada etapa: a tese, os argumentos e a proposta precisam responder ao mesmo problema.
+
+\subsection*{2. Projeto de texto}
+
+O projeto de texto é o planejamento dos argumentos antes da redação. Em cinco minutos, escreva uma tese e duas causas ou dimensões do problema.
+
+Um modelo funcional:
+
+\begin{itemize}
+  \item tese: o problema persiste por causa de A e B;
+  \item desenvolvimento 1: explique A, suas origens e seus efeitos;
+  \item desenvolvimento 2: explique B, suas origens e seus efeitos;
+  \item conclusão: enfrente A e B com uma proposta articulada.
+\end{itemize}
+
+Os argumentos podem ser institucionais, sociais, econômicos, culturais, históricos ou tecnológicos. O importante não é acumular causas, mas desenvolver duas ideias com relação clara com a tese.
+
+Evite escrever a introdução inteira antes de saber o que será defendido. Uma tese genérica, como “é preciso resolver esse problema”, não orienta os parágrafos. Uma tese eficiente mostra a direção do texto: “A persistência do problema decorre da insuficiência de políticas públicas e da naturalização de determinadas práticas sociais”.
+
+\subsection*{3. Introdução}
+
+A introdução pode ter três movimentos:
+
+\begin{enumerate}
+  \item contextualização breve;
+  \item apresentação do problema;
+  \item tese com os dois eixos argumentativos.
+\end{enumerate}
+
+A contextualização não precisa ser uma citação famosa. Pode ser uma observação histórica, uma definição, um contraste ou uma referência a princípio constitucional, desde que não substitua a discussão do tema.
+
+Modelo:
+
+\begin{alerta}
+Embora [contexto ou avanço], [problema] ainda persiste no Brasil. Nesse cenário, a dificuldade é sustentada por [argumento 1] e [argumento 2], fatores que exigem enfrentamento articulado.
+\end{alerta}
+
+O modelo não deve ser copiado mecanicamente. Ele serve para conferir se a introdução contém contexto, problema e tese. A tese pode aparecer em uma ou duas frases, desde que os argumentos estejam identificáveis.
+
+\subsection*{4. Desenvolvimento argumentativo}
+
+Cada desenvolvimento deve apresentar uma ideia central e provar essa ideia. Uma estrutura segura é:
+
+\begin{enumerate}
+  \item tópico frasal: afirmação do argumento;
+  \item explicação: como o fator produz ou agrava o problema;
+  \item repertório ou exemplo: referência que sustenta a análise;
+  \item consequência: efeito concreto sobre a sociedade;
+  \item fechamento: ligação com a tese.
+\end{enumerate}
+
+Não basta citar uma instituição, um filósofo ou uma lei. O repertório precisa ser produtivo, isto é, explicar o argumento. A frase “Segundo determinado autor, a sociedade é desigual” só ajuda se o texto mostrar como essa desigualdade se relaciona ao problema proposto.
+
+Um parágrafo de desenvolvimento não é uma coleção de frases independentes. Use conectivos para indicar causa, consequência, oposição e conclusão: “desse modo”, “além disso”, “por conseguinte”, “contudo”, “portanto”. O conectivo deve corresponder à relação lógica real.
+
+\subsection*{5. Repertório sociocultural}
+
+Repertório é conhecimento externo pertinente ao tema. Pode vir de História, Sociologia, Filosofia, Literatura, legislação, pesquisas, obras artísticas, conceitos científicos ou acontecimentos conhecidos.
+
+Um repertório forte possui três características:
+
+\begin{itemize}
+  \item pertinência: relaciona-se diretamente com o argumento;
+  \item legitimidade: é reconhecível e não inventado;
+  \item produtividade: é explicado e usado para defender a tese.
+\end{itemize}
+
+Não invente dados, autores, títulos ou frases. Se não tiver certeza da autoria de uma citação, use a ideia sem atribuição literal ou escolha outro repertório. Informação falsa pode comprometer a credibilidade e a argumentação.
+
+É melhor usar dois repertórios bem explicados do que cinco menções decorativas. Uma referência constitucional, por exemplo, deve ser ligada ao dever do Estado, à proteção de um direito ou à cidadania discutida no tema.
+
+\subsection*{6. Coesão e coerência}
+
+Coerência é a lógica global do texto. Coesão é a ligação linguística entre suas partes. O texto deve avançar sem contradizer a tese ou repetir a mesma ideia.
+
+Use recursos de coesão:
+
+\begin{itemize}
+  \item pronomes e expressões de retomada: “esse cenário”, “tal medida”;
+  \item substituição lexical: “problema”, “desafio”, “situação”;
+  \item conectivos: “porque”, “assim”, “entretanto”, “além disso”;
+  \item paralelismo: estruturas semelhantes para ideias semelhantes.
+\end{itemize}
+
+Evite iniciar todos os parágrafos com “é importante”. Também evite “porém” como conectivo de qualquer relação. Se o segundo período explicar o primeiro, use “pois” ou “porque”; se apresentar oposição, use “porém” ou “contudo”.
+
+\subsection*{7. Conclusão e proposta de intervenção}
+
+A conclusão deve retomar o problema sem repetir a introdução e apresentar uma proposta de intervenção. Uma proposta completa contém cinco elementos:
+
+\begin{enumerate}
+  \item \textbf{agente:} quem executará a medida;
+  \item \textbf{ação:} o que será feito;
+  \item \textbf{meio ou modo:} como a ação será realizada;
+  \item \textbf{finalidade:} qual resultado se pretende alcançar;
+  \item \textbf{detalhamento:} especificação de um agente, ação ou efeito.
+\end{enumerate}
+
+Exemplo estrutural:
+
+\begin{alerta}
+Portanto, o Ministério responsável deve implementar [ação], por meio de [modo], a fim de [finalidade]. Paralelamente, [outro agente] deve [segunda ação], com [detalhamento], para reduzir [efeito do problema].
+\end{alerta}
+
+O agente deve ter competência para executar a medida. “A sociedade deve resolver” é vago; “o Ministério da Educação, em parceria com as redes de ensino” é mais preciso quando o tema envolver educação. A proposta precisa respeitar os direitos humanos e não pode sugerir violência, censura ou retirada de direitos.
+
+Quando o tema tiver duas causas, a intervenção deve enfrentá-las. Uma campanha de conscientização isolada pode ser insuficiente para um problema que também depende de fiscalização, orçamento ou acesso a serviços.
+
+\subsection*{8. Linguagem formal e revisão}
+
+A modalidade formal exige atenção a concordância, regência, pontuação, acentuação e escolha vocabular. Não é necessário usar palavras difíceis. Clareza e precisão valem mais que frases ornamentadas.
+
+Na revisão, faça quatro leituras rápidas:
+
+\begin{enumerate}
+  \item tema: respondi exatamente ao recorte?
+  \item estrutura: há tese, dois argumentos e intervenção?
+  \item conexão: cada parágrafo se liga ao anterior?
+  \item língua: corrigi concordância, pontuação, repetição e grafia?
+\end{enumerate}
+
+Não introduza uma ideia nova na última linha. A conclusão deve fechar o raciocínio, não abrir um terceiro desenvolvimento.
+
+\section*{Como a banca cobra}
+
+\begin{itemize}
+  \item A redação pode perder desempenho quando discute o assunto amplo, mas não o recorte específico do tema.
+  \item Citação sem explicação não substitui argumento.
+  \item Proposta com apenas “conscientizar” costuma ser genérica se não houver agente, meio e finalidade.
+  \item Conclusão que repete a tese sem intervenção fica incompleta.
+  \item Frases longas com muitas orações aumentam o risco de falha de pontuação e concordância.
+  \item Repertório decorado precisa ser adaptado ao tema; não force uma referência que não sustenta a ideia.
+\end{itemize}
+
+\subsection*{Exemplos resolvidos}
+
+\subsubsection*{Exemplo 1}
+
+Tema hipotético: desafios para ampliar a inclusão digital de idosos no Brasil.
+
+Tese fraca: “A inclusão digital é importante e deve ser ampliada.”
+
+Tese eficiente: “A inclusão digital de idosos é dificultada pela oferta insuficiente de formação tecnológica e pela falta de acessibilidade nos serviços digitais.”
+
+A segunda tese apresenta dois eixos que podem organizar os desenvolvimentos e a intervenção. O primeiro parágrafo pode discutir formação; o segundo, design e acessibilidade.
+
+\subsubsection*{Exemplo 2}
+
+Proposta incompleta: “É preciso conscientizar a população sobre o problema.”
+
+Proposta desenvolvida: “O Ministério responsável deve promover oficinas gratuitas de letramento digital em centros públicos, com instrutores e materiais adaptados, a fim de ampliar a autonomia dos idosos no uso de serviços on-line. Além disso, as plataformas públicas devem realizar testes de acessibilidade e oferecer atendimento presencial alternativo, para impedir que a digitalização exclua usuários com dificuldades.”
+
+A versão desenvolvida apresenta agentes, ações, meios, finalidades e detalhamento. Também enfrenta os dois eixos da tese.
+
+\section*{Quadro-resumo}
+
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+ \textbf{Parte} & \textbf{Pergunta que deve responder} \\
+\midrule
+ introdução & qual problema será discutido e qual é a tese? \\
+ desenvolvimento 1 & qual é a primeira causa ou dimensão? \\
+ desenvolvimento 2 & qual é a segunda causa ou dimensão? \\
+ conclusão & como o problema será enfrentado? \\
+ agente & quem executará a medida? \\
+ ação & o que será feito? \\
+ meio & como será feito? \\
+ finalidade & para qual resultado? \\
+ detalhamento & qual especificação torna a proposta concreta? \\
+\bottomrule
+\end{tabularx}
+
+
+\section*{Questões de fixação}
+
+\subsection*{Questão 1 — (questão inédita)}
+
+Em um projeto de texto para o ENEM, a tese tem como função principal:
+
+A) apresentar todos os dados que serão usados. B) resumir exclusivamente a proposta de intervenção. C) indicar a posição defendida e orientar os argumentos. D) substituir os parágrafos de desenvolvimento. E) repetir literalmente o tema da proposta.
+
+\begin{alerta}
+\textbf{Gabarito: C.} A tese apresenta o ponto de vista e os eixos argumentativos. Os dados e a intervenção serão desenvolvidos nas partes adequadas do texto.
+\end{alerta}
+
+\subsection*{Questão 2 — (questão inédita)}
+
+Qual repertório é mais produtivo em uma redação sobre desigualdade de acesso à educação?
+
+A) uma citação famosa sem explicação. B) um conceito educacional explicado e ligado ao problema. C) uma lista de autores não relacionados ao tema. D) um dado estatístico inventado para reforçar a tese. E) uma referência histórica usada apenas na conclusão.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Repertório produtivo é pertinente, legítimo e articulado ao argumento. Citação decorativa ou informação inventada não cumpre essa função.
+\end{alerta}
+
+\subsection*{Questão 3 — (questão inédita)}
+
+Uma proposta de intervenção completa deve apresentar, entre outros elementos:
+
+A) apenas uma opinião pessoal. B) agente, ação, meio, finalidade e detalhamento. C) uma nova tese sem relação com o desenvolvimento. D) uma promessa de resultado imediato. E) somente uma campanha publicitária.
+
+\begin{alerta}
+\textbf{Gabarito: B.} Esses elementos tornam a proposta concreta, executável e relacionada ao problema discutido.
+\end{alerta}
+
+\subsection*{Questão 4 — (questão inédita)}
+
+Em “A medida é necessária, portanto deve ser acompanhada de fiscalização”, o termo “portanto” estabelece relação de:
+
+A) oposição. B) condição. C) conclusão. D) concessão. E) comparação.
+
+\begin{alerta}
+\textbf{Gabarito: C.} A segunda oração apresenta uma conclusão decorrente da afirmação anterior.
+\end{alerta}
+
+\subsection*{Questão 5 — (questão inédita)}
+
+Para evitar o tangenciamento, o candidato deve:
+
+A) abordar qualquer assunto relacionado ao tema. B) repetir o título em todos os parágrafos. C) responder ao recorte específico ao longo de todo o texto. D) evitar apresentar uma tese definida. E) concentrar-se apenas na proposta de intervenção.
+
+\begin{alerta}
+\textbf{Gabarito: C.} O recorte deve orientar a tese, os argumentos e a intervenção. Tratar apenas do assunto amplo pode afastar o texto da proposta.
+\end{alerta}
+
+\section*{Revisão final}
+
+\begin{itemize}
+  \item[$\square$] Identifiquei o assunto, o problema e o recorte do tema.
+  \item[$\square$] Escrevi uma tese com dois eixos argumentativos.
+  \item[$\square$] Desenvolvi uma causa ou dimensão em cada parágrafo.
+  \item[$\square$] Expliquei o repertório em vez de apenas citá-lo.
+  \item[$\square$] Usei conectivos de acordo com a relação lógica.
+  \item[$\square$] Retomei o problema na conclusão.
+  \item[$\square$] Indiquei agente, ação, meio, finalidade e detalhamento.
+  \item[$\square$] Mantive a proposta compatível com os direitos humanos.
+  \item[$\square$] Revisei língua formal, pontuação e repetição.
+\end{itemize}
+
+\end{document}
