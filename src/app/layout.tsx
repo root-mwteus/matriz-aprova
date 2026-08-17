@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google"
 import { Toaster } from "sonner"
 import { Analytics } from "@vercel/analytics/next"
+import { SupportBubble } from "@/components/SupportBubble"
 import "./globals.css"
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants"
 
@@ -107,6 +108,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <Analytics />
+
+        {/* Suporte flutuante no canto: compacto por padrão, abre o balão com
+            o contato; fica abaixo de modais e do ⌘K (z-40). */}
+        <SupportBubble />
       </body>
     </html>
   )

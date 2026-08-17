@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { SITE_NAME } from "@/lib/constants"
+import { Logo } from "@/components/marketing/Logo"
 
 /**
  * Casca das telas de entrada (login, cadastro, recuperação).
@@ -32,13 +32,7 @@ export function AuthShell({
             href="/"
             className="inline-flex items-center gap-2 rounded-md transition-opacity duration-fast hover:opacity-80"
           >
-            <span
-              aria-hidden
-              className="grid h-7 w-7 place-items-center rounded-lg bg-accent text-xs font-bold text-fg-on-accent"
-            >
-              M
-            </span>
-            <span className="text-base font-semibold tracking-tight text-fg">{SITE_NAME}</span>
+            <Logo className="h-7 w-auto" />
           </Link>
         </div>
 

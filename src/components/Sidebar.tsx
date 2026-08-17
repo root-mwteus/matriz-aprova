@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { ChevronsUpDown, LogOut, Lock, Settings } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { navigation, isRouteActive } from "@/lib/navigation"
+import { Logo } from "@/components/marketing/Logo"
 import { cn } from "@/lib/utils"
 import type { Profile } from "@/types"
 import { Avatar, Menu, MenuItem, MenuSeparator, Tooltip } from "@/components/ui"
@@ -60,13 +61,7 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
           href="/dashboard"
           className="flex items-center gap-2.5 rounded-md px-1 py-1 transition-opacity duration-fast hover:opacity-80"
         >
-          <span
-            aria-hidden
-            className="grid h-6 w-6 place-items-center rounded-[7px] bg-accent text-[11px] font-bold text-fg-on-accent"
-          >
-            M
-          </span>
-          <span className="text-sm font-semibold tracking-tight text-fg">Matriz</span>
+          <Logo className="h-6 w-auto" />
         </Link>
       </div>
 

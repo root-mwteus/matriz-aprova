@@ -1,6 +1,6 @@
 # Concursos principais por área
 
-> Snapshot de **agosto/2026** para alimentar o conteúdo do Matriz Aprovação
+> Snapshot de **agosto/2026** para alimentar o conteúdo do Matriz Aprova
 > (editais, questões, materiais, contagem regressiva). **Verifique sempre o
 > edital oficial** — datas e vagas mudam com retificações. Fontes: páginas
 > oficiais (INEP, CFOAB/FGV, EEAR, Exército, Marinha, Aeronáutica) e portais

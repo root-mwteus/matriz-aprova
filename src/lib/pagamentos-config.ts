@@ -27,7 +27,7 @@ export interface ConfigPagamentos {
 }
 
 export const CONFIG_PAGAMENTOS_DEFAULT: ConfigPagamentos = {
-  titulo_plano: "Plano Vitalício Matriz Aprovação",
+  titulo_plano: "Plano Vitalício Matriz Aprova",
   descricao_plano: "Um pagamento. Acesso completo para sempre.",
   valor_centavos: 4999,
   beneficios: [

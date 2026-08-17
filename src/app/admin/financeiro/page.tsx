@@ -221,7 +221,7 @@ export default function AdminFinanceiroPage() {
                   value={tituloPlano}
                   onChange={(e) => setTituloPlano(e.target.value)}
                   className="field h-9"
-                  placeholder="Plano Vitalício Matriz Aprovação"
+                  placeholder="Plano Vitalício Matriz Aprova"
                 />
               </div>
               <div className="space-y-1.5">

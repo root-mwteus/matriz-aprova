@@ -1,8 +1,8 @@
 import { LegalLayout } from "@/components/marketing/LegalLayout"
 
 export const metadata = {
-  title: "Política de Privacidade · Matriz Aprovação",
-  description: "Política de Privacidade da plataforma Matriz Aprovação.",
+  title: "Política de Privacidade · Matriz Aprova",
+  description: "Política de Privacidade da plataforma Matriz Aprova.",
 }
 
 const secao = "mt-10"

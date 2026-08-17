@@ -12,8 +12,8 @@ function getResend(): Resend | null {
 // "domain is not verified", falta adicionar o domínio e os registros DNS
 // em https://resend.com/domains (verificado a partir do código em 03/08).
 const FROM = process.env.NODE_ENV === "production"
-  ? "Matriz Aprovação <noreply@matrizaprova.com>"
-  : "Matriz Aprovação <onboarding@resend.dev>"
+  ? "Matriz Aprova <noreply@matrizaprova.com>"
+  : "Matriz Aprova <onboarding@resend.dev>"
 
 export async function sendBoasVindas({
   nome,
@@ -31,7 +31,7 @@ export async function sendBoasVindas({
   return resend.emails.send({
     from: FROM,
     to: email,
-    subject: `${nome}, sua conta na Matriz Aprovação está pronta`,
+    subject: `${nome}, sua conta na Matriz Aprova está pronta`,
     headers: {
       "List-Unsubscribe": "<mailto:suporte@matrizaprova.com?subject=Descadastrar>",
     },
@@ -203,7 +203,7 @@ Veja o edital completo: ${url}
 Acesse o app: https://matrizaprova.com/editais
 
 ---
-Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
+Matriz Aprova Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
 suporte@matrizaprova.com · matrizaprova.com`
 }
 
@@ -243,7 +243,7 @@ function alertaEditalHtml({
     <tr>
       <td align="center" style="padding:32px 16px 10px">
         <a href="https://matrizaprova.com" style="text-decoration:none">
-          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprovação"
+          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprova"
                style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
         </a>
       </td>
@@ -286,7 +286,7 @@ function alertaEditalHtml({
 
           <tr>
             <td style="padding:32px 0 0;text-align:center">
-              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
+              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprova Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
               <p style="margin:0;color:#6B7280;font-size:11px">
                 <a href="mailto:suporte@matrizaprova.com" style="color:#6B7280;text-decoration:none">suporte@matrizaprova.com</a>
                 &nbsp;·&nbsp;
@@ -312,7 +312,7 @@ function recuperarSenhaText({
 }) {
   return `Olá, ${nome}!
 
-Você pediu para criar uma senha nova na Matriz Aprovação.
+Você pediu para criar uma senha nova na Matriz Aprova.
 
 Para criar a nova senha, use este link:
 ${link}
@@ -322,7 +322,7 @@ O link expira em 1 hora. Se você não pediu isso, ignore este email — sua sen
 Não consegue usar o link? Copie e cole o endereço no navegador, ou peça um novo link em https://matrizaprova.com/recuperar-senha.
 
 ---
-Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
+Matriz Aprova Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
 suporte@matrizaprova.com · matrizaprova.com`
 }
 
@@ -352,7 +352,7 @@ function recuperarSenhaHtml({
     <tr>
       <td align="center" style="padding:32px 16px 10px">
         <a href="https://matrizaprova.com" style="text-decoration:none">
-          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprovação"
+          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprova"
                style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
         </a>
       </td>
@@ -371,7 +371,7 @@ function recuperarSenhaHtml({
                 Criar nova senha, ${nomeEsc}
               </h1>
               <p style="margin:0 0 22px;color:rgba(255,255,255,0.68);font-size:15px;line-height:1.7">
-                Você pediu para criar uma senha nova na Matriz Aprovação. O link abaixo vale por 1 hora:
+                Você pediu para criar uma senha nova na Matriz Aprova. O link abaixo vale por 1 hora:
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0">
                 <tr>
@@ -407,7 +407,7 @@ function recuperarSenhaHtml({
 
           <tr>
             <td style="padding:32px 0 0;text-align:center">
-              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
+              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprova Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
               <p style="margin:0;color:#6B7280;font-size:11px">
                 <a href="mailto:suporte@matrizaprova.com" style="color:#6B7280;text-decoration:none">suporte@matrizaprova.com</a>
                 &nbsp;·&nbsp;
@@ -427,7 +427,7 @@ function recuperarSenhaHtml({
 function boasVindasText(nome: string, area: string) {
   return `Olá, ${nome}!
 
-Sua conta na Matriz Aprovação está pronta e você já está no modo ${area}.
+Sua conta na Matriz Aprova está pronta e você já está no modo ${area}.
 
 Comece por aqui:
 · Banco de questões comentadas das principais bancas
@@ -442,7 +442,7 @@ Você está no plano demo — explore à vontade. Quando quiser liberar as 4 ár
 Se você não criou esta conta, ignore este email.
 
 ---
-Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
+Matriz Aprova Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
 suporte@matrizaprova.com · matrizaprova.com`
 }
 
@@ -461,13 +461,13 @@ function avisoLoginText({
 }) {
   return `Olá, ${nome}!
 
-Um novo acesso à sua conta na Matriz Aprovação acaba de acontecer.
+Um novo acesso à sua conta na Matriz Aprova acaba de acontecer.
 
 Dispositivo: ${navegador} no ${sistema}
 IP: ${ip ?? "não identificado"}
 Quando: ${quando} (horário de Brasília)
 
-Por segurança, a Matriz Aprovação mantém apenas uma sessão ativa por conta — se havia outra sessão aberta, ela foi desconectada.
+Por segurança, a Matriz Aprova mantém apenas uma sessão ativa por conta — se havia outra sessão aberta, ela foi desconectada.
 
 Não foi você? Altere sua senha imediatamente:
 https://matrizaprova.com/recuperar-senha
@@ -475,7 +475,7 @@ https://matrizaprova.com/recuperar-senha
 Se foi você, pode ignorar este email com segurança.
 
 ---
-Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
+Matriz Aprova Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43
 suporte@matrizaprova.com · matrizaprova.com`
 }
 
@@ -511,14 +511,14 @@ function avisoLoginHtml({
 </head>
 <body style="margin:0;padding:0;background-color:#EDE9E0;font-family:Arial,Helvetica,sans-serif;color:#0E1117">
   <div style="display:none;max-height:0;overflow:hidden;mso-hide:all">
-    Novo acesso à sua conta na Matriz Aprovação. Se não foi você, altere sua senha.
+    Novo acesso à sua conta na Matriz Aprova. Se não foi você, altere sua senha.
   </div>
 
   <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
     <tr>
       <td align="center" style="padding:32px 16px 10px">
         <a href="https://matrizaprova.com" style="text-decoration:none">
-          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprovação"
+          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprova"
                style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
         </a>
       </td>
@@ -537,7 +537,7 @@ function avisoLoginHtml({
                 Novo acesso à sua conta, ${nomeEsc}
               </h1>
               <p style="margin:0 0 10px;color:rgba(255,255,255,0.68);font-size:15px;line-height:1.7">
-                Um novo login acaba de acontecer na sua conta na Matriz Aprovação:
+                Um novo login acaba de acontecer na sua conta na Matriz Aprova:
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid rgba(255,255,255,0.12)">
                 ${linha("Dispositivo", dispositivoEsc)}
@@ -573,7 +573,7 @@ function avisoLoginHtml({
 
           <tr>
             <td style="padding:32px 0 0;text-align:center">
-              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
+              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprova Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
               <p style="margin:0;color:#6B7280;font-size:11px">
                 <a href="mailto:suporte@matrizaprova.com" style="color:#6B7280;text-decoration:none">suporte@matrizaprova.com</a>
                 &nbsp;·&nbsp;
@@ -599,18 +599,18 @@ function boasVindasHtml(nome: string, area: string) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="x-apple-disable-message-reformatting">
-  <title>Bem-vindo à Matriz Aprovação</title>
+  <title>Bem-vindo à Matriz Aprova</title>
 </head>
 <body style="margin:0;padding:0;background-color:#EDE9E0;font-family:Arial,Helvetica,sans-serif;color:#0E1117">
   <div style="display:none;max-height:0;overflow:hidden;mso-hide:all">
-    Sua conta na Matriz Aprovação está pronta. Comece a estudar agora.
+    Sua conta na Matriz Aprova está pronta. Comece a estudar agora.
   </div>
 
   <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
     <tr>
       <td align="center" style="padding:32px 16px 10px">
         <a href="https://matrizaprova.com" style="text-decoration:none">
-          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprovação"
+          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprova"
                style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
         </a>
       </td>
@@ -727,7 +727,7 @@ function boasVindasHtml(nome: string, area: string) {
           <!-- FOOTER -->
           <tr>
             <td style="padding:32px 0 0;text-align:center">
-              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprovação Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
+              <p style="margin:0 0 4px;color:#6B7280;font-size:11px">Matriz Aprova Tecnologia Educacional LTDA · CNPJ 54.892.317/0001-43</p>
               <p style="margin:0;color:#6B7280;font-size:11px">
                 <a href="mailto:suporte@matrizaprova.com" style="color:#6B7280;text-decoration:none">suporte@matrizaprova.com</a>
                 &nbsp;·&nbsp;

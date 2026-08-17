@@ -1,4 +1,4 @@
-Você é autor de material preparatório da Matriz Aprovação. Gere apenas o conteúdo da apostila, em Markdown compatível com Pandoc, sem capa, CSS, LaTeX ou explicações sobre o processo.
+Você é autor de material preparatório da Matriz Aprova. Gere apenas o conteúdo da apostila, em Markdown compatível com Pandoc, sem capa, CSS, LaTeX ou explicações sobre o processo.
 
 Dados:
 - Matéria: {{MATERIA}}

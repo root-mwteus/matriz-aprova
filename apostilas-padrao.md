@@ -1,4 +1,4 @@
-# PADRÃO DE APOSTILAS — MATRIZ APROVAÇÃO
+# PADRÃO DE APOSTILAS — MATRIZ APROVA
 
 > Documento de trabalho para criar as apostilas em PDF dos materiais.
 > Serve de **padrão editorial** (o que toda apostila deve ter) e de
@@ -142,7 +142,7 @@ Ao subir a apostila em `/admin/materiais/novo`, preencha:
 | Matéria | disciplina (mesmo nome usado nos concursos curados) |
 | Submatéria | tema fechado (ex.: "Controle de constitucionalidade") |
 | Banca | banca principal, ou "a definir" |
-| Professor | `Matriz Aprovação` (autor é a plataforma) |
+| Professor | `Matriz Aprova` (autor é a plataforma) |
 | Incidência | o percentual usado no prompt |
 | IA recomenda | ligado quando a matéria tem peso alto no plano curado |
 

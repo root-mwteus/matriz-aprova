@@ -24,7 +24,7 @@ import {
 import { createClient } from "@/lib/supabase/client"
 import { formatarValor } from "@/lib/pagamentos-config"
 import { Button } from "@/components/ui"
-import { SITE_NAME } from "@/lib/constants"
+import { Logo } from "@/components/marketing/Logo"
 
 /**
  * Página de assinatura.
@@ -203,13 +203,7 @@ export default function AssinarPage() {
             href="/dashboard"
             className="inline-flex items-center gap-2 rounded-md transition-opacity duration-fast hover:opacity-80"
           >
-            <span
-              aria-hidden
-              className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-sm font-bold text-fg-on-accent"
-            >
-              M
-            </span>
-            <span className="text-base font-semibold tracking-tight text-fg">{SITE_NAME}</span>
+            <Logo className="h-8 w-auto" />
           </Link>
 
           <Link

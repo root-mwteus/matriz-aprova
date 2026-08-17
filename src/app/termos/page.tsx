@@ -1,8 +1,8 @@
 import { LegalLayout } from "@/components/marketing/LegalLayout"
 
 export const metadata = {
-  title: "Termos de Uso · Matriz Aprovação",
-  description: "Termos de Uso da plataforma Matriz Aprovação.",
+  title: "Termos de Uso · Matriz Aprova",
+  description: "Termos de Uso da plataforma Matriz Aprova.",
 }
 
 const secao = "mt-10"
@@ -19,7 +19,7 @@ export default function TermosPage() {
       <section className={secao}>
         <h2 className={h2}>1. Aceitação dos termos</h2>
         <p className={paragrafo}>
-          Ao criar uma conta ou utilizar a plataforma Matriz Aprovação, você declara ter lido, compreendido e
+          Ao criar uma conta ou utilizar a plataforma Matriz Aprova, você declara ter lido, compreendido e
           concordado com estes Termos de Uso e com a Política de Privacidade. Se não concordar com qualquer parte
           destes termos, não utilize o serviço.
         </p>
@@ -28,7 +28,7 @@ export default function TermosPage() {
       <section className={secao}>
         <h2 className={h2}>2. Descrição do serviço</h2>
         <p className={paragrafo}>
-          A Matriz Aprovação é uma plataforma de estudos que combina banco de questões, simulados e recursos de
+          A Matriz Aprova é uma plataforma de estudos que combina banco de questões, simulados e recursos de
           inteligência artificial para auxiliar usuários na preparação para concursos públicos, OAB, concursos
           militares e ENEM. A plataforma não garante aprovação em qualquer seleção.
         </p>
@@ -39,7 +39,7 @@ export default function TermosPage() {
         <p className={paragrafo}>
           Você é responsável por manter a confidencialidade dos seus dados de acesso e por todas as atividades
           realizadas na sua conta. Você deve fornecer informações verdadeiras e manter seus dados atualizados. A
-          Matriz Aprovação pode suspender contas que utilizem informações falsas ou que violem estes termos.
+          Matriz Aprova pode suspender contas que utilizem informações falsas ou que violem estes termos.
         </p>
       </section>
 
@@ -67,7 +67,7 @@ export default function TermosPage() {
         <h2 className={h2}>6. Propriedade intelectual</h2>
         <p className={paragrafo}>
           Todo o conteúdo da plataforma — questões, textos, recursos visuais, marca e software — é propriedade da
-          Matriz Aprovação Tecnologia Educacional LTDA ou de seus licenciantes e está protegido pelas leis de
+          Matriz Aprova Tecnologia Educacional LTDA ou de seus licenciantes e está protegido pelas leis de
           propriedade intelectual. O uso é concedido em caráter pessoal e intransferível.
         </p>
       </section>
@@ -75,7 +75,7 @@ export default function TermosPage() {
       <section className={secao}>
         <h2 className={h2}>7. Limitação de responsabilidade</h2>
         <p className={paragrafo}>
-          A plataforma é fornecida {"\"no estado em que se encontra\""}. A Matriz Aprovação não se responsabiliza por
+          A plataforma é fornecida {"\"no estado em que se encontra\""}. A Matriz Aprova não se responsabiliza por
           danos diretos ou indiretos decorrentes do uso ou da impossibilidade de uso do serviço, incluindo
           interrupções técnicas. O conteúdo de questões e gabaritos é oferecido para fins de estudo e pode conter
           erros.

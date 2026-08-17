@@ -14,7 +14,7 @@ import { SITE_URL } from "@/lib/constants"
  */
 
 export const PLANO_VITALICIO = {
-  titulo: "Plano Vitalício Matriz Aprovação",
+  titulo: "Plano Vitalício Matriz Aprova",
   valorCentavos: 4999,
   valorExibido: "R$ 49,99",
 } as const

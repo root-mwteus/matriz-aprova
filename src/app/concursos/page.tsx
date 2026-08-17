@@ -1,11 +1,12 @@
 import Link from "next/link"
+import { Logo } from "@/components/marketing/Logo"
 import { ThemeToggle } from "@/components/marketing/ThemeToggle"
 
 const COLOR = "#FFD500"
 const COLOR_TEXT = "#0E1117"
 
 export const metadata = {
-  title: "Matriz Aprovação · Concursos Públicos",
+  title: "Matriz Aprova · Concursos Públicos",
   description: "Plataforma de estudos para concursos públicos com IA preditiva. CESPE, FGV, FCC, VUNESP e mais 40 bancas.",
 }
 
@@ -18,18 +19,7 @@ export default function ConcursosPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-md flex items-center justify-center" style={{ background: COLOR }}>
-                <div className="grid grid-cols-2 gap-0.5 w-5 h-5">
-                  <div className="bg-ink/30 rounded-sm"></div>
-                  <div className="bg-ink/30 rounded-sm"></div>
-                  <div className="bg-ink/30 rounded-sm"></div>
-                  <div className="bg-ink rounded-sm"></div>
-                </div>
-              </div>
-              <div className="leading-none">
-                <div className="font-display font-bold text-lg text-ink dark:text-paper">matriz<span style={{ color: COLOR }}>.</span></div>
-                <div className="font-mono text-[9px] text-ink/60 dark:text-paper/50 uppercase tracking-widest">concursos públicos</div>
-              </div>
+              <Logo className="h-8 w-auto" />
             </Link>
 
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-ink/70 dark:text-paper/70">
@@ -57,7 +47,7 @@ export default function ConcursosPage() {
       {/* ── BREADCRUMB ── */}
       <div className="border-b-2 border-ink" style={{ background: COLOR, color: COLOR_TEXT }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center gap-2 font-mono text-xs">
-          <Link href="/" className="hover:underline opacity-70">matriz.aprovação</Link>
+          <Link href="/" className="hover:underline opacity-70">matriz.aprova</Link>
           <span className="opacity-50">/</span>
           <span className="font-bold uppercase tracking-widest">concursos públicos</span>
         </div>
@@ -422,18 +412,9 @@ export default function ConcursosPage() {
           <div className="grid md:grid-cols-12 gap-10 mb-12">
             <div className="md:col-span-5">
               <Link href="/" className="flex items-center gap-2.5 mb-5">
-                <div className="w-9 h-9 rounded-md flex items-center justify-center" style={{ background: COLOR }}>
-                  <div className="grid grid-cols-2 gap-0.5 w-5 h-5">
-                    <div className="bg-ink/30 rounded-sm"></div>
-                    <div className="bg-ink/30 rounded-sm"></div>
-                    <div className="bg-ink/30 rounded-sm"></div>
-                    <div className="bg-ink rounded-sm"></div>
-                  </div>
-                </div>
-                <div className="leading-none">
-                  <div className="font-display font-bold text-lg text-paper">matriz<span style={{ color: COLOR }}>.</span></div>
-                  <div className="font-mono text-[9px] text-paper/50 uppercase tracking-widest">concursos públicos</div>
-                </div>
+                <span className="rounded-md bg-paper p-1.5">
+                  <Logo className="h-7 w-auto" />
+                </span>
               </Link>
               <p className="text-sm leading-relaxed max-w-md">Plataforma brasileira de estudos com IA preditiva para Concursos, OAB, Militar e ENEM.</p>
             </div>
@@ -459,8 +440,8 @@ export default function ConcursosPage() {
           </div>
           <div className="border-t border-paper/10 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono text-[11px] text-paper/50 uppercase tracking-widest">
             <div>
-              © 2026 matriz aprovação<br />
-              <span className="normal-case tracking-normal">MATRIZ APROVAÇÃO TECNOLOGIA EDUCACIONAL LTDA · CNPJ: 54.892.317/0001-43</span>
+              © 2026 matriz aprova<br />
+              <span className="normal-case tracking-normal">MATRIZ APROVA TECNOLOGIA EDUCACIONAL LTDA · CNPJ: 54.892.317/0001-43</span>
             </div>
             <div className="text-paper/40">matrizaprova.com</div>
           </div>

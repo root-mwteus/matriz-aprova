@@ -19,7 +19,7 @@
 -- 1. Tabela de configuração
 CREATE TABLE IF NOT EXISTS public.config_pagamentos (
   id                  integer PRIMARY KEY CHECK (id = 1),
-  titulo_plano        text NOT NULL DEFAULT 'Plano Vitalício Matriz Aprovação',
+  titulo_plano        text NOT NULL DEFAULT 'Plano Vitalício Matriz Aprova',
   descricao_plano     text NOT NULL DEFAULT 'Um pagamento. Acesso completo para sempre.',
   valor_centavos      integer NOT NULL DEFAULT 4999
                       CHECK (valor_centavos > 0),
