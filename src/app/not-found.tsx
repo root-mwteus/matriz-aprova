@@ -1,5 +1,6 @@
 import Link from "next/link"
 import type { Metadata } from "next"
+import { ThemeToggle } from "@/components/marketing/ThemeToggle"
 
 export const metadata: Metadata = {
   title: "Página não encontrada",
@@ -16,7 +17,11 @@ export const metadata: Metadata = {
  */
 export default function NotFound() {
   return (
-    <div className="dark flex min-h-screen items-center justify-center bg-canvas px-6">
+    <div className="relative flex min-h-screen items-center justify-center bg-canvas px-6">
+      <div className="absolute right-4 top-4">
+        <ThemeToggle />
+      </div>
+
       <div className="w-full max-w-sm text-center">
         <p className="text-sm font-medium tabular-nums text-fg-faint">404</p>
 

@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Logo } from "@/components/marketing/Logo"
+import { ThemeToggle } from "@/components/marketing/ThemeToggle"
 
 /**
  * Casca das telas de entrada (login, cadastro, recuperação).
@@ -25,7 +26,11 @@ export function AuthShell({
   footer?: React.ReactNode
 }) {
   return (
-    <div className="dark flex min-h-screen flex-col items-center justify-center bg-canvas px-4 py-10">
+    <div className="relative flex min-h-screen flex-col items-center justify-center bg-canvas px-4 py-10">
+      <div className="absolute right-4 top-4">
+        <ThemeToggle />
+      </div>
+
       <div className="w-full max-w-[400px] animate-rise">
         <div className="mb-7 text-center">
           <Link

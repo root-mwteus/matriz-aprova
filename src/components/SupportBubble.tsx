@@ -22,7 +22,7 @@ export function SupportBubble() {
   const temWhatsapp = digitos.length > 0
   const href = temWhatsapp
     ? `https://wa.me/${digitos}?text=${encodeURIComponent(TEXTO_WHATSAPP)}`
-    : `mailto:${EMAIL_SUPORTE}?subject=Suporte%20%E2%80%94%20D%C3%BAvida%20ou%20falha`
+    : `https://wa.me/5553999010269`
   const ContatoIcon = temWhatsapp ? MessageCircle : Headset
 
   return (

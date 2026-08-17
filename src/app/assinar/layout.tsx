@@ -25,5 +25,5 @@ export default async function AssinarLayout({ children }: { children: React.Reac
     redirect("/login?next=/assinar")
   }
 
-  return <div className="dark min-h-screen bg-canvas text-fg">{children}</div>
+  return <div className="min-h-screen bg-canvas text-fg">{children}</div>
 }

@@ -10,6 +10,7 @@ import PaywallBanner from "@/components/PaywallBanner"
 import PaywallLock from "@/components/PaywallLock"
 import SecaoLock from "@/components/SecaoLock"
 import { CommandPalette, useCommandPalette } from "@/components/CommandPalette"
+import { ThemeToggle } from "@/components/marketing/ThemeToggle"
 import { breadcrumbsFor } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
 import { IconButton, Kbd } from "@/components/ui"
@@ -21,9 +22,9 @@ import { IconButton, Kbd } from "@/components/ui"
  * barra superior não rolam, então nunca se perde a referência de onde se
  * está numa lista longa.
  *
- * A aplicação assume o tema escuro (`dark` na raiz): é uma ferramenta de
- * sessão longa, e o marketing continua respeitando a preferência do
- * sistema, com seu próprio escopo de cor.
+ * O painel acompanha o tema escolhido pelo usuário (toggle no topo),
+ * assim como as páginas de marketing — o escuro não é mais assumido
+ * na raiz da aplicação.
  */
 
 export default function DashboardShell({ children }: { children: React.ReactNode }) {
@@ -41,7 +42,7 @@ export default function DashboardShell({ children }: { children: React.ReactNode
   // vendas fora deste shell e nunca chega aqui.
 
   return (
-    <div className="dark min-h-screen bg-canvas text-fg">
+    <div className="min-h-screen bg-canvas text-fg">
       {/* ── Sidebar fixa (desktop) ─────────────────────────────── */}
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-sidebar border-r border-line lg:block">
         <Sidebar />
@@ -127,6 +128,8 @@ export default function DashboardShell({ children }: { children: React.ReactNode
           >
             <Search size={16} strokeWidth={2} />
           </IconButton>
+
+          <ThemeToggle />
         </header>
 
         {/* ── Aviso de plano demo ─────────────────────────────── */}

@@ -243,7 +243,7 @@ function alertaEditalHtml({
     <tr>
       <td align="center" style="padding:32px 16px 10px">
         <a href="https://matrizaprova.com" style="text-decoration:none">
-          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprova"
+          <img src="https://matrizaprova.com/matrizaprova_temaclaro.png" width="300" height="110" alt="Matriz Aprova"
                style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
         </a>
       </td>
@@ -352,7 +352,7 @@ function recuperarSenhaHtml({
     <tr>
       <td align="center" style="padding:32px 16px 10px">
         <a href="https://matrizaprova.com" style="text-decoration:none">
-          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprova"
+          <img src="https://matrizaprova.com/matrizaprova_temaclaro.png" width="300" height="110" alt="Matriz Aprova"
                style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
         </a>
       </td>
@@ -518,7 +518,7 @@ function avisoLoginHtml({
     <tr>
       <td align="center" style="padding:32px 16px 10px">
         <a href="https://matrizaprova.com" style="text-decoration:none">
-          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprova"
+          <img src="https://matrizaprova.com/matrizaprova_temaclaro.png" width="300" height="110" alt="Matriz Aprova"
                style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
         </a>
       </td>
@@ -610,7 +610,7 @@ function boasVindasHtml(nome: string, area: string) {
     <tr>
       <td align="center" style="padding:32px 16px 10px">
         <a href="https://matrizaprova.com" style="text-decoration:none">
-          <img src="https://matrizaprova.com/logo.png" width="340" height="64" alt="Matriz Aprova"
+          <img src="https://matrizaprova.com/matrizaprova_temaclaro.png" width="300" height="110" alt="Matriz Aprova"
                style="display:block;border:0;outline:none;text-decoration:none;width:340px;max-width:340px;height:auto">
         </a>
       </td>

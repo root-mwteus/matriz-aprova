@@ -25,6 +25,7 @@ import { createClient } from "@/lib/supabase/client"
 import { formatarValor } from "@/lib/pagamentos-config"
 import { Button } from "@/components/ui"
 import { Logo } from "@/components/marketing/Logo"
+import { ThemeToggle } from "@/components/marketing/ThemeToggle"
 
 /**
  * Página de assinatura.
@@ -206,12 +207,15 @@ export default function AssinarPage() {
             <Logo className="h-8 w-auto" />
           </Link>
 
-          <Link
-            href="/dashboard"
-            className="text-sm font-medium text-fg-muted transition-colors duration-fast hover:text-fg"
-          >
-            Voltar ao painel →
-          </Link>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+              href="/dashboard"
+              className="text-sm font-medium text-fg-muted transition-colors duration-fast hover:text-fg"
+            >
+              Voltar ao painel →
+            </Link>
+          </div>
         </header>
 
         <main className="flex flex-1 flex-col items-center py-12 lg:py-16">

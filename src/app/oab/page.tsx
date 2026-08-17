@@ -397,7 +397,7 @@ export default function OABPage() {
             <div className="md:col-span-5">
               <Link href="/" className="flex items-center gap-2.5 mb-5">
                 <span className="rounded-md bg-paper p-1.5">
-                  <Logo className="h-7 w-auto" />
+                  <Logo className="h-7 w-auto" sempreClaro />
                 </span>
               </Link>
               <p className="text-sm leading-relaxed max-w-md">Plataforma brasileira de estudos com IA preditiva para Concursos, OAB, Militar e ENEM.</p>

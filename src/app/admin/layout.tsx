@@ -22,6 +22,7 @@ import {
   type LucideIcon,
 } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { ThemeToggle } from "@/components/marketing/ThemeToggle"
 import { cn } from "@/lib/utils"
 import {
   Avatar,
@@ -227,7 +228,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   )
 
   return (
-    <div className="dark min-h-screen bg-canvas text-fg">
+    <div className="min-h-screen bg-canvas text-fg">
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-sidebar border-r border-line lg:block">
         {sidebar}
       </aside>
@@ -297,6 +298,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               ))}
             </ol>
           </nav>
+
+          <div className="flex-1" />
+          <ThemeToggle />
         </header>
 
         <main className="mx-auto w-full max-w-content px-4 py-6 lg:px-8 lg:py-8">{children}</main>
