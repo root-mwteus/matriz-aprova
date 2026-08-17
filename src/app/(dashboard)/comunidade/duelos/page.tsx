@@ -5,6 +5,7 @@ import { Swords, Timer, Trophy } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { cn } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
+import PerfilAvatar from "@/components/comunidade/PerfilAvatar"
 import { Badge, Button, ErrorState, Panel, Skeleton } from "@/components/ui"
 
 /**
@@ -30,6 +31,12 @@ interface QuestaoDetalhe {
   explicacao?: string | null
 }
 
+interface JogadorResumo {
+  nome: string
+  icone_path?: string | null
+  moldura_id?: string | null
+}
+
 interface DueloEstado {
   id: string
   status: "aguardando" | "ativo" | "finalizado" | "expirado" | "cancelado"
@@ -41,6 +48,8 @@ interface DueloEstado {
   vencedor?: string | null
   acertos_a?: number
   acertos_b?: number
+  /** Aparência de quem está na partida — para mostrar o oponente. */
+  jogadores?: Record<string, JogadorResumo>
 }
 
 type Fase = "ocioso" | "buscando" | "partida" | "resultado"
@@ -70,7 +79,7 @@ export default function DuelosPage() {
       // Quem puxa o pareamento recebe a partida pronta na resposta —
       // vai direto pras questões, sem passar pela fase de espera.
       if (data.status === "ativo" && data.duelo) {
-        setDuelo(data.duelo)
+        setDuelo({ ...data.duelo, jogadores: data.jogadores })
         setFase("partida")
         return
       }
@@ -194,7 +203,7 @@ function BuscandoOponente({
         if (data.duelo.status === "ativo") {
           clearInterval(poll)
           clearInterval(relogio)
-          onAtivo(data.duelo)
+          onAtivo({ ...data.duelo, jogadores: data.jogadores })
         } else if (data.duelo.status !== "aguardando") {
           clearInterval(poll)
           clearInterval(relogio)
@@ -238,6 +247,10 @@ function Partida({
 }) {
   const supabase = createClient()
   const questoes = duelo.questoes_detalhes ?? []
+  const souA = duelo.jogador_a === meuId
+  const oponenteId = souA ? duelo.jogador_b : duelo.jogador_a
+  const meuJogador = duelo.jogadores?.[meuId]
+  const oponente = duelo.jogadores?.[oponenteId ?? ""]
   const [indice, setIndice] = useState(0)
   const [respondeu, setRespondeu] = useState(false)
   const [ultima, setUltima] = useState<{ correta: number; acertei: boolean } | null>(null)
@@ -290,7 +303,7 @@ function Partida({
     const res = await fetch(`/api/duelos/${duelo.id}`)
     if (res.ok) {
       const data = await res.json()
-      if (data.duelo.status === "finalizado") onFim(data.duelo)
+      if (data.duelo.status === "finalizado") onFim({ ...data.duelo, jogadores: data.jogadores })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [duelo.id])
@@ -316,7 +329,7 @@ function Partida({
         const final = await fetch(`/api/duelos/${duelo.id}`)
         if (final.ok) {
           const f = await final.json()
-          setTimeout(() => onFim(f.duelo), 1500)
+          setTimeout(() => onFim({ ...f.duelo, jogadores: f.jogadores }), 1500)
         }
       }
     } catch {
@@ -339,7 +352,8 @@ function Partida({
         <Timer size={20} className="mx-auto text-accent-ink" />
         <h3 className="mt-3 text-base font-semibold text-fg">Você terminou!</h3>
         <p className="mt-1 text-sm text-fg-subtle">
-          Oponente: {oponenteFeitas}/{questoes.length} · o duelo fecha sozinho em até 10 min.
+          {oponente?.nome ?? "Oponente"}: {oponenteFeitas}/{questoes.length} · o duelo fecha sozinho em
+          até 10 min.
         </p>
         <div className="mx-auto mt-4 h-1.5 w-48 overflow-hidden rounded-full bg-surface-sunken">
           <div
@@ -356,6 +370,26 @@ function Partida({
   return (
     <div className="space-y-4">
       <Panel>
+        <div className="mb-3 flex items-center justify-between gap-3 border-b border-line pb-3">
+          <span className="flex min-w-0 items-center gap-2 text-xs text-fg-subtle">
+            <PerfilAvatar
+              nome={meuJogador?.nome}
+              iconePath={meuJogador?.icone_path}
+              molduraId={meuJogador?.moldura_id}
+              size={22}
+            />
+            <span className="truncate">{meuJogador?.nome ?? "Você"}</span>
+          </span>
+          <span className="flex min-w-0 items-center gap-2 text-xs text-fg-subtle">
+            <span className="truncate">{oponente?.nome ?? "Oponente"}</span>
+            <PerfilAvatar
+              nome={oponente?.nome}
+              iconePath={oponente?.icone_path}
+              molduraId={oponente?.moldura_id}
+              size={22}
+            />
+          </span>
+        </div>
         <div className="flex items-center justify-between gap-3">
           <Badge tone={restante <= 10 ? "caution" : "accent"}>
             Questão {indice + 1} de {questoes.length}
@@ -434,6 +468,9 @@ function Resultado({
   const dele = (souA ? duelo.acertos_b : duelo.acertos_a) ?? 0
   const venci = duelo.vencedor === meuId
   const empate = duelo.vencedor == null
+  const oponenteId = souA ? duelo.jogador_b : duelo.jogador_a
+  const meuJogador = duelo.jogadores?.[meuId]
+  const oponente = duelo.jogadores?.[oponenteId ?? ""]
 
   return (
     <Panel className="text-center">
@@ -448,10 +485,36 @@ function Resultado({
       <h3 className="mt-3 text-lg font-semibold text-fg">
         {empate ? "Empate!" : venci ? "Vitória!" : "Derrota"}
       </h3>
-      <p className="mt-1 text-2xl font-semibold tabular-nums text-fg">
-        {meus} <span className="text-fg-subtle">×</span> {dele}
-      </p>
-      <p className="mt-1 text-sm text-fg-subtle">
+
+      <div className="mx-auto mt-4 flex max-w-sm items-center justify-center gap-4">
+        <div className="flex min-w-0 flex-1 flex-col items-center gap-1.5">
+          <PerfilAvatar
+            nome={meuJogador?.nome}
+            iconePath={meuJogador?.icone_path}
+            molduraId={meuJogador?.moldura_id}
+            size={48}
+          />
+          <span className="w-full truncate text-xs font-medium text-fg">
+            {meuJogador?.nome ?? "Você"}
+          </span>
+        </div>
+        <span className="shrink-0 text-2xl font-semibold tabular-nums text-fg">
+          {meus} <span className="text-fg-subtle">×</span> {dele}
+        </span>
+        <div className="flex min-w-0 flex-1 flex-col items-center gap-1.5">
+          <PerfilAvatar
+            nome={oponente?.nome}
+            iconePath={oponente?.icone_path}
+            molduraId={oponente?.moldura_id}
+            size={48}
+          />
+          <span className="w-full truncate text-xs font-medium text-fg">
+            {oponente?.nome ?? "Oponente"}
+          </span>
+        </div>
+      </div>
+
+      <p className="mt-3 text-sm text-fg-subtle">
         {empate ? "+5 pontos na liga para os dois" : venci ? "+10 pontos na liga" : "+2 pontos na liga"}
       </p>
       <div className="mt-4 flex justify-center gap-2">

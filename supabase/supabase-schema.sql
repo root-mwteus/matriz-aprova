@@ -58,6 +58,48 @@ CREATE POLICY "Admin atualiza qualquer perfil"
 CREATE INDEX idx_profiles_email ON public.profiles(email);
 CREATE INDEX idx_profiles_role  ON public.profiles(role);
 
+-- Perfil público (migration 027): aparência + bio + prova alvo.
+ALTER TABLE public.profiles
+  ADD COLUMN IF NOT EXISTS bio text,
+  ADD COLUMN IF NOT EXISTS prova_alvo text,
+  ADD COLUMN IF NOT EXISTS icone_path text,
+  ADD COLUMN IF NOT EXISTS banner_path text;
+
+-- 1b. MOLDURAS (migration 027) — catálogo de molduras de avatar.
+CREATE TABLE IF NOT EXISTS public.molduras (
+  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  slug        text NOT NULL UNIQUE,
+  nome        text NOT NULL,
+  arquivo     text NOT NULL,
+  desbloqueio text NOT NULL DEFAULT 'livre' CHECK (desbloqueio IN ('livre', 'vitalicio')),
+  created_at  timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.molduras ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Autenticados leem molduras"
+  ON public.molduras FOR SELECT
+  USING (auth.role() = 'authenticated');
+
+CREATE POLICY "Admin cria molduras"
+  ON public.molduras FOR INSERT
+  WITH CHECK (public.is_admin());
+
+CREATE POLICY "Admin atualiza molduras"
+  ON public.molduras FOR UPDATE
+  USING (public.is_admin());
+
+CREATE POLICY "Admin exclui molduras"
+  ON public.molduras FOR DELETE
+  USING (public.is_admin());
+
+ALTER TABLE public.profiles
+  ADD COLUMN IF NOT EXISTS moldura_id uuid REFERENCES public.molduras(id) ON DELETE SET NULL;
+
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('perfis', 'perfis', true), ('molduras', 'molduras', true)
+ON CONFLICT (id) DO NOTHING;
+
 -- 2. COURSES
 CREATE TABLE public.courses (
   id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),

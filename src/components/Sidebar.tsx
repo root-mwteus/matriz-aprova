@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { ChevronsUpDown, LogOut, Lock, Settings } from "lucide-react"
+import { ChevronsUpDown, LogOut, Lock, Settings, User } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { navigation, isRouteActive } from "@/lib/navigation"
 import { Logo } from "@/components/marketing/Logo"
@@ -153,7 +153,15 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
                 "transition-colors duration-fast hover:bg-surface-hover"
               )}
             >
-              <Avatar name={profile?.nome} size={24} />
+              <Avatar
+                name={profile?.nome}
+                size={24}
+                src={
+                  profile?.icone_path
+                    ? `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/perfis/${profile.icone_path}`
+                    : undefined
+                }
+              />
               <span className="min-w-0 flex-1">
                 <span className="block truncate text-sm font-medium text-fg">
                   {profile?.nome?.split(" ")[0] ?? "Conta"}
@@ -168,6 +176,9 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
         >
           {/* Rótulo fiel ao que a rota faz: /onboarding ajusta área e data
               da prova, não "preferências" em geral. */}
+          <MenuItem icon={<User />} onClick={() => router.push("/perfil")}>
+            Meu perfil
+          </MenuItem>
           <MenuItem icon={<Settings />} onClick={() => router.push("/onboarding")}>
             Configurar estudo
           </MenuItem>

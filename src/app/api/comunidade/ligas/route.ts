@@ -30,18 +30,30 @@ export async function GET() {
 
   const ids = (linhas ?? []).map((l: { user_id: string }) => l.user_id)
   const { data: perfis } = ids.length
-    ? await service.from("profiles").select("id, nome").in("id", ids)
+    ? await service.from("profiles").select("id, nome, icone_path, moldura_id").in("id", ids)
     : { data: [] }
 
-  const nomes = new Map((perfis ?? []).map((p: { id: string; nome: string | null }) => [p.id, p.nome]))
+  const porId = new Map(
+    (perfis ?? []).map(
+      (p: { id: string; nome: string | null; icone_path: string | null; moldura_id: string | null }) => [
+        p.id,
+        p,
+      ]
+    )
+  )
 
   return NextResponse.json({
     semana: chaveSemana(),
     meu_id: user.id,
-    ranking: (linhas ?? []).map((l: { user_id: string; pontos: number }) => ({
-      user_id: l.user_id,
-      nome: nomes.get(l.user_id) ?? "Estudante",
-      pontos: Number(l.pontos),
-    })),
+    ranking: (linhas ?? []).map((l: { user_id: string; pontos: number }) => {
+      const perfil = porId.get(l.user_id)
+      return {
+        user_id: l.user_id,
+        nome: perfil?.nome ?? "Estudante",
+        icone_path: perfil?.icone_path ?? null,
+        moldura_id: perfil?.moldura_id ?? null,
+        pontos: Number(l.pontos),
+      }
+    }),
   })
 }

@@ -45,6 +45,39 @@ export function oponente(duelo: Duelo, userId: string): string | null {
   return null
 }
 
+export interface JogadorResumo {
+  nome: string
+  icone_path: string | null
+  moldura_id: string | null
+}
+
+/**
+ * Aparência dos dois jogadores do duelo (nome, ícone e moldura), para a
+ * tela mostrar contra quem se está disputando. Busca em lote no service.
+ */
+export async function jogadoresDoDuelo(
+  service: SupabaseClient,
+  ids: (string | null)[]
+): Promise<Record<string, JogadorResumo>> {
+  const unicos = Array.from(new Set(ids.filter(Boolean) as string[]))
+  if (!unicos.length) return {}
+
+  const { data } = await service
+    .from("profiles")
+    .select("id, nome, icone_path, moldura_id")
+    .in("id", unicos)
+
+  const mapa: Record<string, JogadorResumo> = {}
+  for (const p of data ?? []) {
+    mapa[p.id] = {
+      nome: p.nome || "Anônimo",
+      icone_path: p.icone_path,
+      moldura_id: p.moldura_id,
+    }
+  }
+  return mapa
+}
+
 /**
  * Fecha a partida e pontua a liga. Critério: acertos; empate decide
  * pelo tempo total (quem terminou antes). Vencedor null = empate

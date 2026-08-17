@@ -7,7 +7,29 @@ export interface Profile {
   role: "user" | "admin"
   plano: "demo" | "vitalicio"
   suspenso?: boolean
+  bio?: string | null
+  prova_alvo?: string | null
+  icone_path?: string | null
+  banner_path?: string | null
+  moldura_id?: string | null
   created_at: string
+}
+
+/** Catálogo de molduras de avatar (PNG 512×512 transparente). */
+export interface Moldura {
+  id: string
+  slug: string
+  nome: string
+  arquivo: string
+  desbloqueio: "livre" | "vitalicio"
+  created_at: string
+}
+
+/** Presença mínima de um usuário nos rankings/duelos. */
+export interface PerfilResumo {
+  nome: string
+  icone_path?: string | null
+  moldura_id?: string | null
 }
 
 export interface ConfigPagamentos {

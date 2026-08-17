@@ -5,6 +5,7 @@ import {
   TEMPO_PARTIDA_MS,
   finalizarDuelo,
   detalharQuestoes,
+  jogadoresDoDuelo,
   souJogador,
   type Duelo,
 } from "@/lib/duelo"
@@ -44,8 +45,9 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
 
   const comGabarito = duelo.status === "finalizado"
   const questoes = await detalharQuestoes(service, duelo.questoes, comGabarito)
+  const jogadores = await jogadoresDoDuelo(service, [duelo.jogador_a, duelo.jogador_b])
 
-  return NextResponse.json({ duelo: { ...duelo, questoes_detalhes: questoes }, meu_id: user.id })
+  return NextResponse.json({ duelo: { ...duelo, questoes_detalhes: questoes }, jogadores, meu_id: user.id })
 }
 
 /**

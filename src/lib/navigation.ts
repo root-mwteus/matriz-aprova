@@ -11,6 +11,7 @@ import {
   Trophy,
   Swords,
   ShieldCheck,
+  User,
   type LucideIcon,
 } from "lucide-react"
 
@@ -64,6 +65,7 @@ export const navigation: NavGroup[] = [
       { href: "/comunidade", label: "Comunidade", icon: Users },
       { href: "/comunidade/ligas", label: "Ligas", icon: Trophy },
       { href: "/comunidade/duelos", label: "Duelos", icon: Swords },
+      { href: "/perfil", label: "Meu perfil", icon: User },
       { href: "/seguranca", label: "Segurança", icon: ShieldCheck },
     ],
   },
@@ -85,6 +87,7 @@ const segmentLabels: Record<string, string> = {
   ligas: "Ligas",
   duelos: "Duelos",
   seguranca: "Segurança",
+  perfil: "Meu perfil",
   cronometro: "Cronômetro",
   plano: "Plano de estudos",
   dashboard: "Painel",

@@ -15,6 +15,8 @@ interface LinhaRanking {
 
 interface Entry extends LinhaRanking {
   nome: string
+  icone_path: string | null
+  moldura_id: string | null
   pct: number
 }
 
@@ -61,15 +63,25 @@ export async function GET(_request: Request, { params }: { params: { id: string 
 
   const ids = rows.map((r) => r.user_id)
   const { data: perfis } = ids.length
-    ? await service.from("profiles").select("id, nome").in("id", ids)
+    ? await service.from("profiles").select("id, nome, icone_path, moldura_id").in("id", ids)
     : { data: [] }
-  const nomes = new Map((perfis ?? []).map((p) => [p.id, p.nome || "Anônimo"]))
+  const porId = new Map(
+    (perfis ?? []).map((p: { id: string; nome: string | null; icone_path: string | null; moldura_id: string | null }) => [
+      p.id,
+      p,
+    ])
+  )
 
-  const ranking: Entry[] = rows.map((r) => ({
-    ...r,
-    nome: nomes.get(r.user_id) || "Anônimo",
-    pct: r.questoes > 0 ? Math.round((r.acertos / r.questoes) * 100) : 0,
-  }))
+  const ranking: Entry[] = rows.map((r) => {
+    const perfil = porId.get(r.user_id)
+    return {
+      ...r,
+      nome: perfil?.nome || "Anônimo",
+      icone_path: perfil?.icone_path ?? null,
+      moldura_id: perfil?.moldura_id ?? null,
+      pct: r.questoes > 0 ? Math.round((r.acertos / r.questoes) * 100) : 0,
+    }
+  })
 
   return NextResponse.json({ ranking, meu_id: user.id })
 }

@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react"
 import { Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Avatar, EmptyState, Panel, Skeleton } from "@/components/ui"
+import { EmptyState, Panel, Skeleton } from "@/components/ui"
+import PerfilAvatar from "@/components/comunidade/PerfilAvatar"
 
 /**
  * Ranking de questões resolvidas e acertos.
@@ -16,6 +17,8 @@ import { Avatar, EmptyState, Panel, Skeleton } from "@/components/ui"
 export interface RankingEntry {
   user_id: string
   nome: string
+  icone_path: string | null
+  moldura_id: string | null
   questoes: number
   acertos: number
   pct: number
@@ -117,7 +120,12 @@ export default function Ranking({ grupoId, className }: { grupoId?: string; clas
                     {i + 1}º
                   </span>
 
-                  <Avatar name={entry.nome} size={28} />
+                  <PerfilAvatar
+                    nome={entry.nome}
+                    iconePath={entry.icone_path}
+                    molduraId={entry.moldura_id}
+                    size={28}
+                  />
 
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm text-fg">

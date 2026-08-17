@@ -24,6 +24,8 @@ interface SimulacaoRow {
 interface MelhorResultado {
   user_id: string
   nome: string
+  icone_path: string | null
+  moldura_id: string | null
   pontuacao: number
   total: number
   tempo_total: number
@@ -68,7 +70,7 @@ export async function GET() {
   }
 
   // Melhor resultado de cada pessoa, sem tocar no banco por linha.
-  const melhores = new Map<string, Omit<MelhorResultado, "nome">>()
+  const melhores = new Map<string, Omit<MelhorResultado, "nome" | "icone_path" | "moldura_id">>()
   for (const s of simulations as SimulacaoRow[]) {
     const total = s.questoes?.length || 0
     const pct = total > 0 ? Math.round((s.pontuacao / total) * 100) : 0
@@ -87,12 +89,27 @@ export async function GET() {
 
   // Uma consulta para todos os nomes, em vez de uma por linha.
   const ids = Array.from(melhores.keys())
-  const { data: perfis } = await service.from("profiles").select("id, nome").in("id", ids)
+  const { data: perfis } = await service.from("profiles").select("id, nome, icone_path, moldura_id").in("id", ids)
 
-  const nomes = new Map(perfis?.map((p) => [p.id, p.nome as string]) ?? [])
+  const porId = new Map(
+    (perfis ?? []).map(
+      (p: { id: string; nome: string | null; icone_path: string | null; moldura_id: string | null }) => [
+        p.id,
+        p,
+      ]
+    )
+  )
 
   const ranking: MelhorResultado[] = Array.from(melhores.values())
-    .map((e) => ({ ...e, nome: nomes.get(e.user_id) || "Anônimo" }))
+    .map((e) => {
+      const perfil = porId.get(e.user_id)
+      return {
+        ...e,
+        nome: perfil?.nome || "Anônimo",
+        icone_path: perfil?.icone_path ?? null,
+        moldura_id: perfil?.moldura_id ?? null,
+      }
+    })
     // Empate em percentual é desempatado pelo tempo — quem fez o mesmo
     // em menos tempo fica na frente.
     .sort((a, b) => b.pct - a.pct || a.tempo_total - b.tempo_total)

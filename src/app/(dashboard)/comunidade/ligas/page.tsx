@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import { ChevronDown, ChevronUp, Minus, Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
+import PerfilAvatar from "@/components/comunidade/PerfilAvatar"
 import { Badge, EmptyState, ErrorState, Panel, Skeleton } from "@/components/ui"
 
 /**
@@ -21,6 +22,8 @@ const ZONA = 5
 interface Entrada {
   user_id: string
   nome: string
+  icone_path: string | null
+  moldura_id: string | null
   pontos: number
 }
 
@@ -118,6 +121,13 @@ export default function LigasPage() {
                   <span className="w-8 shrink-0 text-right text-sm tabular-nums text-fg-subtle">
                     {posicaoGeral}º
                   </span>
+                  <PerfilAvatar
+                    nome={e.nome}
+                    iconePath={e.icone_path}
+                    molduraId={e.moldura_id}
+                    size={26}
+                    className="shrink-0"
+                  />
                   <span className="min-w-0 flex-1 truncate text-sm text-fg">
                     {e.nome}
                     {eu && <span className="ml-2 text-xs font-medium text-accent-ink">você</span>}

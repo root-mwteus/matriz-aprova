@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation"
 import { Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
 import PageHeader from "@/components/PageHeader"
-import { Avatar, Badge, Button, EmptyState, Panel, PanelHeader, Skeleton } from "@/components/ui"
+import PerfilAvatar from "@/components/comunidade/PerfilAvatar"
+import { Badge, Button, EmptyState, Panel, PanelHeader, Skeleton } from "@/components/ui"
 
 /**
  * Ranking.
@@ -22,6 +23,8 @@ import { Avatar, Badge, Button, EmptyState, Panel, PanelHeader, Skeleton } from 
 interface RankingEntry {
   user_id: string
   nome: string
+  icone_path: string | null
+  moldura_id: string | null
   pontuacao: number
   total: number
   tempo_total: number
@@ -133,7 +136,12 @@ export default function RankingPage() {
                     {i + 1}º
                   </span>
 
-                  <Avatar name={entry.nome} size={26} />
+                  <PerfilAvatar
+                    nome={entry.nome}
+                    iconePath={entry.icone_path}
+                    molduraId={entry.moldura_id}
+                    size={26}
+                  />
 
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm text-fg">

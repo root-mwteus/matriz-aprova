@@ -171,11 +171,14 @@ export function Avatar({
   name,
   src,
   size = 28,
+  molduraSrc,
   className,
 }: {
   name?: string | null
   src?: string | null
   size?: number
+  /** PNG de moldura por cima do avatar (a foto fica no vão da moldura). */
+  molduraSrc?: string | null
   className?: string
 }) {
   const initials =
@@ -189,20 +192,31 @@ export function Avatar({
 
   return (
     <span
-      className={cn(
-        "inline-grid shrink-0 place-items-center overflow-hidden rounded-full",
-        "border border-line bg-surface-sunken font-medium text-fg-muted",
-        className
-      )}
-      style={{ width: size, height: size, fontSize: Math.max(9, size * 0.36) }}
+      className={cn("relative inline-grid shrink-0 place-items-center", className)}
+      style={{ width: size, height: size }}
       aria-hidden={!name}
       title={name || undefined}
     >
-      {src ? (
+      <span
+        className="inline-grid h-full w-full place-items-center overflow-hidden rounded-full border border-line bg-surface-sunken font-medium text-fg-muted"
+        style={{ fontSize: Math.max(9, size * 0.36) }}
+      >
+        {src ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={src} alt={name || ""} className="h-full w-full object-cover" />
+        ) : (
+          initials
+        )}
+      </span>
+      {molduraSrc && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={name || ""} className="h-full w-full object-cover" />
-      ) : (
-        initials
+        <img
+          src={molduraSrc}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none"
+          style={{ width: size * 1.4, height: size * 1.4 }}
+        />
       )}
     </span>
   )

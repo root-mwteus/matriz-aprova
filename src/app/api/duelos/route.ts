@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server"
 import { requireUser } from "@/lib/supabase/auth"
 import { createServiceClient } from "@/lib/supabase/service"
-import { QUESTOES_POR_DUELO, TEMPO_BUSCA_MS, detalharQuestoes } from "@/lib/duelo"
+import {
+  QUESTOES_POR_DUELO,
+  TEMPO_BUSCA_MS,
+  detalharQuestoes,
+  jogadoresDoDuelo,
+} from "@/lib/duelo"
 
 export const dynamic = "force-dynamic"
 
@@ -80,7 +85,12 @@ export async function POST() {
 
     if (count && duelo?.[0]) {
       const questoes = await detalharQuestoes(service, duelo[0].questoes, false)
-      return NextResponse.json({ status: "ativo", duelo: { ...duelo[0], questoes_detalhes: questoes } })
+      const jogadores = await jogadoresDoDuelo(service, [duelo[0].jogador_a, duelo[0].jogador_b])
+      return NextResponse.json({
+        status: "ativo",
+        duelo: { ...duelo[0], questoes_detalhes: questoes },
+        jogadores,
+      })
     }
     // Perdeu a corrida para outro jogador — cai para criar a própria.
   }

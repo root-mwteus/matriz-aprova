@@ -41,7 +41,7 @@ npx tsc --noEmit   # typecheck
 npm run build      # produção
 ```
 
-Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc limpo.**
+Validação esperada antes de concluir feature: **91/91 testes, lint limpo, tsc limpo.**
 
 ## Rotas do app (`src/app`)
 
@@ -51,7 +51,7 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
   `/onboarding` (pós-cadastro), `/auth/redefinir-senha`
 
 ### Painel `(dashboard)` — protegidas por middleware (`PROTECTED_ROUTES` em `src/lib/routes.ts`)
-- `/dashboard` `/plano` `/seguranca` `/cronometro` `/materiais` `/editais` `/estatisticas`
+- `/dashboard` `/plano` `/seguranca` `/perfil` `/cronometro` `/materiais` `/editais` `/estatisticas`
 - `/questoes` `/questoes/resolver` `/questoes/[id]` `/questoes/historico`
 - `/simulados` `/simulados/[id]` `/simulados/resultado/[id]` `/simulados/ranking`
 - `/comunidade` `/comunidade/[id]` `/comunidade/ligas` `/comunidade/duelos`
@@ -61,7 +61,7 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
 ### Admin `/admin` — `requireAdmin` no middleware
 - `/admin/dashboard` `/admin/usuarios` `/admin/usuarios/[id]` `/admin/financeiro`
   `/admin/questoes(+novo,editar)` `/admin/simulados` `/admin/editais` `/admin/materiais`
-  `/admin/cursos(+[id])` `/admin/bloqueios`
+  `/admin/cursos(+[id])` `/admin/bloqueios` `/admin/molduras`
 - Nav e breadcrumbs em `src/app/admin/layout.tsx` (`navGroups` + `labels`)
 
 ## APIs (`src/app/api`)
@@ -79,7 +79,8 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
   conteúdo em `materiais/simulados/` e importação via `importar-simulados.mjs`.
 - `seguranca/logins` — histórico + sessão atual
 - `comunidade/*` — chat, grupos, membros, ligas (`ranking_liga`), ranking, nomes em lote
-- `duelos` · `duelos/[id]` · `duelos/[id]/responder` — fila rápida com UPDATE condicional
+- `duelos` · `duelos/[id]` · `duelos/[id]/responder` — fila rápida com UPDATE condicional;
+  `duelos` e `duelos/[id]` devolvem `jogadores` (nome/ícone/moldura) para mostrar o oponente
 - `indicacoes` — GET código/usos, POST registra (UNIQUE por indicado)
 - `gerar-plano` — curadoria por concurso + semanas até a prova, persistência
   em `planos_estudo`/`plano_semanas`, refino de focos via IA (fallback local)
@@ -97,7 +98,8 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
 - `PaywallBanner` (dispensável, localStorage `paywall_dispensado`), `PaywallLock`
   (blur+cadeado, `ROTAS_LIBERADAS = []`), `SecaoLock` (lê `bloqueios_secao`, só visual)
 - `LatexText` (KaTeX, 4 delimitadores + fallback Unicode)
-- `comunidade/Chat` (Realtime `mensagens`, presence, digitando), `comunidade/Ranking`
+- `comunidade/Chat` (Realtime `mensagens`, presence, digitando), `comunidade/Ranking`,
+  `comunidade/PerfilAvatar` (ícone + moldura, cache de molduras p/ rankings/ligas/duelos)
 - `AuthShell`, `GoogleButton`, `PasswordInput`, `ThemeToggle`
 - Admin: `QuestaoForm`, `UploadZone`, `AdminTable`, `MetricCard`, `ConfirmModal`, `StatusBadge`
 - UI kit: `src/components/ui/` (Button, Field, Panel, Badge, Skeleton, Stat, Modal,
@@ -117,6 +119,8 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
   FROM `onboarding@resend.dev` (dev) vs `noreply@matrizaprova.com` (prod)
 - `liga.ts` — PONTOS (resposta 1, acerto 2, simulado 5, duelo 10/5/2); semana inicia 2ª UTC
 - `duelo.ts` — 5 questões, busca 2min, partida 10min, desempate por tempo
+- `perfil.ts` — regras do perfil público: limites (ícone 5MB, banner 8MB, bio 160),
+  `moldurasDesbloqueadas`/`molduraUsavel`, `publicUrl` (bucket público)
 - `bloqueios.ts` — `SECOES_PAINEL` (8 seções) + `secaoDaRota` (prefixo mais longo)
 - `gerar-plano/` — `planos-concursos.ts` (curadoria de 21 concursos, `PLANO_PADRAO`,
   `encontrarConcurso`, `concursosPorArea`), `gerar-plano.ts` (gerador determinístico
@@ -152,7 +156,10 @@ Migrações em `supabase/supabase-migration-NNN-*.sql` (avulsas, **não** em
 `supabase/migrations/`). `supabase-schema.sql` consolidado está DESATUALIZADO
 (a partir da 013+; as migrações são a fonte da verdade).
 
-**Tabelas:** `profiles` (plano demo/vitalício, `suspended`, `codigo_indicacao`),
+**Tabelas:** `profiles` (plano demo/vitalício, `suspended`, `codigo_indicacao`,
+perfil público: `bio`, `prova_alvo`, `icone_path`, `banner_path`, `moldura_id`),
+`molduras` (catálogo de molduras de avatar: `slug`, `nome`, `arquivo`,
+`desbloqueio` `livre`/`vitalicio`; PNG 512×512 transparente em `molduras/<slug>.png`),
 `questions` (5 alternativas, matéria/banca/área), `user_answers`, `simulations`,
 `pagamentos` (referencia `config_pagamentos.valor` no webhook), `config_pagamentos`
 (id=1, singleton; inclui `whatsapp_suporte` do balão de suporte), `editais`
@@ -171,10 +178,11 @@ data_prova, horas_por_dia, semanas_total, semana_liberada) + `plano_semanas`
 `ranking_questoes`, `ranking_grupo`, `ranking_liga`, `somar_pontos_liga`.
 
 **RLS:** por usuário em profiles/user_answers/simulations; admin via `profiles.role = 'admin'`
-(escrita de questões/editais/bloqueios); leitura de bloqueios para qualquer autenticado;
-escritas de sessão/indicacoes/login_events via service role (sem policy client).
+(escrita de questões/editais/bloqueios/molduras); leitura de molduras/bloqueios para qualquer
+autenticado; escritas de sessão/indicacoes/login_events via service role (sem policy client).
 
-**Storage:** `materiais` (privado), `questoes-figuras` (público), `pdf-provas` (privado).
+**Storage:** `materiais` (privado), `questoes-figuras` (público), `pdf-provas` (privado),
+`perfis` (público, upload só na própria pasta `perfis/<user_id>/`), `molduras` (público, admin).
 
 ## Integrações / env (`NEXT_PUBLIC_SUPABASE_URL`, `..._ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`,
 `NEXT_PUBLIC_SITE_URL`, `OPENAI_API_KEY`, `RESEND_API_KEY`, `CRON_SECRET`,
@@ -189,13 +197,14 @@ escritas de sessão/indicacoes/login_events via service role (sem policy client)
 
 Aplicadas no Supabase (verificado via OpenAPI `/rest/v1/`): `003`, `017-sessao-unica`,
 `018-alertas-dispositivos`, `019-ligas-duelos`, `020-indicacoes`, `021-bloqueios-secao`,
-`022-planos-semanas`, `023-simulados-completos`, `024-catalogo-simulados`.
+`022-planos-semanas`, `023-simulados-completos`, `024-catalogo-simulados`,
+`026-editais-sem-edital`.
 
 Pendentes (criadas, **NÃO aplicadas**):
 - `025-whatsapp-suporte` (`config_pagamentos.whatsapp_suporte` — balão de suporte)
-- `026-editais-sem-edital` (status `sem_edital` no CHECK de `editais` — provas
-  já realizadas mostram os dados da última edição; sem ela, `scripts/seed-editais.mjs`
-  não grava esses registros)
+- `027-perfil-molduras` (perfil público: `bio`, `prova_alvo`, `icone_path`,
+  `banner_path`, `moldura_id`; tabela `molduras` + buckets `perfis`/`molduras`
+  com RLS — sem ela, `/perfil` e avatares na comunidade não funcionam)
 
 Passos para ativação em produção: rodar migrações pendentes no SQL Editor do Supabase,
 configurar `SUPABASE_SERVICE_ROLE_KEY` e `CRON_SECRET` (local + Vercel), fazer deploy.

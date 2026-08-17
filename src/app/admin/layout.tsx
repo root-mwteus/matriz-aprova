@@ -13,6 +13,7 @@ import {
   ClipboardList,
   Target,
   Wallet,
+  Frame,
   Menu as MenuIcon,
   X,
   Lock,
@@ -71,6 +72,7 @@ const navGroups: { label: string; items: AdminNav[] }[] = [
       { href: "/admin/cursos", label: "Cursos", icon: PlayCircle },
       { href: "/admin/editais", label: "Editais", icon: ClipboardList },
       { href: "/admin/simulados", label: "Simulados", icon: Target },
+      { href: "/admin/molduras", label: "Molduras", icon: Frame },
     ],
   },
 ]
@@ -83,6 +85,7 @@ const labels: Record<string, string> = {
   cursos: "Cursos",
   editais: "Editais",
   simulados: "Simulados",
+  molduras: "Molduras",
   financeiro: "Financeiro",
   bloqueios: "Bloqueios",
   novo: "Novo",
