@@ -1,9 +1,21 @@
-import { readFileSync, readdirSync, statSync } from "node:fs"
+import { readFileSync, readdirSync, statSync, existsSync } from "node:fs"
 import { join, dirname } from "node:path"
 import { fileURLToPath } from "node:url"
 import { createClient } from "@supabase/supabase-js"
 
 const ROOT = dirname(fileURLToPath(import.meta.url))
+
+// Carrega .env da raiz do projeto (materiais/simulados -> raiz), se existir.
+// Node >= 20.6 oferece process.loadEnvFile() sem dependência externa.
+const ENV_PATH = join(dirname(ROOT), "..", ".env")
+if (existsSync(ENV_PATH)) {
+  try {
+    process.loadEnvFile(ENV_PATH)
+  } catch {
+    // sem .env, usa apenas o ambiente já configurado
+  }
+}
+
 const BATCH = 100
 const NIVEL = new Map([
   ["fácil", "facil"],

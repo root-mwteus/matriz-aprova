@@ -136,7 +136,10 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
   Direito Tributário/princípios e limitações ao poder de tributar, Redação/texto
   dissertativo-argumentativo para ENEM, Direito
   Previdenciário/benefícios e regras gerais do RGPS e Contabilidade/patrimônio
-  e equação contábil.
+  e equação contábil. `importar-pdfs.mjs` sobe os PDFs gerados para o bucket
+  `materiais` (`apostilas/<disciplina>/<arquivo>.pdf`, upsert) e grava/atualiza
+  a linha em `materials`; `node materiais/importar-pdfs.mjs --validate` lista
+  o que seria importado sem tocar no Supabase.
 - `pagamentos-config.ts` — `config_pagamentos` id=1; `formatarValor`, `parseValorParaCentavos`,
   desconto indicação 10% (`desconto_indicacao_pct`)
 - `login-alert.ts` — UA parsing, IP de headers, `notifyLogin`, `registrarLoginEvento`
