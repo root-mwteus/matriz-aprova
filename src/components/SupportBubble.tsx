@@ -1,13 +1,29 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { Headset, LifeBuoy, X } from "lucide-react"
+import { Headset, LifeBuoy, MessageCircle, X } from "lucide-react"
 
 const EMAIL_SUPORTE = "suporte@matrizaprova.com"
+const TEXTO_WHATSAPP = "Olá! Encontrei uma falha ou tenho dúvida na Matriz Aprova."
 
 export function SupportBubble() {
   const [aberto, setAberto] = useState(false)
+  const [whatsapp, setWhatsapp] = useState("")
+
+  useEffect(() => {
+    fetch("/api/pagamentos/config")
+      .then((r) => (r.ok ? r.json() : Promise.resolve({})))
+      .then((d) => setWhatsapp(typeof d.whatsappSuporte === "string" ? d.whatsappSuporte : ""))
+      .catch(() => {})
+  }, [])
+
+  const digitos = whatsapp.replace(/\D/g, "")
+  const temWhatsapp = digitos.length > 0
+  const href = temWhatsapp
+    ? `https://wa.me/${digitos}?text=${encodeURIComponent(TEXTO_WHATSAPP)}`
+    : `mailto:${EMAIL_SUPORTE}?subject=Suporte%20%E2%80%94%20D%C3%BAvida%20ou%20falha`
+  const ContatoIcon = temWhatsapp ? MessageCircle : Headset
 
   return (
     <div className="fixed bottom-4 right-4 z-40 flex flex-col items-end gap-2.5">
@@ -36,11 +52,13 @@ export function SupportBubble() {
             </p>
 
             <a
-              href={`mailto:${EMAIL_SUPORTE}?subject=Suporte%20%E2%80%94%20D%C3%BAvida%20ou%20falha`}
+              href={href}
+              target={temWhatsapp ? "_blank" : undefined}
+              rel={temWhatsapp ? "noopener noreferrer" : undefined}
               className="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-accent px-3 py-2 text-sm font-semibold text-[color:var(--text-on-accent)] transition-colors duration-fast hover:bg-accent-hover"
             >
-              <Headset size={16} strokeWidth={2} />
-              Contatar o suporte
+              <ContatoIcon size={16} strokeWidth={2} />
+              {temWhatsapp ? "Contatar pelo WhatsApp" : "Contatar o suporte"}
             </a>
 
             <span

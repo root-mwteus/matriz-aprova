@@ -24,6 +24,8 @@ export interface ConfigPagamentos {
   pagamentos_ativos: boolean
   /** % de desconto para quem criou a conta com código de indicação. */
   desconto_indicacao_pct: number
+  /** WhatsApp de suporte em E.164 (só dígitos). Vazio desliga o link. */
+  whatsapp_suporte: string
 }
 
 export const CONFIG_PAGAMENTOS_DEFAULT: ConfigPagamentos = {
@@ -42,6 +44,7 @@ export const CONFIG_PAGAMENTOS_DEFAULT: ConfigPagamentos = {
     "Você está no plano demo. Assine o plano vitalício para desbloquear o acesso completo à plataforma.",
   pagamentos_ativos: true,
   desconto_indicacao_pct: 10,
+  whatsapp_suporte: "",
 }
 
 export function formatarValor(centavos: number): string {
@@ -82,5 +85,7 @@ export async function getConfigPagamentos(
     pagamentos_ativos: data.pagamentos_ativos !== false,
     desconto_indicacao_pct:
       Number(data.desconto_indicacao_pct) || CONFIG_PAGAMENTOS_DEFAULT.desconto_indicacao_pct,
+    whatsapp_suporte:
+      typeof data.whatsapp_suporte === "string" ? data.whatsapp_suporte : "",
   }
 }

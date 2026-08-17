@@ -21,6 +21,7 @@ export async function GET() {
     avisoBloqueio: config.aviso_bloqueio,
     pagamentosAtivos: config.pagamentos_ativos,
     descontoIndicacaoPct: config.desconto_indicacao_pct,
+    whatsappSuporte: config.whatsapp_suporte,
     modoTeste: isTestMode(),
   })
 }

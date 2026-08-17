@@ -155,7 +155,7 @@ Migrações em `supabase/supabase-migration-NNN-*.sql` (avulsas, **não** em
 **Tabelas:** `profiles` (plano demo/vitalício, `suspended`, `codigo_indicacao`),
 `questions` (5 alternativas, matéria/banca/área), `user_answers`, `simulations`,
 `pagamentos` (referencia `config_pagamentos.valor` no webhook), `config_pagamentos`
-(id=1, singleton), `editais`, `edital_alertas` (PK dedupe alertas),
+(id=1, singleton; inclui `whatsapp_suporte` do balão de suporte), `editais`, `edital_alertas` (PK dedupe alertas),
 `courses`/`modules`/`lessons`/`progress`, `materials`, `mensagens`/`grupos`/`membros`,
 `study_sessions`, `study_plans` (legado, 1 semana), `planos_estudo` (concurso,
 data_prova, horas_por_dia, semanas_total, semana_liberada) + `plano_semanas`
@@ -182,19 +182,16 @@ escritas de sessão/indicacoes/login_events via service role (sem policy client)
 - `SUPABASE_SERVICE_ROLE_KEY` é necessária para registrar sessão/indicacao/login_event
 - `CRON_SECRET` obrigatória no cron (Bearer) — sem ela o cron recusa tudo
 
-## Status de migrações (pendências de deploy)
+## Status de migrações
 
-Criadas e validadas em código, **NÃO aplicadas** no Supabase ainda:
-- `017-sessao-unica` (user_sessions)
-- `018-alertas-dispositivos` (edital_alertas, login_events)
-- `019-ligas-duelos` (liga_pontos, duelos, RPCs)
-- `020-indicacoes` (indicacoes, codigo_indicacao, desconto_indicacao_pct)
-- `021-bloqueios-secao` (bloqueios_secao + seed)
-- `022-planos-semanas` (planos_estudo, plano_semanas, profiles.concurso_alvo)
-- `023-simulados-completos` (origem/fonte das questões + catálogo e vínculos)
-- `024-catalogo-simulados` (24 cadernos: 6 por área)
+Aplicadas no Supabase (verificado via OpenAPI `/rest/v1/`): `003`, `017-sessao-unica`,
+`018-alertas-dispositivos`, `019-ligas-duelos`, `020-indicacoes`, `021-bloqueios-secao`,
+`022-planos-semanas`, `023-simulados-completos`, `024-catalogo-simulados`.
 
-Passos para ativação em produção: rodar migrações em ordem no SQL Editor do Supabase,
+Pendentes (criadas, **NÃO aplicadas**):
+- `025-whatsapp-suporte` (`config_pagamentos.whatsapp_suporte` — balão de suporte)
+
+Passos para ativação em produção: rodar migrações pendentes no SQL Editor do Supabase,
 configurar `SUPABASE_SERVICE_ROLE_KEY` e `CRON_SECRET` (local + Vercel), fazer deploy.
 
 ## Regras de trabalho

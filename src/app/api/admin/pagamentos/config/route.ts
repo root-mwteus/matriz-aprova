@@ -41,7 +41,15 @@ export async function PUT(request: Request) {
   }
 
   const body = await request.json().catch(() => ({}))
-  const { tituloPlano, descricaoPlano, valorTexto, beneficios, avisoBloqueio, pagamentosAtivos } = body
+  const {
+    tituloPlano,
+    descricaoPlano,
+    valorTexto,
+    beneficios,
+    avisoBloqueio,
+    pagamentosAtivos,
+    whatsappSuporte,
+  } = body
 
   if (typeof tituloPlano !== "string" || tituloPlano.trim().length === 0) {
     return NextResponse.json({ error: "Título do plano é obrigatório" }, { status: 400 })
@@ -66,6 +74,10 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: "Aviso de bloqueio é obrigatório" }, { status: 400 })
   }
 
+  // Número só com dígitos (E.164). Formatação/acentos não vêm do cliente.
+  const whatsappDigitos =
+    typeof whatsappSuporte === "string" ? whatsappSuporte.replace(/\D/g, "") : ""
+
   const { error } = await supabase
     .from("config_pagamentos")
     .update({
@@ -75,6 +87,7 @@ export async function PUT(request: Request) {
       beneficios: beneficios.map((b: string) => b.trim()).filter(Boolean),
       aviso_bloqueio: avisoBloqueio.trim(),
       pagamentos_ativos: pagamentosAtivos === true,
+      whatsapp_suporte: whatsappDigitos,
       updated_at: new Date().toISOString(),
     })
     .eq("id", 1)

@@ -24,6 +24,7 @@ interface ConfigData {
   beneficios: string[]
   aviso_bloqueio: string
   pagamentos_ativos: boolean
+  whatsapp_suporte: string
 }
 
 interface PagamentoRow {
@@ -68,6 +69,7 @@ export default function AdminFinanceiroPage() {
   const [novoBeneficio, setNovoBeneficio] = useState("")
   const [avisoBloqueio, setAvisoBloqueio] = useState("")
   const [pagamentosAtivos, setPagamentosAtivos] = useState(true)
+  const [whatsappSuporte, setWhatsappSuporte] = useState("")
 
   const [pagamentos, setPagamentos] = useState<PagamentoRow[]>([])
   const [resumo, setResumo] = useState<ResumoFinanceiro | null>(null)
@@ -86,6 +88,7 @@ export default function AdminFinanceiroPage() {
     setBeneficios(c.beneficios)
     setAvisoBloqueio(c.aviso_bloqueio)
     setPagamentosAtivos(c.pagamentos_ativos)
+    setWhatsappSuporte(c.whatsapp_suporte ?? "")
   }, [])
 
   const carregarPagamentos = useCallback(async () => {
@@ -134,6 +137,7 @@ export default function AdminFinanceiroPage() {
           beneficios,
           avisoBloqueio,
           pagamentosAtivos,
+          whatsappSuporte,
         }),
       })
       const data = await res.json().catch(() => ({}))
@@ -246,6 +250,24 @@ export default function AdminFinanceiroPage() {
                 className="field h-9"
                 placeholder="Um pagamento. Acesso completo para sempre."
               />
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-medium text-foreground" htmlFor="whatsapp-suporte">
+                WhatsApp de suporte
+              </label>
+              <input
+                id="whatsapp-suporte"
+                value={whatsappSuporte}
+                onChange={(e) => setWhatsappSuporte(e.target.value)}
+                className="field h-9"
+                placeholder="5511999999999"
+                inputMode="tel"
+              />
+              <p className="text-[11px] text-muted">
+                Número com DDI e DDD, só dígitos (ex.: 5511999999999). Aparece no balão de suporte
+                como link do WhatsApp. Deixe vazio para voltar ao e-mail.
+              </p>
             </div>
 
             <div className="space-y-1.5">
