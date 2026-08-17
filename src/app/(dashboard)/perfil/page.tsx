@@ -115,11 +115,23 @@ export default function PerfilPage() {
     setSalvo(false)
     setErro("")
     try {
+      // Garante token de sessão válido antes do upload — o storage exige
+      // autenticação e um token expirado faz o request ir sem sessão (400).
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
+      if (!user || user.id !== profile.id) {
+        throw new Error("Sessão expirada. Saia e entre novamente.")
+      }
+
       let iconePath = profile.icone_path
       if (iconeFile) {
         const path = `${profile.id}/icone.${extensaoDeMime(iconeFile.type) ?? "png"}`
         const { error } = await supabase.storage.from("perfis").upload(path, iconeFile, { upsert: true })
-        if (error) throw new Error("Falha ao enviar o ícone")
+        if (error) {
+          console.error("upload ícone", error)
+          throw new Error(`Falha ao enviar o ícone: ${error.message}`)
+        }
         iconePath = path
       } else if (profile.icone_path) {
         iconePath = null
@@ -129,7 +141,10 @@ export default function PerfilPage() {
       if (bannerFile) {
         const path = `${profile.id}/banner.${extensaoDeMime(bannerFile.type) ?? "png"}`
         const { error } = await supabase.storage.from("perfis").upload(path, bannerFile, { upsert: true })
-        if (error) throw new Error("Falha ao enviar o banner")
+        if (error) {
+          console.error("upload banner", error)
+          throw new Error(`Falha ao enviar o banner: ${error.message}`)
+        }
         bannerPath = path
       } else if (profile.banner_path) {
         bannerPath = null
@@ -145,7 +160,10 @@ export default function PerfilPage() {
           banner_path: bannerPath,
         })
         .eq("id", profile.id)
-      if (error) throw new Error("Falha ao salvar o perfil")
+      if (error) {
+        console.error("update perfil", error)
+        throw new Error(`Falha ao salvar o perfil: ${error.message}`)
+      }
 
       setProfile({ ...profile, bio, prova_alvo: provaAlvo.trim(), moldura_id: molduraId, icone_path: iconePath, banner_path: bannerPath })
       setIconeFile(null)
