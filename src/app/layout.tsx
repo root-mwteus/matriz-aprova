@@ -4,7 +4,7 @@ import { Toaster } from "sonner"
 import { Analytics } from "@vercel/analytics/next"
 import { SupportBubble } from "@/components/SupportBubble"
 import "./globals.css"
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants"
+import { SITE_DESCRIPTION, SITE_NAME, LANDING_URL } from "@/lib/constants"
 
 /**
  * Fontes auto-hospedadas via `next/font`.
@@ -38,7 +38,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(LANDING_URL),
   title: {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
-    url: SITE_URL,
+    url: LANDING_URL,
     locale: "pt_BR",
     type: "website",
   },

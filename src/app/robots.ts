@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next"
-import { SITE_URL } from "@/lib/constants"
+import { LANDING_URL } from "@/lib/constants"
 import { AUTH_ROUTES, PROTECTED_ROUTES, PUBLIC_ROUTES } from "@/lib/routes"
 
 export default function robots(): MetadataRoute.Robots {
@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [...PROTECTED_ROUTES, "/admin", "/api"],
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: `${LANDING_URL}/sitemap.xml`,
   }
 }

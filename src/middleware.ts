@@ -3,6 +3,19 @@ import { NextResponse, type NextRequest } from "next/server"
 import { AUTH_ROUTES, PROTECTED_ROUTES } from "@/lib/routes"
 import { isSessionRevoked } from "@/lib/supabase/session"
 
+const LANDING_URL = process.env.NEXT_PUBLIC_LANDING_URL || "http://localhost:3000"
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+
+function isAppDomain(request: NextRequest) {
+  const host = request.headers.get("host") || ""
+  return host.startsWith("app.") || host === "localhost:3000"
+}
+
+function isLandingDomain(request: NextRequest) {
+  const host = request.headers.get("host") || ""
+  return !host.startsWith("app.") && host !== "localhost:3000"
+}
+
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
@@ -31,33 +44,38 @@ export async function middleware(request: NextRequest) {
 
   const { pathname } = request.nextUrl
 
-  /**
-   * Rotas protegidas.
-   *
-   * Estava escrito como uma cadeia de `startsWith` que precisava ser
-   * lembrada a cada página nova — /comunidade, /cronometro e /onboarding
-   * tinham ficado de fora e só eram barrados depois, pelo layout, já com
-   * o custo de uma renderização. A lista agora é uma constante única,
-   * usada também pelo robots.txt.
-   */
   const isAuthRoute = AUTH_ROUTES.some((r) => pathname.startsWith(r))
   const isDashboardRoute = PROTECTED_ROUTES.some((r) => pathname.startsWith(r))
   const isAdminRoute = pathname.startsWith("/admin")
 
+  // ── Usuário NÃO logado em rota protegida ──────────────────────────
   if (!user && (isDashboardRoute || isAdminRoute)) {
     const url = request.nextUrl.clone()
     url.pathname = "/login"
-    // Preserva o destino: após logar, o usuário volta para onde tentava ir.
     url.searchParams.set("next", `${pathname}${request.nextUrl.search}`)
+
+    // No app.matrizaprova.com, redireciona para a landing (login fica lá)
+    if (isAppDomain(request)) {
+      return NextResponse.redirect(new URL(`${LANDING_URL}/login${url.search}`))
+    }
+
     return NextResponse.redirect(url)
   }
 
+  // ── Usuário logado em rota de auth (login, cadastro, etc.) ────────
   if (user && isAuthRoute) {
     const url = request.nextUrl.clone()
     url.pathname = "/dashboard"
+
+    // Na landing, redireciona para o app (dashboard fica lá)
+    if (isLandingDomain(request)) {
+      return NextResponse.redirect(new URL(`${APP_URL}/dashboard`))
+    }
+
     return NextResponse.redirect(url)
   }
 
+  // ── Verificações de perfil (só rodam no app) ──────────────────────
   if (user && (isDashboardRoute || isAdminRoute)) {
     const { data: profile } = await supabase
       .from("profiles")
@@ -70,6 +88,12 @@ export async function middleware(request: NextRequest) {
       const url = request.nextUrl.clone()
       url.pathname = "/login"
       url.searchParams.set("suspenso", "1")
+
+      // Na landing, redireciona para a landing
+      if (isAppDomain(request)) {
+        return NextResponse.redirect(new URL(`${LANDING_URL}/login?suspenso=1`))
+      }
+
       return NextResponse.redirect(url)
     }
 
