@@ -58,6 +58,10 @@ function validar(caderno, caminho) {
     if (!questao.enunciado || !Array.isArray(questao.alternativas) || questao.alternativas.length !== 5) {
       throw new Error(`${prefixo}: enunciado ou alternativas inválidos`)
     }
+    const textos = normalizarAlternativas(questao.alternativas).map((alt) => alt.text)
+    if (textos.some((texto) => !texto || !texto.trim())) {
+      throw new Error(`${prefixo}: alternativa com texto vazio`)
+    }
     if (questao.resposta_correta < 0 || questao.resposta_correta > 4) {
       throw new Error(`${prefixo}: gabarito fora do intervalo 0-4`)
     }
@@ -73,12 +77,18 @@ function validar(caderno, caminho) {
   }
 }
 
+// Normaliza para o formato canônico do app (src/types: {letter, text}).
+// Os cadernos usam três formatos: string, {letra, texto} e {letter, text}.
 function normalizarAlternativas(alternativas) {
-  return alternativas.map((alternativa, index) =>
-    typeof alternativa === "string"
-      ? { letra: LETRAS[index], texto: alternativa }
-      : { letra: alternativa.letra ?? LETRAS[index], texto: alternativa.texto ?? "" }
-  )
+  return alternativas.map((alternativa, index) => {
+    if (typeof alternativa === "string") {
+      return { letter: LETRAS[index], text: alternativa }
+    }
+    return {
+      letter: alternativa.letter ?? alternativa.letra ?? LETRAS[index],
+      text: alternativa.text ?? alternativa.texto ?? "",
+    }
+  })
 }
 
 function lerCadernos() {

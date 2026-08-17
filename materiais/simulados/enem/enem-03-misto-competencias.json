@@ -15,7 +15,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 1).",
+      "enunciado": "Um cartaz de campanha de vacinação combina uma imagem de uma família protegida com a frase curta “Proteja quem você ama: vacine-se hoje!”, além da orientação de procurar a unidade de saúde mais próxima. A escolha dessa combinação de linguagem visual e verbal evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -23,27 +23,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O cartaz alia imagem emocional e verbo no imperativo (“vacine-se”) com o objetivo de convencer o público a agir, o que caracteriza a função conativa ou persuasiva da linguagem, típica de campanhas publicitárias.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE VACINAÇÃO\n[Imagem: família abraçada em primeiro plano]\n“Proteja quem você ama: vacine-se hoje!”\nProcure a unidade de saúde mais próxima."
     },
     {
       "ordem": 2,
@@ -54,7 +55,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 2).",
+      "enunciado": "O mapa retrata a expansão urbana de uma metrópole brasileira acompanhada do aumento dos deslocamentos pendulares na periferia. O processo evidenciado indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -62,27 +63,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O crescimento dos loteamentos na periferia, ao longo do eixo rodoviário, combinado ao aumento das viagens diárias rumo ao centro, revela uma integração espacial desigual: a metrópole cresce, mas concentra moradias na periferia e empregos no núcleo, intensificando os deslocamentos pendulares.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "Mapa — região metropolitana (descrição): a mancha urbana do núcleo central praticamente não cresce, enquanto novos loteamentos se espalham pelos municípios vizinhos ao longo de uma rodovia radial; setas de espessura crescente representam o aumento das viagens diárias desses municípios em direção à capital."
     },
     {
       "ordem": 3,
@@ -93,31 +95,31 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 3).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -132,7 +134,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 4).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -140,23 +142,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -171,7 +173,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 5).",
+      "enunciado": "Uma instalação apresentada em uma bienal de arte reúne milhares de embalagens, eletrônicos quebrados e roupas descartadas, formando uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -179,27 +181,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Ao transformar o lixo em objeto estético e incluir o visitante na cena, a instalação provoca uma reflexão crítica sobre o consumismo, o desperdício e a desigualdade social.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "Instalação apresentada em bienal de arte: milhares de embalagens, eletrônicos quebrados e roupas descartadas formam uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo."
     },
     {
       "ordem": 6,
@@ -210,7 +213,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 6).",
+      "enunciado": "Um cartógrafo precisa representar um único bairro, com o máximo de detalhes, em uma folha de papel do mesmo tamanho que antes continha o mapa de toda a cidade. Para isso, ele altera a escala cartográfica do documento. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -218,23 +221,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Para representar menos área com mais detalhes na mesma folha, o cartógrafo aumenta a escala (denominador menor, como de 1:100 000 para 1:10 000): escala maior, área representada menor e maior nível de detalhe.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -249,7 +252,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 7).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -257,23 +260,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -288,7 +291,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 8).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -296,23 +299,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -327,7 +330,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 9).",
+      "enunciado": "Durante uma conversa, participantes de regiões diferentes empregam marcas regionais da língua — como formas de tratamento e expressões típicas — sem que isso comprometa a compreensão entre eles. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -335,23 +338,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a necessidade de corrigir toda fala que fuja à norma-padrão."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a impossibilidade de comunicação entre variantes distintas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da norma-padrão sobre as variantes regionais."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a inexistência de variedades regionais no português brasileiro."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A comunicação eficaz entre falantes de variantes regionais diferentes comprova que todas as variedades da língua são legítimas e igualmente adequadas, respeitando-se o contexto de uso.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -366,7 +369,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 10).",
+      "enunciado": "De acordo com a pesquisa, a análise adequada dos resultados apresentados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -374,27 +377,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Os dados mostram forte correlação entre renda, território e acesso: quanto menor a renda e mais afastado o domicílio dos grandes centros, menor a conectividade. A leitura adequada reconhece as desigualdades estruturais que limitam o acesso.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "Pesquisa nacional sobre conectividade: entre as famílias com renda de até um salário mínimo, 35% não possuem internet em casa; entre as famílias com renda superior a cinco salários mínimos, esse percentual cai para 3%. Nas áreas rurais do Norte e do Nordeste, a banda larga de qualidade chega à metade dos domicílios, contra quase a totalidade nas capitais."
     },
     {
       "ordem": 11,
@@ -405,31 +409,31 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 11).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -444,7 +448,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 12).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -452,23 +456,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -483,7 +487,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 13).",
+      "enunciado": "Uma campanha de doação de sangue divulga um cartaz em que a imagem de um paciente sorridente aparece ao lado da frase “Você pode salvar vidas. Doe sangue!” e de instruções sobre locais de coleta. Esse arranjo entre imagem e texto tem como principal efeito:",
       "alternativas": [
         {
           "letter": "A",
@@ -491,23 +495,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A campanha mobiliza emoção e comando direto (“Doe sangue!”) para levar o leitor a agir, configurando a função persuasiva (conativa) da linguagem.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -522,7 +526,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 14).",
+      "enunciado": "O mapa mostra uma metrópole em que a mancha urbana se estende ao longo de uma rodovia, enquanto aumentam os deslocamentos diários de moradores da periferia para o centro. A leitura conjunta do mapa e dos dados de transporte indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -530,27 +534,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A periferização da moradia ao longo do eixo viário e a concentração de empregos no núcleo geram fluxos pendulares intensos, expressão da integração espacial desigual da metrópole.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "Mapa — região metropolitana (descrição): núcleo central com alta densidade de empregos; periferia em expansão, com novos conjuntos habitacionais ao longo da rodovia radial; setas crescentes indicam o volume de pessoas que viajam diariamente dos municípios vizinhos para trabalhar no centro."
     },
     {
       "ordem": 15,
@@ -561,31 +566,31 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 15).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -600,7 +605,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 16).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -608,23 +613,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -639,7 +644,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 17).",
+      "enunciado": "Em uma exposição de arte contemporânea, toneladas de objetos descartados são empilhadas para discutir consumo e desigualdade, e um espelho no alto da pilha reflete o rosto de quem visita. A proposta artística da obra é:",
       "alternativas": [
         {
           "letter": "A",
@@ -647,23 +652,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A obra utiliza o resíduo do consumo como matéria-prima e insere o observador no conjunto, incentivando a reflexão crítica sobre práticas sociais ligadas ao consumo e à desigualdade.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -678,7 +683,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 18).",
+      "enunciado": "Um mapa da cidade inteira, elaborado na escala 1:100 000, será substituído por um mapa do bairro na escala 1:10 000 impresso em uma folha do mesmo tamanho. Comparando os dois documentos, o novo mapa apresenta:",
       "alternativas": [
         {
           "letter": "A",
@@ -686,23 +691,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A escala 1:10 000 é maior que a 1:100 000 (1/10 000 > 1/100 000). Com escala maior, a área representada diminui e o detalhamento aumenta.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -717,7 +722,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 19).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -725,23 +730,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -756,7 +761,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 20).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -764,23 +769,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -795,7 +800,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 21).",
+      "enunciado": "Em uma reunião de trabalho, colegas de diferentes estados usam palavras e pronúncias típicas de suas regiões, e todos se entendem sem dificuldade. O episódio demonstra:",
       "alternativas": [
         {
           "letter": "A",
@@ -803,23 +808,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a necessidade de corrigir toda fala que fuja à norma-padrão."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a impossibilidade de comunicação entre variantes distintas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da norma-padrão sobre as variantes regionais."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a inexistência de variedades regionais no português brasileiro."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A variação linguística é natural e não impede a comunicação; as variantes regionais são sistemáticas e legítimas dentro de suas comunidades de fala.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -834,7 +839,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 22).",
+      "enunciado": "A pesquisa apresentada aponta diferenças expressivas de conectividade entre grupos sociais. A interpretação correta dos dados deve:",
       "alternativas": [
         {
           "letter": "A",
@@ -842,27 +847,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A concentração da falta de acesso nas classes de menor renda e nas áreas rurais, somada ao custo do serviço como principal barreira, evidencia desigualdades estruturais, e não escolhas individuais.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "Pesquisa nacional sobre conectividade: 90% dos domicílios das classes A e B têm internet de qualidade, contra 38% das classes D e E; nas regiões metropolitanas o acesso atinge 84% dos domicílios, enquanto nas zonas rurais não ultrapassa 41%. A principal razão apontada pelas famílias sem acesso foi o custo do serviço."
     },
     {
       "ordem": 23,
@@ -873,31 +879,31 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 23).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -912,7 +918,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 24).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -920,23 +926,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -951,7 +957,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 25).",
+      "enunciado": "Um cartaz de campanha de vacinação combina uma imagem de uma família protegida com a frase curta “Proteja quem você ama: vacine-se hoje!”, além da orientação de procurar a unidade de saúde mais próxima. A escolha dessa combinação de linguagem visual e verbal evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -959,27 +965,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O cartaz alia imagem emocional e verbo no imperativo (“vacine-se”) com o objetivo de convencer o público a agir, o que caracteriza a função conativa ou persuasiva da linguagem, típica de campanhas publicitárias.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE VACINAÇÃO\n[Imagem: família abraçada em primeiro plano]\n“Proteja quem você ama: vacine-se hoje!”\nProcure a unidade de saúde mais próxima."
     },
     {
       "ordem": 26,
@@ -990,7 +997,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 26).",
+      "enunciado": "O mapa retrata a expansão urbana de uma metrópole brasileira acompanhada do aumento dos deslocamentos pendulares na periferia. O processo evidenciado indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -998,27 +1005,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O crescimento dos loteamentos na periferia, ao longo do eixo rodoviário, combinado ao aumento das viagens diárias rumo ao centro, revela uma integração espacial desigual: a metrópole cresce, mas concentra moradias na periferia e empregos no núcleo, intensificando os deslocamentos pendulares.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "Mapa — região metropolitana (descrição): a mancha urbana do núcleo central praticamente não cresce, enquanto novos loteamentos se espalham pelos municípios vizinhos ao longo de uma rodovia radial; setas de espessura crescente representam o aumento das viagens diárias desses municípios em direção à capital."
     },
     {
       "ordem": 27,
@@ -1029,31 +1037,31 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 27).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -1067,7 +1075,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 28).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1075,23 +1083,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1105,7 +1113,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 29).",
+      "enunciado": "Uma instalação apresentada em uma bienal de arte reúne milhares de embalagens, eletrônicos quebrados e roupas descartadas, formando uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1113,27 +1121,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Ao transformar o lixo em objeto estético e incluir o visitante na cena, a instalação provoca uma reflexão crítica sobre o consumismo, o desperdício e a desigualdade social.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Instalação apresentada em bienal de arte: milhares de embalagens, eletrônicos quebrados e roupas descartadas formam uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo."
     },
     {
       "ordem": 30,
@@ -1143,7 +1152,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 30).",
+      "enunciado": "Um cartógrafo precisa representar um único bairro, com o máximo de detalhes, em uma folha de papel do mesmo tamanho que antes continha o mapa de toda a cidade. Para isso, ele altera a escala cartográfica do documento. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1151,23 +1160,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Para representar menos área com mais detalhes na mesma folha, o cartógrafo aumenta a escala (denominador menor, como de 1:100 000 para 1:10 000): escala maior, área representada menor e maior nível de detalhe.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1181,7 +1190,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 31).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -1189,23 +1198,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1219,7 +1228,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 32).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -1227,23 +1236,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1257,7 +1266,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 33).",
+      "enunciado": "Durante uma conversa, participantes de regiões diferentes empregam marcas regionais da língua — como formas de tratamento e expressões típicas — sem que isso comprometa a compreensão entre eles. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1265,23 +1274,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a necessidade de corrigir toda fala que fuja à norma-padrão."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a impossibilidade de comunicação entre variantes distintas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da norma-padrão sobre as variantes regionais."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a inexistência de variedades regionais no português brasileiro."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A comunicação eficaz entre falantes de variantes regionais diferentes comprova que todas as variedades da língua são legítimas e igualmente adequadas, respeitando-se o contexto de uso.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1295,7 +1304,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 34).",
+      "enunciado": "De acordo com a pesquisa, a análise adequada dos resultados apresentados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -1303,27 +1312,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Os dados mostram forte correlação entre renda, território e acesso: quanto menor a renda e mais afastado o domicílio dos grandes centros, menor a conectividade. A leitura adequada reconhece as desigualdades estruturais que limitam o acesso.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Pesquisa nacional sobre conectividade: entre as famílias com renda de até um salário mínimo, 35% não possuem internet em casa; entre as famílias com renda superior a cinco salários mínimos, esse percentual cai para 3%. Nas áreas rurais do Norte e do Nordeste, a banda larga de qualidade chega à metade dos domicílios, contra quase a totalidade nas capitais."
     },
     {
       "ordem": 35,
@@ -1333,31 +1343,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 35).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1371,7 +1381,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 36).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1379,23 +1389,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1409,7 +1419,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 37).",
+      "enunciado": "Uma campanha de doação de sangue divulga um cartaz em que a imagem de um paciente sorridente aparece ao lado da frase “Você pode salvar vidas. Doe sangue!” e de instruções sobre locais de coleta. Esse arranjo entre imagem e texto tem como principal efeito:",
       "alternativas": [
         {
           "letter": "A",
@@ -1417,23 +1427,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A campanha mobiliza emoção e comando direto (“Doe sangue!”) para levar o leitor a agir, configurando a função persuasiva (conativa) da linguagem.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1447,7 +1457,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 38).",
+      "enunciado": "O mapa mostra uma metrópole em que a mancha urbana se estende ao longo de uma rodovia, enquanto aumentam os deslocamentos diários de moradores da periferia para o centro. A leitura conjunta do mapa e dos dados de transporte indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -1455,27 +1465,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A periferização da moradia ao longo do eixo viário e a concentração de empregos no núcleo geram fluxos pendulares intensos, expressão da integração espacial desigual da metrópole.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Mapa — região metropolitana (descrição): núcleo central com alta densidade de empregos; periferia em expansão, com novos conjuntos habitacionais ao longo da rodovia radial; setas crescentes indicam o volume de pessoas que viajam diariamente dos municípios vizinhos para trabalhar no centro."
     },
     {
       "ordem": 39,
@@ -1485,31 +1496,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 39).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1523,7 +1534,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 40).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1531,23 +1542,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1561,7 +1572,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 41).",
+      "enunciado": "Em uma exposição de arte contemporânea, toneladas de objetos descartados são empilhadas para discutir consumo e desigualdade, e um espelho no alto da pilha reflete o rosto de quem visita. A proposta artística da obra é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1569,23 +1580,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A obra utiliza o resíduo do consumo como matéria-prima e insere o observador no conjunto, incentivando a reflexão crítica sobre práticas sociais ligadas ao consumo e à desigualdade.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1599,7 +1610,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 42).",
+      "enunciado": "Um mapa da cidade inteira, elaborado na escala 1:100 000, será substituído por um mapa do bairro na escala 1:10 000 impresso em uma folha do mesmo tamanho. Comparando os dois documentos, o novo mapa apresenta:",
       "alternativas": [
         {
           "letter": "A",
@@ -1607,23 +1618,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A escala 1:10 000 é maior que a 1:100 000 (1/10 000 > 1/100 000). Com escala maior, a área representada diminui e o detalhamento aumenta.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1637,7 +1648,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 43).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -1645,23 +1656,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1675,7 +1686,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 44).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1683,23 +1694,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1713,7 +1724,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 45).",
+      "enunciado": "Em uma reunião de trabalho, colegas de diferentes estados usam palavras e pronúncias típicas de suas regiões, e todos se entendem sem dificuldade. O episódio demonstra:",
       "alternativas": [
         {
           "letter": "A",
@@ -1721,23 +1732,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a necessidade de corrigir toda fala que fuja à norma-padrão."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a impossibilidade de comunicação entre variantes distintas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da norma-padrão sobre as variantes regionais."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a inexistência de variedades regionais no português brasileiro."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A variação linguística é natural e não impede a comunicação; as variantes regionais são sistemáticas e legítimas dentro de suas comunidades de fala.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1751,7 +1762,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 46).",
+      "enunciado": "A pesquisa apresentada aponta diferenças expressivas de conectividade entre grupos sociais. A interpretação correta dos dados deve:",
       "alternativas": [
         {
           "letter": "A",
@@ -1759,27 +1770,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A concentração da falta de acesso nas classes de menor renda e nas áreas rurais, somada ao custo do serviço como principal barreira, evidencia desigualdades estruturais, e não escolhas individuais.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Pesquisa nacional sobre conectividade: 90% dos domicílios das classes A e B têm internet de qualidade, contra 38% das classes D e E; nas regiões metropolitanas o acesso atinge 84% dos domicílios, enquanto nas zonas rurais não ultrapassa 41%. A principal razão apontada pelas famílias sem acesso foi o custo do serviço."
     },
     {
       "ordem": 47,
@@ -1789,31 +1801,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 47).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1827,7 +1839,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 48).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1835,23 +1847,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1865,7 +1877,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 49).",
+      "enunciado": "Um cartaz de campanha de vacinação combina uma imagem de uma família protegida com a frase curta “Proteja quem você ama: vacine-se hoje!”, além da orientação de procurar a unidade de saúde mais próxima. A escolha dessa combinação de linguagem visual e verbal evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1873,27 +1885,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O cartaz alia imagem emocional e verbo no imperativo (“vacine-se”) com o objetivo de convencer o público a agir, o que caracteriza a função conativa ou persuasiva da linguagem, típica de campanhas publicitárias.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE VACINAÇÃO\n[Imagem: família abraçada em primeiro plano]\n“Proteja quem você ama: vacine-se hoje!”\nProcure a unidade de saúde mais próxima."
     },
     {
       "ordem": 50,
@@ -1903,7 +1916,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 50).",
+      "enunciado": "O mapa retrata a expansão urbana de uma metrópole brasileira acompanhada do aumento dos deslocamentos pendulares na periferia. O processo evidenciado indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -1911,27 +1924,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O crescimento dos loteamentos na periferia, ao longo do eixo rodoviário, combinado ao aumento das viagens diárias rumo ao centro, revela uma integração espacial desigual: a metrópole cresce, mas concentra moradias na periferia e empregos no núcleo, intensificando os deslocamentos pendulares.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Mapa — região metropolitana (descrição): a mancha urbana do núcleo central praticamente não cresce, enquanto novos loteamentos se espalham pelos municípios vizinhos ao longo de uma rodovia radial; setas de espessura crescente representam o aumento das viagens diárias desses municípios em direção à capital."
     },
     {
       "ordem": 51,
@@ -1941,31 +1955,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 51).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1979,7 +1993,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 52).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1987,23 +2001,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2017,7 +2031,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 53).",
+      "enunciado": "Uma instalação apresentada em uma bienal de arte reúne milhares de embalagens, eletrônicos quebrados e roupas descartadas, formando uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2025,27 +2039,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Ao transformar o lixo em objeto estético e incluir o visitante na cena, a instalação provoca uma reflexão crítica sobre o consumismo, o desperdício e a desigualdade social.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Instalação apresentada em bienal de arte: milhares de embalagens, eletrônicos quebrados e roupas descartadas formam uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo."
     },
     {
       "ordem": 54,
@@ -2055,7 +2070,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 54).",
+      "enunciado": "Um cartógrafo precisa representar um único bairro, com o máximo de detalhes, em uma folha de papel do mesmo tamanho que antes continha o mapa de toda a cidade. Para isso, ele altera a escala cartográfica do documento. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2063,23 +2078,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Para representar menos área com mais detalhes na mesma folha, o cartógrafo aumenta a escala (denominador menor, como de 1:100 000 para 1:10 000): escala maior, área representada menor e maior nível de detalhe.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2093,7 +2108,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 55).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -2101,23 +2116,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2131,7 +2146,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 56).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -2139,23 +2154,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2169,7 +2184,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 57).",
+      "enunciado": "Durante uma conversa, participantes de regiões diferentes empregam marcas regionais da língua — como formas de tratamento e expressões típicas — sem que isso comprometa a compreensão entre eles. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2177,23 +2192,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a necessidade de corrigir toda fala que fuja à norma-padrão."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a impossibilidade de comunicação entre variantes distintas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da norma-padrão sobre as variantes regionais."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a inexistência de variedades regionais no português brasileiro."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A comunicação eficaz entre falantes de variantes regionais diferentes comprova que todas as variedades da língua são legítimas e igualmente adequadas, respeitando-se o contexto de uso.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2207,7 +2222,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 58).",
+      "enunciado": "De acordo com a pesquisa, a análise adequada dos resultados apresentados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -2215,27 +2230,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Os dados mostram forte correlação entre renda, território e acesso: quanto menor a renda e mais afastado o domicílio dos grandes centros, menor a conectividade. A leitura adequada reconhece as desigualdades estruturais que limitam o acesso.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Pesquisa nacional sobre conectividade: entre as famílias com renda de até um salário mínimo, 35% não possuem internet em casa; entre as famílias com renda superior a cinco salários mínimos, esse percentual cai para 3%. Nas áreas rurais do Norte e do Nordeste, a banda larga de qualidade chega à metade dos domicílios, contra quase a totalidade nas capitais."
     },
     {
       "ordem": 59,
@@ -2245,31 +2261,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 59).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2283,7 +2299,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 60).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2291,23 +2307,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2321,7 +2337,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 61).",
+      "enunciado": "Uma campanha de doação de sangue divulga um cartaz em que a imagem de um paciente sorridente aparece ao lado da frase “Você pode salvar vidas. Doe sangue!” e de instruções sobre locais de coleta. Esse arranjo entre imagem e texto tem como principal efeito:",
       "alternativas": [
         {
           "letter": "A",
@@ -2329,23 +2345,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A campanha mobiliza emoção e comando direto (“Doe sangue!”) para levar o leitor a agir, configurando a função persuasiva (conativa) da linguagem.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2359,7 +2375,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 62).",
+      "enunciado": "O mapa mostra uma metrópole em que a mancha urbana se estende ao longo de uma rodovia, enquanto aumentam os deslocamentos diários de moradores da periferia para o centro. A leitura conjunta do mapa e dos dados de transporte indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -2367,27 +2383,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A periferização da moradia ao longo do eixo viário e a concentração de empregos no núcleo geram fluxos pendulares intensos, expressão da integração espacial desigual da metrópole.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Mapa — região metropolitana (descrição): núcleo central com alta densidade de empregos; periferia em expansão, com novos conjuntos habitacionais ao longo da rodovia radial; setas crescentes indicam o volume de pessoas que viajam diariamente dos municípios vizinhos para trabalhar no centro."
     },
     {
       "ordem": 63,
@@ -2397,31 +2414,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 63).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2435,7 +2452,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 64).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2443,23 +2460,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2473,7 +2490,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 65).",
+      "enunciado": "Em uma exposição de arte contemporânea, toneladas de objetos descartados são empilhadas para discutir consumo e desigualdade, e um espelho no alto da pilha reflete o rosto de quem visita. A proposta artística da obra é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2481,23 +2498,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A obra utiliza o resíduo do consumo como matéria-prima e insere o observador no conjunto, incentivando a reflexão crítica sobre práticas sociais ligadas ao consumo e à desigualdade.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2511,7 +2528,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 66).",
+      "enunciado": "Um mapa da cidade inteira, elaborado na escala 1:100 000, será substituído por um mapa do bairro na escala 1:10 000 impresso em uma folha do mesmo tamanho. Comparando os dois documentos, o novo mapa apresenta:",
       "alternativas": [
         {
           "letter": "A",
@@ -2519,23 +2536,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A escala 1:10 000 é maior que a 1:100 000 (1/10 000 > 1/100 000). Com escala maior, a área representada diminui e o detalhamento aumenta.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2549,7 +2566,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 67).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -2557,23 +2574,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2587,7 +2604,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 68).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2595,23 +2612,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2625,7 +2642,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 69).",
+      "enunciado": "Em uma reunião de trabalho, colegas de diferentes estados usam palavras e pronúncias típicas de suas regiões, e todos se entendem sem dificuldade. O episódio demonstra:",
       "alternativas": [
         {
           "letter": "A",
@@ -2633,23 +2650,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a necessidade de corrigir toda fala que fuja à norma-padrão."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a impossibilidade de comunicação entre variantes distintas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da norma-padrão sobre as variantes regionais."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a inexistência de variedades regionais no português brasileiro."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A variação linguística é natural e não impede a comunicação; as variantes regionais são sistemáticas e legítimas dentro de suas comunidades de fala.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2663,7 +2680,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 70).",
+      "enunciado": "A pesquisa apresentada aponta diferenças expressivas de conectividade entre grupos sociais. A interpretação correta dos dados deve:",
       "alternativas": [
         {
           "letter": "A",
@@ -2671,27 +2688,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A concentração da falta de acesso nas classes de menor renda e nas áreas rurais, somada ao custo do serviço como principal barreira, evidencia desigualdades estruturais, e não escolhas individuais.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Pesquisa nacional sobre conectividade: 90% dos domicílios das classes A e B têm internet de qualidade, contra 38% das classes D e E; nas regiões metropolitanas o acesso atinge 84% dos domicílios, enquanto nas zonas rurais não ultrapassa 41%. A principal razão apontada pelas famílias sem acesso foi o custo do serviço."
     },
     {
       "ordem": 71,
@@ -2701,31 +2719,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 71).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2739,7 +2757,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 72).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2747,23 +2765,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2777,7 +2795,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 73).",
+      "enunciado": "Um cartaz de campanha de vacinação combina uma imagem de uma família protegida com a frase curta “Proteja quem você ama: vacine-se hoje!”, além da orientação de procurar a unidade de saúde mais próxima. A escolha dessa combinação de linguagem visual e verbal evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2785,27 +2803,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O cartaz alia imagem emocional e verbo no imperativo (“vacine-se”) com o objetivo de convencer o público a agir, o que caracteriza a função conativa ou persuasiva da linguagem, típica de campanhas publicitárias.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE VACINAÇÃO\n[Imagem: família abraçada em primeiro plano]\n“Proteja quem você ama: vacine-se hoje!”\nProcure a unidade de saúde mais próxima."
     },
     {
       "ordem": 74,
@@ -2815,7 +2834,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 74).",
+      "enunciado": "O mapa retrata a expansão urbana de uma metrópole brasileira acompanhada do aumento dos deslocamentos pendulares na periferia. O processo evidenciado indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -2823,27 +2842,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O crescimento dos loteamentos na periferia, ao longo do eixo rodoviário, combinado ao aumento das viagens diárias rumo ao centro, revela uma integração espacial desigual: a metrópole cresce, mas concentra moradias na periferia e empregos no núcleo, intensificando os deslocamentos pendulares.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Mapa — região metropolitana (descrição): a mancha urbana do núcleo central praticamente não cresce, enquanto novos loteamentos se espalham pelos municípios vizinhos ao longo de uma rodovia radial; setas de espessura crescente representam o aumento das viagens diárias desses municípios em direção à capital."
     },
     {
       "ordem": 75,
@@ -2853,31 +2873,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 75).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2891,7 +2911,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 76).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2899,23 +2919,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2929,7 +2949,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 77).",
+      "enunciado": "Uma instalação apresentada em uma bienal de arte reúne milhares de embalagens, eletrônicos quebrados e roupas descartadas, formando uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2937,27 +2957,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Ao transformar o lixo em objeto estético e incluir o visitante na cena, a instalação provoca uma reflexão crítica sobre o consumismo, o desperdício e a desigualdade social.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Instalação apresentada em bienal de arte: milhares de embalagens, eletrônicos quebrados e roupas descartadas formam uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo."
     },
     {
       "ordem": 78,
@@ -2967,7 +2988,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 78).",
+      "enunciado": "Um cartógrafo precisa representar um único bairro, com o máximo de detalhes, em uma folha de papel do mesmo tamanho que antes continha o mapa de toda a cidade. Para isso, ele altera a escala cartográfica do documento. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2975,23 +2996,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Para representar menos área com mais detalhes na mesma folha, o cartógrafo aumenta a escala (denominador menor, como de 1:100 000 para 1:10 000): escala maior, área representada menor e maior nível de detalhe.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3005,7 +3026,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 79).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -3013,23 +3034,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3043,7 +3064,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 80).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -3051,23 +3072,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3081,7 +3102,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 81).",
+      "enunciado": "Durante uma conversa, participantes de regiões diferentes empregam marcas regionais da língua — como formas de tratamento e expressões típicas — sem que isso comprometa a compreensão entre eles. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -3089,23 +3110,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a necessidade de corrigir toda fala que fuja à norma-padrão."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a impossibilidade de comunicação entre variantes distintas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da norma-padrão sobre as variantes regionais."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a inexistência de variedades regionais no português brasileiro."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A comunicação eficaz entre falantes de variantes regionais diferentes comprova que todas as variedades da língua são legítimas e igualmente adequadas, respeitando-se o contexto de uso.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3119,7 +3140,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 82).",
+      "enunciado": "De acordo com a pesquisa, a análise adequada dos resultados apresentados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -3127,27 +3148,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Os dados mostram forte correlação entre renda, território e acesso: quanto menor a renda e mais afastado o domicílio dos grandes centros, menor a conectividade. A leitura adequada reconhece as desigualdades estruturais que limitam o acesso.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Pesquisa nacional sobre conectividade: entre as famílias com renda de até um salário mínimo, 35% não possuem internet em casa; entre as famílias com renda superior a cinco salários mínimos, esse percentual cai para 3%. Nas áreas rurais do Norte e do Nordeste, a banda larga de qualidade chega à metade dos domicílios, contra quase a totalidade nas capitais."
     },
     {
       "ordem": 83,
@@ -3157,31 +3179,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 83).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3195,7 +3217,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 84).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3203,23 +3225,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3233,7 +3255,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 85).",
+      "enunciado": "Uma campanha de doação de sangue divulga um cartaz em que a imagem de um paciente sorridente aparece ao lado da frase “Você pode salvar vidas. Doe sangue!” e de instruções sobre locais de coleta. Esse arranjo entre imagem e texto tem como principal efeito:",
       "alternativas": [
         {
           "letter": "A",
@@ -3241,23 +3263,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A campanha mobiliza emoção e comando direto (“Doe sangue!”) para levar o leitor a agir, configurando a função persuasiva (conativa) da linguagem.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3271,7 +3293,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 86).",
+      "enunciado": "O mapa mostra uma metrópole em que a mancha urbana se estende ao longo de uma rodovia, enquanto aumentam os deslocamentos diários de moradores da periferia para o centro. A leitura conjunta do mapa e dos dados de transporte indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -3279,27 +3301,28 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A periferização da moradia ao longo do eixo viário e a concentração de empregos no núcleo geram fluxos pendulares intensos, expressão da integração espacial desigual da metrópole.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "Mapa — região metropolitana (descrição): núcleo central com alta densidade de empregos; periferia em expansão, com novos conjuntos habitacionais ao longo da rodovia radial; setas crescentes indicam o volume de pessoas que viajam diariamente dos municípios vizinhos para trabalhar no centro."
     },
     {
       "ordem": 87,
@@ -3309,31 +3332,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 87).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3347,7 +3370,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 88).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3355,23 +3378,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3385,7 +3408,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 89).",
+      "enunciado": "Em uma exposição de arte contemporânea, toneladas de objetos descartados são empilhadas para discutir consumo e desigualdade, e um espelho no alto da pilha reflete o rosto de quem visita. A proposta artística da obra é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3393,23 +3416,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A obra utiliza o resíduo do consumo como matéria-prima e insere o observador no conjunto, incentivando a reflexão crítica sobre práticas sociais ligadas ao consumo e à desigualdade.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3423,7 +3446,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 90).",
+      "enunciado": "Um mapa da cidade inteira, elaborado na escala 1:100 000, será substituído por um mapa do bairro na escala 1:10 000 impresso em uma folha do mesmo tamanho. Comparando os dois documentos, o novo mapa apresenta:",
       "alternativas": [
         {
           "letter": "A",
@@ -3431,23 +3454,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A escala 1:10 000 é maior que a 1:100 000 (1/10 000 > 1/100 000). Com escala maior, a área representada diminui e o detalhamento aumenta.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"

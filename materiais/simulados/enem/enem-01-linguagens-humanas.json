@@ -15,7 +15,8 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 1).",
+      "enunciado": "Um cartaz de campanha de vacinação combina uma imagem de família protegida com uma frase curta que orienta o público. A escolha dessa linguagem destaca:",
+      "texto_referencia": "CARTAZ — CAMPANHA DE VACINAÇÃO\n[Imagem: família abraçada em primeiro plano]\n“Proteja quem você ama: vacine-se hoje!”\nProcure a unidade de saúde mais próxima.",
       "alternativas": [
         {
           "letter": "A",
@@ -23,19 +24,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a exigência de linguagem técnica especializada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade da informação estatística sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a descrição neutra de procedimentos médicos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da frase escolhida."
         }
       ],
       "resposta_correta": 0,
@@ -54,7 +55,8 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 2).",
+      "enunciado": "O mapa descrito retrata a expansão urbana de uma metrópole brasileira acompanhada do aumento dos deslocamentos pendulares na periferia. O processo evidenciado indica:",
+      "texto_referencia": "Mapa — região metropolitana (descrição): a mancha urbana do núcleo central praticamente não cresce, enquanto novos loteamentos se espalham pelos municípios vizinhos ao longo de uma rodovia radial; setas de espessura crescente representam o aumento das viagens diárias desses municípios em direção à capital.",
       "alternativas": [
         {
           "letter": "A",
@@ -62,19 +64,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -93,7 +95,8 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 3).",
+      "enunciado": "No diálogo, os participantes empregam marcas da oralidade e variedades regionais sem que a comunicação entre eles seja comprometida. Essa situação evidencia:",
+      "texto_referencia": "— Cê vai vim na festa junina da escola?\n— Vou, mas antes preciso pegar meus irmão na casa da vó.\n— Então apressa, porque o povo já tá chegando!",
       "alternativas": [
         {
           "letter": "A",
@@ -101,19 +104,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -132,7 +135,8 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 4).",
+      "enunciado": "De acordo com a pesquisa, a análise adequada dos resultados apresentados deve considerar:",
+      "texto_referencia": "Pesquisa nacional sobre conectividade: entre as famílias com renda de até um salário mínimo, 35% não possuem internet em casa; entre as famílias com renda superior a cinco salários mínimos, esse percentual cai para 3%. Nas áreas rurais do Norte e do Nordeste, a banda larga de qualidade chega à metade dos domicílios, contra quase a totalidade nas capitais.",
       "alternativas": [
         {
           "letter": "A",
@@ -140,19 +144,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -171,7 +175,8 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 5).",
+      "enunciado": "A instalação descrita recorre ao acúmulo de objetos descartados para tratar do consumo e da desigualdade. Nesse contexto, a obra provoca:",
+      "texto_referencia": "Instalação apresentada em bienal de arte: milhares de embalagens, eletrônicos quebrados e roupas descartadas formam uma montanha que ocupa a sala inteira; no topo, um espelho obriga cada visitante a se reconhecer dentro do acúmulo.",
       "alternativas": [
         {
           "letter": "A",
@@ -179,19 +184,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -210,7 +215,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 6).",
+      "enunciado": "Um cartógrafo precisa representar um único bairro, com o máximo de detalhes, em uma folha de papel do mesmo tamanho que antes continha o mapa de toda a cidade. Para isso, ele altera a escala cartográfica do documento. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -218,19 +223,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -249,7 +254,8 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 7).",
+      "enunciado": "Um cartaz de campanha de doação de sangue combina imagem marcante e frase curta para convencer o público a agir. A escolha dessa linguagem destaca:",
+      "texto_referencia": "CARTAZ — CAMPANHA DE DOAÇÃO DE SANGUE\n[Imagem: punho cerrado com laço vermelho]\n“Doar sangue salva vidas. Seja doador hoje!”\nPostos de coleta abertos em todos os hospitais da cidade.",
       "alternativas": [
         {
           "letter": "A",
@@ -257,19 +263,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o uso de argumentação puramente técnica."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a apresentação de dados estatísticos detalhados."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada voltada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a descrição objetiva dos procedimentos de coleta."
         }
       ],
       "resposta_correta": 0,
@@ -288,7 +294,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 8).",
+      "enunciado": "Em uma metrópole brasileira, os censos mostram que a população dos municípios da periferia cresce três vezes mais rápido que a da capital, com novos loteamentos ocupando áreas junto às rodovias, enquanto a maioria dos empregos formais permanece concentrada no centro. Como consequência, aumenta o número de pessoas que moram em um município e trabalham em outro. Esse conjunto de transformações indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -296,19 +302,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -327,7 +333,8 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 9).",
+      "enunciado": "No diálogo, falantes de regiões diferentes empregam nomes distintos para um mesmo alimento, e a comunicação ocorre sem qualquer problema. Essa situação evidencia:",
+      "texto_referencia": "— Na minha terra, a gente chama de aipim.\n— Aqui a gente fala macaxeira!\n— Pois é... no mercado, todo mundo se entende na hora de comprar.",
       "alternativas": [
         {
           "letter": "A",
@@ -335,19 +342,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -366,7 +373,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 10).",
+      "enunciado": "Uma pesquisa nacional compara o acesso à internet nas famílias brasileiras segundo a renda e a localização geográfica. Entre as famílias com renda de até um salário mínimo, cerca de 38% não têm internet em casa; entre as de renda superior a cinco salários mínimos, esse percentual cai para 3%. Nas áreas rurais do Norte e do Nordeste, a banda larga de qualidade chega à metade dos domicílios, contra quase a totalidade nas capitais. A leitura adequada desses dados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -374,19 +381,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -405,7 +412,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 11).",
+      "enunciado": "Em uma bienal de arte, uma instalação ocupa uma sala inteira com milhares de objetos descartados — eletrodomésticos quebrados, embalagens e roupas — amontoados como uma montanha; no topo, um espelho reflete o visitante dentro do acúmulo. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -413,19 +420,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -444,7 +451,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 12).",
+      "enunciado": "Um atlas destina uma página inteira ao mapa de um país. Para mostrar com mais detalhes apenas a capital, o cartógrafo precisa modificar a escala. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -452,19 +459,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -483,7 +490,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 13).",
+      "enunciado": "Um cartaz de campanha de vacinação combina a imagem de uma família protegida com uma frase curta que orienta o público a agir. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -491,19 +498,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -511,7 +518,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE VACINAÇÃO\n[Imagem: família abraçada em primeiro plano]\n\"Proteja quem você ama: vacine-se hoje!\"\nProcure a unidade de saúde mais próxima."
     },
     {
       "ordem": 14,
@@ -522,7 +530,8 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 14).",
+      "enunciado": "A representação cartográfica descrita associa a expansão urbana ao longo de uma rodovia ao aumento dos deslocamentos pendulares. O processo espacial indicado é:",
+      "texto_referencia": "Mapa esquemático (descrição): uma rodovia radial liga o centro de uma grande cidade a cinco municípios vizinhos; ao longo dela surgem condomínios e loteamentos novos; linhas pontilhadas de espessura crescente a cada década representam as viagens diárias casa–trabalho entre a periferia e o centro.",
       "alternativas": [
         {
           "letter": "A",
@@ -530,19 +539,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -561,7 +570,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 15).",
+      "enunciado": "No diálogo, os participantes empregam marcas da oralidade e variedades regionais sem que a comunicação entre eles seja comprometida. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -569,19 +578,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -589,7 +598,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "— Cê vai vim na festa junina da escola?\n— Vou, mas antes preciso pegar meus irmão na casa da vó.\n— Então apressa, porque o povo já tá chegando!"
     },
     {
       "ordem": 16,
@@ -600,7 +610,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 16).",
+      "enunciado": "Um levantamento sobre conectividade escolar mostra que 35% dos estudantes de escolas públicas do interior não acessam a internet em casa, enquanto nas escolas particulares das capitais esse índice é de 2%. Além disso, a qualidade da conexão varia: nos municípios pequenos, a velocidade média é três vezes menor que nas metrópoles. A interpretação mais adequada desses resultados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -608,19 +618,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -639,7 +649,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 17).",
+      "enunciado": "Uma artista monta, em um centro cultural, um corredor com mesas de refeições de famílias de rendas distintas: de um lado, pratos simples e repetidos; do outro, banquetes servidos em louças finas. Os visitantes percorrem o corredor em fila indiana, observando as diferenças. Ao articular esse conjunto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -647,19 +657,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -678,7 +688,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 18).",
+      "enunciado": "Um cartógrafo precisa representar um único bairro, com o máximo de detalhes, em uma folha de papel do mesmo tamanho que antes continha o mapa de toda a cidade. Para isso, ele altera a escala cartográfica do documento. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -686,19 +696,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -717,7 +727,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 19).",
+      "enunciado": "Um cartaz de campanha de doação de sangue combina uma imagem marcante e uma frase curta para convencer o público a agir. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -725,19 +735,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -745,7 +755,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE DOAÇÃO DE SANGUE\n[Imagem: punho cerrado com laço vermelho]\n\"Doar sangue salva vidas. Seja doador hoje!\"\nPostos de coleta abertos em todos os hospitais da cidade."
     },
     {
       "ordem": 20,
@@ -756,7 +767,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 20).",
+      "enunciado": "Nas últimas décadas, uma região metropolitana do Nordeste concentrou investimentos e serviços na capital, enquanto a produção habitacional foi empurrada para os municípios vizinhos ao longo da principal rodovia da região; o tempo médio de deslocamento domicílio–trabalho dos moradores desses municípios dobrou no período. O processo territorial descrito indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -764,19 +775,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -795,7 +806,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 21).",
+      "enunciado": "No diálogo, falantes de regiões diferentes usam nomes distintos para o mesmo alimento e a comunicação ocorre sem qualquer problema. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -803,19 +814,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -823,7 +834,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "— Na minha terra, a gente chama de aipim.\n— Aqui a gente fala macaxeira!\n— Pois é... no mercado, todo mundo se entende na hora de comprar."
     },
     {
       "ordem": 22,
@@ -834,7 +846,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 22).",
+      "enunciado": "Durante a adoção do ensino remoto, uma pesquisa revelou que filhos de famílias de baixa renda dividiam um único aparelho entre vários irmãos, enquanto a maioria das famílias de alta renda dispunha de equipamentos próprios e conexão de fibra óptica. A análise adequada desses resultados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -842,19 +854,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -873,7 +885,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 23).",
+      "enunciado": "Em uma praça pública, cem brinquedos infantis idênticos e quebrados são dispostos em círculo ao redor de um único brinquedo novo e funcional, protegido por grades; o contraste entre o acesso e a falta de acesso é intencional. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -881,19 +893,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -912,7 +924,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 24).",
+      "enunciado": "Em um aplicativo de mapas, o usuário amplia a imagem para ver uma área cada vez menor, mantendo a tela do celular do mesmo tamanho; a cada ampliação, surgem mais ruas e nomes de lugares. Em relação à escala do mapa, ocorre:",
       "alternativas": [
         {
           "letter": "A",
@@ -920,19 +932,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -951,7 +963,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 25).",
+      "enunciado": "Um cartaz de prevenção de acidentes associa uma imagem impactante a uma frase de orientação. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -959,19 +971,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -979,7 +991,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE TRÂNSITO\n[Imagem: cadeira de rodas vazia ao lado de um carro]\n\"Não dirija depois de beber. Sua escolha salva vidas.\"\nBlitze educativas em toda a cidade neste fim de semana."
     },
     {
       "ordem": 26,
@@ -990,7 +1003,8 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 26).",
+      "enunciado": "O mapa de fluxos descrito evidencia a expansão urbana ao longo da rodovia e o aumento dos deslocamentos pendulares. Esse processo indica:",
+      "texto_referencia": "Mapa de fluxos (descrição): a espessura das setas é proporcional ao volume diário de passageiros que entra na capital; as setas mais grossas partem dos municípios periféricos cortados pela rodovia, justamente onde os parcelamentos novos mais cresceram entre os dois últimos censos.",
       "alternativas": [
         {
           "letter": "A",
@@ -998,19 +1012,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -1029,7 +1043,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 27).",
+      "enunciado": "No diálogo, os interlocutores usam expressões típicas da fala nordestina e o entendimento é imediato. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1037,19 +1051,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -1057,7 +1071,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "— Oxe, menino, cadê teu boné?\n— Tava com medo do vento levar!\n— Vento leva coisa leve, e teu boné é pesado, moço!"
     },
     {
       "ordem": 28,
@@ -1067,7 +1082,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 28).",
+      "enunciado": "Um estudo do IBGE compara o acesso à internet entre domicílios urbanos e rurais: na zona rural, apenas 55% das residências têm conexão, contra 85% nas cidades; a diferença é ainda maior entre as regiões, com o Norte e o Nordeste apresentando os piores indicadores. A leitura adequada desses dados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -1075,19 +1090,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -1105,7 +1120,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 29).",
+      "enunciado": "Uma instalação exibe, em paredes opostas, duas fotografias aéreas da mesma cidade: na primeira, os bairros centrais aparecem com equipamentos urbanos completos; na segunda, os bairros periféricos surgem sem as mesmas estruturas. As imagens são separadas por um corredor de espelhos. Ao articular esse conjunto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1113,19 +1128,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -1143,7 +1158,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 30).",
+      "enunciado": "Uma folha de tamanho fixo continha o mapa de um estado inteiro. Para representar apenas a região metropolitana da capital com todos os detalhes, o cartógrafo modifica a escala. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1151,19 +1166,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -1181,7 +1196,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 31).",
+      "enunciado": "Um cartaz de combate à dengue une uma imagem ilustrativa e uma instrução prática. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1189,19 +1204,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -1209,7 +1224,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE COMBATE À DENGUE\n[Imagem: recipiente com água parada sendo vedado]\n\"Elimine os criadouros: dez minutos por semana bastam.\"\nAgentes de saúde passarão de casa em casa."
     },
     {
       "ordem": 32,
@@ -1219,7 +1235,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 32).",
+      "enunciado": "Uma metrópole do Centro-Oeste cresce de forma horizontal: os distritos periféricos situados junto à rodovia federal recebem os novos loteamentos populares, e levantamentos mostram que parte crescente de seus moradores trabalha e estuda no núcleo central, a mais de trinta quilômetros de distância. Esse padrão de expansão indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -1227,19 +1243,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -1257,7 +1273,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 33).",
+      "enunciado": "No diálogo, os jovens empregam gírias e abreviações próprias da oralidade, e ambos se entendem perfeitamente. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1265,19 +1281,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -1285,7 +1301,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Fala, parceiro! Bora pro jogo?\n— Bora! Mas só depois da aula de matemática.\n— Valeu! Te espero na frente da escola."
     },
     {
       "ordem": 34,
@@ -1295,7 +1312,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 34).",
+      "enunciado": "Uma pesquisa sobre inclusão digital aponta que 30 milhões de brasileiros nunca usaram a internet. O perfil predominante é de pessoas com mais de 60 anos, moradoras do interior e com baixa escolaridade, o que indica que a exclusão digital se soma a outras desigualdades. A interpretação adequada desses resultados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -1303,19 +1320,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -1333,7 +1350,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 35).",
+      "enunciado": "Em um museu, uma instalação transforma o lixo de um único dia da cidade em um monumento: centenas de sacos e caixas são empilhados em forma de coluna, com um letreiro luminoso indicando o peso total do material coletado. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1341,19 +1358,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -1371,7 +1388,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 36).",
+      "enunciado": "Em uma planta cadastral, um engenheiro precisa mostrar os lotes de um quarteirão em vez de um bairro inteiro, usando uma folha do mesmo tamanho; para isso, ele amplia a escala do desenho. O resultado dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1379,19 +1396,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -1409,7 +1426,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 37).",
+      "enunciado": "Um cartaz de divulgação do exame combina a imagem de jovens estudantes com uma frase de incentivo. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1417,19 +1434,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -1437,7 +1454,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE INSCRIÇÃO NO ENEM\n[Imagem: jovens sorrindo em uma sala de prova]\n\"Sua vaga começa com sua inscrição. Não fique de fora!\"\nAs inscrições vão até sexta-feira no site oficial."
     },
     {
       "ordem": 38,
@@ -1447,7 +1465,8 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 38).",
+      "enunciado": "A leitura do mapa descrito, que associa a expansão da mancha urbana ao crescimento dos deslocamentos pendulares, indica:",
+      "texto_referencia": "Mapa — evolução da mancha urbana, 1980–2020 (descrição): os polígonos construídos quase não mudam no núcleo central, mas avançam como dedos ao longo da rodovia; o gráfico ao lado registra alta contínua das viagens diárias entre os municípios da periferia e o centro.",
       "alternativas": [
         {
           "letter": "A",
@@ -1455,19 +1474,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -1485,7 +1504,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 39).",
+      "enunciado": "No diálogo, falantes de gerações diferentes ajustam o tratamento (\"o senhor\" e \"meu filho\") e mantêm a conversa sem ruído. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1493,19 +1512,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -1513,7 +1532,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Dona, o senhor aceita um cafezinho?\n— Aceito, sim, meu filho. E me diga: o café é coado?\n— É sim, feito agora mesmo."
     },
     {
       "ordem": 40,
@@ -1523,7 +1543,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 40).",
+      "enunciado": "Dados de uma pesquisa nacional mostram que o trabalho remoto se consolidou entre profissionais de alta renda, enquanto trabalhadores de serviços essenciais seguiram dependendo do transporte público; ao mesmo tempo, a ausência de banda larga em bairros periféricos limitou o acesso de estudantes ao ensino a distância. A leitura adequada desses dados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -1531,19 +1551,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -1561,7 +1581,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 41).",
+      "enunciado": "Um artista expõe um carrinho de supermercado gigante, cheio de produtos em escala aumentada, ao lado de fotografias de filas de pessoas aguardando distribuição de alimentos; a montagem aproxima consumo e escassez em um mesmo espaço. Ao articular esse conjunto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1569,19 +1589,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -1599,7 +1619,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 42).",
+      "enunciado": "Um livro de geografia reserva uma página para um mapa-múndi. Ao trocar esse mapa pelo mapa detalhado de um único continente na mesma página, a escala utilizada deve ser alterada. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1607,19 +1627,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -1637,7 +1657,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 43).",
+      "enunciado": "Um cartaz de saúde pública associa a imagem de um dia de praia a uma recomendação de hábito. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1645,19 +1665,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -1665,7 +1685,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE PREVENÇÃO AO CÂNCER DE PELE\n[Imagem: sol nascendo sobre o litoral]\n\"Use protetor solar todos os dias.\"\nA prevenção começa com um pequeno hábito diário."
     },
     {
       "ordem": 44,
@@ -1675,7 +1696,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 44).",
+      "enunciado": "Municípios do entorno de uma grande capital passaram a abrigar famílias que não conseguiam morar no centro; a rodovia que liga o entorno à capital ficou congestionada nos dois horários de pico, e novas linhas diárias de ônibus foram criadas para atender os novos bairros. O processo territorial descrito indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -1683,19 +1704,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -1713,7 +1734,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 45).",
+      "enunciado": "No diálogo, falantes do Sul empregam regionalismos e a comunicação flui sem dificuldade. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1721,19 +1742,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -1741,7 +1762,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Tchê, que tarde linda pra um chimarrão!\n— Bora, que a cuia já tá pronta!\n— E o vento minuano? Deu pra sentir?"
     },
     {
       "ordem": 46,
@@ -1751,7 +1773,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 46).",
+      "enunciado": "Uma pesquisa sobre o uso de serviços públicos digitais revela que, nas capitais, 70% dos usuários acessam os serviços pela internet, contra 20% nos municípios de menor porte, onde faltam sinal e equipamentos; entre os usuários de baixa renda, o acesso ocorre principalmente por celulares emprestados. A análise adequada desses resultados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -1759,19 +1781,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -1789,7 +1811,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 47).",
+      "enunciado": "Em uma sala de exposição, uma instalação coloca um trono dourado sobre um piso de terra batida; ao redor, telas exibem imagens de trabalhadores em minas e plantações. O contraste entre o luxo do trono e a dureza do chão é proposital. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1797,19 +1819,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -1827,7 +1849,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 48).",
+      "enunciado": "Em um mapa turístico, a escala atual permite ver a cidade inteira em um painel. Para destacar apenas o centro histórico, com todas as suas ruas, no mesmo painel, o desenhista precisa alterar a escala. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1835,19 +1857,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -1865,7 +1887,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 49).",
+      "enunciado": "Um cartaz de incentivo à leitura junta a imagem de doação de livros a uma frase curta. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -1873,19 +1895,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -1893,7 +1915,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE DOAÇÃO DE LIVROS\n[Imagem: mãos depositando livros em uma caixa comunitária]\n\"Doe um livro e abra mil mundos.\"\nPontos de coleta nas escolas e nas bibliotecas municipais."
     },
     {
       "ordem": 50,
@@ -1903,7 +1926,8 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 50).",
+      "enunciado": "O padrão revelado pelo mapa descrito — expansão urbana junto às rodovias e intensificação dos deslocamentos pendulares — indica:",
+      "texto_referencia": "Mapa temático (descrição): deslocamentos pendulares no país metropolitano; os maiores fluxos aparecem entre municípios periféricos e capitais, especialmente onde rodovias radiais conectam loteamentos recentes às áreas centrais de emprego.",
       "alternativas": [
         {
           "letter": "A",
@@ -1911,19 +1935,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -1941,7 +1965,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 51).",
+      "enunciado": "No diálogo, os participantes misturam marcas regionais da fala mineira e paulista, e a compreensão é total. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1949,19 +1973,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -1969,7 +1993,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Cê viu a promoção do mercado?\n— Vi, mas o trem é longe daqui.\n— Uai, então vai de metrô, que é rapidim!"
     },
     {
       "ordem": 52,
@@ -1979,7 +2004,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 52).",
+      "enunciado": "Em um censo da educação, 40% das escolas rurais não oferecem conectividade adequada, enquanto praticamente todas as escolas urbanas de grande porte têm laboratório de informática; a defasagem acompanha o recorte de renda, já que as escolas públicas mais pobres são as mais afetadas. A leitura adequada desses dados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -1987,19 +2012,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -2017,7 +2042,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 53).",
+      "enunciado": "Uma instalação coletiva constrói, dentro de um galpão, uma réplica em escala reduzida de um bairro periférico feita apenas com caixas de papelão e garrafas PET; sobre as construções, um vídeo mostra o mesmo bairro em sua realidade. Ao articular esse conjunto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2025,19 +2050,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -2055,7 +2080,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 54).",
+      "enunciado": "Um estudante amplia, em fotocopiadora, um mapa do país: ao reproduzir apenas um quadrante na folha, as ruas ficam maiores e mais detalhadas. Em relação à escala cartográfica, ocorre:",
       "alternativas": [
         {
           "letter": "A",
@@ -2063,19 +2088,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -2093,7 +2118,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 55).",
+      "enunciado": "Um cartaz de segurança no trabalho combina a imagem de um trabalhador protegido com um apelo à família. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2101,19 +2126,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -2121,7 +2146,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE SEGURANÇA NO TRABALHO\n[Imagem: trabalhador ajustando o capacete]\n\"Sua família espera você em casa. Use o EPI.\"\nEquipamentos disponíveis com o encarregado."
     },
     {
       "ordem": 56,
@@ -2131,7 +2157,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 56).",
+      "enunciado": "Depois da duplicação de uma rodovia estadual, terras do entorno de uma metrópole foram loteadas e a população dos municípios vizinhos cresceu rapidamente; parte desses novos moradores passou a gastar até três horas por dia no trajeto até a capital, onde trabalha. O processo indicado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2139,19 +2165,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -2169,7 +2195,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 57).",
+      "enunciado": "No diálogo, os amigos usam uma linguagem informal, com reduções e gírias, sem prejuízo para a comunicação. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2177,19 +2203,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -2197,7 +2223,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Bora no cinema hoje?\n— Não posso, tô sem grana.\n— Relaxa, o ingresso é meu presente!"
     },
     {
       "ordem": 58,
@@ -2207,7 +2234,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 58).",
+      "enunciado": "Um levantamento sobre telemedicina indica que, entre os pacientes atendidos à distância, os moradores das capitais têm três vezes mais consultas do que os do interior, e que a falta de sinal e de aparelhos adequados explica parte da diferença. A interpretação adequada desses resultados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -2215,19 +2242,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -2245,7 +2272,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 59).",
+      "enunciado": "Em uma galeria, uma instalação pendura do teto centenas de etiquetas de preço vazias, formando uma nuvem; no chão, sacolas de compras amassadas se acumulam; um áudio reproduz o som de máquinas registradoras. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2253,19 +2280,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -2283,7 +2310,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 60).",
+      "enunciado": "Uma equipe de planejamento urbano substitui, em um relatório, o mapa da cidade inteira pelo mapa detalhado de um único bairro, mantendo o mesmo formato de página. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2291,19 +2318,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -2321,7 +2348,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 61).",
+      "enunciado": "Um cartaz de alimentação saudável relaciona a imagem de um prato equilibrado a uma frase de incentivo. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2329,19 +2356,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -2349,7 +2376,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE ALIMENTAÇÃO SAUDÁVEL\n[Imagem: prato colorido de frutas e legumes]\n\"Coma bem para viver melhor.\"\nCardápios balanceados nas escolas municipais."
     },
     {
       "ordem": 62,
@@ -2359,7 +2387,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 62).",
+      "enunciado": "Uma metrópole do Sudeste teve a mancha urbana avançada sobre áreas rurais de dois municípios vizinhos, formando um eixo de ocupação contínuo ao longo da rodovia; pesquisas de origem e destino mostram que o fluxo diário de pessoas que cruzam a fronteira municipal para trabalhar cresceu 180% em dez anos. Esse processo espacial indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -2367,19 +2395,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -2397,7 +2425,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 63).",
+      "enunciado": "No diálogo, os falantes recorrem a marcas regionais e o entendimento acontece sem dificuldade. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2405,19 +2433,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -2425,7 +2453,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Sô, cadê o trem que a gente ia pegar?\n— Já passou, uai. Mas dá pra ir a pé.\n— Então anda logo, que o sol tá quente!"
     },
     {
       "ordem": 64,
@@ -2435,7 +2464,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 64).",
+      "enunciado": "Uma pesquisa nacional compara o acesso à internet nas famílias brasileiras segundo a renda e a localização geográfica. Entre as famílias com renda de até um salário mínimo, cerca de 38% não têm internet em casa; entre as de renda superior a cinco salários mínimos, esse percentual cai para 3%. Nas áreas rurais do Norte e do Nordeste, a banda larga de qualidade chega à metade dos domicílios, contra quase a totalidade nas capitais. A leitura adequada desses dados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -2443,19 +2472,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -2473,7 +2502,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 65).",
+      "enunciado": "Em uma bienal de arte, uma instalação ocupa uma sala inteira com milhares de objetos descartados — eletrodomésticos quebrados, embalagens e roupas — amontoados como uma montanha; no topo, um espelho reflete o visitante dentro do acúmulo. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2481,19 +2510,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -2511,7 +2540,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 66).",
+      "enunciado": "Um atlas destina uma página inteira ao mapa de um país. Para mostrar com mais detalhes apenas a capital, o cartógrafo precisa modificar a escala. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2519,19 +2548,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -2549,7 +2578,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 67).",
+      "enunciado": "Um cartaz de campanha de vacinação combina a imagem de uma família protegida com uma frase curta que orienta o público a agir. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2557,19 +2586,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -2577,7 +2606,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE VACINAÇÃO\n[Imagem: família abraçada em primeiro plano]\n\"Proteja quem você ama: vacine-se hoje!\"\nProcure a unidade de saúde mais próxima."
     },
     {
       "ordem": 68,
@@ -2587,7 +2617,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 68).",
+      "enunciado": "Um estudo de uma região metropolitana revela que as áreas centrais perderam população relativa, enquanto os municípios periféricos dobraram seus habitantes; a oferta de empregos, no entanto, continua concentrada no núcleo, obrigando a maioria dos trabalhadores a longos deslocamentos diários de transporte coletivo. O padrão de organização do espaço descrito indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -2595,19 +2625,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -2625,7 +2655,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 69).",
+      "enunciado": "No diálogo, os participantes empregam marcas da oralidade e variedades regionais sem que a comunicação entre eles seja comprometida. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2633,19 +2663,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -2653,7 +2683,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Cê vai vim na festa junina da escola?\n— Vou, mas antes preciso pegar meus irmão na casa da vó.\n— Então apressa, porque o povo já tá chegando!"
     },
     {
       "ordem": 70,
@@ -2663,7 +2694,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 70).",
+      "enunciado": "Um levantamento sobre conectividade escolar mostra que 35% dos estudantes de escolas públicas do interior não acessam a internet em casa, enquanto nas escolas particulares das capitais esse índice é de 2%. Além disso, a qualidade da conexão varia: nos municípios pequenos, a velocidade média é três vezes menor que nas metrópoles. A interpretação mais adequada desses resultados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -2671,19 +2702,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -2701,7 +2732,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 71).",
+      "enunciado": "Uma artista monta, em um centro cultural, um corredor com mesas de refeições de famílias de rendas distintas: de um lado, pratos simples e repetidos; do outro, banquetes servidos em louças finas. Os visitantes percorrem o corredor em fila indiana, observando as diferenças. Ao articular esse conjunto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2709,19 +2740,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -2739,7 +2770,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 72).",
+      "enunciado": "Um cartógrafo precisa representar um único bairro, com o máximo de detalhes, em uma folha de papel do mesmo tamanho que antes continha o mapa de toda a cidade. Para isso, ele altera a escala cartográfica do documento. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2747,19 +2778,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -2777,7 +2808,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 73).",
+      "enunciado": "Um cartaz de campanha de doação de sangue combina uma imagem marcante e uma frase curta para convencer o público a agir. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2785,19 +2816,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -2805,7 +2836,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE DOAÇÃO DE SANGUE\n[Imagem: punho cerrado com laço vermelho]\n\"Doar sangue salva vidas. Seja doador hoje!\"\nPostos de coleta abertos em todos os hospitais da cidade."
     },
     {
       "ordem": 74,
@@ -2815,7 +2847,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 74).",
+      "enunciado": "Em um aglomerado urbano, os últimos censos registraram a construção de milhares de novas unidades habitacionais em municípios dormitório cortados por rodovias, enquanto o centro manteve quase toda a oferta de serviços e empregos; o número de passageiros nos trens e ônibus metropolitanos cresceu continuamente. O processo territorial indicado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2823,19 +2855,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -2853,7 +2885,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 75).",
+      "enunciado": "No diálogo, falantes de regiões diferentes usam nomes distintos para o mesmo alimento e a comunicação ocorre sem qualquer problema. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2861,19 +2893,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -2881,7 +2913,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Na minha terra, a gente chama de aipim.\n— Aqui a gente fala macaxeira!\n— Pois é... no mercado, todo mundo se entende na hora de comprar."
     },
     {
       "ordem": 76,
@@ -2891,7 +2924,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 76).",
+      "enunciado": "Durante a adoção do ensino remoto, uma pesquisa revelou que filhos de famílias de baixa renda dividiam um único aparelho entre vários irmãos, enquanto a maioria das famílias de alta renda dispunha de equipamentos próprios e conexão de fibra óptica. A análise adequada desses resultados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -2899,19 +2932,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -2929,7 +2962,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 77).",
+      "enunciado": "Em uma praça pública, cem brinquedos infantis idênticos e quebrados são dispostos em círculo ao redor de um único brinquedo novo e funcional, protegido por grades; o contraste entre o acesso e a falta de acesso é intencional. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -2937,19 +2970,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -2967,7 +3000,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 78).",
+      "enunciado": "Em um aplicativo de mapas, o usuário amplia a imagem para ver uma área cada vez menor, mantendo a tela do celular do mesmo tamanho; a cada ampliação, surgem mais ruas e nomes de lugares. Em relação à escala do mapa, ocorre:",
       "alternativas": [
         {
           "letter": "A",
@@ -2975,19 +3008,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -3005,7 +3038,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 79).",
+      "enunciado": "Um cartaz de prevenção de acidentes associa uma imagem impactante a uma frase de orientação. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -3013,19 +3046,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -3033,7 +3066,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE TRÂNSITO\n[Imagem: cadeira de rodas vazia ao lado de um carro]\n\"Não dirija depois de beber. Sua escolha salva vidas.\"\nBlitze educativas em toda a cidade neste fim de semana."
     },
     {
       "ordem": 80,
@@ -3043,7 +3077,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 80).",
+      "enunciado": "Uma capital litorânea viu os preços de moradia dispararem no centro, empurrando a população de baixa renda para cidades do interior conectadas por rodovia; essas cidades cresceram, mas seus moradores dependem de viagens diárias de até duas horas para trabalhar e estudar na capital. Esse conjunto de transformações indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -3051,19 +3085,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -3081,7 +3115,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 81).",
+      "enunciado": "No diálogo, os interlocutores usam expressões típicas da fala nordestina e o entendimento é imediato. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -3089,19 +3123,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -3109,7 +3143,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Oxe, menino, cadê teu boné?\n— Tava com medo do vento levar!\n— Vento leva coisa leve, e teu boné é pesado, moço!"
     },
     {
       "ordem": 82,
@@ -3119,7 +3154,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 82).",
+      "enunciado": "Um estudo do IBGE compara o acesso à internet entre domicílios urbanos e rurais: na zona rural, apenas 55% das residências têm conexão, contra 85% nas cidades; a diferença é ainda maior entre as regiões, com o Norte e o Nordeste apresentando os piores indicadores. A leitura adequada desses dados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -3127,19 +3162,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -3157,7 +3192,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 83).",
+      "enunciado": "Uma instalação exibe, em paredes opostas, duas fotografias aéreas da mesma cidade: na primeira, os bairros centrais aparecem com equipamentos urbanos completos; na segunda, os bairros periféricos surgem sem as mesmas estruturas. As imagens são separadas por um corredor de espelhos. Ao articular esse conjunto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -3165,19 +3200,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -3195,7 +3230,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 84).",
+      "enunciado": "Uma folha de tamanho fixo continha o mapa de um estado inteiro. Para representar apenas a região metropolitana da capital com todos os detalhes, o cartógrafo modifica a escala. O efeito dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3203,19 +3238,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,
@@ -3233,7 +3268,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 85).",
+      "enunciado": "Um cartaz de combate à dengue une uma imagem ilustrativa e uma instrução prática. A escolha dessa linguagem destaca:",
       "alternativas": [
         {
           "letter": "A",
@@ -3241,19 +3276,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de informações puramente técnicas."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a prioridade dos dados estatísticos sobre o apelo ao público."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a linguagem rebuscada destinada a leitores escolarizados."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a função meramente decorativa da imagem e da frase."
         }
       ],
       "resposta_correta": 0,
@@ -3261,7 +3296,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "CARTAZ — CAMPANHA DE COMBATE À DENGUE\n[Imagem: recipiente com água parada sendo vedado]\n\"Elimine os criadouros: dez minutos por semana bastam.\"\nAgentes de saúde passarão de casa em casa."
     },
     {
       "ordem": 86,
@@ -3271,7 +3307,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 86).",
+      "enunciado": "Entre dois censos, uma região metropolitana registrou crescimento populacional de 25%, quase todo concentrado nos municípios periféricos ao longo do eixo rodoviário, enquanto o emprego formal cresceu apenas 5%, localizado no núcleo; o resultado foi o aumento expressivo das viagens pendulares. O processo espacial descrito indica:",
       "alternativas": [
         {
           "letter": "A",
@@ -3279,19 +3315,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a equalização da infraestrutura entre centro e periferia."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o esvaziamento demográfico da região metropolitana."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a dispersão equilibrada dos postos de trabalho pelo território."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a independência funcional dos municípios periféricos."
         }
       ],
       "resposta_correta": 0,
@@ -3309,7 +3345,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 87).",
+      "enunciado": "No diálogo, os jovens empregam gírias e abreviações próprias da oralidade, e ambos se entendem perfeitamente. Essa situação evidencia:",
       "alternativas": [
         {
           "letter": "A",
@@ -3317,19 +3353,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a inadequação da língua falada em contextos informais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a necessidade de corrigir os desvios de fala dos falantes."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a superioridade da variedade padrão em qualquer situação de uso."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a impossibilidade de compreensão entre falantes de regiões distintas."
         }
       ],
       "resposta_correta": 0,
@@ -3337,7 +3373,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "— Fala, parceiro! Bora pro jogo?\n— Bora! Mas só depois da aula de matemática.\n— Valeu! Te espero na frente da escola."
     },
     {
       "ordem": 88,
@@ -3347,7 +3384,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 88).",
+      "enunciado": "Uma pesquisa sobre inclusão digital aponta que 30 milhões de brasileiros nunca usaram a internet. O perfil predominante é de pessoas com mais de 60 anos, moradoras do interior e com baixa escolaridade, o que indica que a exclusão digital se soma a outras desigualdades. A interpretação adequada desses resultados deve considerar:",
       "alternativas": [
         {
           "letter": "A",
@@ -3355,19 +3392,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a ausência de relação entre renda e conectividade."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a escolha voluntária das famílias por permanecer offline."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a uniformidade do acesso à internet entre as regiões do país."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a superação definitiva da exclusão digital nas áreas urbanas."
         }
       ],
       "resposta_correta": 0,
@@ -3385,7 +3422,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 89).",
+      "enunciado": "Em um museu, uma instalação transforma o lixo de um único dia da cidade em um monumento: centenas de sacos e caixas são empilhados em forma de coluna, com um letreiro luminoso indicando o peso total do material coletado. Nesse contexto, a obra provoca:",
       "alternativas": [
         {
           "letter": "A",
@@ -3393,19 +3430,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a valorização do consumo de bens descartáveis."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade da arte diante dos problemas sociais."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simples ornamentação do espaço expositivo."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a recusa do diálogo com o público visitante."
         }
       ],
       "resposta_correta": 0,
@@ -3423,7 +3460,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 90).",
+      "enunciado": "Em uma planta cadastral, um engenheiro precisa mostrar os lotes de um quarteirão em vez de um bairro inteiro, usando uma folha do mesmo tamanho; para isso, ele amplia a escala do desenho. O resultado dessa alteração é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3431,19 +3468,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "redução da escala e ampliação da área representada."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "aumento simultâneo da escala e da área representada."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "redução da escala e manutenção do nível de detalhe."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impossibilidade de alterar a escala em uma folha de mesmo tamanho."
         }
       ],
       "resposta_correta": 0,

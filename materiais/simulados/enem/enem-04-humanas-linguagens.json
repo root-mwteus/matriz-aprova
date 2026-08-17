@@ -15,7 +15,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 1).",
+      "enunciado": "Uma política pública de reparação cria um memorial em homenagem às comunidades perseguidas durante o período da ditadura militar; o espaço reúne documentos, objetos e depoimentos que registram as experiências desses grupos. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -23,19 +23,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -54,7 +54,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 2).",
+      "enunciado": "Uma notícia apresenta título, dados de um levantamento e a declaração de uma especialista sobre a falta de vagas em creches. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -62,19 +62,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -82,7 +82,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Faltam vagas em creches públicas no interior\nLevantamento da prefeitura aponta déficit de 5 mil vagas. Para a pedagoga Cláudia Reis, a ampliação do atendimento depende de orçamento e de novas contratações."
     },
     {
       "ordem": 3,
@@ -93,7 +94,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 3).",
+      "enunciado": "Um conselho escolar decide o destino de uma verba considerando o impacto da escolha sobre os alunos da periferia, e não apenas a opinião dos membros mais influentes. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -101,19 +102,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -132,7 +133,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 4).",
+      "enunciado": "No poema, os versos repetem sons e invertem a ordem das palavras para sugerir o movimento da cidade. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -140,19 +141,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -160,7 +161,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\na cidade gira\ngira e engole\no sol da tarde;\no vento vira\nvira e some\nna avenida."
     },
     {
       "ordem": 5,
@@ -171,7 +173,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 5).",
+      "enunciado": "Moradores de uma vila se reúnem mensalmente para decidir a aplicação de uma verba de melhorias, votando diretamente cada obra. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -179,19 +181,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -210,7 +212,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 6).",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e o verbo no imperativo (\"Sign up\") para vender um curso. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -218,19 +220,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -238,7 +240,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "AD — Learn English in 30 days — Sign up now!\n[Imagem: pessoa sorrindo ao telefone]\nAprenda inglês em 30 dias — Inscreva-se agora!"
     },
     {
       "ordem": 7,
@@ -249,7 +252,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 7).",
+      "enunciado": "Um município reconhece oficialmente o passado das comunidades quilombolas locais, incorporando suas histórias aos livros didáticos e aos museus da cidade. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -257,19 +260,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -288,7 +291,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 8).",
+      "enunciado": "Uma notícia sobre a cheia de um rio combina a evolução dos níveis com a fala de um coordenador da Defesa Civil. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -296,19 +299,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -316,7 +319,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Rio sobe e cidade decreta estado de atenção\nO nível do rio passou de 4 para 6 metros em 24 horas. O coordenador da Defesa Civil, Marcos Lima, afirma que os moradores das áreas ribeirinhas serão avisados com antecedência."
     },
     {
       "ordem": 9,
@@ -327,7 +331,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 9).",
+      "enunciado": "Ao construir uma estrada, um governo avalia os efeitos da obra sobre as comunidades do trajeto, incluindo desapropriações e danos ambientais, antes de aprovar o projeto. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -335,19 +339,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -366,7 +370,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 10).",
+      "enunciado": "No poema, a repetição de palavras e a quebra da sintaxe representam a agitação urbana. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -374,19 +378,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -394,7 +398,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\ncorro a rua\nrua corre\ncorre o tempo\nentre prédios de concreto."
     },
     {
       "ordem": 11,
@@ -405,7 +410,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 11).",
+      "enunciado": "Uma comunidade ribeirinha realiza assembleias abertas para estabelecer as regras de pesca do rio compartilhado. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -413,19 +418,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -444,7 +449,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 12).",
+      "enunciado": "Um anúncio em inglês combina a imagem de um atleta com o imperativo (\"Start today\") para atrair clientes. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -452,19 +457,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -472,7 +477,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "AD — Join the best gym in town — Start today!\n[Imagem: atleta em atividade]\nEntre para a melhor academia da cidade — Comece hoje!"
     },
     {
       "ordem": 13,
@@ -483,7 +489,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 13).",
+      "enunciado": "O governo cria um centro de documentação para preservar as memórias dos povos indígenas que sofreram processos de assimilação forçada no século XX. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -491,19 +497,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -522,7 +528,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 14).",
+      "enunciado": "Uma notícia apresenta números sobre a matrícula de idosos no ensino superior e a opinião de uma professora. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -530,19 +536,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -550,7 +556,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Cresce o número de idosos que buscam a universidade\nDados do MEC mostram alta de 40% nas matrículas. Para a professora Helena Duarte, a longevidade ampliou o interesse pela formação contínua."
     },
     {
       "ordem": 15,
@@ -561,7 +568,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 15).",
+      "enunciado": "Uma assembleia comunitária decide sobre a instalação de uma fábrica na região, ponderando as consequências para os moradores locais e não apenas o lucro dos empresários. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -569,19 +576,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -600,7 +607,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 16).",
+      "enunciado": "No poema, a inversão da ordem dos versos e a repetição criam um ritmo de vaivém. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -608,19 +615,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -628,7 +635,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\no metrô cospe\na multidão;\na multidão\ncospe o metrô."
     },
     {
       "ordem": 17,
@@ -639,7 +647,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 17).",
+      "enunciado": "Os estudantes de uma escola elegem, em votação direta, as pautas que serão debatidas no conselho escolar. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -647,19 +655,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -678,7 +686,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 18).",
+      "enunciado": "Um anúncio de viagens em inglês usa slogan e o verbo no imperativo (\"Book\") para estimular a compra. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -686,19 +694,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -706,7 +714,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "AD — Book your trip now — Flights for less!\n[Imagem: praia ao pôr do sol]\nReserve sua viagem agora — Voos por menos!"
     },
     {
       "ordem": 19,
@@ -717,7 +726,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 19).",
+      "enunciado": "Uma universidade instala uma exposição permanente com registros das greves operárias da região, incluindo depoimentos de trabalhadores antes ignorados pela historiografia oficial. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -725,19 +734,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -756,7 +765,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 20).",
+      "enunciado": "Uma notícia associa dados de uma pesquisa à fala de um agricultor sobre o retorno das feiras livres. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -764,19 +773,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -784,7 +793,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Feiras livres recuperam espaço nas grandes cidades\nPesquisa indica que 70% dos consumidores voltaram a frequentar feiras. O agricultor Antônio Souza atribui a retomada à busca por alimentos frescos."
     },
     {
       "ordem": 21,
@@ -795,7 +805,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 21).",
+      "enunciado": "Em uma epidemia, um hospital distribui os leitos de UTI priorizando os pacientes mais graves, e não os que primeiro chegaram ou os que podem pagar mais. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -803,19 +813,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -834,7 +844,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 22).",
+      "enunciado": "No poema, a enumeração e a repetição sonora reproduzem a intensidade da vida urbana. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -842,19 +852,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -862,7 +872,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\nluzes, buzinas, vitrines\n— a cidade lateja;\nlateja e acena\npara quem passa correndo."
     },
     {
       "ordem": 23,
@@ -873,7 +884,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 23).",
+      "enunciado": "Em um condomínio, os moradores decidem em assembleia o uso das áreas comuns, com direito de voto para cada unidade. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -881,19 +892,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -912,7 +923,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 24).",
+      "enunciado": "Um anúncio em inglês convida o leitor com o imperativo (\"Try\") e apresenta o produto com uma imagem. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -920,19 +931,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -940,7 +951,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "AD — Try our new coffee — Taste the difference!\n[Imagem: xícara de café fumegante]\nExperimente nosso novo café — Prove a diferença!"
     },
     {
       "ordem": 25,
@@ -951,7 +963,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 25).",
+      "enunciado": "Ao completar cem anos, uma cidade inaugura um acervo público dedicado à memória das mulheres que participaram de sua fundação, antes silenciadas nos relatos oficiais. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -959,19 +971,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -990,7 +1002,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 26).",
+      "enunciado": "Uma notícia sobre jornada flexível combina os resultados de um estudo com a declaração de uma diretora de RH. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -998,19 +1010,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -1018,7 +1030,8 @@
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Empresas adotam jornada flexível\nEstudo com 200 empresas mostra que a medida reduziu o absenteísmo. A diretora de RH Marina Costa destaca a importância de respeitar os limites de cada cargo."
     },
     {
       "ordem": 27,
@@ -1029,7 +1042,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 27).",
+      "enunciado": "Em uma empresa, a decisão de demitir funcionários leva em conta o impacto sobre as famílias atingidas e as alternativas de realocação, em vez de considerar apenas o custo. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1037,19 +1050,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -1067,7 +1080,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 28).",
+      "enunciado": "No poema, o paralelismo e a inversão sintática constroem um jogo de espelhos sobre a cidade. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -1075,19 +1088,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -1095,7 +1108,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\nnas esquinas, a pressa;\nnas janelas, o vazio;\nvazio de quem chega\ne pressa de quem parte."
     },
     {
       "ordem": 29,
@@ -1105,7 +1119,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 29).",
+      "enunciado": "Uma cooperativa de agricultores resolve coletivamente como distribuir a água de irrigação nos períodos de seca. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1113,19 +1127,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -1143,7 +1157,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 30).",
+      "enunciado": "Um anúncio digital em inglês usa o imperativo (\"Download\") associado a um benefício imediato. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1151,19 +1165,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -1171,7 +1185,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Download the app — Get 20% off!\n[Imagem: celular mostrando o aplicativo]\nBaixe o aplicativo — Ganhe 20% de desconto!"
     },
     {
       "ordem": 31,
@@ -1181,7 +1196,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 31).",
+      "enunciado": "Um programa nacional de preservação financia a restauração de arquivos de comunidades imigrantes e afro-brasileiras, promovendo sua inclusão nos currículos escolares. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -1189,19 +1204,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -1219,7 +1234,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 32).",
+      "enunciado": "Uma notícia sobre bibliotecas comunitárias articula dados de um levantamento e a fala de um educador. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -1227,19 +1242,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -1247,7 +1262,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Bibliotecas comunitárias florescem na periferia\nLevantamento identifica 80 novas bibliotecas. O educador Paulo Ramos afirma que a leitura transformou a rotina das crianças do bairro."
     },
     {
       "ordem": 33,
@@ -1257,7 +1273,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 33).",
+      "enunciado": "Uma cidade decide entre construir um shopping ou uma praça pública; os gestores escolhem a praça por avaliar os benefícios para todos os moradores, especialmente crianças e idosos. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1265,19 +1281,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -1295,7 +1311,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 34).",
+      "enunciado": "No poema, a repetição das palavras em posições trocadas cria um movimento circular. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -1303,19 +1319,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -1323,7 +1339,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\no bonde passa\npassa o bonde\ne a praça dorme;\na praça passa\npassa o sonho\nde quem volta."
     },
     {
       "ordem": 35,
@@ -1333,7 +1350,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 35).",
+      "enunciado": "Os membros de uma associação de bairro decidem, em encontros semanais, as prioridades de segurança e lazer do local. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1341,19 +1358,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -1371,7 +1388,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 36).",
+      "enunciado": "Um anúncio de campanha em inglês usa o imperativo (\"Donate\") e a imagem de crianças para sensibilizar. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1379,19 +1396,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -1399,7 +1416,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Donate today — Help build a school!\n[Imagem: crianças em sala de aula]\nDoe hoje — Ajude a construir uma escola!"
     },
     {
       "ordem": 37,
@@ -1409,7 +1427,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 37).",
+      "enunciado": "Uma lei estadual cria um dia de memória dedicado aos povos atingidos pela construção de barragens, com espaços de escuta e registro de suas trajetórias. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -1417,19 +1435,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -1447,7 +1465,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 38).",
+      "enunciado": "Uma notícia apresenta os números da coleta seletiva e a declaração de uma engenheira ambiental. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -1455,19 +1473,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -1475,7 +1493,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Coleta seletiva avança em pequenos municípios\nRelatório aponta que 300 cidades aderiram ao programa. A engenheira ambiental Luiza Prado ressalta a importância da participação da população."
     },
     {
       "ordem": 39,
@@ -1485,7 +1504,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 39).",
+      "enunciado": "Um grupo de amigos decide onde investir uma poupança coletiva, considerando como a escolha afetará cada participante e a comunidade em geral. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1493,19 +1512,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -1523,7 +1542,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 40).",
+      "enunciado": "No poema, a sonoridade das palavras e a ordem quebrada dos versos reforçam a experiência urbana. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -1531,19 +1550,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -1551,7 +1570,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\ngritos, motores, sirenes:\na cidade anuncia;\nanuncia e esquece\no nome de quem passa."
     },
     {
       "ordem": 41,
@@ -1561,7 +1581,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 41).",
+      "enunciado": "Uma aldeia indígena delibera em conselhos abertos sobre a gestão das terras coletivas e das roças comuns. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1569,19 +1589,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -1599,7 +1619,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 42).",
+      "enunciado": "Um anúncio em inglês combina o imperativo (\"Choose\") com a imagem de uma família conectada. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1607,19 +1627,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -1627,7 +1647,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Stay connected — Choose our internet plan!\n[Imagem: família usando dispositivos]\nFique conectado — Escolha nosso plano de internet!"
     },
     {
       "ordem": 43,
@@ -1637,7 +1658,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 43).",
+      "enunciado": "Um museu municipal reorganiza seu acervo para incluir as versões históricas de grupos populares, antes representados apenas pelas elites locais. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -1645,19 +1666,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -1675,7 +1696,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 44).",
+      "enunciado": "Uma notícia sobre ônibus elétricos combina projeções de crescimento da frota com a fala de um secretário de Mobilidade. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -1683,19 +1704,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -1703,7 +1724,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Ônibus elétricos chegam a mais capitais\nA frota deve crescer 25% neste ano. Para o secretário de Mobilidade João Batista, a meta é reduzir a poluição nas regiões centrais."
     },
     {
       "ordem": 45,
@@ -1713,7 +1735,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 45).",
+      "enunciado": "Ao reformar o currículo, uma escola considera o efeito das mudanças sobre os estudantes com deficiência, e não apenas a facilidade administrativa. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1721,19 +1743,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -1751,7 +1773,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 46).",
+      "enunciado": "No poema, a repetição de sons e a inversão da sintaxe dão ritmo à descrição da cidade. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -1759,19 +1781,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -1779,7 +1801,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\nno asfalto, o rumor;\nno ar, a fumaça;\nfumaça e rumor\ndesenham a cidade que passa."
     },
     {
       "ordem": 47,
@@ -1789,7 +1812,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 47).",
+      "enunciado": "Os usuários de uma praça decidem, em audiências públicas, o projeto de revitalização do espaço. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -1797,19 +1820,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -1827,7 +1850,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 48).",
+      "enunciado": "Um anúncio de liquidação em inglês usa o imperativo (\"Hurry up\") para criar urgência no leitor. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1835,19 +1858,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -1855,7 +1878,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Hurry up — Sale ends this weekend!\n[Imagem: vitrine com etiquetas de desconto]\nCorra — A liquidação termina neste fim de semana!"
     },
     {
       "ordem": 49,
@@ -1865,7 +1889,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 49).",
+      "enunciado": "Uma associação de moradores recupera as histórias dos bairros operários, reunindo fotografias e relatos orais que disputam espaço com a versão oficial do crescimento da cidade. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -1873,19 +1897,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -1903,7 +1927,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 50).",
+      "enunciado": "Uma notícia sobre mutirões de saúde apresenta os resultados do programa e a declaração de uma médica. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -1911,19 +1935,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -1931,7 +1955,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Mutirões ampliam atendimento em postos de saúde\nEm três meses, as filas de exames caíram pela metade. A médica Roberta Alves defende a continuidade dos mutirões nos fins de semana."
     },
     {
       "ordem": 51,
@@ -1941,7 +1966,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 51).",
+      "enunciado": "Uma cooperativa de saúde decide o valor da mensalidade ponderando o impacto sobre os associados de menor renda, em vez de maximizar apenas o retorno financeiro. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1949,19 +1974,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -1979,7 +2004,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 52).",
+      "enunciado": "No poema, a inversão da ordem dos versos e a repetição de sons constroem a imagem de uma cidade que desperta. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -1987,19 +2012,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -2007,7 +2032,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\na manhã acorda\nentre antenas e fios;\nacordam os pardais,\ne a cidade espia\npor trás das persianas."
     },
     {
       "ordem": 53,
@@ -2017,7 +2043,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 53).",
+      "enunciado": "Os sócios de um clube comunitário votam diretamente a destinação do saldo da cantina para melhorias. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2025,19 +2051,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -2055,7 +2081,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 54).",
+      "enunciado": "Um anúncio de locação de veículos em inglês usa o imperativo (\"Rent\") e a imagem de liberdade para atrair o leitor. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2063,19 +2089,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -2083,7 +2109,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Rent a car — Drive your way!\n[Imagem: carro em estrada de montanha]\nAlugue um carro — Dirija do seu jeito!"
     },
     {
       "ordem": 55,
@@ -2093,7 +2120,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 55).",
+      "enunciado": "Uma política pública de reparação cria um memorial em homenagem às comunidades perseguidas durante o período da ditadura militar; o espaço reúne documentos, objetos e depoimentos que registram as experiências desses grupos. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -2101,19 +2128,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -2131,7 +2158,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 56).",
+      "enunciado": "Uma notícia apresenta título, dados de um levantamento e a declaração de uma especialista sobre a falta de vagas em creches. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -2139,19 +2166,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -2159,7 +2186,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Faltam vagas em creches públicas no interior\nLevantamento da prefeitura aponta déficit de 5 mil vagas. Para a pedagoga Cláudia Reis, a ampliação do atendimento depende de orçamento e de novas contratações."
     },
     {
       "ordem": 57,
@@ -2169,7 +2197,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 57).",
+      "enunciado": "Um conselho escolar decide o destino de uma verba considerando o impacto da escolha sobre os alunos da periferia, e não apenas a opinião dos membros mais influentes. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2177,19 +2205,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -2207,7 +2235,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 58).",
+      "enunciado": "No poema, os versos repetem sons e invertem a ordem das palavras para sugerir o movimento da cidade. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -2215,19 +2243,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -2235,7 +2263,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\na cidade gira\ngira e engole\no sol da tarde;\no vento vira\nvira e some\nna avenida."
     },
     {
       "ordem": 59,
@@ -2245,7 +2274,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 59).",
+      "enunciado": "Moradores de uma vila se reúnem mensalmente para decidir a aplicação de uma verba de melhorias, votando diretamente cada obra. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2253,19 +2282,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -2283,7 +2312,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 60).",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e o verbo no imperativo (\"Sign up\") para vender um curso. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2291,19 +2320,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -2311,7 +2340,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Learn English in 30 days — Sign up now!\n[Imagem: pessoa sorrindo ao telefone]\nAprenda inglês em 30 dias — Inscreva-se agora!"
     },
     {
       "ordem": 61,
@@ -2321,7 +2351,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 61).",
+      "enunciado": "Um município reconhece oficialmente o passado das comunidades quilombolas locais, incorporando suas histórias aos livros didáticos e aos museus da cidade. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -2329,19 +2359,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -2359,7 +2389,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 62).",
+      "enunciado": "Uma notícia sobre a cheia de um rio combina a evolução dos níveis com a fala de um coordenador da Defesa Civil. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -2367,19 +2397,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -2387,7 +2417,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Rio sobe e cidade decreta estado de atenção\nO nível do rio passou de 4 para 6 metros em 24 horas. O coordenador da Defesa Civil, Marcos Lima, afirma que os moradores das áreas ribeirinhas serão avisados com antecedência."
     },
     {
       "ordem": 63,
@@ -2397,7 +2428,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 63).",
+      "enunciado": "Ao construir uma estrada, um governo avalia os efeitos da obra sobre as comunidades do trajeto, incluindo desapropriações e danos ambientais, antes de aprovar o projeto. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2405,19 +2436,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -2435,7 +2466,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 64).",
+      "enunciado": "No poema, a repetição de palavras e a quebra da sintaxe representam a agitação urbana. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -2443,19 +2474,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -2463,7 +2494,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\ncorro a rua\nrua corre\ncorre o tempo\nentre prédios de concreto."
     },
     {
       "ordem": 65,
@@ -2473,7 +2505,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 65).",
+      "enunciado": "Uma comunidade ribeirinha realiza assembleias abertas para estabelecer as regras de pesca do rio compartilhado. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2481,19 +2513,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -2511,7 +2543,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 66).",
+      "enunciado": "Um anúncio em inglês combina a imagem de um atleta com o imperativo (\"Start today\") para atrair clientes. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2519,19 +2551,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -2539,7 +2571,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Join the best gym in town — Start today!\n[Imagem: atleta em atividade]\nEntre para a melhor academia da cidade — Comece hoje!"
     },
     {
       "ordem": 67,
@@ -2549,7 +2582,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 67).",
+      "enunciado": "O governo cria um centro de documentação para preservar as memórias dos povos indígenas que sofreram processos de assimilação forçada no século XX. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -2557,19 +2590,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -2587,7 +2620,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 68).",
+      "enunciado": "Uma notícia apresenta números sobre a matrícula de idosos no ensino superior e a opinião de uma professora. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -2595,19 +2628,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -2615,7 +2648,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Cresce o número de idosos que buscam a universidade\nDados do MEC mostram alta de 40% nas matrículas. Para a professora Helena Duarte, a longevidade ampliou o interesse pela formação contínua."
     },
     {
       "ordem": 69,
@@ -2625,7 +2659,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 69).",
+      "enunciado": "Uma assembleia comunitária decide sobre a instalação de uma fábrica na região, ponderando as consequências para os moradores locais e não apenas o lucro dos empresários. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2633,19 +2667,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -2663,7 +2697,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 70).",
+      "enunciado": "No poema, a inversão da ordem dos versos e a repetição criam um ritmo de vaivém. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -2671,19 +2705,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -2691,7 +2725,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\no metrô cospe\na multidão;\na multidão\ncospe o metrô."
     },
     {
       "ordem": 71,
@@ -2701,7 +2736,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 71).",
+      "enunciado": "Os estudantes de uma escola elegem, em votação direta, as pautas que serão debatidas no conselho escolar. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2709,19 +2744,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -2739,7 +2774,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 72).",
+      "enunciado": "Um anúncio de viagens em inglês usa slogan e o verbo no imperativo (\"Book\") para estimular a compra. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2747,19 +2782,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -2767,7 +2802,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Book your trip now — Flights for less!\n[Imagem: praia ao pôr do sol]\nReserve sua viagem agora — Voos por menos!"
     },
     {
       "ordem": 73,
@@ -2777,7 +2813,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 73).",
+      "enunciado": "Uma universidade instala uma exposição permanente com registros das greves operárias da região, incluindo depoimentos de trabalhadores antes ignorados pela historiografia oficial. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -2785,19 +2821,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -2815,7 +2851,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 74).",
+      "enunciado": "Uma notícia associa dados de uma pesquisa à fala de um agricultor sobre o retorno das feiras livres. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -2823,19 +2859,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -2843,7 +2879,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Feiras livres recuperam espaço nas grandes cidades\nPesquisa indica que 70% dos consumidores voltaram a frequentar feiras. O agricultor Antônio Souza atribui a retomada à busca por alimentos frescos."
     },
     {
       "ordem": 75,
@@ -2853,7 +2890,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 75).",
+      "enunciado": "Em uma epidemia, um hospital distribui os leitos de UTI priorizando os pacientes mais graves, e não os que primeiro chegaram ou os que podem pagar mais. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2861,19 +2898,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -2891,7 +2928,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 76).",
+      "enunciado": "No poema, a enumeração e a repetição sonora reproduzem a intensidade da vida urbana. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -2899,19 +2936,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -2919,7 +2956,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\nluzes, buzinas, vitrines\n— a cidade lateja;\nlateja e acena\npara quem passa correndo."
     },
     {
       "ordem": 77,
@@ -2929,7 +2967,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 77).",
+      "enunciado": "Em um condomínio, os moradores decidem em assembleia o uso das áreas comuns, com direito de voto para cada unidade. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -2937,19 +2975,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -2967,7 +3005,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 78).",
+      "enunciado": "Um anúncio em inglês convida o leitor com o imperativo (\"Try\") e apresenta o produto com uma imagem. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2975,19 +3013,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -2995,7 +3033,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Try our new coffee — Taste the difference!\n[Imagem: xícara de café fumegante]\nExperimente nosso novo café — Prove a diferença!"
     },
     {
       "ordem": 79,
@@ -3005,7 +3044,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 79).",
+      "enunciado": "Ao completar cem anos, uma cidade inaugura um acervo público dedicado à memória das mulheres que participaram de sua fundação, antes silenciadas nos relatos oficiais. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -3013,19 +3052,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -3043,7 +3082,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 80).",
+      "enunciado": "Uma notícia sobre jornada flexível combina os resultados de um estudo com a declaração de uma diretora de RH. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -3051,19 +3090,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -3071,7 +3110,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Empresas adotam jornada flexível\nEstudo com 200 empresas mostra que a medida reduziu o absenteísmo. A diretora de RH Marina Costa destaca a importância de respeitar os limites de cada cargo."
     },
     {
       "ordem": 81,
@@ -3081,7 +3121,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 81).",
+      "enunciado": "Em uma empresa, a decisão de demitir funcionários leva em conta o impacto sobre as famílias atingidas e as alternativas de realocação, em vez de considerar apenas o custo. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3089,19 +3129,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -3119,7 +3159,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 82).",
+      "enunciado": "No poema, o paralelismo e a inversão sintática constroem um jogo de espelhos sobre a cidade. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -3127,19 +3167,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -3147,7 +3187,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\nnas esquinas, a pressa;\nnas janelas, o vazio;\nvazio de quem chega\ne pressa de quem parte."
     },
     {
       "ordem": 83,
@@ -3157,7 +3198,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 83).",
+      "enunciado": "Uma cooperativa de agricultores resolve coletivamente como distribuir a água de irrigação nos períodos de seca. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -3165,19 +3206,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -3195,7 +3236,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 84).",
+      "enunciado": "Um anúncio digital em inglês usa o imperativo (\"Download\") associado a um benefício imediato. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3203,19 +3244,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -3223,7 +3264,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Download the app — Get 20% off!\n[Imagem: celular mostrando o aplicativo]\nBaixe o aplicativo — Ganhe 20% de desconto!"
     },
     {
       "ordem": 85,
@@ -3233,7 +3275,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 85).",
+      "enunciado": "Um programa nacional de preservação financia a restauração de arquivos de comunidades imigrantes e afro-brasileiras, promovendo sua inclusão nos currículos escolares. Essa medida se relaciona à:",
       "alternativas": [
         {
           "letter": "A",
@@ -3241,19 +3283,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o apagamento das narrativas não oficiais da história do país."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade do Estado diante dos processos de memória social."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a exclusão de versões históricas contrárias aos grupos reconhecidos."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a desconsideração dos suportes materiais de preservação da memória."
         }
       ],
       "resposta_correta": 0,
@@ -3271,7 +3313,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 86).",
+      "enunciado": "Uma notícia sobre bibliotecas comunitárias articula dados de um levantamento e a fala de um educador. Esse arranjo permite:",
       "alternativas": [
         {
           "letter": "A",
@@ -3279,19 +3321,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "impor uma única interpretação ao leitor do fato."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "ocultar a autoria das informações divulgadas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "substituir os fatos por opiniões de especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "impedir a verificação das informações pelo leitor."
         }
       ],
       "resposta_correta": 0,
@@ -3299,7 +3341,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "NOTÍCIA — Bibliotecas comunitárias florescem na periferia\nLevantamento identifica 80 novas bibliotecas. O educador Paulo Ramos afirma que a leitura transformou a rotina das crianças do bairro."
     },
     {
       "ordem": 87,
@@ -3309,7 +3352,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 87).",
+      "enunciado": "Uma cidade decide entre construir um shopping ou uma praça pública; os gestores escolhem a praça por avaliar os benefícios para todos os moradores, especialmente crianças e idosos. O princípio enfatizado é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3317,19 +3360,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a prioridade absoluta dos interesses individuais."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a neutralidade moral diante das consequências das ações."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a indiferença quanto aos afetados pela decisão."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a submissão da ética aos cálculos de conveniência própria."
         }
       ],
       "resposta_correta": 0,
@@ -3347,7 +3390,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 88).",
+      "enunciado": "No poema, a repetição das palavras em posições trocadas cria um movimento circular. O procedimento produz:",
       "alternativas": [
         {
           "letter": "A",
@@ -3355,19 +3398,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a padronização do verso de acordo com a norma culta."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a eliminação das marcas de oralidade do texto poético."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a simplificação do vocabulário para facilitar a leitura."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a neutralização da sonoridade em favor do conteúdo lógico."
         }
       ],
       "resposta_correta": 0,
@@ -3375,7 +3418,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "POEMA\n\no bonde passa\npassa o bonde\ne a praça dorme;\na praça passa\npassa o sonho\nde quem volta."
     },
     {
       "ordem": 89,
@@ -3385,7 +3429,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 89).",
+      "enunciado": "Os membros de uma associação de bairro decidem, em encontros semanais, as prioridades de segurança e lazer do local. A prática amplia:",
       "alternativas": [
         {
           "letter": "A",
@@ -3393,19 +3437,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a delegação integral das decisões a representantes."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a concentração do poder nas mãos de um dirigente."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a restrição do debate público aos especialistas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a supressão do diálogo entre os membros da comunidade."
         }
       ],
       "resposta_correta": 0,
@@ -3423,7 +3467,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 90).",
+      "enunciado": "Um anúncio de campanha em inglês usa o imperativo (\"Donate\") e a imagem de crianças para sensibilizar. O recurso central é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3431,19 +3475,19 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a apresentação de argumentos estritamente técnicos."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o uso de linguagem impessoal e descritiva."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "a ausência de relação entre imagem e slogan."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a exclusão do leitor da mensagem publicitária."
         }
       ],
       "resposta_correta": 0,
@@ -3451,7 +3495,8 @@
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
-      ]
+      ],
+      "texto_referencia": "AD — Donate today — Help build a school!\n[Imagem: crianças em sala de aula]\nDoe hoje — Ajude a construir uma escola!"
     }
   ]
 }

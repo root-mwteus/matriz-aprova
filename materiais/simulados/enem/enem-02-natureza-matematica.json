@@ -15,7 +15,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 1).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -23,23 +23,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -54,7 +54,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 2).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -62,23 +62,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -93,31 +93,31 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 3).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -132,7 +132,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 4).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -140,23 +140,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -171,31 +171,31 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 5).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -210,7 +210,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 6).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -218,23 +218,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -249,7 +249,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 7).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -257,23 +257,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -288,7 +288,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 8).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -296,23 +296,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -327,31 +327,31 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 9).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -366,7 +366,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 10).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -374,23 +374,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -405,31 +405,31 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 11).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -444,7 +444,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 12).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -452,23 +452,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -483,7 +483,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 13).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -491,23 +491,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -522,7 +522,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 14).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -530,23 +530,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -561,31 +561,31 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 15).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -600,7 +600,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 16).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -608,23 +608,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -639,31 +639,31 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 17).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -678,7 +678,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 18).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -686,23 +686,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -717,7 +717,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 19).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -725,23 +725,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -756,7 +756,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 20).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -764,23 +764,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -795,31 +795,31 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 21).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -834,7 +834,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 22).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -842,23 +842,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -873,31 +873,31 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 23).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -912,7 +912,7 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 24).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -920,23 +920,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -951,7 +951,7 @@
       "nivel": "facil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 25).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -959,23 +959,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -990,7 +990,7 @@
       "nivel": "medio",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 26).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -998,23 +998,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -1029,31 +1029,31 @@
       "nivel": "dificil",
       "origem": "adaptada",
       "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 27).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
         "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
@@ -1067,7 +1067,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 28).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1075,23 +1075,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1105,31 +1105,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 29).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1143,7 +1143,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 30).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1151,23 +1151,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1181,7 +1181,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 31).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -1189,23 +1189,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1219,7 +1219,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 32).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1227,23 +1227,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1257,31 +1257,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 33).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1295,7 +1295,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 34).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1303,23 +1303,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1333,31 +1333,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 35).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1371,7 +1371,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 36).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1379,23 +1379,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1409,7 +1409,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 37).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -1417,23 +1417,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1447,7 +1447,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 38).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -1455,23 +1455,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1485,31 +1485,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 39).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1523,7 +1523,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 40).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1531,23 +1531,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1561,31 +1561,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 41).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1599,7 +1599,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 42).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1607,23 +1607,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1637,7 +1637,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 43).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -1645,23 +1645,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1675,7 +1675,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 44).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1683,23 +1683,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1713,31 +1713,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 45).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1751,7 +1751,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 46).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1759,23 +1759,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1789,31 +1789,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 47).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1827,7 +1827,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 48).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1835,23 +1835,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1865,7 +1865,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 49).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -1873,23 +1873,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1903,7 +1903,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 50).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -1911,23 +1911,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1941,31 +1941,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 51).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -1979,7 +1979,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 52).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -1987,23 +1987,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2017,31 +2017,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 53).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2055,7 +2055,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 54).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2063,23 +2063,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2093,7 +2093,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 55).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -2101,23 +2101,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2131,7 +2131,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 56).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2139,23 +2139,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2169,31 +2169,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 57).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2207,7 +2207,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 58).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2215,23 +2215,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2245,31 +2245,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 59).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2283,7 +2283,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 60).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2291,23 +2291,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2321,7 +2321,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 61).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -2329,23 +2329,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2359,7 +2359,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 62).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -2367,23 +2367,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2397,31 +2397,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 63).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2435,7 +2435,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 64).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2443,23 +2443,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2473,31 +2473,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 65).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2511,7 +2511,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 66).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2519,23 +2519,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2549,7 +2549,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 67).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -2557,23 +2557,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2587,7 +2587,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 68).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2595,23 +2595,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2625,31 +2625,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 69).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2663,7 +2663,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 70).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2671,23 +2671,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2701,31 +2701,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 71).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2739,7 +2739,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 72).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2747,23 +2747,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2777,7 +2777,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 73).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -2785,23 +2785,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2815,7 +2815,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 74).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -2823,23 +2823,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2853,31 +2853,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 75).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2891,7 +2891,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 76).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2899,23 +2899,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2929,31 +2929,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 77).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -2967,7 +2967,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 78).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -2975,23 +2975,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3005,7 +3005,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 79).",
+      "enunciado": "Uma área verde mantida em uma cidade concentra árvores nativas, flores e abrigo para polinizadores, além de reduzir a sensação térmica nos bairros próximos. Esse conjunto de efeitos evidencia que a preservação da área verde garante:",
       "alternativas": [
         {
           "letter": "A",
@@ -3013,23 +3013,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "a eliminação das chuvas e o ressecamento do solo."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "o aumento da temperatura e da poluição do ar."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o favorecimento de pragas e a perda de espécies nativas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "a dependência total da cidade em relação a fertilizantes químicos."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Áreas verdes urbanas prestam serviços ecossistêmicos essenciais: abrigam polinizadores, sustentando a biodiversidade, e regulam o microclima ao reduzir a temperatura local, trazendo benefícios diretos para a qualidade de vida urbana.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3043,7 +3043,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 80).",
+      "enunciado": "Uma empresa de entregas cobra R$ 6,00 para iniciar o serviço e mais R$ 2,00 a cada quilômetro percorrido. Se x representa a distância percorrida em quilômetros, a função que descreve o valor V a pagar, em reais, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3051,23 +3051,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O valor pago é a soma da taxa inicial fixa com o termo variável proporcional à distância: V(x) = 6 + 2x. Para x = 5 km, por exemplo, V = 6 + 10 = R$ 16,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3081,31 +3081,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 81).",
+      "enunciado": "Em um experimento, duas soluções ácidas foram medidas: uma registrou pH 3 e a outra, pH 5. Considerando a definição pH = $-\\log[\\mathrm{H^+}]$, é correto afirmar que a solução de pH 3, em relação à de pH 5, possui concentração de íons H⁺:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A cada unidade de pH a concentração de H⁺ varia dez vezes. A diferença de duas unidades (5 − 3 = 2) multiplica [H⁺] por 10² = 100: a solução de pH 3 tem [H⁺] = 10⁻³ mol/L, cem vezes a da solução de pH 5 (10⁻⁵ mol/L).",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3119,7 +3119,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 82).",
+      "enunciado": "Um terreno retangular destinado ao plantio mede 12 m de comprimento por 8 m de largura. A área total desse terreno, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3127,23 +3127,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Área do retângulo: A = base × altura = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3157,31 +3157,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 83).",
+      "enunciado": "Uma lâmpada de potência igual a 60 W fica acesa por um período de 5 horas. Considerando a relação entre potência, tempo e energia, o consumo de energia elétrica da lâmpada nesse período, em kWh, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Consumo = P × Δt = 60 W × 5 h = 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3195,7 +3195,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 84).",
+      "enunciado": "Quatro estudantes precisam ser dispostos em uma fila indiana. A quantidade total de formas distintas de organizar essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3203,23 +3203,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O número de permutações de 4 pessoas em fila é 4! = 24, pois a ordem dos elementos importa.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3233,7 +3233,7 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 85).",
+      "enunciado": "Uma cidade preserva uma área verde urbana que abriga polinizadores, como abelhas e borboletas, e ajuda a reduzir a temperatura local nos dias mais quentes. Entre os benefícios ecológicos proporcionados por essa área verde para o ambiente urbano, destaca-se:",
       "alternativas": [
         {
           "letter": "A",
@@ -3241,23 +3241,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "o aumento da temperatura média e a queda da umidade do ar."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "a redução da biodiversidade causada pelo adensamento das copas."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "o incentivo ao uso de agrotóxicos nas áreas vizinhas."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "o bloqueio da circulação de ventos e das chuvas na cidade."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A vegetação urbana abriga e alimenta polinizadores, essenciais para a reprodução de muitas espécies vegetais, e contribui para a regulação do microclima ao reduzir a temperatura local. Esses efeitos caracterizam serviços ecossistêmicos que mantêm a biodiversidade e regulam o ambiente.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3271,7 +3271,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 86).",
+      "enunciado": "Um aplicativo de transporte cobra uma taxa fixa de R$ 6,00 por corrida, acrescida de R$ 2,00 por quilômetro rodado. Considerando x como o número de quilômetros percorridos, o valor total a pagar, em reais, é expresso por:",
       "alternativas": [
         {
           "letter": "A",
@@ -3279,23 +3279,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "2 + 6x."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "8x."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "6x + 2."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "2x − 6."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "O custo é formado pela parte fixa (R$ 6,00) somada ao valor proporcional à distância (R$ 2,00 por quilômetro): C(x) = 6 + 2x. Por exemplo, para 10 km, C(10) = 6 + 20 = R$ 26,00.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3309,31 +3309,31 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 87).",
+      "enunciado": "Duas soluções aquosas foram preparadas em laboratório: a primeira apresenta pH 3 e a segunda, pH 5. Sabendo que o pH é definido por pH = $-\\log[\\mathrm{H^+}]$, a concentração de íons H⁺ da primeira solução, comparada à da segunda, é:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "cem vezes maior concentração."
+          "text": "cem vezes maior."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "cem vezes menor."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "duas vezes maior."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "dez vezes maior."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "mil vezes maior."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Como pH = −log[H⁺], uma diferença de 2 unidades de pH (de 5 para 3) corresponde a um aumento de 10² = 100 vezes na concentração de H⁺: a primeira solução tem [H⁺] = 10⁻³ mol/L e a segunda, 10⁻⁵ mol/L.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3347,7 +3347,7 @@
       "ano": 2025,
       "nivel": "medio",
       "origem": "inédita",
-      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 88).",
+      "enunciado": "Um jardim retangular possui 12 metros de comprimento e 8 metros de largura, e toda a sua superfície será utilizada para o plantio de hortaliças. A área disponível para o plantio, em metros quadrados, é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3355,23 +3355,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "20."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "40."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "48."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "104."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "A área de um retângulo é o produto entre o comprimento e a largura: A = 12 × 8 = 96 m².",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3385,31 +3385,31 @@
       "ano": 2025,
       "nivel": "facil",
       "origem": "inédita",
-      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 89).",
+      "enunciado": "Uma lâmpada de potência 60 W permanece ligada durante 5 horas. A energia consumida pela lâmpada nesse intervalo de tempo, em quilowatts-hora (kWh), é igual a:",
       "alternativas": [
         {
           "letter": "A",
-          "text": "0,3 kWh."
+          "text": "0,3."
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "300."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "3."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "0,12."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Energia = potência × tempo = 60 W × 5 h = 300 Wh. Como 1 kWh = 1 000 Wh, tem-se 300 Wh = 0,3 kWh.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
@@ -3423,7 +3423,7 @@
       "ano": 2025,
       "nivel": "dificil",
       "origem": "inédita",
-      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 90).",
+      "enunciado": "Quatro estudantes — Ana, Bruno, Carla e Diego — vão se organizar em uma fila única para participar de uma atividade. O número de ordenações diferentes possíveis para essa fila é:",
       "alternativas": [
         {
           "letter": "A",
@@ -3431,23 +3431,23 @@
         },
         {
           "letter": "B",
-          "text": "uma interpretação sem relação com os dados."
+          "text": "4."
         },
         {
           "letter": "C",
-          "text": "uma conclusão baseada apenas em opinião."
+          "text": "12."
         },
         {
           "letter": "D",
-          "text": "uma descrição que ignora o contexto."
+          "text": "16."
         },
         {
           "letter": "E",
-          "text": "uma medida que contradiz a situação apresentada."
+          "text": "256."
         }
       ],
       "resposta_correta": 0,
-      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "explicacao": "Trata-se de permutação simples de 4 elementos: P₄ = 4! = 4 × 3 × 2 × 1 = 24 ordens distintas.",
       "referencias": [
         "Matriz de Referência do ENEM — INEP",
         "Elaboração autoral"
