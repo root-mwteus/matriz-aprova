@@ -55,9 +55,11 @@ export default function AdminMoldurasPage() {
     }
     setSalvando(true)
     try {
+      // Upload simples (sem upsert): o slug é novo e a policy de INSERT basta —
+      // upsert/delete dependem da policy de UPDATE com WITH CHECK da migration.
       const { error: up } = await supabase.storage
         .from("molduras")
-        .upload(`${slugLimpo}.png`, arquivo, { upsert: true })
+        .upload(`${slugLimpo}.png`, arquivo)
       if (up) throw new Error("Falha ao enviar o PNG")
 
       const { error } = await supabase.from("molduras").insert({

@@ -126,11 +126,19 @@ export default function PerfilPage() {
 
       let iconePath = profile.icone_path
       if (iconeFile) {
-        const path = `${profile.id}/icone.${extensaoDeMime(iconeFile.type) ?? "png"}`
-        const { error } = await supabase.storage.from("perfis").upload(path, iconeFile, { upsert: true })
+        // Nome único por upload (com timestamp) para depender só da policy de
+        // INSERT — upsert/delete exigem a policy de UPDATE com WITH CHECK da
+        // migration 027, que pode não estar aplicada no banco ainda.
+        const ext = extensaoDeMime(iconeFile.type) ?? "png"
+        const path = `${profile.id}/icone-${Date.now()}.${ext}`
+        const { error } = await supabase.storage.from("perfis").upload(path, iconeFile)
         if (error) {
           console.error("upload ícone", error)
           throw new Error(`Falha ao enviar o ícone: ${error.message}`)
+        }
+        // Remove o objeto antigo se der (melhor esforço).
+        if (profile.icone_path && profile.icone_path !== path) {
+          await supabase.storage.from("perfis").remove([profile.icone_path])
         }
         iconePath = path
       } else if (profile.icone_path) {
@@ -139,11 +147,15 @@ export default function PerfilPage() {
 
       let bannerPath = profile.banner_path
       if (bannerFile) {
-        const path = `${profile.id}/banner.${extensaoDeMime(bannerFile.type) ?? "png"}`
-        const { error } = await supabase.storage.from("perfis").upload(path, bannerFile, { upsert: true })
+        const ext = extensaoDeMime(bannerFile.type) ?? "png"
+        const path = `${profile.id}/banner-${Date.now()}.${ext}`
+        const { error } = await supabase.storage.from("perfis").upload(path, bannerFile)
         if (error) {
           console.error("upload banner", error)
           throw new Error(`Falha ao enviar o banner: ${error.message}`)
+        }
+        if (profile.banner_path && profile.banner_path !== path) {
+          await supabase.storage.from("perfis").remove([profile.banner_path])
         }
         bannerPath = path
       } else if (profile.banner_path) {
