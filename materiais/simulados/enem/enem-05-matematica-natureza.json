@@ -1,0 +1,3457 @@
+{
+  "slug": "enem-05-matematica-natureza",
+  "titulo": "ENEM 05 — Matemática e Natureza",
+  "area": "enem",
+  "prova": "ENEM 2º dia",
+  "quantidade": 90,
+  "duracao_min": 330,
+  "questoes": [
+    {
+      "ordem": 1,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 1).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 2,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 2).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 3,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 3).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 4,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 4).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 5,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 5).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 6,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 6).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 7,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 7).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 8,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 8).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 9,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 9).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 10,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 10).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 11,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 11).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 12,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 12).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 13,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 13).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 14,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 14).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 15,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 15).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 16,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 16).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 17,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 17).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 18,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 18).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 19,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 19).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 20,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 20).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 21,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 21).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 22,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 22).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 23,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 23).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 24,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 24).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 25,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 25).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 26,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 26).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 27,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 27).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 28,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 28).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 29,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 29).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 30,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 30).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 31,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 31).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 32,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 32).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 33,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 33).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 34,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 34).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 35,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 35).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 36,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 36).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 37,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 37).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 38,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 38).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 39,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 39).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 40,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 40).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 41,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 41).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 42,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 42).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 43,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 43).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 44,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 44).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 45,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 45).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 46,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 46).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 47,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 47).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 48,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 48).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 49,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 49).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 50,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 50).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 51,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 51).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 52,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 52).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 53,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 53).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 54,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 54).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 55,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 55).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 56,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 56).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 57,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 57).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 58,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 58).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 59,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 59).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 60,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 60).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 61,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 61).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 62,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 62).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 63,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 63).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 64,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 64).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 65,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 65).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 66,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 66).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 67,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 67).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 68,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 68).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 69,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 69).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 70,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 70).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 71,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 71).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 72,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 72).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 73,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 73).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 74,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 74).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 75,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 75).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 76,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 76).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 77,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 77).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 78,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 78).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 79,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 79).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 80,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 80).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 81,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 81).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 82,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 82).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 83,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 83).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 84,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 84).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 85,
+      "materia": "Matemática",
+      "sub_materia": "porcentagem",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma tarifa de R$ 200 recebe desconto de 15% e depois acréscimo de 10%. O valor final é (situação 85).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "R$ 187,00."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque r$ 187,00. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 86,
+      "materia": "Natureza",
+      "sub_materia": "Física",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um ciclista percorre 120 m em 10 s, mantendo velocidade constante. Sua velocidade média é (situação 86).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "12 m/s."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 12 m/s. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 87,
+      "materia": "Matemática",
+      "sub_materia": "estatística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "As notas 4, 6, 6, 8 e 11 formam um conjunto de dados. A mediana é (situação 87).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 88,
+      "materia": "Natureza",
+      "sub_materia": "ecologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O despejo de nutrientes em um lago aumenta algas e reduz oxigênio dissolvido. Esse processo é (situação 88).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "eutrofização."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque eutrofização. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 89,
+      "materia": "Matemática",
+      "sub_materia": "probabilidade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma urna tem 3 bolas azuis e 2 vermelhas. Retirando uma bola ao acaso, a chance de ser vermelha é (situação 89).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "2/5."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 2/5. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 90,
+      "materia": "Natureza",
+      "sub_materia": "genética",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em um cruzamento Aa x Aa, considerando dominância completa, a proporção esperada de aa é (situação 90).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "25%."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 25%. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    }
+  ]
+}

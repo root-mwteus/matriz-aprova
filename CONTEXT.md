@@ -75,6 +75,8 @@ Validação esperada antes de concluir feature: **81/81 testes, lint limpo, tsc 
 - `pagamentos/config` — público (preço/título)
 - `questoes/responder` — valida no servidor, vitalício apenas
 - `simulados/ranking` · `simulados/[id]/finalizar` — scoring no servidor, anti-cheat, máx 3h
+  Cadernos completos usam `simulados_catalogo` + `simulados_catalogo_questoes`;
+  conteúdo em `materiais/simulados/` e importação via `importar-simulados.mjs`.
 - `seguranca/logins` — histórico + sessão atual
 - `comunidade/*` — chat, grupos, membros, ligas (`ranking_liga`), ranking, nomes em lote
 - `duelos` · `duelos/[id]` · `duelos/[id]/responder` — fila rápida com UPDATE condicional
@@ -186,6 +188,8 @@ Criadas e validadas em código, **NÃO aplicadas** no Supabase ainda:
 - `020-indicacoes` (indicacoes, codigo_indicacao, desconto_indicacao_pct)
 - `021-bloqueios-secao` (bloqueios_secao + seed)
 - `022-planos-semanas` (planos_estudo, plano_semanas, profiles.concurso_alvo)
+- `023-simulados-completos` (origem/fonte das questões + catálogo e vínculos)
+- `024-catalogo-simulados` (24 cadernos: 6 por área)
 
 Passos para ativação em produção: rodar migrações em ordem no SQL Editor do Supabase,
 configurar `SUPABASE_SERVICE_ROLE_KEY` e `CRON_SECRET` (local + Vercel), fazer deploy.

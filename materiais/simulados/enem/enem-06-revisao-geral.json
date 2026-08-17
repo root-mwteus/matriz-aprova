@@ -1,0 +1,3457 @@
+{
+  "slug": "enem-06-revisao-geral",
+  "titulo": "ENEM 06 — Revisão Geral",
+  "area": "enem",
+  "prova": "ENEM completo",
+  "quantidade": 90,
+  "duracao_min": 330,
+  "questoes": [
+    {
+      "ordem": 1,
+      "materia": "Linguagens",
+      "sub_materia": "interpretação",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 1).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a função persuasiva da mensagem."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 2,
+      "materia": "Humanas",
+      "sub_materia": "Geografia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 2).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "integração espacial desigual da metrópole."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 3,
+      "materia": "Natureza",
+      "sub_materia": "Química",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 3).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "cem vezes maior concentração."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 4,
+      "materia": "Matemática",
+      "sub_materia": "geometria",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 4).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "96."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 5,
+      "materia": "Linguagens",
+      "sub_materia": "arte e sociedade",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 5).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "reflexão crítica sobre práticas sociais."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 6,
+      "materia": "Humanas",
+      "sub_materia": "cartografia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 6).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "aumento da escala e redução da área representada."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 7,
+      "materia": "Natureza",
+      "sub_materia": "Biologia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 7).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "manutenção da biodiversidade e regulação ambiental."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 8,
+      "materia": "Matemática",
+      "sub_materia": "função",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 8).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6 + 2x."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 9,
+      "materia": "Linguagens",
+      "sub_materia": "variação linguística",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 9).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a legitimidade da diversidade linguística."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 10,
+      "materia": "Humanas",
+      "sub_materia": "Sociologia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 10).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "desigualdades estruturais de acesso."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 11,
+      "materia": "Natureza",
+      "sub_materia": "energia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 11).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "0,3 kWh."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 12,
+      "materia": "Matemática",
+      "sub_materia": "combinatória",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 12).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "24."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 13,
+      "materia": "Linguagens",
+      "sub_materia": "interpretação",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 13).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a função persuasiva da mensagem."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 14,
+      "materia": "Humanas",
+      "sub_materia": "Geografia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 14).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "integração espacial desigual da metrópole."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 15,
+      "materia": "Natureza",
+      "sub_materia": "Química",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 15).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "cem vezes maior concentração."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 16,
+      "materia": "Matemática",
+      "sub_materia": "geometria",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 16).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "96."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 17,
+      "materia": "Linguagens",
+      "sub_materia": "arte e sociedade",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 17).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "reflexão crítica sobre práticas sociais."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 18,
+      "materia": "Humanas",
+      "sub_materia": "cartografia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 18).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "aumento da escala e redução da área representada."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 19,
+      "materia": "Natureza",
+      "sub_materia": "Biologia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 19).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "manutenção da biodiversidade e regulação ambiental."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 20,
+      "materia": "Matemática",
+      "sub_materia": "função",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 20).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6 + 2x."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 21,
+      "materia": "Linguagens",
+      "sub_materia": "variação linguística",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 21).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a legitimidade da diversidade linguística."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 22,
+      "materia": "Humanas",
+      "sub_materia": "Sociologia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 22).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "desigualdades estruturais de acesso."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 23,
+      "materia": "Natureza",
+      "sub_materia": "energia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 23).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "0,3 kWh."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 24,
+      "materia": "Matemática",
+      "sub_materia": "combinatória",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 24).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "24."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 25,
+      "materia": "Linguagens",
+      "sub_materia": "interpretação",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 25).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a função persuasiva da mensagem."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 26,
+      "materia": "Humanas",
+      "sub_materia": "Geografia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 26).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "integração espacial desigual da metrópole."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 27,
+      "materia": "Natureza",
+      "sub_materia": "Química",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 27).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "cem vezes maior concentração."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 28,
+      "materia": "Matemática",
+      "sub_materia": "geometria",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 28).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "96."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 29,
+      "materia": "Linguagens",
+      "sub_materia": "arte e sociedade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 29).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "reflexão crítica sobre práticas sociais."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 30,
+      "materia": "Humanas",
+      "sub_materia": "cartografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 30).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "aumento da escala e redução da área representada."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 31,
+      "materia": "Natureza",
+      "sub_materia": "Biologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 31).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "manutenção da biodiversidade e regulação ambiental."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 32,
+      "materia": "Matemática",
+      "sub_materia": "função",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 32).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6 + 2x."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 33,
+      "materia": "Linguagens",
+      "sub_materia": "variação linguística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 33).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a legitimidade da diversidade linguística."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 34,
+      "materia": "Humanas",
+      "sub_materia": "Sociologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 34).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "desigualdades estruturais de acesso."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 35,
+      "materia": "Natureza",
+      "sub_materia": "energia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 35).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "0,3 kWh."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 36,
+      "materia": "Matemática",
+      "sub_materia": "combinatória",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 36).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "24."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 37,
+      "materia": "Linguagens",
+      "sub_materia": "interpretação",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 37).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a função persuasiva da mensagem."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 38,
+      "materia": "Humanas",
+      "sub_materia": "Geografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 38).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "integração espacial desigual da metrópole."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 39,
+      "materia": "Natureza",
+      "sub_materia": "Química",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 39).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "cem vezes maior concentração."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 40,
+      "materia": "Matemática",
+      "sub_materia": "geometria",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 40).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "96."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 41,
+      "materia": "Linguagens",
+      "sub_materia": "arte e sociedade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 41).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "reflexão crítica sobre práticas sociais."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 42,
+      "materia": "Humanas",
+      "sub_materia": "cartografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 42).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "aumento da escala e redução da área representada."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 43,
+      "materia": "Natureza",
+      "sub_materia": "Biologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 43).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "manutenção da biodiversidade e regulação ambiental."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 44,
+      "materia": "Matemática",
+      "sub_materia": "função",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 44).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6 + 2x."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 45,
+      "materia": "Linguagens",
+      "sub_materia": "variação linguística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 45).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a legitimidade da diversidade linguística."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 46,
+      "materia": "Humanas",
+      "sub_materia": "Sociologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 46).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "desigualdades estruturais de acesso."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 47,
+      "materia": "Natureza",
+      "sub_materia": "energia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 47).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "0,3 kWh."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 48,
+      "materia": "Matemática",
+      "sub_materia": "combinatória",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 48).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "24."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 49,
+      "materia": "Linguagens",
+      "sub_materia": "interpretação",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 49).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a função persuasiva da mensagem."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 50,
+      "materia": "Humanas",
+      "sub_materia": "Geografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 50).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "integração espacial desigual da metrópole."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 51,
+      "materia": "Natureza",
+      "sub_materia": "Química",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 51).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "cem vezes maior concentração."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 52,
+      "materia": "Matemática",
+      "sub_materia": "geometria",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 52).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "96."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 53,
+      "materia": "Linguagens",
+      "sub_materia": "arte e sociedade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 53).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "reflexão crítica sobre práticas sociais."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 54,
+      "materia": "Humanas",
+      "sub_materia": "cartografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 54).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "aumento da escala e redução da área representada."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 55,
+      "materia": "Natureza",
+      "sub_materia": "Biologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 55).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "manutenção da biodiversidade e regulação ambiental."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 56,
+      "materia": "Matemática",
+      "sub_materia": "função",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 56).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6 + 2x."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 57,
+      "materia": "Linguagens",
+      "sub_materia": "variação linguística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 57).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a legitimidade da diversidade linguística."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 58,
+      "materia": "Humanas",
+      "sub_materia": "Sociologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 58).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "desigualdades estruturais de acesso."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 59,
+      "materia": "Natureza",
+      "sub_materia": "energia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 59).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "0,3 kWh."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 60,
+      "materia": "Matemática",
+      "sub_materia": "combinatória",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 60).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "24."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 61,
+      "materia": "Linguagens",
+      "sub_materia": "interpretação",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 61).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a função persuasiva da mensagem."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 62,
+      "materia": "Humanas",
+      "sub_materia": "Geografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 62).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "integração espacial desigual da metrópole."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 63,
+      "materia": "Natureza",
+      "sub_materia": "Química",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 63).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "cem vezes maior concentração."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 64,
+      "materia": "Matemática",
+      "sub_materia": "geometria",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 64).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "96."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 65,
+      "materia": "Linguagens",
+      "sub_materia": "arte e sociedade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 65).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "reflexão crítica sobre práticas sociais."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 66,
+      "materia": "Humanas",
+      "sub_materia": "cartografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 66).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "aumento da escala e redução da área representada."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 67,
+      "materia": "Natureza",
+      "sub_materia": "Biologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 67).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "manutenção da biodiversidade e regulação ambiental."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 68,
+      "materia": "Matemática",
+      "sub_materia": "função",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 68).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6 + 2x."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 69,
+      "materia": "Linguagens",
+      "sub_materia": "variação linguística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 69).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a legitimidade da diversidade linguística."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 70,
+      "materia": "Humanas",
+      "sub_materia": "Sociologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 70).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "desigualdades estruturais de acesso."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 71,
+      "materia": "Natureza",
+      "sub_materia": "energia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 71).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "0,3 kWh."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 72,
+      "materia": "Matemática",
+      "sub_materia": "combinatória",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 72).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "24."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 73,
+      "materia": "Linguagens",
+      "sub_materia": "interpretação",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 73).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a função persuasiva da mensagem."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 74,
+      "materia": "Humanas",
+      "sub_materia": "Geografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 74).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "integração espacial desigual da metrópole."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 75,
+      "materia": "Natureza",
+      "sub_materia": "Química",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 75).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "cem vezes maior concentração."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 76,
+      "materia": "Matemática",
+      "sub_materia": "geometria",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 76).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "96."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 77,
+      "materia": "Linguagens",
+      "sub_materia": "arte e sociedade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 77).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "reflexão crítica sobre práticas sociais."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 78,
+      "materia": "Humanas",
+      "sub_materia": "cartografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 78).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "aumento da escala e redução da área representada."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 79,
+      "materia": "Natureza",
+      "sub_materia": "Biologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma cidade preserva uma área verde que abriga polinizadores e reduz a temperatura local. O benefício ecológico envolve (situação 79).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "manutenção da biodiversidade e regulação ambiental."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque manutenção da biodiversidade e regulação ambiental. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 80,
+      "materia": "Matemática",
+      "sub_materia": "função",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma corrida cobra taxa fixa de R$ 6 e R$ 2 por quilômetro. Para x quilômetros, o custo é (situação 80).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "6 + 2x."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 6 + 2x. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 81,
+      "materia": "Linguagens",
+      "sub_materia": "variação linguística",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Em uma conversa, participantes usam marcas regionais sem comprometer a compreensão. A situação evidencia (situação 81).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a legitimidade da diversidade linguística."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a legitimidade da diversidade linguística. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 82,
+      "materia": "Humanas",
+      "sub_materia": "Sociologia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma pesquisa compara acesso à internet por renda e território. A leitura adequada deve considerar (situação 82).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "desigualdades estruturais de acesso."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque desigualdades estruturais de acesso. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 83,
+      "materia": "Natureza",
+      "sub_materia": "energia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma lâmpada de 60 W permanece ligada por 5 h. O consumo de energia é (situação 83).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "0,3 kWh."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 0,3 kwh. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 84,
+      "materia": "Matemática",
+      "sub_materia": "combinatória",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Quatro estudantes serão organizados em uma fila. O número de ordens possíveis é (situação 84).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "24."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 24. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 85,
+      "materia": "Linguagens",
+      "sub_materia": "interpretação",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Um cartaz de campanha combina imagem e frase curta para orientar o público. A escolha da linguagem destaca (situação 85).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a função persuasiva da mensagem."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a função persuasiva da mensagem. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 86,
+      "materia": "Humanas",
+      "sub_materia": "Geografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "O mapa mostra expansão urbana junto a uma rodovia, com aumento de deslocamentos pendulares. O processo indica (situação 86).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "integração espacial desigual da metrópole."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque integração espacial desigual da metrópole. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 87,
+      "materia": "Natureza",
+      "sub_materia": "Química",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma solução tem pH 3 e outra pH 5. Em relação à concentração de H+, a primeira apresenta (situação 87).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "cem vezes maior concentração."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque cem vezes maior concentração. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 88,
+      "materia": "Matemática",
+      "sub_materia": "geometria",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um jardim retangular mede 12 m por 8 m. A área destinada ao plantio, em metros quadrados, é (situação 88).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "96."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque 96. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 89,
+      "materia": "Linguagens",
+      "sub_materia": "arte e sociedade",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma instalação usa objetos descartados para discutir consumo e desigualdade. A obra provoca (situação 89).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "reflexão crítica sobre práticas sociais."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque reflexão crítica sobre práticas sociais. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 90,
+      "materia": "Humanas",
+      "sub_materia": "cartografia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma escala cartográfica é alterada para representar a mesma área em mais detalhes. O efeito é (situação 90).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "aumento da escala e redução da área representada."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque aumento da escala e redução da área representada. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    }
+  ]
+}

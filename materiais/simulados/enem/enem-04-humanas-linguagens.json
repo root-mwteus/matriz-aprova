@@ -1,0 +1,3457 @@
+{
+  "slug": "enem-04-humanas-linguagens",
+  "titulo": "ENEM 04 — Humanas e Linguagens",
+  "area": "enem",
+  "prova": "ENEM 1º dia",
+  "quantidade": 90,
+  "duracao_min": 330,
+  "questoes": [
+    {
+      "ordem": 1,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 1).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 2,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 2).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 3,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 3).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 4,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 4).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 5,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 5).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 6,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 6).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 7,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 7).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 8,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 8).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 9,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 9).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 10,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 10).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 11,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 11).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 12,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 12).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 13,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 13).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 14,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 14).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 15,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 15).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 16,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 16).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 17,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 17).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 18,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 18).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 19,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 19).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 20,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 20).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 21,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 21).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 22,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 22).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 23,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 23).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 24,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 24).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 25,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "facil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 25).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 26,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "medio",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 26).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 27,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2022,
+      "nivel": "dificil",
+      "origem": "adaptada",
+      "fonte_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 27).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "ENEM 2022: item autoral adaptado de matriz e tema recorrente do exame",
+        "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      ]
+    },
+    {
+      "ordem": 28,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 28).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 29,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 29).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 30,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 30).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 31,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 31).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 32,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 32).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 33,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 33).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 34,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 34).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 35,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 35).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 36,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 36).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 37,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 37).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 38,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 38).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 39,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 39).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 40,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 40).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 41,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 41).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 42,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 42).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 43,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 43).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 44,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 44).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 45,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 45).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 46,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 46).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 47,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 47).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 48,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 48).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 49,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 49).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 50,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 50).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 51,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 51).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 52,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 52).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 53,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 53).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 54,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 54).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 55,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 55).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 56,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 56).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 57,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 57).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 58,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 58).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 59,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 59).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 60,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 60).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 61,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 61).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 62,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 62).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 63,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 63).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 64,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 64).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 65,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 65).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 66,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 66).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 67,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 67).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 68,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 68).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 69,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 69).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 70,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 70).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 71,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 71).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 72,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 72).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 73,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 73).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 74,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 74).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 75,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 75).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 76,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 76).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 77,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 77).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 78,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 78).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 79,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 79).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 80,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 80).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 81,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 81).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 82,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 82).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 83,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 83).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 84,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 84).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 85,
+      "materia": "Humanas",
+      "sub_materia": "História",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma política pública reconhece memórias de grupos antes silenciados. Essa medida se relaciona à (situação 85).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "disputa pela construção da memória coletiva."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque disputa pela construção da memória coletiva. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 86,
+      "materia": "Linguagens",
+      "sub_materia": "gêneros textuais",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Uma notícia apresenta título, dados e declaração de especialistas sobre um problema social. Esse arranjo permite (situação 86).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "informar com base em diferentes vozes."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque informar com base em diferentes vozes. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 87,
+      "materia": "Humanas",
+      "sub_materia": "Filosofia",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Uma decisão coletiva considera consequências para pessoas afetadas, e não apenas interesses individuais. O princípio enfatizado é (situação 87).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a responsabilidade ética perante o outro."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a responsabilidade ética perante o outro. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 88,
+      "materia": "Linguagens",
+      "sub_materia": "literatura",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "medio",
+      "origem": "inédita",
+      "enunciado": "Um poema rompe a ordem sintática e repete sons para representar uma experiência urbana. O procedimento produz (situação 88).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "efeito de ritmo e estranhamento."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque efeito de ritmo e estranhamento. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 89,
+      "materia": "Humanas",
+      "sub_materia": "política",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "facil",
+      "origem": "inédita",
+      "enunciado": "Uma comunidade cria assembleias para decidir o uso de um recurso comum. A prática amplia (situação 89).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a participação política direta."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a participação política direta. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    },
+    {
+      "ordem": 90,
+      "materia": "Linguagens",
+      "sub_materia": "língua estrangeira",
+      "banca": "INEP",
+      "ano": 2025,
+      "nivel": "dificil",
+      "origem": "inédita",
+      "enunciado": "Um anúncio em língua inglesa usa imagem, slogan e verbo no imperativo para vender um serviço. O recurso central é (situação 90).",
+      "alternativas": [
+        {
+          "letter": "A",
+          "text": "a construção de apelo direto ao leitor."
+        },
+        {
+          "letter": "B",
+          "text": "uma interpretação sem relação com os dados."
+        },
+        {
+          "letter": "C",
+          "text": "uma conclusão baseada apenas em opinião."
+        },
+        {
+          "letter": "D",
+          "text": "uma descrição que ignora o contexto."
+        },
+        {
+          "letter": "E",
+          "text": "uma medida que contradiz a situação apresentada."
+        }
+      ],
+      "resposta_correta": 0,
+      "explicacao": "A alternativa A é correta porque a construção de apelo direto ao leitor. A resolução exige relacionar o contexto aos dados apresentados, em vez de recorrer a trivia.",
+      "referencias": [
+        "Matriz de Referência do ENEM — INEP",
+        "Elaboração autoral"
+      ]
+    }
+  ]
+}

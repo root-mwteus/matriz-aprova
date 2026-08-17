@@ -30,27 +30,77 @@ const OPCOES_TEMPO = [
   { label: "3h", value: 180 },
 ]
 
+interface SimuladoCatalogo {
+  id: string
+  titulo: string
+  area: string
+  prova: string
+  quantidade: number
+  duracao_min: number
+  descricao: string | null
+}
+
 export default function SimuladosPage() {
   const router = useRouter()
   const supabase = createClient()
   const [banca, setBanca] = useState("")
   const [area, setArea] = useState("")
+  const [catalogos, setCatalogos] = useState<SimuladoCatalogo[]>([])
+  const [catalogoId, setCatalogoId] = useState("")
   const [numQuestoes, setNumQuestoes] = useState(20)
   const [tempo, setTempo] = useState(120)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
 
+  useEffect(() => {
+    createClient()
+      .from("simulados_catalogo")
+      .select("id, titulo, area, prova, quantidade, duracao_min, descricao")
+      .order("area")
+      .order("titulo")
+      .then(({ data }) => {
+        if (data) setCatalogos(data as SimuladoCatalogo[])
+      })
+  }, [])
+
   const handleIniciar = useCallback(async () => {
     setLoading(true)
     setError("")
 
-    let query = supabase.from("questions").select("*")
-    if (banca) query = query.eq("banca", banca)
-    if (area) query = query.eq("area_concurso", area)
-    query = query.limit(numQuestoes * 2)
-    query = query.order("created_at", { ascending: false })
+    let data: Question[] = []
+    let err: unknown = null
 
-    const { data, error: err } = await query
+    if (catalogoId) {
+      const { data: vinculos, error: vinculosError } = await supabase
+        .from("simulados_catalogo_questoes")
+        .select("question_id, ordem")
+        .eq("simulado_id", catalogoId)
+        .order("ordem")
+
+      if (vinculosError || !vinculos?.length) {
+        err = vinculosError
+      } else {
+        const ids = vinculos.map((v: { question_id: string }) => v.question_id)
+        const { data: questoes, error: questoesError } = await supabase
+          .from("questions")
+          .select("*")
+          .in("id", ids)
+        err = questoesError
+        const porId = new Map((questoes ?? []).map((q: Question) => [q.id, q]))
+        data = vinculos
+          .map((v: { question_id: string }) => porId.get(v.question_id))
+          .filter((q: Question | undefined): q is Question => Boolean(q))
+      }
+    } else {
+      let query = supabase.from("questions").select("*")
+      if (banca) query = query.eq("banca", banca)
+      if (area) query = query.eq("area_concurso", area)
+      query = query.limit(numQuestoes * 2)
+      query = query.order("created_at", { ascending: false })
+      const resultado = await query
+      data = (resultado.data ?? []) as Question[]
+      err = resultado.error
+    }
 
     if (err || !data || data.length === 0) {
       setError("Nenhuma questão encontrada com esses filtros. Tente ampliar a banca ou a área.")
@@ -58,7 +108,7 @@ export default function SimuladosPage() {
       return
     }
 
-    const embaralhadas = data.sort(() => Math.random() - 0.5).slice(0, numQuestoes)
+    const embaralhadas = catalogoId ? data : data.sort(() => Math.random() - 0.5).slice(0, numQuestoes)
     const questoesData = embaralhadas.map((q: Question) => ({
       id: q.id,
       materia: q.materia,
@@ -93,7 +143,7 @@ export default function SimuladosPage() {
 
     router.push(`/simulados/${sim.id}`)
     setLoading(false)
-  }, [banca, area, numQuestoes, tempo, supabase, router])
+  }, [banca, area, catalogoId, numQuestoes, tempo, supabase, router])
 
   const minutosPorQuestao = (tempo / numQuestoes).toFixed(1).replace(".", ",")
 
@@ -112,13 +162,47 @@ export default function SimuladosPage() {
 
       <div className="grid gap-5 lg:grid-cols-3">
         <Panel flush className="lg:col-span-2">
-          <PanelHeader title="Novo simulado" description="Deixe em branco para não filtrar" />
+          <PanelHeader title="Novo simulado" description="Escolha um caderno completo ou monte uma prova por filtros." />
 
           <div className="space-y-5 p-4">
+            {catalogos.length > 0 && (
+              <Field label="Caderno completo">
+                {(props) => (
+                  <Select
+                    {...props}
+                    value={catalogoId}
+                    onChange={(e) => {
+                      const id = e.target.value
+                      const escolhido = catalogos.find((item) => item.id === id)
+                      setCatalogoId(id)
+                      if (escolhido) {
+                        setNumQuestoes(escolhido.quantidade)
+                        setTempo(escolhido.duracao_min)
+                      }
+                    }}
+                  >
+                    <option value="">Montar por filtros</option>
+                    {catalogos.map((item) => (
+                      <option key={item.id} value={item.id}>
+                        {item.titulo} · {item.quantidade} questões · {item.duracao_min} min
+                      </option>
+                    ))}
+                  </Select>
+                )}
+              </Field>
+            )}
+
+            {catalogoId && (
+              <p className="rounded-md border border-line-accent bg-accent-soft px-3 py-2 text-sm text-fg">
+                {catalogos.find((item) => item.id === catalogoId)?.descricao ||
+                  "Este caderno usa questões em ordem fixa e gabarito validado no servidor."}
+              </p>
+            )}
+
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Banca">
                 {(props) => (
-                  <Select {...props} value={banca} onChange={(e) => setBanca(e.target.value)}>
+                  <Select {...props} disabled={Boolean(catalogoId)} value={banca} onChange={(e) => setBanca(e.target.value)}>
                     <option value="">Todas as bancas</option>
                     {BANCAS.map((b) => (
                       <option key={b} value={b}>
@@ -131,7 +215,7 @@ export default function SimuladosPage() {
 
               <Field label="Área">
                 {(props) => (
-                  <Select {...props} value={area} onChange={(e) => setArea(e.target.value)}>
+                  <Select {...props} disabled={Boolean(catalogoId)} value={area} onChange={(e) => setArea(e.target.value)}>
                     <option value="">Todas as áreas</option>
                     {AREAS.map((a) => (
                       <option key={a} value={a}>
@@ -147,14 +231,18 @@ export default function SimuladosPage() {
               label="Número de questões"
               value={numQuestoes}
               onChange={setNumQuestoes}
-              options={OPCOES_QUESTOES.map((n) => ({ value: n, label: String(n) }))}
+              options={
+                catalogoId
+                  ? [{ value: numQuestoes, label: String(numQuestoes) }]
+                  : OPCOES_QUESTOES.map((n) => ({ value: n, label: String(n) }))
+              }
             />
 
             <GrupoOpcoes
               label="Tempo limite"
               value={tempo}
               onChange={setTempo}
-              options={OPCOES_TEMPO}
+              options={catalogoId ? [{ value: tempo, label: `${tempo} min` }] : OPCOES_TEMPO}
             />
 
             {error && (
