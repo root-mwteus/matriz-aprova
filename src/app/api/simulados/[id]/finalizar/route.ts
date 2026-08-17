@@ -3,6 +3,7 @@ import { z } from "zod"
 import { requireUser } from "@/lib/supabase/auth"
 import { createServiceClient } from "@/lib/supabase/service"
 import { PONTOS, registrarPontosLiga } from "@/lib/liga"
+import { XP, somarXp } from "@/lib/xp"
 
 export const dynamic = "force-dynamic"
 
@@ -103,6 +104,10 @@ export async function POST(request: Request, { params }: { params: { id: string 
 
   // Liga da semana: simulado fechado soma 5. Falha silenciosa.
   await registrarPontosLiga(service, user.id, PONTOS.SIMULADO)
+
+  // XP por simulado — dedupe por simulado (a rota já bloqueia re-finalizar,
+  // o dedupe é a segunda camada para retry).
+  await somarXp(service, user.id, "simulado", params.id, XP.SIMULADO)
 
   return NextResponse.json({ pontuacao: acertos, tempo_total: parsed.data.tempoTotal })
 }

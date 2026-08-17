@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { requireUser } from "@/lib/supabase/auth"
 import { createServiceClient } from "@/lib/supabase/service"
 import { PONTOS, registrarPontosLiga } from "@/lib/liga"
+import { XP, somarXp } from "@/lib/xp"
 
 /**
  * POST /api/questoes/responder
@@ -57,13 +58,17 @@ export async function POST(request: Request) {
 
   const correto = body.resposta_dada === questao.resposta_correta
 
-  const { error } = await service.from("user_answers").insert({
-    user_id: user.id,
-    question_id: body.question_id,
-    resposta_dada: body.resposta_dada,
-    correto,
-    tempo_segundos: Number.isInteger(body.tempo_segundos) ? body.tempo_segundos : null,
-  })
+  const { data: resposta, error } = await service
+    .from("user_answers")
+    .insert({
+      user_id: user.id,
+      question_id: body.question_id,
+      resposta_dada: body.resposta_dada,
+      correto,
+      tempo_segundos: Number.isInteger(body.tempo_segundos) ? body.tempo_segundos : null,
+    })
+    .select("id")
+    .single()
 
   if (error) {
     console.error("responder: erro ao salvar resposta", error)
@@ -77,6 +82,9 @@ export async function POST(request: Request) {
     user.id,
     PONTOS.RESPOSTA + (correto ? PONTOS.ACERTO : 0)
   )
+
+  // XP: mesma regra, dedupe por resposta (retry não pontua 2×).
+  await somarXp(service, user.id, "questao", resposta.id, XP.RESPOSTA + (correto ? XP.ACERTO : 0))
 
   return NextResponse.json({ ok: true })
 }

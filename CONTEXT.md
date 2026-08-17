@@ -106,6 +106,7 @@ Validação esperada antes de concluir feature: **91/91 testes, lint limpo, tsc 
   Menu, Tooltip, Tabs, Table/DataTable/Pagination, Toolbar/FilterSelect, EmptyState, IconButton)
 - Charts: `src/components/charts/ChartKit.tsx` (useChartTheme lê CSS vars `--chart-1..4`,
   ChartFrame com alternativa em tabela p/ acessibilidade)
+- `xp/NivelPanel` — nível + barra de XP até o próximo nível (dashboard e `/perfil`)
 
 ## Lib (`src/lib`)
 
@@ -119,6 +120,9 @@ Validação esperada antes de concluir feature: **91/91 testes, lint limpo, tsc 
   FROM `onboarding@resend.dev` (dev) vs `noreply@matrizaprova.com` (prod)
 - `liga.ts` — PONTOS (resposta 1, acerto 2, simulado 5, duelo 10/5/2); semana inicia 2ª UTC
 - `duelo.ts` — 5 questões, busca 2min, partida 10min, desempate por tempo
+- `xp.ts` — XP: ganhos (resposta 10, acerto 10, simulado 50, duelo 100/50/25),
+  curva triangular de níveis (`nivelDeXp`/`xpProximoNivel`), `somarXp` (rpc
+  com dedupe por origem + teto diário, falha silenciosa)
 - `perfil.ts` — regras do perfil público: limites (ícone 5MB, banner 8MB, bio 160),
   `moldurasDesbloqueadas`/`molduraUsavel`, `publicUrl` (bucket público)
 - `bloqueios.ts` — `SECOES_PAINEL` (8 seções) + `secaoDaRota` (prefixo mais longo)
@@ -157,9 +161,12 @@ Migrações em `supabase/supabase-migration-NNN-*.sql` (avulsas, **não** em
 (a partir da 013+; as migrações são a fonte da verdade).
 
 **Tabelas:** `profiles` (plano demo/vitalício, `suspended`, `codigo_indicacao`,
-perfil público: `bio`, `prova_alvo`, `icone_path`, `banner_path`, `moldura_id`),
+perfil público: `bio`, `prova_alvo`, `icone_path`, `banner_path`, `moldura_id`,
+`xp_total` — XP acumulado, nível é função pura em `src/lib/xp.ts`),
 `molduras` (catálogo de molduras de avatar: `slug`, `nome`, `arquivo`,
 `desbloqueio` `livre`/`vitalicio`; PNG 512×512 transparente em `molduras/<slug>.png`),
+`xp_historico` (razão de XP: `tipo`/`origem_id` UNIQUE por user — dedupe de retry
++ teto diário de 1000 XP em `somar_xp`),
 `questions` (5 alternativas, matéria/banca/área), `user_answers`, `simulations`,
 `pagamentos` (referencia `config_pagamentos.valor` no webhook), `config_pagamentos`
 (id=1, singleton; inclui `whatsapp_suporte` do balão de suporte), `editais`
@@ -175,7 +182,8 @@ data_prova, horas_por_dia, semanas_total, semana_liberada) + `plano_semanas`
 (secao PK, bloqueado, mensagem).
 
 **Funções:** `is_admin()` (SECURITY DEFINER), `gerar_codigo_indicacao()`,
-`ranking_questoes`, `ranking_grupo`, `ranking_liga`, `somar_pontos_liga`.
+`ranking_questoes`, `ranking_grupo`, `ranking_liga`, `somar_pontos_liga`,
+`somar_xp` (SECURITY DEFINER — soma XP com dedupe por origem e teto diário).
 
 **RLS:** por usuário em profiles/user_answers/simulations; admin via `profiles.role = 'admin'`
 (escrita de questões/editais/bloqueios/molduras); leitura de molduras/bloqueios para qualquer
@@ -205,6 +213,9 @@ Pendentes (criadas, **NÃO aplicadas**):
 - `027-perfil-molduras` (perfil público: `bio`, `prova_alvo`, `icone_path`,
   `banner_path`, `moldura_id`; tabela `molduras` + buckets `perfis`/`molduras`
   com RLS — sem ela, `/perfil` e avatares na comunidade não funcionam)
+- `028-niveis-xp` (`profiles.xp_total` + razão `xp_historico` + `somar_xp` com
+  dedupe por origem e teto diário de 1000 XP — sem ela o XP não acumula; o
+  resto do app funciona, o nível aparece como 1)
 
 Passos para ativação em produção: rodar migrações pendentes no SQL Editor do Supabase,
 configurar `SUPABASE_SERVICE_ROLE_KEY` e `CRON_SECRET` (local + Vercel), fazer deploy.

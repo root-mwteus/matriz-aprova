@@ -7,6 +7,7 @@ import { createClient } from "@/lib/supabase/client"
 import type { Profile, Question, UserAnswer, Material } from "@/types"
 import { calcularStreakSemana } from "@/lib/streak"
 import { cn, diasAte } from "@/lib/utils"
+import NivelPanel from "@/components/xp/NivelPanel"
 import PageHeader from "@/components/PageHeader"
 import {
   Badge,
@@ -186,6 +187,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="space-y-5">
+          <NivelPanel xpTotal={profile?.xp_total ?? 0} />
           <ProvaPanel dataProva={profile?.data_prova ?? null} loading={loading} />
           <SemanaPanel dias={streak} diaIdx={diaIdx} loading={loading} />
           {material && <SugestaoPanel material={material} />}

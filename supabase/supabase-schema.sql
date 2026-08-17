@@ -65,6 +65,10 @@ ALTER TABLE public.profiles
   ADD COLUMN IF NOT EXISTS icone_path text,
   ADD COLUMN IF NOT EXISTS banner_path text;
 
+-- Níveis e XP (migration 028): XP acumulado; o nível é função pura no código.
+ALTER TABLE public.profiles
+  ADD COLUMN IF NOT EXISTS xp_total integer NOT NULL DEFAULT 0;
+
 -- 1b. MOLDURAS (migration 027) — catálogo de molduras de avatar.
 CREATE TABLE IF NOT EXISTS public.molduras (
   id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -95,6 +99,62 @@ CREATE POLICY "Admin exclui molduras"
 
 ALTER TABLE public.profiles
   ADD COLUMN IF NOT EXISTS moldura_id uuid REFERENCES public.molduras(id) ON DELETE SET NULL;
+
+-- Níveis e XP (migration 028): razão de XP com dedupe por origem + teto diário.
+CREATE TABLE IF NOT EXISTS public.xp_historico (
+  id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id    uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  tipo       text NOT NULL CHECK (tipo IN ('questao', 'simulado', 'duelo')),
+  origem_id  text NOT NULL,
+  xp         integer NOT NULL,
+  data       date NOT NULL DEFAULT ((now() AT TIME ZONE 'UTC')::date),
+  created_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (user_id, tipo, origem_id)
+);
+
+ALTER TABLE public.xp_historico ENABLE ROW LEVEL SECURITY;
+
+CREATE INDEX IF NOT EXISTS idx_xp_historico_user_data
+  ON public.xp_historico(user_id, data);
+
+CREATE OR REPLACE FUNCTION public.somar_xp(
+  p_user_id uuid,
+  p_tipo text,
+  p_origem_id text,
+  p_xp integer
+)
+RETURNS void
+LANGUAGE plpgsql SECURITY DEFINER
+AS $$
+DECLARE
+  v_hoje       date := (now() AT TIME ZONE 'UTC')::date;
+  v_max        constant integer := 1000;
+  v_ja         integer;
+  v_permitido  integer;
+BEGIN
+  IF p_xp <= 0 THEN RETURN; END IF;
+
+  IF EXISTS (
+    SELECT 1 FROM public.xp_historico
+    WHERE user_id = p_user_id AND tipo = p_tipo AND origem_id = p_origem_id
+  ) THEN
+    RETURN;
+  END IF;
+
+  SELECT COALESCE(SUM(xp), 0) INTO v_ja
+  FROM public.xp_historico
+  WHERE user_id = p_user_id AND data = v_hoje;
+
+  v_permitido := LEAST(p_xp, GREATEST(0, v_max - v_ja));
+  IF v_permitido <= 0 THEN RETURN; END IF;
+
+  INSERT INTO public.xp_historico (user_id, tipo, origem_id, xp, data)
+  VALUES (p_user_id, p_tipo, p_origem_id, v_permitido, v_hoje);
+
+  UPDATE public.profiles
+  SET xp_total = xp_total + v_permitido
+  WHERE id = p_user_id;
+END $$;
 
 INSERT INTO storage.buckets (id, name, public)
 VALUES ('perfis', 'perfis', true), ('molduras', 'molduras', true)

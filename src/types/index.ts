@@ -12,6 +12,7 @@ export interface Profile {
   icone_path?: string | null
   banner_path?: string | null
   moldura_id?: string | null
+  xp_total?: number
   created_at: string
 }
 

@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js"
 import { PONTOS, registrarPontosLiga } from "@/lib/liga"
+import { XP, somarXp } from "@/lib/xp"
 
 /**
  * Duelo 1v1: 5 questões, quem acerta mais vence (empate: menor tempo
@@ -103,9 +104,15 @@ export async function finalizarDuelo(service: SupabaseClient, duelo: Duelo): Pro
 
   const pontos = (id: string | null) =>
     vencedor === null ? PONTOS.DUELO_EMPATE : vencedor === id ? PONTOS.DUELO_VITORIA : PONTOS.DUELO_DERROTA
+  const xpDoJogador = (id: string | null) =>
+    vencedor === null ? XP.DUELO_EMPATE : vencedor === id ? XP.DUELO_VITORIA : XP.DUELO_DERROTA
   if (duelo.jogador_b) {
     await registrarPontosLiga(service, duelo.jogador_a, pontos(duelo.jogador_a))
     await registrarPontosLiga(service, duelo.jogador_b, pontos(duelo.jogador_b))
+    // XP por duelo — dedupe por origem no banco; o status "finalizado"
+    // já impede refazer, o dedupe cobre retry da última resposta.
+    await somarXp(service, duelo.jogador_a, "duelo", duelo.id, xpDoJogador(duelo.jogador_a))
+    await somarXp(service, duelo.jogador_b, "duelo", duelo.id, xpDoJogador(duelo.jogador_b))
   }
 
   return data as Duelo

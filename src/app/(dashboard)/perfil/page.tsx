@@ -16,6 +16,7 @@ import {
   publicUrl,
 } from "@/lib/perfil"
 import PageHeader from "@/components/PageHeader"
+import NivelPanel from "@/components/xp/NivelPanel"
 import { Avatar, Badge, Button, ErrorState, Panel, Skeleton } from "@/components/ui"
 import type { Moldura, Profile } from "@/types"
 
@@ -220,6 +221,8 @@ export default function PerfilPage() {
         bannerUrl={bannerUrl}
         molduraUrl={molduraAtual ? publicUrl("molduras", molduraAtual.arquivo) : null}
       />
+
+      <NivelPanel xpTotal={profile?.xp_total ?? 0} />
 
       <div className="grid gap-6 md:grid-cols-2">
         <UploadPanel

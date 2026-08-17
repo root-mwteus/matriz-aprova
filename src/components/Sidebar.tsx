@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { ChevronsUpDown, LogOut, Lock, Settings, User } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { navigation, isRouteActive } from "@/lib/navigation"
+import { nivelDeXp } from "@/lib/xp"
 import { Logo } from "@/components/marketing/Logo"
 import { cn } from "@/lib/utils"
 import type { Profile } from "@/types"
@@ -138,9 +139,16 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
           <span className="text-2xs font-medium uppercase tracking-wide text-fg-faint">
             {profile?.plano === "vitalicio" ? "Vitalício" : "Demo"}
           </span>
-          {profile?.plano !== "vitalicio" && (
-            <span className="text-2xs font-medium text-accent-ink">Assinar →</span>
-          )}
+          <span className="flex items-center gap-2">
+            {profile && (
+              <span className="rounded-full border border-line px-1.5 py-0.5 text-2xs font-semibold tabular-nums text-fg-muted">
+                Nv {nivelDeXp(profile.xp_total ?? 0)}
+              </span>
+            )}
+            {profile?.plano !== "vitalicio" && (
+              <span className="text-2xs font-medium text-accent-ink">Assinar →</span>
+            )}
+          </span>
         </Link>
         <Menu
           align="start"
