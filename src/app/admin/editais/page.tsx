@@ -8,18 +8,20 @@ import { createClient } from "@/lib/supabase/client"
 import type { Edital } from "@/types"
 
 const areas = ["Concursos", "OAB", "Militar", "ENEM"]
-const statusOptions: Edital["status"][] = ["aberto", "previsto", "encerrado"]
+const statusOptions: Edital["status"][] = ["aberto", "previsto", "encerrado", "sem_edital"]
 
 const STATUS_LABEL: Record<Edital["status"], string> = {
   aberto: "ABERTO",
   previsto: "PREVISTO",
   encerrado: "ENCERRADO",
+  sem_edital: "SEM EDITAL",
 }
 
 const STATUS_STYLE: Record<Edital["status"], string> = {
   aberto: "text-green-400 bg-green-400/10 border border-green-400/30",
   previsto: "text-yellow-400 bg-yellow-400/10 border border-yellow-400/30",
   encerrado: "text-muted bg-card-border/50 border border-card-border",
+  sem_edital: "text-muted bg-card-border/50 border border-card-border",
 }
 
 type FormState = Omit<Edital, "id" | "created_at">

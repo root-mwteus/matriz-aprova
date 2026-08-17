@@ -155,7 +155,10 @@ Migrações em `supabase/supabase-migration-NNN-*.sql` (avulsas, **não** em
 **Tabelas:** `profiles` (plano demo/vitalício, `suspended`, `codigo_indicacao`),
 `questions` (5 alternativas, matéria/banca/área), `user_answers`, `simulations`,
 `pagamentos` (referencia `config_pagamentos.valor` no webhook), `config_pagamentos`
-(id=1, singleton; inclui `whatsapp_suporte` do balão de suporte), `editais`, `edital_alertas` (PK dedupe alertas),
+(id=1, singleton; inclui `whatsapp_suporte` do balão de suporte), `editais`
+(status `aberto`/`encerrado`/`previsto`/`sem_edital`; seed em
+`scripts/seed-editais.mjs`, PDFs dos editais principais em `editais/`),
+`edital_alertas` (PK dedupe alertas),
 `courses`/`modules`/`lessons`/`progress`, `materials`, `mensagens`/`grupos`/`membros`,
 `study_sessions`, `study_plans` (legado, 1 semana), `planos_estudo` (concurso,
 data_prova, horas_por_dia, semanas_total, semana_liberada) + `plano_semanas`
@@ -190,6 +193,9 @@ Aplicadas no Supabase (verificado via OpenAPI `/rest/v1/`): `003`, `017-sessao-u
 
 Pendentes (criadas, **NÃO aplicadas**):
 - `025-whatsapp-suporte` (`config_pagamentos.whatsapp_suporte` — balão de suporte)
+- `026-editais-sem-edital` (status `sem_edital` no CHECK de `editais` — provas
+  já realizadas mostram os dados da última edição; sem ela, `scripts/seed-editais.mjs`
+  não grava esses registros)
 
 Passos para ativação em produção: rodar migrações pendentes no SQL Editor do Supabase,
 configurar `SUPABASE_SERVICE_ROLE_KEY` e `CRON_SECRET` (local + Vercel), fazer deploy.

@@ -24,7 +24,8 @@ const AREAS = ["Todas", "Concursos", "OAB", "Militar", "ENEM"]
 const STATUS: Record<Edital["status"], { label: string; tone: "positive" | "caution" | "neutral" }> = {
   aberto: { label: "Inscrições abertas", tone: "positive" },
   previsto: { label: "Previsto", tone: "caution" },
-  encerrado: { label: "Encerrado", tone: "neutral" },
+  encerrado: { label: "Inscrições encerradas", tone: "neutral" },
+  sem_edital: { label: "Sem edital atualizado", tone: "neutral" },
 }
 
 function formatarData(iso: string | null) {

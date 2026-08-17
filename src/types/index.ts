@@ -29,7 +29,7 @@ export interface Edital {
   data_prova: string | null
   data_inscricao_fim: string | null
   link: string | null
-  status: "aberto" | "encerrado" | "previsto"
+  status: "aberto" | "encerrado" | "previsto" | "sem_edital"
   created_at: string
 }
 
