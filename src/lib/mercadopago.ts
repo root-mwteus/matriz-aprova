@@ -1,5 +1,5 @@
 import { createHmac, timingSafeEqual } from "crypto"
-import { SITE_URL } from "@/lib/constants"
+import { APP_URL } from "@/lib/constants"
 
 /**
  * Mercado Pago — Checkout Pro.
@@ -89,11 +89,11 @@ export async function criarPreferencia(opts: {
         },
       ],
       external_reference: opts.userId,
-      notification_url: `${SITE_URL}/api/pagamentos/webhook`,
+      notification_url: `${APP_URL}/api/pagamentos/webhook`,
       back_urls: {
-        success: `${SITE_URL}/assinar?resultado=success`,
-        pending: `${SITE_URL}/assinar?resultado=pending`,
-        failure: `${SITE_URL}/assinar?resultado=failure`,
+        success: `${APP_URL}/assinar?resultado=success`,
+        pending: `${APP_URL}/assinar?resultado=pending`,
+        failure: `${APP_URL}/assinar?resultado=failure`,
       },
       auto_return: "approved",
       payer: { email: opts.email },

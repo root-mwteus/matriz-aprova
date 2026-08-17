@@ -1,4 +1,5 @@
 import { Resend } from "resend"
+import { APP_URL } from "@/lib/constants"
 
 // Init lazy: o construtor do Resend lança exceção síncrona sem API key.
 // Este módulo é importado pelo /auth/callback, que não pode quebrar só
@@ -435,7 +436,7 @@ Comece por aqui:
 · IA preditiva mapeando o padrão da sua banca
 · Simulados com ranking nacional
 
-Acesse o app: https://matrizaprova.com/dashboard
+Acesse o app: ${APP_URL}/dashboard
 
 Você está no plano demo — explore à vontade. Quando quiser liberar as 4 áreas com acesso vitalício, basta um único pagamento na página Assinar.
 
@@ -636,7 +637,7 @@ function boasVindasHtml(nome: string, area: string) {
               <table role="presentation" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="border-radius:10px">
-                    <a href="https://matrizaprova.com/dashboard"
+                     <a href="${APP_URL}/dashboard"
                        style="display:inline-block;background-color:#C8FF3D;color:#0E1117;font-weight:700;font-size:14px;padding:15px 30px;border-radius:10px;text-decoration:none">
                       Acessar o app →
                     </a>
@@ -716,7 +717,7 @@ function boasVindasHtml(nome: string, area: string) {
                     <p style="margin:0 0 6px;color:#0E1117;font-size:14px;font-weight:700">Está no plano demo — explore à vontade.</p>
                     <p style="margin:0;color:rgba(14,17,23,0.75);font-size:13px;line-height:1.6">
                       No plano demo você tem acesso ao painel. Questões, simulados, PDFs e o resto da plataforma desbloqueiam com o vitalício, em um único pagamento.
-                      <a href="https://matrizaprova.com/assinar" style="color:#0E1117;font-weight:700;text-decoration:underline">Ver o plano vitalício →</a>
+                       <a href="${APP_URL}/assinar" style="color:#0E1117;font-weight:700;text-decoration:underline">Ver o plano vitalício →</a>
                     </p>
                   </td>
                 </tr>

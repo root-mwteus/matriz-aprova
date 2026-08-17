@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 import { createServiceClient } from "@/lib/supabase/service"
 import { sendRecuperarSenha } from "@/lib/email"
-import { SITE_URL } from "@/lib/constants"
+import { APP_URL } from "@/lib/constants"
 
 /**
  * Envia o link de redefinição de senha pela Resend.
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
   const { data, error } = await supabase.auth.admin.generateLink({
     type: "recovery",
     email,
-    options: { redirectTo: `${SITE_URL}/auth/callback` },
+    options: { redirectTo: `${APP_URL}/auth/callback` },
   })
 
   // Conta inexistente ou erro do provider: resposta neutra igual.
