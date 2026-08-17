@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { ChevronsUpDown, LogOut, Lock, Settings, User } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { navigation, isRouteActive } from "@/lib/navigation"
-import { nivelDeXp } from "@/lib/xp"
+import { xpProximoNivel } from "@/lib/xp"
 import { Logo } from "@/components/marketing/Logo"
 import { cn } from "@/lib/utils"
 import type { Profile } from "@/types"
@@ -139,16 +139,9 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
           <span className="text-2xs font-medium uppercase tracking-wide text-fg-faint">
             {profile?.plano === "vitalicio" ? "Vitalício" : "Demo"}
           </span>
-          <span className="flex items-center gap-2">
-            {profile && (
-              <span className="rounded-full border border-line px-1.5 py-0.5 text-2xs font-semibold tabular-nums text-fg-muted">
-                Nv {nivelDeXp(profile.xp_total ?? 0)}
-              </span>
-            )}
-            {profile?.plano !== "vitalicio" && (
-              <span className="text-2xs font-medium text-accent-ink">Assinar →</span>
-            )}
-          </span>
+          {profile?.plano !== "vitalicio" && (
+            <span className="text-2xs font-medium text-accent-ink">Assinar →</span>
+          )}
         </Link>
         <Menu
           align="start"
@@ -177,6 +170,9 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
                 <span className="block truncate text-2xs text-fg-subtle">
                   {profile?.email ?? "—"}
                 </span>
+                {profile && (
+                  <NivelBarra xpTotal={profile.xp_total ?? 0} />
+                )}
               </span>
               <ChevronsUpDown size={13} strokeWidth={2} className="shrink-0 text-fg-faint" />
             </button>
@@ -197,5 +193,30 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
         </Menu>
       </div>
     </nav>
+  )
+}
+
+/**
+ * Barrinha de nível no rodapé da sidebar — verde brilhante embaixo do
+ * e-mail. O brilho vem do gradiente + sombra; a largura reflete o
+ * progresso até o próximo nível.
+ */
+function NivelBarra({ xpTotal }: { xpTotal: number }) {
+  const { nivel, xpBase, xpAlvo, progresso } = xpProximoNivel(xpTotal)
+  return (
+    <span className="mt-1 block">
+      <span className="flex items-center justify-between text-[10px] tabular-nums text-fg-muted">
+        <span>Nível {nivel}</span>
+        <span>
+          {xpTotal - xpBase}/{xpAlvo - xpBase} XP
+        </span>
+      </span>
+      <span className="mt-0.5 block h-1 w-full overflow-hidden rounded-full bg-surface-sunken">
+        <span
+          className="block h-full rounded-full bg-gradient-to-r from-emerald-500 via-green-400 to-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]"
+          style={{ width: `${progresso}%` }}
+        />
+      </span>
+    </span>
   )
 }
