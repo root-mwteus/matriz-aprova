@@ -72,7 +72,11 @@ export async function POST() {
     .maybeSingle()
 
   if (candidato) {
-    const { data: duelo, count } = await service
+    // maybeSingle: o UPDATE só retorna a linha se o status ainda era
+    // "aguardando" (perdeu a corrida → null, sem erro). `count` aqui
+    // nunca viria populado sem count:'exact' — depender dele fazia o
+    // pareamento sempre cair no "criar a própria", empilhando filas.
+    const { data: duelo, error: erroPareamento } = await service
       .from("duelos")
       .update({
         jogador_b: user.id,
@@ -82,13 +86,19 @@ export async function POST() {
       .eq("id", candidato.id)
       .eq("status", "aguardando")
       .select()
+      .maybeSingle()
 
-    if (count && duelo?.[0]) {
-      const questoes = await detalharQuestoes(service, duelo[0].questoes, false)
-      const jogadores = await jogadoresDoDuelo(service, [duelo[0].jogador_a, duelo[0].jogador_b])
+    if (erroPareamento) {
+      console.error("duelos: erro ao emparelhar", erroPareamento)
+      return NextResponse.json({ error: "Falha ao buscar oponente" }, { status: 500 })
+    }
+
+    if (duelo) {
+      const questoes = await detalharQuestoes(service, duelo.questoes, false)
+      const jogadores = await jogadoresDoDuelo(service, [duelo.jogador_a, duelo.jogador_b])
       return NextResponse.json({
         status: "ativo",
-        duelo: { ...duelo[0], questoes_detalhes: questoes },
+        duelo: { ...duelo, questoes_detalhes: questoes },
         jogadores,
       })
     }

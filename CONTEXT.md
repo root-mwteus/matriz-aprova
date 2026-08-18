@@ -164,7 +164,8 @@ Migrações em `supabase/supabase-migration-NNN-*.sql` (avulsas, **não** em
 perfil público: `bio`, `prova_alvo`, `icone_path`, `banner_path`, `moldura_id`,
 `xp_total` — XP acumulado, nível é função pura em `src/lib/xp.ts`),
 `molduras` (catálogo de molduras de avatar: `slug`, `nome`, `arquivo`,
-`desbloqueio` `livre`/`vitalicio`; PNG 512×512 transparente em `molduras/<slug>.png`),
+`desbloqueio` `livre`/`vitalicio`; PNG 512×512 transparente em `molduras/<slug>.png`;
+gerados por `scripts/gerar-molduras.mjs` e semeados por `scripts/seed-molduras.mjs`),
 `xp_historico` (razão de XP: `tipo`/`origem_id` UNIQUE por user — dedupe de retry
 + teto diário de 1000 XP em `somar_xp`),
 `questions` (5 alternativas, matéria/banca/área), `user_answers`, `simulations`,
@@ -190,7 +191,8 @@ data_prova, horas_por_dia, semanas_total, semana_liberada) + `plano_semanas`
 autenticado; escritas de sessão/indicacoes/login_events via service role (sem policy client).
 
 **Storage:** `materiais` (privado), `questoes-figuras` (público), `pdf-provas` (privado),
-`perfis` (público, upload só na própria pasta `perfis/<user_id>/`), `molduras` (público, admin).
+`perfis` (público, upload só na própria pasta `perfis/<user_id>/`), `molduras` (público, admin;
+PNGs de avatar gerados em `molduras/` por `scripts/gerar-molduras.mjs`).
 
 ## Integrações / env (`NEXT_PUBLIC_SUPABASE_URL`, `..._ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`,
 `NEXT_PUBLIC_SITE_URL`, `OPENAI_API_KEY`, `RESEND_API_KEY`, `CRON_SECRET`,
