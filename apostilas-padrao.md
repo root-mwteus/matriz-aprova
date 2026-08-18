@@ -267,4 +267,4 @@ Priorize o que cobre mais alunos de uma vez (impacto × frequência):
 - [ ] Título e matéria corretos no cadastro; incidência coerente
 - [ ] PDF legível (tipografia, cabeçalho, quebras) e sem texto cortado
 - [ ] Revisão de português (acentuação, concordância)
-- [ ] ID do material cadastrado bate com o arquivo enviado ao storage
+- [ ] ID do material cadastrado bate com o arquivo enviado ao storage a
