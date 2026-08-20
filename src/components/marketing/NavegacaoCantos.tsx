@@ -1,10 +1,22 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 
 export function NavegacaoCantos() {
   const [voltarVisivel, setVoltarVisivel] = useState(false)
+
+  useEffect(() => {
+    const aoRolar = () => {
+      if (window.scrollY <= 2) setVoltarVisivel(false)
+    }
+    window.addEventListener("scroll", aoRolar, { passive: true })
+    window.addEventListener("touchmove", aoRolar, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", aoRolar)
+      window.removeEventListener("touchmove", aoRolar)
+    }
+  }, [])
 
   return (
     <>
