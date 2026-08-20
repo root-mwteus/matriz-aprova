@@ -241,6 +241,13 @@ h1 { letter-spacing: -0.028em; }
 @media (max-height: 700px) {
   section.snap-start h1 { font-size: 2.2rem !important; line-height: 1.05 !important; }
   section.snap-start h2 { font-size: 1.9rem !important; line-height: 1.08 !important; }
+  .hero-trust { display: none !important; }
+  .hero-mockup { transform: scale(0.88); transform-origin: top center; }
+}
+@media (max-height: 620px) {
+  section.snap-start h1 { font-size: 1.9rem !important; }
+  section.snap-start h2 { font-size: 1.7rem !important; }
+  .hero-mockup { transform: scale(0.78); }
 }
 @media (max-width: 768px) {
   html { scroll-snap-type: y proximity; }

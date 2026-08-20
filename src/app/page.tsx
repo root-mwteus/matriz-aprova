@@ -60,13 +60,13 @@ export default async function HomePage() {
       </header>
 
       {/* ── HERO · slide 1 ── */}
-      <section className="relative bg-paper dark:bg-ink overflow-hidden border-b-2 border-ink dark:border-paper/10 snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center" aria-labelledby="hero-title">
+      <section className="relative bg-paper dark:bg-ink overflow-hidden border-b-2 border-ink dark:border-paper/10 snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center" aria-labelledby="hero-title">
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
         <div className="absolute top-24 right-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow">[ 04 · 12 ]</div>
         <div className="absolute bottom-20 left-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow" style={{animationDelay: '1s'}}>[ 18 · 03 ]</div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 w-full">
-          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+          <div className="grid lg:grid-cols-12 gap-5 lg:gap-6 items-center flex-1 min-h-0">
 
             <div className="lg:col-span-7 animate-rise">
               <div className="inline-flex items-center gap-2 bg-ink dark:bg-lime text-paper dark:text-ink px-3 py-1.5 rounded-full mb-4 shadow-lg">
@@ -107,7 +107,7 @@ export default async function HomePage() {
               </div>
 
               {/* Trust Bar */}
-              <div className="mt-6 pt-5 border-t-2 border-ink/10 dark:border-paper/10 flex flex-wrap items-center gap-5 text-sm text-ink/50 dark:text-paper/50">
+              <div className="hero-trust mt-6 pt-5 border-t-2 border-ink/10 dark:border-paper/10 flex flex-wrap items-center gap-5 text-sm text-ink/50 dark:text-paper/50">
                 <div className="flex items-center gap-2 font-mono text-xs">
                   <svg className="w-3.5 h-3.5 text-lime-dark dark:text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -130,7 +130,7 @@ export default async function HomePage() {
             </div>
 
             {/* App mockup */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative hero-mockup">
               <div className="bg-ink text-paper rounded-2xl border-2 border-ink relative overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 matrix-grid-dark"></div>
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-lime/10 rounded-full blur-3xl hidden lg:block"></div>
@@ -297,10 +297,10 @@ export default async function HomePage() {
       </div>
 
       {/* ── AS 4 ÁREAS · slide 2 ── */}
-      <section id="areas" className="py-6 lg:py-8 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="areas" className="py-4 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div className="max-w-2xl">
               <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ quatro áreas · um acesso</span>
@@ -405,30 +405,27 @@ export default async function HomePage() {
       </section>
 
       {/* ── PROBLEMA / SOLUÇÃO · slide 3 ── */}
-      <section id="metodo" className="py-6 lg:py-8 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="metodo" className="py-4 lg:py-5 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl mb-6">
-            <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ por que a matriz funciona</span>
-            <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ink dark:text-paper leading-[1.05]">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+          <div className="max-w-3xl mb-4">
+            <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-2">◆ por que a matriz funciona</span>
+            <h2 className="mt-2 font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-ink dark:text-paper leading-[1.05]">
               Você não foi reprovado<br />
               por falta de estudo.<br />
               <span className="highlight-invert">Foi por estudar errado.</span>
             </h2>
-            <p className="mt-4 text-base text-ink/70 dark:text-paper/70 leading-relaxed">
-              Todo concurseiro perde meses em PDFs gigantes e em matéria que <strong className="text-ink dark:text-paper">quase nunca cai</strong>. Quem passou estudou cirurgicamente o que a banca cobra. A diferença não é esforço — é estratégia.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-4 lg:p-5">
-              <div className="flex items-center justify-between mb-6">
+          <div className="grid md:grid-cols-2 gap-3">
+            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-3 lg:p-4">
+              <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-ink/60 dark:text-paper/60">/ sem a matriz</span>
-                <span className="w-8 h-8 bg-ink dark:bg-paper/10 text-paper rounded-full flex items-center justify-center font-bold">✕</span>
+                <span className="w-7 h-7 bg-ink dark:bg-paper/10 text-paper rounded-full flex items-center justify-center font-bold text-sm">✕</span>
               </div>
-              <h3 className="font-display font-bold text-xl text-ink dark:text-paper mb-4">O ciclo da reprovação.</h3>
-              <ul className="space-y-3 text-sm text-ink/80 dark:text-paper/80">
+              <h3 className="font-display font-bold text-base lg:text-lg text-ink dark:text-paper mb-3">O ciclo da reprovação.</h3>
+              <ul className="space-y-2 text-xs lg:text-sm text-ink/80 dark:text-paper/80">
                 <li className="flex gap-3"><span className="font-mono text-xs font-bold text-ink/40 dark:text-paper/40 mt-1">01</span><span>Ler edital de 200 páginas sem saber por onde começar</span></li>
                 <li className="flex gap-3"><span className="font-mono text-xs font-bold text-ink/40 dark:text-paper/40 mt-1">02</span><span>Decorar leis e tópicos que a banca raramente cobra</span></li>
                 <li className="flex gap-3"><span className="font-mono text-xs font-bold text-ink/40 dark:text-paper/40 mt-1">03</span><span>Comprar 12 livros físicos pra cobrir um único edital</span></li>
@@ -437,15 +434,15 @@ export default async function HomePage() {
               </ul>
             </div>
 
-            <div className="bg-ink text-paper border-2 border-ink rounded-2xl p-4 lg:p-5 relative overflow-hidden">
+            <div className="bg-ink text-paper border-2 border-ink rounded-2xl p-3 lg:p-4 relative overflow-hidden">
               <div className="absolute inset-0 matrix-grid-lime opacity-50"></div>
               <div className="relative">
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                   <span className="font-mono text-xs font-bold uppercase tracking-widest text-lime">/ com a matriz</span>
                   <span className="w-7 h-7 bg-lime text-ink rounded-full flex items-center justify-center font-bold text-sm">✓</span>
                 </div>
-                <h3 className="font-display font-bold text-xl text-paper mb-4">O caminho mais curto.</h3>
-                <ul className="space-y-3 text-sm text-paper/85">
+                <h3 className="font-display font-bold text-base lg:text-lg text-paper mb-3">O caminho mais curto.</h3>
+                <ul className="space-y-2 text-xs lg:text-sm text-paper/85">
                   <li className="flex gap-3"><span className="font-mono text-xs font-bold text-lime mt-1">01</span><span>A IA escaneia 10 anos da sua banca em segundos</span></li>
                   <li className="flex gap-3"><span className="font-mono text-xs font-bold text-lime mt-1">02</span><span>Mostra os tópicos com maior probabilidade de cair</span></li>
                   <li className="flex gap-3"><span className="font-mono text-xs font-bold text-lime mt-1">03</span><span>PDFs enxutos e diretos · só o que cai na sua banca</span></li>
@@ -456,21 +453,21 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="mt-6 bg-lime border-2 border-ink rounded-2xl p-4 lg:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <div className="font-display font-bold text-5xl lg:text-6xl text-ink leading-none stat-num">3,2×</div>
+          <div className="mt-4 bg-lime border-2 border-ink rounded-2xl p-3 lg:p-4 flex flex-col md:flex-row items-center gap-3 md:gap-6">
+            <div className="font-display font-bold text-4xl lg:text-5xl text-ink leading-none stat-num">3,2×</div>
             <div className="flex-1 text-center md:text-left">
-              <div className="font-display font-bold text-lg lg:text-xl text-ink mb-1">mais rendimento por hora de estudo</div>
-              <div className="text-xs lg:text-sm text-ink/70">Dados internos comparando alunos da Matriz com método tradicional de estudo (PDFs genéricos + apostilas de 800 páginas).</div>
+              <div className="font-display font-bold text-base lg:text-lg text-ink mb-1">mais rendimento por hora de estudo</div>
+              <div className="text-xs text-ink/70">Dados internos comparando alunos da Matriz com método tradicional de estudo (PDFs genéricos + apostilas de 800 páginas).</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── FERRAMENTAS · slide 4 ── */}
-      <section id="ferramentas" className="py-6 lg:py-8 bg-ink text-paper border-b-2 border-ink relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="ferramentas" className="py-4 bg-ink text-paper border-b-2 border-ink relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div className="max-w-2xl">
               <span className="label-tag text-lime border-lime/40 mb-3">◆ ferramentas</span>
@@ -548,10 +545,10 @@ export default async function HomePage() {
       </section>
 
       {/* ── APROVADOS · slide 5 ── */}
-      <section id="aprovados" className="py-6 lg:py-8 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="aprovados" className="py-4 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div>
               <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ aprovados</span>
@@ -624,10 +621,10 @@ export default async function HomePage() {
       </section>
 
       {/* ── PREÇO · slide 6 ── */}
-      <section id="preco" className="py-6 lg:py-8 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="preco" className="py-4 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
           <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 mb-6 items-end">
             <div className="lg:col-span-7">
               <span className="label-tag text-lime border-lime/40 mb-3">◆ investimento</span>
@@ -736,10 +733,10 @@ export default async function HomePage() {
       </section>
 
       {/* ── FAQ · slide 7 ── */}
-      <section id="faq" className="py-6 lg:py-8 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="faq" className="py-4 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
           <div className="mb-6">
             <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ faq</span>
             <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ink dark:text-paper leading-[1.05]">
@@ -774,9 +771,9 @@ export default async function HomePage() {
       </section>
 
       {/* ── CTA FINAL · slide 8 ── */}
-      <section className="bg-lime border-b-2 border-ink relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section className="bg-lime border-b-2 border-ink relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center py-4">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 text-center w-full">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2 text-center">
           <span className="label-tag text-ink border-ink/40 mb-3">◆ a próxima coordenada é sua</span>
           <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-6xl text-ink leading-[1]">
             R$ 49,99 hoje.<br />
