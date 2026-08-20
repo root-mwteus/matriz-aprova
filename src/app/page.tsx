@@ -552,7 +552,7 @@ export default function HomePage() {
                 <div className="bg-lime border-2 border-ink rounded-full px-2.5 py-0.5 font-mono text-[10px] font-bold text-ink">APROVADA</div>
               </div>
               <p className="text-ink/80 dark:text-paper/80 leading-relaxed mb-6 flex-1">
-                &ldquo;Eu trabalhava 8h por dia, só tinha 2h pra estudar. A IA da Matriz mostrou que eu estava perdendo tempo com matéria que mal caía. Em <strong className="text-ink dark:text-paper">7 meses</strong> passei pra Receita Federal.&rdquo;
+                &ldquo;Eu trabalhava 8 horas por dia, e só tinha 2 horas pra estudar. A IA da Matriz mostrou que eu estava perdendo tempo com matéria que mal caía no concurso. Em <strong className="text-ink dark:text-paper">7 meses</strong>, consegui passar pra Receita Federal.&rdquo;
               </p>
               <div className="flex items-center gap-3 pt-5 border-t-2 border-ink/10 dark:border-paper/10">
                 <div className="w-11 h-11 bg-area-concursos border-2 border-ink rounded-full flex items-center justify-center text-ink font-display font-bold">CM</div>
@@ -586,7 +586,7 @@ export default function HomePage() {
                 <div className="bg-lime border-2 border-ink rounded-full px-2.5 py-0.5 font-mono text-[10px] font-bold text-ink">APROVADA · 11º</div>
               </div>
               <p className="text-ink/80 dark:text-paper/80 leading-relaxed mb-6 flex-1">
-                &ldquo;Mãe de dois, estudava 1h30 na hora do almoço. Foquei nos PDFs curtos da Matriz e nos simulados, e a IA ajustava meu plano toda semana. Passei em <strong className="text-ink dark:text-paper">11º lugar</strong> no concurso da prefeitura.&rdquo;
+                &ldquo;Mãe de dois meninos, conseguia estudar apenas 1h30 na hora do almoço. Foquei nos PDFs curtos da Matriz e nos simulados, e a IA ajustava meu plano toda semana. Passei em <strong className="text-ink dark:text-paper">11º lugar</strong> no concurso da prefeitura! Recomendo muito caso não tenha tanto tempo livre, a Matriz se adaptou a minha rotina apertada, vai se adaptar a sua também.&rdquo;
               </p>
               <div className="flex items-center gap-3 pt-5 border-t-2 border-ink/10 dark:border-paper/10">
                 <div className="w-11 h-11 bg-area-militar border-2 border-ink rounded-full flex items-center justify-center text-white font-display font-bold">JS</div>
