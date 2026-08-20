@@ -65,30 +65,30 @@ export default async function HomePage() {
         <div className="absolute top-24 right-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow">[ 04 · 12 ]</div>
         <div className="absolute bottom-20 left-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow" style={{animationDelay: '1s'}}>[ 18 · 03 ]</div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-20 lg:pt-20 lg:pb-28">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 w-full">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
             <div className="lg:col-span-7 animate-rise">
-              <div className="inline-flex items-center gap-2 bg-ink dark:bg-lime text-paper dark:text-ink px-3 py-1.5 rounded-full mb-6 shadow-lg">
+              <div className="inline-flex items-center gap-2 bg-ink dark:bg-lime text-paper dark:text-ink px-3 py-1.5 rounded-full mb-4 shadow-lg">
                 <span className="w-1.5 h-1.5 bg-lime dark:bg-ink rounded-full pulse-soft"></span>
                 <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest font-semibold">Plataforma Desenvolvida por Aprovados.</span>
               </div>
 
-              <h1 id="hero-title" className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-ink dark:text-paper leading-[1.02] tracking-tight">
+              <h1 id="hero-title" className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink dark:text-paper leading-[1.02] tracking-tight">
                 Estude o que cai.<br />
                 Passe <span className="text-lime-dark dark:text-lime">em menos tempo.</span>
               </h1>
 
-              <p className="mt-7 text-lg text-ink/70 dark:text-paper/70 max-w-2xl leading-relaxed">
+              <p className="mt-4 text-base lg:text-lg text-ink/70 dark:text-paper/70 max-w-2xl leading-relaxed">
                 A <strong className="text-ink dark:text-paper">Matriz</strong> usa <strong className="text-ink dark:text-paper">IA preditiva</strong> treinada em 10 anos de provas da sua banca. Entregamos <strong className="text-ink dark:text-paper">PDFs cirúrgicos</strong>, <strong className="text-ink dark:text-paper">simulados no estilo real</strong> e <strong className="text-ink dark:text-paper">questões comentadas</strong> — só o que tem chance real de cair.
               </p>
 
-              <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-start gap-4">
-                <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 bg-lime text-ink font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink group">
+              <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-start gap-3">
+                <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 bg-lime text-ink font-display font-bold text-sm lg:text-base px-6 py-3.5 rounded-lg border-2 border-ink group">
                   QUERO MINHA APROVAÇÃO · R$ 49,99
                   <span className="font-mono group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
-                <Link href="/cadastro" className="cta-secondary inline-flex items-center justify-center gap-2 bg-paper dark:bg-transparent text-ink dark:text-paper font-display font-bold text-base px-7 py-4 rounded-lg border-2 border-ink dark:border-paper/50 group">
+                <Link href="/cadastro" className="cta-secondary inline-flex items-center justify-center gap-2 bg-paper dark:bg-transparent text-ink dark:text-paper font-display font-bold text-sm lg:text-base px-6 py-3.5 rounded-lg border-2 border-ink dark:border-paper/50 group">
                   <svg className="w-4 h-4 group-hover:rotate-90 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -96,18 +96,18 @@ export default async function HomePage() {
                 </Link>
               </div>
 
-              <div className="mt-3 font-mono text-xs text-ink/50 dark:text-paper/50">
+              <div className="mt-2 font-mono text-xs text-ink/50 dark:text-paper/50">
                 sem cartão · acesso imediato · limitações no plano demo
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink/60 dark:text-paper/60">
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-1.5 font-mono text-xs text-ink/60 dark:text-paper/60">
                 <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> Plano vitalício · 1 pagamento</span>
                 <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> 7 dias garantia incondicional</span>
                 <span className="flex items-center gap-1.5"><span className="text-lime-dark dark:text-lime">✓</span> Sem mensalidade · sem renovação</span>
               </div>
 
               {/* Trust Bar */}
-              <div className="mt-10 pt-8 border-t-2 border-ink/10 dark:border-paper/10 flex flex-wrap items-center gap-6 text-sm text-ink/50 dark:text-paper/50">
+              <div className="mt-6 pt-5 border-t-2 border-ink/10 dark:border-paper/10 flex flex-wrap items-center gap-5 text-sm text-ink/50 dark:text-paper/50">
                 <div className="flex items-center gap-2 font-mono text-xs">
                   <svg className="w-3.5 h-3.5 text-lime-dark dark:text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -297,103 +297,103 @@ export default async function HomePage() {
       </div>
 
       {/* ── AS 4 ÁREAS · slide 2 ── */}
-      <section id="areas" className="py-10 lg:py-12 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="areas" className="py-6 lg:py-8 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div className="max-w-2xl">
-              <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-5">◆ quatro áreas · um acesso</span>
-              <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink dark:text-paper leading-[1.05]">
+              <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ quatro áreas · um acesso</span>
+              <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ink dark:text-paper leading-[1.05]">
                 Para qual prova você<br />
                 <span className="highlight-lime">vai gabaritar?</span>
               </h2>
             </div>
-            <p className="text-ink/60 dark:text-paper/60 max-w-sm">
+            <p className="text-sm text-ink/60 dark:text-paper/60 max-w-sm">
               Cada área tem sua própria trilha, curadoria e IA treinada na banca específica. Tudo no mesmo acesso anual.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-            <Link href="/concursos" className="area-card bg-area-concursos text-ink rounded-2xl p-6 border-2 border-ink flex flex-col group">
-              <div className="flex items-start justify-between mb-12">
+            <Link href="/concursos" className="area-card bg-area-concursos text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink flex flex-col group">
+              <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-xs font-bold">№ 01</div>
-                <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-area-concursos" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-area-concursos" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-2xl mb-2">Concursos Públicos</h3>
-              <p className="text-sm text-ink/75 leading-relaxed mb-5 flex-1">Federais, estaduais e municipais. Receita, INSS, TRT, polícia, tribunais e mais.</p>
-              <div className="font-mono text-xs text-ink/70 pt-4 border-t-2 border-ink/15">
+              <h3 className="font-display font-bold text-xl mb-1.5">Concursos Públicos</h3>
+              <p className="text-xs lg:text-sm text-ink/75 leading-relaxed mb-4 flex-1">Federais, estaduais e municipais. Receita, INSS, TRT, polícia, tribunais e mais.</p>
+              <div className="font-mono text-xs text-ink/70 pt-3 border-t-2 border-ink/15">
                 <div className="flex justify-between mb-1"><span>Editais ativos</span><span className="font-bold">76</span></div>
                 <div className="flex justify-between mb-1"><span>PDFs</span><span className="font-bold">10 mil+</span></div>
-                <div className="flex justify-between mb-3"><span>Bancas</span><span className="font-bold">40+</span></div>
+                <div className="flex justify-between mb-2"><span>Bancas</span><span className="font-bold">40+</span></div>
               </div>
               <div className="font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-1 group-hover:gap-3 transition-all">
                 ESTUDAR PARA CONCURSOS →
               </div>
             </Link>
 
-            <Link href="/oab" className="area-card bg-area-oab text-white rounded-2xl p-6 border-2 border-ink flex flex-col group">
-              <div className="flex items-start justify-between mb-12">
+            <Link href="/oab" className="area-card bg-area-oab text-white rounded-2xl p-4 lg:p-5 border-2 border-ink flex flex-col group">
+              <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-xs font-bold">№ 02</div>
-                <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-area-oab" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-area-oab" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
                   </svg>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-2xl mb-2">OAB</h3>
-              <p className="text-sm text-white/85 leading-relaxed mb-5 flex-1">Exame de Ordem (FGV). 1ª fase + 2ª fase com curadoria de advogados aprovados.</p>
-              <div className="font-mono text-xs text-white/80 pt-4 border-t-2 border-white/20">
+              <h3 className="font-display font-bold text-xl mb-1.5">OAB</h3>
+              <p className="text-xs lg:text-sm text-white/85 leading-relaxed mb-4 flex-1">Exame de Ordem (FGV). 1ª fase + 2ª fase com curadoria de advogados aprovados.</p>
+              <div className="font-mono text-xs text-white/80 pt-3 border-t-2 border-white/20">
                 <div className="flex justify-between mb-1"><span>PDFs 1ª fase</span><span className="font-bold">2.624</span></div>
                 <div className="flex justify-between mb-1"><span>Matérias</span><span className="font-bold">17</span></div>
-                <div className="flex justify-between mb-3"><span>Peças treinadas</span><span className="font-bold">60+</span></div>
+                <div className="flex justify-between mb-2"><span>Peças treinadas</span><span className="font-bold">60+</span></div>
               </div>
               <div className="font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-1 group-hover:gap-3 transition-all">
                 ESTUDAR PARA OAB →
               </div>
             </Link>
 
-            <Link href="/militar" className="area-card bg-area-militar text-white rounded-2xl p-6 border-2 border-ink flex flex-col group">
-              <div className="flex items-start justify-between mb-12">
+            <Link href="/militar" className="area-card bg-area-militar text-white rounded-2xl p-4 lg:p-5 border-2 border-ink flex flex-col group">
+              <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-xs font-bold">№ 03</div>
-                <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-area-militar" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-area-militar" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-2xl mb-2">Militar</h3>
-              <p className="text-sm text-white/85 leading-relaxed mb-5 flex-1">EsPCEx, EEAR, AFA, EFOMM, EsSA, Colégio Naval e mais. Provas de carreira.</p>
-              <div className="font-mono text-xs text-white/80 pt-4 border-t-2 border-white/20">
+              <h3 className="font-display font-bold text-xl mb-1.5">Militar</h3>
+              <p className="text-xs lg:text-sm text-white/85 leading-relaxed mb-4 flex-1">EsPCEx, EEAR, AFA, EFOMM, EsSA, Colégio Naval e mais. Provas de carreira.</p>
+              <div className="font-mono text-xs text-white/80 pt-3 border-t-2 border-white/20">
                 <div className="flex justify-between mb-1"><span>Concursos</span><span className="font-bold">18</span></div>
                 <div className="flex justify-between mb-1"><span>PDFs</span><span className="font-bold">1.840</span></div>
-                <div className="flex justify-between mb-3"><span>TAF + intelectual</span><span className="font-bold">incluso</span></div>
+                <div className="flex justify-between mb-2"><span>TAF + intelectual</span><span className="font-bold">incluso</span></div>
               </div>
               <div className="font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-1 group-hover:gap-3 transition-all">
                 ESTUDAR PARA MILITAR →
               </div>
             </Link>
 
-            <Link href="/enem" className="area-card bg-area-enem text-white rounded-2xl p-6 border-2 border-ink flex flex-col group">
-              <div className="flex items-start justify-between mb-12">
+            <Link href="/enem" className="area-card bg-area-enem text-white rounded-2xl p-4 lg:p-5 border-2 border-ink flex flex-col group">
+              <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-xs font-bold">№ 04</div>
-                <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-area-enem" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-area-enem" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                   </svg>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-2xl mb-2">ENEM</h3>
-              <p className="text-sm text-white/85 leading-relaxed mb-5 flex-1">4 áreas + Redação. Conteúdo alinhado à Matriz do INEP. SISU, ProUni e FIES.</p>
-              <div className="font-mono text-xs text-white/80 pt-4 border-t-2 border-white/20">
+              <h3 className="font-display font-bold text-xl mb-1.5">ENEM</h3>
+              <p className="text-xs lg:text-sm text-white/85 leading-relaxed mb-4 flex-1">4 áreas + Redação. Conteúdo alinhado à Matriz do INEP. SISU, ProUni e FIES.</p>
+              <div className="font-mono text-xs text-white/80 pt-3 border-t-2 border-white/20">
                 <div className="flex justify-between mb-1"><span>PDFs</span><span className="font-bold">1.739</span></div>
                 <div className="flex justify-between mb-1"><span>Áreas + Redação</span><span className="font-bold">5</span></div>
-                <div className="flex justify-between mb-3"><span>Simulados INEP</span><span className="font-bold">12</span></div>
+                <div className="flex justify-between mb-2"><span>Simulados INEP</span><span className="font-bold">12</span></div>
               </div>
               <div className="font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-1 group-hover:gap-3 transition-all">
                 ESTUDAR PARA ENEM →
@@ -405,30 +405,30 @@ export default async function HomePage() {
       </section>
 
       {/* ── PROBLEMA / SOLUÇÃO · slide 3 ── */}
-      <section id="metodo" className="py-10 lg:py-12 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="metodo" className="py-6 lg:py-8 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14">
-            <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-5">◆ por que a matriz funciona</span>
-            <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink dark:text-paper leading-[1.05]">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-3xl mb-6">
+            <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ por que a matriz funciona</span>
+            <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ink dark:text-paper leading-[1.05]">
               Você não foi reprovado<br />
               por falta de estudo.<br />
               <span className="highlight-invert">Foi por estudar errado.</span>
             </h2>
-            <p className="mt-6 text-lg text-ink/70 dark:text-paper/70 leading-relaxed">
+            <p className="mt-4 text-base text-ink/70 dark:text-paper/70 leading-relaxed">
               Todo concurseiro perde meses em PDFs gigantes e em matéria que <strong className="text-ink dark:text-paper">quase nunca cai</strong>. Quem passou estudou cirurgicamente o que a banca cobra. A diferença não é esforço — é estratégia.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-7 lg:p-9">
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-4 lg:p-5">
               <div className="flex items-center justify-between mb-6">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-ink/60 dark:text-paper/60">/ sem a matriz</span>
                 <span className="w-8 h-8 bg-ink dark:bg-paper/10 text-paper rounded-full flex items-center justify-center font-bold">✕</span>
               </div>
-              <h3 className="font-display font-bold text-2xl text-ink dark:text-paper mb-6">O ciclo da reprovação.</h3>
-              <ul className="space-y-4 text-ink/80 dark:text-paper/80">
+              <h3 className="font-display font-bold text-xl text-ink dark:text-paper mb-4">O ciclo da reprovação.</h3>
+              <ul className="space-y-3 text-sm text-ink/80 dark:text-paper/80">
                 <li className="flex gap-3"><span className="font-mono text-xs font-bold text-ink/40 dark:text-paper/40 mt-1">01</span><span>Ler edital de 200 páginas sem saber por onde começar</span></li>
                 <li className="flex gap-3"><span className="font-mono text-xs font-bold text-ink/40 dark:text-paper/40 mt-1">02</span><span>Decorar leis e tópicos que a banca raramente cobra</span></li>
                 <li className="flex gap-3"><span className="font-mono text-xs font-bold text-ink/40 dark:text-paper/40 mt-1">03</span><span>Comprar 12 livros físicos pra cobrir um único edital</span></li>
@@ -437,15 +437,15 @@ export default async function HomePage() {
               </ul>
             </div>
 
-            <div className="bg-ink text-paper border-2 border-ink rounded-2xl p-7 lg:p-9 relative overflow-hidden">
+            <div className="bg-ink text-paper border-2 border-ink rounded-2xl p-4 lg:p-5 relative overflow-hidden">
               <div className="absolute inset-0 matrix-grid-lime opacity-50"></div>
               <div className="relative">
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-between mb-4">
                   <span className="font-mono text-xs font-bold uppercase tracking-widest text-lime">/ com a matriz</span>
-                  <span className="w-8 h-8 bg-lime text-ink rounded-full flex items-center justify-center font-bold">✓</span>
+                  <span className="w-7 h-7 bg-lime text-ink rounded-full flex items-center justify-center font-bold text-sm">✓</span>
                 </div>
-                <h3 className="font-display font-bold text-2xl text-paper mb-6">O caminho mais curto.</h3>
-                <ul className="space-y-4 text-paper/85">
+                <h3 className="font-display font-bold text-xl text-paper mb-4">O caminho mais curto.</h3>
+                <ul className="space-y-3 text-sm text-paper/85">
                   <li className="flex gap-3"><span className="font-mono text-xs font-bold text-lime mt-1">01</span><span>A IA escaneia 10 anos da sua banca em segundos</span></li>
                   <li className="flex gap-3"><span className="font-mono text-xs font-bold text-lime mt-1">02</span><span>Mostra os tópicos com maior probabilidade de cair</span></li>
                   <li className="flex gap-3"><span className="font-mono text-xs font-bold text-lime mt-1">03</span><span>PDFs enxutos e diretos · só o que cai na sua banca</span></li>
@@ -456,91 +456,91 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="mt-10 bg-lime border-2 border-ink rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-12">
-            <div className="font-display font-bold text-7xl lg:text-8xl text-ink leading-none stat-num">3,2×</div>
+          <div className="mt-6 bg-lime border-2 border-ink rounded-2xl p-4 lg:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <div className="font-display font-bold text-5xl lg:text-6xl text-ink leading-none stat-num">3,2×</div>
             <div className="flex-1 text-center md:text-left">
-              <div className="font-display font-bold text-xl lg:text-2xl text-ink mb-2">mais rendimento por hora de estudo</div>
-              <div className="text-sm text-ink/70">Dados internos comparando alunos da Matriz com método tradicional de estudo (PDFs genéricos + apostilas de 800 páginas).</div>
+              <div className="font-display font-bold text-lg lg:text-xl text-ink mb-1">mais rendimento por hora de estudo</div>
+              <div className="text-xs lg:text-sm text-ink/70">Dados internos comparando alunos da Matriz com método tradicional de estudo (PDFs genéricos + apostilas de 800 páginas).</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── FERRAMENTAS · slide 4 ── */}
-      <section id="ferramentas" className="py-10 lg:py-12 bg-ink text-paper border-b-2 border-ink relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="ferramentas" className="py-6 lg:py-8 bg-ink text-paper border-b-2 border-ink relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div className="max-w-2xl">
-              <span className="label-tag text-lime border-lime/40 mb-5">◆ ferramentas</span>
-              <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-paper leading-[1.05]">
+              <span className="label-tag text-lime border-lime/40 mb-3">◆ ferramentas</span>
+              <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-paper leading-[1.05]">
                 Quatro ferramentas.<br />
                 Um único alvo: <span className="text-lime">aprovação.</span>
               </h2>
             </div>
-            <p className="text-paper/60 max-w-sm">
+            <p className="text-sm text-paper/60 max-w-sm">
               Cada ferramenta foi desenhada para tirar você do estudo genérico e te colocar no estudo que aprova.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-            <div className="feature-tile bg-paper text-ink rounded-2xl p-6 border-2 border-ink">
-              <div className="flex items-start justify-between mb-8">
+            <div className="feature-tile bg-paper text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink">
+              <div className="flex items-start justify-between mb-4">
                 <span className="font-mono text-xs font-bold text-ink/40">01/04</span>
-                <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+                <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 12h6M9 16h4" />
                   </svg>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2.5">Banca de Questões</h3>
-              <p className="text-sm text-ink/65 leading-relaxed mb-5">Questões atualizadas, filtráveis por banca, ano, assunto e dificuldade. Todas comentadas.</p>
-              <div className="font-mono text-xs text-ink/50 pt-4 border-t border-ink/10">CESPE · FGV · FCC · VUNESP · múltiplas bancas</div>
+              <h3 className="font-display font-bold text-lg mb-2">Banca de Questões</h3>
+              <p className="text-xs lg:text-sm text-ink/65 leading-relaxed mb-4">Questões atualizadas, filtráveis por banca, ano, assunto e dificuldade. Todas comentadas.</p>
+              <div className="font-mono text-xs text-ink/50 pt-3 border-t border-ink/10">CESPE · FGV · FCC · VUNESP · múltiplas bancas</div>
             </div>
 
-            <div className="feature-tile bg-lime text-ink rounded-2xl p-6 border-2 border-ink relative">
+            <div className="feature-tile bg-lime text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink relative">
               <span className="absolute -top-3 left-6 bg-ink text-lime font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">★ exclusivo</span>
-              <div className="flex items-start justify-between mb-8">
+              <div className="flex items-start justify-between mb-4">
                 <span className="font-mono text-xs font-bold text-ink/50">02/04</span>
-                <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+                <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2.5">IA Preditiva</h3>
-              <p className="text-sm text-ink/75 leading-relaxed mb-5">O algoritmo da aprovação. Analisa anos de prova e prevê o que tem maior chance de cair.</p>
-              <div className="font-mono text-xs text-ink/60 pt-4 border-t border-ink/20">precisão média: 89%</div>
+              <h3 className="font-display font-bold text-lg mb-2">IA Preditiva</h3>
+              <p className="text-xs lg:text-sm text-ink/75 leading-relaxed mb-4">O algoritmo da aprovação. Analisa anos de prova e prevê o que tem maior chance de cair.</p>
+              <div className="font-mono text-xs text-ink/60 pt-3 border-t border-ink/20">precisão média: 89%</div>
             </div>
 
-            <div className="feature-tile bg-paper text-ink rounded-2xl p-6 border-2 border-ink">
-              <div className="flex items-start justify-between mb-8">
+            <div className="feature-tile bg-paper text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink">
+              <div className="flex items-start justify-between mb-4">
                 <span className="font-mono text-xs font-bold text-ink/40">03/04</span>
-                <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+                <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2.5">PDFs Cirúrgicos</h3>
-              <p className="text-sm text-ink/65 leading-relaxed mb-5">Materiais enxutos de 10 a 30 páginas. Linguagem direta, esquemas visuais, sem encheção. Só o que cai.</p>
-              <div className="font-mono text-xs text-ink/50 pt-4 border-t border-ink/10">Materiais · download liberado</div>
+              <h3 className="font-display font-bold text-lg mb-2">PDFs Cirúrgicos</h3>
+              <p className="text-xs lg:text-sm text-ink/65 leading-relaxed mb-4">Materiais enxutos de 10 a 30 páginas. Linguagem direta, esquemas visuais, sem encheção. Só o que cai.</p>
+              <div className="font-mono text-xs text-ink/50 pt-3 border-t border-ink/10">Materiais · download liberado</div>
             </div>
 
-            <div className="feature-tile bg-paper text-ink rounded-2xl p-6 border-2 border-ink">
-              <div className="flex items-start justify-between mb-8">
+            <div className="feature-tile bg-paper text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink">
+              <div className="flex items-start justify-between mb-4">
                 <span className="font-mono text-xs font-bold text-ink/40">04/04</span>
-                <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+                <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
+                  <svg className="w-5 h-5 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-xl mb-2.5">Simulados + Ranking</h3>
-              <p className="text-sm text-ink/65 leading-relaxed mb-5">Simulados no estilo da banca com cronômetro real e ranking nacional. Saiba onde você está.</p>
-              <div className="font-mono text-xs text-ink/50 pt-4 border-t border-ink/10">novos simulados toda semana</div>
+              <h3 className="font-display font-bold text-lg mb-2">Simulados + Ranking</h3>
+              <p className="text-xs lg:text-sm text-ink/65 leading-relaxed mb-4">Simulados no estilo da banca com cronômetro real e ranking nacional. Saiba onde você está.</p>
+              <div className="font-mono text-xs text-ink/50 pt-3 border-t border-ink/10">novos simulados toda semana</div>
             </div>
 
           </div>
@@ -548,25 +548,25 @@ export default async function HomePage() {
       </section>
 
       {/* ── APROVADOS · slide 5 ── */}
-      <section id="aprovados" className="py-10 lg:py-12 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="aprovados" className="py-6 lg:py-8 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div>
-              <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-5">◆ aprovados</span>
-              <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink dark:text-paper leading-[1.12]">
+              <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ aprovados</span>
+              <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ink dark:text-paper leading-[1.12]">
                 Nome no <span className="highlight-lime">diário oficial.</span><br />
                 Carreira no <span className="highlight-invert">serviço público.</span>
               </h2>
             </div>
             <div className="font-mono text-sm text-ink/60 dark:text-paper/60 lg:text-right">
-              <div className="font-display font-bold text-3xl text-ink dark:text-paper stat-num">+4.812</div>
-              <div>aprovados em 2024 e 2025</div>
+              <div className="font-display font-bold text-2xl text-ink dark:text-paper stat-num">+4.812</div>
+              <div className="text-xs">aprovados em 2024 e 2025</div>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
             <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-6 flex flex-col">
               <div className="flex items-start justify-between mb-5">
@@ -624,20 +624,20 @@ export default async function HomePage() {
       </section>
 
       {/* ── PREÇO · slide 6 ── */}
-      <section id="preco" className="py-10 lg:py-12 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="preco" className="py-6 lg:py-8 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 mb-12 items-end">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 mb-6 items-end">
             <div className="lg:col-span-7">
-              <span className="label-tag text-lime border-lime/40 mb-5">◆ investimento</span>
-              <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-paper leading-[1.05]">
+              <span className="label-tag text-lime border-lime/40 mb-3">◆ investimento</span>
+              <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-paper leading-[1.05]">
                 Um preço.<br />
                 <span className="text-lime">Acesso total.</span>
               </h2>
             </div>
             <div className="lg:col-span-5 lg:text-right">
-              <p className="text-lg text-paper/70 leading-relaxed max-w-sm lg:ml-auto">
+              <p className="text-sm lg:text-base text-paper/70 leading-relaxed max-w-sm lg:ml-auto">
                 Sem planos confusos, sem mensalidade, sem surpresa no cartão.<br />
                 Um pagamento e <strong className="text-paper">pronto</strong>.
               </p>
@@ -658,16 +658,16 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 px-6 lg:px-10 py-8 lg:py-10 border-b-2 border-ink/10">
+            <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 px-6 lg:px-10 py-5 lg:py-6 border-b-2 border-ink/10">
               <div className="lg:col-span-5">
-                <div className="font-mono text-xs uppercase tracking-widest text-ink/50 mb-3">/ pagamento único</div>
+                <div className="font-mono text-xs uppercase tracking-widest text-ink/50 mb-2">/ pagamento único</div>
                 <div className="flex items-baseline gap-2 mb-1">
-                  <span className="font-display text-xl text-ink/30 line-through stat-num">R$ {cheioPartes[0]},{cheioPartes[1]}</span>
+                  <span className="font-display text-lg text-ink/30 line-through stat-num">R$ {cheioPartes[0]},{cheioPartes[1]}</span>
                 </div>
                 <div className="flex items-baseline gap-1 leading-none">
-                  <span className="font-display text-2xl font-bold text-ink">R$</span>
-                  <span className="font-display text-7xl sm:text-8xl lg:text-9xl font-bold text-ink stat-num">{valorPartes[0]}</span>
-                  <span className="font-display text-3xl font-bold text-ink">,{valorPartes[1]}</span>
+                  <span className="font-display text-xl font-bold text-ink">R$</span>
+                  <span className="font-display text-6xl sm:text-7xl lg:text-8xl font-bold text-ink stat-num">{valorPartes[0]}</span>
+                  <span className="font-display text-2xl font-bold text-ink">,{valorPartes[1]}</span>
                 </div>
                 <div className="mt-4 space-y-1">
                   <div className="font-mono text-xs text-ink/70">pagamento único · pix ou cartão</div>
@@ -736,13 +736,13 @@ export default async function HomePage() {
       </section>
 
       {/* ── FAQ · slide 7 ── */}
-      <section id="faq" className="py-10 lg:py-12 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
+      <section id="faq" className="py-6 lg:py-8 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-5">◆ faq</span>
-            <h2 className="mt-4 font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-ink dark:text-paper leading-[1.05]">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="mb-6">
+            <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ faq</span>
+            <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ink dark:text-paper leading-[1.05]">
               Toda dúvida tem<br />
               <span className="highlight-invert">uma resposta direta.</span>
             </h2>
@@ -776,16 +776,16 @@ export default async function HomePage() {
       {/* ── CTA FINAL · slide 8 ── */}
       <section className="bg-lime border-b-2 border-ink relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-center">
-          <span className="label-tag text-ink border-ink/40 mb-6">◆ a próxima coordenada é sua</span>
-          <h2 className="mt-5 font-display font-bold text-4xl sm:text-5xl lg:text-7xl text-ink leading-[1]">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 text-center w-full">
+          <span className="label-tag text-ink border-ink/40 mb-3">◆ a próxima coordenada é sua</span>
+          <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-6xl text-ink leading-[1]">
             R$ 49,99 hoje.<br />
             Um <span className="bg-ink text-lime px-3">salário público</span> amanhã.
           </h2>
-          <p className="mt-6 text-lg text-ink/80 max-w-xl mx-auto">
+          <p className="mt-4 text-base text-ink/80 max-w-xl mx-auto">
             Faz a conta. Ou testa grátis primeiro.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
+          <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
             <Link href="/assinar" className="cta-primary inline-flex items-center justify-center gap-3 bg-ink text-lime font-display font-bold text-lg px-8 py-5 rounded-xl border-2 border-ink">
               QUERO COMEÇAR AGORA
               <span className="font-mono">→</span>

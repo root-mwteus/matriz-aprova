@@ -234,6 +234,14 @@ h1 { letter-spacing: -0.028em; }
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
+/* Telas baixas: comprime levemente para não estourar o viewport */
+@media (max-height: 800px) {
+  section.snap-start { padding-top: 1.25rem !important; padding-bottom: 1.25rem !important; }
+}
+@media (max-height: 700px) {
+  section.snap-start h1 { font-size: 2.2rem !important; line-height: 1.05 !important; }
+  section.snap-start h2 { font-size: 1.9rem !important; line-height: 1.08 !important; }
+}
 @media (max-width: 768px) {
   html { scroll-snap-type: y proximity; }
 }
