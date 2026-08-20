@@ -28,14 +28,16 @@ export function NavegacaoCantos() {
       style={{
         opacity: oculta ? 0 : 1,
         pointerEvents: oculta ? "none" : "auto",
+        bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
       }}
-      className="fixed bottom-4 left-1/2 z-[60] -translate-x-1/2 flex items-center justify-center p-4 -m-4 transition-opacity duration-300 select-none group"
+      className="fixed left-1/2 z-[60] -translate-x-1/2 flex items-center justify-center min-h-[44px] min-w-[44px] p-4 -m-4 touch-manipulation transition-opacity duration-300 select-none group will-change-transform"
     >
       <svg
         aria-hidden
         viewBox="0 0 40 14"
-        className="w-[40px] h-[14px] overflow-visible text-ink/35 dark:text-paper/35 group-hover:text-ink/60 dark:group-hover:text-paper/60 transition-colors duration-300 group-active:scale-95"
+        className="h-[12px] w-[34px] sm:h-[14px] sm:w-[40px] lg:h-[15px] lg:w-[44px] max-w-[12vw] overflow-visible text-ink/35 dark:text-paper/35 group-hover:text-ink/60 dark:group-hover:text-paper/60 transition-colors duration-300 group-active:scale-95"
         fill="none"
+        preserveAspectRatio="xMidYMid meet"
       >
         <path
           d="M2 2 L20 12 L38 2"
@@ -43,6 +45,7 @@ export function NavegacaoCantos() {
           strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
         />
       </svg>
     </button>
