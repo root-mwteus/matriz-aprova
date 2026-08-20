@@ -29,7 +29,7 @@ export function NavegacaoCantos() {
       className="fixed z-[60] flex flex-col items-center gap-0.5 -translate-x-1/2"
       style={{
         left: "50%",
-        bottom: "calc(0.75rem + env(safe-area-inset-bottom, 0px))",
+        bottom: "calc(0.35rem + env(safe-area-inset-bottom, 0px))",
       }}
     >
       <button
