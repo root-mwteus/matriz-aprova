@@ -745,23 +745,20 @@ export default async function HomePage() {
             </h2>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-2">
             {([
-              ["Posso testar antes de pagar?", 'Sim! Temos um plano gratuito de demonstração com acesso limitado a PDFs e questões. Não precisa de cartão. É só clicar em "Testar grátis" e você entra no app na mesma hora.'],
-              ["Por quanto tempo eu tenho acesso?", "Acesso vitalício. Você paga uma vez e usa o plano para sempre, sem qualquer limite: questões, PDFs, simulados, IA e métricas. Vale para as 4 áreas."],
-              ["Posso estudar para mais de uma área?", "Sim. Com 1 pagamento você libera Concursos, OAB, Militar e ENEM simultaneamente. Sem limite de acesso entre áreas."],
-              ["Quais são as formas de pagamento?", "PIX (liberação imediata) e cartão de crédito em até 12x. Pagamento processado pela InfinitePay, com liberação automática do acesso."],
-              ["As questões e PDFs são atualizados?", "Sim. Toda semana incluímos novas questões assim que novas provas são aplicadas. Os PDFs são revisados a cada mudança de legislação ou edital."],
-              ["E se eu não gostar? Tem reembolso?", "Sim, sem burocracia. 7 dias de garantia incondicional. Não gostou, devolvemos 100% do valor — sem perguntas."],
-              ["Como a IA me ajuda na prática?", "A IA analisa milhares de provas anteriores da sua banca, identifica os tópicos mais cobrados e cruza com seu desempenho. Ela te diz exatamente o que estudar hoje para maximizar seus acertos."],
-              ["Posso acessar pelo celular?", "Sim. Plataforma 100% responsiva em celulares, tablets e computadores. Estude no transporte, no almoço, onde quiser."],
+              ["Posso testar antes de pagar?", 'Plano demo gratuito, sem cartão. Clique em "Testar grátis" e entre no app na hora.'],
+              ["Por quanto tempo tenho acesso?", "Vitalício. Um pagamento, acesso para sempre às 4 áreas."],
+              ["Quais são as formas de pagamento?", "PIX (imediato) e cartão em até 12x via InfinitePay."],
+              ["E se eu não gostar?", "7 dias de garantia incondicional. Devolvemos 100% sem perguntas."],
+              ["Como a IA me ajuda?", "Analisa anos da sua banca, cruza com seu desempenho e diz o que estudar hoje."],
             ] as [string, string][]).map(([q, a]) => (
               <details key={q} className="bg-paper-2 dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-xl">
-                <summary className="flex justify-between items-center gap-4 p-5">
-                  <span className="font-display font-bold text-ink dark:text-paper text-lg">{q}</span>
-                  <span className="faq-toggle w-9 h-9 flex-shrink-0 bg-ink dark:bg-paper/10 text-paper rounded-full flex items-center justify-center font-bold text-xl">+</span>
+                <summary className="flex justify-between items-center gap-3 p-3.5">
+                  <span className="font-display font-bold text-ink dark:text-paper text-sm lg:text-base">{q}</span>
+                  <span className="faq-toggle w-7 h-7 flex-shrink-0 bg-ink dark:bg-paper/10 text-paper rounded-full flex items-center justify-center font-bold text-lg">+</span>
                 </summary>
-                <div className="px-5 pb-5 text-ink/75 dark:text-paper/75 leading-relaxed border-t-2 border-ink/10 dark:border-paper/10 pt-4 mx-5">
+                <div className="px-4 pb-3 text-xs lg:text-sm text-ink/75 dark:text-paper/75 leading-relaxed border-t-2 border-ink/10 dark:border-paper/10 pt-3 mx-4">
                   {a}
                 </div>
               </details>
