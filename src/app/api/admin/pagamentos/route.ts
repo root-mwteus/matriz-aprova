@@ -26,7 +26,7 @@ export async function GET(request: Request) {
 
   let query = supabase
     .from("pagamentos")
-    .select("id, user_id, transaction_nsu, status, valor, created_at, updated_at, profile:user_id(nome, email)", {
+    .select("id, user_id, transaction_nsu, status, valor, created_at, updated_at", {
       count: "exact",
     })
 
@@ -44,6 +44,14 @@ export async function GET(request: Request) {
     console.error("admin: erro ao listar pagamentos", error)
     return NextResponse.json({ error: "Falha ao carregar pagamentos" }, { status: 500 })
   }
+
+  // Sem FK entre pagamentos.user_id e profiles, o embed do PostgREST
+  // falha (PGRST200) — busca os perfis numa segunda query e mescla.
+  const userIds = Array.from(new Set((data ?? []).map((p) => p.user_id)))
+  const { data: perfis } = userIds.length
+    ? await supabase.from("profiles").select("id, nome, email").in("id", userIds)
+    : { data: null }
+  const perfilPorId = new Map((perfis ?? []).map((pr) => [pr.id, pr]))
 
   const { data: resumoData } = await supabase.from("pagamentos").select("status, valor")
 
@@ -65,15 +73,15 @@ export async function GET(request: Request) {
   }
 
   const pagamentos = (data ?? []).map((p) => {
-    const perfil = Array.isArray(p.profile) ? p.profile[0] : p.profile
+    const perfil = perfilPorId.get(p.user_id)
     return {
       id: p.id,
       transaction_nsu: p.transaction_nsu,
       status: p.status,
       valor: Number(p.valor),
       created_at: formatarData(p.created_at),
-      aluno_nome: (perfil as any)?.nome ?? null,
-      aluno_email: (perfil as any)?.email ?? null,
+      aluno_nome: perfil?.nome ?? null,
+      aluno_email: perfil?.email ?? null,
     }
   })
 
