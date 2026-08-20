@@ -1,6 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
-import { AUTH_ROUTES, PROTECTED_ROUTES } from "@/lib/routes"
+import { AUTH_ROUTES, PROTECTED_ROUTES, PUBLIC_ROUTES } from "@/lib/routes"
 import { isSessionRevoked } from "@/lib/supabase/session"
 
 const LANDING_URL = process.env.NEXT_PUBLIC_LANDING_URL || "http://localhost:3000"
@@ -47,6 +47,14 @@ export async function middleware(request: NextRequest) {
   const isAuthRoute = AUTH_ROUTES.some((r) => pathname.startsWith(r))
   const isDashboardRoute = PROTECTED_ROUTES.some((r) => pathname.startsWith(r))
   const isAdminRoute = pathname.startsWith("/admin")
+  const isPublicRoute = PUBLIC_ROUTES.some((r) => pathname === r || pathname.startsWith(`${r}/`))
+
+  // ── Landing page no domínio errado ────────────────────────────────
+  // Se alguém acessar app.matrizaprova.com/ (ou /concursos, /oab, etc.),
+  // redireciona para matrizaprova.com. O app só deve servir o painel.
+  if (isAppDomain(request) && isPublicRoute) {
+    return NextResponse.redirect(new URL(`${LANDING_URL}${pathname}${request.nextUrl.search}`))
+  }
 
   // ── Usuário NÃO logado em rota protegida ──────────────────────────
   if (!user && (isDashboardRoute || isAdminRoute)) {
@@ -134,6 +142,6 @@ export async function middleware(request: NextRequest) {
  */
 export const config = {
   matcher: [
-    "/((?!api|auth|concursos|oab|militar|enem|_next/static|_next/image|favicon.ico|$|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!api|auth|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 }
