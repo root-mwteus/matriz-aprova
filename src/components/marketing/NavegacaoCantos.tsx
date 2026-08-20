@@ -3,62 +3,56 @@
 import { useEffect, useState } from "react"
 
 export function NavegacaoCantos() {
-  const [voltarVisivel, setVoltarVisivel] = useState(false)
+  const [oculta, setOculta] = useState(false)
+  const [offsetX, setOffsetX] = useState(0)
 
   useEffect(() => {
-    let ultimaPosicao = window.scrollY
-    const aoRolar = () => {
-      const atual = window.scrollY
-      if (atual <= 2 && atual < ultimaPosicao) setVoltarVisivel(false)
-      ultimaPosicao = atual
+    const onScroll = () => {
+      const pertoDoFim = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 120
+      setOculta(pertoDoFim)
     }
-    window.addEventListener("scroll", aoRolar, { passive: true })
-    window.addEventListener("touchmove", aoRolar, { passive: true })
+    const onMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 18
+      setOffsetX(x)
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("mousemove", onMove)
+    onScroll()
     return () => {
-      window.removeEventListener("scroll", aoRolar)
-      window.removeEventListener("touchmove", aoRolar)
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("mousemove", onMove)
     }
   }, [])
 
-  const irParaPreco = () => {
-    setVoltarVisivel(true)
-    document.getElementById("preco")?.scrollIntoView({ behavior: "smooth", block: "start" })
-  }
-
-  const voltarAoTopo = () => {
-    setVoltarVisivel(false)
-    window.scrollTo({ top: 0, behavior: "smooth" })
+  const proximo = () => {
+    window.scrollBy({ top: window.innerHeight * 0.92, behavior: "smooth" })
   }
 
   return (
-    <>
-      <button
-        type="button"
-        onClick={irParaPreco}
-        aria-label="Ver mais"
-        className="fixed bottom-4 right-4 z-[60] flex flex-col items-center -rotate-6 select-none group cursor-pointer"
-      >
-        <span className="font-display font-bold text-lg text-ink bg-lime border-2 border-ink rounded-lg px-3 py-1 shadow-lg group-hover:-translate-y-1 transition-transform">Mais!</span>
-        <svg className="w-9 h-14 text-lime-dark dark:text-lime drop-shadow group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 40" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 4v24" />
-          <path d="M5 21l7 7 7-7" />
-        </svg>
-      </button>
-
-      {voltarVisivel && (
-        <button
-          type="button"
-          onClick={voltarAoTopo}
-          aria-label="Voltar ao topo"
-          className="fixed bottom-4 left-4 z-[60] flex flex-col items-center rotate-6 select-none group cursor-pointer"
-        >
-          <span className="font-display font-bold text-lg text-ink bg-lime border-2 border-ink rounded-lg px-3 py-1 shadow-lg group-hover:translate-y-1 transition-transform">Voltar</span>
-          <svg className="w-9 h-14 text-lime-dark dark:text-lime drop-shadow group-hover:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 40" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 36v-24" />
-            <path d="M5 19l7-7 7 7" />
-          </svg>
-        </button>
-      )}
-    </>
+    <button
+      type="button"
+      onClick={proximo}
+      aria-label="Próximo bloco"
+      tabIndex={oculta ? -1 : 0}
+      style={{
+        opacity: oculta ? 0 : 1,
+        pointerEvents: oculta ? "none" : "auto",
+        transform: `translateX(calc(-50% + ${offsetX}px))`,
+      }}
+      className="fixed bottom-4 left-1/2 z-[60] flex items-center justify-center p-3 -m-3 transition-opacity duration-300 select-none group"
+    >
+      <span className="relative block w-[46px] h-[14px] transition-transform duration-300 group-hover:scale-[1.12] group-active:scale-95">
+        <span
+          aria-hidden
+          className="absolute left-0 top-1/2 w-[23px] h-[2.5px] -translate-y-1/2 origin-right rounded-full bg-gradient-to-r from-zinc-400 via-zinc-200 to-zinc-300 shadow-[0_0_10px_rgba(255,255,255,0.75),0_1px_2px_rgba(0,0,0,0.35)] group-hover:from-white group-hover:via-zinc-100 group-hover:to-zinc-300 group-hover:shadow-[0_0_14px_rgba(255,255,255,0.9),0_1px_3px_rgba(0,0,0,0.4)] transition-all duration-300"
+          style={{ transform: "rotate(32deg)" }}
+        />
+        <span
+          aria-hidden
+          className="absolute right-0 top-1/2 w-[23px] h-[2.5px] -translate-y-1/2 origin-left rounded-full bg-gradient-to-l from-zinc-400 via-zinc-200 to-zinc-300 shadow-[0_0_10px_rgba(255,255,255,0.75),0_1px_2px_rgba(0,0,0,0.35)] group-hover:from-white group-hover:via-zinc-100 group-hover:to-zinc-300 group-hover:shadow-[0_0_14px_rgba(255,255,255,0.9),0_1px_3px_rgba(0,0,0,0.4)] transition-all duration-300"
+          style={{ transform: "rotate(-32deg)" }}
+        />
+      </span>
+    </button>
   )
 }

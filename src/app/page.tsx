@@ -59,8 +59,8 @@ export default async function HomePage() {
         </div>
       </header>
 
-      {/* ── HERO ── */}
-      <section className="relative bg-paper dark:bg-ink overflow-hidden border-b-2 border-ink dark:border-paper/10" aria-labelledby="hero-title">
+      {/* ── HERO · slide 1 ── */}
+      <section className="relative bg-paper dark:bg-ink overflow-hidden border-b-2 border-ink dark:border-paper/10 snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center" aria-labelledby="hero-title">
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
         <div className="absolute top-24 right-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow">[ 04 · 12 ]</div>
         <div className="absolute bottom-20 left-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow" style={{animationDelay: '1s'}}>[ 18 · 03 ]</div>
@@ -296,8 +296,8 @@ export default async function HomePage() {
         </div>
       </div>
 
-      {/* ── AS 4 ÁREAS ── */}
-      <section id="areas" className="py-20 lg:py-28 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden">
+      {/* ── AS 4 ÁREAS · slide 2 ── */}
+      <section id="areas" className="py-10 lg:py-12 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -404,8 +404,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── PROBLEMA / SOLUÇÃO ── */}
-      <section id="metodo" className="py-20 lg:py-28 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden">
+      {/* ── PROBLEMA / SOLUÇÃO · slide 3 ── */}
+      <section id="metodo" className="py-10 lg:py-12 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -466,8 +466,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── FERRAMENTAS ── */}
-      <section id="ferramentas" className="py-20 lg:py-28 bg-ink text-paper border-b-2 border-ink relative overflow-hidden">
+      {/* ── FERRAMENTAS · slide 4 ── */}
+      <section id="ferramentas" className="py-10 lg:py-12 bg-ink text-paper border-b-2 border-ink relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -547,8 +547,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── APROVADOS ── */}
-      <section id="aprovados" className="py-20 lg:py-28 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden">
+      {/* ── APROVADOS · slide 5 ── */}
+      <section id="aprovados" className="py-10 lg:py-12 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -623,8 +623,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── PREÇO ── */}
-      <section id="preco" className="py-20 lg:py-28 bg-ink text-paper relative overflow-hidden border-b-2 border-ink">
+      {/* ── PREÇO · slide 6 ── */}
+      <section id="preco" className="py-10 lg:py-12 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -735,8 +735,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section id="faq" className="py-20 lg:py-28 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden">
+      {/* ── FAQ · slide 7 ── */}
+      <section id="faq" className="py-10 lg:py-12 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -773,8 +773,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA FINAL ── */}
-      <section className="bg-lime border-b-2 border-ink relative overflow-hidden">
+      {/* ── CTA FINAL · slide 8 ── */}
+      <section className="bg-lime border-b-2 border-ink relative overflow-hidden snap-start min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-center">
           <span className="label-tag text-ink border-ink/40 mb-6">◆ a próxima coordenada é sua</span>
