@@ -6,8 +6,11 @@ export function NavegacaoCantos() {
   const [voltarVisivel, setVoltarVisivel] = useState(false)
 
   useEffect(() => {
+    let ultimaPosicao = window.scrollY
     const aoRolar = () => {
-      if (window.scrollY <= 2) setVoltarVisivel(false)
+      const atual = window.scrollY
+      if (atual <= 2 && atual < ultimaPosicao) setVoltarVisivel(false)
+      ultimaPosicao = atual
     }
     window.addEventListener("scroll", aoRolar, { passive: true })
     window.addEventListener("touchmove", aoRolar, { passive: true })
