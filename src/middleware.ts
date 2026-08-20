@@ -5,6 +5,8 @@ import { isSessionRevoked } from "@/lib/supabase/session"
 
 const LANDING_URL = process.env.NEXT_PUBLIC_LANDING_URL || "http://localhost:3000"
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+const COOKIE_DOMAIN =
+  process.env.NODE_ENV === "production" ? ".matrizaprova.com" : undefined
 
 function isAppDomain(request: NextRequest) {
   const host = request.headers.get("host") || ""
@@ -31,7 +33,7 @@ export async function middleware(request: NextRequest) {
           cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
           supabaseResponse = NextResponse.next({ request })
           cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
+            supabaseResponse.cookies.set(name, value, { ...options, domain: COOKIE_DOMAIN })
           )
         },
       },

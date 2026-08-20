@@ -1,6 +1,9 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr"
 import { cookies } from "next/headers"
 
+const COOKIE_DOMAIN =
+  process.env.NODE_ENV === "production" ? ".matrizaprova.com" : undefined
+
 export function createClient() {
   const cookieStore = cookies()
 
@@ -14,12 +17,12 @@ export function createClient() {
         },
         set(name: string, value: string, options: CookieOptions) {
           try {
-            cookieStore.set({ name, value, ...options })
+            cookieStore.set({ name, value, ...options, domain: COOKIE_DOMAIN })
           } catch {}
         },
         remove(name: string, options: CookieOptions) {
           try {
-            cookieStore.set({ name, value: "", ...options })
+            cookieStore.set({ name, value: "", ...options, domain: COOKIE_DOMAIN })
           } catch {}
         },
       },

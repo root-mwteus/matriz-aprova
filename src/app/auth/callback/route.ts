@@ -4,6 +4,9 @@ import { notifyLogin, registrarLoginEvento } from "@/lib/login-alert"
 import { registerCurrentSession } from "@/lib/supabase/register-session"
 import { sendBoasVindas } from "@/lib/email"
 
+const COOKIE_DOMAIN =
+  process.env.NODE_ENV === "production" ? ".matrizaprova.com" : undefined
+
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get("code")
@@ -27,7 +30,10 @@ export async function GET(request: NextRequest) {
           setAll(cookiesToSet: { name: string; value: string; options: CookieOptions }[]) {
             cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
             cookiesToSet.forEach(({ name, value, options }) =>
-              supabaseResponse.cookies.set(name, value, options)
+              supabaseResponse.cookies.set(name, value, {
+                ...options,
+                domain: COOKIE_DOMAIN,
+              })
             )
           },
         },
