@@ -48,7 +48,7 @@ interface SimuladoItem {
 
 interface PagamentoItem {
   id: string
-  mp_payment_id: string | null
+  transaction_nsu: string | null
   status: string
   valor: number
   created_at: string
@@ -352,7 +352,7 @@ export default function UserDetailPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-card-border">
-                      {["Pagamento MP", "Status", "Valor", "Data"].map((h) => (
+                      {["Transação", "Status", "Valor", "Data"].map((h) => (
                         <th key={h} className="text-left text-[11px] text-muted font-mono font-normal px-4 py-3">{h}</th>
                       ))}
                     </tr>
@@ -360,7 +360,7 @@ export default function UserDetailPage() {
                   <tbody>
                     {dados.pagamentos.map((p) => (
                       <tr key={p.id} className="border-b border-card-border hover:bg-white/[.03]">
-                        <td className="px-4 py-3 text-muted font-mono">{p.mp_payment_id ?? "—"}</td>
+                        <td className="px-4 py-3 text-muted font-mono">{p.transaction_nsu ?? "—"}</td>
                         <td className="px-4 py-3">
                           <span
                             className={`text-[11px] px-2 py-0.5 rounded-full uppercase tracking-wider ${

@@ -5,7 +5,7 @@ import type { SupabaseClient } from "@supabase/supabase-js"
  * Configuração de pagamentos editável pelo admin.
  *
  * Antes o preço, o título e os benefícios do plano viviam fixos em
- * `mercadopago.ts`. Agora moram na tabela `config_pagamentos` (linha
+ * `infinitepay.ts`. Agora moram na tabela `config_pagamentos` (linha
  * única, id = 1), que o painel admin edita. Tudo que depende do valor
  * passa por este módulo — checkout, webhook, página /assinar e o aviso
  * de bloqueio do plano demo.

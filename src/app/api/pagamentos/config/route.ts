@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { getConfigPagamentos } from "@/lib/pagamentos-config"
-import { isTestMode } from "@/lib/mercadopago"
+import { isTestMode } from "@/lib/infinitepay"
 
 /**
  * GET /api/pagamentos/config

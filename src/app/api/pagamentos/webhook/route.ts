@@ -1,161 +1,115 @@
 import { NextResponse } from "next/server"
 import { createServiceClient } from "@/lib/supabase/service"
-import { buscarPagamento, parsePaymentId, verificarAssinaturaWebhook } from "@/lib/mercadopago"
-import { getConfigPagamentos } from "@/lib/pagamentos-config"
+import { consultarPagamento, validarPayloadWebhook } from "@/lib/infinitepay"
 
 /**
  * POST /api/pagamentos/webhook
  *
- * O Mercado Pago notifica eventos de pagamento aqui. O fluxo:
- *  1. Valida a assinatura HMAC (`x-signature`) com a secret do MP.
- *  2. Confirma o id do pagamento com a API do MP (access token).
- *  3. Valida: external_reference (user_id), valor e status approved.
- *  4. Idempotente: um `mp_payment_id` já processado não re-executa.
- *  5. Promove o perfil para vitalício e registra o pagamento.
+ * A InfinitePay notifica aqui quando um pagamento do Checkout Integrado
+ * é aprovado. Diferente do Mercado Pago, não há assinatura HMAC — a
+ * autenticação é outra:
  *
- * Sempre responde 200 para o MP parar de reenviar — inclusive para
- * eventos irrelevantes e body inválido. Erros reais são logados.
+ *  1. `order_nsu` precisa bater com uma linha de `pagamentos` real (é um
+ *     UUID aleatório gerado no checkout; só o servidor conhece).
+ *  2. `transaction_nsu` é a chave de dedupe (UNIQUE na tabela): retry do
+ *     mesmo pagamento não promove duas vezes.
+ *  3. `amount` precisa bater com o valor gravado na linha do checkout.
+ *  4. Conferência extra com `payment_check` antes de promover (defesa em
+ *     profundidade — o webhook em si não é assinado).
+ *
+ * Responde 200 para confirmar e 400 para a InfinitePay tentar de novo.
+ * Sempre 200 em eventos já processados ou fora do nosso domínio.
  */
 
 export async function POST(request: Request) {
+  let body: Record<string, unknown>
   try {
-    const rawBody = await request.clone().text()
+    body = await request.json()
+  } catch {
+    return NextResponse.json({ ok: false }, { status: 400 })
+  }
 
-    const dataId =
-      new URL(request.url).searchParams.get("data.id") ??
-      JSON.parse(rawBody || "{}")?.data?.id ??
-      JSON.parse(rawBody || "{}")?.id
+  const ids = validarPayloadWebhook(body)
+  if (!ids) {
+    console.error("webhook: payload sem order_nsu/transaction_nsu/amount", JSON.stringify(body).slice(0, 200))
+    return NextResponse.json({ ok: false }, { status: 400 })
+  }
 
-    const assinaturaValida = verificarAssinaturaWebhook({
-      xSignature: request.headers.get("x-signature"),
-      dataId: typeof dataId === "string" ? dataId : null,
-      rawBody,
+  const { orderNsu, transactionNsu, amount } = ids
+
+  const service = createServiceClient()
+
+  // Dedupe: a mesma transação nunca é processada duas vezes.
+  const { data: jaProcessado } = await service
+    .from("pagamentos")
+    .select("id, status")
+    .eq("transaction_nsu", transactionNsu)
+    .maybeSingle()
+
+  if (jaProcessado) {
+    if (jaProcessado.status === "approved") {
+      return NextResponse.json({ ok: true })
+    }
+    // Linha existe mas ainda não aprovada: segue e atualiza.
+  }
+
+  // Autenticação: o order_nsu tem que ser de um pedido nosso.
+  const { data: linha } = await service
+    .from("pagamentos")
+    .select("id, user_id, valor")
+    .eq("order_nsu", orderNsu)
+    .maybeSingle()
+
+  if (!linha) {
+    console.error("webhook: order_nsu desconhecido", orderNsu)
+    return NextResponse.json({ ok: false }, { status: 400 })
+  }
+
+  // Conferência com a API antes de promover. Se a consulta falhar,
+  // segue com o corpo — o order_nsu + valor já são prova forte (UUID
+  // que só o servidor gera). Se responder que não está pago, não promove.
+  try {
+    const conferencia = await consultarPagamento({
+      orderNsu,
+      transactionNsu,
+      slug: typeof body.invoice_slug === "string" ? body.invoice_slug : null,
     })
-
-    if (!assinaturaValida) {
-      console.error("webhook: assinatura inválida", request.headers.get("x-signature"))
-      return NextResponse.json({ ok: false }, { status: 401 })
-    }
-
-    const body = JSON.parse(rawBody || "{}")
-
-    const paymentId = parsePaymentId(body?.data?.id ?? body?.id)
-    if (!paymentId) {
-      // Evento sem pagamento (ex.: teste de conexão do MP) — ignora.
+    if (!conferencia.paid) {
+      console.warn("webhook: payment_check diz que o pagamento não foi pago", orderNsu)
       return NextResponse.json({ ok: true })
     }
-
-    const pagamento = await buscarPagamento(paymentId)
-
-    if (pagamento.status !== "approved") {
-      // Pending/rejected/cancelled: registra mas não promove.
-      await registrar(paymentId, pagamento.status, pagamento.external_reference)
-      return NextResponse.json({ ok: true })
-    }
-
-    const userId = pagamento.external_reference
-    if (!userId) {
-      console.error("webhook: pagamento aprovado sem external_reference", paymentId)
-      return NextResponse.json({ ok: true })
-    }
-
-    const service = createServiceClient()
-    const config = await getConfigPagamentos(service)
-
-    const { data: existente } = await service
-      .from("pagamentos")
-      .select("id, status")
-      .eq("mp_payment_id", paymentId)
-      .single()
-
-    if (existente && existente.status === "approved") {
-      return NextResponse.json({ ok: true })
-    }
-
-    // A linha criada no checkout carrega o valor combinado na hora —
-    // checar contra config.valor_centavos rejeitaria qualquer preço
-    // diferente do padrão (desconto de indicação, reajuste antigo).
-    const preferenciaId = pagamento.metadata?.preferencia_id
-    const { data: linhaCheckout } = preferenciaId
-      ? await service
-          .from("pagamentos")
-          .select("id, valor")
-          .eq("mp_preference_id", preferenciaId)
-          .order("created_at", { ascending: false })
-          .limit(1)
-          .maybeSingle()
-      : { data: null }
-
-    const valorEsperado = linhaCheckout?.valor ?? config.valor_centavos
-
-    if (Math.round(pagamento.transaction_amount * 100) !== valorEsperado) {
-      console.error("webhook: valor inesperado no pagamento", paymentId, pagamento.transaction_amount)
-      return NextResponse.json({ ok: true })
-    }
-
-    const { error: promoError } = await service
-      .from("profiles")
-      .update({ plano: "vitalicio" })
-      .eq("id", userId)
-
-    if (promoError) {
-      console.error("webhook: falha ao promover perfil", promoError)
-      return NextResponse.json({ ok: true })
-    }
-
-    if (linhaCheckout) {
-      // Atualiza a linha do checkout em vez de criar outra — a tabela
-      // fica com uma linha por compra, ligada ao payment id do MP.
-      await service
-        .from("pagamentos")
-        .update({ mp_payment_id: paymentId, status: "approved", updated_at: new Date().toISOString() })
-        .eq("id", linhaCheckout.id)
-    } else {
-      await registrar(paymentId, "approved", userId, valorEsperado)
-    }
-
-    // Indicação consumida: o desconto foi usado nesta compra.
-    await service
-      .from("indicacoes")
-      .update({ status: "usada", usada_em: new Date().toISOString() })
-      .eq("indicado_id", userId)
-      .eq("status", "pendente")
-
-    return NextResponse.json({ ok: true })
   } catch (e) {
-    console.error("webhook: erro ao processar", e)
+    console.error("webhook: falha na conferência (segue com o corpo)", e)
+  }
+
+  // Valor: o `amount` é o valor original do link (o que cobramos). Bater
+  // com a linha garante que o desconto de indicação foi respeitado.
+  if (amount !== linha.valor) {
+    console.error("webhook: valor inesperado no pagamento", orderNsu, amount, "esperado", linha.valor)
     return NextResponse.json({ ok: true })
   }
-}
 
-async function registrar(mpPaymentId: string, status: string, userId?: string, valorCentavos?: number) {
-  try {
-    const service = createServiceClient()
-    const { data: existente } = await service
-      .from("pagamentos")
-      .select("id")
-      .eq("mp_payment_id", mpPaymentId)
-      .single()
+  const { error: promoError } = await service
+    .from("profiles")
+    .update({ plano: "vitalicio" })
+    .eq("id", linha.user_id)
 
-    if (existente) {
-      await service
-        .from("pagamentos")
-        .update({ status, updated_at: new Date().toISOString() })
-        .eq("id", existente.id)
-      return
-    }
-
-    if (!userId) return
-
-    const config = await getConfigPagamentos(service)
-
-    await service.from("pagamentos").insert({
-      user_id: userId,
-      mp_payment_id: mpPaymentId,
-      status,
-      valor: valorCentavos ?? config.valor_centavos,
-    })
-  } catch (e) {
-    console.error("webhook: falha ao registrar pagamento", e)
+  if (promoError) {
+    console.error("webhook: falha ao promover perfil", promoError)
+    return NextResponse.json({ ok: true })
   }
+
+  await service
+    .from("pagamentos")
+    .update({ transaction_nsu: transactionNsu, status: "approved", updated_at: new Date().toISOString() })
+    .eq("id", linha.id)
+
+  // Indicação consumida: o desconto foi usado nesta compra.
+  await service
+    .from("indicacoes")
+    .update({ status: "usada", usada_em: new Date().toISOString() })
+    .eq("indicado_id", linha.user_id)
+    .eq("status", "pendente")
+
+  return NextResponse.json({ ok: true })
 }

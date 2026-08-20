@@ -26,7 +26,7 @@ export async function GET(request: Request) {
 
   let query = supabase
     .from("pagamentos")
-    .select("id, user_id, mp_payment_id, status, valor, created_at, updated_at, profile:user_id(nome, email)", {
+    .select("id, user_id, transaction_nsu, status, valor, created_at, updated_at, profile:user_id(nome, email)", {
       count: "exact",
     })
 
@@ -68,7 +68,7 @@ export async function GET(request: Request) {
     const perfil = Array.isArray(p.profile) ? p.profile[0] : p.profile
     return {
       id: p.id,
-      mp_payment_id: p.mp_payment_id,
+      transaction_nsu: p.transaction_nsu,
       status: p.status,
       valor: Number(p.valor),
       created_at: formatarData(p.created_at),

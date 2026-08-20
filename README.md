@@ -50,16 +50,17 @@ cp .env.example .env.local
    que já foram aplicadas — o `supabase-schema.sql` é o estado final
    consolidado e serve apenas para setups novos.
 
-## Pagamentos (Mercado Pago)
+## Pagamentos (InfinitePay)
 
 Para vender o plano vitalício (R$ 49,99):
 
-1. Crie um app em [Mercado Pago Developers](https://www.mercadopago.com.br/developers)
-2. Copie a credencial de produção (ou de teste) em **Seus projetos > Credenciais**
-3. Defina `MERCADOPAGO_ACCESS_TOKEN` no `.env.local` e na Vercel
-4. No painel do Mercado Pago, configure o webhook `https://matrizaprova.com/api/pagamentos/webhook`
-5. O fluxo: `/assinar` cria a preferência no Checkout Pro e o webhook
+1. Crie uma conta em [InfinitePay](https://www.infinitepay.io/checkout)
+2. Pegue sua InfiniteTag (nome de usuário no app, sem o `$`)
+3. Defina `INFINITEPAY_HANDLE` no `.env.local` e na Vercel
+4. A `webhook_url` já é enviada pela API em cada link (`/api/pagamentos/webhook`) — não precisa configurar no painel
+5. O fluxo: `/assinar` cria o link no Checkout Integrado e o webhook
    promove o `profiles.plano` para `vitalicio` quando o pagamento aprova
+   (valida `order_nsu`/valor e faz dedupe por `transaction_nsu`)
 
 ### Editável pelo painel admin
 

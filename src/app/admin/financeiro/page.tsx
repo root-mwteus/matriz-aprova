@@ -29,7 +29,7 @@ interface ConfigData {
 
 interface PagamentoRow {
   id: string
-  mp_payment_id: string | null
+  transaction_nsu: string | null
   status: string
   valor: number
   created_at: string
@@ -170,7 +170,7 @@ export default function AdminFinanceiroPage() {
         <div>
           <h1 className="text-xl font-semibold text-fg">Financeiro</h1>
           <p className="text-xs text-muted mt-0.5">
-            Configure o plano e acompanhe os pagamentos do Mercado Pago.
+            Configure o plano e acompanhe os pagamentos da InfinitePay.
           </p>
         </div>
       </div>
@@ -399,10 +399,10 @@ export default function AdminFinanceiroPage() {
                   ),
                 },
                 {
-                  key: "mp_payment_id",
-                  header: "ID MP",
+                  key: "transaction_nsu",
+                  header: "TRANSAÇÃO",
                   render: (row) => (
-                    <span className="text-xs text-muted font-mono">{row.mp_payment_id ?? "—"}</span>
+                    <span className="text-xs text-muted font-mono">{row.transaction_nsu ?? "—"}</span>
                   ),
                 },
                 {

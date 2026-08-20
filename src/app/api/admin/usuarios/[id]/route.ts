@@ -132,7 +132,7 @@ export async function GET(_request: Request, { params }: { params: { id: string 
     calendario,
     pagamentos: (pagamentos ?? []).map((p) => ({
       id: p.id,
-      mp_payment_id: p.mp_payment_id,
+      transaction_nsu: p.transaction_nsu,
       status: p.status,
       valor: p.valor,
       created_at: formatarData(p.created_at),

@@ -6,7 +6,7 @@ sem explorar o código todo. Mantenha atualizado ao mudar arquivos, tabelas ou r
 ## Visão geral
 
 Plataforma de estudos para concursos (site vitrine + painel pago). Plano pago é
-**vitalício** via Mercado Pago Checkout Pro; usuários novos entram como plano
+**vitalício** via InfinitePay Checkout Integrado; usuários novos entram como plano
 **demo** (100% trancado — `ROTAS_LIBERADAS = []` em `src/components/PaywallLock.tsx`).
 O conteúdo do produto: questões com alternativas A–E (KaTeX), simulados com
 correção no servidor, materiais em PDF, editais com alertas, plano de estudos por IA
@@ -23,7 +23,8 @@ desnecessários em código novo (comentários de "porquê" em blocos são aceito
   - Clients: `src/lib/supabase/client.ts` (browser PKCE), `server.ts` (server/cookies),
     `service.ts` (service-role, bypass RLS), `auth.ts` (requireUser/requireUserSupabase),
     `session.ts` (sessão única), `register-session.ts`, `admin.ts` (requireAdmin via service role)
-- **Mercado Pago** Checkout Pro (webhook com assinatura HMAC) — `src/lib/mercadopago.ts`
+- **InfinitePay** Checkout Integrado (link de pagamento + webhook sem assinatura —
+  autenticação por `order_nsu` aleatório + dedupe por `transaction_nsu`) — `src/lib/infinitepay.ts`
 - **Resend** e-mails transacionais — `src/lib/email.ts`
 - **OpenAI** refino de focos do plano de estudos — `src/lib/gerar-plano`
   (gerador determinístico por semanas com curadoria; IA opcional, fallback local)
@@ -70,8 +71,9 @@ Validação esperada antes de concluir feature: **91/91 testes, lint limpo, tsc 
 - `auth/recuperar-senha` — POST público; gera link recovery via admin client
   (`generateLink`) e envia pela Resend (`sendRecuperarSenha`); resposta neutra
   p/ não vazar cadastros; rate-limit 5/h por IP
-- `pagamentos/checkout` — preferência MP (preço da config, desconto de indicação, idempotente)
-- `pagamentos/webhook` — HMAC, valida valor/status, idempotente por `mp_payment_id`, sempre 200
+- `pagamentos/checkout` — link InfinitePay (preço da config, desconto de indicação, idempotente)
+- `pagamentos/webhook` — valida `order_nsu`/valor, conferência via `payment_check`,
+  idempotente por `transaction_nsu` (UNIQUE), sempre 200 exceto payload inválido (400 → reenvio)
 - `pagamentos/config` — público (preço/título)
 - `questoes/responder` — valida no servidor, vitalício apenas
 - `simulados/ranking` · `simulados/[id]/finalizar` — scoring no servidor, anti-cheat, máx 3h
@@ -114,7 +116,9 @@ Validação esperada antes de concluir feature: **91/91 testes, lint limpo, tsc 
 - `navigation.ts` — 3 grupos (Estudar/Conteúdo/Acompanhar), breadcrumbs, `isRouteActive`
 - `routes.ts` — `PROTECTED_ROUTES`, `AUTH_ROUTES`, `PUBLIC_ROUTES`
 - `auth-validation.ts` — zod: login/register/forgot/redefinirSenha
-- `mercadopago.ts` — Checkout Pro; `isTestMode` (TEST-); HMAC webhook; parse payment_id
+- `infinitepay.ts` — Checkout Integrado: `criarLink`, `consultarPagamento`
+  (`payment_check`), `isTestMode` (env `INFINITEPAY_TEST`), validação do payload do
+  webhook (`validarPayloadWebhook`)
 - `email.ts` — Resend: `sendBoasVindas`, `sendAlertaEdital`, `sendAvisoLogin`,
   `sendRecuperarSenha`;
   FROM `onboarding@resend.dev` (dev) vs `noreply@matrizaprova.com` (prod)
@@ -169,7 +173,8 @@ gerados por `scripts/gerar-molduras.mjs` e semeados por `scripts/seed-molduras.m
 `xp_historico` (razão de XP: `tipo`/`origem_id` UNIQUE por user — dedupe de retry
 + teto diário de 1000 XP em `somar_xp`),
 `questions` (5 alternativas, matéria/banca/área), `user_answers`, `simulations`,
-`pagamentos` (referencia `config_pagamentos.valor` no webhook), `config_pagamentos`
+`pagamentos` (order_nsu = id do pedido gerado no checkout, transaction_nsu UNIQUE =
+id da transação p/ dedupe do webhook; referencia `config_pagamentos.valor`), `config_pagamentos`
 (id=1, singleton; inclui `whatsapp_suporte` do balão de suporte), `editais`
 (status `aberto`/`encerrado`/`previsto`/`sem_edital`; seed em
 `scripts/seed-editais.mjs`, PDFs dos editais principais em `editais/`),
@@ -196,7 +201,7 @@ PNGs de avatar gerados em `molduras/` por `scripts/gerar-molduras.mjs`).
 
 ## Integrações / env (`NEXT_PUBLIC_SUPABASE_URL`, `..._ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`,
 `NEXT_PUBLIC_SITE_URL`, `OPENAI_API_KEY`, `RESEND_API_KEY`, `CRON_SECRET`,
-`MERCADOPAGO_ACCESS_TOKEN`, `MERCADOPAGO_WEBHOOK_SECRET`, `NEXT_PUBLIC_SENTRY_DSN`,
+`INFINITEPAY_HANDLE`, `INFINITEPAY_TEST`, `NEXT_PUBLIC_SENTRY_DSN`,
 `SENTRY_AUTH_TOKEN`)
 
 - Vercel: cron `/api/cron/editais-alertas` `0 12 * * *` (região `gru1`)
@@ -218,6 +223,9 @@ Pendentes (criadas, **NÃO aplicadas**):
 - `028-niveis-xp` (`profiles.xp_total` + razão `xp_historico` + `somar_xp` com
   dedupe por origem e teto diário de 1000 XP — sem ela o XP não acumula; o
   resto do app funciona, o nível aparece como 1)
+- `029-infinitepay` (rename em `pagamentos`: `mp_preference_id` → `order_nsu` e
+  `mp_payment_id` → `transaction_nsu` — sem ela, checkout/webhook/admin quebram
+  porque o código novo já usa os nomes novos)
 
 Passos para ativação em produção: rodar migrações pendentes no SQL Editor do Supabase,
 configurar `SUPABASE_SERVICE_ROLE_KEY` e `CRON_SECRET` (local + Vercel), fazer deploy.

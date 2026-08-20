@@ -27,7 +27,10 @@ const DIAS = [
 function dataFutura(dias: number): string {
   const d = new Date()
   d.setDate(d.getDate() + dias)
-  return d.toISOString().split("T")[0]
+  // toISOString() converte para UTC e, no fim do dia, cai no dia seguinte —
+  // o app trabalha com datas locais, então normaliza antes de formatar.
+  const local = new Date(d.getTime() - d.getTimezoneOffset() * 60000)
+  return local.toISOString().split("T")[0]
 }
 
 describe("calcularSemanas", () => {

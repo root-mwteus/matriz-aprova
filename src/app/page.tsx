@@ -700,7 +700,7 @@ export default function HomePage() {
             <div className="px-6 lg:px-10 py-4 border-t-2 border-ink/10 flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] text-ink/50 uppercase tracking-widest">
               <div className="flex flex-wrap items-center gap-3">
                 <span>🔒 pagamento seguro</span><span>·</span>
-                <span>pix · cartão · boleto</span><span>·</span>
+                <span>pix · cartão de crédito</span><span>·</span>
                 <span>sem renovação automática</span>
               </div>
               <div>matriz aprova · v2026</div>
@@ -731,7 +731,7 @@ export default function HomePage() {
               ["Posso testar antes de pagar?", 'Sim! Temos um plano gratuito de demonstração com acesso limitado a PDFs e questões. Não precisa de cartão. É só clicar em "Testar grátis" e você entra no app na mesma hora.'],
               ["Por quanto tempo eu tenho acesso?", "Acesso vitalício. Você paga uma vez e usa o plano para sempre, sem qualquer limite: questões, PDFs, simulados, IA e métricas. Vale para as 4 áreas."],
               ["Posso estudar para mais de uma área?", "Sim. Com 1 pagamento você libera Concursos, OAB, Militar e ENEM simultaneamente. Sem limite de acesso entre áreas."],
-              ["Quais são as formas de pagamento?", "PIX (liberação imediata), cartão de crédito em até 12x de R$ 4,17 e boleto bancário. Ambiente 100% seguro."],
+              ["Quais são as formas de pagamento?", "PIX (liberação imediata) e cartão de crédito em até 12x. Pagamento processado pela InfinitePay, com liberação automática do acesso."],
               ["As questões e PDFs são atualizados?", "Sim. Toda semana incluímos novas questões assim que novas provas são aplicadas. Os PDFs são revisados a cada mudança de legislação ou edital."],
               ["E se eu não gostar? Tem reembolso?", "Sim, sem burocracia. 7 dias de garantia incondicional. Não gostou, devolvemos 100% do valor — sem perguntas."],
               ["Como a IA me ajuda na prática?", "A IA analisa milhares de provas anteriores da sua banca, identifica os tópicos mais cobrados e cruza com seu desempenho. Ela te diz exatamente o que estudar hoje para maximizar seus acertos."],

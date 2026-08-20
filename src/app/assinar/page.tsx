@@ -69,7 +69,7 @@ const FAQ = [
   },
   {
     q: "Quais formas de pagamento aceito?",
-    a: "PIX, cartão de crédito e boleto, pelo Mercado Pago. A liberação é automática após a aprovação.",
+    a: "PIX e cartão de crédito, pela InfinitePay. A liberação é automática após a aprovação.",
   },
   {
     q: "E se eu não gostar?",
@@ -135,7 +135,7 @@ export default function AssinarPage() {
     carregarPerfil()
   }, [carregarPerfil])
 
-  // Volta do Mercado Pago: o webhook pode levar alguns segundos para
+  // Volta da InfinitePay: o webhook pode levar alguns segundos para
   // processar — faz um polling curto quando o resultado foi success.
   useEffect(() => {
     if (resultado !== "success") return
@@ -171,8 +171,8 @@ export default function AssinarPage() {
         setPagando(false)
         return
       }
-      if (data.initPoint) {
-        window.location.href = data.initPoint
+      if (data.url) {
+        window.location.href = data.url
         return
       }
       setPagando(false)
@@ -315,13 +315,13 @@ export default function AssinarPage() {
                         disabled={pagando}
                         className="cta-primary mt-6 w-full rounded-xl bg-accent px-5 py-4 text-base font-semibold text-fg-on-accent"
                       >
-                        {pagando ? "Abrindo Mercado Pago…" : "PAGAR COM MERCADO PAGO →"}
+                        {pagando ? "Abrindo InfinitePay…" : "PAGAR COM INFINITEPAY →"}
                       </button>
                     )}
 
                     <div className="mt-4 flex items-center justify-center gap-2 text-xs text-fg-faint">
                       <Lock size={12} strokeWidth={2} />
-                      <span>PIX · cartão de crédito · boleto · transação segura</span>
+                      <span>PIX · cartão de crédito · transação segura</span>
                     </div>
 
                     <ul className="mt-6 space-y-2.5 border-t border-line pt-5">
