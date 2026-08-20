@@ -31,18 +31,20 @@ export function NavegacaoCantos() {
       }}
       className="fixed bottom-4 left-1/2 z-[60] -translate-x-1/2 flex items-center justify-center p-4 -m-4 transition-opacity duration-300 select-none group"
     >
-      <span className="relative block w-[52px] h-[16px] transition-transform duration-300 group-hover:scale-[1.08] group-active:scale-95">
-        <span
-          aria-hidden
-          className="absolute left-0 top-1/2 w-[26px] h-[5px] -translate-y-1/2 origin-right rounded-full bg-gradient-to-r from-zinc-400 via-zinc-100 to-zinc-300 shadow-[0_0_12px_rgba(255,255,255,0.8),0_1px_3px_rgba(0,0,0,0.4)] group-hover:from-white group-hover:via-zinc-50 group-hover:to-zinc-200 group-hover:shadow-[0_0_16px_rgba(255,255,255,0.95),0_1px_4px_rgba(0,0,0,0.45)] transition-all duration-300"
-          style={{ transform: "rotate(32deg)", borderRadius: "999px" }}
+      <svg
+        aria-hidden
+        viewBox="0 0 40 14"
+        className="w-[40px] h-[14px] overflow-visible text-ink/35 dark:text-paper/35 group-hover:text-ink/60 dark:group-hover:text-paper/60 transition-colors duration-300 group-active:scale-95"
+        fill="none"
+      >
+        <path
+          d="M2 2 L20 12 L38 2"
+          stroke="currentColor"
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-        <span
-          aria-hidden
-          className="absolute right-0 top-1/2 w-[26px] h-[5px] -translate-y-1/2 origin-left rounded-full bg-gradient-to-l from-zinc-400 via-zinc-100 to-zinc-300 shadow-[0_0_12px_rgba(255,255,255,0.8),0_1px_3px_rgba(0,0,0,0.4)] group-hover:from-white group-hover:via-zinc-50 group-hover:to-zinc-200 group-hover:shadow-[0_0_16px_rgba(255,255,255,0.95),0_1px_4px_rgba(0,0,0,0.45)] transition-all duration-300"
-          style={{ transform: "rotate(-32deg)", borderRadius: "999px" }}
-        />
-      </span>
+      </svg>
     </button>
   )
 }
