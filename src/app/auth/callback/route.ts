@@ -7,8 +7,17 @@ import { sendBoasVindas } from "@/lib/email"
 const COOKIE_DOMAIN =
   process.env.NODE_ENV === "production" ? ".matrizaprova.com" : undefined
 
+/**
+ * O callback roda no mesmo domínio onde o login/cadastro foi iniciado
+ * (landing) para que o PKCE code_verifier esteja acessível. Após trocar
+ * o código por uma sessão, redireciona para o app (dashboard) — a sessão
+ * é compartilhada via cookie de domínio ".matrizaprova.com".
+ */
+const LANDING_URL = process.env.NEXT_PUBLIC_LANDING_URL || "http://localhost:3000"
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+
 export async function GET(request: NextRequest) {
-  const { searchParams, origin } = new URL(request.url)
+  const { searchParams } = new URL(request.url)
   const code = searchParams.get("code")
   const type = searchParams.get("type")
 
@@ -73,8 +82,10 @@ export async function GET(request: NextRequest) {
       // aqui: quem acabou de recuperar a senha precisa saber de acessos.
       if (type === "recovery") {
         enviarAvisoLogin()
-        const res = NextResponse.redirect(`${origin}/auth/redefinir-senha`)
-        supabaseResponse.cookies.getAll().forEach((c) => res.cookies.set(c.name, c.value))
+        const res = NextResponse.redirect(`${APP_URL}/auth/redefinir-senha`)
+        supabaseResponse.cookies.getAll().forEach((c) =>
+          res.cookies.set(c.name, c.value, { domain: COOKIE_DOMAIN })
+        )
         return res
       }
 
@@ -104,20 +115,27 @@ export async function GET(request: NextRequest) {
           // Envia email de boas-vindas (sem bloquear o redirect)
           sendBoasVindas({ nome, email, area: "Concursos Gerais" }).catch(() => {})
 
-          // Novo usuário Google → onboarding
-          const res = NextResponse.redirect(`${origin}/onboarding`)
-          supabaseResponse.cookies.getAll().forEach((c) => res.cookies.set(c.name, c.value))
+          // Novo usuário Google → onboarding (no app)
+          const res = NextResponse.redirect(`${APP_URL}/onboarding`)
+          supabaseResponse.cookies.getAll().forEach((c) =>
+            res.cookies.set(c.name, c.value, { domain: COOKIE_DOMAIN })
+          )
           return res
         }
       }
 
       enviarAvisoLogin()
 
-      const res = NextResponse.redirect(`${origin}${next}`)
-      supabaseResponse.cookies.getAll().forEach((c) => res.cookies.set(c.name, c.value))
+      // Sessão trocada na landing → redireciona para o app (dashboard).
+      // O cookie de sessão foi setado com domain ".matrizaprova.com",
+      // então o middleware do app vê a sessão.
+      const res = NextResponse.redirect(`${APP_URL}${next}`)
+      supabaseResponse.cookies.getAll().forEach((c) =>
+        res.cookies.set(c.name, c.value, { domain: COOKIE_DOMAIN })
+      )
       return res
     }
   }
 
-  return NextResponse.redirect(`${origin}/login?error=auth_callback_error`)
+  return NextResponse.redirect(`${LANDING_URL}/login?error=auth_callback_error`)
 }

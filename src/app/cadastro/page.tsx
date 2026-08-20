@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
 import { registerSchema, type RegisterData } from "@/lib/auth-validation"
-import { AREAS, APP_URL } from "@/lib/constants"
+import { AREAS, LANDING_URL } from "@/lib/constants"
 import { resolveApiUrl } from "@/lib/fetch-utils"
 import { safeNext } from "@/lib/utils"
 import { AuthDivider, AuthError, AuthShell } from "@/components/auth/AuthShell"
@@ -64,7 +64,7 @@ function RegisterContent() {
         password: form.password,
         options: {
           data: { nome: form.nome, area_concurso: form.area_concurso },
-          emailRedirectTo: `${APP_URL}/auth/callback`,
+          emailRedirectTo: `${LANDING_URL}/auth/callback`,
         },
       })
       data = res.data

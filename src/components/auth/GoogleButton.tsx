@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { createClient } from "@/lib/supabase/client"
-import { APP_URL } from "@/lib/constants"
+import { LANDING_URL } from "@/lib/constants"
 import { Button } from "@/components/ui"
 
 /**
@@ -27,7 +27,7 @@ export function GoogleButton({
     const supabase = createClient()
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${APP_URL}/auth/callback` },
+      options: { redirectTo: `${LANDING_URL}/auth/callback` },
     })
 
     if (error) {
