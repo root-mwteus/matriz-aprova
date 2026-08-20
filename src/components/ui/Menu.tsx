@@ -16,9 +16,10 @@ interface MenuProps {
   children: React.ReactNode
   align?: "start" | "end"
   className?: string
+  rootClassName?: string
 }
 
-export function Menu({ trigger, children, align = "end", className }: MenuProps) {
+export function Menu({ trigger, children, align = "end", className, rootClassName }: MenuProps) {
   const [open, setOpen] = useState(false)
   const [flipUp, setFlipUp] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
@@ -74,7 +75,7 @@ export function Menu({ trigger, children, align = "end", className }: MenuProps)
   }, [open])
 
   return (
-    <div ref={rootRef} className="relative inline-flex">
+    <div ref={rootRef} className={cn("relative inline-flex", rootClassName)}>
       <span
         data-menu-trigger
         onClick={() => setOpen((v) => !v)}

@@ -145,6 +145,7 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
         </Link>
         <Menu
           align="start"
+          rootClassName="w-full"
           className="w-[204px]"
           trigger={
             <button
@@ -211,7 +212,7 @@ function NivelBarra({ xpTotal }: { xpTotal: number }) {
           {xpTotal - xpBase}/{xpAlvo - xpBase} XP
         </span>
       </span>
-      <span className="mt-0.5 block h-1 w-full overflow-hidden rounded-full bg-surface-sunken">
+      <span className="mt-0.5 block h-0.5 w-full overflow-hidden rounded-full bg-surface-sunken">
         <span
           className="block h-full rounded-full bg-gradient-to-r from-emerald-500 via-green-400 to-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]"
           style={{ width: `${progresso}%` }}
