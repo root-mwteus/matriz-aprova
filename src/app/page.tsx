@@ -569,7 +569,7 @@ export default function HomePage() {
                 <div className="bg-lime border-2 border-ink rounded-full px-2.5 py-0.5 font-mono text-[10px] font-bold text-ink">APROVADO</div>
               </div>
               <p className="text-ink/80 dark:text-paper/80 leading-relaxed mb-6 flex-1">
-                &ldquo;Já tinha reprovado 3 vezes por menos de 5 pontos. A Matriz me mostrou onde eu errava: estudava muito Constitucional e quase nada de Administrativo. <strong className="text-ink dark:text-paper">TRT-RJ em 5 meses.</strong>&rdquo;
+                &ldquo;Eu já tinha reprovado 3 vezes por menos de 5 pontos. A Matriz clareou minha mente e me mostrou onde eu errava, estudava muito Constitucional e acabava não estuando quase nada de Administrativo. <strong className="text-ink dark:text-paper">TRT-RJ em 5 meses.</strong>&rdquo;
               </p>
               <div className="flex items-center gap-3 pt-5 border-t-2 border-ink/10 dark:border-paper/10">
                 <div className="w-11 h-11 bg-area-oab border-2 border-ink rounded-full flex items-center justify-center text-white font-display font-bold">RF</div>
