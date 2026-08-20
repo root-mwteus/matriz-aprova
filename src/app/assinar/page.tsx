@@ -201,7 +201,7 @@ export default function AssinarPage() {
         {/* ── Marca ─────────────────────────────────────────────── */}
         <header className="flex items-center justify-between">
           <Link
-            href="/dashboard"
+            href="/"
             className="inline-flex items-center gap-2 rounded-md transition-opacity duration-fast hover:opacity-80"
           >
             <Logo className="h-8 w-auto" />

@@ -59,7 +59,7 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
       {/* ── Marca ─────────────────────────────────────────────── */}
       <div className="flex h-topbar shrink-0 items-center border-b border-line px-3">
         <Link
-          href="/dashboard"
+          href="/"
           className="flex items-center gap-2.5 rounded-md px-1 py-1 transition-opacity duration-fast hover:opacity-80"
         >
           <Logo className="h-6 w-auto" />
