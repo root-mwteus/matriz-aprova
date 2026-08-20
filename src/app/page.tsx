@@ -42,6 +42,13 @@ export default function HomePage() {
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
         <div className="absolute top-24 right-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow">[ 04 · 12 ]</div>
         <div className="absolute bottom-20 left-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow" style={{animationDelay: '1s'}}>[ 18 · 03 ]</div>
+        <div className="absolute bottom-10 right-10 hidden md:flex flex-col items-center -rotate-6 select-none z-20">
+          <span className="font-display font-bold text-lg text-ink bg-lime border-2 border-ink rounded-lg px-3 py-1 shadow-lg">mais!</span>
+          <svg className="w-8 h-12 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 3v14" />
+            <path d="M6 11l6 6 6-6" />
+          </svg>
+        </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-20 lg:pt-20 lg:pb-28">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
