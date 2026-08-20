@@ -109,8 +109,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <Analytics />
 
-        {/* Suporte flutuante no canto: compacto por padrão, abre o balão com
-            o contato; fica abaixo de modais e do ⌘K (z-40). */}
+        {/* Suporte flutuante no canto superior direito; acima de headers
+            sticky (z-50) e abaixo de modais. */}
         <SupportBubble />
       </body>
     </html>
