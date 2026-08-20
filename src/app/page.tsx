@@ -775,9 +775,9 @@ export default async function HomePage() {
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2 text-center">
           <span className="label-tag text-ink border-ink/40 mb-3">◆ a próxima coordenada é sua</span>
-          <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-6xl text-ink leading-[1]">
+          <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-6xl text-ink leading-[1.05]">
             R$ 49,99 hoje.<br />
-            Um <span className="bg-ink text-lime px-3">salário público</span> amanhã.
+            Um <span className="inline-block bg-ink text-lime px-2.5 py-1 rounded-lg text-[0.82em] leading-none tracking-tight">salário público</span> amanhã.
           </h2>
           <p className="mt-4 text-base text-ink/80 max-w-xl mx-auto">
             Faz a conta. Ou testa grátis primeiro.
