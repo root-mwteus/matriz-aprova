@@ -10,6 +10,9 @@ import {
   economiaPct,
 } from "@/lib/pagamentos-config"
 
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 export default async function HomePage() {
   const config = await getConfigPagamentos()
   const valor = config.valor_centavos
