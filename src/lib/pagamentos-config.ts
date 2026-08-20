@@ -64,6 +64,30 @@ export function centavosParaTexto(centavos: number): string {
 }
 
 /**
+ * Multiplicador do preço cheio em relação ao preço promocional.
+ * 49,99 × 6 ≈ 299,94 — arredonda para 297 no template original.
+ * Usado para derivar o "valor cheio" riscado na landing.
+ */
+const MULTIPLICADOR_PRECOO_CHEIO = 6
+
+/** Preço cheio (de tabela) em centavos, derivado do preço promocional. */
+export function precoCheioCentavos(valorCentavos: number): number {
+  return Math.round((valorCentavos * MULTIPLICADOR_PRECOO_CHEIO) / 100) * 100
+}
+
+/** Parcela em 12× (centavos), para o "ou 12× de R$ X". */
+export function parcela12xCentavos(valorCentavos: number): number {
+  return Math.round(valorCentavos / 12)
+}
+
+/** Porcentagem de desconto entre preço cheio e promocional (inteiro 0–100). */
+export function economiaPct(valorCentavos: number): number {
+  const cheio = precoCheioCentavos(valorCentavos)
+  if (cheio <= 0) return 0
+  return Math.round((1 - valorCentavos / cheio) * 100)
+}
+
+/**
  * Lê a configuração do banco com o cliente service (ignora RLS).
  * Se a linha ainda não existir, retorna os padrões.
  */

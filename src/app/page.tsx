@@ -2,8 +2,23 @@ import Link from "next/link"
 import { Logo } from "@/components/marketing/Logo"
 import { ThemeToggle } from "@/components/marketing/ThemeToggle"
 import { NavegacaoCantos } from "@/components/marketing/NavegacaoCantos"
+import {
+  getConfigPagamentos,
+  formatarValor,
+  precoCheioCentavos,
+  parcela12xCentavos,
+  economiaPct,
+} from "@/lib/pagamentos-config"
 
-export default function HomePage() {
+export default async function HomePage() {
+  const config = await getConfigPagamentos()
+  const valor = config.valor_centavos
+  const cheio = precoCheioCentavos(valor)
+  const parcela = parcela12xCentavos(valor)
+  const economia = economiaPct(valor)
+  const valorPartes = formatarValor(valor).replace("R$ ", "").split(",")
+  const cheioPartes = formatarValor(cheio).replace("R$ ", "").split(",")
+  const parcelaTxt = formatarValor(parcela).replace("R$ ", "")
   return (
     <div id="topo" className="font-sans bg-paper dark:bg-ink min-h-screen">
 
@@ -635,7 +650,7 @@ export default function HomePage() {
                 <span className="font-display font-bold text-lg">PLANO VITALÍCIO MATRIZ</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="bg-ink text-lime font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">⚡ economia 83%</span>
+                <span className="bg-ink text-lime font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">⚡ economia {economia}%</span>
                 <span className="font-mono text-xs uppercase tracking-widest text-ink/50 hidden sm:inline">vitalício</span>
               </div>
             </div>
@@ -644,22 +659,22 @@ export default function HomePage() {
               <div className="lg:col-span-5">
                 <div className="font-mono text-xs uppercase tracking-widest text-ink/50 mb-3">/ pagamento único</div>
                 <div className="flex items-baseline gap-2 mb-1">
-                  <span className="font-display text-xl text-ink/30 line-through stat-num">R$ 297</span>
+                  <span className="font-display text-xl text-ink/30 line-through stat-num">R$ {cheioPartes[0]},{cheioPartes[1]}</span>
                 </div>
                 <div className="flex items-baseline gap-1 leading-none">
                   <span className="font-display text-2xl font-bold text-ink">R$</span>
-                  <span className="font-display text-7xl sm:text-8xl lg:text-9xl font-bold text-ink stat-num">49</span>
-                  <span className="font-display text-3xl font-bold text-ink">,99</span>
+                  <span className="font-display text-7xl sm:text-8xl lg:text-9xl font-bold text-ink stat-num">{valorPartes[0]}</span>
+                  <span className="font-display text-3xl font-bold text-ink">,{valorPartes[1]}</span>
                 </div>
                 <div className="mt-4 space-y-1">
                   <div className="font-mono text-xs text-ink/70">pagamento único · pix ou cartão</div>
-                  <div className="font-mono text-xs text-ink/70">ou 12× de R$ 4,17 no cartão</div>
+                  <div className="font-mono text-xs text-ink/70">ou 12× de R$ {parcelaTxt} no cartão</div>
                 </div>
                 <div className="mt-5 inline-flex items-center gap-2 bg-lime border-2 border-ink px-3 py-1.5 rounded-full">
                   <svg className="w-4 h-4 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <span className="font-mono text-xs font-bold text-ink uppercase tracking-widest">só R$ 4,17 por mês</span>
+                  <span className="font-mono text-xs font-bold text-ink uppercase tracking-widest">só R$ {parcelaTxt} por mês</span>
                 </div>
               </div>
 
@@ -712,7 +727,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-center font-mono text-xs text-paper/40 uppercase tracking-widest mt-8">
-            ⚠ oferta por tempo limitado · valor cheio volta a r$ 297
+            ⚠ oferta por tempo limitado · valor cheio volta a R$ {cheioPartes[0]},{cheioPartes[1]}
           </p>
         </div>
       </section>
