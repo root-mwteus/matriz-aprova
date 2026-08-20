@@ -10,7 +10,7 @@ export default function HomePage() {
       <Link
         href="#preco"
         aria-label="Ver mais"
-        className="fixed bottom-5 right-5 z-[60] flex flex-col items-center -rotate-6 select-none group"
+        className="fixed bottom-24 right-5 z-[60] flex flex-col items-center -rotate-6 select-none group"
       >
         <span className="font-display font-bold text-lg text-ink bg-lime border-2 border-ink rounded-lg px-3 py-1 shadow-lg group-hover:-translate-y-1 transition-transform">Mais!</span>
         <svg className="w-9 h-14 text-lime-dark dark:text-lime drop-shadow group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 40" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round">
