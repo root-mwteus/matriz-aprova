@@ -232,7 +232,7 @@ h1 { letter-spacing: -0.028em; }
 /* ── Landing slides: parada firme em cada bloco; footer não trava ── */
 .snap-start {
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
 }
 /* Telas baixas: comprime levemente para não estourar o viewport */
 @media (max-height: 800px) {

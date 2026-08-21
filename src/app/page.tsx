@@ -621,11 +621,11 @@ export default async function HomePage() {
       </section>
 
       {/* ── PREÇO · slide 6 ── */}
-      <section id="preco" className="py-4 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
+      <section id="preco" className="py-3 sm:py-4 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center">
-          <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 mb-6 items-end">
+          <div className="grid lg:grid-cols-12 gap-3 lg:gap-8 mb-4 sm:mb-6 items-end">
             <div className="lg:col-span-7">
               <span className="label-tag text-lime border-lime/40 mb-3">◆ investimento</span>
               <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-paper leading-[1.05]">
@@ -643,7 +643,7 @@ export default async function HomePage() {
 
           <div className="bg-paper text-ink rounded-2xl border-2 border-ink overflow-hidden">
 
-            <div className="px-6 lg:px-10 py-5 border-b-2 border-ink flex flex-wrap items-center justify-between gap-3">
+            <div className="px-4 sm:px-6 lg:px-10 py-4 border-b-2 border-ink flex flex-wrap items-center justify-between gap-2 sm:gap-3">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-ink/50">№ 01 / único</span>
                 <span className="font-mono text-xs uppercase tracking-widest text-ink/30">·</span>
@@ -655,16 +655,16 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 px-6 lg:px-10 py-5 lg:py-6 border-b-2 border-ink/10">
+            <div className="grid lg:grid-cols-12 gap-3 lg:gap-8 px-4 sm:px-6 lg:px-10 py-4 lg:py-6 border-b-2 border-ink/10">
               <div className="lg:col-span-5">
                 <div className="font-mono text-xs uppercase tracking-widest text-ink/50 mb-2">/ pagamento único</div>
                 <div className="flex items-baseline gap-2 mb-1">
-                  <span className="font-display text-lg text-ink/30 line-through stat-num">R$ {cheioPartes[0]},{cheioPartes[1]}</span>
+                  <span className="font-display text-base sm:text-lg text-ink/30 line-through stat-num">R$ {cheioPartes[0]},{cheioPartes[1]}</span>
                 </div>
                 <div className="flex items-baseline gap-1 leading-none">
-                  <span className="font-display text-xl font-bold text-ink">R$</span>
-                  <span className="font-display text-6xl sm:text-7xl lg:text-8xl font-bold text-ink stat-num">{valorPartes[0]}</span>
-                  <span className="font-display text-2xl font-bold text-ink">,{valorPartes[1]}</span>
+                  <span className="font-display text-lg sm:text-xl font-bold text-ink">R$</span>
+                  <span className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold text-ink stat-num">{valorPartes[0]}</span>
+                  <span className="font-display text-xl sm:text-2xl font-bold text-ink">,{valorPartes[1]}</span>
                 </div>
                 <div className="mt-4 space-y-1">
                   <div className="font-mono text-xs text-ink/70">pagamento único · pix ou cartão</div>
@@ -691,7 +691,7 @@ export default async function HomePage() {
                     ["07", "Mobile + desktop · estuda em qualquer lugar"],
                     ["08", "Garantia incondicional de 7 dias"],
                   ].map(([num, desc]) => (
-                    <div key={String(num)} className="flex items-center justify-between py-3">
+                    <div key={String(num)} className="flex items-center justify-between py-2 sm:py-3">
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs font-bold text-ink/40">{num}</span>
                         <span className="text-ink/90">{desc}</span>
@@ -703,12 +703,12 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="bg-paper-2 px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <Link href="/assinar" className="cta-primary flex-1 inline-flex items-center justify-center gap-3 bg-lime text-ink font-display font-bold text-lg lg:text-xl px-7 py-5 rounded-xl border-2 border-ink">
+            <div className="bg-paper-2 px-4 sm:px-6 lg:px-10 py-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <Link href="/assinar" className="cta-primary flex-1 inline-flex items-center justify-center gap-2 bg-lime text-ink font-display font-bold text-base lg:text-lg px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl border-2 border-ink">
                 QUERO GARANTIR MEU ACESSO
-                <span className="font-mono text-xl">→</span>
+                <span className="font-mono text-lg">→</span>
               </Link>
-              <Link href="/cadastro" className="inline-flex items-center justify-center gap-2 bg-paper text-ink font-display font-bold text-base px-6 py-5 rounded-xl border-2 border-ink whitespace-nowrap hover:bg-ink hover:text-lime transition">
+              <Link href="/cadastro" className="inline-flex items-center justify-center gap-2 bg-paper text-ink font-display font-bold text-sm sm:text-base px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl border-2 border-ink whitespace-nowrap hover:bg-ink hover:text-lime transition">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
