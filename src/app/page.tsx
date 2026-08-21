@@ -60,7 +60,7 @@ export default async function HomePage() {
       </header>
 
       {/* ── HERO · slide 1 ── */}
-      <section className="relative bg-paper dark:bg-ink overflow-hidden border-b-2 border-ink dark:border-paper/10 snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center" aria-labelledby="hero-title">
+      <section className="relative bg-paper dark:bg-ink overflow-hidden border-b-2 border-ink dark:border-paper/10 snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center" aria-labelledby="hero-title">
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
         <div className="absolute top-24 right-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow">[ 04 · 12 ]</div>
         <div className="absolute bottom-20 left-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow" style={{animationDelay: '1s'}}>[ 18 · 03 ]</div>
@@ -297,7 +297,7 @@ export default async function HomePage() {
       </div>
 
       {/* ── AS 4 ÁREAS · slide 2 ── */}
-      <section id="areas" className="py-4 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
+      <section id="areas" className="py-4 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
@@ -314,9 +314,9 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
 
-            <Link href="/concursos" className="area-card bg-area-concursos text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink flex flex-col group">
+            <Link href="/concursos" className="area-card bg-area-concursos text-ink rounded-2xl p-3 sm:p-4 lg:p-5 border-2 border-ink flex flex-col group">
               <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-xs font-bold">№ 01</div>
                 <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
@@ -337,7 +337,7 @@ export default async function HomePage() {
               </div>
             </Link>
 
-            <Link href="/oab" className="area-card bg-area-oab text-white rounded-2xl p-4 lg:p-5 border-2 border-ink flex flex-col group">
+            <Link href="/oab" className="area-card bg-area-oab text-white rounded-2xl p-3 sm:p-4 lg:p-5 border-2 border-ink flex flex-col group">
               <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-xs font-bold">№ 02</div>
                 <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
@@ -358,7 +358,7 @@ export default async function HomePage() {
               </div>
             </Link>
 
-            <Link href="/militar" className="area-card bg-area-militar text-white rounded-2xl p-4 lg:p-5 border-2 border-ink flex flex-col group">
+            <Link href="/militar" className="area-card bg-area-militar text-white rounded-2xl p-3 sm:p-4 lg:p-5 border-2 border-ink flex flex-col group">
               <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-xs font-bold">№ 03</div>
                 <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
@@ -379,7 +379,7 @@ export default async function HomePage() {
               </div>
             </Link>
 
-            <Link href="/enem" className="area-card bg-area-enem text-white rounded-2xl p-4 lg:p-5 border-2 border-ink flex flex-col group">
+            <Link href="/enem" className="area-card bg-area-enem text-white rounded-2xl p-3 sm:p-4 lg:p-5 border-2 border-ink flex flex-col group">
               <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-xs font-bold">№ 04</div>
                 <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
@@ -405,7 +405,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── PROBLEMA / SOLUÇÃO · slide 3 ── */}
-      <section id="metodo" className="py-4 lg:py-5 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] flex flex-col justify-center overflow-hidden">
+      <section id="metodo" className="py-4 lg:py-5 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
@@ -464,7 +464,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── FERRAMENTAS · slide 4 ── */}
-      <section id="ferramentas" className="py-4 bg-ink text-paper border-b-2 border-ink relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
+      <section id="ferramentas" className="py-4 bg-ink text-paper border-b-2 border-ink relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
@@ -481,9 +481,9 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
 
-            <div className="feature-tile bg-paper text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink">
+            <div className="feature-tile bg-paper text-ink rounded-2xl p-3 sm:p-4 lg:p-5 border-2 border-ink">
               <div className="flex items-start justify-between mb-4">
                 <span className="font-mono text-xs font-bold text-ink/40">01/04</span>
                 <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
@@ -497,7 +497,7 @@ export default async function HomePage() {
               <div className="font-mono text-xs text-ink/50 pt-3 border-t border-ink/10">CESPE · FGV · FCC · VUNESP · múltiplas bancas</div>
             </div>
 
-            <div className="feature-tile bg-lime text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink relative">
+            <div className="feature-tile bg-lime text-ink rounded-2xl p-3 sm:p-4 lg:p-5 border-2 border-ink relative">
               <span className="absolute -top-3 left-6 bg-ink text-lime font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">★ exclusivo</span>
               <div className="flex items-start justify-between mb-4">
                 <span className="font-mono text-xs font-bold text-ink/50">02/04</span>
@@ -512,7 +512,7 @@ export default async function HomePage() {
               <div className="font-mono text-xs text-ink/60 pt-3 border-t border-ink/20">precisão média: 89%</div>
             </div>
 
-            <div className="feature-tile bg-paper text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink">
+            <div className="feature-tile bg-paper text-ink rounded-2xl p-3 sm:p-4 lg:p-5 border-2 border-ink">
               <div className="flex items-start justify-between mb-4">
                 <span className="font-mono text-xs font-bold text-ink/40">03/04</span>
                 <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
@@ -526,7 +526,7 @@ export default async function HomePage() {
               <div className="font-mono text-xs text-ink/50 pt-3 border-t border-ink/10">Materiais · download liberado</div>
             </div>
 
-            <div className="feature-tile bg-paper text-ink rounded-2xl p-4 lg:p-5 border-2 border-ink">
+            <div className="feature-tile bg-paper text-ink rounded-2xl p-3 sm:p-4 lg:p-5 border-2 border-ink">
               <div className="flex items-start justify-between mb-4">
                 <span className="font-mono text-xs font-bold text-ink/40">04/04</span>
                 <div className="w-10 h-10 bg-ink rounded-xl flex items-center justify-center">
@@ -545,7 +545,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── APROVADOS · slide 5 ── */}
-      <section id="aprovados" className="py-4 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
+      <section id="aprovados" className="py-4 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
@@ -565,7 +565,7 @@ export default async function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-6 flex flex-col">
+            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-4 sm:p-5 flex flex-col">
               <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-ink/50 dark:text-paper/50">/ depoimento 01</div>
                 <div className="bg-lime border-2 border-ink rounded-full px-2.5 py-0.5 font-mono text-[10px] font-bold text-ink">APROVADA</div>
@@ -582,7 +582,7 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-6 flex flex-col">
+            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-4 sm:p-5 flex flex-col">
               <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-ink/50 dark:text-paper/50">/ depoimento 02</div>
                 <div className="bg-lime border-2 border-ink rounded-full px-2.5 py-0.5 font-mono text-[10px] font-bold text-ink">APROVADO</div>
@@ -599,7 +599,7 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-6 flex flex-col">
+            <div className="bg-paper dark:bg-ink-3 border-2 border-ink dark:border-paper/20 rounded-2xl p-4 sm:p-5 flex flex-col">
               <div className="flex items-start justify-between mb-5">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-ink/50 dark:text-paper/50">/ depoimento 03</div>
                 <div className="bg-lime border-2 border-ink rounded-full px-2.5 py-0.5 font-mono text-[10px] font-bold text-ink">APROVADA · 11º</div>
@@ -621,7 +621,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── PREÇO · slide 6 ── */}
-      <section id="preco" className="py-4 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
+      <section id="preco" className="py-4 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
@@ -733,7 +733,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── FAQ · slide 7 ── */}
-      <section id="faq" className="py-4 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center">
+      <section id="faq" className="py-4 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
@@ -768,7 +768,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── CTA FINAL · slide 8 ── */}
-      <section className="bg-lime border-b-2 border-ink relative overflow-hidden snap-start h-[calc(100dvh-4rem)] min-h-[calc(100dvh-4rem)] max-h-[calc(100dvh-4rem)] overflow-hidden flex flex-col justify-center py-4">
+      <section className="bg-lime border-b-2 border-ink relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center py-4">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2 text-center">
           <span className="label-tag text-ink border-ink/40 mb-3">◆ a próxima coordenada é sua</span>
