@@ -65,7 +65,7 @@ export default async function HomePage() {
         <div className="absolute top-24 right-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow">[ 04 · 12 ]</div>
         <div className="absolute bottom-20 left-12 font-mono text-xs text-lime-dark/60 dark:text-lime/60 hidden lg:block animate-pulse-slow" style={{animationDelay: '1s'}}>[ 18 · 03 ]</div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center">
           <div className="grid lg:grid-cols-12 gap-5 lg:gap-6 items-center flex-1 min-h-0">
 
             <div className="lg:col-span-7 animate-rise">
@@ -300,7 +300,7 @@ export default async function HomePage() {
       <section id="areas" className="py-4 bg-paper dark:bg-ink border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-50"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div className="max-w-2xl">
               <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ quatro áreas · um acesso</span>
@@ -408,7 +408,7 @@ export default async function HomePage() {
       <section id="metodo" className="py-4 lg:py-5 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center">
           <div className="max-w-3xl mb-4">
             <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-2">◆ por que a matriz funciona</span>
             <h2 className="mt-2 font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-ink dark:text-paper leading-[1.05]">
@@ -467,7 +467,7 @@ export default async function HomePage() {
       <section id="ferramentas" className="py-4 bg-ink text-paper border-b-2 border-ink relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div className="max-w-2xl">
               <span className="label-tag text-lime border-lime/40 mb-3">◆ ferramentas</span>
@@ -548,7 +548,7 @@ export default async function HomePage() {
       <section id="aprovados" className="py-4 bg-paper-2 dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
             <div>
               <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ aprovados</span>
@@ -624,7 +624,7 @@ export default async function HomePage() {
       <section id="preco" className="py-4 bg-ink text-paper relative overflow-hidden border-b-2 border-ink snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid-dark"></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center">
           <div className="grid lg:grid-cols-12 gap-4 lg:gap-8 mb-6 items-end">
             <div className="lg:col-span-7">
               <span className="label-tag text-lime border-lime/40 mb-3">◆ investimento</span>
@@ -736,7 +736,7 @@ export default async function HomePage() {
       <section id="faq" className="py-4 bg-paper dark:bg-ink-2 border-b-2 border-ink dark:border-paper/10 relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 matrix-grid opacity-40"></div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center">
           <div className="mb-6">
             <span className="label-tag text-ink dark:text-paper border-ink/20 dark:border-paper/20 mb-3">◆ faq</span>
             <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ink dark:text-paper leading-[1.05]">
@@ -770,7 +770,7 @@ export default async function HomePage() {
       {/* ── CTA FINAL · slide 8 ── */}
       <section className="bg-lime border-b-2 border-ink relative overflow-hidden snap-start h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] max-h-[calc(100svh-4rem)] overflow-hidden flex flex-col justify-center py-4">
         <div className="absolute inset-0 matrix-grid opacity-30"></div>
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center py-2 text-center">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-start lg:justify-center py-2 overflow-y-auto lg:overflow-visible overscroll-contain safe-center text-center">
           <span className="label-tag text-ink border-ink/40 mb-3">◆ a próxima coordenada é sua</span>
           <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-6xl text-ink leading-[1.05]">
             R$ 49,99 hoje.<br />

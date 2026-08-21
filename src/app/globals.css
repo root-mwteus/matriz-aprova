@@ -249,6 +249,14 @@ h1 { letter-spacing: -0.028em; }
   section.snap-start h2 { font-size: 1.7rem !important; }
   .hero-mockup { transform: scale(0.78); }
 }
+@media (max-height: 560px) {
+  section.snap-start { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+  section.snap-start h1 { font-size: 1.6rem !important; }
+  section.snap-start h2 { font-size: 1.35rem !important; }
+  .area-card, .feature-tile { padding: 0.5rem !important; }
+  .feature-tile h3, .area-card h3 { font-size: 1rem !important; }
+}
+.safe-center { justify-content: safe center; }
 @media (max-width: 768px) {
   html { scroll-snap-type: y proximity; }
 }
