@@ -7,7 +7,7 @@ export async function extrairTextoDePdf(buffer: Buffer): Promise<{ texto: string
   // pdfjs legacy build só via require (sem ESM)
   const pdfjs = (requireFn as unknown as (id: string) => typeof import("pdfjs-dist"))("pdfjs-dist/legacy/build/pdf.js")
 
-  const doc = await pdfjs.getDocument({ data: buffer, disableWorker: true } as unknown as Parameters<typeof pdfjs.getDocument>[0]).promise
+  const doc = await pdfjs.getDocument({ data: new Uint8Array(buffer), disableWorker: true } as unknown as Parameters<typeof pdfjs.getDocument>[0]).promise
   const paginas = doc.numPages
   const textos: string[] = []
 

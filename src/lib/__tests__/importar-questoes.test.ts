@@ -44,9 +44,9 @@ describe("QuestaoExtraidaSchema", () => {
     })
     expect(r.success).toBe(false)
   })
-  it("rejeita materia fora de MATERIAS", () => {
+  it("aceita materia livre (validação de MATERIAS é no preview/normalize)", () => {
     const r = parseQuestaoExtraida({ ...questaoBase, materia: "Astrologia" })
-    expect(r.success).toBe(false)
+    expect(r.success).toBe(true)
   })
   it("aceita resposta_correta null (revisão humana)", () => {
     const r = parseQuestaoExtraida({ ...questaoBase, resposta_correta: null })
