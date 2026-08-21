@@ -1,0 +1,6 @@
+export { extrairTextoDePdf } from "./extract-pdf"
+export { extrairTextoDeHtml, validarUrlPublica } from "./extract-url"
+export { parseChunksComIA } from "./parse-ia"
+export { chunkTexto, dedupePorEnunciado } from "./chunk"
+export { QuestaoExtraidaSchema, RespostaIASchema } from "./schema"
+export type { QuestaoExtraida } from "./schema"

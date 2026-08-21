@@ -89,10 +89,16 @@ export default function AdminQuestoesPage() {
             ))}
           </select>
           <button
+            onClick={() => router.push("/admin/questoes/importar")}
+            className="text-xs bg-card border border-card-border text-muted px-4 py-1.5 rounded-lg font-semibold hover:bg-card-hover transition-colors"
+          >
+            IMPORTAR EM MASSA
+          </button>
+          <button
             onClick={() => router.push("/admin/questoes/novo")}
             className="text-xs bg-accent/20 text-accent border border-accent/40 px-4 py-1.5 rounded-lg font-semibold hover:bg-accent/30 transition-colors"
           >
-            NOVA QUESTÃO →
+            NOVA QUESTÃO
           </button>
         </div>
       </div>

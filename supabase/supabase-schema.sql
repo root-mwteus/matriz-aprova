@@ -724,3 +724,19 @@ ALTER TABLE public.user_sessions ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Usuário lê apenas a própria sessão"
   ON public.user_sessions FOR SELECT TO authenticated
   USING (auth.uid() = user_id);
+
+-- 030: importacoes_questoes (audit de importacao em massa via IA)
+CREATE TABLE public.importacoes_questoes (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  admin_id uuid NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
+  fonte_tipo text NOT NULL CHECK (fonte_tipo IN ('pdf','url')),
+  arquivo_path text,
+  urls text[] DEFAULT '{}'::text[],
+  status text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','processing','done','error')),
+  total_extraidas integer NOT NULL DEFAULT 0,
+  total_confirmadas integer NOT NULL DEFAULT 0,
+  custo_tokens integer NOT NULL DEFAULT 0,
+  erro text,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
