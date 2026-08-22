@@ -200,19 +200,6 @@ export default function SimuladosPage() {
             )}
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Banca">
-                {(props) => (
-                  <Select {...props} disabled={Boolean(catalogoId)} value={banca} onChange={(e) => setBanca(e.target.value)}>
-                    <option value="">Todas as bancas</option>
-                    {BANCAS.map((b) => (
-                      <option key={b} value={b}>
-                        {b}
-                      </option>
-                    ))}
-                  </Select>
-                )}
-              </Field>
-
               <Field label="Área">
                 {(props) => (
                   <Select {...props} disabled={Boolean(catalogoId)} value={area} onChange={(e) => setArea(e.target.value)}>
@@ -220,6 +207,19 @@ export default function SimuladosPage() {
                     {AREAS.map((a) => (
                       <option key={a} value={a}>
                         {a}
+                      </option>
+                    ))}
+                  </Select>
+                )}
+              </Field>
+
+              <Field label="Banca">
+                {(props) => (
+                  <Select {...props} disabled={Boolean(catalogoId)} value={banca} onChange={(e) => setBanca(e.target.value)}>
+                    <option value="">Todas as bancas</option>
+                    {BANCAS.map((b) => (
+                      <option key={b} value={b}>
+                        {b}
                       </option>
                     ))}
                   </Select>
