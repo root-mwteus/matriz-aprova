@@ -50,6 +50,7 @@ export default function CronometroPage() {
   const [rodando, setRodando] = useState(false)
   const [sessoes, setSessoes] = useState<StudySession[]>([])
   const [carregando, setCarregando] = useState(true)
+  const [modalSalvarAberto, setModalSalvarAberto] = useState(false)
   const [salvando, setSalvando] = useState(false)
   const [confirmarReset, setConfirmarReset] = useState(false)
   const [materia, setMateria] = useState<string>(MATERIAS[0])
@@ -158,6 +159,7 @@ export default function CronometroPage() {
     ])
     toast.success(`${minutos} min registrados em ${materia}`)
     setSalvando(false)
+    setModalSalvarAberto(false)
     zerar()
   }
 
@@ -217,7 +219,7 @@ export default function CronometroPage() {
                 variant="secondary"
                 size="lg"
                 disabled={decorrido === 0}
-                onClick={() => setSalvando(true)}
+                onClick={() => setModalSalvarAberto(true)}
               >
                 Salvar sessão
               </Button>
@@ -314,13 +316,13 @@ export default function CronometroPage() {
 
       {/* ── Salvar ──────────────────────────────────────────── */}
       <Modal
-        open={salvando}
-        onClose={() => setSalvando(false)}
+        open={modalSalvarAberto}
+        onClose={() => setModalSalvarAberto(false)}
         title="Salvar sessão"
         description={`${Math.floor(decorrido / 60)} minutos cronometrados. Em qual matéria?`}
         footer={
           <>
-            <Button variant="ghost" onClick={() => setSalvando(false)}>
+            <Button variant="ghost" onClick={() => setModalSalvarAberto(false)}>
               Cancelar
             </Button>
             <Button variant="accent" onClick={salvar} disabled={salvando}>
