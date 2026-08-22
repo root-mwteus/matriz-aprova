@@ -172,7 +172,8 @@ perfil público: `bio`, `prova_alvo`, `icone_path`, `banner_path`, `moldura_id`,
 gerados por `scripts/gerar-molduras.mjs` e semeados por `scripts/seed-molduras.mjs`),
 `xp_historico` (razão de XP: `tipo`/`origem_id` UNIQUE por user — dedupe de retry
 + teto diário de 1000 XP em `somar_xp`),
-`questions` (5 alternativas, matéria/banca/área), `user_answers`, `simulations`,
+`questions` (5 alternativas, matéria/banca/área; importação pública registra `fonte_url`,
+`fonte_id_original`, `prova` e `imagens_origem`), `user_answers`, `simulations`,
 `pagamentos` (order_nsu = id do pedido gerado no checkout, transaction_nsu UNIQUE =
 id da transação p/ dedupe do webhook; referencia `config_pagamentos.valor`), `config_pagamentos`
 (id=1, singleton; inclui `whatsapp_suporte` do balão de suporte), `editais`
@@ -216,6 +217,8 @@ Aplicadas no Supabase (verificado via OpenAPI `/rest/v1/`): `003`, `017-sessao-u
 `026-editais-sem-edital`.
 
 Pendentes (criadas, **NÃO aplicadas**):
+- `031-cosseno-origem` (metadados de proveniência pública em `questions`: ID externo,
+  prova e URLs de imagens; necessária antes de `npm run import:questions`)
 - `025-whatsapp-suporte` (`config_pagamentos.whatsapp_suporte` — balão de suporte)
 - `027-perfil-molduras` (perfil público: `bio`, `prova_alvo`, `icone_path`,
   `banner_path`, `moldura_id`; tabela `molduras` + buckets `perfis`/`molduras`
